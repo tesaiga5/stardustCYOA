@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Dust CYOA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script>
+      const player = {
+        credits: 0, 
+        fleetSize: 0,
+        skills: [],
+        gear: [],
+        scenario: []
+      };
+
+      const ship = {
+        spinalMount: 0,
+        broadSideMount: 0,
+        pointDefenseMount: 0,
+        hull: "fighter", 
+        hangarSpace: 0,
+        navigation: 0, 
+        hullArmor: 0,
+        shieldStr: 0,
+        length: 0,
+        maxCrew: 0,
+        crewSize: 0,
+        extraRooms: 0,
+        energyUse: 1,
+        energySystem: "solar", 
+        ai: "winston",
+        commandMods: "cool paint job",
+      };
+      
+
+    </script>
+
+<h1>Star Dust: Reloaded + Unofficial DLC</h1>
+<h2>Original by StardustAnon</h2>
+
+<div class="section">
+  <div>Yep you have a billion dollars</div></div>
+
+<div class="section">
+  <div class="choice" id="choice-lore">Lore</div>
+  <div class="choice" id="choice-you">You</div>
+  <div class="choice" id="choice-fleet">Your Fleet</div>
+  <div class="choice" id="choice-crew">Your Crew</div>
+  <div class="choice" id="choice-contracts">Contracts</div>
+  <div class="choice" id="choice-battle">Battle</div>
+</div>
+
+<!--Lore Section--> 
+<div class="section" id="section-lore">
+  <div class="choice" id="choice-spaceships">Space Ships</div> 
+  <!--a destroyer can blockade a defenseless planet forever until relieved
+  a fleet can blockade a defenseless system forever until relieved, 
+  a single destroyer can glass a habitable planet given the planet's defenseless and there is enough ammunition 
+  it takes a monumental effort to build a single spaceship. The cost of building a destroyer is equal to the IRL annual GDP of the UK in 2025, whilst a dreadnought will cost 
+  the annual GDP of Earth in 2025. And it assumes Earth have all the necessary materials, manpower, knowhow and machinery. 
+  However, repairing ships are cheap and easier, especially if you have an existing hull. Moreover, the poorest planet in Stardust exceeded IRL Earth 2025 by 10x -->
+  <div class="choice" id="choice-economy">How much is a credit?</div>
+  <!--Each planet have their own currency, but if they want to trade with other planets or transact across systems, they use Credits. Credits or Dust is a futuristic cryptocurrency that allows absolutely fair, scam-free, untraceable trade. Everyone accepts credits, regardless of origin. 
+  100 million credits = the wealth of a typical non-Luos businessman, top 1% richest person in a non-Luos planet
+  1 billion credits = the wealth of a typical Luos 'billionaire', top 1% in a non-Luos system.
+  At its height, the richest Luos citizen had a net worth of 1 trillion credits and the largest corporation in the Luos Syndicate had a market cap of 300 trillion credits.  -->
+  <div class="choice" id="choice-technology">Technology</div>
+  <!--Most ships travel at relativistic speeds in vacuum, and use warp drives to achieve FTL speeds.
+  How Warp Drives work: when a ship activates its Warp Drive, it will enter the nearest Dark River, a Riemann manifold between two systems, and exit at the end of the River. 
+  Ships cannot exit early or appear in between systems, nor can they enter the River at any point. Matter cannot exist inside a Dark River without Warp Drives (so no Dark River battles). Time does not flow in a Dark River, so ships passing through Dark Rivers can't perceive anything, they just appear instantenously on the other side. Finally, the entry/exit point of a River is anywhere within a 1LY omni-radius from a known system's center (so no camping). 
+
+  Known Space: sectors that have at least 1 Dark River mapped
+  Unknown Space: sectors that don't have or known to have a Dark River
+  Dead Space: sectors without any celestial bodies, ergo no Dark River -->
+</div>
+
+<!--You Section--> 
+<div class="section" id="section-you">
+  <div class="choice" id="choice-moneysource">How'd you get the money?</div>
+  <div class="choice" id="choice-origin">Origins</div>
+  <div class="choice" id="choice-skills">Skills</div>
+  <div class="choice" id="choice-equipment">Equipment</div>
+</div>
+
+<!--You-How'd you get the money Section--> 
+<div class="section" id="section-moneysource">
+  <div class="choice" >Gambling</div>
+  <div class="choice" >Theft</div>
+  <div class="choice" >Investments</div>
+  <div class="choice" >Retirement Fund</div>
+  <div class="choice" >Sponsorship Scam</div>
+</div>
+
+<!--You-Origins, this will scroll no clickable choices because too long
+dependencies: choice-origin --> 
+<div class="section" id="section-origin">
+  <div class="choice" >Education</div>
+  <div class="choice" >Sponsor</div>
+  <div class="choice" >Mana</div>
+  <div class="choice" >Catalyst</div>
+  <div class="choice" >Spell Base</div>
+  <div class="choice" >Affinities</div>
+</div>
+
+
+
+
+<script>
+  // Get references to the elements
+  const choiceLore1 = document.getElementById('choice-lore');
+  const sectionLore1 = document.getElementById('section-lore');
+
+  // Add a click event listener to div #1
+  choiceLore1.addEventListener('click', () => {
+    // Toggle the 'visible' class on the new grid container
+    // If it has 'visible', it will be removed (hiding the grid)
+    // If it doesn't have 'visible', it will be added (showing the grid)
+    sectionLore1.classList.toggle('visible');
+  });
+</script>
+</body>
+</html>
+
