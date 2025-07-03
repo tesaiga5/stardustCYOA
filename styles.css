@@ -13,11 +13,15 @@
   text-align: center;
 }
 
-#section-lore{
+#section-lore, #section-you, #section-moneysource,
+#section-origin, #section-equipment, 
+#section-titles {
   display: none; /* Hidden by default */
 }
 
-#section-lore.visible{
+#section-lore.visible, #section-you.visible, #section-moneysource.visible,
+#section-origin.visible, #section-equipment.visible, 
+#section-titles.visible {
   display: grid; /* Hidden by default */
 }
 

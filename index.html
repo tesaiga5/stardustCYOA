@@ -82,7 +82,7 @@
   <div class="choice" id="choice-moneysource">How'd you get the money?</div>
   <div class="choice" id="choice-origin">Origins</div>
   <div class="choice" id="choice-equipment">Equipment</div>
-  <div class="choice" id="choice-skills">Titles</div>
+  <div class="choice" id="choice-titles">Titles</div>
 </div>
 
 <!--You-How'd you get the money Section--> 
@@ -110,7 +110,7 @@ dependencies: choice-origin -->
 dependencies: choice-origin --> 
 <div class="section" id="section-equipment">
   <div class="choice" >a</div>
-  <div class="choice" >b</div>s
+  <div class="choice" >b</div>
   <div class="choice" >c</div>
   <div class="choice" >dt</div>
   <div class="choice" >e</div>
@@ -119,7 +119,7 @@ dependencies: choice-origin -->
 
 <div class="section" id="section-titles">
   <div class="choice" >a</div>
-  <div class="choice" >b</div>s
+  <div class="choice" >b</div>
   <div class="choice" >c</div>
   <div class="choice" >dt</div>
   <div class="choice" >e</div>
@@ -132,6 +132,18 @@ dependencies: choice-origin -->
   // Get references to the elements
   const choiceLore1 = document.getElementById('choice-lore');
   const sectionLore1 = document.getElementById('section-lore');
+  const choiceYou1 = document.getElementById('choice-you');
+  const sectionYou1 = document.getElementById('section-you');
+
+  const choiceMoneySource1 = document.getElementById('choice-moneysource');
+  const sectionMoneySource1 = document.getElementById('section-moneysource');
+  const choiceOrigin1 = document.getElementById('choice-origin');
+  const sectionOrigin1 = document.getElementById('section-origin');
+
+  const choiceEquipment1 = document.getElementById('choice-equipment');
+  const sectionEquipment1 = document.getElementById('section-equipment');
+  const choiceTitles1 = document.getElementById('choice-titles');
+  const sectionTitles1 = document.getElementById('section-titles');
 
   // Add a click event listener to div #1
   choiceLore1.addEventListener('click', () => {
@@ -140,6 +152,27 @@ dependencies: choice-origin -->
     // If it doesn't have 'visible', it will be added (showing the grid)
     sectionLore1.classList.toggle('visible');
   });
+
+  choiceYou1.addEventListener('click', () => {
+    sectionYou1.classList.toggle('visible');
+  });
+
+  choiceMoneySource1.addEventListener('click', () => {
+    sectionMoneySource1.classList.toggle('visible');
+  });
+
+  choiceOrigin1.addEventListener('click', () => {
+    sectionOrigin1.classList.toggle('visible');
+  });
+
+  choiceEquipment1.addEventListener('click', () => {
+    sectionEquipment1.classList.toggle('visible');
+  });
+
+  choiceTitles1.addEventListener('click', () => {
+    sectionTitles1.classList.toggle('visible');
+  });
+
 </script>
 </body>
 </html>
