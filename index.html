@@ -1,179 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Dust CYOA</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Dust CYOA</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script>
-      const player = {
-        credits: 0, 
-        fleetSize: 0,
-        skills: [],
-        gear: [],
-        scenario: []
-      };
+  <script>
+    const player = {
+      credits: 10, 
+      fleetSize: 0,
+      skills: [],
+      gear: [],
+      scenario: []
+    };
 
-      const ship = {
-        spinalMount: 0,
-        broadSideMount: 0,
-        pointDefenseMount: 0,
-        hull: "fighter", 
-        hangarSpace: 0,
-        navigation: 0, 
-        hullArmor: 0,
-        shieldStr: 0,
-        length: 0,
-        maxCrew: 0,
-        crewSize: 0,
-        extraRooms: 0,
-        energyUse: 1,
-        energySystem: "solar", 
-        ai: "winston",
-        commandMods: "cool paint job",
-      };
-      
+    const ship = {
+      spinalMount: 0,
+      broadSideMount: 0,
+      pointDefenseMount: 0,
+      hull: "fighter", 
+      hangarSpace: 0,
+      navigation: 0, 
+      hullArmor: 0,
+      shieldStr: 0,
+      length: 0,
+      maxCrew: 0,
+      crewSize: 0,
+      extraRooms: 0,
+      energyUse: 1,
+      energySystem: "solar", 
+      ai: "winston",
+      commandMods: "cool paint job",
+    };
+    
+    
 
-    </script>
+  </script>
 
-<h1>Star Dust: Reloaded + Unofficial DLC</h1>
-<h2>Original by StardustAnon</h2>
+  <h1>Star Dust: Reloaded + Unofficial DLC</h1>
+  <h2>Original by StardustAnon</h2>
 
-<div class="section">
-  <div>Yep you have a billion dollars</div></div>
+  <div class="section">
+    <div>Yep you have a billion dollars</div></div>
 
-<div class="section">
-  <div class="choice" id="choice-lore">Lore</div>
-  <div class="choice" id="choice-you">You</div>
-  <div class="choice" id="choice-fleet">Your Fleet</div>
-  <div class="choice" id="choice-crew">Your Crew</div>
-  <div class="choice" id="choice-contracts">Contracts</div>
-  <div class="choice" id="choice-battle">Battle</div>
-</div>
+  <div class="section">
+    <div class="choice" id="choice-lore">Lore</div>
+    <div class="choice" id="choice-you">You</div>
+    <div class="choice" id="choice-fleet">Your Fleet</div>
+    <div class="choice" id="choice-crew">Your Crew</div>
+    <div class="choice" id="choice-contracts">Contracts</div>
+    <div class="choice" id="choice-battle">Battle</div>
+  </div>
 
-<!--Lore Section--> 
-<div class="section" id="section-lore">
-  <div class="choice" id="choice-spaceships">Space Ships</div> 
-  <!--a destroyer can blockade a defenseless planet forever until relieved
-  a fleet can blockade a defenseless system forever until relieved, 
-  a single destroyer can glass a habitable planet given the planet's defenseless and there is enough ammunition 
-  it takes a monumental effort to build a single spaceship. The cost of building a destroyer is equal to the IRL annual GDP of the UK in 2025, whilst a dreadnought will cost 
-  the annual GDP of Earth in 2025. And it assumes Earth have all the necessary materials, manpower, knowhow and machinery. 
-  However, repairing ships are cheap and easier, especially if you have an existing hull. Moreover, the poorest planet in Stardust exceeded IRL Earth 2025 by 10x -->
-  <div class="choice" id="choice-economy">How much is a credit?</div>
-  <!--Each planet have their own currency, but if they want to trade with other planets or transact across systems, they use Credits. Credits or Dust is a futuristic cryptocurrency that allows absolutely fair, scam-free, untraceable trade. Everyone accepts credits, regardless of origin. 
-  100 million credits = the wealth of a typical non-Luos businessman, top 1% richest person in a non-Luos planet
-  1 billion credits = the wealth of a typical Luos 'billionaire', top 1% in a non-Luos system.
-  At its height, the richest Luos citizen had a net worth of 1 trillion credits and the largest corporation in the Luos Syndicate had a market cap of 300 trillion credits.  -->
-  <div class="choice" id="choice-technology">Technology</div>
-  <!--Most ships travel at relativistic speeds in vacuum, and use warp drives to achieve FTL speeds.
-  How Warp Drives work: when a ship activates its Warp Drive, it will enter the nearest Dark River, a Riemann manifold between two systems, and exit at the end of the River. 
-  Ships cannot exit early or appear in between systems, nor can they enter the River at any point. Matter cannot exist inside a Dark River without Warp Drives (so no Dark River battles). Time does not flow in a Dark River, so ships passing through Dark Rivers can't perceive anything, they just appear instantenously on the other side. Finally, the entry/exit point of a River is anywhere within a 1LY omni-radius from a known system's center (so no camping). 
+  <!--Lore Section--> 
+  <div class="section" id="section-lore">
+    <div class="choice" id="choice-spaceships">Space Ships</div> 
+    <!--a destroyer can blockade a defenseless planet forever until relieved
+    a fleet can blockade a defenseless system forever until relieved, 
+    a single destroyer can glass a habitable planet given the planet's defenseless and there is enough ammunition 
+    it takes a monumental effort to build a single spaceship. The cost of building a destroyer is equal to the IRL annual GDP of the UK in 2025, whilst a dreadnought will cost 
+    the annual GDP of Earth in 2025. And it assumes Earth have all the necessary materials, manpower, knowhow and machinery. 
+    However, repairing ships are cheap and easier, especially if you have an existing hull. Moreover, the poorest planet in Stardust exceeded IRL Earth 2025 by 10x -->
+    <div class="choice" id="choice-economy">How much is a credit?</div>
+    <!--Each planet have their own currency, but if they want to trade with other planets or transact across systems, they use Credits. Credits or Dust is a futuristic cryptocurrency that allows absolutely fair, scam-free, untraceable trade. Everyone accepts credits, regardless of origin. 
+    100 million credits = the wealth of a typical non-Luos businessman, top 1% richest person in a non-Luos planet
+    1 billion credits = the wealth of a typical Luos 'billionaire', top 1% in a non-Luos system.
+    At its height, the richest Luos citizen had a net worth of 1 trillion credits and the largest corporation in the Luos Syndicate had a market cap of 300 trillion credits.  -->
+    <div class="choice" id="choice-technology">Technology</div>
+    <!--Most ships travel at relativistic speeds in vacuum, and use warp drives to achieve FTL speeds.
+    How Warp Drives work: when a ship activates its Warp Drive, it will enter the nearest Dark River, a Riemann manifold between two systems, and exit at the end of the River. 
+    Ships cannot exit early or appear in between systems, nor can they enter the River at any point. Matter cannot exist inside a Dark River without Warp Drives (so no Dark River battles). Time does not flow in a Dark River, so ships passing through Dark Rivers can't perceive anything, they just appear instantenously on the other side. Finally, the entry/exit point of a River is anywhere within a 1LY omni-radius from a known system's center (so no camping). 
 
-  Known Space: sectors that have at least 1 Dark River mapped
-  Unknown Space: sectors that don't have or known to have a Dark River
-  Dead Space: sectors without any celestial bodies, ergo no Dark River -->
-</div>
+    Known Space: sectors that have at least 1 Dark River mapped
+    Unknown Space: sectors that don't have or known to have a Dark River
+    Dead Space: sectors without any celestial bodies, ergo no Dark River -->
+  </div>
 
-<!--You Section--> 
-<div class="section" id="section-you">
-  <div class="choice" id="choice-moneysource">How'd you get the money?</div>
-  <div class="choice" id="choice-origin">Origins</div>
-  <div class="choice" id="choice-equipment">Equipment</div>
-  <div class="choice" id="choice-titles">Titles</div>
-</div>
+  <!--You Section--> 
+  <div class="section" id="section-you">
+    <div class="choice" id="choice-moneysource">How'd you get the money?</div>
+    <div class="choice" id="choice-origin">Origins</div>
+    <div class="choice" id="choice-equipment">Equipment</div>
+    <div class="choice" id="choice-titles">Titles</div>
+    <div class="choice" id="choice-startingPos">Starting Location</div>
+  </div>
 
-<!--You-How'd you get the money Section--> 
-<div class="section" id="section-moneysource">
-  <div class="choice" >Gambling</div>
-  <div class="choice" >Theft</div>
-  <div class="choice" >Investments</div>
-  <div class="choice" >Retirement Fund</div>
-  <div class="choice" >Sponsorship Scam</div>
-</div>
+  <!--You-How'd you get the money Section--> 
+  <div class="section" id="section-moneysource">
+    <div class="choice" id="choose-gambling">Gambling 1 Million</div>
+    <div class="choice" id="choose-theft">Theft</div>
+    <div class="choice" id="choose-invest">Investments</div>
+    <div class="choice" id="choose-retired">Retirement Fund</div>
+    <div class="choice" id="choose-sponsorScam">Sponsorship Scam</div>
+  </div>
 
-<!--You-Origins, this will scroll no clickable choices because too long
-dependencies: choice-origin --> 
-<div class="section" id="section-origin">
-  <div class="choice" >Education</div>
-  <div class="choice" >Sponsor</div>
-  <div class="choice" >Skills</div>
-  <div class="choice" >Mana</div>
-  <div class="choice" >Catalyst</div>
-  <div class="choice" >Spell Base</div>
-  <div class="choice" >Affinities</div>
-</div>
+  <!--You-Origins, this will scroll no clickable choices because too long
+  dependencies: choice-origin --> 
+  <div class="section" id="section-origin">
+    <div class="choice" >Education</div>
+    <div class="choice" >Sponsor</div>
+    <div class="choice" >Skills</div>
+    <div class="choice" >Mana</div>
+    <div class="choice" >Catalyst</div>
+    <div class="choice" >Spell Base</div>
+    <div class="choice" >Affinities</div>
+  </div>
 
-<!--You-Equipment, this will scroll no clickable choices because too long
-dependencies: choice-origin --> 
-<div class="section" id="section-equipment">
-  <div class="choice" >a</div>
-  <div class="choice" >b</div>
-  <div class="choice" >c</div>
-  <div class="choice" >dt</div>
-  <div class="choice" >e</div>
-  <div class="choice" >g</div>
-</div>
+  <!--You-Equipment, this will scroll no clickable choices because too long
+  dependencies: choice-origin --> 
+  <div class="section" id="section-equipment">
+    <div class="choice" >a</div>
+    <div class="choice" >b</div>
+    <div class="choice" >c</div>
+    <div class="choice" >dt</div>
+    <div class="choice" >e</div>
+    <div class="choice" >g</div>
+  </div>
 
-<div class="section" id="section-titles">
-  <div class="choice" >a</div>
-  <div class="choice" >b</div>
-  <div class="choice" >c</div>
-  <div class="choice" >dt</div>
-  <div class="choice" >e</div>
-  <div class="choice" >g</div>
-</div>
+  <!--You-Titles, this will scroll no clickable choices because too long
+  dependencies: choice-origin --> 
+  <div class="section" id="section-titles">
+    <div class="choice" >a</div>
+    <div class="choice" >b</div>
+    <div class="choice" >c</div>
+    <div class="choice" >dt</div>
+    <div class="choice" >e</div>
+    <div class="choice" >g</div>
+  </div>
 
+  <!--FLEET section-->
+  <div class="section" id="section-fleet">
+    <button class="choice" id="choice-toggle-addShip">Add Ship</button> 
+    <!--IF add ship, a choice "1st Ship" will appear, this div is also editable, and there is an 'x' icon on the upper right, which will delete it-->
+  </div>
 
+  <!--TODO: Move this to JS-->
+  <!--Ship Section-->
+  <div class="section" id="section-ship">
+    <div class="choice" id="choice-hull">Hull</div>
+    <div class="choice" id="choice-subsystem">Subsystems</div>
+    <div class="choice" id="choice-mod">Mods</div>
+    <div class="choice" id="choice-weapon">Weapons</div>
+    <div class="choice" id="choice-industrial">Industrial Equipment</div>
+    <div class="choice" id="choice-ewar">E-War Equipment</div>
+    <div class="choice" id="choice-room">Rooms & Compartments</div>
+  </div>
+
+  <div class="section" id="section-hull">
+    <div class="choice" id="choice-fighter">◈Fighter◈</div>
+    <div class="choice" id="choice-frigate">◈Frigate◈</div>
+    <div class="choice" id="choice-destroyer">◈Destroyer◈</div>
+    <div class="choice" id="choice-cruiser">◈Cruiser◈</div>
+    <div class="choice" id="choice-battleship">◈Battleship◈</div>
+    <div class="choice" id="choice-carrier">◈Carrier◈</div>
+    <div class="choice" id="choice-dreadnought">◈Dreadnought◈</div>
+  </div>
+
+  <div id="credits-display">Credits: </div>
 
 <script>
-  // Get references to the elements
-  const choiceLore1 = document.getElementById('choice-lore');
-  const sectionLore1 = document.getElementById('section-lore');
-  const choiceYou1 = document.getElementById('choice-you');
-  const sectionYou1 = document.getElementById('section-you');
+    //formats credits to have decimals
+    const formatterIntl = new Intl.NumberFormat('en-US', {
+            minimumFractionDigits: 0, // Ensure no decimal places if not needed
+            maximumFractionDigits: 2 // Allow up to 2 decimal places if present
+    });
 
-  const choiceMoneySource1 = document.getElementById('choice-moneysource');
-  const sectionMoneySource1 = document.getElementById('section-moneysource');
-  const choiceOrigin1 = document.getElementById('choice-origin');
-  const sectionOrigin1 = document.getElementById('section-origin');
+    function handleChoice (section, chosenChoice, creditChange) {
+      const setOfChoices = section.querySelectorAll('.choice');
+      let alreadyActive = false;
 
-  const choiceEquipment1 = document.getElementById('choice-equipment');
-  const sectionEquipment1 = document.getElementById('section-equipment');
-  const choiceTitles1 = document.getElementById('choice-titles');
-  const sectionTitles1 = document.getElementById('section-titles');
+      // Check if any other money source choice is already active
+      setOfChoices.forEach(choice => {
+          // An active choice has 'bg-blue-600'
+          if (choice !== chosenChoice && choice.classList.contains('active')) {
+              alreadyActive = true;
+          }
+      });
+      // If no other money source is active AND the clicked one isn't already active
+      if (!alreadyActive && !chosenChoice.classList.contains('active')) {
+          // Make the chosen element active (blue)
+          chosenChoice.classList.toggle('active');
+          player.credits = player.credits + creditChange; 
+          document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+      }
+    }
+    
+    // Get references to the elements
+    const choiceLore1 = document.getElementById('choice-lore');
+    const sectionLore1 = document.getElementById('section-lore');
+    const choiceYou1 = document.getElementById('choice-you');
+    const sectionYou1 = document.getElementById('section-you');
 
-  // Add a click event listener to div #1
-  choiceLore1.addEventListener('click', () => {
-    // Toggle the 'visible' class on the new grid container
-    // If it has 'visible', it will be removed (hiding the grid)
-    // If it doesn't have 'visible', it will be added (showing the grid)
-    sectionLore1.classList.toggle('visible');
-  });
+    const choiceMoneySource1 = document.getElementById('choice-moneysource');
+    const sectionMoneySource1 = document.getElementById('section-moneysource');
+    const chooseGambling1 = document.getElementById('choose-gambling'); 
+    const chooseTheft1 = document.getElementById('choose-theft');
+    const chooseRetired1 = document.getElementById('choose-retired');
+    const chooseInvest1 = document.getElementById('choose-invest');
+    const chooseSponsorScam1 = document.getElementById('choose-sponsorScam');
 
-  choiceYou1.addEventListener('click', () => {
-    sectionYou1.classList.toggle('visible');
-  });
 
-  choiceMoneySource1.addEventListener('click', () => {
-    sectionMoneySource1.classList.toggle('visible');
-  });
+    const choiceOrigin1 = document.getElementById('choice-origin');
+    const sectionOrigin1 = document.getElementById('section-origin');
 
-  choiceOrigin1.addEventListener('click', () => {
-    sectionOrigin1.classList.toggle('visible');
-  });
+    const choiceEquipment1 = document.getElementById('choice-equipment');
+    const sectionEquipment1 = document.getElementById('section-equipment');
+    const choiceTitles1 = document.getElementById('choice-titles');
+    const sectionTitles1 = document.getElementById('section-titles');
 
-  choiceEquipment1.addEventListener('click', () => {
-    sectionEquipment1.classList.toggle('visible');
-  });
+    const choiceFleet1 = document.getElementById('choice-fleet');
+    const sectionFleet1 = document.getElementById('section-fleet');
+    const choiceShip1 = document.getElementById('choice-toggle-addShip');
+    const sectionShip1 = document.getElementById('section-ship');
+    const choiceHull1 = document.getElementById('choice-hull');
+    const sectionHull1 = document.getElementById('section-hull');
 
-  choiceTitles1.addEventListener('click', () => {
-    sectionTitles1.classList.toggle('visible');
-  });
+    document.addEventListener('click', (event) => {
+      // Check if the clicked element (or its closest parent) has the 'choice' class
+      const choiceElement = event.target.closest('.choice');
+      
+      if (choiceElement) {
+        const id = choiceElement.id; // Get the ID of the clicked choice
+        switch (id) {
+          case 'choice-lore':
+            choiceElement.classList.toggle('active'); 
+            sectionLore1.classList.toggle('visible');
+            break;
+          case 'choice-you':
+            choiceElement.classList.toggle('active'); 
+            sectionYou1.classList.toggle('visible');
+            break;
+          case 'choice-fleet':
+            choiceElement.classList.toggle('active'); 
+            sectionFleet1.classList.toggle('visible');
+            break;
+          case 'choice-crew':
+            //placeholder
+            break;
+          case 'choice-contracts':
+            //placeholder
+            break;
+          case 'choice-battle':
+            //placeholder
+            break;
+          case 'choice-moneysource':
+            choiceElement.classList.toggle('active'); 
+            sectionMoneySource1.classList.toggle('visible');
+            break;
+          case 'choice-origin':
+            choiceElement.classList.toggle('active'); 
+            sectionOrigin1.classList.toggle('visible');
+            break;
+          
+            //make player choose ONLY 1 MONEYSOURCE
+          case 'choose-gambling':
+            handleChoice(sectionMoneySource1, choiceElement, 100000000);
+            break; 
+          case 'choose-theft':
+            handleChoice(sectionMoneySource1, choiceElement, 200000000);
+            break; 
+          case 'choose-invest':
+            handleChoice(sectionMoneySource1, choiceElement, 250000000);
+            break; 
+          case 'choose-retired':
+            handleChoice(sectionMoneySource1, choiceElement, 150000000);
+            break; 
+          case 'choose-sponsorScam':
+            handleChoice(sectionMoneySource1, choiceElement, 0);
+            break; 
+        }
+      } 
+    });
 
-</script>
+
+    
+
+    
+
+  
+
+    choiceEquipment1.addEventListener('click', () => {
+      sectionEquipment1.classList.toggle('visible');
+    });
+
+    choiceTitles1.addEventListener('click', () => {
+      sectionTitles1.classList.toggle('visible');
+    });
+
+    
+
+    choiceShip1.addEventListener('click', () => {
+      sectionShip1.classList.toggle('visible');
+      sectionHull1.classList.toggle('visible');
+    });
+
+
+    
+
+    document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+    
+    
+  </script>
+  
 </body>
+
+<footer>
+  
+</footer>
 </html>
 

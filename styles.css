@@ -15,13 +15,14 @@
 
 #section-lore, #section-you, #section-moneysource,
 #section-origin, #section-equipment, 
-#section-titles {
+#section-titles, #section-fleet, #section-ship, #section-hull {
   display: none; /* Hidden by default */
 }
 
 #section-lore.visible, #section-you.visible, #section-moneysource.visible,
 #section-origin.visible, #section-equipment.visible, 
-#section-titles.visible {
+#section-titles.visible, #section-fleet.visible, #section-ship.visible,
+#section-hull.visible  {
   display: grid; /* Hidden by default */
 }
 
@@ -34,6 +35,10 @@
   background-color: blue;
   transform: translateY(-2px);
   cursor: pointer;
+}
+
+.choice.active{
+  background-color: blue;
 }
 
 h1, h2 {
