@@ -13,7 +13,8 @@
       fleetSize: 0, //IF fleetsize is zero, can't choose hulls
       skills: [],
       gear: [],
-      scenario: []
+      scenario: [],
+      choices: [],
     };
 
     const ship = {
@@ -81,6 +82,7 @@
   <!--You Section--> 
   <div class="section" id="section-you">
     <div class="choice" id="choice-moneysource">How'd you get the money?</div>
+    <div class="choice" id="choice-sponsor">Sponsor</div>
     <div class="choice" id="choice-origin">Origins</div>
     <div class="choice" id="choice-equipment">Equipment</div>
     <div class="choice" id="choice-titles">Titles</div>
@@ -96,17 +98,72 @@
     <div class="choice" id="choose-sponsorScam">Sponsorship Scam</div>
   </div>
 
+  <div class="section" id="section-sponsor">
+    <div class="choice" id="choose-navy">Federation Navy</div>
+    <div class="choice" id="choose-seal">Federation Special Forces</div>
+    <div class="choice" id="choose-civillian">Federation Civillian</div>
+    <div class="choice" id="choose-blackhawk">Blackhawk Elite</div>
+    <div class="choice" id="choose-pirates">Red Dagger Pirates</div>
+    <div class="choice" id="choose-luos">Luos Syndicate</div>
+    <div class="choice" id="choose-talons">Talons</div>
+    <div class="choice" id="choose-dustkeepers">Society of Dustkeepers</div>
+    <div class="choice" id="choose-gazers">Gazers</div>
+    <div class="choice" id="choose-io">IO Security</div>
+    <div class="choice" id="choose-hammerhead">Hammerhead Industries</div>
+    <div class="choice" id="choose-beatrice">Beatrice R&D</div>
+    <div class="choice" id="choose-noSponsor">No Sponsor</div>
+  </div>
+
+
   <!--You-Origins, this will scroll no clickable choices because too long
   dependencies: choice-origin --> 
-  <div class="section" id="section-origin">
-    <div class="choice" >Education</div>
-    <div class="choice" >Sponsor</div>
-    <div class="choice" >Skills</div>
-    <div class="choice" >Mana</div>
-    <div class="choice" >Catalyst</div>
-    <div class="choice" >Spell Base</div>
-    <div class="choice" >Affinities</div>
-  </div>
+  <div class="section" id="section-origin"></div>
+    <div class="section" id="origin-education">
+      <h1>Education</h1>
+      <div class="choice" id="choose-gambling">a</div>
+      <div class="choice" id="choose-theft">b</div>
+      <div class="choice" id="choose-invest">c</div>
+      <div class="choice" id="choose-retired">d</div>
+      <div class="choice" id="choose-sponsorScam">e</div>
+    </div>
+
+    <div class="section" id="origin-skills">
+      <h1>Skills</h1>
+      <div class="choice" id="choose-gambling">a</div>
+      <div class="choice" id="choose-theft">b</div>
+      <div class="choice" id="choose-invest">c</div>
+      <div class="choice" id="choose-retired">d</div>
+      <div class="choice" id="choose-sponsorScam">e</div>
+    </div>
+      
+    <div class="section" id="origin-mana" >Mana
+      <div class="choice" id="choose-gambling">a</div>
+      <div class="choice" id="choose-theft">b</div>
+      <div class="choice" id="choose-invest">c</div>
+      <div class="choice" id="choose-retired">d</div>
+      <div class="choice" id="choose-sponsorScam">e</div>
+    </div>
+    <div class="section" id="origin-catalyst" >Catalyst
+      <div class="choice" id="choose-gambling">a</div>
+      <div class="choice" id="choose-theft">b</div>
+      <div class="choice" id="choose-invest">c</div>
+      <div class="choice" id="choose-retired">d</div>
+      <div class="choice" id="choose-sponsorScam">e</div>
+    </div>
+    <div class="section" id="origin-spell" >Spell Base
+      <div class="choice" id="choose-gambling">a</div>
+      <div class="choice" id="choose-theft">b</div>
+      <div class="choice" id="choose-invest">c</div>
+      <div class="choice" id="choose-retired">d</div>
+      <div class="choice" id="choose-sponsorScam">e</div>
+    </div>
+    <div class="section" id="origin-affinities" >Affinities
+      <div class="choice" id="choose-gambling">a</div>
+      <div class="choice" id="choose-theft">b</div>
+      <div class="choice" id="choose-invest">c</div>
+      <div class="choice" id="choose-retired">d</div>
+      <div class="choice" id="choose-sponsorScam">e</div>
+    </div>
 
   <!--You-Equipment, this will scroll no clickable choices because too long
   dependencies: choice-origin --> 
@@ -167,26 +224,24 @@
             maximumFractionDigits: 2 // Allow up to 2 decimal places if present
     });
 
-    function handleChoice (section, chosenChoice, creditChange) {
-      const setOfChoices = section.querySelectorAll('.choice');
-      let alreadyActive = false;
-
-      // Check if any other money source choice is already active
-      setOfChoices.forEach(choice => {
-          // An active choice has 'bg-blue-600'
-          if (choice !== chosenChoice && choice.classList.contains('active')) {
-              alreadyActive = true;
-          }
-      });
-      // If no other money source is active AND the clicked one isn't already active
-      if (!alreadyActive && !chosenChoice.classList.contains('active')) {
-          // Make the chosen element active (blue)
-          chosenChoice.classList.toggle('active');
-          player.credits = player.credits + creditChange; 
-          document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+    function handleChoice (section, chosenChoice, creditChange, maxChoices) {
+      const activeChoices = section.querySelectorAll('.choice.active');
+      const isChosenActive = chosenChoice.classList.contains('active');
+      if (isChosenActive) {
+        // If the chosen choice is already active, deactivate it (deselect)
+        chosenChoice.classList.toggle('active');
+        player.credits -= creditChange; // Remove credits
+        document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+      } else {
+                // If the chosen choice is not active, try to activate it (select)
+        if (activeChoices.length < maxChoices) {
+            chosenChoice.classList.toggle('active');
+            player.credits += creditChange; // Add credits
+            document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+        }
       }
     }
-    
+                         
     // Get references to the elements
     const choiceLore1 = document.getElementById('choice-lore');
     const sectionLore1 = document.getElementById('section-lore');
@@ -226,7 +281,22 @@
     'choose-retired':'section-moneysource',
     'choose-invest':'section-moneysource',
     'choose-sponsorScam':'section-moneysource',
-
+    
+    //sponsor
+    'choice-sponsor':'section-sponsor',
+    "choose-navy":'section-sponsor',
+    "choose-seal":'section-sponsor',
+    "choose-civillian":'section-sponsor',
+    "choose-blackhawk":'section-sponsor',
+    "choose-pirates":'section-sponsor',
+    "choose-luos":'section-sponsor',
+    "choose-talons":'section-sponsor',
+    "choose-dustkeepers":'section-sponsor',
+    "choose-gazers":'section-sponsor',
+    "choose-io":'section-sponsor',
+    "choose-hammerhead":'section-sponsor',
+    "choose-beatrice":'section-sponsor',
+    "choose-noSponsor":'section-sponsor',
 
     'choice-origin':'section-origin',
 
@@ -235,6 +305,9 @@
 
     'choice-fleet':'section-fleet',
     };
+
+    const originToggleArray = ['origin-education', 'origin-skills', 'origin-mana', 'origin-catalyst', 'origin-spell', 'origin-affinities'];
+
 
     document.addEventListener('click', (event) => {
       // Check if the clicked element (or its closest parent) has the 'choice' class
@@ -274,30 +347,122 @@
           case 'choice-origin':
             choiceElement.classList.toggle('active'); 
             sectionToToggle.classList.toggle('visible');
+            originToggleArray.forEach(origin => {
+              const elmen = document.getElementById(origin);
+              elmen.classList.toggle('visible');
+            });
             break;
           
-            //make player choose ONLY 1 MONEYSOURCE
+          //make player choose ONLY 1 MONEYSOURCE
           case 'choose-gambling':
-            handleChoice(sectionToToggle, choiceElement, 100000000);
+            handleChoice(sectionToToggle, choiceElement, 100000000, 1);
             break; 
           case 'choose-theft':
-            handleChoice(sectionToToggle, choiceElement, 200000000);
+            handleChoice(sectionToToggle, choiceElement, 200000000, 1);
             break; 
           case 'choose-invest':
-            handleChoice(sectionToToggle, choiceElement, 250000000);
+            handleChoice(sectionToToggle, choiceElement, 250000000, 1);
             break; 
           case 'choose-retired':
-            handleChoice(sectionToToggle, choiceElement, 150000000);
+            handleChoice(sectionToToggle, choiceElement, 150000000, 1);
             break; 
           case 'choose-sponsorScam':
-            handleChoice(sectionToToggle, choiceElement, 0);
+            handleChoice(sectionToToggle, choiceElement, 0, 1);
+            player.choices.push('choose-sponsorScam');
             break; 
           
-          //
+          //make player choose only 1 sponsor, unless sponsorScam
+          case 'choice-sponsor':
+            choiceElement.classList.toggle('active'); 
+            sectionToToggle.classList.toggle('visible');
+            break;
+          
+          case 'choose-navy':
+            if(player.choices.includes('choose-sponsorScam')){
+              handleChoice(sectionToToggle, choiceElement, 100000000, 2);
+            } 
+            else {
+              handleChoice(sectionToToggle, choiceElement, 100000000, 1);
+            }
+            break; 
+          case 'choose-seal':
+            if(player.choices.includes('choose-sponsorScam')){
+              handleChoice(sectionToToggle, choiceElement, 100000000, 2);
+            } 
+            else {
+              handleChoice(sectionToToggle, choiceElement, 100000000, 1);
+            }
+            break; 
+          case 'choose-civillian':
+           if(player.choices.includes('choose-sponsorScam')){
+              handleChoice(sectionToToggle, choiceElement, 100000000, 2);
+            } 
+            else {
+              handleChoice(sectionToToggle, choiceElement, 100000000, 1);
+            }
+            break; 
+          case 'choose-pirates':
+            if(player.choices.includes('choose-sponsorScam')){
+              handleChoice(sectionToToggle, choiceElement, 100000000, 2);
+            } 
+            else {
+              handleChoice(sectionToToggle, choiceElement, 100000000, 1);
+            }
+            break; 
+          case 'choose-talons':
+            if(player.choices.includes('choose-sponsorScam')){
+              handleChoice(sectionToToggle, choiceElement, 100000000, 2);
+            } 
+            else {
+              handleChoice(sectionToToggle, choiceElement, 100000000, 1);
+            }
+            break;
+          case 'choose-luos':
+            if(player.choices.includes('choose-sponsorScam')){
+              handleChoice(sectionToToggle, choiceElement, 100000000, 2);
+            } 
+            else {
+              handleChoice(sectionToToggle, choiceElement, 100000000, 1);
+            }
+            break; 
+          case 'choose-seal':
+            if(player.choices.includes('choose-sponsorScam')){
+              handleChoice(sectionToToggle, choiceElement, 100000000, 2);
+            } 
+            else {
+              handleChoice(sectionToToggle, choiceElement, 100000000, 1);
+            }
+            break; 
+          case 'choose-civillian':
+           if(player.choices.includes('choose-sponsorScam')){
+              handleChoice(sectionToToggle, choiceElement, 100000000, 2);
+            } 
+            else {
+              handleChoice(sectionToToggle, choiceElement, 100000000, 1);
+            }
+            break; 
+          case 'choose-pirates':
+            if(player.choices.includes('choose-sponsorScam')){
+              handleChoice(sectionToToggle, choiceElement, 100000000, 2);
+            } 
+            else {
+              handleChoice(sectionToToggle, choiceElement, 100000000, 1);
+            }
+            break; 
+          case 'choose-talons':
+            if(player.choices.includes('choose-sponsorScam')){
+              handleChoice(sectionToToggle, choiceElement, 100000000, 2);
+            } 
+            else {
+              handleChoice(sectionToToggle, choiceElement, 100000000, 1);
+            }
+            break;
+          
+
+          
         }
       } 
     });
-
 
     
 
