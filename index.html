@@ -8,9 +8,9 @@
 </head>
 <body>
   <script>
-    const player = {
+    const player = { //collect the pre-requisites in the player
       credits: 10, 
-      fleetSize: 0,
+      fleetSize: 0, //IF fleetsize is zero, can't choose hulls
       skills: [],
       gear: [],
       scenario: []
@@ -217,24 +217,46 @@
     const choiceHull1 = document.getElementById('choice-hull');
     const sectionHull1 = document.getElementById('section-hull');
 
+    const sectionToggleMap = {
+    'choice-lore': 'section-lore', 
+    'choice-you': 'section-you',
+    'choice-moneysource':'section-moneysource',
+    'choose-gambling':'section-moneysource',
+    'choose-theft':'section-moneysource',
+    'choose-retired':'section-moneysource',
+    'choose-invest':'section-moneysource',
+    'choose-sponsorScam':'section-moneysource',
+
+
+    'choice-origin':'section-origin',
+
+    'choice-equipment':'section-equipment',
+    'choice-titles':'section-titles',
+
+    'choice-fleet':'section-fleet',
+    };
+
     document.addEventListener('click', (event) => {
       // Check if the clicked element (or its closest parent) has the 'choice' class
       const choiceElement = event.target.closest('.choice');
       
       if (choiceElement) {
         const id = choiceElement.id; // Get the ID of the clicked choice
+        const targetSectionID = sectionToggleMap[id];
+        const sectionToToggle = document.getElementById(targetSectionID);
+
         switch (id) {
           case 'choice-lore':
             choiceElement.classList.toggle('active'); 
-            sectionLore1.classList.toggle('visible');
+            sectionToToggle.classList.toggle('visible');
             break;
           case 'choice-you':
             choiceElement.classList.toggle('active'); 
-            sectionYou1.classList.toggle('visible');
+            sectionToToggle.classList.toggle('visible');
             break;
           case 'choice-fleet':
             choiceElement.classList.toggle('active'); 
-            sectionFleet1.classList.toggle('visible');
+            sectionToToggle.classList.toggle('visible');
             break;
           case 'choice-crew':
             //placeholder
@@ -247,29 +269,31 @@
             break;
           case 'choice-moneysource':
             choiceElement.classList.toggle('active'); 
-            sectionMoneySource1.classList.toggle('visible');
+            sectionToToggle.classList.toggle('visible');
             break;
           case 'choice-origin':
             choiceElement.classList.toggle('active'); 
-            sectionOrigin1.classList.toggle('visible');
+            sectionToToggle.classList.toggle('visible');
             break;
           
             //make player choose ONLY 1 MONEYSOURCE
           case 'choose-gambling':
-            handleChoice(sectionMoneySource1, choiceElement, 100000000);
+            handleChoice(sectionToToggle, choiceElement, 100000000);
             break; 
           case 'choose-theft':
-            handleChoice(sectionMoneySource1, choiceElement, 200000000);
+            handleChoice(sectionToToggle, choiceElement, 200000000);
             break; 
           case 'choose-invest':
-            handleChoice(sectionMoneySource1, choiceElement, 250000000);
+            handleChoice(sectionToToggle, choiceElement, 250000000);
             break; 
           case 'choose-retired':
-            handleChoice(sectionMoneySource1, choiceElement, 150000000);
+            handleChoice(sectionToToggle, choiceElement, 150000000);
             break; 
           case 'choose-sponsorScam':
-            handleChoice(sectionMoneySource1, choiceElement, 0);
+            handleChoice(sectionToToggle, choiceElement, 0);
             break; 
+          
+          //
         }
       } 
     });
