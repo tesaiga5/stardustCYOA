@@ -192,7 +192,7 @@ const skills = [
     }
 ];
 
-const titles = [
+export const titles = [
     {
         id:"title-rogue",
         title:"The Rogue",
