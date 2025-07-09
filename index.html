@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Star Dust CYOA</title>
   <link rel="stylesheet" href="styles.css">
+
+  
 </head>
 <body>
+
   <script>
     const player = { //collect the pre-requisites in the player
       credits: 10, 
@@ -35,10 +38,9 @@
       ai: "winston",
       commandMods: "cool paint job",
     };
-    
-    
 
   </script>
+  
 
   <h1>Star Dust: Reloaded + Unofficial DLC</h1>
   <h2>Original by StardustAnon</h2>
@@ -179,12 +181,6 @@
   <!--You-Titles, this will scroll no clickable choices because too long
   dependencies: choice-origin --> 
   <div class="section" id="section-titles">
-    <div class="choice" >a</div>
-    <div class="choice" >b</div>
-    <div class="choice" >c</div>
-    <div class="choice" >dt</div>
-    <div class="choice" >e</div>
-    <div class="choice" >g</div>
   </div>
 
   <!--FLEET section-->
@@ -217,7 +213,7 @@
 
   <div id="credits-display">Credits: </div>
 
-<script>
+<script type="module">
     //formats credits to have decimals
     const formatterIntl = new Intl.NumberFormat('en-US', {
             minimumFractionDigits: 0, // Ensure no decimal places if not needed
@@ -241,6 +237,11 @@
         }
       }
     }
+
+    
+
+  
+  
                          
     // Get references to the elements
     const choiceLore1 = document.getElementById('choice-lore');
@@ -262,8 +263,7 @@
 
     const choiceEquipment1 = document.getElementById('choice-equipment');
     const sectionEquipment1 = document.getElementById('section-equipment');
-    const choiceTitles1 = document.getElementById('choice-titles');
-    const sectionTitles1 = document.getElementById('section-titles');
+    
 
     const choiceFleet1 = document.getElementById('choice-fleet');
     const sectionFleet1 = document.getElementById('section-fleet');
@@ -457,6 +457,7 @@
               handleChoice(sectionToToggle, choiceElement, 100000000, 1);
             }
             break;
+
           
 
           
@@ -474,9 +475,7 @@
       sectionEquipment1.classList.toggle('visible');
     });
 
-    choiceTitles1.addEventListener('click', () => {
-      sectionTitles1.classList.toggle('visible');
-    });
+    
 
     
 
@@ -485,14 +484,50 @@
       sectionHull1.classList.toggle('visible');
     });
 
-
-    
-
     document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+
+    import {titles} from '/choiceData.js';
+
+      function addChoiceDataToSection(choiceArray, choicePrefix, sectionID) {
+        const targetSection = document.getElementById(sectionID);
+
+        if (!targetSection) {
+            console.error(`Target section with ID "${sectionID}" not found.`);
+            return;
+        }
+
+        if (!Array.isArray(choiceArray)) {
+            console.error(`Global variable "${choiceArray}" is not an array or does not exist.`);
+            return;
+        }
+
+        // Clear existing content in the section before adding new choices, if desired
+        // targetSection.innerHTML = ''; 
+
+        choiceArray.forEach(item => {
+            const newDiv = document.createElement("div");
+            newDiv.classList.add("choice");
+            // Ensure unique ID for each choice element
+            newDiv.id = `${choicePrefix}-${item.id}`; 
+
+            let contentHTML = `<h3>${item.title || 'No Title'}</h3>`;
+
+            // Customize content based on the array type
+            newDiv.innerHTML = contentHTML;
+            targetSection.appendChild(newDiv); // Append to the target section
+        });
+    }
+
+    const choiceTitles1 = document.getElementById('choice-titles');
+    const sectionTitles1 = document.getElementById('section-titles');
+    choiceTitles1.addEventListener('click', () => {
+      sectionTitles1.classList.toggle('visible');
+      choiceTitles1.classList.toggle('active');
+      addChoiceDataToSection(titles, 'title-choice', 'section-titles');
+    });
     
     
-  </script>
-  
+  </script> 
 </body>
 
 <footer>

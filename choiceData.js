@@ -191,7 +191,6 @@ const skills = [
         playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }]
     }
 ];
-
 export const titles = [
     {
         id:"title-rogue",
@@ -2049,3 +2048,4 @@ const hulls = [
         description: "Wormhole Generator creates a temporary gateway to any designated star system. Energy Damping Field negates 80% of damage received. Anti-matter cannon strike overloads damping field for five minutes, but \"Hades\" survives otherwise intact. \"Hades\" is a mobile space station the size of a small city, recovered from a decaying orbit around a black hole. Formerly a scientific research outpost, \"Hades\" possesses unique technologies that will have a strong impact on space travel once they are reverse engineered."
     }
 ]
+
