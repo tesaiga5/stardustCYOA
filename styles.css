@@ -47,3 +47,17 @@
 h1, h2 {
   text-align: center;
 }
+
+.object-div{
+  position:relative;
+}
+.x-button{
+  position:absolute;
+  top:5px;
+  right:5px;
+}
+.edit-button{
+  position:absolute;
+  top:30px;
+  right:5px;
+}
