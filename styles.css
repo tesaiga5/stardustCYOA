@@ -9,11 +9,14 @@
 }
 
 .section > div {
-  background-color: #f1f1f1;
   border: 1px solid black;
   padding: 10px;
   font-size: 30px;
   text-align: center;
+  background-color: rgba(20, 30, 60, 0.8); /* Dark blue with transparency */
+  color: #ffffff; /* White font for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger text shadow for better contrast */
+  overflow: hidden;
 }
 
 div {
@@ -43,21 +46,27 @@ div {
 }
 
 .choice:hover{
-  background-color: blue;
-  transform: translateY(-2px);
   cursor: pointer;
+  background-color: rgba(0, 100, 255, 0.7); /* A more vibrant blue with transparency for hover */
+  transform: translateY(-2px);
 }
 
 .choice.active{
-  background-color: blue;
+  background-color: rgba(0, 100, 255, 0.7); /* Consistent active color */
 }
 
-h1, h2 {
+h1, h2, h3 {
   text-align: center;
+  color: #ffffff; /* White color for headings */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 1); /* Stronger shadow for headings */
 }
 
 .object-div{
   position:relative;
+  /* Recommended Div and Font Colors */
+  background-color: rgba(20, 30, 60, 0.8); /* Dark blue with transparency */
+  color: #ffffff; /* White font for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger text shadow for better contrast */
 }
 .x-button{
   position:absolute;
@@ -72,4 +81,12 @@ h1, h2 {
 
 img {
   height: 200px;
+}
+
+body { /*make galaxy background image*/ 
+  background-image: url(Images/timBartonSunsetNebulae.webp); /* Replace with your image path */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
