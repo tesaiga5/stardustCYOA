@@ -41,15 +41,52 @@
 
   </script>
   
+  <div>
+    <h1>Star Dust: Reloaded + Unofficial DLC</h1>
+    <h2>Original by StardustAnon</h2>
+  </div>
 
-  <h1>Star Dust: Reloaded + Unofficial DLC</h1>
-  <h2>Original by StardustAnon</h2>
+  <div>
+    <span><image src="/Images/Beatrice R&D.webp" style="margin: 10px;">
+    <div><p>Yep you have a billion dollars</p></div></span></div>
+
+    <div style="box-sizing: border-box; display: flex;flex-basis: auto;
+flex-grow: 1;
+flex-shrink:1;
+flex-wrap:wrap;
+justify-content:flex-start;
+line-height:24px;
+margin: 5px;
+padding: 5px;
+tab-size: 4;
+text-align: center;
+text-size-adjust: 100%;" >
+      <div style="display:inline-block; position:relative; flex-grow: inherit;" >
+        <div style="text-align: center;"><h1>Lorem ipsum dolor amethyst</h1><p style="color:aqua">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit esse officiis placeat quos distinctio aperiam magnam aut, dolores excepturi explicabo cum unde quaerat facere maxime non! Magnam totam tempore at.
+        </p></div></div>
+        <div style="display:flex";>
+          <div style="border: 3px solid purple;">
+            <span>
+              <img src="/Images/Beatrice R&D.webp">
+              <span><h3>Lorem ipsum dolor ruby</h3><p style="color:aqua">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis, nam laudantium reiciendis repellendus obcaecati numquam esse sint iste. Repudiandae, perspiciatis blanditiis saepe maiores dignissimos eligendi illum ipsam illo delectus!</p></span>
+            </span></div>
+          <div >
+          <span>
+              <img src="/Images/Beatrice R&D.webp">
+              <span><h3>Lorem ipsum dolor ruby</h3></span>
+            </span></div>
+          <div >
+          <span>
+              <img src="/Images/Beatrice R&D.webp">
+              <span><h3>Lorem ipsum dolor ruby</h3></span>
+            </span> </div>
+        </div>
+
+    </div>
 
   <div class="section">
-    <div>Yep you have a billion dollars</div></div>
-
-  <div class="section">
-    <div class="choice" id="choice-lore">Lore</div>
+    
     <div class="choice" id="choice-you">You</div>
     <div class="choice" id="choice-fleet">Your Fleet</div>
     <div class="choice" id="choice-crew">Your Crew</div>
@@ -513,6 +550,13 @@
             // Customize content based on the array type
             newDiv.innerHTML = contentHTML;
             targetSection.appendChild(newDiv); // Append to the target section
+
+            //create image element
+            const imgElement = document.createElement('img');
+            // Set the src attribute using the image path from the object
+            imgElement.src = item.imageSrc;
+            newDiv.appendChild(imgElement);
+          
           });
         }}
     

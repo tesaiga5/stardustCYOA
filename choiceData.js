@@ -7,7 +7,8 @@ export const skills = [
         cost: 0, // Assuming initial courses are free as per "You may take up to 6 courses..."
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "basic-piloting" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "basic-piloting" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "ship-gunnery",
@@ -16,7 +17,7 @@ export const skills = [
         cost: 0,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "ship-gunnery" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "ship-gunnery" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "medical",
@@ -25,7 +26,7 @@ export const skills = [
         cost: 0,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "medical" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "medical" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "computer-science",
@@ -34,7 +35,7 @@ export const skills = [
         cost: 0,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "computer-science" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "computer-science" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "standard-piloting",
@@ -43,7 +44,7 @@ export const skills = [
         cost: 2000000, // 2m per additional course
         prerequisites: [{ type: "skill", value: "basic-piloting" }],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "standard-piloting" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "standard-piloting" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "ship-weapon-specialization",
@@ -52,7 +53,7 @@ export const skills = [
         cost: 2000000,
         prerequisites: [{ type: "skill", value: "ship-gunnery" }],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "ship-weapon-specialization" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "ship-weapon-specialization" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "mechanics",
@@ -61,7 +62,7 @@ export const skills = [
         cost: 0,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "mechanics" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mechanics" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "cyber-security",
@@ -70,7 +71,7 @@ export const skills = [
         cost: 2000000,
         prerequisites: [{ type: "skill", value: "computer-science" }],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "cyber-security" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "cyber-security" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "advanced-piloting",
@@ -79,7 +80,7 @@ export const skills = [
         cost: 2000000,
         prerequisites: [{ type: "skill", value: "standard-piloting" }],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-piloting" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-piloting" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "standard-combat-training",
@@ -88,7 +89,7 @@ export const skills = [
         cost: 0,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "standard-combat-training" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "standard-combat-training" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "nuclear",
@@ -97,7 +98,7 @@ export const skills = [
         cost: 0,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "nuclear" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "nuclear" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "industry",
@@ -106,7 +107,7 @@ export const skills = [
         cost: 0,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "industry" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "industry" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "diplomacy",
@@ -115,7 +116,7 @@ export const skills = [
         cost: 0,
         prerequisites: [],
         consequences: [{ type: "crew-hire-limit", value: 4, condition: "hostile-faction" }],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "diplomacy" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "diplomacy" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "advanced-combat-training",
@@ -124,7 +125,7 @@ export const skills = [
         cost: 2000000,
         prerequisites: [{ type: "skill", value: "standard-combat-training" }],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-combat-training" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-combat-training" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "mind-link",
@@ -139,7 +140,7 @@ export const skills = [
             { type: "skill", value: "computer-science" }
         ],
         consequences: [{ type: "job-slots", value: 3 }], // Can assume 3 jobs instead of 2
-        playerUpdates: [{ attribute: "skills", action: "add", value: "mind-link" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mind-link" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "mercantile",
@@ -148,7 +149,7 @@ export const skills = [
         cost: 0,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }]
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
     }
 ];
 export const titles = [
