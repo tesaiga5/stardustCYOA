@@ -26,7 +26,6 @@
 
 div {
   margin: 10px;
-  border-color: aqua;
 }
 
 #section-lore, #section-you, #section-moneysource,
@@ -103,5 +102,36 @@ body { /*make galaxy background image*/
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  color: white;
 }
 
+.pseudoChoice {
+  border: 3px solid rgb(177, 59, 255);
+  background-color: rgb(71, 19, 150, 0.4); 
+  display: flex; /* Makes the pseudoChoice itself a flex container */
+  flex-wrap: wrap; /* Allows the *contents* of pseudoChoice to wrap */
+  /* NEW: Define a width for pseudoChoice to enable wrapping in its parent */
+  /* This calculation aims for roughly 3 items per row, adjusting for gaps */
+  width: calc(33.33% - 20px); /* (100% / 3 items) - (2 * gap size / 3 items) */
+  min-width: 280px; /* Ensure a reasonable minimum width for readability */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  padding: 15px; /* Added padding for content inside the pseudoChoice */
+  flex-direction: column; /* Stack content inside vertically */
+  align-items: center; /* Center content inside horizontally */
+  text-align: center; /* Center text inside */
+  border-radius: 8px; /* Added rounded corners for aesthetics */
+}
+
+.pseudoChoice img {
+  max-width: 100%; /* Ensure images don't overflow their parent pseudoChoice */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Added rounded corners to images */
+  margin-bottom: 10px; /* Space between image and text */
+}
+
+.pseudoChoice h3,
+.pseudoChoice p {
+  word-break: break-word; /* Forces long words to break and wrap to the next line */
+  overflow-wrap: break-word; /* Alternative/complementary property for word breaking */
+  hyphens: auto; /* Allows the browser to automatically hyphenate words for better text flow */
+}
