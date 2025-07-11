@@ -131,11 +131,6 @@
 
     <div class="section" id="origin-skills">
       <h1>Skills</h1>
-      <div class="choice" id="choose-gambling">a</div>
-      <div class="choice" id="choose-theft">b</div>
-      <div class="choice" id="choose-invest">c</div>
-      <div class="choice" id="choose-retired">d</div>
-      <div class="choice" id="choose-sponsorScam">e</div>
     </div>
       
     <div class="section" id="origin-mana" >Mana
@@ -350,7 +345,7 @@
             originToggleArray.forEach(origin => {
               const elmen = document.getElementById(origin);
               elmen.classList.toggle('visible');
-            });
+              });
             break;
           
           //make player choose ONLY 1 MONEYSOURCE
@@ -456,28 +451,14 @@
             else {
               handleChoice(sectionToToggle, choiceElement, 100000000, 1);
             }
-            break;
-
-          
-
-          
+            break;                   
         }
       } 
-    });
-
-    
-
-    
-
-  
+    });   
 
     choiceEquipment1.addEventListener('click', () => {
       sectionEquipment1.classList.toggle('visible');
-    });
-
-    
-
-    
+    });    
 
     choiceShip1.addEventListener('click', () => {
       sectionShip1.classList.toggle('visible');
@@ -486,7 +467,10 @@
 
     document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
 
+    //populate titles
     import {titles} from '/choiceData.js';
+    //populate skills
+    import {skills} from '/choiceData.js';
 
       function addChoiceDataToSection(choiceArray, choicePrefix, sectionID) {
         const targetSection = document.getElementById(sectionID);
@@ -501,9 +485,12 @@
             return;
         }
 
-        // Clear existing content in the section before adding new choices, if desired
-        // targetSection.innerHTML = ''; 
-
+        const checkDiv = document.getElementById(`${choicePrefix}-${choiceArray[0].id}`)
+        //check if section already has population
+        if(targetSection.contains(checkDiv)){
+          return;
+        } else {
+          //if not, create new divs to populate choices
         choiceArray.forEach(item => {
             const newDiv = document.createElement("div");
             newDiv.classList.add("choice");
@@ -515,15 +502,24 @@
             // Customize content based on the array type
             newDiv.innerHTML = contentHTML;
             targetSection.appendChild(newDiv); // Append to the target section
-        });
-    }
-
+          });
+        }}
+    
+        //make choices visible
     const choiceTitles1 = document.getElementById('choice-titles');
     const sectionTitles1 = document.getElementById('section-titles');
     choiceTitles1.addEventListener('click', () => {
       sectionTitles1.classList.toggle('visible');
       choiceTitles1.classList.toggle('active');
-      addChoiceDataToSection(titles, 'title-choice', 'section-titles');
+      addChoiceDataToSection(titles, 'choice', 'section-titles');
+    });
+
+    const choiceSkills1 = document.getElementById('origin-skills');
+    const sectionSkills1 = document.getElementById('choice-origin');
+    sectionSkills1.addEventListener('click', () => {
+      sectionSkills1.classList.toggle('visible');
+      choiceSkills1.classList.toggle('active');
+      addChoiceDataToSection(skills, 'choice', 'origin-skills');
     });
     
     
