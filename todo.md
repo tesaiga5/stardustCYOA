@@ -10,3 +10,7 @@ TODO:
 1. Player object
 2. Ship Object
 3. pictures in DIV
+
+Ship Object:
+1. Button add ship, then the ship object appears next to it. The ship object can be deleted with an 'x'. 
+2. 
