@@ -59,6 +59,19 @@ div {
   border-radius: 15px;
 }
 
+.choice h3{
+  font-size:32px;
+}
+
+.choice p, .choice div{
+  font-size:16px;
+}
+
+.choice-cost {
+  font-size:16px;
+  color:rgb(255, 204, 0);
+}
+
 .choice:hover{
   cursor: pointer;
   background-color: rgb(9, 0, 64, 0.7); /* A more vibrant blue with transparency for hover */
@@ -67,7 +80,13 @@ div {
 
 .choice.active{
   background-color:  rgb(9, 0, 64, 0.7); /* Consistent active color */
+}
 
+.choice img{
+  max-width: 100%; /* Ensure images don't overflow their parent pseudoChoice */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Added rounded corners to images */
+  margin-bottom: 10px; /* Space between image and text */
 }
 
 h1, h2, h3 {
