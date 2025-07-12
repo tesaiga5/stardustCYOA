@@ -16,10 +16,11 @@
   padding: 10px;
   font-size: 30px;
   text-align: center;
-  background-color: rgba(20, 30, 60, 0.8); /* Dark blue with transparency */
   color: #ffffff; /* White font for readability */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger text shadow for better contrast */
   overflow: hidden;
+  border: 3px solid rgb(177, 59, 255);
+  background-color: rgb(71, 19, 150, 0.4);
   /* width: max-content; - This can cause issues with wrapping; flex-basis is preferred for flex items */
   /* display: inline-block; - Not needed when parent is flex container */
 }
@@ -55,16 +56,17 @@ div {
   flex-basis: calc((100% / 6) - (10px * 5 / 6));
   min-width: 140px; /* Ensure items don't shrink below this size on smaller screens */
   box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
+  border-radius: 15px;
 }
 
 .choice:hover{
   cursor: pointer;
-  background-color: rgba(0, 100, 255, 0.7); /* A more vibrant blue with transparency for hover */
+  background-color: rgb(9, 0, 64, 0.7); /* A more vibrant blue with transparency for hover */
   transform: translateY(-2px);
 }
 
 .choice.active{
-  background-color: rgba(0, 100, 255, 0.7); /* Consistent active color */
+  background-color:  rgb(9, 0, 64, 0.7); /* Consistent active color */
 
 }
 
@@ -80,6 +82,7 @@ h1, h2, h3 {
   background-color: rgba(20, 30, 60, 0.8); /* Dark blue with transparency */
   color: #ffffff; /* White font for readability */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger text shadow for better contrast */
+
 }
 .x-button{
   position:absolute;
@@ -103,23 +106,58 @@ body { /*make galaxy background image*/
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: white;
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+body b{
+  color: rgb(255, 204, 0);
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgb(71, 19, 150), 0 0 40px rgb(71, 19, 150), 0 0 50px rgb(71, 19, 150), 0 0 60px rgb(71, 19, 150),
+   0 0 70px rgb(71, 19, 150);
+}
+
+/* This is the container for the pseudoChoice elements */
+.pseudoChoice-container {
+  display: flex; /* Make it a flex container */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center the items horizontally */
+  gap: 20px; /* Space between pseudoChoice items */
+  padding: 10px;
+  max-width: 1200px; /* Optional: Set a max-width for the container */
+  margin: 0 auto; /* Center the container itself */
+  flex-direction: row;
 }
 
 .pseudoChoice {
-  border: 3px solid rgb(177, 59, 255);
-  background-color: rgb(71, 19, 150, 0.4); 
-  display: flex; /* Makes the pseudoChoice itself a flex container */
-  flex-wrap: wrap; /* Allows the *contents* of pseudoChoice to wrap */
-  /* NEW: Define a width for pseudoChoice to enable wrapping in its parent */
-  /* This calculation aims for roughly 3 items per row, adjusting for gaps */
-  width: calc(33.33% - 20px); /* (100% / 3 items) - (2 * gap size / 3 items) */
-  min-width: 280px; /* Ensure a reasonable minimum width for readability */
+  /* No longer a flex container for its children, but a flex item in pseudo-choice-container */
+  /* flex-wrap: wrap; - REMOVED, as its parent now handles wrapping */
+  /* flex-direction: row; - REMOVED, as its parent now handles wrapping */
+  /* align-items: center; - REMOVED, as its parent now handles wrapping */
+
+  /* Calculate width for 4 items per row, considering gap */
+  width: calc(23%); /* (100% / 4 items) - (3 * gap size / 4 items) */
+  min-width: 250px; /* Ensure a reasonable minimum width for readability on smaller screens */
   box-sizing: border-box; /* Include padding and border in the width calculation */
   padding: 15px; /* Added padding for content inside the pseudoChoice */
-  flex-direction: column; /* Stack content inside vertically */
-  align-items: center; /* Center content inside horizontally */
   text-align: center; /* Center text inside */
   border-radius: 8px; /* Added rounded corners for aesthetics */
+
+  /* Existing styles for pseudoChoice content */
+  border: 3px solid rgb(177, 59, 255);
+  border-radius: 15px;
+  background-color: rgb(71, 19, 150, 0.4);
+  display: flex; /* Make pseudoChoice itself a flex container */
+  flex-direction: column; /* Stack content inside vertically */
+  align-items: center; /* Center content inside horizontally */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.pseudoChoice div{
+  /* This div is now a direct child of pseudoChoice, so it inherits flex properties */
+  border: 3px solid rgb(177, 59, 255);
+  background-color: rgb(71, 19, 150, 0.4);
+  width: 100%; /* Make sure this div takes full width inside pseudoChoice */
+  border-radius: 15px;
 }
 
 .pseudoChoice img {
@@ -133,5 +171,18 @@ body { /*make galaxy background image*/
 .pseudoChoice p {
   word-break: break-word; /* Forces long words to break and wrap to the next line */
   overflow-wrap: break-word; /* Alternative/complementary property for word breaking */
-  hyphens: auto; /* Allows the browser to automatically hyphenate words for better text flow */
+  /*hyphens: auto;  Allows the browser to automatically hyphenate words for better text flow */
+}
+
+.image-container {
+  display: flex; /* Make it a flex container */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: auto; /* Keep auto height, or set a fixed height if needed */
+  flex-direction: column; /* Stack children vertically if you want the text below the image */
+}
+.image-container img{
+  /* No specific centering properties needed here if parent is flex */
+  max-width: 100%; /* Ensure image scales down if larger than container */
+  height: auto; /* Maintain aspect ratio */
 }

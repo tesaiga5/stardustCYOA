@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Star Dust CYOA</title>
   <link rel="stylesheet" href="styles.css">
-
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   
 </head>
 <body>
@@ -41,71 +41,98 @@
 
   </script>
   
-  <div>
+    <div>
     <h1>Star Dust: Reloaded + Unofficial DLC</h1>
     <h2>Original by StardustAnon</h2>
+    <h2>interactive by IndoTort</h2>
   </div>
 
   <div>
-    <span><image src="/Images/Beatrice R&D.webp" style="margin: 10px;">
-    <div><p>Yep you have a billion dollars</p></div></span></div>
-
-    <div style="box-sizing: border-box; display: flex;flex-basis: auto; flex-grow: 1; flex-shrink:1; 
-flex-wrap:wrap; justify-content:flex-start;
-line-height:24px;
-margin: 5px;
-padding: 5px;
-tab-size: 4;
-text-align: center;
-text-size-adjust: 100%;" >
-      <div style="display:flex; position:relative; flex-grow: inherit;" >
-        <div style="text-align: center;">
-          <h1>Lorem ipsum dolor amethyst</h1>
-          <p >
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit esse officiis placeat quos distinctio aperiam magnam aut, dolores excepturi explicabo cum unde quaerat facere maxime non! Magnam totam tempore at.
-          </p>
+    <span class="image-container"><image src="/Images/Beatrice R&D.webp">
+        <div style="border: 3px solid rgb(177, 59, 255); background-color: rgb(71, 19, 150, 0.4); border-radius: 15px;">
+            <span style="margin-top:5px; margin-bottom:5px;">
+            <p style="margin-left: 5px; margin-right: 5px; text-align: left; justify-content: center;">Well, you've finally made it. After a long trip across the stars, you've arrived at the ever-popular Stardust Space Station; 
+            a massive 100 square-kilometre hunk of metal orbiting a deadbeat planet. Pirate and Federation goons alike abide by the station's cease-fire rules, 
+            and since this station is situated in quite literally the centre of civilized space, you can find all types of people here. You're here to start your 
+            galactic quest (whatever that is), and to do that you will need a ship. You might even buy multiple, plus a ship crew, your ship's weapons... 
+            you might need a calculator for this. Secretively, you pull up your holographic wallet and check to make sure that-yep, <b>100 million credits</b> to your name.</p>
+            </span>
         </div>
-      </div>
-        <div style="display:flex; width:1000;  ">
-          <div class="pseudoChoice">
-            <span >
-              <img src="/Images/Beatrice R&D.webp">
-              <span><h3>Ship Warfare</h3><p >a destroyer can blockade a defenseless planet forever until relieved
-    a fleet can blockade a defenseless system forever until relieved, 
-    a single destroyer can glass a habitable planet given the planet's defenseless and there is enough ammunition </p></span>
+    </span>
+    </div>
+
+    <!-- Give this container a new class to control its flex behavior -->
+    <div>
+        <div>
+            <div>
+            <h1>Lore</h1>
+            <p s>
+            </div>
+        </div>
+        <div style="display:flex; flex-direction:row; flex-wrap:wrap;">
+            <div class="pseudoChoice">
+            <span>
+                <img src="/Images/Beatrice R&D.webp">
+                <span style="text-align: left;">
+                    <h3>Ship Supremacy</h3>
+                    <p>a destroyer can blockade a defenseless <b>planet</b> forever until relieved</p>
+                    <p>a fleet can blockade a defenseless <b>system</b> forever until relieved </p>
+                    <p>a single destroyer can glass a habitable planet given the planet's defenseless and there is enough ammunition </p></span>
             </span></div>
-          <div class="pseudoChoice"">
-          <span>
-              <img src="/Images/Beatrice R&D.webp">
-              <span><h3>Ship Building</h3><p >it takes a monumental effort to build a single spaceship. The cost of building a destroyer is equal to the IRL annual GDP of the UK in 2025, whilst a dreadnought will cost 
-    the annual GDP of Earth in 2025. And it assumes Earth have all the necessary materials, manpower, knowhow and machinery. 
-    However, repairing ships are cheap and easier, especially if you have an existing hull. Moreover, the poorest planet in Stardust exceeded IRL Earth 2025 by 10x </p></span>
+            <div class="pseudoChoice">
+            <span>
+                <img src="/Images/Beatrice R&D.webp">
+                <span style="text-align: left; "><h3>Cost of a Ship</h3><p>A dreadnought costs
+                the annual GDP of IRL Earth(2025), assuming Earth have all the necessary materials, manpower, technology, knowhow and machinery.</p>
+                <p>Repairing ships is cheaper and easier, especially if you have an intact hull.</p> <p>The poorest planet in Stardust exceeded the GDP of IRL Earth
+                2025 by 10x. </p></span>
             </span></div>
-          <div class="pseudoChoice"">
+            <div class="pseudoChoice">
             <span>
                 <img src="/Images/Beatrice R&D.webp">
-                <span><h3>Lorem ipsum dolor ruby</h3><p >Each planet have their own currency, but if they want to trade with other planets or transact across systems, they use Credits. Credits or Dust is a futuristic cryptocurrency that allows absolutely fair, scam-free, untraceable trade. Everyone accepts credits, regardless of origin. 
-    100 million credits = the wealth of a typical non-Luos businessman, top 1% richest person in a non-Luos planet
-    1 billion credits = the wealth of a typical Luos 'billionaire', top 1% in a non-Luos system.
-    At its height, the richest Luos citizen had a net worth of 1 trillion credits and the largest corporation in the Luos Syndicate had a market cap of 300 trillion credits.</p></span>
-              </span> 
-          </div>
-          <div class="pseudoChoice">
+                <span style="text-align: left; ">
+                    <h3>Credits</h3>
+                    <p>Each planet have their own currency, but if they want to trade with other planets or transact across systems, they use Credits.</p> <p>Credits
+                    (aka Dust) is a futuristic cryptocurrency that allows absolutely fair, scam-free, untraceable trade. Everyone accepts credits, regardless of origin.</p>
+                    </span>
+                </span>
+            </div>
+            <div class="pseudoChoice">
             <span>
                 <img src="/Images/Beatrice R&D.webp">
-                <span><h3>FTL Travel</h3><p style="text-wrap:pretty;">Most ships travel at relativistic speeds in vacuum, and use warp drives to achieve FTL speeds.
-    How Warp Drives work: when a ship activates its Warp Drive, it will enter the nearest Dark River, a Riemann manifold between two systems, and exit at the end of the River. 
-    Ships cannot exit early or appear in between systems, nor can they enter the River at any point. Matter cannot exist inside a Dark River without Warp Drives (so no Dark River battles). Time does not flow in a Dark River, so ships passing through Dark Rivers can't perceive anything, they just appear instantenously on the other side. Finally, the entry/exit point of a River is anywhere within a 1LY omni-radius from a known system's center (so no camping).</p></span>
-              </span> 
-          </div>
-          <div class="pseudoChoice">
+                <span style="text-align: left;"><h3>Wealth</h3>
+                    <p>100 million credits = the wealth of a typical non-Luos businessman, top 1% richest person in a non-Luos planet</p>
+                    <p>1 billion credits = the wealth of a typical Luos 'billionaire', top 1% in a non-Luos system.</p>
+                    <p>At its height, the richest Luos citizen had a <b>net worth</b> of 1 trillion credits and the largest corporation in the Luos Syndicate had a 
+                      <b>market cap</b> of 300 trillion credits.</p></span>
+                </span>
+            </div>     
+            <div class="pseudoChoice">
             <span>
                 <img src="/Images/Beatrice R&D.webp">
-                <span><h3>Space</h3><p style="text-wrap:pretty;">Known Space: sectors that have at least 1 Dark River mapped
-    Unknown Space: sectors that don't have or known to have a Dark River
-    Dead Space: sectors without any celestial bodies, ergo no Dark River</p></span>
-              </span> 
-          </div>
+                <span style="text-align: left;"><h3>FTL Travel</h3><p>Most ships travel at relativistic speeds in vacuum, and use warp drives to achieve FTL speeds.
+                    <p><b>How Warp Drives work:</b> when a ship activates its Warp Drive, it will enter the nearest Dark River, a Riemann manifold between two systems, and exit at the
+                    end of the River.</p>
+                    <p>The activation takes a minute, obvious, and detectable. No better warp drive exists.</p>
+                    </span>
+                </span>
+            </div>
+            <div class="pseudoChoice">
+            <span>
+                <img src="/Images/Beatrice R&D.webp">
+                <span style="text-align: left;"><h3>Dark River</h3><p>The entry/exit point of a River is anywhere within a 1LY omni-radius from a known system's center. The ship(s) decides where.</p> <p>Matter cannot exist inside a Dark River without Warp Drives
+                    (so no Dark River battles). Incoming matter cannot displace matter at the exit point. Space expands temporarily to accomodate incoming matter. </p> <p>Time does not flow in a Dark River, ships passing through Dark Rivers can't perceive anything, they just appear instantaneously on the
+                    other side.</p></span>
+                </span>
+            </div>     
+            <div class="pseudoChoice">
+            <span>
+                <img src="/Images/Beatrice R&D.webp">
+                <span style="text-align: left;"><h3>Space</h3><p>Known Space: sectors that have at least 1 Dark River mapped
+                <p>Unknown/Dark Space: sectors that don't have or known to have a Dark River</p>
+                <p>Dead Space: sectors without any celestial bodies, ergo no Dark River</p></span>
+                </span>
+            </div>        
         </div>
 
     </div>
@@ -119,29 +146,6 @@ text-size-adjust: 100%;" >
     <div class="choice" id="choice-battle">Battle</div>
   </div>
 
-  <!--Lore Section--> 
-  <div class="section" id="section-lore">
-    <div class="choice" id="choice-spaceships">Space Ships</div> 
-    <!--a destroyer can blockade a defenseless planet forever until relieved
-    a fleet can blockade a defenseless system forever until relieved, 
-    a single destroyer can glass a habitable planet given the planet's defenseless and there is enough ammunition 
-    it takes a monumental effort to build a single spaceship. The cost of building a destroyer is equal to the IRL annual GDP of the UK in 2025, whilst a dreadnought will cost 
-    the annual GDP of Earth in 2025. And it assumes Earth have all the necessary materials, manpower, knowhow and machinery. 
-    However, repairing ships are cheap and easier, especially if you have an existing hull. Moreover, the poorest planet in Stardust exceeded IRL Earth 2025 by 10x -->
-    <div class="choice" id="choice-economy">How much is a credit?</div>
-    <!--Each planet have their own currency, but if they want to trade with other planets or transact across systems, they use Credits. Credits or Dust is a futuristic cryptocurrency that allows absolutely fair, scam-free, untraceable trade. Everyone accepts credits, regardless of origin. 
-    100 million credits = the wealth of a typical non-Luos businessman, top 1% richest person in a non-Luos planet
-    1 billion credits = the wealth of a typical Luos 'billionaire', top 1% in a non-Luos system.
-    At its height, the richest Luos citizen had a net worth of 1 trillion credits and the largest corporation in the Luos Syndicate had a market cap of 300 trillion credits.  -->
-    <div class="choice" id="choice-technology">Technology</div>
-    <!--Most ships travel at relativistic speeds in vacuum, and use warp drives to achieve FTL speeds.
-    How Warp Drives work: when a ship activates its Warp Drive, it will enter the nearest Dark River, a Riemann manifold between two systems, and exit at the end of the River. 
-    Ships cannot exit early or appear in between systems, nor can they enter the River at any point. Matter cannot exist inside a Dark River without Warp Drives (so no Dark River battles). Time does not flow in a Dark River, so ships passing through Dark Rivers can't perceive anything, they just appear instantenously on the other side. Finally, the entry/exit point of a River is anywhere within a 1LY omni-radius from a known system's center (so no camping). 
-
-    Known Space: sectors that have at least 1 Dark River mapped
-    Unknown Space: sectors that don't have or known to have a Dark River
-    Dead Space: sectors without any celestial bodies, ergo no Dark River -->
-  </div>
 
   <!--You Section--> 
   <div class="section" id="section-you">
