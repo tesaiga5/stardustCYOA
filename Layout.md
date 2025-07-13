@@ -1,14 +1,24 @@
-Layout: 
+function handleChoice (section, chosenChoice, creditChange, maxChoices) {
+const activeChoices = section.querySelectorAll('.choice.active');
+const isChosenActive = chosenChoice.classList.contains('active');
+if (isChosenActive) {
+// If the chosen choice is already active, deactivate it (deselect)
+chosenChoice.classList.toggle('active');
+player.credits -= creditChange; // Remove credits
 
-<div><span><div><img>
-Yep you have a billion dollars
-//There is an image then intro text
-
-<div> //lore section 
-	<span> //to create a border between edge of screen and lore section*optional
-		<div> //lore section intro text
-		<div> //lore section pseudo-choices *uneselectable
-			<div> //each pseudo choice
-				<span> //to create border between div above and this
-					<img> //the image for the pseudo-choice
-					<span> //the text for the pseudo-choice
+        //remove choice
+        const index = player.choices.indexOf(chosenChoice.id);
+        if(index !== -1){
+          player.choices.splice(chosenChoice.id, 1);
+        }
+        document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+      } else {
+                // If the chosen choice is not active, try to activate it (select)
+        if (activeChoices.length < maxChoices) {
+            chosenChoice.classList.toggle('active');
+            player.credits += creditChange; // Add credits
+            player.choices.push(chosenChoice.id);
+            document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+        }
+      }
+    }
