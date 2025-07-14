@@ -1,0 +1,977 @@
+name: Clothing
+cost: Free\!
+equipmentLevel: 0
+kineticDefence: 0000000
+energyDefence: 0000000
+mobility: 0000000
+
+name: Bulletproof Vest
+cost: 50k
+equipmentLevel: +2
+kineticDefence: 00000082SS
+energyDefence:
+mobility:
+
+name: Full-Body Tactical
+cost: 150k
+equipmentLevel: +3
+kineticDefence:
+energyDefence:
+mobility:
+
+name: Wastelander
+cost: 150k
+equipmentLevel: +3
+kineticDefence: 000000ORS
+energyDefence:
+mobility:
+
+name: Infiltrator
+cost: 300k
+equipmentLevel: +4
+kineticDefence: 00000000
+energyDefence:
+mobility:
+
+name: Hydra Vest
+cost: 350k
+equipmentLevel: +4
+kineticDefence: 0000 000SS
+energyDefence:
+mobility:
+
+name: Survivalist
+cost: 500k
+equipmentLevel: +5
+kineticDefence: 00000SE
+energyDefence:
+mobility:
+
+name: Infantry
+cost: 600k
+equipmentLevel: +5
+kineticDefence: 00000...
+energyDefence:
+mobility:
+
+name: Exo-Skeleton
+cost: 700k
+equipmentLevel: +5
+kineticDefence: 000000000
+energyDefence:
+mobility:
+
+name: Phorcys
+cost: 1.2m
+equipmentLevel: +6
+kineticDefence:
+energyDefence:
+mobility:
+
+name: Reactive Plating
+cost: 2m
+equipmentLevel: +6
+kineticDefence: 0000 SE
+energyDefence:
+mobility:
+
+name: Nano Suit
+cost: 2.5m
+equipmentLevel: +7
+kineticDefence:
+energyDefence:
+mobility:
+
+name: Erinyes
+cost: 3m
+equipmentLevel: +7
+kineticDefence:
+energyDefence:
+mobility:
+
+name: Pioneer
+cost: 3.5m
+equipmentLevel: +7
+kineticDefence:
+energyDefence:
+mobility:
+
+name: Crown Mk3
+cost: 4m
+equipmentLevel: +7
+kineticDefence:
+energyDefence:
+mobility:
+
+name: Olympian
+cost: 5m
+equipmentLevel: +8
+kineticDefence: 0000000SS
+energyDefence: 0000000ES
+mobility: 0000000000
+
+name: Hellhound
+cost: 5.5m
+equipmentLevel: +8
+kineticDefence: 00000000SS
+energyDefence:
+mobility:
+
+name: Power Armour
+cost: 9m
+equipmentLevel: +10
+kineticDefence: 0000000
+energyDefence:
+mobility:
+
+name: .362 Snub Lawmaker
+type: Kinetic
+cost: 50k
+equipmentLevel: +1
+stoppingPower: DXXXX
+piercingPower:
+rateOfFire:
+range:
+accuracy:
+handling:
+roundCapacity: 7
+action: Revolver
+calibre: .362 LCat
+
+name: KML Compact
+type: Kinetic
+cost: 50k
+equipmentLevel: +1
+stoppingPower: DXXXXXXXMM
+piercingPower:
+rateOfFire:
+range: DOO
+accuracy:
+handling:
+roundCapacity: 12
+action: Semi-auto
+calibre: 8.8mm PIL
+
+name: Forcify MK VII
+type: Plasma
+cost: 100k
+equipmentLevel: +1
+stoppingPower: DXXXXSE
+piercingPower:
+rateOfFire:
+range:
+accuracy:
+handling:
+roundCapacity: \~16
+action: Semi-auto
+diode: 980nm
+
+name: Bandit-12
+type: Kinetic
+cost: 400k
+equipmentLevel: +2
+stoppingPower: 0000SS
+piercingPower: 0000000
+rateOfFire:
+range:
+accuracy:
+handling:
+roundCapacity: 6
+action: Revolver
+calibre: .48 RE
+
+name: .362 Deputy
+type: Kinetic
+cost: 500k
+equipmentLevel: +2
+stoppingPower: DXXXXXES
+piercingPower: 000000
+rateOfFire: 0000000
+range: 00000006
+accuracy:
+handling:
+roundCapacity:
+action: Revolver
+calibre: 362 LCat
+
+name: C 2911
+type: Kinetic
+cost: 100k
+equipmentLevel: +1
+stoppingPower: DXXXXX
+piercingPower: 0000ES
+rateOfFire: 0000SE
+range: DXXXXXXX
+accuracy:
+handling:
+roundCapacity: 9
+action: Semi-auto
+calibre: 11mm FR
+
+name: FD17 Daybreak
+type: Kinetic
+cost: 100k
+equipmentLevel: +1
+stoppingPower: 00000
+piercingPower:
+rateOfFire:
+range:
+accuracy:
+handling:
+roundCapacity: 15
+action: Semi-auto
+calibre: 8.8mm Pil
+
+name: Sabre 6
+type: Plasma
+cost: 150k
+equipmentLevel: +1
+stoppingPower: 00000
+piercingPower: 0000083SS
+rateOfFire: DOORGASM
+range: 00000004
+accuracy: DOSSSSSASS
+handling: 00000665
+roundCapacity: \~28
+action: Semi-auto
+diode: 1025nm
+
+name: Pallach Or2
+type: Laser
+cost: 200k
+equipmentLevel: +2
+stoppingPower: DOODS
+piercingPower: DO
+rateOfFire:
+range:
+accuracy:
+handling:
+roundCapacity: \~5
+action: Full-auto
+diode: 405nm
+
+name: H56
+type: Kinetic
+cost: 200k
+equipmentLevel: +2
+stoppingPower: 0000000
+piercingPower: D
+rateOfFire:
+range:
+accuracy:
+handling:
+roundCapacity: 24
+action: Full-auto
+calibre: 8.8mm PIL
+
+name: FD9 Judge
+type: Kinetic
+cost: 500k
+equipmentLevel: +3
+stoppingPower: 00000
+piercingPower: 00000006SS
+rateOfFire: 0000000
+range:
+accuracy:
+handling:
+roundCapacity: 18
+action: Select-fire
+calibre: 10mm INF
+
+name: Gretel MK III
+type: Rail
+cost: 800k
+equipmentLevel: +3
+stoppingPower: 0000000
+piercingPower: 000000000
+rateOfFire: 000004
+range:
+accuracy:
+handling:
+roundCapacity: 4
+action: Semi-auto
+bolt: 22mm
+
+name: Kayta F5
+type: Kinetic
+cost: 200k
+equipmentLevel: +2
+stoppingPower: 0000SS
+piercingPower: DOO
+rateOfFire:
+range: 0000000SE
+accuracy:
+handling:
+roundCapacity: 30
+action: Full-auto
+calibre: 8.8mm PIL
+
+name: Rinn-J
+type: Plasma
+cost: 200k
+equipmentLevel: +2
+stoppingPower: DOSSSGSSS
+piercingPower: \~45
+rateOfFire: Full-auto
+range:
+accuracy:
+handling:
+roundCapacity: \~16
+action:
+diode: 980nm
+
+name: Hellfang
+type: Laser
+cost: 500k
+equipmentLevel: +3
+stoppingPower:
+piercingPower:
+rateOfFire:
+range:
+accuracy:
+handling:
+roundCapacity: \~16
+action: Full-auto
+diode: 320nm
+
+name: FD39 Echo
+type: Kinetic
+cost: 550k
+equipmentLevel: +3
+stoppingPower: 00000ES
+piercingPower: 000000US
+rateOfFire:
+range: 0000
+accuracy:
+handling:
+roundCapacity: 28
+action: Full-auto
+calibre: 10mm INF
+
+name: LK Banshee
+type: Plasma
+cost: 700k
+equipmentLevel: +3
+stoppingPower: 00000ES
+piercingPower: 0
+
+0000000
+
+name: LK Banshee  
+cost: 700k  
+equipmentLevel: +3  
+kineticDefence:  
+energyDefence: 00000ES  
+mobility:  
+diode: 1025nm  
+stoppingPower: 00000ES  
+piercingPower: 0000X  
+rateOfFire: Full-auto/chg  
+range:  
+accuracy:  
+handling:  
+roundCapacity: \~16  
+action: Full-auto/chg
+
+name: H "Frill"  
+cost: 800k  
+equipmentLevel: +3  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000ES  
+piercingPower: 00000US  
+rateOfFire: Full-auto  
+range:  
+accuracy:  
+handling:  
+roundCapacity: \~50  
+action: Full-auto  
+diode: Unknown
+
+name: Spatha 2100FP  
+cost: 100k  
+equipmentLevel: +3  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 000000000  
+piercingPower: 00000...GE  
+rateOfFire: 9  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 8  
+action: Pump  
+calibre: 10ga
+
+name: Espingarda Model 80  
+cost: 150k  
+equipmentLevel: +3  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000000  
+piercingPower: 00000686ES  
+rateOfFire: \~5  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 12  
+action: Semi-auto  
+calibre: 12ga
+
+name: Starburst MK VI  
+cost: 200k  
+equipmentLevel: +3  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000E  
+piercingPower:  
+rateOfFire:  
+range:  
+accuracy:  
+handling:  
+roundCapacity: \~10  
+action: Semi-auto  
+diode: 4x675nm
+
+name: Ogoun M31  
+cost: 400k  
+equipmentLevel: +3  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000  
+piercingPower: 000000068S  
+rateOfFire:  
+range: 000000  
+accuracy: 00000  
+handling:  
+roundCapacity: \~8  
+action: Full-auto  
+diode: 80nm x6
+
+name: AS-12/45  
+cost: 400k  
+equipmentLevel: +3  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000S  
+piercingPower: 00000SS  
+rateOfFire: 000000  
+range: 0000  
+accuracy:  
+handling:  
+roundCapacity: 4  
+action: Burst  
+calibre: 12ga
+
+name: Wraithsong A4  
+cost: 800k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000  
+piercingPower:  
+rateOfFire:  
+range: 00000  
+accuracy:  
+handling:  
+roundCapacity: 4  
+action: Burst  
+bolt: 4mm x3
+
+name: UN200-42  
+cost: 400k  
+equipmentLevel: +3  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000  
+piercingPower: 0000000  
+rateOfFire: DESSOUSSE  
+range: 000000SE  
+accuracy: \~34  
+handling: Full-auto  
+roundCapacity: 30  
+action: Full-auto  
+diode: 980nm
+
+name: FD49 Reverb  
+cost: 500k  
+equipmentLevel: +3  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000  
+piercingPower:  
+rateOfFire:  
+range: 0000  
+accuracy: 000000  
+handling:  
+roundCapacity: 28  
+action: Semi-auto  
+calibre: 5.91mm IN
+
+name: Angel  
+cost: 700k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000  
+piercingPower: 00000000E  
+rateOfFire: 000006856S  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 28  
+action: Select-fire  
+calibre: 6.4mm Ws
+
+name: Devil's Kiss  
+cost: 1m  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 000000  
+piercingPower: DOOOO  
+rateOfFire: 000006856S  
+range: \~26  
+accuracy: Full-auto/alt  
+handling: 995nm  
+roundCapacity:  
+action: Full-auto/alt  
+diode: 995nm?
+
+name: Bastard-21  
+cost: 200k  
+equipmentLevel: +3  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000R  
+piercingPower: DOSS  
+rateOfFire: 00000066  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 30  
+action: Select-fire  
+calibre: 6.16mm UNI
+
+name: The Ivan  
+cost: 250k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000  
+piercingPower: 00000  
+rateOfFire: Full-auto  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 30  
+action: Full-auto  
+calibre: 7.75mm SV
+
+name: Sharktooth-T751  
+cost: 400k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000  
+piercingPower: DOO  
+rateOfFire: Full-auto  
+range: \~40  
+accuracy:  
+handling:  
+roundCapacity: \~40  
+action: Full-auto  
+diode: 1155nm
+
+name: FD22 Sprint  
+cost: 450k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000SS  
+piercingPower: 22  
+rateOfFire: Semi-auto  
+range:  
+accuracy:  
+handling:  
+roundCapacity: \~20  
+action: Semi-auto  
+calibre: 6.16mm UNI
+
+name: LK Scarlet  
+cost: 650k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000  
+piercingPower: 00000SS  
+rateOfFire:  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 32  
+action: Semi-auto  
+diode: 405nm
+
+name: The EVI Platform  
+cost: 700k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000  
+piercingPower: 00000SS  
+rateOfFire: Select-fire  
+range:  
+accuracy:  
+handling:
+
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower:  
+piercingPower:  
+rateOfFire: Select-fire  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 32  
+action: Select-fire  
+calibre: 6.16mm UNI
+
+name: H23  
+cost: 800k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: DXXXXX  
+piercingPower: 0000000  
+rateOfFire: 0000000  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 28  
+action: Select-fire  
+calibre: 6.8mm BH
+
+name: Gloom MK III  
+cost: 1m  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000066SS  
+piercingPower: 00000000  
+rateOfFire: 000000000  
+range:  
+accuracy:  
+handling:  
+roundCapacity: \~32  
+action: Select-fire  
+diode: 995+440nm
+
+name: H "Mantis"  
+cost: 1m  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: DXXXXXXX  
+piercingPower: DOXXX  
+rateOfFire: 000000  
+range: \~30  
+accuracy:  
+handling:  
+roundCapacity:  
+action: Burst  
+diode: Unknown
+
+name: Burial M55  
+cost: 700k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: DXXXXXX  
+piercingPower: 00000885SS  
+rateOfFire: -------  
+range: DOODGE  
+accuracy:  
+handling:  
+roundCapacity: 12  
+action: Semi-auto  
+calibre: 8.02mm TB
+
+name: Atrophy  
+cost: 1.4m  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: DXXXXX  
+piercingPower: 000000000  
+rateOfFire: 000000000  
+range: DOOSSSSSS  
+accuracy:  
+handling:  
+roundCapacity: \~8  
+action: Semi-auto  
+diode: 625nm
+
+name: Orca A7  
+cost: 1.8m  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 000000000  
+piercingPower: 000000000  
+rateOfFire: DOOSSSASIN  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 6  
+action: Semi-auto  
+bolt: 28mm
+
+name: Hail-92  
+cost: 650k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 000000000  
+piercingPower: 0000000  
+rateOfFire: Full-auto  
+range:  
+accuracy: \~60  
+handling:  
+roundCapacity: 200  
+action: Full-auto  
+calibre: 7.75mm SV
+
+name: FD7 Optimum  
+cost: 900k  
+equipmentLevel: +5  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: DXXXXXXX  
+piercingPower: 00000SS  
+rateOfFire: Full-auto  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 60  
+action: Full-auto  
+calibre: 7.75mm SV
+
+name: Salamander Or2  
+cost: 800k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000000  
+piercingPower: 0000000  
+rateOfFire: Full-auto  
+range:  
+accuracy:  
+handling:  
+roundCapacity: \~200L  
+action: Thrower  
+calibre: n/a
+
+name: H "Flare"
+cost: 1.6m  
+equipmentLevel: +5  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 000000000  
+piercingPower: 00000000  
+rateOfFire: Full-auto  
+range: \~100  
+accuracy:  
+handling:  
+roundCapacity: \~350  
+action: continuous
+diode: unknown
+
+name: Ratio MK II
+cost: 2m  
+equipmentLevel: +5  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000000  
+piercingPower: 00000000  
+rateOfFire: Full-auto  
+range:  
+accuracy:  
+handling:  
+roundCapacity: \~300  
+action: bolt-action
+calibre: 42mm
+
+name: Sardonic-9
+cost: 2.2m  
+equipmentLevel: +5  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 00000000  
+piercingPower: 00000000  
+rateOfFire:  
+range: \~20  
+accuracy:  
+handling:  
+roundCapacity: \~12  
+action: Rocket  
+calibre: 1990nm
+
+name: H12 
+cost: 500k  
+equipmentLevel: +4  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000000  
+piercingPower: 0000000000  
+rateOfFire: Semi-auto  
+range:  
+accuracy:  
+handling:  
+roundCapacity: 12  
+action: Semi-auto  
+bolt: 40mm
+
+name: Stark-4 
+cost: 700k  
+equipmentLevel: +5  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 000000000  
+piercingPower: 000000000  
+rateOfFire: 00000  
+range:  
+accuracy: 000000  
+handling:  
+roundCapacity: \~50  
+action: Launcher 
+diode: 82mm
+
+name: KM Swarm 
+cost: 1.2m  
+equipmentLevel: +5  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000000  
+piercingPower: 000000000  
+rateOfFire: 
+range: \~100  
+accuracy:  
+handling:  
+roundCapacity: \~500  
+action: Semi-auto  
+calibre: 28mm
+
+name: FD102 Toler
+cost: 2m  
+equipmentLevel: +7  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000000  
+piercingPower: 0000000000  
+rateOfFire:  
+range:  
+accuracy:  
+handling:  
+roundCapacity: \~25  
+action: Launcher  
+diode: 110m
+
+name: Explody Thing   
+cost: 8m  
+equipmentLevel: +7  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000000  
+piercingPower: 0000000000  
+rateOfFire: \~20  
+range: \~50  
+accuracy:  
+handling:  
+roundCapacity: 8  
+action: Pump  
+calibre: 2
+
+name: Moses Or19   
+cost: 3m  
+equipmentLevel: +7  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000000  
+piercingPower: 0000000000  
+rateOfFire: \~20  
+range: \~50  
+accuracy:  
+handling:  
+roundCapacity: 8  
+action: semi-auto  
+calibre: 2
+
+name: Hel  
+cost: 4m  
+equipmentLevel: +7  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000000  
+piercingPower: 0000000000  
+rateOfFire: \~20  
+range: \~50  
+accuracy:  
+handling:  
+roundCapacity: 8  
+action: semi-auto  
+calibre: 2
+
+name: FD99x Perfection  
+cost: 6m  
+equipmentLevel: +7  
+kineticDefence:  
+energyDefence:  
+mobility:  
+stoppingPower: 0000000000  
+piercingPower: 0000000000  
+rateOfFire: \~20  
+range: \~50  
+accuracy:  
+handling:  
+roundCapacity: 1000  
+action: Gatling 
+calibre: 45mm Qn
