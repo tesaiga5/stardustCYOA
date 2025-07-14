@@ -115,7 +115,7 @@ export const skills = [
         title: "Mind-Link",
         description: "Experimental tech developed at Triglav that requires an immense amount of knowledge, patience, and fortitude to get through. With this skill, you'll be able to link your mind to your ship.",
         cost: 200000,
-        prerequisites: ["medical", "mechanics","nuclear", "advanced-piloting","computer-science"],
+        prerequisites: ["medical", "mechanics", "nuclear", "advanced-piloting", "computer-science"],
         consequences: [{ type: "job-slots", value: 3 }], // Can assume 3 jobs instead of 2
         playerUpdates: [{ attribute: "skills", action: "add", value: "mind-link" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
@@ -132,24 +132,6 @@ export const skills = [
         id: "basicTraining",
         title: "Basic Training",
         description: "Go through the same training any soldier goes though: Basic. You're trained on the basics of using firearms, you're whipped into taking basic orders, taught basic tactics, and trained in basic physical courses. All the fun stuff that, while basic, still pushes you to your limits.",
-        cost: 200000,
-        prerequisites: [],
-        consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
-    },
-    {
-        id: "closeQuartersCombat",
-        title: "Close-Quarters Combat",
-        description: "Anything that involves taking somebody on in the melee is covered this course. Learn to use the kinetics of your body as well as the handling of close combat weapons. Coming out of this course, you will never be caught without a knife. Or a hammer, if that's your thing.",
-        cost: 200000,
-        prerequisites: [],
-        consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
-    },
-    {
-        id: "closeQuartersCombat",
-        title: "Close-Quarters Combat",
-        description: "Anything that involves taking somebody on in the melee is covered this course. Learn to use the kinetics of your body as well as the handling of close combat weapons. Coming out of this course, you will never be caught without a knife. Or a hammer, if that's your thing.",
         cost: 200000,
         prerequisites: [],
         consequences: [],
@@ -764,6 +746,285 @@ const origins = [
         ]
     }
 ];
+
+export const startPos = [
+    // The Federation
+    {
+        cityName: "New Terra",
+        cityType: "capital",
+        allegiance: "Federation",
+        description: "The crown jewel of the Federation, New Terra is what's considered as the 'core' of the sovereignty. While it contains some of the most important people to the Federation, it is also considered to be the safest place in the entire galaxy. Wealth prospers here, and provides ample opportunity to those seeking it."
+    },
+    {
+        cityName: "Arcadia",
+        cityType: "trade hub",
+        allegiance: "Federation",
+        description: "Situated in the 'galactic far east' of the Federation, Arcadia is both loyal and yet distant to New Terra and its influence. It's much more modest and is a lot more approachable to outside entities willing to trade. It has three space stations orbiting different planets, all of which are open to the public. Arcadia's multicultural cities are very welcoming."
+    },
+    {
+        cityName: "Laporte",
+        cityType: "trade hub",
+        allegiance: "Federation",
+        description: "Laporte is less of a trade hub and more of a cargo gathering of freighters ferrying goods to and from New Terra. It has one station orbiting the single civilized planet, and is open to the public for trade. With all of the mass of products available, prices are fairly desirable, here."
+    },
+    {
+        cityName: "Dellsin",
+        cityType: "other",
+        allegiance: "Federation",
+        description: "Dellsin is considered to be within the 'outer reaches' of the Federation, and like Arcadia, it sees a great mix of people coming and going. It is surrounded by several star systems in which planets are civilized with great urban cities."
+    },
+    {
+        cityName: "Wayward",
+        cityType: "other",
+        allegiance: "Federation",
+        description: "At the back of the Federation is Wayward, the Federation's top industry system that provides ore for almost half of the galactic nation. The surrounding systems are dotted with a network of ore-rich mining facilities with an almost endless supply. Wayward is home to some of the Federation's most prevalent corporations of industry."
+    },
+    {
+        cityName: "Capitolus",
+        cityType: "other",
+        allegiance: "Federation",
+        description: "Capitolus sees a lot more solitude than the other trade hub systems of the Federation. It's dubbed as the 'Centre of Knowledge', a gathering of the civilized galaxy's most brilliant minds. Top research and development firms such as Beatrice R&D and Pulsar Inc. trace their roots to this system."
+    },
+    {
+        cityName: "Archer",
+        cityType: "fort",
+        allegiance: "Federation",
+        description: "As the Federation's top military staging system, Archer houses the largest legions of the Federation Navy Armada - the strongest military power in the civilized galaxy. It has access to many routes that give them the leverage to insert almost anywhere in the outer rims."
+    },
+
+    // The Talons
+    {
+        cityName: "Talon Prime",
+        cityType: "capital",
+        allegiance: "The Talons",
+        description: "Only the Talons know the true origins of how they came to be, but the notorious, high-class society held their small sovereignty for a very long time, long before they were first discovered by the Blackhawk Elite. Talon Prime is everything opposite of what you would expect of an outer-ring nation; it's clean, it's professional, and it's pleasant to live in. It's often said that the Talons have a sense of humour despite their professional appearance - they still, somehow, retain their outer-rim mentality and like to pick on those who take themselves too seriously."
+    },
+    {
+        cityName: "Zona",
+        cityType: "other",
+        allegiance: "The Talons",
+        description: "The source of the Talon power is in their access to valuable, high-grade ore, and Zona is abundant in this, on top of being of a rare breed of star systems in which a planet is habitable. Using technology likely stolen from the Federation and possibly Pulsar Inc., the Talons are able to self-sustain their small sovereignty with surprising efficiency."
+    },
+
+    // The Red Dagger Pirates
+    {
+        cityName: "Ten Cred",
+        cityType: "capital",
+        allegiance: "Red Dagger Pirates",
+        description: "Despite being one of the (former) smaller pirate groups, the Red Daggers are also one of the oldest. After the Pirate Coalition War with the Blackhawks and the fall of the Luos Syndicate, they've become a prevalent power. And ever since their first of thousands of heists against neighboring powers, Ten Cred has been the Red Dagger's home system. It's also a very active trade system for inter relations between gangs and for powers they don't entirely hate."
+    },
+    {
+        cityName: "Lastop",
+        cityType: "other",
+        allegiance: "Red Dagger Pirates",
+        description: "When the Lastop system was first scouted out by the Talons, the Red Daggers were surprised to find that they were offered it in return of having a trade deal with them. It seemed that the Talons had no interest in expanding territory, but the Red Daggers took it without hesitating, and has since become a very powerful asset and ally. Lastop is rich in the much-needed common ores, and the Talons and Red Daggers have taken advantage of it."
+    },
+
+    // The Blackhawk Elite
+    {
+        cityName: "Ysgard",
+        cityType: "capital",
+        allegiance: "Blackhawk Elite",
+        description: "Facing constant threats from powerful pirate organizations where the Federation was not as present, groups like the Blackhawk Elite arose. Ysgard was the first system that became the Blackhawk Elite's growing sovereignty, and as they drove pirate influence out, the Blackhawks captured more. Ysgard and the surrounding systems acted as a powerful shield for the Federation against the growing threat of the time that was the Luos Syndicate."
+    },
+    {
+        cityName: "Ragnarök",
+        cityType: "capital",
+        allegiance: "Blackhawk Elite",
+        description: "Seeking to take their righteousness further into dangerous territory, the Blackhawk Elites established Ragnarök, their second stronghold system. For decades, the Blackhawks defended Ragnarök fiercely, and through lots of blood, sweat, and tears, used Ragnarök's leverage to push far into pirate territory."
+    },
+    {
+        cityName: "Valhalla",
+        cityType: "capital",
+        allegiance: "Blackhawk Elite",
+        description: "The Blackhawk Elite were unstoppable and shredded through their enemies with ease... until they came upon the Talons. Matching them in power, the Blackhawks were stalled and thus were forced to settle down in Valhalla. Even after the Pirate Coalition War where much Blackhawk territory was lost and after the fall of the Luos Syndicate, Valhalla and Ragnarök remain defended with unbreakable, iron might."
+    },
+    {
+        cityName: "Clover Region",
+        cityType: "other",
+        allegiance: "Blackhawk Elite",
+        description: "In between the Blackhawk Elite's Valhalla sovereignty and the Talon sovereignty is a scant four systems that link the two powers. Silent and unseen from the rest of the civilized galaxy is a constant demonstration of might and tact, neither side ever getting an advantage over the other. When one side gets a victory, they lose the next encounter. It's gotten so bad that the two sides have silently agreed to wave their pride at each other in the form of 'wargames' instead of blowing each other into oblivion (most of the time), and fights have often turned into conflicting opinions and name-calling. They hate each other. A lot."
+    },
+
+    // The Rebels
+    {
+        cityName: "Detritus",
+        cityType: "capital",
+        allegiance: "The Rebels",
+        description: "The Federation has plenty of virtues, but some groups have failed to see them within the galactic nation. The rising threats from pirate groups such as the Luos Syndicate caused uprising in the outer Federation systems; where was the Navy when they were most needed? Detritus was the second system to claim separatism from the Federation, having been long fed up with the incompetency. And to make matters worse, the Federation simply dismissed the claim and labeled them as a 'pirate group', along with the Exodus system. Being left to fend for themselves, they've held out against bandits and pirates using guerilla tactics and make-shift hardware."
+    },
+    {
+        cityName: "Exodus",
+        cityType: "capital",
+        allegiance: "The Rebels",
+        description: "Exodus, though not having been under as much threat from bandits as Detritus has, was the first to claim separatism from the Federation. Having started out as a simple mining colony, resources were limited and were only ferried in small amounts from Wayward. Despite Exodus' calls for increased support, they went unanswered and began to establish the colony as their own, starting agricultural projects with what they had. Soon they became self-sustaining, but when support from the Federation finally cut off, they ended up not caring anymore."
+    },
+
+    // The Luos Syndicate (former)
+    {
+        cityName: "Haven",
+        cityType: "capital",
+        allegiance: "Luos Syndicate",
+        description: "Much of the once powerful Luos Syndicate now lies in ruin. Thousands of tons of twisted metal litter the entire Syndicate space from destroyed warships to unserviceable space stations. Pirate and Federation activity is still rampant after the Syndicate's fall, and unrest is evident throughout the many remaining cities. Haven was the Syndicate capital, and it was also bombarded the most by the Federation and mercenary armada. Although Haven was largely considered the centre of the Core Ring corporations, it was bitter irony to them that the last vestiges of the Luos armada that defended the system were made up of their Outer Ring counterparts; groups that they didn't see eye-to-eye with. At this point in the war, most of the companies in the Syndicate forces were either routed or just deserted completely."
+    },
+    {
+        cityName: "Olympus",
+        cityType: "other",
+        allegiance: "Luos Syndicate",
+        description: "Several years after the Pirate Coalition War, the Blackhawk Elite and Federation fought back. With an armada spanning several thousand ships including nearly sixty dreadnoughts, the Navy-led assault took them to the three entry-systems of the Luos Syndicate: Olympus, Elysium and Solaria. The Syndicate had prepared but despite their power, could not withstand their might. They held for a mere four days before being forced to retreat. Olympus was one of the entry systems."
+    },
+    {
+        cityName: "Elysium",
+        cityType: "other",
+        allegiance: "Luos Syndicate",
+        description: "Several years after the Pirate Coalition War, the Blackhawk Elite and Federation fought back. With an armada spanning several thousand ships including nearly sixty dreadnoughts, the Navy-led assault took them to the three entry-systems of the Luos Syndicate: Olympus, Elysium and Solaria. The Syndicate had prepared but despite their power, could not withstand their might. They held for a mere four days before being forced to retreat. Elysium saw the heaviest of the fights, but was also the last to fall."
+    },
+    {
+        cityName: "Solaria",
+        cityType: "other",
+        allegiance: "Luos Syndicate",
+        description: "Several years after the Pirate Coalition War, the Blackhawk Elite and Federation fought back. With an armada spanning several thousand ships including nearly sixty dreadnoughts, the Navy-led assault took them to the three entry-systems of the Luos Syndicate: Olympus, Elysium and Solaria. The Syndicate had prepared but despite their power, could not withstand their might. They held for a mere four days before being forced to retreat. Solaria was one of the entry systems."
+    },
+    {
+        cityName: "Erebus",
+        cityType: "other",
+        allegiance: "Luos Syndicate",
+        description: "Erebus was home to many of the Syndicate's Outer Ring corporations, such as the industrious Reibar manufacturing company or the venerable Cerberus Legion. Living conditions here were a stark contrast to Haven; it was a much harsher environment stricken with a more rustic atmosphere. Strange enough, the people were friendlier, and it's likely that the inhabitants here were the original founders of the Syndicate who envisioned a prosperous nation. A mercenary coalition led by the Blackhawk Elites had planned a back-door attack from Valhalla and it was at Erebus where they entered the Syndicate. Unfortunately for them, however, they were met not by Syndicate forces but by Talons and Red Daggers in an ingenious ambush; almost half of the fleet was decimated by pre-aimed anti-matter cannon blasts as they landed in the system, predicted to the tee by Talon spies. The mercenary fleet was forced to flee, but so were the Talons and Red Daggers after they had heard that the Syndicate defence had failed up at the 'galactic north'. Rumors spread that both groups left due to other reasons, but neither elected to comment."
+    },
+    {
+        cityName: "Abyss",
+        cityType: "other",
+        allegiance: "Luos Syndicate",
+        description: "After the devastating Luos defeat at Olympus, Elysium and Solaria, the Federation forces tore through the remaining systems like a plague. Cities were bombarded to submission and Syndicate fleets were outnumbered and shredded apart by relentless firepower. The remaining Syndicate forces gathered at Abyss for a final defence led by Ise Ley'is, who was one of the only remaining Syndicate commanders that wasn't missing or had abandoned the Syndicate as a whole. Under valiant and ruthless leadership, she and the remaining Syndicate forces defended the system for two months before attrition burned them out. No ship was spared, and the few thousand surviving souls of an armada of nearly two million fled to Haven."
+    },
+    {
+        cityName: "Zen",
+        cityType: "other",
+        allegiance: "Luos Syndicate", // Explicitly stated in the prompt's CYOA section
+        description: "CYOA Event System: Contract: 'The Twin Fangs'."
+    },
+
+    // No-Man's Land
+    {
+        cityName: "Star Dust",
+        cityType: "other",
+        allegiance: "No Man's Land",
+        description: "Situated in almost literally the centre of the civilized galaxy, the Star Dust system is a very, very popular system for all factions. Namely, for the Stardust Space Station that orbits a barren planet. With such leverage for all corners of the civilized galaxy, trade is rampant here, and you could find almost anything. The massive station attracts some of the most curious people who often bring rare things like Herald artifacts, or even entire Herald ships. Under a silent agreement of pirate organizations and even the Federation, the Star Dust system is one of the few places to be left out of conflicts. Groups have tried, but the system has a very strong militia funded by the wealthy station owners."
+    },
+    {
+        cityName: "BR-5RB",
+        cityType: "other",
+        allegiance: "No Man's Land",
+        description: "During the long, tedious and fierce Pirate Coalition War, it was at BR-5RB where the Blackhawk Elite suffered their first major defeat. Bringing nearly twenty dreadnoughts and many battleships, they left the field with almost none left. It was through utilizing much quicker swarms of destroyers and cruisers that the pirates overwhelmed the Blackhawks."
+    },
+    {
+        cityName: "DL7-2E",
+        cityType: "other",
+        allegiance: "No Man's Land",
+        description: "After BR-5RB, the Blackhawk Elite staged another defence here, but morale was devastated and their might was stricken. They put up little to no resistance, and fled. Mjölnir was abandoned, and the Blackhawks fortified at their other two staging systems before the Pirate Coalition declared a victory. CYOA Event System: Contract: 'And the Fire Grows', 'Until Our Dying Breath'."
+    },
+    {
+        cityName: "Carceri",
+        cityType: "other",
+        allegiance: "No Man's Land",
+        description: "CYOA Event System: Contract: 'Search & Rescue'."
+    },
+    {
+        cityName: "Farrigan's Reach",
+        cityType: "other",
+        allegiance: "No Man's Land",
+        description: "CYOA Event System: Contract: 'Acheron', 'The Sound'."
+    },
+    {
+        cityName: "Kolb",
+        cityType: "other",
+        allegiance: "No Man's Land",
+        description: "CYOA Event System: Contract: 'Escalation'."
+    },
+    {
+        cityName: "Craddock",
+        cityType: "other",
+        allegiance: "No Man's Land",
+        description: "CYOA Event System: Contract: 'Ace'."
+    },
+    {
+        cityName: "HT4J-L8",
+        cityType: "other",
+        allegiance: "No Man's Land",
+        description: "CYOA Event System: Contract: 'This Land', 'Mining King Steve'."
+    },
+    {
+        cityName: "Fordelia",
+        cityType: "other",
+        allegiance: "No Man's Land",
+        description: "CYOA Event System: Contract: 'All Aboard'."
+    },
+    {
+        cityName: "L9M7-2",
+        cityType: "other",
+        allegiance: "No Man's Land",
+        description: "CYOA Event System: Contract: 'Asunder, Sweet'."
+    },
+    {
+        cityName: "New Hope",
+        cityType: "other",
+        allegiance: "No Man's Land", // Listed under CYOA event systems, implying this allegiance for the context of the event.
+        description: "CYOA Event System: Contract: 'Heat'."
+    },
+
+    // The Fire Legion
+    {
+        cityName: "Mjölnir",
+        cityType: "capital",
+        allegiance: "The Fire Legion",
+        description: "Mjölnir was the second staging system that the Blackhawk Elites established during their crusade in the outer rims. For many decades, Ragnarök, Mjölnir and Valhalla were unbreakable, until the pirates formed a coalition led by the Luos Core Ring and began a full out assault. After the devastating Blackhawk losses at BR-5RB and DL7-2E, they were forced to abandon Mjölnir, and a part of the pirate coalition took over the region. Ever since, they have almost always kept to themselves, despite the collaboration with the Luos Syndicate and the Red Daggers. They called themselves the Fire Legion. It was not until recently when they began raising hostilities with the Red Daggers and even the Blackhawk Elites, their skirmishes growing more and more violent. As of late, the Blackhawks have responded by setting up strong blockades across the region of space surrounding the Fire Legion. Meanwhile, the rest of the galaxy has resorted to watching with anxious curiosity. Rumors are spreading that this all has to do with the Heralds, but even more ominous rumors suggest about something called the Harbinger. Others say it has something to do with mana energy. Either way, those on the front lines claim that the Legion can hardly be claimed as human anymore..."
+    },
+    {
+        cityName: "Crown",
+        cityType: "other",
+        allegiance: "The Fire Legion",
+        description: "After the Pirate Coalition War, the pirates who settled at Mjölnir named themselves the Fire Legion and began to raise hostilities against their former allies, the Red Daggers. The Crown and Forge systems are both witnesses to some of the most violent encounters that have been escalating throughout the years between the Legion, the Red Daggers, and Blackhawk Elites. Full out war seems to be brewing again, and sides are going to be taken."
+    },
+    {
+        cityName: "Forge",
+        cityType: "other",
+        allegiance: "The Fire Legion",
+        description: "After the Pirate Coalition War, the pirates who settled at Mjölnir named themselves the Fire Legion and began to raise hostilities against their former allies, the Red Daggers. The Crown and Forge systems are both witnesses to some of the most violent encounters that have been escalating throughout the years between the Legion, the Red Daggers, and Blackhawk Elites. Full out war seems to be brewing again, and sides are going to be taken."
+    },
+
+    // Independent
+    {
+        cityName: "Prion",
+        cityType: "capital",
+        allegiance: "Independent",
+        description: "Pulsar Incorporated started out as a research and development company in the Federation, but after striking gold at Prion, they became one of the civilized galaxy's most prevalent industrial companies. The surrounding systems are rich with high-grade ore and allowed the company to establish the region as their own. Prion is one of the more popular systems, being a dependent source of high-grade metals for many different parties."
+    },
+    {
+        cityName: "Bastion",
+        cityType: "capital",
+        allegiance: "Independent",
+        description: "Very similar to Pulsar Inc., Beatrice Research and Development started off as a pursuit for exploration, terraforming and research. Many of the accessible systems in the civilized galaxy are thanks to the technology developed by Beatrice, and they have since established their own few systems as a base of operations. Bastion is fitted with some of the most advanced technology ever built by humanity, and with an endless amount of stars within human reach, Beatrice continues to lead the charge into the unknown universe."
+    },
+    {
+        cityName: "Synchordia",
+        cityType: "capital",
+        allegiance: "Independent",
+        description: "Unlike Beatrice R&D and Pulsar Inc, Hammerhead Industries was an industrious company from its roots. Inspired by the success of Pulsar, Hammerhead industries, one of the lead manufacturers of ships and vehicles in the Federation already, funded their own expedition across the galaxy. It was at Synchordia where they struck their own gold mine and established a strong, industrious fortress. They began mass producing ships ever since, and have become the most used ship hull brand for pilots across the galaxy."
+    },
+    {
+        cityName: "Freeport",
+        cityType: "other",
+        allegiance: "Independent",
+        description: "CYOA Event System: Contract: 'Don't Get Lost'."
+    },
+    {
+        cityName: "Quorum",
+        cityType: "other",
+        allegiance: "Independent",
+        description: "CYOA Event System: Contract: 'Rogue Drones'."
+    }
+];
+
 
 
 
