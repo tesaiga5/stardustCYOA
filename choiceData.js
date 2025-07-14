@@ -4,26 +4,53 @@ export const skills = [
         id: "basic-piloting",
         title: "Basic Piloting",
         description: "If you're going into space, it's probably a good idea to at least know how to fly a ship. This course will teach you the basics, and when you're through, you'll be able to adequately pilot almost any ship. Don't expect to outwit more experienced pilots, however.",
-        cost: 0, // Assuming initial courses are free as per "You may take up to 6 courses..."
+        cost: 200000, // Assuming initial courses are free as per "You may take up to 6 courses..."
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "basic-piloting" }],
         imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
+        id: "standard-piloting",
+        title: "Standard Piloting",
+        description: "This course will put you through much more realistic simulations, and even take you onto the field a few times. New techniques open up a wave of new possibilities for you as an aspiring pilot, and you fly confidently enough to go toe-to-toe with other pilots out there.",
+        cost: 200000, // 2m per additional course
+        prerequisites: ["basic-piloting"],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "standard-piloting" }],  imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "advanced-piloting",
+        title: "Advanced Piloting",
+        description: "You're in the real world now, and you can't settle for anything less than the best when it comes to being a pilot. You'll be put in the most realistic conditions, enough that you're convinced that these are real situations they're throwing at you. Come out of this alive and you'll quickly become a respected pilot.",
+        cost: 200000,
+        prerequisites: ["standard-piloting"],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-piloting" }],  imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
         id: "ship-gunnery",
         title: "Ship Gunnery",
         description: "Learning how to fire a ship's weapons is almost an essential skill needed when space-faring. Hostiles. can find the sneakiest ways of getting you where they want you to be, so you best be prepared to defend yourself from them. You'll be able to ade- quately fire any ship weapon from this course.",
-        cost: 0,
+        cost: 200000,
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "ship-gunnery" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
+        id: "ship-weapon-specialization",
+        title: "Ship Weapon Specialization",
+        description: "This course highlights the advanced techniques in handling a certain ship weapon type. You can select either kinetic, energy, blaster, or explosive, boosting that weapon type's effectiveness when you're in command of the ship they're attached to.",
+        cost: 200000,
+        prerequisites: ["ship-gunnery"],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "ship-weapon-specialization" }],  imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
         id: "medical",
         title: "Medical",
         description: "People with medical knowledge are few and far between, but they're always in high demand. Having a doctor on board can improve the quality of life tenfold. Better yet, why not train yourself to become one?",
-        cost: 0,
+        cost: 200000,
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "medical" }],  imageSrc: "/Images/Beatrice R&D.webp"
@@ -32,70 +59,34 @@ export const skills = [
         id: "computer-science",
         title: "Computer Science",
         description: "Information technology is heavily embedded into everything, so it's valuable knowledge to have. Especially when piloting a ship, it certainly helps to know how it works under the hood. Computer science is almost an essential skill to have for anyone hoping to travel the stars",
-        cost: 0,
+        cost: 200000,
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "computer-science" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
-        id: "standard-piloting",
-        title: "Standard Piloting",
-        description: "This course will put you through much more realistic simulations, and even take you onto the field a few times. New techniques open up a wave of new possibilities for you as an aspiring pilot, and you fly confidently enough to go toe-to-toe with other pilots out there.",
-        cost: 2000000, // 2m per additional course
-        prerequisites: [{ type: "skill", value: "basic-piloting" }],
+        id: "cyber-security",
+        title: "Cyber Security",
+        description: "Take information technology a step further and into the world of info-sec. For as long humanity can remember, hacking and cyber defence has been a volatile field that requires top-of-the-line intuition and craftiness. E-war is just as dangerous as conven- tional warfare, and some argue it is more so.",
+        cost: 200000,
+        prerequisites: ["computer-science"],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "standard-piloting" }],  imageSrc: "/Images/Beatrice R&D.webp"
-    },
-    {
-        id: "ship-weapon-specialization",
-        title: "Ship Weapon Specialization",
-        description: "This course highlights the advanced techniques in handling a certain ship weapon type. You can select either kinetic, energy, blaster, or explosive, boosting that weapon type's effectiveness when you're in command of the ship they're attached to.",
-        cost: 2000000,
-        prerequisites: [{ type: "skill", value: "ship-gunnery" }],
-        consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "ship-weapon-specialization" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "cyber-security" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
         id: "mechanics",
         title: "Mechanics",
         description: "Having no mechanical knowledge on your ship can lead to a boatload of problems; it's a no-brainer to have one on board. That said, knowing how to fix things yourself can't hurt, and it helps keep your mechanic doing more important things than trying to fix your robotic leg.",
-        cost: 0,
+        cost: 200000,
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "mechanics" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
     {
-        id: "cyber-security",
-        title: "Cyber Security",
-        description: "Take information technology a step further and into the world of info-sec. For as long humanity can remember, hacking and cyber defence has been a volatile field that requires top-of-the-line intuition and craftiness. E-war is just as dangerous as conven- tional warfare, and some argue it is more so.",
-        cost: 2000000,
-        prerequisites: [{ type: "skill", value: "computer-science" }],
-        consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "cyber-security" }],  imageSrc: "/Images/Beatrice R&D.webp"
-    },
-    {
-        id: "advanced-piloting",
-        title: "Advanced Piloting",
-        description: "You're in the real world now, and you can't settle for anything less than the best when it comes to being a pilot. You'll be put in the most realistic conditions, enough that you're convinced that these are real situations they're throwing at you. Come out of this alive and you'll quickly become a respected pilot.",
-        cost: 2000000,
-        prerequisites: [{ type: "skill", value: "standard-piloting" }],
-        consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-piloting" }],  imageSrc: "/Images/Beatrice R&D.webp"
-    },
-    {
-        id: "standard-combat-training",
-        title: "Standard Combat Training",
-        description: "Hand-to-hand, long-ranged, you name it. This course teaches you the basics in combat defence and offence, skills you might find invaluable one day. The universe is not a friendly place, so knowing how to fire a weapon properly can bring you a long way.",
-        cost: 0,
-        prerequisites: [],
-        consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "standard-combat-training" }],  imageSrc: "/Images/Beatrice R&D.webp"
-    },
-    {
         id: "nuclear",
         title: "Nuclear",
         description: "Almost every ship nowadays is powered by nuclear technology, be it through fission, fusion, or even anti- matter. At least knowing the do's and don'ts of nuclear sciences may mean the difference between life and becoming atomized into oblivion.",
-        cost: 0,
+        cost: 200000,
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "nuclear" }],  imageSrc: "/Images/Beatrice R&D.webp"
@@ -104,7 +95,7 @@ export const skills = [
         id: "industry",
         title: "Industry",
         description: "All of this would not be possible if it were not for the industrious side of society. Everything from mining, refining, and processing is covered in this course. If you plan on sailing the stars to make profit off of them, then you're going to want to have this skill under your belt.",
-        cost: 0,
+        cost: 200000,
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "industry" }],  imageSrc: "/Images/Beatrice R&D.webp"
@@ -113,32 +104,18 @@ export const skills = [
         id: "diplomacy",
         title: "Diplomacy",
         description: "As someone who's likely going to get into a lot of interactions with others, it's good to at least know how to handle situations into your favour. You'll become a great mediator and can convince most people you're right. After taking this course, you can hire up to 4 crew members hostile to your faction.",
-        cost: 0,
+        cost: 200000,
         prerequisites: [],
         consequences: [{ type: "crew-hire-limit", value: 4, condition: "hostile-faction" }],
         playerUpdates: [{ attribute: "skills", action: "add", value: "diplomacy" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
-    {
-        id: "advanced-combat-training",
-        title: "Advanced Combat Training",
-        description: "Just pointing and shooting isn't enough; you need to know how to win, and this course can get you there. You'll be learning everything from valuable survival skills to the discipline of following and giving orders. You will be nothing short of a professional combat- ant in these times of conflict.",
-        cost: 2000000,
-        prerequisites: [{ type: "skill", value: "standard-combat-training" }],
-        consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-combat-training" }],  imageSrc: "/Images/Beatrice R&D.webp"
-    },
+    
     {
         id: "mind-link",
         title: "Mind-Link",
         description: "Experimental tech developed at Triglav that requires an immense amount of knowledge, patience, and fortitude to get through. With this skill, you'll be able to link your mind to your ship.",
-        cost: 2000000,
-        prerequisites: [
-            { type: "skill", value: "medical" },
-            { type: "skill", value: "mechanics" },
-            { type: "skill", value: "nuclear" },
-            { type: "skill", value: "advanced-piloting" },
-            { type: "skill", value: "computer-science" }
-        ],
+        cost: 200000,
+        prerequisites: ["medical", "mechanics","nuclear", "advanced-piloting","computer-science"],
         consequences: [{ type: "job-slots", value: 3 }], // Can assume 3 jobs instead of 2
         playerUpdates: [{ attribute: "skills", action: "add", value: "mind-link" }],  imageSrc: "/Images/Beatrice R&D.webp"
     },
@@ -146,12 +123,230 @@ export const skills = [
         id: "mercantile",
         title: "Mercantile",
         description: "After all is said and done, you're going to want to be able to make profit, and lots of it. It's probably a good idea to have the know-how on how to barter and trade, since the whole product of industry is to not only build society but to acquire the means to do it even better.",
-        cost: 0,
+        cost: 200000,
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
-    }
+    },
+    {
+        id: "basicTraining",
+        title: "Basic Training",
+        description: "Go through the same training any soldier goes though: Basic. You're trained on the basics of using firearms, you're whipped into taking basic orders, taught basic tactics, and trained in basic physical courses. All the fun stuff that, while basic, still pushes you to your limits.",
+        cost: 200000,
+        prerequisites: [],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "closeQuartersCombat",
+        title: "Close-Quarters Combat",
+        description: "Anything that involves taking somebody on in the melee is covered this course. Learn to use the kinetics of your body as well as the handling of close combat weapons. Coming out of this course, you will never be caught without a knife. Or a hammer, if that's your thing.",
+        cost: 200000,
+        prerequisites: [],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "closeQuartersCombat",
+        title: "Close-Quarters Combat",
+        description: "Anything that involves taking somebody on in the melee is covered this course. Learn to use the kinetics of your body as well as the handling of close combat weapons. Coming out of this course, you will never be caught without a knife. Or a hammer, if that's your thing.",
+        cost: 200000,
+        prerequisites: [],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "closeQuartersCombat",
+        title: "Close-Quarters Combat",
+        description: "Anything that involves taking somebody on in the melee is covered this course. Learn to use the kinetics of your body as well as the handling of close combat weapons. Coming out of this course, you will never be caught without a knife. Or a hammer, if that's your thing.",
+        cost: 200000,
+        prerequisites: [],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "security",
+        title: "Security",
+        description: "It's boring, but it's a start. You're left to guard some unknown building for god-knows-what, but all is not lost. Lucky for you, you got to use your weapons more than once; turns out that whatever you were guarding was of value to some people. You likely only faced untrained combatants, though.",
+        cost: 200000,
+        prerequisites: [],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "security" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "patrol",
+        title: "Patrol",
+        description: "Another entry-level position, but you get to move! You get to experience the fun of sniffing out undesirables and neutralizing them. Towards the end of the term, you're brought to more hostile patrols where fights break out more often.",
+        cost: 200000,
+        prerequisites: [],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "patrol" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "advanced-firearms",
+        title: "Advanced Firearms",
+        description: "Learn how to use your weapons effectively. From this course, you will be able to skillfully use most of the firearms out there. Your accuracy and precision will be disciplined. You even get to learn a little bit of the ins and outs of how firearms work.",
+        cost: 200000, // Assuming a cost for advanced courses
+        prerequisites: ["basicTraining"],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-firearms" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "field-medic",
+        title: "Field Medic",
+        description: "A skilled medic is in high demand for all of the violence that happens in the civilized galaxy. Half of your effectiveness will come from your skill of using the latest medical technology, and the other half from your knowledge of healing. All of which can be learned from this course.",
+        cost: 200000,
+        prerequisites: [],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "field-medic" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "hit",
+        title: "Hit",
+        description: "Unwanted miscreants are lurking everywhere, and your organization aims to thwart them all. What better way to spend your term than eliminating them? You get to do this on your own, as well. The more targets you eliminate, the more skilled and creative you get at doing it.",
+        cost: 200000,
+        prerequisites: ["security", "patrol"], // Assuming 'or' means either one
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "hit" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "recovery",
+        title: "Recovery",
+        description: "Not all combat is about taking lives. Sometimes, you have to save them. Here, you will experience the praise of rescuing high-value targets. VIPs, hostages, and even valuable assets will be your focus. Tense situations await; you will need to be precise and efficient.",
+        cost: 200000,
+        prerequisites: ["security", "patrol"], // Assuming 'or' means either one
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "recovery" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "long-ranged-combat",
+        title: "Long-Ranged Combat",
+        description: "You're good with firearms, but you aren't exactly a pronounced sniper... until you take this course, Learning to be a sniper is tough, and the success rate is discouraging to many. Training is body-breaking, and you will be pushed. If you prevail, you will become one of the most stout shots in the galaxy.",
+        cost: 200000,
+        prerequisites: ["advanced-firearms"],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "long-ranged-combat" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "wilderness-survival",
+        title: "Wilderness Survival",
+        description: "With hundreds of planets out there, it isn't just enough to learn what grass is safe to eat. Be prepared to learn the most complex methods that can keep you alive with minimal provisions in the wilderness, across dozens of types of terrains.",
+        cost: 200000,
+        prerequisites: [],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "wilderness-survival" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "raid",
+        title: "Raid",
+        description: "You'll be working in groups for this. Experiencing the pressure of enacting plans and working in a team is invaluable. If one of you messes up, you risk falling apart. The raids get tougher and much more high risk towards the end of the term.",
+        cost: 200000,
+        prerequisites: ["security", "patrol"], // Assuming 'or' means either one
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "raid" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "infiltration",
+        title: "Infiltration",
+        description: "Learning how to become undetected is a hard skill to master, but experience is a good teacher. At first, you'll be snatching low-profile things like ID cards or documents. Then, money caches. Weapon caches. Classified information. People.",
+        cost: 200000,
+        prerequisites: ["security", "patrol"], // Assuming 'or' means either one
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "infiltration" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "demolition",
+        title: "Demolition",
+        description: "After this course, you will be able to solve every problem with an explosion of some sort. You will get to handle all kinds of heavy weaponry and explosive devices, and become good at using them.",
+        cost: 200000,
+        prerequisites: ["advanced-firearms"],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "demolition" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "combat-driving",
+        title: "Combat Driving",
+        description: "A vehicle can provide many tactical and logistical advantages in combat, so knowing how to operate the many kinds of vehicles out there is valuable. Buggies, walkers, tanks, power armour, and even mobile suits are covered in this course.",
+        cost: 200000,
+        prerequisites: [],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "combat-driving" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "assault",
+        title: "Assault",
+        description: "Time to jump into the big fights. Experience the shell shocking action of the battlefield. Feel the ash and blood for yourself; you are but a grunt. A disposable, but no less necessary. Nothing whips a person into shape more than the heat of fire and smell of copper in the air.",
+        cost: 200000,
+        prerequisites: ["hit", "raid"], // Assuming 'or' means either one
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "assault" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "guerilla",
+        title: "Guerilla",
+        description: "It's often very illogical to take on a well-equipped base, which is why they're sending you to whittle it down bit by bit. You'll have to learn how to expend minimal resources to terrorize theirs. One mistake could end your life... or worse.",
+        cost: 200000,
+        prerequisites: ["recovery", "infiltration"], // Assuming 'or' means either one
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "guerilla" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "weaponsmith",
+        title: "Weaponsmith",
+        description: "Weapons are everywhere, so it's a given to learn how they work in detail. Small arms, heavy weapons and even close-combat weapons are learned. You'll be able to do much more than just clean your guns; you'll be able to make them to your liking.",
+        cost: 200000,
+        prerequisites: ["advanced-firearms"],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "weaponsmith" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "combat-engineering",
+        title: "Combat Engineering",
+        description: "You might be good at handling vehicles, but these mechanical monstrosities are made to take a beating. You'll learn more than just changing tires; from now on, you'll be praised for always bringing welding equipment.",
+        cost: 200000,
+        prerequisites: ["combat-driving"],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "combat-engineering" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "leadership",
+        title: "Leadership",
+        description: "You've made promising progress, so you've been chosen to lead your own squad. This is the test of tests; will you be the end of your squad mates? Or will you promise them glory? Do this well, and you'll have a fearsome reputation.",
+        cost: 200000,
+        prerequisites: ["assault"],
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "leadership" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
+    {
+        id: "defence",
+        title: "Defence",
+        description: "This is like a security job, except you're trying to stop a full out assault. Provisions and manpower will be scarce in this remote location, but the enemy will crash into you wave after wave.",
+        cost: 200000,
+        prerequisites: ["assault", "guerilla"], // Assuming 'or' means either one
+        consequences: [],
+        playerUpdates: [{ attribute: "skills", action: "add", value: "defence" }],
+        imageSrc: "/Images/Beatrice R&D.webp"
+    },
 ];
+
+
 export const titles = [
     {
         id:"title-rogue",
