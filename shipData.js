@@ -5,7 +5,7 @@ const hulls = [
     {
         name: "S92-TMC",
         manufacturer: "Hammerhead Ind.",
-        cost: 7000000,
+        type: 'frigate', cost: 7000000,
         spinalMount: 3,
         spinal: [], // Default empty array
         broadsideMount: 2,
@@ -28,7 +28,7 @@ const hulls = [
     {
         name: "S97-TRN",
         manufacturer: "Hammerhead Ind.",
-        cost: 9000000,
+        type: 'frigate', cost: 9000000,
         spinalMount: 3,
         spinal: [],
         broadsideMount: 4,
@@ -51,7 +51,7 @@ const hulls = [
     {
         name: "Beyond",
         manufacturer: "Beatrice R&D",
-        cost: 9000000, // Corrected from 10m in original shipData.js to 9m as per docx
+        type: 'frigate', cost: 9000000, // Corrected from 10m in original shipData.js to 9m as per docx
         spinalMount: 3,
         spinal: [],
         broadsideMount: 2,
@@ -74,7 +74,7 @@ const hulls = [
     {
         name: "Wasp",
         manufacturer: "Federation Navy",
-        cost: 11000000,
+        type: 'frigate', cost: 11000000,
         spinalMount: 3,
         spinal: [],
         broadsideMount: 4,
@@ -99,7 +99,7 @@ const hulls = [
     {
         name: "Stingray",
         manufacturer: "Hammerhead Ind.",
-        cost: 25000000,
+        type: 'frigate', cost: 25000000,
         spinalMount: 1,
         spinal: [],
         broadsideMount: 4,
@@ -122,7 +122,7 @@ const hulls = [
     {
         name: "Valkyrie",
         manufacturer: "Beatrice R&D",
-        cost: 30000000,
+        type: 'frigate', cost: 30000000,
         spinalMount: 1,
         spinal: [],
         broadsideMount: 6,
@@ -145,7 +145,7 @@ const hulls = [
     {
         name: "Manta",
         manufacturer: "Federation Navy",
-        cost: 35000000,
+        type: 'frigate', cost: 35000000,
         spinalMount: 1,
         spinal: [],
         broadsideMount: 5,
@@ -170,7 +170,7 @@ const hulls = [
     {
         name: "Javelin",
         manufacturer: "Hammerhead Ind.",
-        cost: 50000000,
+        type: 'frigate', cost: 50000000,
         spinalMount: 2,
         spinal: [],
         broadsideMount: 8,
@@ -193,7 +193,7 @@ const hulls = [
     {
         name: "Aegis",
         manufacturer: "Beatrice R&D",
-        cost: 60000000,
+        type: 'frigate', cost: 60000000,
         spinalMount: 2,
         spinal: [],
         broadsideMount: 10,
@@ -216,7 +216,7 @@ const hulls = [
     {
         name: "Gladius",
         manufacturer: "Federation Navy",
-        cost: 70000000,
+        type: 'frigate', cost: 70000000,
         spinalMount: 2,
         spinal: [],
         broadsideMount: 9,
@@ -241,7 +241,7 @@ const hulls = [
     {
         name: "Colossus",
         manufacturer: "Hammerhead Ind.",
-        cost: 90000000,
+        type: 'frigate', cost: 90000000,
         spinalMount: 3,
         spinal: [],
         broadsideMount: 12,
@@ -264,7 +264,7 @@ const hulls = [
     {
         name: "Oracle",
         manufacturer: "Beatrice R&D",
-        cost: 100000000,
+        type: 'frigate', cost: 100000000,
         spinalMount: 3,
         spinal: [],
         broadsideMount: 14,
@@ -287,7 +287,7 @@ const hulls = [
     {
         name: "Vanguard",
         manufacturer: "Federation Navy",
-        cost: 110000000,
+        type: 'frigate', cost: 110000000,
         spinalMount: 3,
         spinal: [],
         broadsideMount: 13,
@@ -312,7 +312,7 @@ const hulls = [
     {
         name: "Behemoth",
         manufacturer: "Hammerhead Ind.",
-        cost: 150000000,
+        type: 'frigate', cost: 150000000,
         spinalMount: 4,
         spinal: [],
         broadsideMount: 18,
@@ -335,7 +335,7 @@ const hulls = [
     {
         name: "Paladin",
         manufacturer: "Beatrice R&D",
-        cost: 160000000,
+        type: 'frigate', cost: 160000000,
         spinalMount: 4,
         spinal: [],
         broadsideMount: 20,
@@ -358,7 +358,7 @@ const hulls = [
     {
         name: "Conqueror",
         manufacturer: "Federation Navy",
-        cost: 170000000,
+        type: 'frigate', cost: 170000000,
         spinalMount: 4,
         spinal: [],
         broadsideMount: 19,
@@ -383,7 +383,7 @@ const hulls = [
     {
         name: "Leviathan",
         manufacturer: "Hammerhead Ind.",
-        cost: 200000000,
+        type: 'frigate', cost: 200000000,
         spinalMount: 1,
         spinal: [],
         broadsideMount: 10,
@@ -406,7 +406,7 @@ const hulls = [
     {
         name: "Gáe Bulg",
         manufacturer: "Blackhawk Elite",
-        cost: 120000000,
+        type: 'frigate', cost: 120000000,
         spinalMount: 1,
         spinal: [],
         broadsideMount: 0, // No value in docx, default to 0
@@ -431,7 +431,7 @@ const hulls = [
     {
         name: "Gungnir",
         manufacturer: "Blackhawk Elite",
-        cost: 300000000,
+        type: 'frigate', cost: 300000000,
         spinalMount: 5,
         spinal: [],
         broadsideMount: 36,
@@ -454,7 +454,7 @@ const hulls = [
     {
         name: "Dhyana",
         manufacturer: "Triglav Innovations",
-        cost: 340000000,
+        type: 'frigate', cost: 340000000,
         spinalMount: 6,
         spinal: [],
         broadsideMount: 42,
@@ -478,7 +478,7 @@ const hulls = [
     {
         name: "PI V18",
         manufacturer: "Pulsar Inc.",
-        cost: 15000000, // "15m"
+        type: 'frigate', cost: 15000000, // "15m"
         spinalMount: 4,
         spinal: [],
         broadsideMount: 4,
@@ -501,7 +501,7 @@ const hulls = [
     {
         name: "X66 \"Omen\"",
         manufacturer: "Triglav Innovations",
-        cost: 20000000, // "20m"
+        type: 'frigate', cost: 20000000, // "20m"
         spinalMount: 3,
         spinal: [],
         broadsideMount: 4,
@@ -524,7 +524,7 @@ const hulls = [
     {
         name: "Cygnus",
         manufacturer: "Talons",
-        cost: 30000000, // "30m"
+        type: 'frigate', cost: 30000000, // "30m"
         spinalMount: 4,
         spinal: [],
         broadsideMount: 6,
@@ -547,7 +547,7 @@ const hulls = [
     {
         name: "Scorpion",
         manufacturer: "Heralds",
-        cost: 36000000, // "36m"
+        type: 'frigate', cost: 36000000, // "36m"
         spinalMount: 4,
         spinal: [],
         broadsideMount: 6,
@@ -570,7 +570,7 @@ const hulls = [
     {
         name: "Hermes",
         manufacturer: "Beatrice R&D",
-        cost: 16000000, // "16m"
+        type: 'frigate', cost: 16000000, // "16m"
         spinalMount: 2,
         spinal: [],
         broadsideMount: 6,
@@ -593,7 +593,7 @@ const hulls = [
     {
         name: "Dirk",
         manufacturer: "Red Dagger Pirates",
-        cost: 19000000, // "19m"
+        type: 'frigate', cost: 19000000, // "19m"
         spinalMount: 4,
         spinal: [],
         broadsideMount: 2,
@@ -616,7 +616,7 @@ const hulls = [
     {
         name: "PI Vk2",
         manufacturer: "Pulsar Inc.",
-        cost: 20000000, // "20m"
+        type: 'frigate', cost: 20000000, // "20m"
         spinalMount: 3,
         spinal: [],
         broadsideMount: 6,
@@ -639,7 +639,7 @@ const hulls = [
     {
         name: "Morning Star",
         manufacturer: "Talons",
-        cost: 28000000, // "28m"
+        type: 'frigate', cost: 28000000, // "28m"
         spinalMount: 4,
         spinal: [],
         broadsideMount: 10,
@@ -662,7 +662,7 @@ const hulls = [
     {
         name: "Shrike",
         manufacturer: "Heralds",
-        cost: 45000000, // "45m"
+        type: 'frigate', cost: 45000000, // "45m"
         spinalMount: 5,
         spinal: [],
         broadsideMount: 10,
@@ -685,7 +685,7 @@ const hulls = [
     {
         name: "Medusa",
         manufacturer: "Heralds",
-        cost: 74000000, // "74m"
+        type: 'frigate', cost: 74000000, // "74m"
         spinalMount: 6,
         spinal: [],
         broadsideMount: 14,
@@ -708,7 +708,7 @@ const hulls = [
     {
         name: "Rapier",
         manufacturer: "Red Dagger",
-        cost: 40000000, // "40m"
+        type: 'frigate', cost: 40000000, // "40m"
         spinalMount: 5,
         spinal: [],
         broadsideMount: 14,
@@ -731,7 +731,7 @@ const hulls = [
     {
         name: "PI Vc11",
         manufacturer: "Pulsar Inc.",
-        cost: 49000000, // "49m"
+        type: 'frigate', cost: 49000000, // "49m"
         spinalMount: 5,
         spinal: [],
         broadsideMount: 16,
@@ -754,7 +754,7 @@ const hulls = [
     {
         name: "Fury",
         manufacturer: "Talons",
-        cost: 64000000, // "64m"
+        type: 'frigate', cost: 64000000, // "64m"
         spinalMount: 6,
         spinal: [],
         broadsideMount: 18,
@@ -777,7 +777,7 @@ const hulls = [
     {
         name: "Harrower",
         manufacturer: "Heralds",
-        cost: 99000000, // "99m"
+        type: 'frigate', cost: 99000000, // "99m"
         spinalMount: 6,
         spinal: [],
         broadsideMount: 20,
@@ -800,7 +800,7 @@ const hulls = [
     {
         name: "X45 Scythe",
         manufacturer: "Triglav Innovations",
-        cost: 80000000, // "80m"
+        type: 'frigate', cost: 80000000, // "80m"
         spinalMount: 4,
         spinal: [],
         broadsideMount: 24,
@@ -823,7 +823,7 @@ const hulls = [
     {
         name: "Manta (Herald)", // Renamed to avoid conflict with Federation Navy Manta
         manufacturer: "Heralds",
-        cost: 120000000, // "120m"
+        type: 'frigate', cost: 120000000, // "120m"
         spinalMount: 4,
         spinal: [],
         broadsideMount: 28,
@@ -846,7 +846,7 @@ const hulls = [
     {
         name: "Monarch",
         manufacturer: "Heralds",
-        cost: 224000000, // "224m"
+        type: 'frigate', cost: 224000000, // "224m"
         spinalMount: 4,
         spinal: [],
         broadsideMount: 30,
@@ -869,7 +869,7 @@ const hulls = [
     {
         name: "Charon",
         manufacturer: "Beatrice R&D",
-        cost: 96000000, // "96m, Unique" - taking 96m
+        type: 'frigate', cost: 96000000, // "96m, Unique" - taking 96m
         spinalMount: 2,
         spinal: [],
         broadsideMount: 15,
@@ -892,7 +892,7 @@ const hulls = [
     {
         name: "X65 \"Odysseus\"",
         manufacturer: "Triglav Innovations",
-        cost: 220000000, // "220m"
+        type: 'frigate', cost: 220000000, // "220m"
         spinalMount: 3,
         spinal: [],
         broadsideMount: 26,
@@ -915,7 +915,7 @@ const hulls = [
     {
         name: "PI Va2",
         manufacturer: "Pulsar Inc.",
-        cost: 380000000, // "380m"
+        type: 'frigate', cost: 380000000, // "380m"
         spinalMount: 4,
         spinal: [],
         broadsideMount: 32,
@@ -938,7 +938,7 @@ const hulls = [
     {
         name: "Archangel",
         manufacturer: "Talons",
-        cost: 380000000, // "380m"
+        type: 'frigate', cost: 380000000, // "380m"
         spinalMount: 6,
         spinal: [],
         broadsideMount: 42,
@@ -961,7 +961,7 @@ const hulls = [
     {
         name: "Hades",
         manufacturer: "Heralds",
-        cost: 0, // "Special, Unique" - defaulting to 0
+        type: 'frigate', cost: 0, // "Special, Unique" - defaulting to 0
         spinalMount: 0,
         spinal: [],
         broadsideMount: 48,
@@ -982,3 +982,184 @@ const hulls = [
         image: '/Images/Beatrice R&D.webp',
     },
 ];
+
+function createShip() { //initialize ship object
+    // Basic validation to ensure inputs are numbers
+
+    // You can add more properties to the ship object here as needed,
+    // such as a unique ID, name, health, cargo capacity, etc.
+    const newShip = {
+        hull: {},
+        type: 'frigate', // Default type, can be changed later
+        spinalWeapons: [],
+        broadsideWeapons: [],
+        pointDefenceWeapons: [],
+        onboardAI: 'none',
+        energyGen:[],
+        shield:[],
+        commandMods: [],
+        hullMods: [],
+        hangar: [],
+        rooms: [],
+        shipEquipment: [],
+    };
+
+    console.log(`New ship created with ID: ${newShip.id}`);
+    return newShip;
+}
+
+function deleteShip(shipObject) { //delete ship object
+    // Logic to delete a ship by its ID
+    shipObject = null; // Set the ship object to null to simulate deletion
+    console.log(`Ship with ID: ${shipObject.id} has been deleted.`);
+}
+
+function addHull(shipObject, hullData) {
+    shipObject.hull = hullData;
+}   
+
+function addWeapon(shipObject, weaponData) {
+    if(weaponData.type.includes('spinal')) { //if the weapon can be slotted into a spinal mount
+        if(shipObject.spinalWeapons.length < shipObject.hull.spinalMount ) { //if the number of spinal weapons on the ship is less than the number of spinal mounts
+            shipObject.spinalWeapons.push(weaponData); //add the weapon to the spinal weapons array
+            return;
+        } else if (shipObject.hull.type === 'frigate' || shipObject.hull.type === 'fighter') { 
+            console.log("No available spinal mounts for this weapon.");
+            return;
+        } else if (shipObject.broadsideWeapons.length < shipObject.hull.broadsideMount) { //if there exists a broadside mount, we can add the weapon
+            if (shipObject.hull.type === 'destroyer') { return;}
+            shipObject.broadsideWeapons.push(weaponData);
+            return;
+        } else {
+            console.log("No available mounts for this weapon.");
+            return;
+        }
+    } else if (weaponData.type.includes('broadside')) { //if the weapon can be slotted into a broadside mount
+        if(shipObject.broadsideWeapons.length < shipObject.hull.broadsideMount) { //if the number of broadside weapons on the ship is less than the number of broadside mounts
+            shipObject.broadsideWeapons.push(weaponData); //add the weapon to the broadside weapons array
+            return;
+        } else {
+            console.log("No available broadside mounts for this weapon.");
+            return;
+        }
+    } else {
+        if(shipObject.pointDefenceWeapons.length < shipObject.hull.pointDefenceMount) { //if the number of point defence weapons on the ship is less than the number of point defence mounts
+            shipObject.pointDefenceWeapons.push(weaponData); //add the weapon to the point defence weapons array
+            return;
+        } else {
+            console.log("No available point defence mounts for this weapon.");
+            return;
+        }
+    }
+}
+
+function addAI(shipObject, aiData) {
+    shipObject.onboardAI = aiData; //set the onboard AI to the AI data
+}
+
+function addEnergyGen(shipObject, energyData) {
+    if (shipObject.energyGen.length < 2) {
+        shipObject.energyGen.push(energyData);
+         //add the energy generator to the energy generators array
+    } else if (energyData.type === 'solar' && !shipObject.energyGen.includes('solar')) {
+        shipObject.energyGen.push(energyData);
+         //add the solar energy generator to the energy generators array
+    } else {
+        console.log("No available energy generator slots for this energy generator.");
+    }
+}
+
+function addShield(shipObject, shieldData) {
+    if (shipObject.shield.length >= 1) {
+        console.log("No available shield slots for this shield.");
+        return; //if the ship already has a shield, we cannot add another one
+    }
+    shipObject.shield.push(shieldData); //add the shield to the shields array
+}
+
+function addCommandMod(shipObject, commandModData) {
+    if (shipObject.commandMods.length < 1) {
+        shipObject.commandMods.push(commandModData); //add the command mod to the command mods array
+    } else {
+        console.log("No available command mod slots for this command mod.");
+    }
+}
+
+function addHullMod(shipObject, hullModData) {
+    if (shipObject.hull.type === 'dreadnought') {
+        console.log("Dreadnoughts cannot have hull mods.");
+        return;
+    } else {
+        shipObject.hullMods.push(hullModData); //add the hull mod to the hull mods array
+    }
+}
+
+function addToHangar (shipObject, drone) {
+    if (shipObject.hangar.length < shipObject.hull.hangarSpace) {
+        shipObject.hangar.push(drone); //add the drone to the hangars array
+    } else {
+        console.log("No available hangar space for this drone.");
+    }
+}
+
+function addShipEquipment (shipObject, equipmentData) { //accepts ewar & industrial equipment
+    shipObject.shipEquipment.push(equipmentData);
+}
+
+function addRoom(shipObject, roomData) {
+    if (shipObject.rooms.length < shipObject.hull.extraRooms) {
+        shipObject.rooms.push(roomData); //add the room to the rooms array
+    } else {
+        console.log("No available room slots for this room.");
+    }
+    switch (roomData.type) {
+        case 'tavern':
+            if (shipObject.rooms.includes('standardMessHall')||shipObject.rooms.includes('luxuryMessHall')) {
+                shipObject.hull.extraRooms += 1; //if the ship has a mess hall, we can add a tavern
+            }
+            break;
+        case 'luxuryMessHall':
+        case 'standardMessHall':
+            if (shipObject.rooms.includes('tavern')) {
+                shipObject.hull.extraRooms += 1; //if the ship has a tavern, we can add a mess hall
+            }
+            break;
+        case 'lounge':
+        case 'recreation':
+        case 'observatory':
+            if (shipObject.rooms.includes('lounge')||shipObject.rooms.includes('recreation')||shipObject.rooms.includes('observatory')) {
+                shipObject.hull.extraRooms += 1; //if the ship has a lounge or recreation room, we can add an observatory
+            }
+            break;
+        case 'terraformingBay':
+        case 'laboratory':
+            if (shipObject.rooms.includes('laboratory')) {
+                shipObject.hull.extraRooms += 1; //if the ship has a terraforming bay, we can add another one
+            }
+            break;
+        case 'oreProcessing':
+        case 'factory':
+            if (shipObject.rooms.includes('oreProcessing')||shipObject.rooms.includes('factory')) {
+                shipObject.hull.extraRooms += 1; //if the ship has an ore processing or factory, we can add another one
+            }
+            break;
+        case 'engineeringBay':
+        case 'cargoSpace': 
+            if (shipObject.rooms.includes('engineeringBay')||shipObject.rooms.includes('cargoSpace')) {
+                shipObject.hull.extraRooms += 1; //if the ship has an engineering bay or cargo space, we can add another one
+            }
+            break;
+        case 'hypercomms':
+        case 'digitalSecurity':
+            if (shipObject.rooms.includes('hypercomms')||shipObject.rooms.includes('digitalSecurity')) {
+                shipObject.hull.extraRooms += 1; //if the ship has a hypercomms or digital security, we can add another one
+            }
+            break;
+        case 'aquaCulture':
+        case 'hydroponics':
+            if (shipObject.rooms.includes('aquaCulture')||shipObject.rooms.includes('hydroponics')) {
+                shipObject.hull.extraRooms += 1; //if the ship has an aqua culture or hydroponics, we can add another one
+            }
+            break;
+        }
+}

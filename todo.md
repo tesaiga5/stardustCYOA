@@ -16,3 +16,5 @@ TODO:
 6. Make each choice have requirement and consequences
 7. populate choice-education with starting location
 8. insert map of the galaxy above startingpos.
+9. required crew/energy display
+10. remaining weapon slots display 

@@ -532,10 +532,12 @@
   <!--FLEET section-->
   <div class="section" id="section-fleet">
     <button class="choice" id="choice-toggle-addShip">Add Ship</button> 
-    <!--IF add ship, a choice "1st Ship" will appear, this div is also editable, and there is an 'x' icon on the upper right, which will delete it-->
-    <div class="object-div" id="section-ship-object">Ship 1 <!--todo: if clicked can edit the text-->
-      <button class="x-button" id="delete-ship-button">X</button> <!--if clicked, delete ship object-->
-      <button class="edit-button" id="edit-ship-button">*</button> <!--if clicked, edit ship object and highlight all choices selected in each section-->
+    <!--IF pressed, create a ship object-->
+    <div class="object-div" id="section-ship-object">Ship 1 <!--todo: if clicked populate ship choices, if unclicked remove ship choices-->
+      <button title = "delete ship" class="x-button" id="delete-ship-button">X</button> <!--if clicked, delete ship object-->
+      <!--upon deletion, refund all credits spent on the ship-->
+      
+      <button title = "edit ship name"class="edit-button" id="edit-ship-button">*</button> <!--if clicked, edit ship name-->
     </div> 
   </div>
 
