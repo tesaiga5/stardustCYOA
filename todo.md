@@ -54,6 +54,9 @@ From display:
 27. Your crew population, pictures, and text
 
 28. Check for accuracy
-29. Publish
+29. Credits page
+30. Publish
 
-30. Reserve contracts & battle for next update
+31. Reserve contracts & battle for next update
+
+Deadline: 17/07/2025
