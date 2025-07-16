@@ -126,6 +126,7 @@ body { /*make galaxy background image*/
   color: white;
   font-family: 'Roboto';
   font-size: 20px;
+  padding-bottom: 70px; /* Add padding to the bottom to prevent content from being hidden behind the fixed point bar */
 }
 
 body b{
@@ -203,4 +204,24 @@ body b{
   /* No specific centering properties needed here if parent is flex */
   max-width: 100%; /* Ensure image scales down if larger than container */
   height: auto; /* Maintain aspect ratio */
+}
+
+.point-bar {
+  display: flex;
+  position: fixed; /* Stays in place relative to the viewport */
+  bottom: 0; /* Aligns to the bottom of the viewport */
+  left: 0; /* Aligns to the left of the viewport */
+  width: 100%; /* Makes it span the full width of the viewport */
+  flex-direction: row; /* Changed to row to align sections horizontally */
+  justify-content: space-around; /* Distributes space evenly */
+  align-items: center;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  border: 3px solid rgb(71, 19, 150);
+  border-radius: 15px;
+  background-color: rgb(71, 19, 150);
+  z-index: 1000; /* Ensures it's on top of other content */
+  padding: 10px 0; /* Add some vertical padding inside the bar */
+  height: 34px; /* Give it a fixed height */
+  margin: 0;
 }
