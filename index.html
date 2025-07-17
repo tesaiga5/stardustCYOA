@@ -531,14 +531,7 @@
 
   <!--FLEET section-->
   <div class="section" id="section-fleet">
-    <button class="choice" id="choice-toggle-addShip">Add Ship</button> 
-    <!--IF pressed, create a ship object-->
-    <div class="object-div" id="section-ship-object">Ship 1 <!--todo: if clicked populate ship choices, if unclicked remove ship choices-->
-      <button title = "delete ship" class="x-button" id="delete-ship-button">X</button> <!--if clicked, delete ship object-->
-      <!--upon deletion, refund all credits spent on the ship-->
-      
-      <button title = "edit ship name"class="edit-button" id="edit-ship-button">*</button> <!--if clicked, edit ship name-->
-    </div> 
+    <button id="choice-toggle-addShip">Add Ship</button> <!--IF pressed, create a ship object-->
   </div>
 
   <!--TODO: Move this to JS-->
@@ -561,6 +554,10 @@
     <div class="choice" id="choice-battleship">◈Battleship◈</div>
     <div class="choice" id="choice-carrier">◈Carrier◈</div>
     <div class="choice" id="choice-dreadnought">◈Dreadnought◈</div>
+  </div>
+
+  <div class ="section" id="section-crew">
+    <div style="display:none;" id="endOfCrew"></div>
   </div>
 
   <div class="point-bar">
@@ -633,8 +630,7 @@
     
 
     const choiceFleet1 = document.getElementById('choice-fleet');
-    const sectionFleet1 = document.getElementById('section-fleet');
-    const choiceShip1 = document.getElementById('choice-toggle-addShip');
+    const choiceShip1 = document.getElementById('choice-fleet');
     const sectionShip1 = document.getElementById('section-ship');
     const choiceHull1 = document.getElementById('choice-hull');
     const sectionHull1 = document.getElementById('section-hull');
@@ -671,6 +667,9 @@
     'choice-titles':'section-titles',
 
     'choice-fleet':'section-fleet',
+
+    //crew
+    'choice-crew':'section-crew',
     };
 
     const originToggleArray = ['origin-startingPos', 'origin-skills', 'origin-mana', 'origin-catalyst', 'origin-spell', 'origin-affinities'];
@@ -699,7 +698,8 @@
             sectionToToggle.classList.toggle('visible');
             break;
           case 'choice-crew':
-            //placeholder
+            choiceElement.classList.toggle('active'); 
+            sectionToToggle.classList.toggle('visible');
             break;
           case 'choice-contracts':
             //placeholder
@@ -873,6 +873,8 @@
     import {skills} from '/choiceData.js';
     //populate start position
     import {startPos} from '/choiceData.js'; //TODO
+    //populate crew
+    import {crew} from '/crewData.js'; // Import crew data
 
       function addChoiceDataToSection(choiceArray, choicePrefix, sectionID) {
         const targetSection = document.getElementById(sectionID);
@@ -942,13 +944,13 @@
           });
         }}
     
-        //make choices visible (populate)
+    //make choices visible (populate)
     const choiceSkills1 = document.getElementById('origin-skills');
     const sectionSkills1 = document.getElementById('choice-origin');
     sectionSkills1.addEventListener('click', () => {
       sectionSkills1.classList.toggle('visible');
       choiceSkills1.classList.toggle('active');
-      addChoiceDataToSection(skills, 'choice', 'origin-mana');
+      addChoiceDataToSection(skills, 'choice', 'origin-mana'); 
     });
 
     const choiceTitles1 = document.getElementById('choice-titles');
@@ -957,9 +959,54 @@
       sectionTitles1.classList.toggle('active');
       addChoiceDataToSection(titles, 'choice', 'endOfTitles');
     });
+
+    const choiceCrew1 = document.getElementById('choice-crew');
+    const sectionCrew1 = document.getElementById('section-crew');
+    choiceCrew1.addEventListener('click', () => {
+      sectionCrew1.classList.toggle('active');
+      addChoiceDataToSection(crew, 'choice', 'endOfCrew');
+    });
+
+
     
     
   </script> 
+
+  <!-- Ship Creation Script -->
+  <script type="module"> 
+    import { createShip } from '/shipData.js'; // Import the createShip function from ship.js
+    const toggleAddShip1 = document.getElementById("choice-toggle-addShip");
+    let shipObjectCounter = 0; // Initialize ship counter
+    toggleAddShip1.addEventListener('click', () => {
+      shipObjectCounter++; // Increment ship counter each time button is clicked
+      //create ship object
+      const shipDiv1 = document.createElement("div");
+      shipDiv1.classList.add("object-div");
+      shipDiv1.id = `section-ship-object-${shipObjectCounter}`; // Set the ID for the ship object
+      shipDiv1.style.border = "none";
+      shipDiv1.innerHTML = `
+        <div class="ship-actions">
+          <button title="delete ship" class="x-button" id="delete-ship-button-${shipObjectCounter}">x</button>
+        </div>
+        <div class="ship-actions">
+          <button title="new blank button" class="blank-button" id="blank-button-${shipObjectCounter}"></button>
+        </div>
+        <div class="ship-actions">
+          <button title="edit ship name" class="edit-button" id="edit-ship-button-${shipObjectCounter}">✏️</button>
+        </div>
+        
+        <div style="border: none;" class="ship-name">Ship ${shipObjectCounter}</div>
+      `;
+      toggleAddShip1.after(shipDiv1); // Append the new ship object after the button
+      console.log(`Ship object ${shipObjectCounter} created with ID: ${shipDiv1.id}`);
+
+      //create object to map div to ship object
+      const divToObjectMap = new Map();
+      const ship1 = createShip(); // Create a new ship object
+      divToObjectMap.set(shipDiv1.id, ship1);      
+    });
+  </script>
+  
 
 </body>
 

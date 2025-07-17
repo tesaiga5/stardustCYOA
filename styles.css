@@ -24,6 +24,33 @@
   /* display: inline-block; - Not needed when parent is flex container */
 }
 
+.section > div:hover {
+  background-color: rgb(71, 19, 150, 0.8); /* Darker background on hover for better visibility */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.section > button {
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+  color: #ffffff; /* White font for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger text shadow for better contrast */
+  overflow: hidden;
+  border: 3px solid rgb(177, 59, 255);
+  border-radius: 20px;
+  background-color: rgb(71, 19, 150, 1);
+  width: max-content; /* Ensures button width is determined by its content */
+
+}
+
+.section > button:hover {
+  background-color: rgb(71, 19, 150, 0.5); /* Darker background on hover for better visibility */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+
 div {
   margin: 10px;
 }
@@ -32,7 +59,7 @@ div {
 #section-origin, #section-equipment,
 #section-titles, #section-fleet, #section-ship, #section-hull,
 #section-sponsor,
-#origin-education, #origin-skills, #origin-mana, #origin-catalyst, #origin-spell, #origin-affinities {
+#origin-education, #origin-skills, #origin-mana, #origin-catalyst, #origin-spell, #origin-affinities, #section-crew {
   display: none; /* Hidden by default */
 }
 
@@ -40,7 +67,8 @@ div {
 #section-origin.visible, #section-equipment.visible,
 #section-titles.visible, #section-fleet.visible, #section-ship.visible,
 #section-hull.visible, #section-sponsor.visible,
-#origin-education.visible, #origin-skills.visible, #origin-mana.visible, #origin-catalyst.visible, #origin-spell.visible, #origin-affinities.visible  {
+#origin-education.visible, #origin-skills.visible, #origin-mana.visible, #origin-catalyst.visible, #origin-spell.visible, #origin-affinities.visible,
+#section-crew.visible {
   display: flex; /* Hidden by default */
 }
 
@@ -94,23 +122,86 @@ h1, h2, h3 {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 1); /* Stronger shadow for headings */
 }
 
-.object-div{
-  position:relative;
-  /* Recommended Div and Font Colors */
-  background-color: rgba(20, 30, 60, 0.8); /* Dark blue with transparency */
-  color: #ffffff; /* White font for readability */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger text shadow for better contrast */
+/* Styles for the ship object container */
+.object-div {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  border: 3px solid #336699; /* Navy-like border */
+  background-color: #224466; /* Darker navy background */
+  color: #ffffff;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  /* Adjust min-width and height based on the new button size */
+  min-width: 250px; /* Example: 200px (button) + some padding */
+  height: auto; /* Let height adjust to content, or set a fixed height that fits 3 buttons + gaps */
+  overflow: hidden; /* Crucial for pseudo-element transforms */
+  clip-path: polygon(0% 50%, 10% 0%, 100% 0%, 100% 100%, 10% 100%);
+}
+
+/* Style for the ship name text */
+.ship-name {
+  flex-grow: 1; /* Allows the ship name to take remaining space */
+  text-align: center; /* Center the ship name within its available space */
+}
+
+/* Container for the chevron buttons */
+.ship-actions {
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  flex-shrink: 0; /* Prevent the container from shrinking */
+  height: 100%; /* Full height of the object-div */
+  width: 50px; /* Fixed width for the button container */
+}
+
+/* Base style for the chevron buttons */
+.x-button,
+.edit-button,
+.blank-button {
+  position: relative; /* For pseudo-elements */
+  height: 100%; /* Height of the chevron button */
+  width: 100%; /* Width of the chevron button */
+  background-color: transparent; /* Base button background - will be covered by pseudo-elements */
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  clip-path: polygon(0% 50%, 50% 0%, 100% 0%, 50% 50%, 100% 100%, 50% 100%);
+  color: white; /* This will be the color of the pseudo-elements */
+}
+
+/* Specific styles for the X button */
+.x-button {
+  background-color: rgb(198, 35, 0); /* Reddish */
+  color: white;
 
 }
-.x-button{
-  position:absolute;
-  top:5px;
-  right:5px;
+
+.x-button:hover {
+  background-color: #F14A00; /* Lighter red on hover */
 }
-.edit-button{
-  position:absolute;
-  top:30px;
-  right:5px;
+
+/* Specific styles for the Edit button */
+.edit-button {
+  background-color: white; /* Goldish/Yellow */
+  color: #333;
+}
+
+.edit-button:hover {
+  background-color: gainsboro;
+}
+
+/* Specific styles for the new blank button */
+.blank-button {
+  background-color: rgb(255, 204, 0); /* Gray */
+  color: white;
+}
+
+.blank-button:hover {
+  background-color: rgb(170, 136, 2);
 }
 
 img {
