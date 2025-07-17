@@ -19,7 +19,7 @@ TODO:
 From display:
 
 1. How'd you get the money text
-2. Moneysource pictures
+2. Moneysource pictures (done)
 3. Moneysource choice consequences
 4. Sponsor section text
 5. Sponsor choice pictures & text
