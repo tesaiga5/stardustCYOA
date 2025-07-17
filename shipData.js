@@ -983,7 +983,7 @@ const hulls = [
     },
 ];
 
-function createShip() { //initialize ship object
+export function createShip() { //initialize ship object
     // Basic validation to ensure inputs are numbers
 
     // You can add more properties to the ship object here as needed,
@@ -1004,7 +1004,6 @@ function createShip() { //initialize ship object
         shipEquipment: [],
     };
 
-    console.log(`New ship created with ID: ${newShip.id}`);
     return newShip;
 }
 

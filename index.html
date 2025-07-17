@@ -531,14 +531,7 @@
 
   <!--FLEET section-->
   <div class="section" id="section-fleet">
-    <button class="choice" id="choice-toggle-addShip">Add Ship</button> 
-    <!--IF pressed, create a ship object-->
-    <div class="object-div" id="section-ship-object">Ship 1 <!--todo: if clicked populate ship choices, if unclicked remove ship choices-->
-      <button title = "delete ship" class="x-button" id="delete-ship-button">X</button> <!--if clicked, delete ship object-->
-      <!--upon deletion, refund all credits spent on the ship-->
-      
-      <button title = "edit ship name"class="edit-button" id="edit-ship-button">*</button> <!--if clicked, edit ship name-->
-    </div> 
+    <button id="choice-toggle-addShip">Add Ship</button> <!--IF pressed, create a ship object-->
   </div>
 
   <!--TODO: Move this to JS-->
@@ -633,8 +626,7 @@
     
 
     const choiceFleet1 = document.getElementById('choice-fleet');
-    const sectionFleet1 = document.getElementById('section-fleet');
-    const choiceShip1 = document.getElementById('choice-toggle-addShip');
+    const choiceShip1 = document.getElementById('choice-fleet');
     const sectionShip1 = document.getElementById('section-ship');
     const choiceHull1 = document.getElementById('choice-hull');
     const sectionHull1 = document.getElementById('section-hull');
@@ -960,6 +952,42 @@
     
     
   </script> 
+
+  <!-- Ship Creation Script -->
+  <script type="module"> 
+    import { createShip } from '/shipData.js'; // Import the createShip function from ship.js
+    const toggleAddShip1 = document.getElementById("choice-toggle-addShip");
+    let shipObjectCounter = 0; // Initialize ship counter
+    toggleAddShip1.addEventListener('click', () => {
+      shipObjectCounter++; // Increment ship counter each time button is clicked
+      //create ship object
+      const shipDiv1 = document.createElement("div");
+      shipDiv1.classList.add("object-div");
+      shipDiv1.id = `section-ship-object-${shipObjectCounter}`; // Set the ID for the ship object
+      shipDiv1.style.border = "none";
+      shipDiv1.innerHTML = `
+        <div class="ship-actions">
+          <button title="delete ship" class="x-button" id="delete-ship-button-${shipObjectCounter}">x</button>
+        </div>
+        <div class="ship-actions">
+          <button title="new blank button" class="blank-button" id="blank-button-${shipObjectCounter}"></button>
+        </div>
+        <div class="ship-actions">
+          <button title="edit ship name" class="edit-button" id="edit-ship-button-${shipObjectCounter}">✏️</button>
+        </div>
+        
+        <div style="border: none;" class="ship-name">Ship ${shipObjectCounter}</div>
+      `;
+      toggleAddShip1.after(shipDiv1); // Append the new ship object after the button
+      console.log(`Ship object ${shipObjectCounter} created with ID: ${shipDiv1.id}`);
+
+      //create object to map div to ship object
+      const divToObjectMap = new Map();
+      const ship1 = createShip(); // Create a new ship object
+      divToObjectMap.set(shipDiv1.id, ship1);      
+    });
+  </script>
+  
 
 </body>
 
