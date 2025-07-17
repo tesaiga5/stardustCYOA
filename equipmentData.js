@@ -1,7 +1,7 @@
 // This array contains all equipment objects with their attributes.
 // Blank attributes are set to '0'.
 // Costs are converted to numerical values (k = thousand, m = million).
-const equipment = [
+export const equipment = [
   {
     name: ".362 Deputy",
     type: "Kinetic",
