@@ -59,7 +59,7 @@ div {
 #section-origin, #section-equipment,
 #section-titles, #section-fleet, #section-ship, #section-hull,
 #section-sponsor,
-#origin-education, #origin-skills, #origin-mana, #origin-catalyst, #origin-spell, #origin-affinities {
+#origin-education, #origin-skills, #origin-mana, #origin-catalyst, #origin-spell, #origin-affinities, #section-crew {
   display: none; /* Hidden by default */
 }
 
@@ -67,7 +67,8 @@ div {
 #section-origin.visible, #section-equipment.visible,
 #section-titles.visible, #section-fleet.visible, #section-ship.visible,
 #section-hull.visible, #section-sponsor.visible,
-#origin-education.visible, #origin-skills.visible, #origin-mana.visible, #origin-catalyst.visible, #origin-spell.visible, #origin-affinities.visible  {
+#origin-education.visible, #origin-skills.visible, #origin-mana.visible, #origin-catalyst.visible, #origin-spell.visible, #origin-affinities.visible,
+#section-crew.visible {
   display: flex; /* Hidden by default */
 }
 

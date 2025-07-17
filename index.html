@@ -556,6 +556,10 @@
     <div class="choice" id="choice-dreadnought">◈Dreadnought◈</div>
   </div>
 
+  <div class ="section" id="section-crew">
+    <div style="display:none;" id="endOfCrew"></div>
+  </div>
+
   <div class="point-bar">
   
     <section>
@@ -663,6 +667,9 @@
     'choice-titles':'section-titles',
 
     'choice-fleet':'section-fleet',
+
+    //crew
+    'choice-crew':'section-crew',
     };
 
     const originToggleArray = ['origin-startingPos', 'origin-skills', 'origin-mana', 'origin-catalyst', 'origin-spell', 'origin-affinities'];
@@ -691,7 +698,8 @@
             sectionToToggle.classList.toggle('visible');
             break;
           case 'choice-crew':
-            //placeholder
+            choiceElement.classList.toggle('active'); 
+            sectionToToggle.classList.toggle('visible');
             break;
           case 'choice-contracts':
             //placeholder
@@ -865,6 +873,8 @@
     import {skills} from '/choiceData.js';
     //populate start position
     import {startPos} from '/choiceData.js'; //TODO
+    //populate crew
+    import {crew} from '/crewData.js'; // Import crew data
 
       function addChoiceDataToSection(choiceArray, choicePrefix, sectionID) {
         const targetSection = document.getElementById(sectionID);
@@ -934,13 +944,13 @@
           });
         }}
     
-        //make choices visible (populate)
+    //make choices visible (populate)
     const choiceSkills1 = document.getElementById('origin-skills');
     const sectionSkills1 = document.getElementById('choice-origin');
     sectionSkills1.addEventListener('click', () => {
       sectionSkills1.classList.toggle('visible');
       choiceSkills1.classList.toggle('active');
-      addChoiceDataToSection(skills, 'choice', 'origin-mana');
+      addChoiceDataToSection(skills, 'choice', 'origin-mana'); 
     });
 
     const choiceTitles1 = document.getElementById('choice-titles');
@@ -949,6 +959,15 @@
       sectionTitles1.classList.toggle('active');
       addChoiceDataToSection(titles, 'choice', 'endOfTitles');
     });
+
+    const choiceCrew1 = document.getElementById('choice-crew');
+    const sectionCrew1 = document.getElementById('section-crew');
+    choiceCrew1.addEventListener('click', () => {
+      sectionCrew1.classList.toggle('active');
+      addChoiceDataToSection(crew, 'choice', 'endOfCrew');
+    });
+
+
     
     
   </script> 
