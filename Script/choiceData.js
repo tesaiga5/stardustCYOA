@@ -8,7 +8,7 @@ export const skills = [
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "basic-piloting" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "standard-piloting",
@@ -17,7 +17,7 @@ export const skills = [
         cost: 200000, // 2m per additional course
         prerequisites: ["basic-piloting"],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "standard-piloting" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "standard-piloting" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "advanced-piloting",
@@ -26,7 +26,7 @@ export const skills = [
         cost: 200000,
         prerequisites: ["standard-piloting"],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-piloting" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-piloting" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "ship-gunnery",
@@ -35,7 +35,7 @@ export const skills = [
         cost: 200000,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "ship-gunnery" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "ship-gunnery" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "ship-weapon-specialization",
@@ -44,7 +44,7 @@ export const skills = [
         cost: 200000,
         prerequisites: ["ship-gunnery"],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "ship-weapon-specialization" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "ship-weapon-specialization" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "medical",
@@ -53,7 +53,7 @@ export const skills = [
         cost: 200000,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "medical" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "medical" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "computer-science",
@@ -62,7 +62,7 @@ export const skills = [
         cost: 200000,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "computer-science" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "computer-science" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "cyber-security",
@@ -71,7 +71,7 @@ export const skills = [
         cost: 200000,
         prerequisites: ["computer-science"],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "cyber-security" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "cyber-security" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "mechanics",
@@ -80,7 +80,7 @@ export const skills = [
         cost: 200000,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "mechanics" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mechanics" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "nuclear",
@@ -89,7 +89,7 @@ export const skills = [
         cost: 200000,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "nuclear" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "nuclear" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "industry",
@@ -98,7 +98,7 @@ export const skills = [
         cost: 200000,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "industry" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "industry" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "diplomacy",
@@ -107,7 +107,7 @@ export const skills = [
         cost: 200000,
         prerequisites: [],
         consequences: [{ type: "crew-hire-limit", value: 4, condition: "hostile-faction" }],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "diplomacy" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "diplomacy" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     
     {
@@ -117,7 +117,7 @@ export const skills = [
         cost: 200000,
         prerequisites: ["medical", "mechanics", "nuclear", "advanced-piloting", "computer-science"],
         consequences: [{ type: "job-slots", value: 3 }], // Can assume 3 jobs instead of 2
-        playerUpdates: [{ attribute: "skills", action: "add", value: "mind-link" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mind-link" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "mercantile",
@@ -126,7 +126,7 @@ export const skills = [
         cost: 200000,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "basicTraining",
@@ -135,7 +135,7 @@ export const skills = [
         cost: 200000,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "closeQuartersCombat",
@@ -144,7 +144,7 @@ export const skills = [
         cost: 200000,
         prerequisites: [],
         consequences: [],
-        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Beatrice R&D.webp"
+        playerUpdates: [{ attribute: "skills", action: "add", value: "mercantile" }],  imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "security",
@@ -154,7 +154,7 @@ export const skills = [
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "security" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "patrol",
@@ -164,7 +164,7 @@ export const skills = [
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "patrol" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "advanced-firearms",
@@ -174,7 +174,7 @@ export const skills = [
         prerequisites: ["basicTraining"],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "advanced-firearms" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "field-medic",
@@ -184,7 +184,7 @@ export const skills = [
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "field-medic" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "hit",
@@ -194,7 +194,7 @@ export const skills = [
         prerequisites: ["security", "patrol"], // Assuming 'or' means either one
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "hit" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "recovery",
@@ -204,7 +204,7 @@ export const skills = [
         prerequisites: ["security", "patrol"], // Assuming 'or' means either one
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "recovery" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "long-ranged-combat",
@@ -214,7 +214,7 @@ export const skills = [
         prerequisites: ["advanced-firearms"],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "long-ranged-combat" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "wilderness-survival",
@@ -224,7 +224,7 @@ export const skills = [
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "wilderness-survival" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "raid",
@@ -234,7 +234,7 @@ export const skills = [
         prerequisites: ["security", "patrol"], // Assuming 'or' means either one
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "raid" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "infiltration",
@@ -244,7 +244,7 @@ export const skills = [
         prerequisites: ["security", "patrol"], // Assuming 'or' means either one
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "infiltration" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "demolition",
@@ -254,7 +254,7 @@ export const skills = [
         prerequisites: ["advanced-firearms"],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "demolition" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "combat-driving",
@@ -264,7 +264,7 @@ export const skills = [
         prerequisites: [],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "combat-driving" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "assault",
@@ -274,7 +274,7 @@ export const skills = [
         prerequisites: ["hit", "raid"], // Assuming 'or' means either one
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "assault" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "guerilla",
@@ -284,7 +284,7 @@ export const skills = [
         prerequisites: ["recovery", "infiltration"], // Assuming 'or' means either one
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "guerilla" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "weaponsmith",
@@ -294,7 +294,7 @@ export const skills = [
         prerequisites: ["advanced-firearms"],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "weaponsmith" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "combat-engineering",
@@ -304,7 +304,7 @@ export const skills = [
         prerequisites: ["combat-driving"],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "combat-engineering" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "leadership",
@@ -314,7 +314,7 @@ export const skills = [
         prerequisites: ["assault"],
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "leadership" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
     {
         id: "defence",
@@ -324,7 +324,7 @@ export const skills = [
         prerequisites: ["assault", "guerilla"], // Assuming 'or' means either one
         consequences: [],
         playerUpdates: [{ attribute: "skills", action: "add", value: "defence" }],
-        imageSrc: "/Images/Beatrice R&D.webp"
+        imageSrc: "/Images/Other/Beatrice R&D.webp"
     },
 ];
 
@@ -336,7 +336,7 @@ export const titles = [
         prerequisites: "none",
         consequences: [],
         credits: 200000000,
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "One or more of your crew will betray you at some point while you are adventuring the stars. You best hope you have good security personnel... unless they're the traitors. name 5 traitors from the named crew members."
     },
     {
@@ -351,7 +351,7 @@ export const titles = [
             'shield-mana': false
         },
         credits: 100000000,
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "*Can't take nuclear fusion, mana core, or anti-matter energy *Can't take aegis or mana shields You never saw the reason to upgrade. What you have is perfect- ly fine, and you don't need anything fancier to accomplish what you do."
     },
     {
@@ -360,7 +360,7 @@ export const titles = [
         prerequisites: "none",
         consequences: [],
         credits: 120000000,
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously."
     },
     {
@@ -369,7 +369,7 @@ export const titles = [
         prerequisites: "none",
         consequences: [],
         credits: 130000000,
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "It takes awhile for you to catch on, but you find out that your ship Al has began to develop a more... emotional personality. How it happened, you're not sure, but it's become moody and will reject your orders if not treated well... some- thing Al shouldn't do. It's probably best you don't piss it off."
     },
     // Titles from "Page 1 Stardust word.docx"
@@ -381,7 +381,7 @@ export const titles = [
             "One or more of your crew will betray you at some point while you are adventuring the stars. You best hope you have good security personnel... unless they're the traitors. Limited to 5 traitors total. Must be named crew members.",
             { type: "bonus-per-traitor", value: 30000000 }
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "One or more of your crew will betray you at some point while you are adventuring the stars. You best hope you have good security personnel... unless they're the traitors. Bonus starting credits: 50m +Every additional traitor adds 30m *Must be named crew members *Limited to 5 traitors total",
         prerequisites: [],
         consequences: []
@@ -394,7 +394,7 @@ export const titles = [
             "Cannot take nuclear fusion, mana core, or anti-matter energy.",
             "Cannot take aegis or mana shields."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "*Can't take nuclear fusion, mana core, or anti-matter energy *Can't take aegis or mana shields You never saw the reason to upgrade. What you have is perfect- ly fine, and you don't need anything fancier to accomplish what you do.",
         prerequisites: [],
         consequences: []
@@ -406,7 +406,7 @@ export const titles = [
         complications: [
             "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously. Bonus starting credits: 120m",
         prerequisites: [],
         consequences: []
@@ -418,7 +418,7 @@ export const titles = [
         complications: [
             "It takes awhile for you to catch on, but you find out that your ship Al has began to develop a more... emotional personality. How it happened, you're not sure, but it's become moody and will reject your orders if not treated well... some- thing Al shouldn't do. It's probably best you don't piss it off."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "It takes awhile for you to catch on, but you find out that your ship Al has began to develop a more... emotional personality. How it happened, you're not sure, but it's become moody and will reject your orders if not treated well... some- thing Al shouldn't do. It's probably best you don't piss it off. Bonus starting credits: 130m",
         prerequisites: [],
         consequences: []
@@ -430,7 +430,7 @@ export const titles = [
         complications: [
             "A hostile bandit group has a bone to pick with you. They will show up at the most inconvenient times, but almost never to confront you directly. Sabotage, traps, and spies await you when you least expect it. The larger your crew, the more likely they can infiltrate. You might want intimidating crew members."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "A hostile bandit group has a bone to pick with you. They will show up at the most inconvenient times, but almost never to confront you directly. Sabotage, traps, and spies await you when you least expect it. The larger your crew, the more likely they can infiltrate. You might want intimidating crew members. Bonus starting credits: 140m",
         prerequisites: [],
         consequences: []
@@ -442,7 +442,7 @@ export const titles = [
         complications: [
             "The notorious (former) \"Siblings of Death\" both join your crew at the same time, unbeknownst to each other. However, they don't find out until you're in the middle of space, and they hate each other's guts with a violent zeal."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "The notorious (former) \"Siblings of Death\" both join your crew at the same time, unbeknownst to each other. However, they don't find out until you're in the middle of space, and they hate each other's guts with a violent zeal. Bonus starting credits: 150m +Can get Alessia (combat) and Ricce (combat) for free",
         playerUpdates: [
             { attribute: "crew", action: "add", value: "Alessia" },
@@ -460,7 +460,7 @@ export const titles = [
             "All ship shields permanently lose 2 points, to a minimum of 1.",
             "Shields cannot exceed 23/25."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "Something's wrong with the shields of your ships, but no matter what you do, it can't be fixed. However, your weapons seem improved. Bonus starting credits: 170m +All ship weapons permanently gain 1 point of damage per volley *All ship shields permanently lose 2 points, to a minmum of 1 *Shields cannot exceed 23/25",
         playerUpdates: [
             { attribute: "ship-weapon-damage", action: "add", value: 1 },
@@ -477,7 +477,7 @@ export const titles = [
         complications: [
             "Somewhere out there in the galaxy, someone sees you as the 'Perfect Rival.' They fly a similar ship or fleet doctrine that is every bit as good as yours. Their leader? A notorious pilot who has had a fearsome record of flawless victo- ries, winning with genius tact. Your hope is to not face them alone..."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "Somewhere out there in the galaxy, someone sees you as the 'Perfect Rival.' They fly a similar ship or fleet doctrine that is every bit as good as yours. Their leader? A notorious pilot who has had a fearsome record of flawless victo- ries, winning with genius tact. Your hope is to not face them alone... Bonus starting credits: 180m",
         prerequisites: [],
         consequences: []
@@ -489,7 +489,7 @@ export const titles = [
         complications: [
             "You get horrendously lost and come across a huge ancient space station made completely out of Herald tech. However, you find yourself surrounded by a lot of mysterious Herald vessels. You know their ships are powerful, but they don't sem happy to see you. Better make a good impression..."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "You get horrendously lost and come across a huge ancient space station made completely out of Herald tech. However, you find yourself surrounded by a lot of mysterious Herald vessels. You know their ships are powerful, but they don't sem happy to see you. Better make a good impression... Bonus starting credits: 190m",
         prerequisites: [],
         consequences: []
@@ -504,7 +504,7 @@ export const titles = [
             "Can only hire hostile or neutral crew members.",
             "Diplomacy skill effect reversed."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "You've been captured by your enemies! To your surprise, instead of imprisoning you, they force you to work for them as a ship captain, seeing your skills as one. Bonus starting credits: 200m *Origin must have hostile factions *Can only hire hostile or neutral crew members *Diplomacy skill effect reversed",
         prerequisites: [],
         consequences: []
@@ -516,7 +516,7 @@ export const titles = [
         complications: [
             "Someone unsavoury actively wants your head, and they've made that knowledge public. Anyone who wants to get in good with them or has something against you will be coming after you, knowing that there's a fat bounty reward waiting for them should they succeed."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "Someone unsavoury actively wants your head, and they've made that knowledge public. Anyone who wants to get in good with them or has something against you will be coming after you, knowing that there's a fat bounty reward waiting for them should they succeed. Bonus starting credits: 200m",
         prerequisites: [],
         consequences: []
@@ -528,7 +528,7 @@ export const titles = [
         complications: [
             "A group of mindless but well organized and well equipped rogue drones are always at your heels, determined to assimilate you, your crew, and your ships into its hoard. Why, you're not sure. You just know they're tough to deal with, as they have an almost endless arsenal of ships and weapons."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "A group of mindless but well organized and well equipped rogue drones are always at your heels, determined to assimilate you, your crew, and your ships into its hoard. Why, you're not sure. You just know they're tough to deal with, as they have an almost endless arsenal of ships and weapons. Bonus starting credits: 210m",
         prerequisites: [],
         consequences: []
@@ -540,7 +540,7 @@ export const titles = [
         complications: [
             "A wormhole will open up at a random point in time while you are in space and swallow you whole. You will appear in unknown space with no way to indicate where you are in the vast, empty universe. You may make it back eventually, but it will take years, at the least. Maybe decades... or never."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "A wormhole will open up at a random point in time while you are in space and swallow you whole. You will appear in unknown space with no way to indicate where you are in the vast, empty universe. You may make it back eventually, but it will take years, at the least. Maybe decades... or never. Bonus starting credits: 220m",
         prerequisites: [],
         consequences: []
@@ -552,7 +552,7 @@ export const titles = [
         complications: [
             "After finding an abandoned facility on a remote moon, you find a woman. You take her in; she was put through many experiments, mostly involving mind-link tech. On hearing about this, certain shady Federation entities will seek to capture her for some reason... and also hunt you and your crew down, regardless of your standings."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "After finding an abandoned facility on a remote moon, you find a woman. You take her in; she was put through many experiments, mostly involving mind-link tech. On hearing about this, certain shady Federation entities will seek to capture her for some reason... and also hunt you and your crew down, regardless of your standings. Bonus starting credits: 240m +Can get \"Hailey\" (co-pilot) for free",
         playerUpdates: [{ attribute: "crew", action: "add", value: "Hailey" }],
         prerequisites: [],
@@ -565,7 +565,7 @@ export const titles = [
         complications: [
             "While passing by wreckages littering the former Luos Syndicate, you come across an SOS signal coming from a supposed aban- doned station. You investigate and find a woman hooked up to some sort of machines. Upon saving her, the twisted, possessed pirates of the Fire Legion will try to seek and eradicate you and your crew."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "While passing by wreckages littering the former Luos Syndicate, you come across an SOS signal coming from a supposed aban- doned station. You investigate and find a woman hooked up to some sort of machines. Upon saving her, the twisted, possessed pirates of the Fire Legion will try to seek and eradicate you and your crew. Bonus starting credits: 240m +Can get \"Comet\" (gunner) for free",
         playerUpdates: [{ attribute: "crew", action: "add", value: "Comet" }],
         prerequisites: [],
@@ -578,7 +578,7 @@ export const titles = [
         complications: [
             "Receive all complications from The Leader, The Nemesis, and The Space Cowboy."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "Receive all complications from The Leader, The Nemesis, and The Space Cowboy. Bonus starting credits: 420m *Cannot take The Leader, The Nemesis, or The Space Cowboy",
         prerequisites: [
             { type: "not-title", value: "title-the-leader" },
@@ -594,7 +594,7 @@ export const titles = [
         complications: [
             "Receive all complications from The Whisperer, The Sleeper and The Traveler."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "Receive all complications from The Whisperer, The Sleeper and The Traveler. Bonus starting credits: 420m *Cannot take The Whisperer, The Sleeper, or The Traveler",
         prerequisites: [
             { type: "not-title", value: "title-the-whisperer" },
@@ -610,7 +610,7 @@ export const titles = [
         complications: [
             "Receive all complications and crew members from The Guardian and The Sorcerer."
         ],
-        imageSrc: "/Images/Beatrice R&D.webp",
+        imageSrc: "/Images/Other/Beatrice R&D.webp",
         description: "Receive all complications and crew members from The Guardian and The Sorcerer. Bonus starting credits: 440m *Cannot take The Guardian or The Sorcerer",
         prerequisites: [
             { type: "not-title", value: "title-the-guardian" },

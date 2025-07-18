@@ -209,7 +209,7 @@ img {
 }
 
 body { /*make galaxy background image*/
-  background-image: url(Images/timBartonSunsetNebulae.webp); /* Replace with your image path */
+  background-image: url(/Images/Other/timBartonSunsetNebulae.webp); /* Replace with your image path */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
