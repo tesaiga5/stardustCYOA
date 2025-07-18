@@ -1,6 +1,11 @@
 // This file contains data for various ship hulls available in the game.
+
+export {hulls, createShip, deleteShip, addHull, addWeapon, addAI,addEnergyGen, addShield, addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom, 
+    
+}
+
 // The structure is based on the existing shipData.js forma
-export const hulls = [
+const hulls = [
     // Fighters from 'ship Data.docx'
     {
         name: "S92-TMC",
@@ -983,7 +988,95 @@ export const hulls = [
     },
 ];
 
-export function createShip() { //initialize ship object
+const subSystems = [
+    {
+        name: "AI",
+        manufacturer: "Beatrice R&D",
+        role: "Onboard AI",
+        description: "Allows the ship to travel faster than light.",
+        imageSrc: "/Images/Beatrice R&D.webp",
+        
+    },
+    {
+        name: "Energy",
+        cost: 1000000,
+        energyOutput: 5,
+        chargeDuration: 10,
+        auxDescription: "Generates energy for the ship's systems.",
+        description: "Protects the ship from incoming fire.",
+        imageSrc: "/Images/Beatrice R&D.webp",
+    },
+    {
+        name: "Shield",
+        cost: 5000000,
+        shieldStrength: 10,
+        description: "Maintains a habitable environment for the crew.",
+        imageSrc: "/Images/Beatrice R&D.webp",
+    },
+];
+
+const mods = [
+    {
+        name: "Command Mod",
+        manufacturer: "Beatrice R&D",
+        cost: 5000000,
+        specialAbility: "None",
+        cooldown: "passive",
+        range: "self",
+        description: "Enhances the ship's command and control capabilities.",
+        imageSrc: "/Images/Beatrice R&D.webp",
+    },
+    {
+        name: "Hull Mod",
+        manufacturer: "Beatrice R&D",
+        cost: 3000000,
+        effect: "passive",
+        description: "Reinforces the ship's hull, providing additional protection against damage.",
+    }
+];
+
+
+const industrialEquipment = [
+    {
+        name: "Mining Laser",
+        manufacturer: "Beatrice R&D",
+        moduleType: "industrial",
+        cost: 1000000,
+        auxDescription: "Used for extracting resources from asteroids and other celestial bodies.",
+        description: "Used for mining asteroids and other resources.",
+        imageSrc: "/Images/Beatrice R&D.webp",
+    },
+    {
+        name: "Refinery Unit",
+        manufacturer: "Beatrice R&D",
+        type: "industrial",
+        cost: 5000000,
+        description: "Processes raw materials into usable resources.",
+    },
+];
+const ewarEquipment = [
+    {
+        name: "Poisoning Module",
+        manufacturer: "Beatrice R&D",
+        moduleType: "E-war",
+        cost: 1000000,
+        range: 0,
+        description: "Used for mining asteroids and other resources.",
+        imageSrc: "/Images/Beatrice R&D.webp",
+    },
+];
+const rooms = [
+    {
+        name: "Command Room",
+        description: "The central hub for ship operations and command.",
+        cost: 5000000,
+        consequences: "Increases command efficiency and crew morale.",
+        type: "tavern",
+        imageSrc: "/Images/Beatrice R&D.webp",
+    }
+];
+
+function createShip() { //initialize ship object
     // Basic validation to ensure inputs are numbers
 
     // You can add more properties to the ship object here as needed,
