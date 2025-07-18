@@ -80,10 +80,14 @@ div {
      (100% / 6) makes each item target 1/6th of the container width.
      (10px * 5 / 6) subtracts a portion of the gap space (5 gaps for 6 items)
      to ensure they fit perfectly. */
-  flex-basis: calc((100% / 6) - (10px * 5 / 6));
+  flex-basis: calc((100% / 6));
   min-width: 140px; /* Ensure items don't shrink below this size on smaller screens */
   box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
   border-radius: 15px;
+}
+
+.choice-sponsor {
+  flex-basis: calc((100% / 4))
 }
 
 .choice h3{

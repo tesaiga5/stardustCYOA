@@ -1,6 +1,6 @@
 // This file contains data for various ship hulls available in the game.
 // The structure is based on the existing shipData.js forma
-const hulls = [
+export const hulls = [
     // Fighters from 'ship Data.docx'
     {
         name: "S92-TMC",
