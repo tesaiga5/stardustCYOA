@@ -18,26 +18,34 @@
       gear: [],
       scenario: [],
       choices: [],
+      currentActiveShip: [],
     };
 
     const ship = {
-      spinalMount: 0,
-      broadSideMount: 0,
-      pointDefenseMount: 0,
+      spinalMount: 0, 
+      broadSideMount: 0, 
+      pointDefenseMount: 0, 
       hull: "fighter", 
-      hangarSpace: 0,
+      hangarSpace: 0, 
       navigation: 0, 
       hullArmor: 0,
       shieldStr: 0,
       length: 0,
       maxCrew: 0,
-      crewSize: 0,
-      extraRooms: 0,
-      energyUse: 1,
-      energySystem: "solar", 
-      ai: "winston",
+      extraRooms: 0, 
+      energyUse: 1, 
+      aiChoice: "winston",
       commandMods: "cool paint job",
+      choiceList: [
+        { subsystemChoice: [] }, { roomChoice: [] },
+        { industrialChoice: [] }, { energyChoice: [] },
+        { eWarChoice: [] }, { spinalChoice: [] },
+        { broadSideChoice: [] }, { pointDefenseChoice: [] },
+        { hangarChoice: [] }, { aiChoice: "" },
+        { commandMods: "" },
+      ]
     };
+
 
   </script>
   
@@ -561,13 +569,6 @@
   </div>
 
   <div class="section" id="section-hull">
-    <div class="choice" id="choice-fighter">◈Fighter◈</div>
-    <div class="choice" id="choice-frigate">◈Frigate◈</div>
-    <div class="choice" id="choice-destroyer">◈Destroyer◈</div>
-    <div class="choice" id="choice-cruiser">◈Cruiser◈</div>
-    <div class="choice" id="choice-battleship">◈Battleship◈</div>
-    <div class="choice" id="choice-carrier">◈Carrier◈</div>
-    <div class="choice" id="choice-dreadnought">◈Dreadnought◈</div>
     <div id="endOfHull"></div>
   </div>
 
@@ -1309,7 +1310,8 @@
 
   <!-- Ship Creation Script -->
   <script type="module"> 
-    import { createShip } from '/Script/shipData.js'; // Import the createShip function from ship.js
+    import { createShip, deleteShip } from '/Script/shipData.js'; // Import the createShip function from ship.js
+
     const toggleAddShip1 = document.getElementById("choice-toggle-addShip");
     let shipObjectCounter = 0; // Initialize ship counter
     toggleAddShip1.addEventListener('click', () => {
@@ -1321,26 +1323,109 @@
       shipDiv1.style.border = "none";
       shipDiv1.innerHTML = `
         <div class="ship-actions">
-          <button title="delete ship" class="x-button" id="delete-ship-button-${shipObjectCounter}">x</button>
+          <button title="delete ship" class="x-button" id="delete-ship-button">x</button>
         </div>
         <div class="ship-actions">
-          <button title="new blank button" class="blank-button" id="blank-button-${shipObjectCounter}"></button>
+          <button title="new blank button" class="blank-button" id="blank-button"></button>
         </div>
         <div class="ship-actions">
-          <button title="edit ship name" class="edit-button" id="edit-ship-button-${shipObjectCounter}">✏️</button>
+          <button title="edit ship name" class="edit-button" id="edit-ship-button">✏️</button>
         </div>
         
-        <div style="border: none;" class="ship-name">Ship ${shipObjectCounter}</div>
+        <div style="border: none;" class="ship-name" id="shipName">Ship ${shipObjectCounter}</div>
       `;
       toggleAddShip1.after(shipDiv1); // Append the new ship object after the button
       console.log(`Ship object ${shipObjectCounter} created with ID: ${shipDiv1.id}`);
 
       //create object to map div to ship object
-      const divToObjectMap = new Map();
-      const ship1 = createShip(); // Create a new ship object
-      divToObjectMap.set(shipDiv1.id, ship1);      
+      const ship1 = createShip(); // Create a new ship object 
+      player.currentActiveShip.push(ship1); // Add the ship object to the player's current active ships
     });
-  </script>
+
+    //this function updates selected choices of a ship object
+    function renderShipConfigUI(currentActiveShip) {
+      //for each div in section-hull, set them to not active
+      // Get the parent div with the ID "section-hull"
+      const sectionHull = document.getElementById('section-hull');
+
+      // Check if the element exists to avoid errors
+      if (sectionHull) {
+        // Get all direct child div elements within "section-hull"
+        const hullDivs = sectionHull.querySelectorAll('div');
+
+        // Iterate over each div and add the 'active' class
+        hullDivs.forEach(div => {
+          div.classList.add('active');
+        });
+      } else {
+        console.error("Element with ID 'section-hull' not found.");
+      }
+      
+      if(player.currentActiveShip) {
+        player.currentActiveShip.choiceList.forEach(choice => {
+          choice.forEach(chosenChoice => {
+            const choiceElement = document.getElementById(chosenChoice.id);
+            if (choiceElement) {
+              choiceElement.classList.add('active'); // Add 'active' class to the choice element
+            } else {
+              console.error(`Choice element with ID "${chosenChoice.id}" not found.`);
+            }
+          });
+        });
+      }
+    }
+    
+    function resetShipConfigUI(currentActiveShip) {
+      //for each div in section-hull, set them to not active
+      // Get the parent div with the ID "section-hull"
+      const sectionHull = document.getElementById('section-hull');
+
+      // Check if the element exists to avoid errors
+      if (sectionHull) {
+        // Get all direct child div elements within "section-hull"
+        const hullDivs = sectionHull.querySelectorAll('div');
+
+        // Iterate over each div and add the 'active' class
+        hullDivs.forEach(div => {
+          div.classList.add('active');
+        });
+      } else {
+        console.error("Element with ID 'section-hull' not found.");
+      }
+    }
+
+    function editShipName(shipId) {
+      const shipDiv = document.getElementById(shipId);
+      if (!shipDiv) {
+        console.error(`Ship div with ID "${shipId}" not found.`);
+        return;
+      } else {
+        const input = prompt('Enter new ship name:');
+        shipDiv.textContent = input;
+      }
+    }
+      
+    //delete ship function and edit ship function
+    const sectionFleet1 = document.getElementById('section-fleet');
+    if(sectionFleet1) {
+      sectionFleet1.addEventListener('click', (event) => {
+        const deleteButton = event.target.closest('[id="delete-ship-button"]');
+        const editButton = event.target.closest('[id="edit-ship-button"]');
+        if (deleteButton) {
+          player.currentActiveShip.splice(player.currentActiveShip.indexOf(event.target.parentElement.parentElement.id), 1); // Remove the ship object from the player's current active ships
+          event.target.parentElement.parentElement.remove(); // Remove the ship div from the DOM
+        } else if (editButton) {
+          editShipName(event.target.parentElement.id);
+        }
+
+      });
+    }
+
+    if(sectionHull1){
+      
+    }
+
+</script>
   
 
 </body>
