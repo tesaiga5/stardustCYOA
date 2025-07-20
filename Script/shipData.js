@@ -1082,19 +1082,28 @@ function createShip() { //initialize ship object
     // You can add more properties to the ship object here as needed,
     // such as a unique ID, name, health, cargo capacity, etc.
     const newShip = {
-        hull: {},
-        type: 'frigate', // Default type, can be changed later
-        spinalWeapons: [],
-        broadsideWeapons: [],
-        pointDefenceWeapons: [],
-        onboardAI: 'none',
-        energyGen:[],
-        shield:[],
-        commandMods: [],
-        hullMods: [],
-        hangar: [],
-        rooms: [],
-        shipEquipment: [],
+        spinalMount: 0, 
+      broadSideMount: 0, 
+      pointDefenseMount: 0, 
+      hull: "fighter", 
+      hangarSpace: 0, 
+      navigation: 0, 
+      hullArmor: 0,
+      shieldStr: 0,
+      length: 0,
+      maxCrew: 0,
+      extraRooms: 0, 
+      energyUse: 1, 
+      aiChoice: "winston",
+      commandMods: "cool paint job",
+      choiceList: [
+        { subsystemChoice: [] }, { roomChoice: [] },
+        { industrialChoice: [] }, { energyChoice: [] },
+        { eWarChoice: [] }, { spinalChoice: [] },
+        { broadSideChoice: [] }, { pointDefenseChoice: [] },
+        { hangarChoice: [] }, { aiChoice: "" },
+        { commandMods: "" },
+      ]
     };
 
     return newShip;

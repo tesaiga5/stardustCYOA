@@ -18,33 +18,10 @@
       gear: [],
       scenario: [],
       choices: [],
-      currentActiveShip: [],
+      currentActiveShip: "", //div id
+      ships: [], //div id
     };
-
-    const ship = {
-      spinalMount: 0, 
-      broadSideMount: 0, 
-      pointDefenseMount: 0, 
-      hull: "fighter", 
-      hangarSpace: 0, 
-      navigation: 0, 
-      hullArmor: 0,
-      shieldStr: 0,
-      length: 0,
-      maxCrew: 0,
-      extraRooms: 0, 
-      energyUse: 1, 
-      aiChoice: "winston",
-      commandMods: "cool paint job",
-      choiceList: [
-        { subsystemChoice: [] }, { roomChoice: [] },
-        { industrialChoice: [] }, { energyChoice: [] },
-        { eWarChoice: [] }, { spinalChoice: [] },
-        { broadSideChoice: [] }, { pointDefenseChoice: [] },
-        { hangarChoice: [] }, { aiChoice: "" },
-        { commandMods: "" },
-      ]
-    };
+      
 
 
   </script>
@@ -998,7 +975,7 @@
           const newDiv = document.createElement("div");
           newDiv.classList.add("choice");
           // Ensure unique ID for each choice element, sanitize name for ID
-          newDiv.id = `${choicePrefix}-${item.name.replace(/\s/g, '-')}`;
+          newDiv.id = `${choicePrefix}-hull-${item.name.replace(/\s/g, '-')}`;
 
           const newSpan = document.createElement("span");
           newDiv.appendChild(newSpan);
@@ -1291,6 +1268,7 @@
     });
 
     choiceHull1.addEventListener('click', () => {
+      choiceHull1.classList.toggle('active');
       sectionHull1.classList.toggle('active');
       addHullDataToSection(hulls, 'choice', 'endOfHull');
     });
@@ -1298,21 +1276,47 @@
     choiceEquipment1.addEventListener('click', () => {
       sectionEquipment1.classList.toggle('active');
       addEquipmentDataToSection(equipment, 'choice', 'endOfEquipment');
-    });
+    });    
 
-
-    
-
-
-    
-    
-  </script> 
-
-  <!-- Ship Creation Script -->
-  <script type="module"> 
+  //Ship Creation Script
     import { createShip, deleteShip } from '/Script/shipData.js'; // Import the createShip function from ship.js
 
-    const toggleAddShip1 = document.getElementById("choice-toggle-addShip");
+    function singleHullReturnCredits(clickedElement, shipDiv1) {
+      // 1. Find the parent container that groups these choices (e.g., 'section-hull')
+      //    You might need to adjust 'closest('.section')' if your grouping div has a different class/ID.
+      const parentContainer = clickedElement.closest('.section'); // Or .closest('#section-hull'), etc.
+
+      if (parentContainer) {
+        // 2. Find all 'choice' elements within this parent container
+        const allChoicesInGroup = parentContainer.querySelectorAll('.choice');
+
+        // 3. Iterate through all choices in the group
+        allChoicesInGroup.forEach(choice => {
+          // 4. If a choice is currently active AND it's not the one just clicked, deactivate it
+          if (choice.classList.contains('active') && choice !== clickedElement) {
+            choice.classList.remove('active');  
+            const prevHull = hulls.find(hull => hull.name === choice.id.replace('choice-hull-', '')); // Find the previous hull data based on the ID
+            return prevHull.cost; // Return the cost of the previous hull
+          }
+          else {
+            return 0; // If no previous hull was active, return 0
+          }
+        });
+      }
+    }
+
+    function chooseHull (clickedElement, shipDiv1) {
+      //check if the user has chosen a hull before
+      player.credits += singleHullReturnCredits(clickedElement, shipDiv1); //if yes, set the previous choice to non-active, set the clicked choice as active
+      //and addback the credits to the player
+      const chosenHull = hulls.find(hull => hull.name === clickedElement.id.replace('choice-hull-', '')); // Find the hull data based on the clicked element's ID
+      player.ships[shipDiv1].hull = chosenHull; // Assign the chosen hull to the ship object
+      player.credits -= chosenHull.cost; // Deduct the cost of the hull from the player's credits
+  }
+    //create a function for each attribute because each attribute has different requirements
+    const toggleAddShip1 = document.getElementById('choice-toggle-addShip'); // Get the button to add a ship
+
+    //add Ship and assign map
     let shipObjectCounter = 0; // Initialize ship counter
     toggleAddShip1.addEventListener('click', () => {
       shipObjectCounter++; // Increment ship counter each time button is clicked
@@ -1339,8 +1343,47 @@
 
       //create object to map div to ship object
       const ship1 = createShip(); // Create a new ship object 
-      player.currentActiveShip.push(ship1); // Add the ship object to the player's current active ships
+      player.currentActiveShip = shipDiv1.id;
+       // Add the ship object to the player's current active ships
+      player.ships[shipDiv1.id] = ship1; 
     });
+
+    const sectionFleet1 = document.getElementById('section-fleet');
+    //event listener for current active ship
+    sectionFleet1.addEventListener('click', (event) => {
+      //look for section-ship-object-*
+      const clickedObjectDiv = event.target.closest('.object-div');
+      if (clickedObjectDiv) {
+        if (clickedObjectDiv.classList.contains('active')) {
+          // If the clicked ship is already active, reset the UI
+          clickedObjectDiv.classList.remove('active');
+          player.currentActiveShip = null; // Reset the current active ship
+        } else if(clickedObjectDiv) {
+          sectionFleet1.querySelectorAll('.object-div').forEach(div => {
+            div.classList.remove('active'); // Remove 'active' class from all ship objects
+          });
+          player.currentActiveShip = clickedObjectDiv.id;
+          clickedObjectDiv.classList.toggle('active'); // Toggle the 'active' class on the clicked ship object
+        }
+      }
+    });
+
+    //start choosing
+    sectionShip1.addEventListener('click', (event) => {
+      const clickedElement = event.target.closest('.choice');
+      if (clickedElement) {
+        if (clickedElement.id.startsWith('choice-hull-')) {
+        // Call the function to handle single choice selection
+          chooseHull(clickedElement, player.currentActiveShip);
+
+        }
+        // Optionally, you can also toggle the 'active' class on the clicked element
+        clickedElement.classList.toggle('active');
+        // Check if the clicked element is a hull choice
+        
+      }
+    });
+  
 
     //this function updates selected choices of a ship object
     function renderShipConfigUI(currentActiveShip) {
@@ -1404,9 +1447,11 @@
         shipDiv.textContent = input;
       }
     }
+
+    
       
     //delete ship function and edit ship function
-    const sectionFleet1 = document.getElementById('section-fleet');
+    
     if(sectionFleet1) {
       sectionFleet1.addEventListener('click', (event) => {
         const deleteButton = event.target.closest('[id="delete-ship-button"]');
@@ -1420,9 +1465,17 @@
 
       });
     }
-
+    
     if(sectionHull1){
-      
+      sectionHull1.addEventListener('click', (event) => {
+        const clickedElement = event.target.closest('.choice');
+        if (clickedElement) {
+          // Call the function to handle single choice selection
+          handleSingleChoiceSelection(clickedElement);
+          // Optionally, you can also toggle the 'active' class on the clicked element
+          clickedElement.classList.toggle('active');
+        }
+      });
     }
 
 </script>
