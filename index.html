@@ -1439,7 +1439,7 @@
       }
     });
 
-    //start choosing
+    //check for clicks on section-ship, if(dataType) write dataType to selected ship object
     sectionShip1.addEventListener('click', (event) => {
       const clickedElement = event.target.closest('.choice');
       if (clickedElement) {
@@ -1449,7 +1449,7 @@
 
         }
         // Optionally, you can also toggle the 'active' class on the clicked element
-        clickedElement.classList.toggle('active');
+        //clickedElement.classList.toggle('active');
         // Check if the clicked element is a hull choice
         
       }
