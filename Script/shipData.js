@@ -1,7 +1,8 @@
 // This file contains data for various ship hulls available in the game.
 
-export {hulls, createShip, deleteShip, addHull, addWeapon, addAI,addEnergyGen, addShield, addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom, 
-    
+export {hulls, subSystems, mods, industrial, eWar, rooms, weapons, drones,
+        createShip, deleteShip, addHull, addWeapon, addAI,addEnergyGen, addShield, 
+        addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom,
 }
 
 // The structure is based on the existing shipData.js forma
@@ -1035,36 +1036,134 @@ const mods = [
     }
 ];
 
+const industrial = [
+  {
+    name: "Mining Harvester",
+    cost: 2000000,
+    moduleType: "Industrial",
+    description: "This harvester uses infrared light to separate common ores from asteroids. It has its own unique built-in tractor beam to bring the ore to your ship while mining. +Can mine low-grade ore *Uses a broadside or point-defence turret mount *Requires ore processing facility"
+  },
+  {
+    name: "MK2 Frequency Lens",
+    cost: 1000000,
+    moduleType: "Industrial",
+    description: "You can replace the lens of a mining harvester with this lens that uses a smaller green laser to mine more complex ores. Lenses can be changed on the fly. +Can switch with mining harvester lenses to mine mid-grade ore *Requires a mining harvester"
+  },
+  {
+    name: "MK3 Frequency Lens",
+    cost: 1000000,
+    moduleType: "Industrial",
+    description: "The most precise and powerful lens, the MK3 is capable of pin-pointing the most valuable ore from asteroids. It's inefficient for mining lower grade ores, however. +Can switch with mining harvester lenses to mine high-grade ore *Requires a mining harvester"
+  },
+  {
+    name: "Salvage Harvester",
+    cost: 3000000,
+    moduleType: "Industrial",
+    description: "Using similar technology to the mining harvesters, this laser is specialized in taking apart machines. Perfect for salvaging debris or ship wrecks. It also comes with its own tractor beam. *Uses a broadside or point-defence turret mount *Requires a cargo space room"
+  },
+  {
+    name: "Tractor Beam",
+    cost: 3000000,
+    moduleType: "Logistics",
+    description: "A universal tractor beam that harnesses light to attract or push matter not limited to ore or scrap. It's useful for retrieving free- floating objects, or that one maintenance crew member who accidentally cut his safety wire. *Can only be bought once per ship *Cannot target other active ships"
+  },
+  {
+    name: "Composition Scanner",
+    cost: 4000000,
+    moduleType: "Logistics",
+    description: "This very complex module can scan objects and bring back very precise results. It can detect ore/mineral compositions in asteroids, energy sources, electri- cal activity, and even life forms. It can also scan other ships to give you intel on their systems. *Can only be bought once per ship"
+  }
+];
 
-const industrialEquipment = [
-    {
-        name: "Mining Laser",
-        manufacturer: "Beatrice R&D",
-        moduleType: "industrial",
-        cost: 1000000,
-        auxDescription: "Used for extracting resources from asteroids and other celestial bodies.",
-        description: "Used for mining asteroids and other resources.",
-        imageSrc: "/Images/Beatrice R&D.webp",
-    },
-    {
-        name: "Refinery Unit",
-        manufacturer: "Beatrice R&D",
-        type: "industrial",
-        cost: 5000000,
-        description: "Processes raw materials into usable resources.",
-    },
+
+const eWar = [
+  {
+    name: "Poisoning Module",
+    cost: 7000000,
+    moduleType: "E-War",
+    range: "000000886",
+    description: "This module can be used to infect a hostile ship's weapons, lowering all of their weapon's tracking, rate of fire, and range effectiveness by 1."
+  },
+  {
+    name: "Honey Pot Module",
+    cost: 3000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "Set up a fake scapegoat server on your vessel that looks appealing to hostile hackers, and use it to monitor their every move while they try to attack your systems in futile."
+  },
+  {
+    name: "Warp Jammer",
+    cost: 6000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "You can point this module at a hostile ship to effectively disable their warp drive, giving them no chance to escape."
+  },
+  {
+    name: "Comm Scrambler",
+    cost: 5000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "Pointing this at a hostile ship will scramble their comms, cutting off their outside and inside communi- cations if done well."
+  },
+  {
+    name: "MITM Module",
+    cost: 4000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "This specialized terminal and tools allow your cybersec officer to easily conduct a man-in-the-middle attack to intercept any sort of data from a ship, giving you information about all of a ship's systems."
+  },
+  {
+    name: "Penetration Module",
+    cost: 8000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "This module helps your cybersec officer by giving them tools to penetrate through a system's defences. In bypassing their securi- ty grid, you lower the hostile's shield strength by 21"
+  },
+  {
+    name: "Bridge Module",
+    cost: 8000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "If successful, this module will disable the teleport jammer of a ship while this process continues to run."
+  },
+  {
+    name: "Incident Module",
+    cost: 6000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "This module implements a wide array of cyber defense tools to help your cybersec officer, such as network security monitoring frameworks. Attacks are easier to determine and isolate.."
+  },
+  {
+    name: "Efficiency Module",
+    cost: 4000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "Installing this in your digital securi- ty room vastly improves the efficiency of digital systems on your ship, reducing your ship's radar cross-section by a significant amount."
+  },
+  {
+    name: "Presence Module",
+    cost: 5000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "Using complex polymorphic code engines and rootkits, this module helps ensure your digital offensive has staying power. It is more difficult for enemies to find and eliminate your attacks."
+  },
+  {
+    name: "Overflow Module",
+    cost: 10000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "If done well, this module can effectively disable up to 2 ship weapons of an enemy ship, or one anti-matter cannon."
+  },
+  {
+    name: "Security Grid",
+    cost: 14000000,
+    moduleType: "E-War",
+    range: "", // Range was blank in source for this item
+    description: "Your ship can project its e-war capabilities across all allied ships in a wide range, allowing you to apply defensive modules to more vulnerable ships and even conduct offensives from them."
+  }
 ];
-const ewarEquipment = [
-    {
-        name: "Poisoning Module",
-        manufacturer: "Beatrice R&D",
-        moduleType: "E-war",
-        cost: 1000000,
-        range: 0,
-        description: "Used for mining asteroids and other resources.",
-        imageSrc: "/Images/Beatrice R&D.webp",
-    },
-];
+
+
 const rooms = [
     {
         name: "Command Room",
@@ -1074,6 +1173,439 @@ const rooms = [
         type: "tavern",
         imageSrc: "/Images/Beatrice R&D.webp",
     }
+];
+
+const weapons = [
+  {
+    name: "Machine Gun",
+    cost: 1000000,
+    secondaryCost: 500000,
+    energyUse: "",
+    tier: 1,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Kinetic",
+    description: "For ships that can get up close and personal, machine guns offer rapid firepower. Nothing can withstand a hail of high-calibre, metal-shredding bullets."
+  },
+  {
+    name: "Light Particle Blaster",
+    cost: 1000000,
+    secondaryCost: 500000,
+    energyUse: "",
+    tier: 1,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Blaster",
+    description: "Blasters fire orbs of very volatile supercharged particles capable of causing severe damage. However, the projectiles are a little slow, they're very close-ranged weapons."
+  },
+  {
+    name: "Light Laser Cannon",
+    cost: 1000000,
+    secondaryCost: 500000,
+    energyUse: "",
+    tier: 1,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Energy",
+    description: "Of the three light-class weapons, the light laser lannon is the most accurate and longest-ranged, but is also slightly less damaging than the others. Great against missiles."
+  },
+  {
+    name: "Missile Pod",
+    cost: 2000000,
+    secondaryCost: 1000000,
+    energyUse: "",
+    tier: 1,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Explosive *Can be shot down",
+    description: "These small missile launchers are fit for smaller craft, but can still deliver a hard-hitting payload of explosive warheads."
+  },
+  {
+    name: "Flak Cannon",
+    cost: 2000000,
+    secondaryCost: 1000000,
+    energyUse: "",
+    tier: 1,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Kinetic +1 damage vs drones, fighters",
+    description: "While not that damaging against larger ships, you may need something to take care of those swarms of drones or fighters."
+  },
+  {
+    name: "Auto Cannon",
+    cost: 2000000,
+    secondaryCost: 1000000,
+    energyUse: "",
+    tier: 1,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Kinetic",
+    description: "Auto cannons use higher calibre bullets and have a longer effective range than machine guns. They are larger, and thus have slightly more trouble tracking."
+  },
+  {
+    name: "Artillery Cannon",
+    cost: 3000000,
+    secondaryCost: 1500000,
+    energyUse: "",
+    tier: 2,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Kin, explosive +1 damage vs hull armour",
+    description: "Artillery cannons deliver devastating damage to anything they fire at. Recoil of successive shots hurt their accuracy, however."
+  },
+  {
+    name: "Heavy Particle Blaster",
+    cost: 3000000,
+    secondaryCost: 1500000,
+    energyUse: "",
+    tier: 2,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Blaster",
+    description: "More fit for ships of larger sizes, heavy particle blasters offer insane amounts of damage up close, perfect for ships that can close the distance easily."
+  },
+  {
+    name: "Mana Blaster",
+    cost: 4000000,
+    secondaryCost: 2000000,
+    energyUse: "",
+    tier: 2,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Blaster +1 damage with a mana core",
+    description: "Mana blasters work at the same principle as particle blasters, but fire dangerous mana instead. While even slower, they hit hard."
+  },
+  {
+    name: "Heavy Laser Cannon",
+    cost: 4000000,
+    secondaryCost: 2000000,
+    energyUse: "",
+    tier: 2,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Energy +1 damage when focused >2 min",
+    description: "Heavy laser cannons excel at medium-to-long range encounters, delivering consistent, intensifying damage-per-second."
+  },
+  {
+    name: "Rail Gun",
+    cost: 4000000,
+    secondaryCost: 2000000,
+    energyUse: "",
+    tier: 2,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Kin, energy",
+    description: "Rail guns are for ships that want to keep engagements at long ranges and want accurate, unprecedented piercing power. However, they suffer up close with poor tracking."
+  },
+  {
+    name: "Missile Launcher",
+    cost: 5000000,
+    secondaryCost: 2000000,
+    energyUse: "",
+    tier: 2,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Explosive *Can be shot down",
+    description: "Missile launchers unleash torrents of fast and agile missiles, perfect against fast targets or larger targets when fired en masse."
+  },
+  {
+    name: "Tesla Overcharger",
+    cost: 6000000,
+    secondaryCost: 4000000,
+    energyUse: "",
+    tier: 3,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Energy +6 damage vs shields +Can stun targets",
+    description: "The Overcharger shoots super-charged bolts of lightning. While this will only do minor damage to a ship hull, it is exceptionally good against shields and also a ship's electrical systems."
+  },
+  {
+    name: "Torpedo Silo",
+    cost: 6000000,
+    secondaryCost: 4000000,
+    energyUse: "",
+    tier: 3,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Explosive +8 damage vs hull armour *Can be shot down *Limited to 3 per fighter",
+    description: "They're slow, bulky and hard to load, but damn if they don't cause explosions. Torpedos are much larger than standard missiles, but don't track as well. However, that doesn't matter if the target is slow."
+  },
+  {
+    name: "Ragefire Rail Gun",
+    cost: 8000000,
+    secondaryCost: 4000000,
+    energyUse: "",
+    tier: 3,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Kin, energy *Requires a cruiser or larger, or a destroyer spinal mount",
+    description: "The invention of the Ragefire is credited towards the Talons, although Triglav stole its schematics and called it their own. As the ultimate sniping weapon, a well-aimed Ragefire volley is bound to cause destructive havoc."
+  },
+  {
+    name: "Tachyon Laser Cannon",
+    cost: 6000000,
+    secondaryCost: 4000000,
+    energyUse: "",
+    tier: 3,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Energy +1 damage when focused >2 min *Requires a cruiser or larger, or a destroyer spinal mount",
+    description: "The epitome of laser technology, These laser cannons utilize special diodes that can channel tachyon particles, constantly moving faster than light. They carry deadly radiation, destroying anything in its way."
+  },
+  {
+    name: "Pulse Beam Cannon",
+    cost: 8000000,
+    secondaryCost: 4000000,
+    energyUse: "",
+    tier: 3,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "En, blaster *Requires a cruiser or larger, or a destroyer spinal mount",
+    description: "Combining the hard hits from a blaster with the long range and accuracy of a laser cannon, the pulse beam cannon fires deadly rays of super-heated particles. However, they have a hard time tracking smaller targets."
+  },
+  {
+    name: "Anti-Matter Cannon",
+    cost: 60000000,
+    secondaryCost: 30000000,
+    energyUse: "",
+    tier: 4,
+    damagePerVolley: "",
+    rateOfFire: "",
+    accuracy: "",
+    range: "",
+    projectileVelocity: "",
+    tracking: "",
+    weaponTypes: "Unique *Costs 2 spinal weapon mounts *Requires a battleship or larger *5 min charge, 10 min cool down",
+    description: "This gun is so massive, only the largest ships can fit it. Thus, to aim It, you must point your entire ship to your target. The ensuing beam of destruction is powerful enough to obliterate the largest of ships."
+  }
+];
+
+const drones = [
+  {
+    name: "Scout Drone",
+    cost: 500000,
+    hangarSpaceUse: 0.5,
+    spinalWeaponMounts: 1,
+    broadsideTurrentMounts: 0,
+    pointDefenceMounts: 0,
+    navigation: 25,
+    hullArmour: 1,
+    shieldDefence: 3,
+    length: "2m",
+    description: "Agile and quick, scout drones are cheap, portable, and expendable. They're great for for basic recon, combat, or point defence. +Comes with a free machine gun *Limited to T1 weapons"
+  },
+  {
+    name: "Beacon Drone",
+    cost: 1000000,
+    hangarSpaceUse: 1,
+    spinalWeaponMounts: 0,
+    broadsideTurrentMounts: 0,
+    pointDefenceMounts: 0,
+    navigation: 10,
+    hullArmour: 2,
+    shieldDefence: 5,
+    length: "6m",
+    description: "Essentially just high-performance computers strapped to navigation systems, beacon drones relay data communication for an extended range between ships. +Boosts E-War Module range by 2"
+  },
+  {
+    name: "Combat Drone",
+    cost: 1000000,
+    hangarSpaceUse: 1,
+    spinalWeaponMounts: 1,
+    broadsideTurrentMounts: 1,
+    pointDefenceMounts: 0,
+    navigation: 22,
+    hullArmour: 2,
+    shieldDefence: 6,
+    length: "4m",
+    description: "These are more suited for straight up combat than scout drones. +Comes with a free T1 weapon *Limited to T1 and T2 weapons *T2 weapons can only be put on spinal weapon mounts"
+  },
+  {
+    name: "Brawler Drone",
+    cost: 2000000,
+    hangarSpaceUse: 2,
+    spinalWeaponMounts: 1,
+    broadsideTurrentMounts: 2,
+    pointDefenceMounts: 1,
+    navigation: 20,
+    hullArmour: 5,
+    shieldDefence: 7,
+    length: "10m",
+    description: "Brawler drones are meant to take hits and provide great firepower. +Comes with a free T2 weapon *Limited to T1 and T2 weapons *T2 weapons can only be put on spinal weapon mounts"
+  },
+  {
+    name: "Stealth Drone",
+    cost: 4000000,
+    hangarSpaceUse: 2,
+    spinalWeaponMounts: 1,
+    broadsideTurrentMounts: 2,
+    pointDefenceMounts: 1,
+    navigation: 18,
+    hullArmour: 2,
+    shieldDefence: 5,
+    length: "12m",
+    description: "+Can cloak for up to 5 minutes +Comes with a free T2 weapon *Limited to T1 and T2 weapons, and tesla overchargers *T2 weapons can only be put on spinal weapon mounts"
+  },
+  {
+    name: "Bomber Drone",
+    cost: 5000000,
+    hangarSpaceUse: 3,
+    spinalWeaponMounts: 1,
+    broadsideTurrentMounts: 0,
+    pointDefenceMounts: 2,
+    navigation: 16,
+    hullArmour: 8,
+    shieldDefence: 9,
+    length: "20m",
+    description: "Large but equipped to deliver hull-breaching blows. +Comes with a free torpedo silo *Limited to T3 and T1 weapons *T3 weapons can only be put on spinal mounts"
+  },
+  {
+    name: "Mining Drone",
+    cost: 1000000,
+    hangarSpaceUse: 1,
+    spinalWeaponMounts: 0,
+    broadsideTurrentMounts: 2,
+    pointDefenceMounts: 0,
+    navigation: 18,
+    hullArmour: 2,
+    shieldDefence: 2,
+    length: "6m",
+    description: "A drone that uses mining lasers to mine asteroids, and can carry the ore to your ship. +Comes with a free mining harvester (MK1 crystal) *Limited to industrial modules"
+  },
+  {
+    name: "Shield Drone",
+    cost: 2000000,
+    hangarSpaceUse: 1,
+    spinalWeaponMounts: 0,
+    broadsideTurrentMounts: 0,
+    pointDefenceMounts: 0,
+    navigation: 22,
+    hullArmour: 1,
+    shieldDefence: 6,
+    length: "6m",
+    description: "A special drone that projects your ship's shield capacity. +Can project a shield that covers 60m^2 and has 1/3 the shield strength of your main ship *Shield lasts 5 min"
+  },
+  {
+    name: "Hull Repair Drone",
+    cost: 2000000,
+    hangarSpaceUse: 1,
+    spinalWeaponMounts: 0,
+    broadsideTurrentMounts: 0,
+    pointDefenceMounts: 0,
+    navigation: 14,
+    hullArmour: 1,
+    shieldDefence: 2,
+    length: "4m",
+    description: "These helpful repair drones will do a superb job at making sure your ship's hull is in tact. While these are very efficient models, they are not well protected. +Can repair hull armour"
+  },
+  {
+    name: "Combat Repair Drone",
+    cost: 2000000,
+    hangarSpaceUse: 1,
+    spinalWeaponMounts: 0,
+    broadsideTurrentMounts: 0,
+    pointDefenceMounts: 0,
+    navigation: 18,
+    hullArmour: 4,
+    shieldDefence: 5,
+    length: "4m",
+    description: "Better protected and mobile than standard repair drones, these drones can repair in the midst of combat. They are less efficient, but easy to rebuild or replace. +Can repair hull armour"
+  },
+  {
+    name: "Science Probe",
+    cost: 2000000,
+    hangarSpaceUse: 0.5,
+    spinalWeaponMounts: 0,
+    broadsideTurrentMounts: 0,
+    pointDefenceMounts: 0,
+    navigation: 11,
+    hullArmour: 1,
+    shieldDefence: 3,
+    length: "2m",
+    description: "Equipped with top of the line. analyzing equipment, these probes are perfect for sending into the unknown for discovery. +Has a built-in tractor beam and composition scanner"
+  },
+  {
+    name: "Lasso Drone",
+    cost: 8000000,
+    hangarSpaceUse: 2,
+    spinalWeaponMounts: 0,
+    broadsideTurrentMounts: 0,
+    pointDefenceMounts: 0,
+    navigation: 14,
+    hullArmour: 2,
+    shieldDefence: 4,
+    length: "12m",
+    description: "If you plan on engaging multiple enemy ships and you want to keep them all from escaping, loading up on lasso drones is a good idea. +Has a built-in warp jammer"
+  }
+
 ];
 
 function createShip() { //initialize ship object

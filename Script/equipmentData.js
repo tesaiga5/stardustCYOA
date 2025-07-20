@@ -1436,6 +1436,149 @@ export const equipment = [ //change to weapons later
   }
 ];
 
-const weapons = [];
-
-const mechs = [];
+export const vehicles = [
+  {
+    name: "AT Dunebuggy",
+    cost: 500000,
+    hangarSpaceUse: 1,
+    crew: 4,
+    T1WeaponSlots: 2,
+    T2WeaponSlots: 0,
+    Mobility: "000000000",
+    Armour: "8m",
+    Length: "4m",
+    Description: "The all-terrain dunebuggy allows for great ground coverage. Its high-traction wheels can be replaced with skates or skiis. +Comes with a free machine gun"
+  },
+  {
+    name: "MLUV",
+    cost: 1000000,
+    hangarSpaceUse: 1,
+    crew: 6,
+    T1WeaponSlots: 2,
+    T2WeaponSlots: 0,
+    Mobility: "D0000",
+    Armour: "E", // Assuming 'E' is a string value for Armour
+    Length: "4m",
+    Description: "This mlitary light utility vehicle has a good balance of mobility, armour, and firepower, perfect for troop transportation and support. +Comes with a free T1 weapon"
+  },
+  {
+    name: "APC",
+    cost: 2000000,
+    hangarSpaceUse: 2,
+    crew: 12,
+    T1WeaponSlots: 2,
+    T2WeaponSlots: 0,
+    Mobility: "D0000",
+    Armour: "4m",
+    Length: "6m",
+    Description: "Large and bulky, these Armoured Personnel Carriers can transport a good handful of troops or VIPs and protect them with thick armour. +Comes with a free T1 weapon"
+  },
+  {
+    name: "Terrain Tank",
+    cost: 3000000,
+    hangarSpaceUse: 2,
+    crew: 5,
+    T1WeaponSlots: 2,
+    T2WeaponSlots: 1,
+    Mobility: "", // Mobility value was blank in source for this item
+    Armour: "6m",
+    Length: "6m",
+    Description: "These tanks are light armoured, but with their special quarduped tank treads, they can cover many kinds of terrain with good speed. +Comes with a free T2 weapon"
+  },
+  {
+    name: "Heavy Tank",
+    cost: 4000000,
+    hangarSpaceUse: 2,
+    crew: 6,
+    T1WeaponSlots: 4,
+    T2WeaponSlots: 1,
+    Mobility: "", // Mobility value was blank in source for this item
+    Armour: "8m",
+    Length: "11m",
+    Description: "Fit for convoys, heavy firepower, artillery support, and everything tank-like, these beasts can lead the charge into combat. +Comes with a free T2 weapon"
+  },
+  {
+    name: "Spider Tank",
+    cost: 6000000,
+    hangarSpaceUse: 2,
+    crew: 4,
+    T1WeaponSlots: 3,
+    T2WeaponSlots: 1,
+    Mobility: "", // Mobility value was blank in source for this item
+    Armour: "5m",
+    Length: "9m",
+    Description: "Spider tanks are a more experi- mental platform, but unlike tradi- tional tanks, they have less trouble overcoming terrain. +Comes with a free T2 weapon"
+  },
+  {
+    name: "Ground Mech",
+    cost: 1000000,
+    hangarSpaceUse: 1,
+    crew: 1,
+    T1WeaponSlots: 2,
+    T2WeaponSlots: 0,
+    Mobility: "0000000",
+    Armour: "5m",
+    Length: "5m",
+    Description: "This personal ground mech has ample firepower with versatile movement. The perfect firepower support platform for your troops. +Comes with a free T1 weapon"
+  },
+  {
+    name: "Heavy Ground Mech",
+    cost: 4000000,
+    hangarSpaceUse: 2,
+    crew: 2,
+    T1WeaponSlots: 3,
+    T2WeaponSlots: 1,
+    Mobility: "000000SS",
+    Armour: "8m",
+    Length: "8m",
+    Description: "These mechs are equipped with extremely hard hitting ordnance, particularily against air targets and other vehicles. +Comes with a free T2 weapon"
+  },
+  {
+    name: "OG Mobile Suit",
+    cost: 7000000,
+    hangarSpaceUse: 2,
+    crew: 8,
+    T1WeaponSlots: 1,
+    T2WeaponSlots: 0,
+    Mobility: "0000000",
+    Armour: "10m",
+    Length: "10m",
+    Description: "Single-piloted, but extremely versatile. An upgrade from your standard power armour, these can fly in atmosphere or space. +Comes with a free T2 weapon"
+  },
+  {
+    name: "Submarine",
+    cost: 3000000,
+    hangarSpaceUse: 3,
+    crew: 12,
+    T1WeaponSlots: 1,
+    T2WeaponSlots: 0,
+    Mobility: "0000000000",
+    Armour: "25m",
+    Length: "25m",
+    Description: "These submarines can withstand extreme temperatures and pres- sures, and can withstand many liquids. +Comes with a free T1 weapon"
+  },
+  {
+    name: "Lamprey Boarding Ship",
+    cost: 5000000,
+    hangarSpaceUse: 4,
+    crew: 12,
+    T1WeaponSlots: 2,
+    T2WeaponSlots: 0,
+    Mobility: "000000SS",
+    Armour: "12m",
+    Length: "12m",
+    Description: "This ship uses high-powered lasers to cut through hulls to allow its boarding party inside. However, it cannot fly through ship shields. +Has 2 hangar space capacity"
+  },
+  {
+    name: "Drop Ship",
+    cost: 5000000,
+    hangarSpaceUse: 2,
+    crew: 12,
+    T1WeaponSlots: 3,
+    T2WeaponSlots: 0,
+    Mobility: "0000000",
+    Armour: "15m",
+    Length: "15m",
+    Description: "Heavily armoured and perfectly capable of transporting troops and vehicles. +Comes with a free T1 weapon +Has 3 hangar space capacity"
+  }
+];
