@@ -549,6 +549,29 @@
     <div id="endOfHull"></div>
   </div>
 
+  <div class="section" id="section-mod">
+    <div id="endOfMod"></div>
+  </div>
+
+  <div class="section" id="section-weapon">
+    <div id="endOfWeapons"></div>
+  </div>
+
+  <div class="section" id="section-industrial">
+    <div id="endOfIndustrial"></div>
+  </div>
+
+  <div class="section" id="section-ewar">
+    <div id="endOfEwar"></div>
+  </div>
+
+  <div class="section" id="section-room">
+    <div id="endOfRooms"></div>
+  </div>
+
+
+
+
   <div class ="section" id="section-crew">
     <div style="display:none;" id="endOfCrew"></div>
   </div>
@@ -627,6 +650,18 @@
     const sectionShip1 = document.getElementById('section-ship');
     const choiceHull1 = document.getElementById('choice-hull');
     const sectionHull1 = document.getElementById('section-hull');
+
+    //const choiceSubsystem1 = document.getElementById('choice-subsystem');
+    const choiceMod1 = document.getElementById('choice-mod');
+    const sectionMod1 = document.getElementById('section-mod');
+    const choiceWeapon1 = document.getElementById('choice-weapon');
+    const sectionWeapon1 = document.getElementById('section-weapon');
+    const choiceIndustrial1 = document.getElementById('choice-industrial');
+    const sectionIndustrial1 = document.getElementById('section-industrial');
+    const choiceEwar1 = document.getElementById('choice-ewar');
+    const sectionEwar1 = document.getElementById('section-ewar');
+    const choiceRoom1 = document.getElementById('choice-room');
+    const sectionRoom1 = document.getElementById('section-room');
 
     const sectionToggleMap = {
     'choice-lore': 'section-lore', 
@@ -874,11 +909,13 @@
     //populate crew
     import {crew} from '/Script/crewData.js'; // Import crew data
     //populate hulls
-    import {hulls} from '/Script/shipData.js';
+    import {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones} from '/Script/shipData.js';
     //populate equipment
-    import {equipment} from '/Script/equipmentData.js';
+    import {equipment, vehicles} from '/Script/equipmentData.js';
+    //populate spells and unified population function
+    import {catalyst, affinity, spellBases, populateDataToSection} from '/Script/manaData.js';
 
-    //populate most of the imported choices above
+    //populate skills, titles, and crew
     function addChoiceDataToSection(choiceArray, choicePrefix, sectionID) {
       const targetSection = document.getElementById(sectionID);
 
@@ -946,7 +983,8 @@
           targetSection.before(newDiv); // Append to the target section
         });
       }}
-    //similar to addChoiceDataToSection but only for hulls
+    
+      //similar to addChoiceDataToSection but only for hulls
     //TODO: do the hulls separately (e.g. frigate, dreadnought)
     function addHullDataToSection(hullArray, choicePrefix, sectionID) {
       const targetSection = document.getElementById(sectionID);
@@ -1072,6 +1110,7 @@
           targetSection.before(newDiv); // Append to the target section
           });
         }
+    
     function addEquipmentDataToSection(equipmentArray, choicePrefix, sectionID) {
       const targetSection = document.getElementById(sectionID);
 
@@ -1243,17 +1282,9 @@
           targetSection.before(newDiv); // Append to the target section
         });
       }
-    
-    function addSubsystemDataToSection(subsystemArray, choicePrefix, sectionID) {}
-    function addModsDataToSection(modsArray, choicePrefix, sectionID) {}
-    function addWeaponsDataToSection (modsArray, choicePrefix, sectionID) {}
-    function addIndustrialDataToSection (modsArray, choicePrefix, sectionID) {}
-    function addEWarDataToSection (modsArray, choicePrefix, sectionID) {}
-    function addRoomDataToSection (modsArray, choicePrefix, sectionID) {}
-    
-    
+      
 
-        //make choices visible (populate)
+    //make choices visible (populate)
     const choiceSkills1 = document.getElementById('origin-skills');
     const sectionSkills1 = document.getElementById('choice-origin');
     sectionSkills1.addEventListener('click', () => {
@@ -1279,13 +1310,44 @@
     choiceHull1.addEventListener('click', () => {
       choiceHull1.classList.toggle('active');
       sectionHull1.classList.toggle('active');
-      addHullDataToSection(hulls, 'choice', 'endOfHull');
+      populateDataToSection(hulls, 'choice', 'endOfHull', 'hull');
     });
 
     choiceEquipment1.addEventListener('click', () => {
       sectionEquipment1.classList.toggle('active');
       addEquipmentDataToSection(equipment, 'choice', 'endOfEquipment');
-    });    
+    });
+    
+    choiceMod1.addEventListener('click', () => {
+      choiceMod1.classList.toggle('active');
+      sectionMod1.classList.toggle('visible');
+      populateDataToSection(mods, 'choice', 'endOfMod', 'mod');
+    });
+
+    choiceWeapon1.addEventListener('click', () => {
+      choiceWeapon1.classList.toggle('active');
+      sectionWeapon1.classList.toggle('visible');
+      populateDataToSection(weapons, 'choice', 'endOfWeapons', 'weapon');
+    });
+
+    choiceIndustrial1.addEventListener('click', () => {
+      choiceIndustrial1.classList.toggle('active');
+      sectionIndustrial1.classList.toggle('visible');
+      populateDataToSection(industrial, 'choice', 'endOfIndustrial', 'industrial');
+    });
+
+    choiceEwar1.addEventListener('click', () => {
+      choiceEwar1.classList.toggle('active');
+      sectionEwar1.classList.toggle('visible');
+      populateDataToSection(eWar, 'choice', 'endOfEwar', 'ewar');
+    });
+
+    choiceRoom1.addEventListener('click', () => {
+      choiceRoom1.classList.toggle('active');
+      sectionRoom1.classList.toggle('visible');
+      populateDataToSection(rooms, 'choice', 'endOfRooms', 'room');
+    });
+
 
   //Ship Creation Script
     import { createShip, deleteShip } from '/Script/shipData.js'; // Import the createShip function from ship.js

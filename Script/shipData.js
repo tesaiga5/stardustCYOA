@@ -1,9 +1,11 @@
 // This file contains data for various ship hulls available in the game.
 
-export {hulls, subSystems, mods, industrial, eWar, rooms, weapons, drones,
+export {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
         createShip, deleteShip, addHull, addWeapon, addAI,addEnergyGen, addShield, 
-        addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom,
-}
+        addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom};
+
+
+
 
 // The structure is based on the existing shipData.js forma
 const hulls = [
@@ -24,12 +26,12 @@ const hulls = [
         hullArmor: 3, // 03/25
         shieldStrength: 1, // 01/25
         length: '18m',
-        maxCrew: 1, 
+        maxCrew: 1,
         extraRooms: 0,
         rooms: [], // Default empty array
         energyUse: 0, // No specific value in docx, default to 0
         description: "A standard fighter from Hammerhead Industries, equipped for combat.",
-        image: '/Images/Beatrice R&D.webp', // Using the same placeholder image
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "S97-TRN",
@@ -47,12 +49,12 @@ const hulls = [
         hullArmor: 2, // 02/25
         shieldStrength: 1, // 01/25
         length: '24m',
-        maxCrew: 1, 
+        maxCrew: 1,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "A versatile Hammerhead Industries fighter with enhanced broadside capabilities.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Beyond",
@@ -70,12 +72,12 @@ const hulls = [
         hullArmor: 4, // 04/25
         shieldStrength: 1, // 01/25
         length: '16m',
-        maxCrew: 2, 
+        maxCrew: 2,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "The Beyond is a Beatrice R&D fighter known for its advanced navigation systems.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Wasp",
@@ -93,12 +95,12 @@ const hulls = [
         hullArmor: 4, // 04/25
         shieldStrength: 0, // No value in docx, default to 0
         length: '14m', // No value in docx, default to 0
-        maxCrew: 1, 
+        maxCrew: 1,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "A nimble fighter used by the Federation Navy.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
 
     // Frigates from 'ship Data.docx'
@@ -118,12 +120,12 @@ const hulls = [
         hullArmor: 7, // 07/25
         shieldStrength: 2, // 02/25
         length: '120m',
-        maxCrew: 20, 
+        maxCrew: 20,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "The Stingray is a Hammerhead Industries frigate, designed for versatile engagements.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Valkyrie",
@@ -141,12 +143,12 @@ const hulls = [
         hullArmor: 6, // 06/25
         shieldStrength: 2, // 02/25
         length: '100m',
-        maxCrew: 25, 
+        maxCrew: 25,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "A Beatrice R&D frigate, known for its strong broadside weaponry.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Manta",
@@ -164,12 +166,12 @@ const hulls = [
         hullArmor: 8, // 08/25
         shieldStrength: 3, // 03/25
         length: '110m',
-        maxCrew: 22, 
+        maxCrew: 22,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "A robust frigate in the Federation Navy's arsenal, balanced for defense and offense.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
 
     // Destroyers from 'ship Data.docx'
@@ -189,12 +191,12 @@ const hulls = [
         hullArmor: 10, // 10/25
         shieldStrength: 4, // 04/25
         length: '250m',
-        maxCrew: 50, 
+        maxCrew: 50,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "The Javelin is a Hammerhead Industries destroyer, capable of sustained engagements.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Aegis",
@@ -212,12 +214,12 @@ const hulls = [
         hullArmor: 9, // 09/25
         shieldStrength: 5, // 05/25
         length: '220m',
-        maxCrew: 60, 
+        maxCrew: 60,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "A Beatrice R&D destroyer, featuring strong defensive capabilities.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Gladius",
@@ -235,12 +237,12 @@ const hulls = [
         hullArmor: 11, // 11/25
         shieldStrength: 6, // 06/25
         length: '240m',
-        maxCrew: 55, 
+        maxCrew: 55,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "The Gladius is a Federation Navy destroyer, a balanced and reliable warship.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
 
     // Cruisers from 'ship Data.docx'
@@ -260,12 +262,12 @@ const hulls = [
         hullArmor: 14, // 14/25
         shieldStrength: 7, // 07/25
         length: '500m',
-        maxCrew: 150, 
+        maxCrew: 150,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "A Hammerhead Industries cruiser, built for heavy firepower and some fighter support.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Oracle",
@@ -283,12 +285,12 @@ const hulls = [
         hullArmor: 13, // 13/25
         shieldStrength: 8, // 08/25
         length: '480m',
-        maxCrew: 180, 
+        maxCrew: 180,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "The Oracle is a Beatrice R&D cruiser, focusing on broadside attacks and advanced systems.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Vanguard",
@@ -306,12 +308,12 @@ const hulls = [
         hullArmor: 15, // 15/25
         shieldStrength: 9, // 09/25
         length: '520m',
-        maxCrew: 160, 
+        maxCrew: 160,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "A Federation Navy cruiser, known for its balanced combat capabilities and robust armor.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
 
     // Battleships from 'ship Data.docx'
@@ -331,12 +333,12 @@ const hulls = [
         hullArmor: 20, // 20/25
         shieldStrength: 10, // 10/25
         length: '1.2km',
-        maxCrew: 500, 
+        maxCrew: 500,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "A Hammerhead Industries battleship, featuring immense firepower and significant hangar capacity.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Paladin",
@@ -354,12 +356,12 @@ const hulls = [
         hullArmor: 19, // 19/25
         shieldStrength: 11, // 11/25
         length: '1.1km',
-        maxCrew: 600, 
+        maxCrew: 600,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "The Paladin is a Beatrice R&D battleship, a formidable vessel with strong broadside and shielding.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Conqueror",
@@ -377,12 +379,12 @@ const hulls = [
         hullArmor: 21, // 21/25
         shieldStrength: 12, // 12/25
         length: '1.3km',
-        maxCrew: 550, 
+        maxCrew: 550,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "The Conqueror is a Federation Navy battleship, a balanced and heavily armored warship.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
 
     // Carriers from 'ship Data.docx'
@@ -402,12 +404,12 @@ const hulls = [
         hullArmor: 16, // 16/25
         shieldStrength: 6, // 06/25
         length: '2km',
-        maxCrew: 2500, 
+        maxCrew: 2500,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
         description: "A massive Hammerhead Industries carrier, designed to deploy a large number of fighters.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Gáe Bulg",
@@ -425,12 +427,12 @@ const hulls = [
         hullArmor: 19, // 19/25
         shieldStrength: 8, // 08/25
         length: '2.5km',
-        maxCrew: 3800, 
+        maxCrew: 3800,
         extraRooms: 20,
         rooms: [],
         energyUse: 0,
         description: "The Gáe Bulg is a Blackhawk Elite carrier, specializing in overwhelming fighter deployment.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
 
     // Dreadnoughts from 'ship Data.docx'
@@ -450,12 +452,12 @@ const hulls = [
         hullArmor: 40, // 40/25
         shieldStrength: 10, // 10/25
         length: '6.5km',
-        maxCrew: 6000, 
+        maxCrew: 6000,
         extraRooms: 32,
         rooms: [],
         energyUse: 0,
         description: "The Gungnir is a Blackhawk Elite dreadnought, a true behemoth of the battlefield.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Dhyana",
@@ -478,7 +480,7 @@ const hulls = [
         rooms: [],
         energyUse: 0,
         description: "The Dhyana is a Triglav Innovations dreadnought, known for its immense firepower and advanced design.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     // New entries from 'Page 2 Stardust.md'
     {
@@ -502,7 +504,7 @@ const hulls = [
         rooms: [],
         energyUse: 1,
         description: "Integrated PI Control V6 may be installed without occupying slots. Although Pulsar's next generation fighter is only in an incremental improvement on its previous efforts, the integrated PIO system is a classy touch that leaves room for a second command module. It is still very comfortable, and has a cozy cabin area for longer voyages.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "X66 \"Omen\"",
@@ -525,7 +527,7 @@ const hulls = [
         rooms: [],
         energyUse: 1,
         description: "May perform missions for a mech, dropship, or drone. Incorporates integrated power capacitor to X66. With both automated flight and extended reconnaissance. While capable of carrying a pilot, it doesn't like it.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Cygnus",
@@ -548,7 +550,7 @@ const hulls = [
         rooms: [],
         energyUse: 1,
         description: "Digital Security may be installed without occupying slots. Recognizing the increasing uselessness of drone warfare, the Talon developed the Cygnus command and control fighter. It is fast and has a good range. The Federation finds the recent advances in the sophistication of Talon engineering concerning.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Scorpion",
@@ -571,7 +573,7 @@ const hulls = [
         rooms: [],
         energyUse: 2,
         description: "May perform missions for a mech, dropship, or submarine. The \"Scorpion\" is a multi-environment fighter whose field-linked modules allow it to operate effectively in an atmosphere and perform a wide variety of tasks.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Hermes",
@@ -594,7 +596,7 @@ const hulls = [
         rooms: [],
         energyUse: 2,
         description: "The Hermes is useful as a shuttle or scout craft for Beatrice's larger ships. But it has also become a popular courier ship on its own merits.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Dirk",
@@ -617,7 +619,7 @@ const hulls = [
         rooms: [],
         energyUse: 2,
         description: "Don't be fooled by its small size. The Dirk never travels alone. These scout ships are always on the lookout for new prey, and are notorious for jamming a victim's warp drive while calling in their mothership for the kill.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "PI Vk2",
@@ -640,7 +642,7 @@ const hulls = [
         rooms: [],
         energyUse: 2,
         description: "The PI Vk2 is often used as a shuttle for civilian liners or a luxury yacht for wealthy businessmen. Roomy, spacious, and surprisingly comfortable, the Vk2 is an increasingly common sight.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Morning Star",
@@ -663,7 +665,7 @@ const hulls = [
         rooms: [],
         energyUse: 2,
         description: "The Morning Star is one of the earliest corvettes, and one of the most successful. Highly adaptable, it can fill the role of scout, interceptor, light support, heavy fighter, or planetary landing craft.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Shrike",
@@ -686,7 +688,7 @@ const hulls = [
         rooms: [],
         energyUse: 3,
         description: "The Shrike is usually found as a plaything of the super rich, who take pains to outfit them in the most expensive way possible.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Medusa",
@@ -709,7 +711,7 @@ const hulls = [
         rooms: [],
         energyUse: 4,
         description: "Fast and deadly, the \"Medusa\" is the quintessential raider. However the large number of point-defense mounts suggest the Heralds designed it as an escort vessel.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Rapier",
@@ -732,7 +734,7 @@ const hulls = [
         rooms: [],
         energyUse: 4,
         description: "Introduced in the battle of BRSRB-4, the Rapier quickly became the pirates’ favorite heavy skirmish vessel.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "PI Vc11",
@@ -755,7 +757,7 @@ const hulls = [
         rooms: [],
         energyUse: 4,
         description: "Intent on overtaking Triglav’s technological lead, Pulsar Inc. engaged with a new partner to develop the PI Vc11 light cruiser. These compact, highly efficient ships retain Pulsar’s signature space-saving refinements while incorporating a more martial configuration.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Fury",
@@ -778,7 +780,7 @@ const hulls = [
         rooms: [],
         energyUse: 4,
         description: "Furies have become a menace in the Clover systems. Dedicated gunships capable of catching and killing Viking class destroyers, they operate in packs to take down larger vessels.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Harrower",
@@ -801,7 +803,7 @@ const hulls = [
         rooms: [],
         energyUse: 4,
         description: "These \"Harrower\" light cruisers were found with the \"Monarch\" battleships. They possess reactionless drives that give them incredible agility and allow them to safely land on planets.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "X45 Scythe",
@@ -824,7 +826,7 @@ const hulls = [
         rooms: [],
         energyUse: 6,
         description: "May not mount anti-matter cannon. Triglav found something out there, and they reverse-engineered it into the X45 Scythe. Although only time will tell if the battlecruiser design is viable, the Scythe’s ability to quickly bring heavy firepower to the battlefield has proven invaluable on several occasions.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Manta (Herald)", // Renamed to avoid conflict with Federation Navy Manta
@@ -847,7 +849,7 @@ const hulls = [
         rooms: [],
         energyUse: 7,
         description: "May not mount anti-matter cannon. The technology and design of the \"Manta\" are distinct from those found in other Herald ships. Triglav won’t be happy you have one of the original Herald battlecruisers.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Monarch",
@@ -870,7 +872,7 @@ const hulls = [
         rooms: [],
         energyUse: 7,
         description: "Advanced Jump Drive allows the \"Monarch\" to travel freely between systems without jump gates. Kings of the \"Ghul\" tech family, two \"Monarch\" fast battleships were recently found. These ships feel alive, and maneuver with a grace unheard of in such a large vessel. Their gravity sails tacking against some unseen medium.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Charon",
@@ -893,7 +895,7 @@ const hulls = [
         rooms: [],
         energyUse: 7,
         description: "Jump Field allows Charon’s fleet to travel freely between systems without jump gates. The Charon is Beatrice R&D’s flagship and the product of decades of work: a jump ship capable of conveying an entire fleet of vessels to an unexplored system in a single leap. Cynical minds note it can bypass jump gates for a back door attack.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "X65 \"Odysseus\"",
@@ -916,7 +918,7 @@ const hulls = [
         rooms: [],
         energyUse: 7,
         description: "Uses Dreadnought rules. Within the Odysseus, Triglav fused the titanic might of the dreadnought with the more versatile nature of the battleship, creating a new breed of super-capital ship.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "PI Va2",
@@ -939,7 +941,7 @@ const hulls = [
         rooms: [],
         energyUse: 7,
         description: "Advanced Jump Drive lets the Va2 travel freely between systems without jump gates. Designed for Pulsar’s corporate field headquarters, the Va2 is the ultimate deep space exploration vessel. It serves as a base for traversing and researching multiple systems in comfort and relative safety.",
-        image: '/Images/Beatrice R&D.D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Archangel",
@@ -962,7 +964,7 @@ const hulls = [
         rooms: [],
         energyUse: 7,
         description: "Although formidable in combat, the Archangel’s primary task is to watch over uncharted systems. It acts as a mobile fortress securing new worlds during the early terraforming and colonization stages. Only once a system is well established is it added to the galactic network.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
     {
         name: "Hades",
@@ -985,55 +987,436 @@ const hulls = [
         rooms: [],
         energyUse: 10,
         description: "Wormhole Generator creates a temporary gateway to any designated star system. Energy Damping Field negates 80% of damage received. Anti-matter cannon strike overloads damping field for five minutes, but \"Hades\" survives otherwise intact. \"Hades\" is a mobile space station the size of a small city, recovered from a decaying orbit around a black hole. Formerly a scientific research outpost, \"Hades\" possesses unique technologies that will have a strong impact on space travel once they are reverse engineered.",
-        image: '/Images/Beatrice R&D.webp',
+        image: '/Images/Other/Beatrice R&D.webp'
     },
 ];
 
-const subSystems = [
-    {
-        name: "AI",
-        manufacturer: "Beatrice R&D",
-        role: "Onboard AI",
-        description: "Allows the ship to travel faster than light.",
-        imageSrc: "/Images/Beatrice R&D.webp",
-        
-    },
-    {
-        name: "Energy",
-        cost: 1000000,
-        energyOutput: 5,
-        chargeDuration: 10,
-        auxDescription: "Generates energy for the ship's systems.",
-        description: "Protects the ship from incoming fire.",
-        imageSrc: "/Images/Beatrice R&D.webp",
-    },
-    {
-        name: "Shield",
-        cost: 5000000,
-        shieldStrength: 10,
-        description: "Maintains a habitable environment for the crew.",
-        imageSrc: "/Images/Beatrice R&D.webp",
-    },
+const shipAI = [
+  {
+    name: "Winston v9.0.3",
+    manufacturer: "Beatrice R&D",
+    role: "Multi-Role",
+    description: "A minimalistic and subtle ship AI that has all of the basic functions any ship-farer could want. Most ships will be well off with this AI.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Beatrice v6.8.2",
+    manufacturer: "Beatrice R&D",
+    role: "Exploration",
+    description: "Named after the founder of the corporation herself while also utilizing her voice, the Beatrice AI is reknown for being efficient at managing exploration voyages.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Targray v3.3",
+    manufacturer: "Hammerhead Ind.",
+    role: "Industry",
+    description: "Targray keeps production and mining operations at tip-top shape. He's full of many frameworks built to keep things running.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Cassandra v16.0.2",
+    manufacturer: "Beatrice R&D",
+    role: "Entertainment",
+    description: "If you're planning on flying a vessel for civillian use or comfort, Cassandra is the AI you need. She's programmed to keep everyone happy on your ship.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Luke v9.5.1",
+    manufacturer: "Pulsar Inc.",
+    role: "Deep Space Exploration",
+    description: "Luke specializes in max efficiency and recycling of resources for those extremely long journeys.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Rom v22.4",
+    manufacturer: "Red Dagger Pirates",
+    role: "Skirmish & Interception",
+    description: "Rom was made by Red Dagger programmers specifically to maximize output into navigation, giving ships the best advantage when it comes to scaling the battlefield. He's very adaptable for any situation you may come across.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Jacob v13.0.4",
+    manufacturer: "Federation Navy",
+    role: "Fire Support",
+    description: "Fleet synergy is the epitome of the Federation Navy, and that's partially thanks to Jacob. He synergizes well with other combat AIs and is a great tactician.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Remington v3.0.1",
+    manufacturer: "Triglav Innovations",
+    role: "Covert Ops",
+    description: "Nothing's more discrete than the latest version of Remington. For any special ops ship-farers out there, there's no AI better than him.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Lai'na v15.3.2",
+    manufacturer: "Luos Syndicate",
+    role: "Assault",
+    description: "There are a lot of assault-based AI out there, but none are better than Lai'na. Programmed by a brilliant Outer Ring programmer, she holds top record in combat performance.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Cedrick v9.2.10",
+    manufacturer: "Blackhawk Elite",
+    role: "Siege & Defence",
+    description: "When it comes to prolonged battles, Cedrick comes out to be the most stalwart. He's able to manage ship defences perfectly with minimal resources.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Blueberry v7.3.2",
+    manufacturer: "Talons",
+    role: "Guerilla",
+    description: "She's a little sassy and sinister, but that's how the Talons programmed her. She's easily one of the most fearsome AIs, full of ingenious tactics to wither down foes.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Sophocles v1.0.3",
+    manufacturer: "Triglav Innovations",
+    role: "Mana Interfacing",
+    description: "Sophocles is Triglav's best attempt at utilizing mana power. His AI is incredibly complex compared to others, and has the potential to make ships incredible.",
+    image: "/Images/Other/Beatrice R&D.webp"
+  }
 ];
 
-const mods = [
+const energy = [
+  {
+    name: "Solar Panels",
+    cost: 2000000,
+    energyOutput: "",
+    chargeDuration: "30 minutes",
+    description: "Solar energy is plentiful, so long as you're near a star. Works great as a hybrid energy system. +Does not count towards your energy system maximum count *Can only be bought once",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+  {
+    name: "Power Capacitors",
+    cost: 10000000,
+    energyOutput: "",
+    chargeDuration: "8 days",
+    description: "Capacitors are small enough to fit in fighters, though they must be recharged often. However, they can also be coupled with other energy systems instead boost their effectiveness.",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+  {
+    name: "Nuclear Fission",
+    cost: 16000000,
+    energyOutput: "",
+    chargeDuration: "25 years",
+    description: "Large and bulky, fission reactors are best kept in larger and better defended vessels. Great power output and great efficiency. *Cannot be equipped on fighters *Requires a nuclear engineer",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+  {
+    name: "Nuclear Fusion",
+    cost: 26000000,
+    energyOutput: "",
+    chargeDuration: "15 years",
+    description: "Fusion has a much more potent energy output than fission, but is also less efficient. *Cannot be equipped on fighters *Requires a nuclear engineer",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+  {
+    name: "Mana Core",
+    cost: 50000000,
+    energyOutput: "",
+    chargeDuration: "Lifetimes",
+    description: "Mana energy was reverse engineered from the \"Ghost\" family of Herald technology. Current tech is still difficult to wire with mana. +Herald ships get +1 energy output and get 10m off",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+  {
+    name: "Anti-Matter Core",
+    cost: 40000000,
+    energyOutput: "",
+    chargeDuration: "12 years",
+    description: "A very volatile energy substance, anti-matter has brought endless potential technology and sciences. This core safely decommissions itself if it's forcefully broken into.",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  }
+];
+
+const shield = [
+  {
+    name: "Basic Shielding",
+    cost: 1000000,
+    shieldStrength: "+7",
+    description: "", // No description provided in the source for this item
+    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
+  },
+  {
+    name: "Standard Shielding",
+    cost: 5000000,
+    shieldStrength: "+10",
+    description: "", // No description provided in the source for this item
+    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
+  },
+  {
+    name: "Advanced Shielding",
+    cost: 20000000,
+    shieldStrength: "+12",
+    description: "+Ships with power capacitors or better 10m off",
+    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
+  },
+  {
+    name: "Aegis Shielding",
+    cost: 30000000,
+    shieldStrength: "+14",
+    description: "+Ships with nuclear fusion or better get 15m off",
+    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
+  },
+  {
+    name: "Stalwart Shielding",
+    cost: 40000000,
+    shieldStrength: "+16",
+    description: "+Ships with anti-matter core or better get 10m off",
+    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
+  },
+  {
+    name: "Mana Shielding",
+    cost: 40000000,
+    shieldStrength: "+15",
+    description: "+Ships with a mana core get this for 5m off and with +2 defence",
+    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
+  }
+];
+
+
+
+const mods = [ // This array contains both Command Mods and Hull Mods
     {
-        name: "Command Mod",
-        manufacturer: "Beatrice R&D",
-        cost: 5000000,
-        specialAbility: "None",
-        cooldown: "passive",
-        range: "self",
-        description: "Enhances the ship's command and control capabilities.",
-        imageSrc: "/Images/Beatrice R&D.webp",
-    },
-    {
-        name: "Hull Mod",
-        manufacturer: "Beatrice R&D",
-        cost: 3000000,
-        effect: "passive",
-        description: "Reinforces the ship's hull, providing additional protection against damage.",
-    }
+    name: "Cool Paint Job",
+    manufacturer: "Civillian",
+    cost: 0, // Free!
+    specialAbility: "None",
+    cooldown: "Passive",
+    range: "Self",
+    description: "Your ship turns the heads of the opposite sex by about an extra 0.4 radians per second.",
+    type: "command", // Added type to differentiate
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "V77-SLT Control Room",
+    manufacturer: "Hammerhead Ind.",
+    cost: 1000000,
+    specialAbility: "Willpower",
+    cooldown: "5 minutes",
+    range: "Self",
+    description: "Your ship gains a small boost to engine thrust, weapon damage and shield defence for 30 seconds.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "\"Columbus\" BTR37",
+    manufacturer: "Beatrice R&D",
+    cost: 2000000,
+    specialAbility: "Elusive",
+    cooldown: "Passive",
+    range: "Self",
+    description: "Other weapons take almost twice as long to lock weapons onto your ship. Your FTL drives are also stronger, and can achieve warp-speed quicker than others.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "FDN Control zrt3",
+    manufacturer: "Federation Navy",
+    cost: 3000000,
+    specialAbility: "Bulwark",
+    cooldown: "5 minutes",
+    range: "Self",
+    description: "Your ship slows to half its velocity but deploys a one-sided force field that blocks all but the strongest incoming damage from a certain direction for 20 seconds.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "\"Zip\" MK III",
+    manufacturer: "Red Dagger Pirates",
+    cost: 3000000,
+    specialAbility: "Raptor",
+    cooldown: "5 minutes",
+    range: "Self",
+    description: "Your ship's engines double their efforts, earning you twice the thrust and acceleration for 20 seconds.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "PI Control V6",
+    manufacturer: "Pulsar Inc.",
+    cost: 3000000,
+    specialAbility: "Atlas",
+    cooldown: "Continuous",
+    range: "Moderate",
+    description: "Once activated, your ship links the energy sources of all nearby allied ships. All ships gain a performance boost for all modules, especially for mining and salvage modules.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "X38 \"Tribe\" TDNK",
+    manufacturer: "Triglav Innovations",
+    cost: 3000000,
+    specialAbility: "Valkyrie",
+    cooldown: "5 minutes",
+    range: "Long",
+    description: "Your ship uses experimental EMP tech to single out an enemy ship. For 3 minutes, that ship's shields are weakened, weapons slowed, and navigation cut in half.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "CBL2 \"Banshee\"",
+    manufacturer: "Luos Syndicate",
+    cost: 4000000,
+    specialAbility: "Moonshine",
+    cooldown: "10 minutes",
+    range: "Moderate",
+    description: "After picking a direction, your ship emits a powerful EMP pulse in a cone, dealing heavy damage to shields while also interfering with electrical systems.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "SH ExmT",
+    manufacturer: "Luos Syndicate",
+    cost: 4000000,
+    specialAbility: "Prometheus",
+    cooldown: "15 minutes",
+    range: "Self",
+    description: "Using stored energy reserves, your ship completely regenerates your shield strength back to its maximum.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "BH Command VR",
+    manufacturer: "Blackhawk Elite",
+    cost: 5000000,
+    specialAbility: "Leviathan",
+    cooldown: "15 minutes",
+    range: "Long (radius)",
+    description: "All allied ships get a massive bonus to shield and hull armour defence for 3 minutes.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "MI520 \"Visage\"",
+    manufacturer: "Talons",
+    cost: 5000000,
+    specialAbility: "Kraken",
+    cooldown: "15 minutes",
+    range: "Long (radius)",
+    description: "All allied ships get a massive bonus to weapon reload times, fire rates and damage for 3 minutes. Does not effect Anti-Matter Cannons.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Herald \"Blink\"",
+    manufacturer: "Heralds",
+    cost: 7000000,
+    specialAbility: "Umbra",
+    cooldown: "8 minutes",
+    range: "Long",
+    description: "Your ship blinks out of existence and almost instantaneously re-appears a far distance ahead of where you were pointed.",
+    type: "command",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Point-Defence Upgrade",
+    cost: 1000000,
+    maximumUpgrades: 3,
+    pointDefenceMounts: 2, // Specific mount type
+    description: "", // No general description provided, only stats
+    type: "hull", // Added type to differentiate
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Broadside Upgrade",
+    cost: 2000000,
+    maximumUpgrades: 3,
+    broadsideTurretMounts: 2, // Specific mount type
+    description: "*Can't be fit on carriers",
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Spinal Weapon Mount",
+    cost: 3000000,
+    maximumUpgrades: 2,
+    spinalWeaponMounts: 1, // Specific mount type
+    description: "*Can't be fit on carriers",
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Overdrive Afterburner",
+    cost: 3000000,
+    maximumUpgrades: 5,
+    navigation: 1, // Specific stat
+    description: "", // No general description provided, only stats
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Nano Armour Coating",
+    cost: 4000000,
+    maximumUpgrades: 1,
+    hullArmor: "20%", // Keep as string as it's a percentage
+    description: "", // No general description provided, only stats
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Vehicle Bay",
+    cost: 3000000,
+    maximumUpgrades: 4,
+    hangarSpace: 2, // Specific stat
+    description: "+Cost does not scale with class *Spaces are only for vehicles *Can't be fit on fighters",
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Active Cloaking",
+    cost: 6000000,
+    maximumUpgrades: 1,
+    description: "Activating this turns your ship invisible to sight or scans. You cannot do anything (including FTL warp) but navigate at half speed.",
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Teleport Jammer",
+    cost: 2000000,
+    maximumUpgrades: 1,
+    description: "Prevents boarding parties from teleporting into your vessel. +Dreadnoughts have this for free +Fighters don't need a jammer",
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Shield Extender",
+    cost: 4000000,
+    maximumUpgrades: 1,
+    shieldStrength: 2, // Specific stat
+    description: "Sacrifice 20% of your ship's shields and give it to all allied ships within a moderate distance.",
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Hull Extension",
+    cost: 1000000,
+    maximumUpgrades: 2,
+    navigation: "", // No specific navigation value provided
+    extraRooms: "", // No specific extra rooms value provided
+    description: "+Frigates gain 2 crew slots *Can't be fit on fighters",
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Hangar Bay",
+    cost: 5000000,
+    maximumUpgrades: 4,
+    hangarSpace: 2, // Specific stat
+    description: "+Cost does not scale with class *Spaces are only for drones/ships *Can't be fit on fighters",
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  },
+  {
+    name: "Hull Reduction",
+    cost: 0, // Free!
+    maximumUpgrades: 2,
+    navigation: "", // No specific navigation value provided
+    extraRooms: "", // No specific extra rooms value provided
+    description: "*Frigates lose 2 crew slots *Can't be fit on fighters",
+    type: "hull",
+    image: "/Images/Other/Beatrice R&D.webp"
+  }
 ];
 
 const industrial = [
@@ -1041,37 +1424,43 @@ const industrial = [
     name: "Mining Harvester",
     cost: 2000000,
     moduleType: "Industrial",
-    description: "This harvester uses infrared light to separate common ores from asteroids. It has its own unique built-in tractor beam to bring the ore to your ship while mining. +Can mine low-grade ore *Uses a broadside or point-defence turret mount *Requires ore processing facility"
+    description: "This harvester uses infrared light to separate common ores from asteroids. It has its own unique built-in tractor beam to bring the ore to your ship while mining. +Can mine low-grade ore *Uses a broadside or point-defence turret mount *Requires ore processing facility",
+    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   },
   {
     name: "MK2 Frequency Lens",
     cost: 1000000,
     moduleType: "Industrial",
-    description: "You can replace the lens of a mining harvester with this lens that uses a smaller green laser to mine more complex ores. Lenses can be changed on the fly. +Can switch with mining harvester lenses to mine mid-grade ore *Requires a mining harvester"
+    description: "You can replace the lens of a mining harvester with this lens that uses a smaller green laser to mine more complex ores. Lenses can be changed on the fly. +Can switch with mining harvester lenses to mine mid-grade ore *Requires a mining harvester",
+    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   },
   {
     name: "MK3 Frequency Lens",
     cost: 1000000,
     moduleType: "Industrial",
-    description: "The most precise and powerful lens, the MK3 is capable of pin-pointing the most valuable ore from asteroids. It's inefficient for mining lower grade ores, however. +Can switch with mining harvester lenses to mine high-grade ore *Requires a mining harvester"
+    description: "The most precise and powerful lens, the MK3 is capable of pin-pointing the most valuable ore from asteroids. It's inefficient for mining lower grade ores, however. +Can switch with mining harvester lenses to mine high-grade ore *Requires a mining harvester",
+    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   },
   {
     name: "Salvage Harvester",
     cost: 3000000,
     moduleType: "Industrial",
-    description: "Using similar technology to the mining harvesters, this laser is specialized in taking apart machines. Perfect for salvaging debris or ship wrecks. It also comes with its own tractor beam. *Uses a broadside or point-defence turret mount *Requires a cargo space room"
+    description: "Using similar technology to the mining harvesters, this laser is specialized in taking apart machines. Perfect for salvaging debris or ship wrecks. It also comes with its own tractor beam. *Uses a broadside or point-defence turret mount *Requires a cargo space room",
+    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   },
   {
     name: "Tractor Beam",
     cost: 3000000,
     moduleType: "Logistics",
-    description: "A universal tractor beam that harnesses light to attract or push matter not limited to ore or scrap. It's useful for retrieving free- floating objects, or that one maintenance crew member who accidentally cut his safety wire. *Can only be bought once per ship *Cannot target other active ships"
+    description: "A universal tractor beam that harnesses light to attract or push matter not limited to ore or scrap. It's useful for retrieving free- floating objects, or that one maintenance crew member who accidentally cut his safety wire. *Can only be bought once per ship *Cannot target other active ships",
+    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   },
   {
     name: "Composition Scanner",
     cost: 4000000,
     moduleType: "Logistics",
-    description: "This very complex module can scan objects and bring back very precise results. It can detect ore/mineral compositions in asteroids, energy sources, electri- cal activity, and even life forms. It can also scan other ships to give you intel on their systems. *Can only be bought once per ship"
+    description: "This very complex module can scan objects and bring back very precise results. It can detect ore/mineral compositions in asteroids, energy sources, electri- cal activity, and even life forms. It can also scan other ships to give you intel on their systems. *Can only be bought once per ship",
+    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   }
 ];
 
@@ -1082,84 +1471,96 @@ const eWar = [
     cost: 7000000,
     moduleType: "E-War",
     range: "000000886",
-    description: "This module can be used to infect a hostile ship's weapons, lowering all of their weapon's tracking, rate of fire, and range effectiveness by 1."
+    description: "This module can be used to infect a hostile ship's weapons, lowering all of their weapon's tracking, rate of fire, and range effectiveness by 1.",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "Honey Pot Module",
     cost: 3000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "Set up a fake scapegoat server on your vessel that looks appealing to hostile hackers, and use it to monitor their every move while they try to attack your systems in futile."
+    description: "Set up a fake scapegoat server on your vessel that looks appealing to hostile hackers, and use it to monitor their every move while they try to attack your systems in futile.",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "Warp Jammer",
     cost: 6000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "You can point this module at a hostile ship to effectively disable their warp drive, giving them no chance to escape."
+    description: "You can point this module at a hostile ship to effectively disable their warp drive, giving them no chance to escape.",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "Comm Scrambler",
     cost: 5000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "Pointing this at a hostile ship will scramble their comms, cutting off their outside and inside communi- cations if done well."
+    description: "Pointing this at a hostile ship will scramble their comms, cutting off their outside and inside communi- cations if done well.",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "MITM Module",
     cost: 4000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "This specialized terminal and tools allow your cybersec officer to easily conduct a man-in-the-middle attack to intercept any sort of data from a ship, giving you information about all of a ship's systems."
+    description: "This specialized terminal and tools allow your cybersec officer to easily conduct a man-in-the-middle attack to intercept any sort of data from a ship, giving you information about all of a ship's systems.",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "Penetration Module",
     cost: 8000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "This module helps your cybersec officer by giving them tools to penetrate through a system's defences. In bypassing their securi- ty grid, you lower the hostile's shield strength by 21"
+    description: "This module helps your cybersec officer by giving them tools to penetrate through a system's defences. In bypassing their securi- ty grid, you lower the hostile's shield strength by 21",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "Bridge Module",
     cost: 8000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "If successful, this module will disable the teleport jammer of a ship while this process continues to run."
+    description: "If successful, this module will disable the teleport jammer of a ship while this process continues to run.",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "Incident Module",
     cost: 6000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "This module implements a wide array of cyber defense tools to help your cybersec officer, such as network security monitoring frameworks. Attacks are easier to determine and isolate.."
+    description: "This module implements a wide array of cyber defense tools to help your cybersec officer, such as network security monitoring frameworks. Attacks are easier to determine and isolate..",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "Efficiency Module",
     cost: 4000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "Installing this in your digital securi- ty room vastly improves the efficiency of digital systems on your ship, reducing your ship's radar cross-section by a significant amount."
+    description: "Installing this in your digital securi- ty room vastly improves the efficiency of digital systems on your ship, reducing your ship's radar cross-section by a significant amount.",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "Presence Module",
     cost: 5000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "Using complex polymorphic code engines and rootkits, this module helps ensure your digital offensive has staying power. It is more difficult for enemies to find and eliminate your attacks."
+    description: "Using complex polymorphic code engines and rootkits, this module helps ensure your digital offensive has staying power. It is more difficult for enemies to find and eliminate your attacks.",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "Overflow Module",
     cost: 10000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "If done well, this module can effectively disable up to 2 ship weapons of an enemy ship, or one anti-matter cannon."
+    description: "If done well, this module can effectively disable up to 2 ship weapons of an enemy ship, or one anti-matter cannon.",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
     name: "Security Grid",
     cost: 14000000,
     moduleType: "E-War",
     range: "", // Range was blank in source for this item
-    description: "Your ship can project its e-war capabilities across all allied ships in a wide range, allowing you to apply defensive modules to more vulnerable ships and even conduct offensives from them."
+    description: "Your ship can project its e-war capabilities across all allied ships in a wide range, allowing you to apply defensive modules to more vulnerable ships and even conduct offensives from them.",
+    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   }
 ];
 
@@ -1170,8 +1571,260 @@ const rooms = [
         description: "The central hub for ship operations and command.",
         cost: 5000000,
         consequences: "Increases command efficiency and crew morale.",
+        type: "command", // Added type to differentiate
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Crew Quarters Upgrade",
+        cost: 1000000,
+        description: "All ships have sleeping quarters for your entire crew, but they are cramped and not too comfortable. Upgrade with this if you want more privacy and better comfort. +Does not cost a room slot",
+        type: "quarters",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Officer's Quarters",
+        cost: 2000000,
+        description: "Comfy, furnished dwellings that can accomodate 1-6 people on a frigate, up to 12 on a destroyer, and 10% of your crew on a cruiser or larger. Keep your important crew members with high morale!",
+        type: "quarters",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Captain's Quarters",
+        cost: 5000000,
+        description: "It will be a very luxurious suite for you on a frigate or destroyer, and a penthouse on a cruiser or larger.",
+        type: "quarters",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Basic Infirmary",
+        cost: 1000000,
+        description: "Got a headache? Maybe you need a bandage? Okay, you can do stitches and make-shift broken-bone splints here too, but don't expect much more.",
+        type: "infirmary",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Standard Infirmary",
+        cost: 2000000,
+        description: "Equipped with decent medical equipment, enough to perform surgeries. Your wounded may live another day, and with a good doctor, your crew's in good hands. *Requires a doctor",
+        type: "infirmary",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Advanced Infirmary",
+        cost: 12000000,
+        description: "The most advanced medical technology is at your finger tips, including magical space beds that can almost instantaneously repair damaged body parts. *Requires a doctor",
+        type: "infirmary",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Evacuation Room",
+        cost: 1000000,
+        description: "This will have enough escape pods for your crew and will get them out of your burning wreckage of a ship. They are equipped with survival equipment and can even navigate to the closest safe spot.",
+        type: "evacuation",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Advanced Evacuation",
+        cost: 9000000,
+        description: "Your escape pods have warp drives built into them and are even moderately armoured with a small shield to protect their inhabitants more effectively. Comes with a sparkling wine bottle in each.",
+        type: "evacuation",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Standard Mess Hall",
+        cost: 2000000,
+        description: "Monday is burger day, Tuesday is turkey day, Wednesday is spaghetti day, Thursday is... you get the idea. +Can combine with a tavern *Requires a chef",
+        type: "messhall",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Fancy Mess Hall",
+        cost: 7000000,
+        description: "All of the good crew members can sit with the captain for the day (that's you)! Enjoy mouth-watering exotic and delicious foods. +Can combine with a tavern *Requires a chef",
+        type: "messhall",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Tavern",
+        cost: 1000000,
+        description: "Sometimes you need a good drink after a long day of hard work. Kick back and relax. Bar food is good too, but not that filling. +Can combine with a mess hall *Requires a chef or bartender",
         type: "tavern",
-        imageSrc: "/Images/Beatrice R&D.webp",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Gravity Control Room",
+        cost: 2000000,
+        description: "All ships come with basic, built-in gravity control, but maybe you want to manipulate it more precisely, and control it for separate rooms in your ship.",
+        type: "control",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Lounge",
+        cost: 0, // Free!
+        description: "Maybe you don't fancy the fancy stuff. Get a few couches, a coffee table, maybe a TV, and suddenly you have a room to laze around in. +Can combine with a recreational room and an observatory",
+        type: "recreational",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Recreational Room",
+        cost: 1000000,
+        description: "During times of no action, your crew might get bored. Why not turn a room into a pool, gym, spa, library, mini-golf course, or more? +Can combine with a lounge and an observatory",
+        type: "recreational",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Observatory",
+        cost: 2000000,
+        description: "You're living amongst the stars, so why not pay attention to them once in awhile? +Can combine with a recreational room and a lounge",
+        type: "recreational",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Laboratory",
+        cost: 1000000,
+        description: "You might want this if you want to analyze ancient artifacts or other anomalies. Otherwise, enjoy mixing chemicals, running volatile experiments, and other fun things. *Requires a scientist",
+        type: "research",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Terraforming Bay",
+        cost: 9000000,
+        description: "It takes many years to terraform a planet. This room comes equipped with the means to get started, but It's not cheap. +Can combine with a laboratory *Requires a laboratory",
+        type: "industrial",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Cryosleep Chambers",
+        cost: 8000000,
+        description: "You may want to go to cryosleep for those really long voyages into unknown space. These chambers ensure you're in good health while you're out cold. *Requires a doctor and scientist",
+        type: "medical",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Ore Processing Facility",
+        cost: 3000000,
+        description: "With all of the ore you will be dealing with, you wil need a place to process them. +Can combine with a factory wing *Requires a production manager",
+        type: "industrial",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Factory Wing",
+        cost: 3000000,
+        description: "This factory wing is fitted with heavy machinery, capable of producing things en masse. It can also process scrap metal. +Can combine with an ore processing facility",
+        type: "industrial",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Cargo Space",
+        cost: 0, // Free!
+        description: "With the blink of an eye, you can turn an empty room into... an empty room. Where else will you keep your excessive space loot? +Can combine with an engineering bay",
+        type: "storage",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Engineering Bay",
+        cost: 3000000,
+        description: "Need to repair something? Bring it here. It's a mechanic's heaven. +Can combine with a cargo space *Requires a mechanical engineer",
+        type: "utility",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Hypercomms Room",
+        cost: 2000000,
+        description: "This high-tech room comes with hypercommunications tech, able to send communications across star systems almost instantly. +Can combine with a digital security room",
+        type: "communications",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Digital Security Room",
+        cost: 4000000,
+        description: "Defend your ship's vulnerable digital systems with top of the line encryption grids. +Can combine with a hypercomms room *Requires a cyber security officer",
+        type: "security",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Arsenal",
+        cost: 4000000,
+        description: "Maybe you are a gun nut, or have a few on board with you. Keep all of your small arms, here. Comes with all kinds of weaponry fit for your standard soldier's hands.",
+        type: "storage",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Advanced Arsenal",
+        cost: 9000000,
+        description: "This arsenal comes with charging stations for power armour, if you or your crew have them. It also comes with all sorts of experimental and advanced weaponry.",
+        type: "storage",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Training Room",
+        cost: 3000000,
+        description: "Give yourself some venting space. Get up close and personal and With this state-of-the-art virtual reality training room, you can emulate almost any hand-to-hand combat situation.",
+        type: "recreational",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Teleporting Platform",
+        cost: 5000000,
+        description: "beam you and your crew into the enemy ship, or onto the surface of a planet.",
+        type: "transport",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Holding Cells",
+        cost: 1000000,
+        description: "Maybe you've got some volatile prisoners you need to hold somewhere, or maybe you just want to put Styx on time-out.",
+        type: "security",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Stasis Cell",
+        cost: 2000000,
+        description: "Got an extremely volatile prisoner or lifeform that you need to contain at all costs? Throw it in the stasis cell to ensure it doesn't do anything you'd regret. Can only hold up to one specimen.",
+        type: "security",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Meat Fridge",
+        cost: 3000000,
+        description: "Stemcell-grown meat is popular in space-faring vessels. All you have to do is make sure to refill the growing solution and the meat multiplies. Comes in many flavours such as beef, chicken, kanye, etc.",
+        type: "food",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Aquaculture Room",
+        cost: 1000000,
+        description: "Raise some space fish! While you might get some good eats, you will need to replace the water often... They will need nutrients, however. +Can combine with a hydroponic garden",
+        type: "food",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Hydroponic Garden",
+        cost: 1000000,
+        description: "Have an in-ship garden by raising plants in water; enjoy the fresh air! unless you have plants for that. +Can combine with an aquaculture room",
+        type: "food",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Secure Vault",
+        cost: 2000000,
+        description: "Transporting critical material worth hundreds of millions of credits? Maybe you don't want to keep it in your cargo space, or maybe you Some aquaculture might help.... Just don't trust your crew mates. +Counts as a cargo space",
+        type: "storage",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Safe Room",
+        cost: 3000000,
+        description: "Got invaders in your ship and need a place to hide? Get a safe room... also known as a panic room. It's a hidden compartment in your ship that's hard to find, and comes with full life support. Easily defensible.",
+        type: "security",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
+    },
+    {
+        name: "Upgraded Ship Security",
+        cost: 8000000,
+        description: "All ships come with mild in-ship security drones. Perhaps you want to install more robust automated turrets and camera systems? +Does not cost a room slot",
+        type: "security",
+        image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     }
 ];
 
@@ -1189,7 +1842,8 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Kinetic",
-    description: "For ships that can get up close and personal, machine guns offer rapid firepower. Nothing can withstand a hail of high-calibre, metal-shredding bullets."
+    description: "For ships that can get up close and personal, machine guns offer rapid firepower. Nothing can withstand a hail of high-calibre, metal-shredding bullets.",
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Light Particle Blaster",
@@ -1204,7 +1858,8 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Blaster",
-    description: "Blasters fire orbs of very volatile supercharged particles capable of causing severe damage. However, the projectiles are a little slow, they're very close-ranged weapons."
+    description: "Blasters fire orbs of very volatile supercharged particles capable of causing severe damage. However, the projectiles are a little slow, they're very close-ranged weapons.",
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Light Laser Cannon",
@@ -1219,7 +1874,8 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Energy",
-    description: "Of the three light-class weapons, the light laser lannon is the most accurate and longest-ranged, but is also slightly less damaging than the others. Great against missiles."
+    description: "Of the three light-class weapons, the light laser lannon is the most accurate and longest-ranged, but is also slightly less damaging than the others. Great against missiles.",
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Missile Pod",
@@ -1234,7 +1890,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Explosive *Can be shot down",
-    description: "These small missile launchers are fit for smaller craft, but can still deliver a hard-hitting payload of explosive warheads."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Flak Cannon",
@@ -1249,7 +1905,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Kinetic +1 damage vs drones, fighters",
-    description: "While not that damaging against larger ships, you may need something to take care of those swarms of drones or fighters."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Auto Cannon",
@@ -1264,7 +1920,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Kinetic",
-    description: "Auto cannons use higher calibre bullets and have a longer effective range than machine guns. They are larger, and thus have slightly more trouble tracking."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Artillery Cannon",
@@ -1279,7 +1935,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Kin, explosive +1 damage vs hull armour",
-    description: "Artillery cannons deliver devastating damage to anything they fire at. Recoil of successive shots hurt their accuracy, however."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Heavy Particle Blaster",
@@ -1294,7 +1950,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Blaster",
-    description: "More fit for ships of larger sizes, heavy particle blasters offer insane amounts of damage up close, perfect for ships that can close the distance easily."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Mana Blaster",
@@ -1309,7 +1965,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Blaster +1 damage with a mana core",
-    description: "Mana blasters work at the same principle as particle blasters, but fire dangerous mana instead. While even slower, they hit hard."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Heavy Laser Cannon",
@@ -1324,7 +1980,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Energy +1 damage when focused >2 min",
-    description: "Heavy laser cannons excel at medium-to-long range encounters, delivering consistent, intensifying damage-per-second."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Rail Gun",
@@ -1339,7 +1995,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Kin, energy",
-    description: "Rail guns are for ships that want to keep engagements at long ranges and want accurate, unprecedented piercing power. However, they suffer up close with poor tracking."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Missile Launcher",
@@ -1354,7 +2010,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Explosive *Can be shot down",
-    description: "Missile launchers unleash torrents of fast and agile missiles, perfect against fast targets or larger targets when fired en masse."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Tesla Overcharger",
@@ -1369,7 +2025,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Energy +6 damage vs shields +Can stun targets",
-    description: "The Overcharger shoots super-charged bolts of lightning. While this will only do minor damage to a ship hull, it is exceptionally good against shields and also a ship's electrical systems."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Torpedo Silo",
@@ -1384,7 +2040,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Explosive +8 damage vs hull armour *Can be shot down *Limited to 3 per fighter",
-    description: "They're slow, bulky and hard to load, but damn if they don't cause explosions. Torpedos are much larger than standard missiles, but don't track as well. However, that doesn't matter if the target is slow."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Ragefire Rail Gun",
@@ -1399,7 +2055,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Kin, energy *Requires a cruiser or larger, or a destroyer spinal mount",
-    description: "The invention of the Ragefire is credited towards the Talons, although Triglav stole its schematics and called it their own. As the ultimate sniping weapon, a well-aimed Ragefire volley is bound to cause destructive havoc."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Tachyon Laser Cannon",
@@ -1414,7 +2070,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Energy +1 damage when focused >2 min *Requires a cruiser or larger, or a destroyer spinal mount",
-    description: "The epitome of laser technology, These laser cannons utilize special diodes that can channel tachyon particles, constantly moving faster than light. They carry deadly radiation, destroying anything in its way."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Pulse Beam Cannon",
@@ -1429,7 +2085,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "En, blaster *Requires a cruiser or larger, or a destroyer spinal mount",
-    description: "Combining the hard hits from a blaster with the long range and accuracy of a laser cannon, the pulse beam cannon fires deadly rays of super-heated particles. However, they have a hard time tracking smaller targets."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
     name: "Anti-Matter Cannon",
@@ -1444,7 +2100,7 @@ const weapons = [
     projectileVelocity: "",
     tracking: "",
     weaponTypes: "Unique *Costs 2 spinal weapon mounts *Requires a battleship or larger *5 min charge, 10 min cool down",
-    description: "This gun is so massive, only the largest ships can fit it. Thus, to aim It, you must point your entire ship to your target. The ensuing beam of destruction is powerful enough to obliterate the largest of ships."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   }
 ];
 
@@ -1460,7 +2116,8 @@ const drones = [
     hullArmour: 1,
     shieldDefence: 3,
     length: "2m",
-    description: "Agile and quick, scout drones are cheap, portable, and expendable. They're great for for basic recon, combat, or point defence. +Comes with a free machine gun *Limited to T1 weapons"
+    description: "Agile and quick, scout drones are cheap, portable, and expendable. They're great for for basic recon, combat, or point defence. +Comes with a free machine gun *Limited to T1 weapons",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Beacon Drone",
@@ -1473,7 +2130,8 @@ const drones = [
     hullArmour: 2,
     shieldDefence: 5,
     length: "6m",
-    description: "Essentially just high-performance computers strapped to navigation systems, beacon drones relay data communication for an extended range between ships. +Boosts E-War Module range by 2"
+    description: "Essentially just high-performance computers strapped to navigation systems, beacon drones relay data communication for an extended range between ships. +Boosts E-War Module range by 2",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Combat Drone",
@@ -1486,7 +2144,8 @@ const drones = [
     hullArmour: 2,
     shieldDefence: 6,
     length: "4m",
-    description: "These are more suited for straight up combat than scout drones. +Comes with a free T1 weapon *Limited to T1 and T2 weapons *T2 weapons can only be put on spinal weapon mounts"
+    description: "These are more suited for straight up combat than scout drones. +Comes with a free T1 weapon *Limited to T1 and T2 weapons *T2 weapons can only be put on spinal weapon mounts",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Brawler Drone",
@@ -1499,7 +2158,8 @@ const drones = [
     hullArmour: 5,
     shieldDefence: 7,
     length: "10m",
-    description: "Brawler drones are meant to take hits and provide great firepower. +Comes with a free T2 weapon *Limited to T1 and T2 weapons *T2 weapons can only be put on spinal weapon mounts"
+    description: "Brawler drones are meant to take hits and provide great firepower. +Comes with a free T2 weapon *Limited to T1 and T2 weapons *T2 weapons can only be put on spinal weapon mounts",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Stealth Drone",
@@ -1512,7 +2172,8 @@ const drones = [
     hullArmour: 2,
     shieldDefence: 5,
     length: "12m",
-    description: "+Can cloak for up to 5 minutes +Comes with a free T2 weapon *Limited to T1 and T2 weapons, and tesla overchargers *T2 weapons can only be put on spinal weapon mounts"
+    description: "+Can cloak for up to 5 minutes +Comes with a free T2 weapon *Limited to T1 and T2 weapons, and tesla overchargers *T2 weapons can only be put on spinal weapon mounts",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Bomber Drone",
@@ -1525,7 +2186,8 @@ const drones = [
     hullArmour: 8,
     shieldDefence: 9,
     length: "20m",
-    description: "Large but equipped to deliver hull-breaching blows. +Comes with a free torpedo silo *Limited to T3 and T1 weapons *T3 weapons can only be put on spinal mounts"
+    description: "Large but equipped to deliver hull-breaching blows. +Comes with a free torpedo silo *Limited to T3 and T1 weapons *T3 weapons can only be put on spinal mounts",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Mining Drone",
@@ -1538,7 +2200,8 @@ const drones = [
     hullArmour: 2,
     shieldDefence: 2,
     length: "6m",
-    description: "A drone that uses mining lasers to mine asteroids, and can carry the ore to your ship. +Comes with a free mining harvester (MK1 crystal) *Limited to industrial modules"
+    description: "A drone that uses mining lasers to mine asteroids, and can carry the ore to your ship. +Comes with a free mining harvester (MK1 crystal) *Limited to industrial modules",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Shield Drone",
@@ -1551,7 +2214,8 @@ const drones = [
     hullArmour: 1,
     shieldDefence: 6,
     length: "6m",
-    description: "A special drone that projects your ship's shield capacity. +Can project a shield that covers 60m^2 and has 1/3 the shield strength of your main ship *Shield lasts 5 min"
+    description: "A special drone that projects your ship's shield capacity. +Can project a shield that covers 60m^2 and has 1/3 the shield strength of your main ship *Shield lasts 5 min",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Hull Repair Drone",
@@ -1564,7 +2228,8 @@ const drones = [
     hullArmour: 1,
     shieldDefence: 2,
     length: "4m",
-    description: "These helpful repair drones will do a superb job at making sure your ship's hull is in tact. While these are very efficient models, they are not well protected. +Can repair hull armour"
+    description: "These helpful repair drones will do a superb job at making sure your ship's hull is in tact. While these are very efficient models, they are not well protected. +Can repair hull armour",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Combat Repair Drone",
@@ -1577,7 +2242,8 @@ const drones = [
     hullArmour: 4,
     shieldDefence: 5,
     length: "4m",
-    description: "Better protected and mobile than standard repair drones, these drones can repair in the midst of combat. They are less efficient, but easy to rebuild or replace. +Can repair hull armour"
+    description: "Better protected and mobile than standard repair drones, these drones can repair in the midst of combat. They are less efficient, but easy to rebuild or replace. +Can repair hull armour",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Science Probe",
@@ -1590,7 +2256,8 @@ const drones = [
     hullArmour: 1,
     shieldDefence: 3,
     length: "2m",
-    description: "Equipped with top of the line. analyzing equipment, these probes are perfect for sending into the unknown for discovery. +Has a built-in tractor beam and composition scanner"
+    description: "Equipped with top of the line. analyzing equipment, these probes are perfect for sending into the unknown for discovery. +Has a built-in tractor beam and composition scanner",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
     name: "Lasso Drone",
@@ -1603,7 +2270,8 @@ const drones = [
     hullArmour: 2,
     shieldDefence: 4,
     length: "12m",
-    description: "If you plan on engaging multiple enemy ships and you want to keep them all from escaping, loading up on lasso drones is a good idea. +Has a built-in warp jammer"
+    description: "If you plan on engaging multiple enemy ships and you want to keep them all from escaping, loading up on lasso drones is a good idea. +Has a built-in warp jammer",
+    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   }
 
 ];
