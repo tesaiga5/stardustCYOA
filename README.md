@@ -50,3 +50,8 @@ refund player credits
 function editShipName {
 
 }
+
+
+1. Click on Ship 1 to set as currently active ship 
+2. Click on choice-hull to open section-hull
+3. 
