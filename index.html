@@ -894,12 +894,13 @@
       choiceEquipment1.classList.toggle('active');
       sectionEquipment1.classList.toggle('visible');
     });    
-
-    choiceFleet1.addEventListener('click', () => {
+    
+    //open ship menus when fleet is clicked
+    //sectionFleet1.addEventListener('click', () => {
       //choiceFleet1.classList.toggle('active');
       //sectionFleet1.classList.toggle('visible');
-      sectionShip1.classList.toggle('visible');
-    });
+      //sectionShip1.classList.toggle('visible');
+    //});
 
     document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
 
@@ -1378,14 +1379,14 @@
           <button title="edit ship name" class="edit-button" id="edit-ship-button">✏️</button>
         </div>
         
-        <div style="border: none;" class="ship-name" id="shipName">Ship ${shipObjectCounter}</div>
+        <div style="border: none;" class="ship-name" id="shipName" contenteditable="true">Ship ${shipObjectCounter}</div>
       `;
       toggleAddShip1.after(shipDiv1); // Append the new ship object after the button
       console.log(`Ship object ${shipObjectCounter} created with ID: ${shipDiv1.id}`);
 
       //create object to map div to ship object
       const ship1 = createShip(); // Create a new ship object 
-      player.currentActiveShip = shipDiv1.id;
+      player.currentActiveShip = null;
        // Add the ship object to the player's current active ships
       player.ships[shipDiv1.id] = ship1; 
     });
@@ -1439,9 +1440,9 @@
       }
     }
 
-//TODO
+
     //event listener for current active ship
-    if(sectionFleet1) { // Ensure sectionFleet1 exists before adding event listener
+     // Ensure sectionFleet1 exists before adding event listener
       sectionFleet1.addEventListener('click', (event) => {
         const clickedObjectDiv = event.target.closest('.object-div');
 
@@ -1449,42 +1450,38 @@
           const clickedShipId = clickedObjectDiv.id;
           let nameOfHull = clickedObjectDiv.id.replace('choice-', ''); // Extract the ship ID from the clicked element')
           //check if there are no choices clicked
-          const hasActiveChoice = sectionHull1.querySelector('.choice.active');
+          
+
           // Check if the clicked ship is already the active ship
           if (player.currentActiveShip === clickedShipId) {          
             // If the same ship is clicked again, deactivate it and reset UI
             clickedObjectDiv.classList.remove('active');
+            player.currentActiveShip = null; // Clear the current active ship
             resetShipConfigUI('section-hull'); // Pass null to reset all UI sections
+            sectionShip1.classList.remove('visible');
             console.log(`Ship ${clickedShipId} deactivated. Configuration UI reset.`);
-          }
-          else if (!hasActiveChoice) {
-            console.log(`No active choices found for ship: ${clickedShipId}`);
-            player.currentActiveShip = clickedShipId;
-            clickedObjectDiv.classList.add('active'); // Activate the clicked ship in UI
-            player.ships[clickedShipId].hull = hulls.find(hull => hull.name === nameOfHull); // Assign the hull to the hull object
-            console.log(`Ship ${clickedShipId} activated.`);
 
+            //check if there is another ship active
+          } else if (sectionFleet1.querySelector('.active')){
+             sectionFleet1.querySelector('.active').classList.remove('active'); // Remove active class from any previously active ship
+              clickedObjectDiv.classList.add('active');
+              player.currentActiveShip = clickedShipId; // Set the clicked ship as the current active ship
+              renderShipConfigUI(player.currentActiveShip);
+              sectionShip1.classList.add('visible');
+              console.log(`Ship ${clickedShipId} activated with hull: ${nameOfHull}.`);
           } else {
-            // A different ship is clicked, or no ship was active
-            // Deactivate any currently active ship in the UI
-            const currentlyActiveShipDiv = sectionFleet1.querySelector('.object-div.active');
-            if (currentlyActiveShipDiv) {
-              currentlyActiveShipDiv.classList.remove('active');
-              console.log(`Previously active ship ${currentlyActiveShipDiv.id} deactivated.`);
-            }
-
             // Set the new active ship
             player.currentActiveShip = clickedShipId;
             clickedObjectDiv.classList.add('active'); // Activate the clicked ship in UI
-            player.ships[clickedShipId].hull = hulls.find(hull => hull.name === nameOfHull); // Assign the hull to the hull object
+             // Assign the hull to the hull object
             console.log(`Ship ${clickedShipId} activated.`);
+            renderShipConfigUI(player.currentActiveShip)
+            sectionShip1.classList.add('visible');
 
-            // Render the configuration UI for the newly active ship
-            renderShipConfigUI(player.currentActiveShip);
+            //player.ships[clickedShipId].hull = hulls.find(hull => hull.name === nameOfHull);
           }
         }
       });
-    }
 
     //choosing the hull and assigning it to the ship object
     //check for clicks on section-hull, if(dataType) write dataType to selected ship object
@@ -1563,34 +1560,42 @@
     
 
 
-    function editShipName(shipId) {
-      const shipDiv = document.getElementById(shipId);
-      if (!shipDiv) {
-        console.error(`Ship div with ID "${shipId}" not found.`);
-        return;
+  function editShipName(shipId) {
+  // Get the main ship container div using the passed ID
+    const shipDiv = document.getElementById(shipId);
+    if (!shipDiv) {
+      console.error(`Ship div with ID "${shipId}" not found.`);
+      return;
+    } else {
+      // Find the specific ship name display div *inside* the shipDiv
+      const shipNameDiv = shipDiv.querySelector('.ship-name');
+      if (shipNameDiv) {
+        shipNameDiv.focus(); // Focus on the ship name div to allow editing
+        //shipNameDiv.addEventListener('blur', () =>
       } else {
-        const input = prompt('Enter new ship name:');
-        shipDiv.textContent = input;
+        console.error(`Ship name display div not found within ship ID "${shipId}".`);
       }
     }
-
-    
-      
+  }
     //delete ship function and edit ship function
     
-    if(sectionFleet1) {
-      sectionFleet1.addEventListener('click', (event) => {
-        const deleteButton = event.target.closest('[id="delete-ship-button"]');
-        const editButton = event.target.closest('[id="edit-ship-button"]');
-        if (deleteButton) {
-          player.currentActiveShip.splice(player.currentActiveShip.indexOf(event.target.parentElement.parentElement.id), 1); // Remove the ship object from the player's current active ships
-          event.target.parentElement.parentElement.remove(); // Remove the ship div from the DOM
-        } else if (editButton) {
-          editShipName(event.target.parentElement.id);
-        }
+  if(sectionFleet1) {
+    sectionFleet1.addEventListener('click', (event) => {
+      const deleteButton = event.target.closest('[id="delete-ship-button"]');
+      const editButton = event.target.closest('[id="edit-ship-button"]');
+      // Get the main ship container div, which is an ancestor of both buttons
+      const clickedObjectDiv = event.target.closest('.object-div'); 
 
-      });
-    }
+      if (deleteButton) {
+        // ... (your existing delete ship logic) ...
+      } else if (editButton) {
+        if (clickedObjectDiv) {
+          // Pass the ID of the main ship object-div to editShipName
+          editShipName(clickedObjectDiv.id); 
+        }
+      }
+    });
+}
 
 </script>
   
