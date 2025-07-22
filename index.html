@@ -651,6 +651,7 @@
     const sectionShip1 = document.getElementById('section-ship');
     const choiceHull1 = document.getElementById('choice-hull');
     const sectionHull1 = document.getElementById('section-hull');
+    
 
     //const choiceSubsystem1 = document.getElementById('choice-subsystem');
     const choiceMod1 = document.getElementById('choice-mod');
@@ -1015,7 +1016,7 @@
       // If not populated, create new divs to populate choices
       hullArray.forEach(item => {
           const newDiv = document.createElement("div");
-          newDiv.classList.add("choice");
+          newDiv.classList.add("choice-ship");
           // Ensure unique ID for each choice element, sanitize name for ID
           newDiv.id = `${choicePrefix}-hull-${item.name.replace(/\s/g, '-')}`;
 
@@ -1354,7 +1355,11 @@
 
 
   //Ship Creation Script
-    import { createShip, deleteShip } from '/Script/shipData.js'; // Import the createShip function from ship.js
+    import {
+      createShip, deleteShip, addHull, addWeapon, addAI,addEnergyGen, addShield, 
+      addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom, 
+      resetShipConfigUI, renderShipConfigUI
+     } from '/Script/shipData.js'; // Import the createShip function from ship.js
 
     //create a function for each attribute because each attribute has different requirements
     const toggleAddShip1 = document.getElementById('choice-toggle-addShip'); // Get the button to add a ship
@@ -1373,7 +1378,7 @@
           <button title="delete ship" class="x-button" id="delete-ship-button">x</button>
         </div>
         <div class="ship-actions">
-          <button title="new blank button" class="blank-button" id="blank-button"></button>
+          <button title="SELECT SHIP" class="blank-button" id="blank-button"></button>
         </div>
         <div class="ship-actions">
           <button title="edit ship name" class="edit-button" id="edit-ship-button">✏️</button>
@@ -1391,211 +1396,210 @@
       player.ships[shipDiv1.id] = ship1; 
     });
 
-    //Set current active ship
-    function resetShipConfigUI(targetShipSection) {
-      //for each div in section-hull, set them to not active
-      // Get the parent div with the ID "section-hull"
-      const sectionToReset = document.getElementById(targetShipSection);
+//event listener for current active ship
+// Ensure sectionFleet1 exists before adding event listener
+sectionFleet1.addEventListener('click', (event) => {
+  const clickedObjectDiv = event.target.closest('.object-div');
 
-      // Check if the element exists to avoid errors
-      if (sectionToReset) {
-        // Get all direct child div elements within "section-hull"
-        const targetDivs = sectionToReset.querySelectorAll('.choice');
-
-        // Iterate over each div and add the 'active' class
-        targetDivs.forEach(choice => {
-          choice.classList.remove('active');
-        });
-      } else {
-        console.error("Element with ID 'section-hull' not found.");
-      }
-    }
-
-    function renderShipConfigUI(shipId) {
-      // Reset all relevant configuration UI sections
-      resetShipConfigUI('section-hull');
-      // Add more reset calls for other sections as they are implemented
-      // resetShipConfigUI('section-mod');
-      // resetShipConfigUI('section-weapon');
-      // resetShipConfigUI('section-industrial');
-      // resetShipConfigUI('section-ewar');
-      // resetShipConfigUI('section-room');
-      
-
-      const shipData = player.ships[shipId];
-      console.log(`Rendering UI for ship: ${shipId}`, shipData);
-
-      // --- Render Hull Configuration ---
-      if (shipData.hull) {
-        const hullName = shipData.hull.name;
-        // Ensure the ID matches how it's generated in addHullDataToSection
-        const hullChoiceId = `choice-${hullName}`;
-        const hullElement = document.getElementById(hullChoiceId);
-        if (hullElement) {
-          hullElement.classList.add('active');
-          console.log(`Activated hull UI for: ${hullName}`);
-        } else {
-          console.warn(`Hull UI element not found for ID: ${hullChoiceId}. Make sure it's populated.`);
-        }
-      }
-    }
-
-
-    //event listener for current active ship
-     // Ensure sectionFleet1 exists before adding event listener
-      sectionFleet1.addEventListener('click', (event) => {
-        const clickedObjectDiv = event.target.closest('.object-div');
-
-        if (clickedObjectDiv) {
-          const clickedShipId = clickedObjectDiv.id;
-          let nameOfHull = clickedObjectDiv.id.replace('choice-', ''); // Extract the ship ID from the clicked element')
-          //check if there are no choices clicked
-          
-
-          // Check if the clicked ship is already the active ship
-          if (player.currentActiveShip === clickedShipId) {          
-            // If the same ship is clicked again, deactivate it and reset UI
-            clickedObjectDiv.classList.remove('active');
-            player.currentActiveShip = null; // Clear the current active ship
-            resetShipConfigUI('section-hull'); // Pass null to reset all UI sections
-            sectionShip1.classList.remove('visible');
-            console.log(`Ship ${clickedShipId} deactivated. Configuration UI reset.`);
-
-            //check if there is another ship active
-          } else if (sectionFleet1.querySelector('.active')){
-             sectionFleet1.querySelector('.active').classList.remove('active'); // Remove active class from any previously active ship
-              clickedObjectDiv.classList.add('active');
-              player.currentActiveShip = clickedShipId; // Set the clicked ship as the current active ship
-              renderShipConfigUI(player.currentActiveShip);
-              sectionShip1.classList.add('visible');
-              console.log(`Ship ${clickedShipId} activated with hull: ${nameOfHull}.`);
-          } else {
-            // Set the new active ship
-            player.currentActiveShip = clickedShipId;
-            clickedObjectDiv.classList.add('active'); // Activate the clicked ship in UI
-             // Assign the hull to the hull object
-            console.log(`Ship ${clickedShipId} activated.`);
-            renderShipConfigUI(player.currentActiveShip)
-            sectionShip1.classList.add('visible');
-
-            //player.ships[clickedShipId].hull = hulls.find(hull => hull.name === nameOfHull);
-          }
-        }
-      });
-
-    //choosing the hull and assigning it to the ship object
-    //check for clicks on section-hull, if(dataType) write dataType to selected ship object
-    sectionHull1.addEventListener('click', (event) => {
-      const clickedElement = event.target.closest('.choice');
-      if (clickedElement) {
-        const shipDiv2 = document.getElementById(player.currentActiveShip); // Get the currently active ship element
-        const shipData = player.ships[shipDiv2.id]; // Reference to the active ship's shipObject
-
-        // Get the hull data corresponding to the clicked element
-        const chosenHull = hulls.find(hull => hull.name === clickedElement.id.replace('choice-', ''));
-
-        if (!chosenHull) {
-          console.error("Hull data not found for:", clickedElement.id);
-          return; // Exit if hull data isn't found
-        }
-
-        // Check if the clicked hull is already active (i.e., being deselected)
-        if (clickedElement.classList.contains('active')) {
-          // 4. chosen hull deactivates
-          clickedElement.classList.remove('active');
-
-          // 5. chosen hull unwrite from currently active ship
-          // Refund credits for the hull being deselected
-          if (shipData.hull && shipData.hull.name === chosenHull.name) {
-            player.credits += chosenHull.cost;
-            shipData.hull = null; // Remove the hull from the ship
-            console.log(`Refunded ${chosenHull.cost} credits. New balance: ${player.credits}`);
-          }
-        } else {
-          // Handle activation: Make this the only active hull choice in the section
-
-          // Find the parent container that groups these choices
-          const parentContainer = clickedElement.closest('.section');
-          if (parentContainer) {
-            const allChoicesInGroup = parentContainer.querySelectorAll('.choice');
-
-            allChoicesInGroup.forEach(choice => {
-              if (choice.classList.contains('active') && choice !== clickedElement) {
-                choice.classList.remove('active');
-                // If there was a previously active hull, refund its cost
-                const prevHullName = choice.id.replace('choice-', '');
-                const prevHull = hulls.find(hull => hull.name === prevHullName);
-                if (prevHull && shipData.hull && shipData.hull.name === prevHull.name) {
-                  player.credits += prevHull.cost;
-                  console.log(`Refunded ${prevHull.cost} credits from previous hull. New balance: ${player.credits}`);
-                }
-              }
-            });
-          }
-
-          // 1. chosen hull becomes active
-          clickedElement.classList.add('active');
-
-          // Deduct cost and assign new hull
-          // Ensure player has enough credits OR handle insufficient funds
-          if (player.credits >= chosenHull.cost) {
-            // 2. chosen hull writes on currently active ship
-            shipData.hull = chosenHull;
-            player.credits -= chosenHull.cost;
-            console.log(`Deducted ${chosenHull.cost} credits for new hull. New balance: ${player.credits}`);
-          } else {
-            console.warn("Insufficient credits to purchase this hull!");
-            // If not enough credits, you might want to revert the 'active' state
-            clickedElement.classList.remove('active');
-          }
-        }
-        // You might want to update the UI to display the current credits and ship hull here
-        document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
-      }
-    });
-  
-
-    //this function updates selected choices of a ship object
-    
+  if (clickedObjectDiv) {
+    const clickedShipId = clickedObjectDiv.id;
+    let nameOfHull = clickedObjectDiv.id.replace('choice-', ''); // Extract the ship ID from the clicked element')
+    //check if there are no choices clicked
     
 
+    // Check if the clicked ship is already the active ship
+    if (player.currentActiveShip === clickedShipId) {          
+      // If the same ship is clicked again, deactivate it and reset UI
+      clickedObjectDiv.classList.remove('active');
+      player.currentActiveShip = null; // Clear the current active ship
+      resetShipConfigUI('section-hull'); // Pass null to reset all UI sections
+      sectionShip1.classList.remove('visible');
+      console.log(`Ship ${clickedShipId} deactivated. Configuration UI reset.`);
 
-  function editShipName(shipId) {
-  // Get the main ship container div using the passed ID
-    const shipDiv = document.getElementById(shipId);
-    if (!shipDiv) {
-      console.error(`Ship div with ID "${shipId}" not found.`);
-      return;
+      //check if there is another ship active
+    } else if (sectionFleet1.querySelector('.active')){
+        sectionFleet1.querySelector('.active').classList.remove('active'); // Remove active class from any previously active ship
+        clickedObjectDiv.classList.add('active');
+        player.currentActiveShip = clickedShipId; // Set the clicked ship as the current active ship
+        renderShipConfigUI(player.currentActiveShip);
+        sectionShip1.classList.add('visible');
+        console.log(`Ship ${clickedShipId} activated with hull: ${nameOfHull}.`);
     } else {
-      // Find the specific ship name display div *inside* the shipDiv
-      const shipNameDiv = shipDiv.querySelector('.ship-name');
-      if (shipNameDiv) {
-        shipNameDiv.focus(); // Focus on the ship name div to allow editing
-        //shipNameDiv.addEventListener('blur', () =>
-      } else {
-        console.error(`Ship name display div not found within ship ID "${shipId}".`);
-      }
+      // Set the new active ship
+      player.currentActiveShip = clickedShipId;
+      clickedObjectDiv.classList.add('active'); // Activate the clicked ship in UI
+        // Assign the hull to the hull object
+      console.log(`Ship ${clickedShipId} activated.`);
+      renderShipConfigUI(player.currentActiveShip)
+      sectionShip1.classList.add('visible');
+
+      //player.ships[clickedShipId].hull = hulls.find(hull => hull.name === nameOfHull);
     }
   }
-    //delete ship function and edit ship function
-    
-  if(sectionFleet1) {
-    sectionFleet1.addEventListener('click', (event) => {
-      const deleteButton = event.target.closest('[id="delete-ship-button"]');
-      const editButton = event.target.closest('[id="edit-ship-button"]');
-      // Get the main ship container div, which is an ancestor of both buttons
-      const clickedObjectDiv = event.target.closest('.object-div'); 
+});
+//delete ship function and edit ship function 
+if(sectionFleet1) {
+  sectionFleet1.addEventListener('click', (event) => {
+    const deleteButton = event.target.closest('[id="delete-ship-button"]');
+    const editButton = event.target.closest('[id="edit-ship-button"]');
+    // Get the main ship container div, which is an ancestor of both buttons
+    const clickedObjectDiv = event.target.closest('.object-div'); 
 
-      if (deleteButton) {
-        // ... (your existing delete ship logic) ...
-      } else if (editButton) {
-        if (clickedObjectDiv) {
-          // Pass the ID of the main ship object-div to editShipName
-          editShipName(clickedObjectDiv.id); 
+    if (deleteButton) {
+      // ... (your existing delete ship logic) ...
+    } else if (editButton) {
+      if (clickedObjectDiv) {
+        // Pass the ID of the main ship object-div to editShipName
+        editShipName(clickedObjectDiv.id); 
         }
       }
     });
 }
+
+    //choosing the hull and assigning it to the ship object
+    //check for clicks on section-hull, if(dataType) write dataType to selected ship object
+sectionHull1.addEventListener('click', (event) => {
+  const clickedElement = event.target.closest('.choice');
+  if (clickedElement) {
+    const shipData = player.ships[player.currentActiveShip]; // Reference to the active ship's shipObject
+
+    // Get the hull data corresponding to the clicked element
+    const chosenHull = hulls.find(hull => hull.name === clickedElement.id.replace('choice-', ''));
+
+    if (!chosenHull) {
+      console.error("Hull data not found for:", clickedElement.id);
+      return; // Exit if hull data isn't found
+    }
+
+    // Check if the clicked hull is already active (i.e., being deselected)
+    if (clickedElement.classList.contains('active')) {
+      // 4. chosen hull deactivates
+      clickedElement.classList.remove('active');
+
+      // 5. chosen hull unwrite from currently active ship
+      // Refund credits for the hull being deselected
+      if (shipData.hull && shipData.hull.name === chosenHull.name) {
+        player.credits += chosenHull.cost;
+        shipData.hull = null; // Remove the hull from the ship
+        console.log(`Refunded ${chosenHull.cost} credits. New balance: ${player.credits}`);
+      }
+    } else {
+      // Handle activation: Make this the only active hull choice in the section
+
+      // Find the parent container that groups these choices
+      const parentContainer = clickedElement.closest('.section');
+      if (parentContainer) {
+        const allChoicesInGroup = parentContainer.querySelectorAll('.choice');
+
+        allChoicesInGroup.forEach(choice => {
+          if (choice.classList.contains('active') && choice !== clickedElement) {
+            choice.classList.remove('active');
+            // If there was a previously active hull, refund its cost
+            const prevHullName = choice.id.replace('choice-', '');
+            const prevHull = hulls.find(hull => hull.name === prevHullName);
+            if (prevHull && shipData.hull && shipData.hull.name === prevHull.name) {
+              player.credits += prevHull.cost;
+              console.log(`Refunded ${prevHull.cost} credits from previous hull. New balance: ${player.credits}`);
+            }
+          }
+        });
+      }
+
+      // 1. chosen hull becomes active
+      clickedElement.classList.add('active');
+
+      // Deduct cost and assign new hull
+      // Ensure player has enough credits OR handle insufficient funds
+      
+      // 2. chosen hull writes on currently active ship
+      shipData.hull = chosenHull;
+      player.credits -= chosenHull.cost;
+      console.log(`Deducted ${chosenHull.cost} credits for new hull. New balance: ${player.credits}`);
+
+    }
+      // You might want to update the UI to display the current credits and ship hull here
+      document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+  }
+});
+
+/*
+sectionWeapon1.addEventListener('click', (event) => {
+  const clickedElement = event.target.closest('.choice');
+  if (clickedElement) {
+    const shipData = player.ships[player.currentActiveShip]; // Reference to the active ship's shipObject
+
+    // Get the weapon data corresponding to the clicked element
+    const chosenWeapon = weapons.find(weapon => weapon.name === clickedElement.id.replace('choice-', ''));
+
+    if (!chosenWeapon) {
+      console.error("Weapon data not found for:", clickedElement.id);
+      return; // Exit if weapon data isn't found
+    }
+
+    // Check if the clicked weapon is already active (i.e., being deselected)
+    if (clickedElement.classList.contains('active')) {
+      // 4. chosen weapon deactivates
+      clickedElement.classList.remove('active');
+      // 5. chosen weapon unwrite from currently active ship
+      
+      // Refund credits for the weapon being deselected
+    }
+
+      // 5. chosen weapon unwrite from currently active ship
+      // Refund credits for the weapon being deselected
+      if (shipData.weapon && shipData.weapon.name === chosenWeapon.name) {
+        player.credits += chosenHull.cost;
+        shipData.hull = null; // Remove the hull from the ship
+        console.log(`Refunded ${chosenHull.cost} credits. New balance: ${player.credits}`);
+      }
+    } else {
+      // Handle activation: Make this the only active hull choice in the section
+
+      // Find the parent container that groups these choices
+      const parentContainer = clickedElement.closest('.section');
+      if (parentContainer) {
+        const allChoicesInGroup = parentContainer.querySelectorAll('.choice');
+
+        allChoicesInGroup.forEach(choice => {
+          if (choice.classList.contains('active') && choice !== clickedElement) {
+            choice.classList.remove('active');
+            // If there was a previously active hull, refund its cost
+            const prevHullName = choice.id.replace('choice-', '');
+            const prevHull = hulls.find(hull => hull.name === prevHullName);
+            if (prevHull && shipData.hull && shipData.hull.name === prevHull.name) {
+              player.credits += prevHull.cost;
+              console.log(`Refunded ${prevHull.cost} credits from previous hull. New balance: ${player.credits}`);
+            }
+          }
+        });
+      }
+
+      // 1. chosen hull becomes active
+      clickedElement.classList.add('active');
+
+      // Deduct cost and assign new hull
+      // Ensure player has enough credits OR handle insufficient funds
+      
+      // 2. chosen hull writes on currently active ship
+      shipData.hull = chosenHull;
+      player.credits -= chosenHull.cost;
+      console.log(`Deducted ${chosenHull.cost} credits for new hull. New balance: ${player.credits}`);
+
+    }
+      // You might want to update the UI to display the current credits and ship hull here
+      document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+  }
+});
+*/  
+
+
+    
+    
+
+
+
+
+
 
 </script>
   

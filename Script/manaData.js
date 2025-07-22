@@ -451,6 +451,97 @@ function appendParagraph(parentElement, textContent) {
   parentElement.appendChild(p);
 }
 
+function appendDropdown(parentElement) {
+    // Create a new div to wrap the dropdown and number input
+    const controlGroup = document.createElement('div');
+
+    // Create the dropdown menu (select element)
+    const selectElement = document.createElement('select');
+    selectElement.innerHTML = `
+        <option value="spinal">Spinal</option>
+        <option value="broadside">Broadside</option>
+        <option value="point-defence">Point-Defence</option>
+    `;
+    selectElement.addEventListener('change', (event) => {
+        console.log('Selected:', event.target.value);
+        // You can add logic here to handle the selected value
+    });
+
+    // Create the number display span
+    const numberSpan = document.createElement('span');
+    numberSpan.textContent = '0'; // Initial number
+    numberSpan.id = `num-${Date.now()}`; // Unique ID for each number span
+
+    // Create the decrement button
+    const decrementButton = document.createElement('button');
+    decrementButton.textContent = '-';
+    decrementButton.addEventListener('click', () => {
+        let currentNum = parseInt(numberSpan.textContent);
+        if (currentNum > 0) { // Prevent going below zero
+            numberSpan.textContent = currentNum - 1;
+        }
+    });
+
+    // Create the increment button
+    const incrementButton = document.createElement('button');
+    incrementButton.textContent = '+';
+    incrementButton.classList.add(
+        'btn-secondary', 'px-4', 'py-2', 'rounded-lg', 'font-bold', 'text-xl'
+    );
+    incrementButton.addEventListener('click', () => {
+        let currentNum = parseInt(numberSpan.textContent);
+        numberSpan.textContent = currentNum + 1;
+    });
+
+    // Append all elements to the control group
+    controlGroup.appendChild(selectElement);
+    controlGroup.appendChild(decrementButton);
+    controlGroup.appendChild(numberSpan);
+    controlGroup.appendChild(incrementButton);
+
+    // Append the control group to the parent element
+    parentElement.appendChild(controlGroup);
+}
+
+function appendGauge(parentElement, labelText, currentValue, maxValue = 10, filledColorClass = 'filled', emptyColorClass = '', highlightIndices = []) {
+    // Create the main container for the gauge (label + cells)
+    const gaugeContainer = document.createElement('span');
+    gaugeContainer.classList.add('gauge-container');
+
+    // Create the label element
+    const label = document.createElement('span');
+    label.textContent = labelText;
+    label.classList.add('gauge-label');
+    gaugeContainer.appendChild(label);
+
+    // Create the container for the gauge cells
+    const cellsContainer = document.createElement('span');
+    cellsContainer.classList.add('gauge-cells');
+
+    // Create individual gauge cells
+for (let i = 0; i < maxValue; i++) {
+  const cell = document.createElement('span');
+  cell.classList.add('gauge-cell');
+
+  // Check if the cell should be filled
+  if (i < currentValue) {
+    // Apply specific filled color based on cell index
+    if (i >= 0 && i <= 2) { // Cells 1-3 (0-indexed: 0, 1, 2)
+        cell.classList.add('filled-white');
+    } else if (i >= 3 && i <= 5) { // Cells 4-6 (0-indexed: 3, 4, 5)
+        cell.classList.add('filled-light-purple');
+    } else if (i >= 6 && i <= 8) { // Cells 7-9 (0-indexed: 6, 7, 8)
+        cell.classList.add('filled-dark-purple');
+    } else if (i === 9) { // Cell 10 (0-indexed: 9)
+        cell.classList.add('filled-light-red');
+    }
+  }
+  cellsContainer.appendChild(cell);
+}
+    gaugeContainer.appendChild(cellsContainer);
+    parentElement.appendChild(gaugeContainer);
+}
+
 /**
  * Populates a specified HTML section with data from a given array of objects.
  * This single function replaces multiple specialized functions by dynamically
@@ -484,7 +575,7 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
 
   dataArray.forEach(item => {
     const newDiv = document.createElement("div");
-    newDiv.classList.add("choice");
+    newDiv.classList.add('choice', 'ship');
     newDiv.id = `${choicePrefix}-${item.name.replace(/\s/g, '-')}`;
 
     const newSpan = document.createElement("span");
@@ -571,6 +662,8 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
         if (item.consequences) appendParagraph(newSpan, `Consequences: ${item.consequences}`);
         break;
       case 'weapon':
+        appendDropdown(newSpan); // Add the dropdown for weapon mounts
+        appendGauge(newSpan, 'Energy Use', 10); // Example gauge for energy use
         appendParagraph(newSpan, `Energy Use: ${item.energyUse || 'N/A'}`);
         appendParagraph(newSpan, `Tier: ${item.tier || 'N/A'}`);
         appendParagraph(newSpan, `Damage Per Volley: ${item.damagePerVolley || 'N/A'}`);

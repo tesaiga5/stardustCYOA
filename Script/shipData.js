@@ -2,7 +2,8 @@
 
 export {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
         createShip, deleteShip, addHull, addWeapon, addAI,addEnergyGen, addShield, 
-        addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom};
+        addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom, 
+        resetShipConfigUI, renderShipConfigUI, editShipName};
 
 
 
@@ -2282,9 +2283,9 @@ function createShip() { //initialize ship object
     // You can add more properties to the ship object here as needed,
     // such as a unique ID, name, health, cargo capacity, etc.
     const newShip = {
-        spinalMount: 0, 
-      broadSideMount: 0, 
-      pointDefenseMount: 0, 
+      spinalWeapons: [], 
+      broadSideWeapons: [], 
+      pointDefenseWeapons: [], 
       hull: "fighter", 
       hangarSpace: 0, 
       navigation: 0, 
@@ -2354,6 +2355,8 @@ function addWeapon(shipObject, weaponData) {
         }
     }
 }
+
+//function removeWeapon(shipObject, weaponData) {}
 
 function addAI(shipObject, aiData) {
     shipObject.onboardAI = aiData; //set the onboard AI to the AI data
@@ -2464,4 +2467,71 @@ function addRoom(shipObject, roomData) {
             }
             break;
         }
+}
+
+//Set current active ship
+function resetShipConfigUI(targetShipSection) {
+  //for each div in section-hull, set them to not active
+  // Get the parent div with the ID "section-hull"
+  const sectionToReset = document.getElementById(targetShipSection);
+
+  // Check if the element exists to avoid errors
+  if (sectionToReset) {
+    // Get all direct child div elements within "section-hull"
+    const targetDivs = sectionToReset.querySelectorAll('.choice');
+
+    // Iterate over each div and add the 'active' class
+    targetDivs.forEach(choice => {
+      choice.classList.remove('active');
+    });
+  } else {
+    console.error("Element with ID 'section-hull' not found.");
+  }
+}
+
+function renderShipConfigUI(shipId) {
+  // Reset all relevant configuration UI sections
+  resetShipConfigUI('section-hull');
+  // Add more reset calls for other sections as they are implemented
+  // resetShipConfigUI('section-mod');
+  // resetShipConfigUI('section-weapon');
+  // resetShipConfigUI('section-industrial');
+  // resetShipConfigUI('section-ewar');
+  // resetShipConfigUI('section-room');
+  
+
+  const shipData = player.ships[shipId];
+  console.log(`Rendering UI for ship: ${shipId}`, shipData);
+
+  // --- Render Hull Configuration ---
+  if (shipData.hull) {
+    const hullName = shipData.hull.name;
+    // Ensure the ID matches how it's generated in addHullDataToSection
+    const hullChoiceId = `choice-${hullName}`;
+    const hullElement = document.getElementById(hullChoiceId);
+    if (hullElement) {
+      hullElement.classList.add('active');
+      console.log(`Activated hull UI for: ${hullName}`);
+    } else {
+      console.warn(`Hull UI element not found for ID: ${hullChoiceId}. Make sure it's populated.`);
+    }
+  }
+}
+
+function editShipName(shipId) {
+// Get the main ship container div using the passed ID
+  const shipDiv = document.getElementById(shipId);
+  if (!shipDiv) {
+    console.error(`Ship div with ID "${shipId}" not found.`);
+    return;
+  } else {
+    // Find the specific ship name display div *inside* the shipDiv
+    const shipNameDiv = shipDiv.querySelector('.ship-name');
+    if (shipNameDiv) {
+      shipNameDiv.focus(); // Focus on the ship name div to allow editing
+      //shipNameDiv.addEventListener('blur', () =>
+    } else {
+      console.error(`Ship name display div not found within ship ID "${shipId}".`);
+    }
+  }
 }

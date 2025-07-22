@@ -89,6 +89,10 @@ div {
   border-radius: 15px;
 }
 
+.ship {
+  flex-basis: calc((100% / 5));
+}
+
 .choice-sponsor {
   flex-basis: calc((100% / 4))
 }
@@ -326,4 +330,56 @@ body b{
   padding: 10px 0; /* Add some vertical padding inside the bar */
   height: 34px; /* Give it a fixed height */
   margin: 0;
+}
+
+/* for gauge*/
+.gauge-container {
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: 10px; /* Allow wrapping for responsiveness */
+    margin-left: 30px;
+    max-width: 300px; /* Full width to allow label and cells to align properly */
+}
+.gauge-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-right: 20px;
+    width: 80px;
+}
+.gauge-cells {
+    display: flex;
+    align-self: center;
+    gap: 1px; /* Small gap between cells */
+     /* Allow cells to take up remaining space */
+    max-width: 100%; /* Adjust max-width based on container width */
+    border: 2px solid white;
+    box-shadow: 0 0 4px 1px rgba(255, 204, 0, 0.7); /* Soft yellow glow */
+    transition: box-shadow 0.2s ease-in-out; /* Smooth transition for glow */
+    filter: brightness(0.9); /* Slightly dim the glow for a more subtle effect */
+}
+.gauge-cell {
+    width: 18px; /* Fixed width for each cell */
+    height: 18px; /* Fixed height for each cell */
+    border: 2px yellow; /* Default border color for empty cells */
+    border-radius: 2px; /* Slightly rounded corners for cells */
+    background-color: rgb(241, 241, 241, 0.3); /* Default empty color */    
+}
+
+/* Custom filled colors based on cell index */
+.gauge-cell.filled-white {
+    background-color: whitesmoke; /* White */
+    
+}
+.gauge-cell.filled-light-purple {
+    background-color: rgb(108, 144, 230); /* Tailwind purple-400 */
+    
+}
+.gauge-cell.filled-dark-purple {
+    background-color: rgb(197, 124, 239); /* Tailwind purple-700 */
+    
+}
+.gauge-cell.filled-light-red {  
+  background-color: rgb(239, 119, 120); /* Tailwind red-400 */
+  
 }
