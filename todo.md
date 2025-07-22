@@ -7,26 +7,26 @@ Features:
 
 TODO:
 
-
 From display:
 
-1. Missing Section Text: How'd you get the money, equipment, titles, section ship 
-3. Moneysource choice consequences
+1. Missing Section Text: How'd you get the money, equipment, titles, section ship
+2. Moneysource choice consequences
+3. Parse weapons for accuracy (mindless)
+4. Populate subsystems
 
+5. Sponsor choice consequences
+6. Starting Location text & pictures, also incomplete choices
+7. Skills choice consequences
+8. Title credits gain
+9. Title pictures
+10. Title pre-requisities and consequences
 
-6. Sponsor choice consequences
-7. Starting Location text & pictures, also incomplete choices
-9. Skills choice consequences
-15. Title credits gain
-16. Title pictures
-17. Title pre-requisities and consequences
+11. Your Fleet pre-requisities & consequences (mostly receiving consequences)
 
-26. Your Fleet pre-requisities & consequences (mostly receiving consequences)
+12. Check for accuracy
+13. Credits page
+14. Publish
 
-28. Check for accuracy
-29. Credits page
-30. Publish
-
-31. Reserve contracts & battle for next update
+15. Reserve contracts & battle for next update
 
 Deadline: 22/07/2025
