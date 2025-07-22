@@ -451,17 +451,26 @@ function appendParagraph(parentElement, textContent) {
   parentElement.appendChild(p);
 }
 
-function appendDropdown(parentElement) {
+function appendDropdown(parentElement, tier) {
     // Create a new div to wrap the dropdown and number input
     const controlGroup = document.createElement('div');
 
     // Create the dropdown menu (select element)
     const selectElement = document.createElement('select');
+    if (tier === 1){
+      selectElement.innerHTML = `
+        <option value="point-defence">Point-Defence</option>
+    `;
+    } else if (tier < 4) {
     selectElement.innerHTML = `
         <option value="spinal">Spinal</option>
         <option value="broadside">Broadside</option>
-        <option value="point-defence">Point-Defence</option>
     `;
+    } else {
+      selectElement.innerHTML = `
+        <option value="spinal">Spinal</option>
+    `;
+    }
     selectElement.addEventListener('change', (event) => {
         console.log('Selected:', event.target.value);
         // You can add logic here to handle the selected value
@@ -509,9 +518,10 @@ function appendGauge(parentElement, labelText, currentValue, maxValue = 10, fill
     gaugeContainer.classList.add('gauge-container');
 
     // Create the label element
-    const label = document.createElement('span');
+    const label = document.createElement('div');
     label.textContent = labelText;
     label.classList.add('gauge-label');
+    label.style.color = 'white';
     gaugeContainer.appendChild(label);
 
     // Create the container for the gauge cells
@@ -662,8 +672,13 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
         if (item.consequences) appendParagraph(newSpan, `Consequences: ${item.consequences}`);
         break;
       case 'weapon':
-        appendDropdown(newSpan); // Add the dropdown for weapon mounts
-        appendGauge(newSpan, 'Energy Use', 10); // Example gauge for energy use
+        if (item.tier === 2 || item.tier === 3) {
+          appendDropdown(newSpan, item.tier); // Add the dropdown for weapon mounts
+          appendDropdown(newSpan, item.tier);
+        } else {
+          appendDropdown(newSpan, item.tier);
+        }
+        appendGauge(newSpan, 'Energy Use: ', 10); // Example gauge for energy use
         appendParagraph(newSpan, `Energy Use: ${item.energyUse || 'N/A'}`);
         appendParagraph(newSpan, `Tier: ${item.tier || 'N/A'}`);
         appendParagraph(newSpan, `Damage Per Volley: ${item.damagePerVolley || 'N/A'}`);
