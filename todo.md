@@ -11,7 +11,6 @@ From display:
 
 1. Missing Section Text: How'd you get the money, equipment, titles, section ship
 2. Moneysource choice consequences
-3. Parse weapons for accuracy (mindless)
 4. Populate subsystems
 
 5. Sponsor choice consequences
