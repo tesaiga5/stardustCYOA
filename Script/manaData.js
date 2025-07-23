@@ -1,4 +1,4 @@
-export { catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection};
+export { catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection };
 const catalyst = [
   {
     name: "Base Catalyst: Arm Blade",

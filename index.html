@@ -910,7 +910,7 @@
     document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
 
     //populate titles
-    import {titles, skills} from '/Script/choiceData.js';
+    import {titles, skills, addTitlesToSection} from '/Script/choiceData.js';
     //populate skills
     //import {} from '/Script/choiceData.js';
     //populate start position
@@ -1298,14 +1298,13 @@
     choiceOrigin1.addEventListener('click', () => {
       addChoiceDataToSection(skills, 'choice', 'origin-mana'); 
       populateCatalystToSection(catalyst, 'choice', 'endOfCatalyst');
-
     });
 
     const choiceTitles1 = document.getElementById('choice-titles');
     const sectionTitles1 = document.getElementById('section-titles');
     choiceTitles1.addEventListener('click', () => {
       sectionTitles1.classList.toggle('active');
-      addChoiceDataToSection(titles, 'choice', 'endOfTitles');
+      addTitlesToSection(titles, 'choice', 'endOfTitles');
     });
 
     const choiceCrew1 = document.getElementById('choice-crew');
