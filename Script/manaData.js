@@ -1,4 +1,4 @@
-export { catalyst, affinity, spellBases, populateDataToSection };
+export { catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection};
 const catalyst = [
   {
     name: "Base Catalyst: Arm Blade",
@@ -553,15 +553,7 @@ for (let i = 0; i < maxValue; i++) {
 }
 
 /**
- * Populates a specified HTML section with data from a given array of objects.
- * This single function replaces multiple specialized functions by dynamically
- * rendering properties based on the 'dataType' parameter.
- *
- * @param {Array<Object>} dataArray - The array of objects to display (e.g., hulls, shipAI, weapons).
- * @param {string} choicePrefix - A prefix for the ID of each generated div (e.g., "item-choice").
- * @param {string} sectionID - The ID of the HTML element where the divs should be appended.
- * @param {string} dataType - A string indicating the type of data being displayed (e.g., 'hull', 'shipAI', 'weapon', 'industrial', 'ewar', 'room', 'drone', 'catalyst', 'affinity', 'spellBase', 'mod').
- */
+ * for hull */
 function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
   const targetSection = document.getElementById(sectionID);
 
@@ -719,4 +711,8 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
 
     targetSection.before(newDiv); // Append to the target section
   });
+}
+
+function populateCatalystToSection(choiceArray, choicePrefix, sectionID) {
+
 }

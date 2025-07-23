@@ -17,7 +17,7 @@ export const equipment = [ //change to weapons later
     action: "Revolver",
     calibre: ".362 LCat",
     
-    description: "A snub-nosed revolver, perfect for concealment while still being able to pack a punch."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A snub-nosed revolver, perfect for concealment while still being able to pack a punch."
   },
   {
     name: "KML Compact",
@@ -34,7 +34,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "8.8mm PIL",
     
-    description: "Extremely popular for concealed carry. Perfect for those who don't want to attract attention."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Extremely popular for concealed carry. Perfect for those who don't want to attract attention."
   },
   {
     name: "Forcify MK VII",
@@ -51,7 +51,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "980nm",
     
-    description: "A compact plasma gun. Energy guns need no reload, but overheat, and need regular battery changes."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A compact plasma gun. Energy guns need no reload, but overheat, and need regular battery changes."
   },
   {
     name: "Bandit-12",
@@ -68,7 +68,7 @@ export const equipment = [ //change to weapons later
     action: "Revolver",
     calibre: ".48 RE",
     
-    description: "A favourite of bandits, this revolver can take off arms. Hold it well, as the recoil could take off your own."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A favourite of bandits, this revolver can take off arms. Hold it well, as the recoil could take off your own."
   },
   {
     name: ".362 Deputy",
@@ -85,7 +85,7 @@ export const equipment = [ //change to weapons later
     action: "Revolver",
     calibre: ".362 LCat",
     
-    description: "These handguns bolster accuracy with a hard hitting calibre. Usually owned by badasses."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These handguns bolster accuracy with a hard hitting calibre. Usually owned by badasses."
   },
   {
     name: "C 2911",
@@ -102,7 +102,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "11mm FR",
     
-    description: "Been in use for a long time, but never discarded for its iconic rep. Still shoots bullets, so it kills."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Been in use for a long time, but never discarded for its iconic rep. Still shoots bullets, so it kills."
   },
   {
     name: "FD17 Daybreak",
@@ -119,7 +119,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "8.8mm Pil",
     
-    description: "A lightweight calibre in a double-stacked magazine is perfect for a well balanced handgun."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A lightweight calibre in a double-stacked magazine is perfect for a well balanced handgun."
   },
   {
     name: "Sabre 6",
@@ -136,7 +136,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "1025nm",
     
-    description: "A popular plasma gun that hits hard. This model is known to have good heat sinks."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A popular plasma gun that hits hard. This model is known to have good heat sinks."
   },
   {
     name: "Pallach Or2",
@@ -153,7 +153,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "405nm",
     
-    description: "Shoots brief, high-powered pulses of laser, reaching temperatures hotter than the surface of a star."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Shoots brief, high-powered pulses of laser, reaching temperatures hotter than the surface of a star."
   },
   {
     name: "H56",
@@ -170,7 +170,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "8.8mm PIL",
     
-    description: "A simple machine pistol with a high rate of fire. Its low calibre has low recoil."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A simple machine pistol with a high rate of fire. Its low calibre has low recoil."
   },
   {
     name: "FD9 Judge",
@@ -187,7 +187,7 @@ export const equipment = [ //change to weapons later
     action: "Select-fire",
     calibre: "10mm INF",
     
-    description: "Perfect in the hands of those who love versatility. Can select to be semi, full, or burst. Silenced."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Perfect in the hands of those who love versatility. Can select to be semi, full, or burst. Silenced."
   },
   {
     name: "Gretel MK III",
@@ -204,7 +204,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "22mm",
     
-    description: "Essentially a portable rail-gun. Known to pierce through tank armour."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Essentially a portable rail-gun. Known to pierce through tank armour."
   },
   {
     name: "Kayta F5",
@@ -221,7 +221,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "8.8mm PIL",
     
-    description: "Mass produced and found virtually everywhere, this balanced SMG is universally loved for its simplicity."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Mass produced and found virtually everywhere, this balanced SMG is universally loved for its simplicity."
   },
   {
     name: "Rinn-J",
@@ -238,7 +238,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "980nm",
     
-    description: "If you want to rain hundreds of burning-hot plasma on your enemies, look no further."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "If you want to rain hundreds of burning-hot plasma on your enemies, look no further."
   },
   {
     name: "Hellfang",
@@ -255,7 +255,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "320nm",
     
-    description: "Nothing is scarier than the rapid fire of deadly red laser pulses. Has the highest PTSD-inducing rate. Loved by spec-ops."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Nothing is scarier than the rapid fire of deadly red laser pulses. Has the highest PTSD-inducing rate. Loved by spec-ops."
   },
   {
     name: "FD39 Echo",
@@ -272,7 +272,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "10mm INF",
     
-    description: "Very wieldly with all of the aspects of an SMG perfected to a tee."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Very wieldly with all of the aspects of an SMG perfected to a tee."
   },
   {
     name: "LK Banshee",
@@ -289,7 +289,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto/chg",
     calibre: "1025nm",
     
-    description: "You can either go full-auto with torrents of hot plasma, or charged burst shots for more destruction."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "You can either go full-auto with torrents of hot plasma, or charged burst shots for more destruction."
   },
   {
     name: "H \"Frill\"",
@@ -306,7 +306,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "Unknown",
     
-    description: "Experimental reverse-engineered tech from the Heralds. Rapidly shoots volatile mana bolts."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Experimental reverse-engineered tech from the Heralds. Rapidly shoots volatile mana bolts."
   },
   {
     name: "Spatha 2100FP",
@@ -323,7 +323,7 @@ export const equipment = [ //change to weapons later
     action: "Pump",
     calibre: "10ga",
     
-    description: "A reliable pump-action that's used in virtually every security and military doctrine."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A reliable pump-action that's used in virtually every security and military doctrine."
   },
   {
     name: "Espingarda Model 80",
@@ -340,7 +340,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "12ga",
     
-    description: "One of the best weapons for storming and taking out hostiles in tight spaces, like ship interiors."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "One of the best weapons for storming and taking out hostiles in tight spaces, like ship interiors."
   },
   {
     name: "Starburst MK VI",
@@ -357,7 +357,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "80nm x6",
     
-    description: "A more experimental weapon that utilizes multiple diodes to burst out a 'fan' of high-powered lasers."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A more experimental weapon that utilizes multiple diodes to burst out a 'fan' of high-powered lasers."
   },
   {
     name: "Ogoun M31",
@@ -374,7 +374,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "4x675nm",
     
-    description: "Delivers a face-full of piping hot plasma. One of the more cruel weapons out there."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Delivers a face-full of piping hot plasma. One of the more cruel weapons out there."
   },
   {
     name: "AS-12/45",
@@ -391,7 +391,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "12ga",
     
-    description: "Not often used despite its full-auto capabilities, but a favourite for outer-rim bandits."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Not often used despite its full-auto capabilities, but a favourite for outer-rim bandits."
   },
   {
     name: "Wraithsong A4",
@@ -408,7 +408,7 @@ export const equipment = [ //change to weapons later
     action: "Burst",
     calibre: "4mm x3",
     
-    description: "Shoots an insanely fast burst of 3 high-velocity darts, which is known to make a ghostly whistling sound."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Shoots an insanely fast burst of 3 high-velocity darts, which is known to make a ghostly whistling sound."
   },
   {
     name: "UN200-42",
@@ -425,7 +425,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "980nm",
     
-    description: "A standard full-auto plasma gun... until you mark a target with the tag that the plasma orbs follow."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A standard full-auto plasma gun... until you mark a target with the tag that the plasma orbs follow."
   },
   {
     name: "FD49 Reverb",
@@ -442,7 +442,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "5.91mm IN",
     
-    description: "A very niche gun usually only found with bodyguards. Has an underslug ranged taser."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A very niche gun usually only found with bodyguards. Has an underslug ranged taser."
   },
   {
     name: "Angel",
@@ -459,7 +459,7 @@ export const equipment = [ //change to weapons later
     action: "Select-fire",
     calibre: "6.4mm Ws",
     
-    description: "The PDW improvement over the FD39 with a harder hitting and longer-ranged cartridge."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "The PDW improvement over the FD39 with a harder hitting and longer-ranged cartridge."
   },
   {
     name: "Devil's Kiss",
@@ -476,7 +476,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto/alt",
     calibre: "995nm",
     
-    description: "Unknown origin. Has a secondary firing mode that overheats more but shoots explosive plasma shots."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Unknown origin. Has a secondary firing mode that overheats more but shoots explosive plasma shots."
   },
   {
     name: "Bastard-21",
@@ -493,7 +493,7 @@ export const equipment = [ //change to weapons later
     action: "Select-fire",
     calibre: "6.16mm UNI",
     
-    description: "Extremely cheap and shoddy, but that's its charm. Usually only found in the outer rim systems."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Extremely cheap and shoddy, but that's its charm. Usually only found in the outer rim systems."
   },
   {
     name: "The Ivan",
@@ -510,7 +510,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "7.75mm SV",
     
-    description: "A popular, cheap, and highly customizable assault rifle made in surplus for a war, long ago."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A popular, cheap, and highly customizable assault rifle made in surplus for a war, long ago."
   },
   {
     name: "Sharktooth-T751",
@@ -527,7 +527,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "1155nm",
     
-    description: "Looks cheaply put together, but is known to be one of the most well balanced plasma guns made."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Looks cheaply put together, but is known to be one of the most well balanced plasma guns made."
   },
   {
     name: "FD22 Sprint",
@@ -544,7 +544,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "6.16mm UNI",
     
-    description: "A lightweight scout rifle, perfect for precision shooting and general recon."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A lightweight scout rifle, perfect for precision shooting and general recon."
   },
   {
     name: "LK Scarlet",
@@ -561,7 +561,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "405nm",
     
-    description: "A versatile and effective laser rifle for scouting and recon. Perfect against armoured personnel."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A versatile and effective laser rifle for scouting and recon. Perfect against armoured personnel."
   },
   {
     name: "The EVI Platform",
@@ -578,7 +578,7 @@ export const equipment = [ //change to weapons later
     action: "Select-fire",
     calibre: "6.16mm UNI",
     
-    description: "A favourite for gun nuts, mainly due to the high availability of after market parts for customization."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A favourite for gun nuts, mainly due to the high availability of after market parts for customization."
   },
   {
     name: "H23",
@@ -595,7 +595,7 @@ export const equipment = [ //change to weapons later
     action: "Select-fire",
     calibre: "6.8mm BH",
     
-    description: "An elite bullpup with a unique, hard-hitting calibre. Some say it's the perfect assault rifle."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "An elite bullpup with a unique, hard-hitting calibre. Some say it's the perfect assault rifle."
   },
   {
     name: "Gloom MK III",
@@ -612,7 +612,7 @@ export const equipment = [ //change to weapons later
     action: "Select-fire",
     calibre: "995+440nm",
     
-    description: "A plasma and laser gun put into one; plasma for full-auto punches and laser for semi-auto piercing."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A plasma and laser gun put into one; plasma for full-auto punches and laser for semi-auto piercing."
   },
   {
     name: "H \"Mantis\"",
@@ -629,7 +629,7 @@ export const equipment = [ //change to weapons later
     action: "Burst",
     calibre: "Unknown",
     
-    description: "Experimental Herald tech. Shoots a quick burst of 3 mana bolts that uncharacteristically move quickly."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Experimental Herald tech. Shoots a quick burst of 3 mana bolts that uncharacteristically move quickly."
   },
   {
     name: "Burial M55",
@@ -646,7 +646,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "8.02mm TB",
     
-    description: "Used in some of the most famous assassinations in history. High-powered and deadly accurate."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Used in some of the most famous assassinations in history. High-powered and deadly accurate."
   },
   {
     name: "Atrophy",
@@ -663,7 +663,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "625nm",
     
-    description: "It is said that the victims don't even feel the pain, dropping dead as if it had come from nowhere..."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "It is said that the victims don't even feel the pain, dropping dead as if it had come from nowhere..."
   },
   {
     name: "Orca A7",
@@ -680,7 +680,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "28mm",
     
-    description: "A skilled shooter with this weapon can become one of the deadliest people in the galaxy."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A skilled shooter with this weapon can become one of the deadliest people in the galaxy."
   },
   {
     name: "Hail-92",
@@ -697,7 +697,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "6.16mm UNI",
     
-    description: "A light machine gun that's often used by bandits. Uses two barrels to unleash a torrent of bullets."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A light machine gun that's often used by bandits. Uses two barrels to unleash a torrent of bullets."
   },
   {
     name: "FD7 Optimum",
@@ -714,7 +714,7 @@ export const equipment = [ //change to weapons later
     action: "Full-auto",
     calibre: "8.02mm TB",
     
-    description: "A medium machine gun that can punch holes in armour and is perfect for suppressive fire."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A medium machine gun that can punch holes in armour and is perfect for suppressive fire."
   },
   {
     name: "Salamander Or2",
@@ -731,7 +731,7 @@ export const equipment = [ //change to weapons later
     action: "Thrower",
     calibre: "n/a",
     
-    description: "A flamethrower often employed by the Dustkeepers. Perfect for burning away biomass."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A flamethrower often employed by the Dustkeepers. Perfect for burning away biomass."
   },
   {
     name: "H \"Flare\"",
@@ -748,7 +748,7 @@ export const equipment = [ //change to weapons later
     action: "Continuous",
     calibre: "Unknown",
     
-    description: "Fires a deadly continuous beam of mana that intensifies the longer you hold it. Overheats quickly."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Fires a deadly continuous beam of mana that intensifies the longer you hold it. Overheats quickly."
   },
   {
     name: "Ratio MK II",
@@ -765,7 +765,7 @@ export const equipment = [ //change to weapons later
     action: "Bolt-action",
     calibre: "42mm",
     
-    description: "Accelerates particles at a very high speed, creating rays of super-charged, volatile particles. A magnetic anti-materiel weapon that uses coils instead of rails."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Accelerates particles at a very high speed, creating rays of super-charged, volatile particles. A magnetic anti-materiel weapon that uses coils instead of rails."
   },
   {
     name: "Sardonic 9",
@@ -782,7 +782,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "1990nm",
     
-    description: "Unknown."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Unknown."
   },
   {
     name: "H12",
@@ -799,7 +799,7 @@ export const equipment = [ //change to weapons later
     action: "Launcher",
     calibre: "82mm",
     
-    description: "Can launch any type of grenade. Used for destructive purposes as well as crowd control."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Can launch any type of grenade. Used for destructive purposes as well as crowd control."
   },
   {
     name: "Stark-4",
@@ -816,7 +816,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "28mm",
     
-    description: "Cheap for a rocket launcher but effective at taking out heavy and expensive targets."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Cheap for a rocket launcher but effective at taking out heavy and expensive targets."
   },
   {
     name: "KM Swarm",
@@ -833,7 +833,7 @@ export const equipment = [ //change to weapons later
     action: "Launcher",
     calibre: "110mm",
     
-    description: "A launcher that's more focused for taking out personnel, rather than materiel."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A launcher that's more focused for taking out personnel, rather than materiel."
   },
   {
     name: "FD102 Toler",
@@ -850,7 +850,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "40mm",
     
-    description: "Locks onto targets and launches high-destructive missiles which seek them."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Locks onto targets and launches high-destructive missiles which seek them."
   },
   {
     name: "Explody Thing",
@@ -867,7 +867,7 @@ export const equipment = [ //change to weapons later
     action: "Semi-auto",
     calibre: "82mm",
     
-    description: "The weapon used by Sya'ra the Mad Roller to repel a small Black-hawk convoy during the Luos wars."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "The weapon used by Sya'ra the Mad Roller to repel a small Black-hawk convoy during the Luos wars."
   },
   {
     name: "Moses Or19",
@@ -884,7 +884,7 @@ export const equipment = [ //change to weapons later
     action: "Burst",
     calibre: "720nm x4",
     
-    description: "A specialized heavy laser gun that fires volatile ion particles, causing explosions."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A specialized heavy laser gun that fires volatile ion particles, causing explosions."
   },
   {
     name: "Hel",
@@ -901,7 +901,7 @@ export const equipment = [ //change to weapons later
     action: "Thrower",
     calibre: "n/a",
     
-    description: "Spews a burning chemical liquid solution that can instantaneously melt through rock."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Spews a burning chemical liquid solution that can instantaneously melt through rock."
   },
   {
     name: "FD99x Perfection",
@@ -918,7 +918,7 @@ export const equipment = [ //change to weapons later
     action: "Gatling",
     calibre: "45mm Qn",
     
-    description: "Usually mounted on vehicles, this monster's roar can be heard from many kilometers away."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Usually mounted on vehicles, this monster's roar can be heard from many kilometers away."
   }
 ];
 
@@ -933,7 +933,7 @@ export const vehicles = [
     Mobility: "000000000",
     Armour: "8m",
     Length: "4m",
-    Description: "The all-terrain dunebuggy allows for great ground coverage. Its high-traction wheels can be replaced with skates or skiis. +Comes with a free machine gun"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "The all-terrain dunebuggy allows for great ground coverage. Its high-traction wheels can be replaced with skates or skiis. +Comes with a free machine gun"
   },
   {
     name: "MLUV",
@@ -945,7 +945,7 @@ export const vehicles = [
     Mobility: "D0000",
     Armour: "E", // Assuming 'E' is a string value for Armour
     Length: "4m",
-    Description: "This mlitary light utility vehicle has a good balance of mobility, armour, and firepower, perfect for troop transportation and support. +Comes with a free T1 weapon"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "This mlitary light utility vehicle has a good balance of mobility, armour, and firepower, perfect for troop transportation and support. +Comes with a free T1 weapon"
   },
   {
     name: "APC",
@@ -957,7 +957,7 @@ export const vehicles = [
     Mobility: "D0000",
     Armour: "4m",
     Length: "6m",
-    Description: "Large and bulky, these Armoured Personnel Carriers can transport a good handful of troops or VIPs and protect them with thick armour. +Comes with a free T1 weapon"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Large and bulky, these Armoured Personnel Carriers can transport a good handful of troops or VIPs and protect them with thick armour. +Comes with a free T1 weapon"
   },
   {
     name: "Terrain Tank",
@@ -969,7 +969,7 @@ export const vehicles = [
     Mobility: "", // Mobility value was blank in source for this item
     Armour: "6m",
     Length: "6m",
-    Description: "These tanks are light armoured, but with their special quarduped tank treads, they can cover many kinds of terrain with good speed. +Comes with a free T2 weapon"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These tanks are light armoured, but with their special quarduped tank treads, they can cover many kinds of terrain with good speed. +Comes with a free T2 weapon"
   },
   {
     name: "Heavy Tank",
@@ -981,7 +981,7 @@ export const vehicles = [
     Mobility: "", // Mobility value was blank in source for this item
     Armour: "8m",
     Length: "11m",
-    Description: "Fit for convoys, heavy firepower, artillery support, and everything tank-like, these beasts can lead the charge into combat. +Comes with a free T2 weapon"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Fit for convoys, heavy firepower, artillery support, and everything tank-like, these beasts can lead the charge into combat. +Comes with a free T2 weapon"
   },
   {
     name: "Spider Tank",
@@ -993,7 +993,7 @@ export const vehicles = [
     Mobility: "", // Mobility value was blank in source for this item
     Armour: "5m",
     Length: "9m",
-    Description: "Spider tanks are a more experi- mental platform, but unlike tradi- tional tanks, they have less trouble overcoming terrain. +Comes with a free T2 weapon"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Spider tanks are a more experi- mental platform, but unlike tradi- tional tanks, they have less trouble overcoming terrain. +Comes with a free T2 weapon"
   },
   {
     name: "Ground Mech",
@@ -1005,7 +1005,7 @@ export const vehicles = [
     Mobility: "0000000",
     Armour: "5m",
     Length: "5m",
-    Description: "This personal ground mech has ample firepower with versatile movement. The perfect firepower support platform for your troops. +Comes with a free T1 weapon"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "This personal ground mech has ample firepower with versatile movement. The perfect firepower support platform for your troops. +Comes with a free T1 weapon"
   },
   {
     name: "Heavy Ground Mech",
@@ -1017,7 +1017,7 @@ export const vehicles = [
     Mobility: "000000SS",
     Armour: "8m",
     Length: "8m",
-    Description: "These mechs are equipped with extremely hard hitting ordnance, particularily against air targets and other vehicles. +Comes with a free T2 weapon"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These mechs are equipped with extremely hard hitting ordnance, particularily against air targets and other vehicles. +Comes with a free T2 weapon"
   },
   {
     name: "OG Mobile Suit",
@@ -1029,7 +1029,7 @@ export const vehicles = [
     Mobility: "0000000",
     Armour: "10m",
     Length: "10m",
-    Description: "Single-piloted, but extremely versatile. An upgrade from your standard power armour, these can fly in atmosphere or space. +Comes with a free T2 weapon"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Single-piloted, but extremely versatile. An upgrade from your standard power armour, these can fly in atmosphere or space. +Comes with a free T2 weapon"
   },
   {
     name: "Submarine",
@@ -1041,7 +1041,7 @@ export const vehicles = [
     Mobility: "0000000000",
     Armour: "25m",
     Length: "25m",
-    Description: "These submarines can withstand extreme temperatures and pres- sures, and can withstand many liquids. +Comes with a free T1 weapon"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These submarines can withstand extreme temperatures and pres- sures, and can withstand many liquids. +Comes with a free T1 weapon"
   },
   {
     name: "Lamprey Boarding Ship",
@@ -1053,7 +1053,7 @@ export const vehicles = [
     Mobility: "000000SS",
     Armour: "12m",
     Length: "12m",
-    Description: "This ship uses high-powered lasers to cut through hulls to allow its boarding party inside. However, it cannot fly through ship shields. +Has 2 hangar space capacity"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "This ship uses high-powered lasers to cut through hulls to allow its boarding party inside. However, it cannot fly through ship shields. +Has 2 hangar space capacity"
   },
   {
     name: "Drop Ship",
@@ -1065,6 +1065,6 @@ export const vehicles = [
     Mobility: "0000000",
     Armour: "15m",
     Length: "15m",
-    Description: "Heavily armoured and perfectly capable of transporting troops and vehicles. +Comes with a free T1 weapon +Has 3 hangar space capacity"
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Heavily armoured and perfectly capable of transporting troops and vehicles. +Comes with a free T1 weapon +Has 3 hangar space capacity"
   }
 ];

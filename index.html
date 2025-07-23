@@ -449,17 +449,8 @@
         </span>
       </div>
     </div>
-
-    <div class="choice" id="choose-catalyst-minor">
-      <span>
-        <img src="/Images/Other/Beatrice R&D.webp">
-        <h3 style="margin-top: 0px; margin-bottom: 0px;">Minor Catalyst</h3>
-        <div class="choice-cost">cost: 110 million</div>
-        <p>A small boost to your mana channeling abilities.</p>
-      </span>
-    </div>
-
     
+    <div id="endOfCatalyst" style ="display: none;"></div>
 
     <div id="origin-affinities" >
       <div>
@@ -469,15 +460,6 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
         </span>
       </div>
-    </div>
-     
-    <div class="choice" id="choose-affinity-elemental">
-      <span>
-        <img src="/Images/Other/Beatrice R&D.webp">
-        <h3 style="margin-top: 0px; margin-bottom: 0px;">Elemental Affinity</h3>
-        <div class="choice-cost">cost: 160 million</div>
-        <p>Strengthen your connection to elemental magic.</p>
-      </span>
     </div>
 
     <div id="origin-spell" >
@@ -490,16 +472,6 @@
       </div>
     </div>
 
-      
-    <div class="choice" id="choose-spell-fireball">
-      <span>
-        <img src="/Images/Other/Beatrice R&D.webp">
-        <h3 style="margin-top: 0px; margin-bottom: 0px;">Fireball Spell</h3>
-        <div class="choice-cost">cost: 130 million</div>
-        <p>Learn to conjure a basic fireball for offensive purposes.</p>
-      </span>
-    </div>
-
   </div>
 
   <!--You-Equipment, this will scroll no clickable choices because too long
@@ -509,6 +481,38 @@
       <span>
         <div>
           <h3>Equipment</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+      </span></div>
+    <div id="title-frame">
+      <span>
+        <div>
+          <h3>Frame</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+      </span></div>
+    <div id="title-rigs">
+      <span>
+        <div>
+          <h3>Rigs</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+      </span></div>
+    <div id="title-dragoon">
+      <span>
+        <div>
+          <h3>Dragoon Mounts</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+      </span></div>
+
+    <div id="title-eWarEquipment">
+      <span>
+        <div>
+          <h3>E-War-Equipment</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+      </span></div>
+    
+    <div id="title-personalWeapons">
+      <span>
+        <div>
+          <h3>Personal Weapons</h3>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
       </span></div>
      
@@ -918,7 +922,9 @@
     //populate equipment
     import {equipment, vehicles} from '/Script/equipmentData.js';
     //populate spells and unified population function
-    import {catalyst, affinity, spellBases, populateDataToSection} from '/Script/manaData.js';
+    import {catalyst, affinity, spellBases, populateDataToSection, 
+      populateCatalystToSection
+    } from '/Script/manaData.js';
 
     //populate skills, titles, and crew
     function addChoiceDataToSection(choiceArray, choicePrefix, sectionID) {
@@ -1149,6 +1155,11 @@
           const newSpan = document.createElement("span");
           newDiv.appendChild(newSpan);
 
+          const imgElement = document.createElement('img');
+          imgElement.src = item.image;
+          imgElement.alt = `${item.name} image`; // Add alt text for accessibility
+          newSpan.appendChild(imgElement);
+
           // Create an h3 element for the name
           const h3Element = document.createElement('h3');
           h3Element.style.marginTop = '0px';
@@ -1172,71 +1183,50 @@
           levelP.textContent = `Equipment Level: ${item.equipmentLevel || 0}`;
           newSpan.appendChild(levelP);
 
-          // Kinetic Defence
-          if (item.kineticDefence !== 0 && item.kineticDefence !== undefined) {
-              const kineticDefenceP = document.createElement('p');
-              kineticDefenceP.textContent = `Kinetic Defence: ${item.kineticDefence}`;
-              newSpan.appendChild(kineticDefenceP);
-          }
-
-          // Energy Defence
-          if (item.energyDefence !== 0 && item.energyDefence !== undefined) {
-              const energyDefenceP = document.createElement('p');
-              energyDefenceP.textContent = `Energy Defence: ${item.energyDefence}`;
-              newSpan.appendChild(energyDefenceP);
-          }
-
-          // Mobility
-          if (item.mobility !== 0 && item.mobility !== undefined) {
-              const mobilityP = document.createElement('p');
-              mobilityP.textContent = `Mobility: ${item.mobility}`;
-              newSpan.appendChild(mobilityP);
-          }
-
           // Stopping Power
-          if (item.stoppingPower !== 0 && item.stoppingPower !== undefined) {
+          if (item.stoppingPower !== null && item.stoppingPower !== undefined) {
               const stoppingPowerP = document.createElement('p');
               stoppingPowerP.textContent = `Stopping Power: ${item.stoppingPower}`;
               newSpan.appendChild(stoppingPowerP);
           }
 
           // Piercing Power
-          if (item.piercingPower !== 0 && item.piercingPower !== undefined) {
+          if (item.piercingPower !== null && item.piercingPower !== undefined) {
               const piercingPowerP = document.createElement('p');
               piercingPowerP.textContent = `Piercing Power: ${item.piercingPower}`;
               newSpan.appendChild(piercingPowerP);
           }
 
           // Rate of Fire
-          if (item.rateOfFire !== 0 && item.rateOfFire !== undefined) {
+          if (item.rateOfFire !== null && item.rateOfFire !== undefined) {
               const rateOfFireP = document.createElement('p');
               rateOfFireP.textContent = `Rate of Fire: ${item.rateOfFire}`;
               newSpan.appendChild(rateOfFireP);
           }
 
           // Range
-          if (item.range !== 0 && item.range !== undefined) {
+          if (item.range !== null && item.range !== undefined) {
               const rangeP = document.createElement('p');
               rangeP.textContent = `Range: ${item.range}`;
               newSpan.appendChild(rangeP);
           }
 
           // Accuracy
-          if (item.accuracy !== 0 && item.accuracy !== undefined) {
+          if (item.accuracy !== null && item.accuracy !== undefined) {
               const accuracyP = document.createElement('p');
               accuracyP.textContent = `Accuracy: ${item.accuracy}`;
               newSpan.appendChild(accuracyP);
           }
 
           // Handling
-          if (item.handling !== 0 && item.handling !== undefined) {
+          if (item.handling !== null && item.handling !== undefined) {
               const handlingP = document.createElement('p');
               handlingP.textContent = `Handling: ${item.handling}`;
               newSpan.appendChild(handlingP);
           }
 
           // Round Capacity
-          if (item.roundCapacity !== 0 && item.roundCapacity !== undefined) {
+          if (item.roundCapacity !== null && item.roundCapacity !== undefined) {
               const roundCapacityP = document.createElement('p');
               roundCapacityP.textContent = `Round Capacity: ${item.roundCapacity}`;
               newSpan.appendChild(roundCapacityP);
@@ -1249,53 +1239,66 @@
               newSpan.appendChild(actionP);
           }
 
-          // Calibre
+          // Calibre (now includes diode/bolt values from the image)
           if (item.calibre !== undefined) {
               const calibreP = document.createElement('p');
               calibreP.textContent = `Calibre: ${item.calibre}`;
               newSpan.appendChild(calibreP);
           }
 
-          // Diode (for Plasma/Laser weapons)
-          if (item.diode !== undefined) {
-              const diodeP = document.createElement('p');
-              diodeP.textContent = `Diode: ${item.diode}`;
-              newSpan.appendChild(diodeP);
+          // Energy Use
+          if (item.energyUse !== null && item.energyUse !== undefined) {
+              const energyUseP = document.createElement('p');
+              energyUseP.textContent = `Energy Use: ${item.energyUse}`;
+              newSpan.appendChild(energyUseP);
           }
 
-          // Bolt (for Rail weapons)
-          if (item.bolt !== undefined) {
-              const boltP = document.createElement('p');
-              boltP.textContent = `Bolt: ${item.bolt}`;
-              newSpan.appendChild(boltP);
+          // Tier
+          if (item.tier !== null && item.tier !== undefined) {
+              const tierP = document.createElement('p');
+              tierP.textContent = `Tier: ${item.tier}`;
+              newSpan.appendChild(tierP);
           }
 
-          // Ordnance (for Explosive weapons)
-          if (item.ordnance !== undefined) {
-              const ordnanceP = document.createElement('p');
-              ordnanceP.textContent = `Ordnance: ${item.ordnance}`;
-              newSpan.appendChild(ordnanceP);
+          // Damage Per Volley
+          if (item.damagePerVolley !== null && item.damagePerVolley !== undefined) {
+              const damagePerVolleyP = document.createElement('p');
+              damagePerVolleyP.textContent = `Damage Per Volley: ${item.damagePerVolley}`;
+              newSpan.appendChild(damagePerVolleyP);
           }
 
-          // Tank Capacity (for Special weapons like Salamander Or2)
-          if (item.tankCapacity !== undefined) {
-              const tankCapacityP = document.createElement('p');
-              tankCapacityP.textContent = `Tank Capacity: ${item.tankCapacity}`;
-              newSpan.appendChild(tankCapacityP);
+          // Projectile Velocity
+          if (item.projectileVelocity !== null && item.projectileVelocity !== undefined) {
+              const projectileVelocityP = document.createElement('p');
+              projectileVelocityP.textContent = `Projectile Velocity: ${item.projectileVelocity}`;
+              newSpan.appendChild(projectileVelocityP);
+          }
+
+          // Tracking
+          if (item.tracking !== null && item.tracking !== undefined) {
+              const trackingP = document.createElement('p');
+              trackingP.textContent = `Tracking: ${item.tracking}`;
+              newSpan.appendChild(trackingP);
+          }
+
+          // Description
+          if (item.description !== undefined) {
+              const descriptionP = document.createElement('p');
+              descriptionP.textContent = `Description: ${item.description}`;
+              newSpan.appendChild(descriptionP);
           }
 
           targetSection.before(newDiv); // Append to the target section
         });
       }
-      
 
     //make choices visible (populate)
     const choiceSkills1 = document.getElementById('origin-skills');
-    const sectionSkills1 = document.getElementById('choice-origin');
-    sectionSkills1.addEventListener('click', () => {
-      sectionSkills1.classList.toggle('visible');
-      choiceSkills1.classList.toggle('active');
+    //const sectionSkills1 = document.getElementById('choice-origin'); NOT NEEDED
+    choiceOrigin1.addEventListener('click', () => {
       addChoiceDataToSection(skills, 'choice', 'origin-mana'); 
+      populateCatalystToSection(catalyst, 'choice', 'endOfCatalyst');
+
     });
 
     const choiceTitles1 = document.getElementById('choice-titles');
