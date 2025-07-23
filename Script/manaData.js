@@ -691,15 +691,6 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
         appendParagraph(newSpan, `Shield Defence: ${item.shieldDefence || 0}`);
         appendParagraph(newSpan, `Length: ${item.length || 'N/A'}`);
         break;
-      case 'catalyst':
-        // Catalyst specific properties (cost and description already handled)
-        break;
-      case 'affinity':
-        // Affinity specific properties (cost and description already handled)
-        break;
-      case 'spellBase':
-        // SpellBase specific properties (cost and description already handled)
-        break;
       default:
         console.warn(`Unknown dataType: ${dataType}. No specific properties rendered.`);
     }

@@ -560,6 +560,34 @@
     <div id="endOfHull"></div>
   </div>
 
+  <div class="section" id="section-subsystem">
+    <div id="title-AI">
+      <span>
+        <div>
+          <h3>Ship AI</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+      </span>
+    </div>
+    <div style= "display: none;" id="endOfAI"></div>
+    <div id="title-energy">
+      <span>
+        <div>
+          <h3>Energy Subsystems</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+      </span>
+    </div>
+    <div style= "display: none;" id="endOfEnergy"></div>
+    <div id="title-shield">
+      <span>
+        <div>
+          <h3>Shield Subsystems</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+      </span>
+    </div>
+    <div style= "display: none;" id="endOfShield"></div>
+
+  </div>
+
   <div class="section" id="section-mod">
     <div id="endOfMod"></div>
   </div>
@@ -679,7 +707,7 @@
     const sectionHull1 = document.getElementById('section-hull');
     
 
-    //const choiceSubsystem1 = document.getElementById('choice-subsystem');
+    const choiceSubsystem1 = document.getElementById('choice-subsystem');
     const choiceMod1 = document.getElementById('choice-mod');
     const sectionMod1 = document.getElementById('section-mod');
     const choiceWeapon1 = document.getElementById('choice-weapon');
@@ -1357,6 +1385,15 @@
       choiceWeapon1.classList.toggle('active');
       sectionWeapon1.classList.toggle('visible');
       populateDataToSection(weapons, 'choice', 'endOfWeapons', 'weapon');
+    });
+
+    const sectionSubsystem1 = document.getElementById('section-subsystem');
+    choiceSubsystem1.addEventListener('click', () => {
+      choiceSubsystem1.classList.toggle('active');
+      sectionSubsystem1.classList.toggle('visible');
+      populateDataToSection(shipAI, 'choice', 'endOfAI', 'shipAI');
+      populateDataToSection(energy, 'choice', 'endOfEnergy', 'energy');
+      populateDataToSection(shield, 'choice', 'endOfShield', 'shield');
     });
 
     choiceIndustrial1.addEventListener('click', () => {
