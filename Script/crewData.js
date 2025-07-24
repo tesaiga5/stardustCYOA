@@ -1,5 +1,5 @@
 export {crew, archetype, addCrewToSection}
-import { appendDropdown } from "/Script/manaData.js";
+import { appendDropdown, formatterIntl } from "/Script/manaData.js";
 
 const crew = [
     // This array contains data for various crew members and archetypes.

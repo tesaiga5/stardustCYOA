@@ -1,3 +1,5 @@
+import { formatterIntl } from "/Script/manaData.js";
+
 // This array contains all equipment objects with their attributes.
 // Blank attributes are set to '0'.
 // Costs are converted to numerical values (k = thousand, m = million).

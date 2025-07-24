@@ -1,4 +1,4 @@
-export { catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection, appendDropdown };
+export { catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection, appendDropdown, formatterIntl };
 const catalyst = [
   {
     name: "Base Catalyst: Arm Blade",
@@ -719,3 +719,8 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
 function populateCatalystToSection(choiceArray, choicePrefix, sectionID) {
 
 }
+
+const formatterIntl = new Intl.NumberFormat('en-US', {
+            minimumFractionDigits: 0, // Ensure no decimal places if not needed
+            maximumFractionDigits: 0 // Allow up to 2 decimal places if present
+    });

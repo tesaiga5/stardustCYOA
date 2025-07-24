@@ -1,4 +1,5 @@
 export {skills, titles, startPos, addTitlesToSection};
+import { formatterIntl } from "/Script/manaData.js";
 
  const skills = [
     // Skills from "Page 1 Stardust word.docx"
@@ -336,33 +337,10 @@ export {skills, titles, startPos, addTitlesToSection};
         title:"The Rogue",
         prerequisites: "none",
         consequences: [],
-        credits: 200000000,
+        credits: 50000000,
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "One or more of your crew will betray you at some point while you are adventuring the stars. You best hope you have good security personnel... unless they're the traitors. name 5 traitors from the named crew members."
-    },
-    {
-        id:"title-oldTimer",
-        title:"The Old Timer",
-        prerequisites: "none",
-        consequences: {
-            'energy-fusion': false, 
-            'energy-mana': false,
-            'energy-antiMatter': false,
-            'shield-aegis': false,
-            'shield-mana': false
-        },
-        credits: 100000000,
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "*Can't take nuclear fusion, mana core, or anti-matter energy *Can't take aegis or mana shields You never saw the reason to upgrade. What you have is perfect- ly fine, and you don't need anything fancier to accomplish what you do."
-    },
-    {
-        id:"title-ghost",
-        title:"The Ghost",
-        prerequisites: "none",
-        consequences: [],
-        credits: 120000000,
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously."
+        subDescription: "Name up to 5 traitors from the named crew members. Every additional traitor adds 30m.",
+        description: "One or more of your crew will betray you at some point while you are adventuring the stars. You best hope you have good security personnel... unless they're the traitors. "
     },
     {
         id:"title-whisperer",
@@ -371,80 +349,60 @@ export {skills, titles, startPos, addTitlesToSection};
         consequences: [],
         credits: 130000000,
         imageSrc: "/Images/Other/Beatrice R&D.webp",
+        subDescription: "", 
         description: "It takes awhile for you to catch on, but you find out that your ship Al has began to develop a more... emotional personality. How it happened, you're not sure, but it's become moody and will reject your orders if not treated well... some- thing Al shouldn't do. It's probably best you don't piss it off."
     },
     // Titles from "Page 1 Stardust word.docx"
     {
-        id: "title-the-rogue",
-        title: "The Rogue",
-        bonusCredits: 50000000,
-        complications: [
-            "One or more of your crew will betray you at some point while you are adventuring the stars. You best hope you have good security personnel... unless they're the traitors. Limited to 5 traitors total. Must be named crew members.",
-            { type: "bonus-per-traitor", value: 30000000 }
-        ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "One or more of your crew will betray you at some point while you are adventuring the stars. You best hope you have good security personnel... unless they're the traitors. Bonus starting credits: 50m +Every additional traitor adds 30m *Must be named crew members *Limited to 5 traitors total",
-        prerequisites: [],
-        consequences: []
-    },
-    {
         id: "title-the-old-timer",
         title: "The Old Timer",
-        bonusCredits: 100000000,
+        credits: 100000000,
         complications: [
             "Cannot take nuclear fusion, mana core, or anti-matter energy.",
             "Cannot take aegis or mana shields."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "*Can't take nuclear fusion, mana core, or anti-matter energy *Can't take aegis or mana shields You never saw the reason to upgrade. What you have is perfect- ly fine, and you don't need anything fancier to accomplish what you do.",
+        subDescription: "Can't take nuclear fusion, mana core, or anti-matter energy. Can't take aegis or mana shields.", 
+        description: "You never saw the reason to upgrade. What you have is perfect- ly fine, and you don't need anything fancier to accomplish what you do.",
         prerequisites: [],
         consequences: []
     },
     {
         id: "title-the-ghost",
         title: "The Ghost",
-        bonusCredits: 120000000,
+        credits: 120000000,
         complications: [
             "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously. Bonus starting credits: 120m",
-        prerequisites: [],
-        consequences: []
-    },
-    {
-        id: "title-the-whisperer",
-        title: "The Whisperer",
-        bonusCredits: 130000000,
-        complications: [
-            "It takes awhile for you to catch on, but you find out that your ship Al has began to develop a more... emotional personality. How it happened, you're not sure, but it's become moody and will reject your orders if not treated well... some- thing Al shouldn't do. It's probably best you don't piss it off."
-        ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "It takes awhile for you to catch on, but you find out that your ship Al has began to develop a more... emotional personality. How it happened, you're not sure, but it's become moody and will reject your orders if not treated well... some- thing Al shouldn't do. It's probably best you don't piss it off. Bonus starting credits: 130m",
+        subDescription: "", 
+        description: "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously.",
         prerequisites: [],
         consequences: []
     },
     {
         id: "title-the-leader",
         title: "The Leader",
-        bonusCredits: 140000000,
+        credits: 140000000,
         complications: [
             "A hostile bandit group has a bone to pick with you. They will show up at the most inconvenient times, but almost never to confront you directly. Sabotage, traps, and spies await you when you least expect it. The larger your crew, the more likely they can infiltrate. You might want intimidating crew members."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "A hostile bandit group has a bone to pick with you. They will show up at the most inconvenient times, but almost never to confront you directly. Sabotage, traps, and spies await you when you least expect it. The larger your crew, the more likely they can infiltrate. You might want intimidating crew members. Bonus starting credits: 140m",
+        subDescription: "", 
+        description: "A hostile bandit group has a bone to pick with you. They will show up at the most inconvenient times, but almost never to confront you directly. Sabotage, traps, and spies await you when you least expect it. The larger your crew, the more likely they can infiltrate. You might want intimidating crew members.",
         prerequisites: [],
         consequences: []
     },
     {
         id: "title-the-saint",
         title: "The Saint",
-        bonusCredits: 150000000,
+        credits: 150000000,
         complications: [
             "The notorious (former) \"Siblings of Death\" both join your crew at the same time, unbeknownst to each other. However, they don't find out until you're in the middle of space, and they hate each other's guts with a violent zeal."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "The notorious (former) \"Siblings of Death\" both join your crew at the same time, unbeknownst to each other. However, they don't find out until you're in the middle of space, and they hate each other's guts with a violent zeal. Bonus starting credits: 150m +Can get Alessia (combat) and Ricce (combat) for free",
+        subDescription: "+Can get Alessia (combat) and Ricce (combat) for free", 
+        description: "The notorious (former) \"Siblings of Death\" both join your crew at the same time, unbeknownst to each other. However, they don't find out until you're in the middle of space, and they hate each other's guts with a violent zeal.",
         playerUpdates: [
             { attribute: "crew", action: "add", value: "Alessia" },
             { attribute: "crew", action: "add", value: "Ricce" }
@@ -455,14 +413,15 @@ export {skills, titles, startPos, addTitlesToSection};
     {
         id: "title-the-berserk",
         title: "The Berserk",
-        bonusCredits: 170000000,
+        credits: 170000000,
         complications: [
             "Something's wrong with the shields of your ships, but no matter what you do, it can't be fixed. However, your weapons seem improved.",
             "All ship shields permanently lose 2 points, to a minimum of 1.",
             "Shields cannot exceed 23/25."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "Something's wrong with the shields of your ships, but no matter what you do, it can't be fixed. However, your weapons seem improved. Bonus starting credits: 170m +All ship weapons permanently gain 1 point of damage per volley *All ship shields permanently lose 2 points, to a minmum of 1 *Shields cannot exceed 23/25",
+        subDescription: "All ship shields permanently lose 2 points, to a minmum of 1. Shields cannot exceed 23/25. +All ship weapons permanently gain 1 point of damage per volley.", 
+        description: "Something's wrong with the shields of your ships, but no matter what you do, it can't be fixed. However, your weapons seem improved.",
         playerUpdates: [
             { attribute: "ship-weapon-damage", action: "add", value: 1 },
             { attribute: "ship-shield-strength", action: "subtract", value: 2, min: 1 },
@@ -474,31 +433,32 @@ export {skills, titles, startPos, addTitlesToSection};
     {
         id: "title-the-nemesis",
         title: "The Nemesis",
-        bonusCredits: 180000000,
+        credits: 180000000,
         complications: [
             "Somewhere out there in the galaxy, someone sees you as the 'Perfect Rival.' They fly a similar ship or fleet doctrine that is every bit as good as yours. Their leader? A notorious pilot who has had a fearsome record of flawless victo- ries, winning with genius tact. Your hope is to not face them alone..."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "Somewhere out there in the galaxy, someone sees you as the 'Perfect Rival.' They fly a similar ship or fleet doctrine that is every bit as good as yours. Their leader? A notorious pilot who has had a fearsome record of flawless victo- ries, winning with genius tact. Your hope is to not face them alone... Bonus starting credits: 180m",
+        subDescription: "", 
+        description: "Somewhere out there in the galaxy, someone sees you as the 'Perfect Rival.' They fly a similar ship or fleet doctrine that is every bit as good as yours. Their leader? A notorious pilot who has had a fearsome record of flawless victo- ries, winning with genius tact. Your hope is to not face them alone...",
         prerequisites: [],
         consequences: []
     },
     {
         id: "title-the-harbinger",
         title: "The Harbinger",
-        bonusCredits: 190000000,
+        credits: 190000000,
         complications: [
             "You get horrendously lost and come across a huge ancient space station made completely out of Herald tech. However, you find yourself surrounded by a lot of mysterious Herald vessels. You know their ships are powerful, but they don't sem happy to see you. Better make a good impression..."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "You get horrendously lost and come across a huge ancient space station made completely out of Herald tech. However, you find yourself surrounded by a lot of mysterious Herald vessels. You know their ships are powerful, but they don't sem happy to see you. Better make a good impression... Bonus starting credits: 190m",
+        subDescription: "", description: "You get horrendously lost and come across a huge ancient space station made completely out of Herald tech. However, you find yourself surrounded by a lot of mysterious Herald vessels. You know their ships are powerful, but they don't sem happy to see you. Better make a good impression...",
         prerequisites: [],
         consequences: []
     },
     {
         id: "title-the-prisoner",
         title: "The Prisoner",
-        bonusCredits: 200000000,
+        credits: 200000000,
         complications: [
             "You've been captured by your enemies! To your surprise, instead of imprisoning you, they force you to work for them as a ship captain, seeing your skills as one.",
             "Origin must have hostile factions.",
@@ -506,55 +466,57 @@ export {skills, titles, startPos, addTitlesToSection};
             "Diplomacy skill effect reversed."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "You've been captured by your enemies! To your surprise, instead of imprisoning you, they force you to work for them as a ship captain, seeing your skills as one. Bonus starting credits: 200m *Origin must have hostile factions *Can only hire hostile or neutral crew members *Diplomacy skill effect reversed",
+        subDescription: "Origin must have hostile factions. Can only hire hostile or neutral crew members. Diplomacy skill effect reversed", 
+        description: "You've been captured by your enemies! To your surprise, instead of imprisoning you, they force you to work for them as a ship captain, seeing your skills as one.",
         prerequisites: [],
         consequences: []
     },
     {
         id: "title-the-space-cowboy",
         title: "The Space Cowboy",
-        bonusCredits: 200000000,
+        credits: 200000000,
         complications: [
             "Someone unsavoury actively wants your head, and they've made that knowledge public. Anyone who wants to get in good with them or has something against you will be coming after you, knowing that there's a fat bounty reward waiting for them should they succeed."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "Someone unsavoury actively wants your head, and they've made that knowledge public. Anyone who wants to get in good with them or has something against you will be coming after you, knowing that there's a fat bounty reward waiting for them should they succeed. Bonus starting credits: 200m",
+        subDescription: "", description: "Someone unsavoury actively wants your head, and they've made that knowledge public. Anyone who wants to get in good with them or has something against you will be coming after you, knowing that there's a fat bounty reward waiting for them should they succeed. ",
         prerequisites: [],
         consequences: []
     },
     {
         id: "title-the-sleeper",
         title: "The Sleeper",
-        bonusCredits: 210000000,
+        credits: 210000000,
         complications: [
             "A group of mindless but well organized and well equipped rogue drones are always at your heels, determined to assimilate you, your crew, and your ships into its hoard. Why, you're not sure. You just know they're tough to deal with, as they have an almost endless arsenal of ships and weapons."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "A group of mindless but well organized and well equipped rogue drones are always at your heels, determined to assimilate you, your crew, and your ships into its hoard. Why, you're not sure. You just know they're tough to deal with, as they have an almost endless arsenal of ships and weapons. Bonus starting credits: 210m",
+        subDescription: "", description: "A group of mindless but well organized and well equipped rogue drones are always at your heels, determined to assimilate you, your crew, and your ships into its hoard. Why, you're not sure. You just know they're tough to deal with, as they have an almost endless arsenal of ships and weapons. ",
         prerequisites: [],
         consequences: []
     },
     {
         id: "title-the-traveler",
         title: "The Traveler",
-        bonusCredits: 220000000,
+        credits: 220000000,
         complications: [
             "A wormhole will open up at a random point in time while you are in space and swallow you whole. You will appear in unknown space with no way to indicate where you are in the vast, empty universe. You may make it back eventually, but it will take years, at the least. Maybe decades... or never."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "A wormhole will open up at a random point in time while you are in space and swallow you whole. You will appear in unknown space with no way to indicate where you are in the vast, empty universe. You may make it back eventually, but it will take years, at the least. Maybe decades... or never. Bonus starting credits: 220m",
+        subDescription: "", description: "A wormhole will open up at a random point in time while you are in space and swallow you whole. You will appear in unknown space with no way to indicate where you are in the vast, empty universe. You may make it back eventually, but it will take years, at the least. Maybe decades... or never. ",
         prerequisites: [],
         consequences: []
     },
     {
         id: "title-the-guardian",
         title: "The Guardian",
-        bonusCredits: 240000000,
+        credits: 240000000,
         complications: [
             "After finding an abandoned facility on a remote moon, you find a woman. You take her in; she was put through many experiments, mostly involving mind-link tech. On hearing about this, certain shady Federation entities will seek to capture her for some reason... and also hunt you and your crew down, regardless of your standings."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "After finding an abandoned facility on a remote moon, you find a woman. You take her in; she was put through many experiments, mostly involving mind-link tech. On hearing about this, certain shady Federation entities will seek to capture her for some reason... and also hunt you and your crew down, regardless of your standings. Bonus starting credits: 240m +Can get \"Hailey\" (co-pilot) for free",
+        subDescription: "+Can get \"Hailey\" (co-pilot) for free", 
+        description: "After finding an abandoned facility on a remote moon, you find a woman. You take her in; she was put through many experiments, mostly involving mind-link tech. On hearing about this, certain shady Federation entities will seek to capture her for some reason... and also hunt you and your crew down, regardless of your standings.",
         playerUpdates: [{ attribute: "crew", action: "add", value: "Hailey" }],
         prerequisites: [],
         consequences: []
@@ -562,12 +524,13 @@ export {skills, titles, startPos, addTitlesToSection};
     {
         id: "title-the-sorcerer",
         title: "The Sorcerer",
-        bonusCredits: 240000000,
+        credits: 240000000,
         complications: [
             "While passing by wreckages littering the former Luos Syndicate, you come across an SOS signal coming from a supposed aban- doned station. You investigate and find a woman hooked up to some sort of machines. Upon saving her, the twisted, possessed pirates of the Fire Legion will try to seek and eradicate you and your crew."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "While passing by wreckages littering the former Luos Syndicate, you come across an SOS signal coming from a supposed aban- doned station. You investigate and find a woman hooked up to some sort of machines. Upon saving her, the twisted, possessed pirates of the Fire Legion will try to seek and eradicate you and your crew. Bonus starting credits: 240m +Can get \"Comet\" (gunner) for free",
+        subDescription: "+Can get \"Comet\" (gunner) for free", 
+        description: "While passing by wreckages littering the former Luos Syndicate, you come across an SOS signal coming from a supposed aban- doned station. You investigate and find a woman hooked up to some sort of machines. Upon saving her, the twisted, possessed pirates of the Fire Legion will try to seek and eradicate you and your crew.",
         playerUpdates: [{ attribute: "crew", action: "add", value: "Comet" }],
         prerequisites: [],
         consequences: []
@@ -575,12 +538,12 @@ export {skills, titles, startPos, addTitlesToSection};
     {
         id: "title-the-hellraiser",
         title: "The Hellraiser",
-        bonusCredits: 420000000,
+        credits: 420000000,
         complications: [
             "Receive all complications from The Leader, The Nemesis, and The Space Cowboy."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "Receive all complications from The Leader, The Nemesis, and The Space Cowboy. Bonus starting credits: 420m *Cannot take The Leader, The Nemesis, or The Space Cowboy",
+        subDescription: "Cannot take The Leader, The Nemesis, or The Space Cowboy", description: "Receive all complications from The Leader, The Nemesis, and The Space Cowboy.\n",
         prerequisites: [
             { type: "not-title", value: "title-the-leader" },
             { type: "not-title", value: "title-the-nemesis" },
@@ -591,12 +554,13 @@ export {skills, titles, startPos, addTitlesToSection};
     {
         id: "title-the-fatebreaker",
         title: "The Fatebreaker",
-        bonusCredits: 420000000,
+        credits: 420000000,
         complications: [
             "Receive all complications from The Whisperer, The Sleeper and The Traveler."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "Receive all complications from The Whisperer, The Sleeper and The Traveler. Bonus starting credits: 420m *Cannot take The Whisperer, The Sleeper, or The Traveler",
+        subDescription: "Cannot take The Whisperer, The Sleeper, or The Traveler", 
+        description: "Receive all complications from The Whisperer, The Sleeper and The Traveler.",
         prerequisites: [
             { type: "not-title", value: "title-the-whisperer" },
             { type: "not-title", value: "title-the-sleeper" },
@@ -607,12 +571,12 @@ export {skills, titles, startPos, addTitlesToSection};
     {
         id: "title-the-demigod",
         title: "The Demigod",
-        bonusCredits: 440000000,
+        credits: 440000000,
         complications: [
             "Receive all complications and crew members from The Guardian and The Sorcerer."
         ],
         imageSrc: "/Images/Other/Beatrice R&D.webp",
-        description: "Receive all complications and crew members from The Guardian and The Sorcerer. Bonus starting credits: 440m *Cannot take The Guardian or The Sorcerer",
+        subDescription: "Cannot take The Guardian or The Sorcerer", description: "Receive all complications and crew members from The Guardian and The Sorcerer.",
         prerequisites: [
             { type: "not-title", value: "title-the-guardian" },
             { type: "not-title", value: "title-the-sorcerer" }
@@ -948,21 +912,25 @@ function addTitlesToSection(titlesArray, choicePrefix, sectionID) {
         // Bonus Credits
        if (item.credits !== undefined) { // For older 'credits' attribute
             const creditsP = document.createElement('p');
-            creditsP.innerHTML = `Bonus Credits: ${typeof item.credits === 'number' ? (typeof formatterIntl !== 'undefined' ? formatterIntl.format(item.credits) : item.credits) : 'N/A'}`;
+            creditsP.innerHTML = `Bonus Credits: ${formatterIntl.format(item.credits)}`;
             newSpan.appendChild(creditsP);
         }
 
-        // Prerequisites (simple indication if present)
+        /* Prerequisites (simple indication if present)
         if (Array.isArray(item.prerequisites) && item.prerequisites.length > 0) {
             const prereqP = document.createElement('p');
             prereqP.textContent = `Prerequisites: ${item.prerequisites}`;
             newSpan.appendChild(prereqP);
-        }
+        }*/
 
         if (item.description !== undefined) {
             const descriptionP = document.createElement('p');
-            descriptionP.textContent = `Description: ${item.description}`;
+            descriptionP.innerHTML = item.description;
+            const descriptionS = document.createElement('p');
+            descriptionS.classList.add("highlighted-bold");
+            descriptionS.innerHTML = item.subDescription;
             newSpan.appendChild(descriptionP);
+            newSpan.appendChild(descriptionS);
         }
 
         targetSection.before(newDiv); // Append to the target section

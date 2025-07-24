@@ -5,6 +5,8 @@ export {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, d
         addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom, 
         resetShipConfigUI, renderShipConfigUI, editShipName};
 
+import { formatterIntl } from "/Script/manaData.js";
+
 
 
 

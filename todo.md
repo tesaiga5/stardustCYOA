@@ -17,7 +17,7 @@ From display:
 6. Skills choice consequences
 7. Title credits gain
 8. Title pictures
-9. Title pre-requisities and consequences
+9. Title pre-requisities and consequences (apply in title not in relevant (e.g. traitor apply in titles section))
 
 10. Your Fleet pre-requisities & consequences (mostly receiving consequences)
 
