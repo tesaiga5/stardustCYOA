@@ -1,4 +1,6 @@
-export const skills = [
+export {skills, titles, startPos, addTitlesToSection};
+
+ const skills = [
     // Skills from "Page 1 Stardust word.docx"
     {
         id: "basic-piloting",
@@ -328,8 +330,7 @@ export const skills = [
     },
 ];
 
-
-export const titles = [
+ const titles = [
     {
         id:"title-rogue",
         title:"The Rogue",
@@ -620,134 +621,7 @@ export const titles = [
     }
 ];
 
-const origins = [
-    {
-        id: "origin-federation-navy",
-        title: "Federation Navy",
-        hostiles: ["Red Daggers", "Talons", "Luos Syndicate"],
-        description: "The venerable Federation Navy is the largest military space armada in the civilized galaxy. Consisting of many thousands of ships across many hundreds of branches, there is simply no force capable going toe-to-toe with them. Granted, with such a big sovereignty, the Navy is oftentimes spread thin, mobilizing as one only for extreme circumstances. Training to be a part of the Navy is extensive, thorough and disciplined, but it's known to reward many benefits... if sailing across the stars in some of the best tech around isn't enough, that is.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 }, // Base starting credits
-            { attribute: "hull-discount", faction: "Federation Navy", value: 6000000 }
-        ]
-    },
-    {
-        id: "origin-federation-spec-ops",
-        title: "Federation Spec Ops Forces",
-        hostiles: ["Red Daggers", "Talons", "Luos Syndicate"],
-        description: "Amidst the Federation's military might are its veritable spec ops programs, and there are many to choose from. Everything from solving internal strife to deploying in the outer-rim systems where piracy is large is inclusive; your stay won't be boring. However, your identity is often concealed, your social life often thrown out the window, and you won't really have many people to talk to other than your brothers and sisters of the forces. To some, that's worth it for a handful of the best skills in the galaxy",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 120000000 }, // 100m + 20m bonus
-            { attribute: "hull-discount", faction: "Triglav", value: 4000000 },
-            { attribute: "hull-discount", faction: "Federation Navy", value: 4000000 }
-        ]
-    },
-    {
-        id: "origin-federation-civilian",
-        title: "Federation Civilian",
-        hostiles: [],
-        description: "Not from the military? No problem! Renowned Federation schools like Rosette University or the University of Arcadia don't offer pilot training without a reason, and that's just two of potentially thousands. Space- faring might be expensive to most people, but all it takes is a good set of skills and a healthy amount of credits to find yourself out of the atmos- phere. Many from the Federation venture out almost aimlessly, often finding themselves a part of different factions. In fact, that's how many of these factions were born.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 }
-        ]
-    },
-    {
-        id: "origin-red-dagger-pirates",
-        title: "Red Dagger Pirates",
-        hostiles: ["Federation", "Blackhawk Elite"],
-        description: "The Red Dagger Pirates are more of a coalition of several pirate groups spanning across the entirety of the civilized galaxy. While each group or gang more or less operate independently, they all generally have good standing with each other and can collaborate when needed. When it comes time for large scale conflict, they have a surprising ability to unite and mobilize almost as a make-shift military group fairly quickly. They've established a surprisingly efficient production line and have massive networks of shipyards across the outer rims.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 },
-            { attribute: "hull-discount", faction: "Red Dagger Pirates", value: 6000000 }
-        ]
-    },
-    {
-        id: "origin-talons",
-        title: "Talons",
-        hostiles: ["Federation", "Blackhawk Elite"],
-        description: "Not much is known about the Talons to other factions, but they tend to operate within their own unknown purpose. Initially labeled as a pirate group by the Federation, the Talons are known to employ some of the greatest skilled individuals in the galaxy. They are known for their notori- ous reputation of a classy but skilled and intelligent touch. Unlike other 'pirate' groups, the Talons bolster technology that could rival the likes of the Blackhawks and Federation Spec Ops. A Talon appearance is rare and surprising, and often an indicator that something's going down.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 },
-            { attribute: "hull-discount", faction: "Talon", value: 6000000 }
-        ]
-    },
-    {
-        id: "origin-luos-syndicate",
-        title: "Luos Syndicate",
-        hostiles: ["Federation", "Blackhawk Elite"],
-        description: "It has all come tumbling down for the Syndicate. A once large collective wealthy and powerful corporations, now crumbled and bombarded to dust by the recent Federation and Blackhawk galaxy-wide assault. Originally founded under the best of intentions while even establishing a big sovereignty and culture, corruption soon ran rampant, and the Syndi- cate found itself the centre of many shady trades. While not all of its members were inherently bad, all of its surviving corps and groups split, mainly between the feuding \"Core\" and \"Outer\" rings of organizations.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 },
-            { attribute: "hull-discount", faction: "Talon", value: 4000000 },
-            { attribute: "hull-discount", faction: "Red Dagger", value: 4000000 },
-            { attribute: "hull-discount", faction: "Luos Syndicate", value: 4000000 }
-        ]
-    },
-    {
-        id: "origin-blackhawk-elite",
-        title: "Blackhawk Elite",
-        hostiles: ["Red Daggers", "Talons", "Luos Syndicate"],
-        description: "As a collective of many mercenary groups, the Blackhawk Elites are known as some of the most elite mercenaries out there. They spend most of their time out in the outer rims, providing protection to those out of the Federation's protective reach and need it. They come into contact with bandits and pirates alike often, but that's the life that the Black- hawks strive for. Their society is highly militaristic, focused on bleeding discipline into its members because that's the type of mindset they need.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 },
-            { attribute: "hull-discount", faction: "Blackhawk Elite", value: 6000000 }
-        ]
-    },
-    {
-        id: "origin-hammerhead-industries",
-        title: "Hammerhead Industries",
-        hostiles: [],
-        description: "As the largest hardware manufacturer in the galaxy, Hammerhead Industries have established their own colonies that are home to a lot of productive and skilled individuals. This multi-trillion credit company produces many much-needed mechanics and engineers for the ever expanding industry of space faring and exploration. Their ships are everywhere, used by civilians, security groups, PMCs, and bandits alike. Show your skills as a down and dirty soot-lover and it won't be hard to strike gold in the industry world.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 },
-            { attribute: "vehicle-mech-discount", value: 2000000, min: 1000000 }
-        ]
-    },
-    {
-        id: "origin-society-of-dustkeepers",
-        title: "Society of Dustkeepers",
-        hostiles: [],
-        description: "\"Dustkeeper\" is more of a title than a faction. However, if you ever find yourself spelunking the depths of space in search of adventure and fortune on your lonesome, you'll also find yourself talking with others like yourself very often. Whether it's for the thrill of finding things never seen before or for the heaps of credits that ancient Herald artifacts can bring you, to others, it's all the same; you're a Dustkeeper. Maybe you travel alone, or maybe you travel with a band of like-minded people. Your purpose is seldom spoken, even if you get asked about it a lot.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 },
-            { attribute: "weapon-discount", type: "kinetic", tier: 2, value: 1000000 }
-        ]
-    },
-    {
-        id: "origin-beatrice-r-and-d",
-        title: "Beatrice R&D",
-        hostiles: [],
-        description: "Easily the most renowned scientific research company, Beatrice R&D is one of the reasons that space colonization has become a thing. Full of brilliant minds that spearhead the advancement of sciences, they've become so efficient at space exploration and terraforming that they have become self-sustaining colony on their own. After earning their independence from the Federation, Beatrice R&D continues to earn its respect from all entities. If not for their passive nature, then for their promise for taking humanity into new age upon new age.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 },
-            { attribute: "drone-discount", value: 1000000, min: 1000000 }
-        ]
-    },
-    {
-        id: "origin-gazer",
-        title: "Gazer",
-        hostiles: ["Unknown"],
-        description: "Some say that getting an invitation to join the Gazers is less likely than passing some of the Federation's top SOF programs, and many wouldn't doubt that. Ominously shady with an origin unknown, Gazer operators are among the best in the galaxy, even if the group is very small. With no side but their own, they often take on the \"big guys\" despite the horren- dous number differences. Their motives? Nobody but they know, and even some Gazers claim to not even know. As far as anyone can tell, they cause a ruckus for their own amusement.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 },
-            { attribute: "hull-discount", faction: "Blackhawk Elite", value: 4000000 },
-            { attribute: "hull-discount", faction: "Talon", value: 4000000 },
-            { attribute: "hull-discount", faction: "Triglav", value: 4000000 }
-        ]
-    },
-    {
-        id: "origin-choose-your-own-adventure",
-        title: "Choose Your Own Adventure",
-        hostiles: [], // User can define
-        description: "Perhaps you want to have your own origins. How did you inherit the millions of credits? Who are your friends, and who are your enemies? You can choose what alignment you wish. This is your adventure, so make it your own.",
-        playerUpdates: [
-            { attribute: "credits", action: "add", value: 100000000 },
-            { attribute: "hull-discount", value: 3000000 } // 3m off all ship hulls
-        ]
-    }
-];
-
-export const startPos = [
+ const startPos = [
     // The Federation
     {
         cityName: "New Terra",
@@ -1024,6 +898,77 @@ export const startPos = [
         description: "CYOA Event System: Contract: 'Rogue Drones'."
     }
 ];
+
+function addTitlesToSection(titlesArray, choicePrefix, sectionID) {
+    const targetSection = document.getElementById(sectionID);
+
+    if (!targetSection) {
+        console.error(`Target section with ID "${sectionID}" not found.`);
+        return;
+    }
+
+    if (!Array.isArray(titlesArray)) {
+        console.error(`Global variable "${titlesArray}" is not an array or does not exist.`);
+        return;
+    }
+
+    // Check if the section already has population to prevent duplicate entries
+    // Assuming the first item's ID is representative for checking
+    if (titlesArray.length > 0) {
+        // Sanitize the ID for use in the DOM
+        const checkDiv = document.getElementById(`${choicePrefix}-${titlesArray[0].id.replace(/\s/g, '-').replace(/[^a-zA-Z0-9-]/g, '')}`);
+        if (document.contains(checkDiv)) {
+            return; // Section already populated, do nothing
+        }
+    }
+
+    // If not populated, create new divs to populate choices
+    titlesArray.forEach(item => {
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("choice");
+        // Ensure unique ID for each choice element, sanitize ID
+        newDiv.id = `${choicePrefix}-${item.id.replace(/\s/g, '-').replace(/[^a-zA-Z0-9-]/g, '')}`;
+
+        const newSpan = document.createElement("span");
+        newDiv.appendChild(newSpan);
+
+        // Image Source (if available, could be used to display an image)
+        const imgElement = document.createElement('img');
+        imgElement.src = item.imageSrc || 'https://placehold.co/100x100/eeeeee/ffffff?text=NoImage';
+        imgElement.alt = `${item.name} image`;
+        newSpan.appendChild(imgElement);
+
+        // Create an h3 element for the title
+        const h3Element = document.createElement('h3');
+        h3Element.style.marginTop = '0px';
+        h3Element.style.marginBottom = '0px';
+        h3Element.textContent = item.title || 'No Title';
+        newSpan.appendChild(h3Element);
+
+        // Bonus Credits
+       if (item.credits !== undefined) { // For older 'credits' attribute
+            const creditsP = document.createElement('p');
+            creditsP.innerHTML = `Bonus Credits: ${typeof item.credits === 'number' ? (typeof formatterIntl !== 'undefined' ? formatterIntl.format(item.credits) : item.credits) : 'N/A'}`;
+            newSpan.appendChild(creditsP);
+        }
+
+        // Prerequisites (simple indication if present)
+        if (Array.isArray(item.prerequisites) && item.prerequisites.length > 0) {
+            const prereqP = document.createElement('p');
+            prereqP.textContent = `Prerequisites: ${item.prerequisites}`;
+            newSpan.appendChild(prereqP);
+        }
+
+        if (item.description !== undefined) {
+            const descriptionP = document.createElement('p');
+            descriptionP.textContent = `Description: ${item.description}`;
+            newSpan.appendChild(descriptionP);
+        }
+
+        targetSection.before(newDiv); // Append to the target section
+    });
+}
+
 
 
 

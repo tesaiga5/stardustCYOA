@@ -9,23 +9,22 @@ TODO:
 
 From display:
 
-1. Missing Section Text: How'd you get the money, equipment, titles, section ship
 2. Moneysource choice consequences
-4. Populate subsystems
 
-5. Sponsor choice consequences
-6. Starting Location text & pictures, also incomplete choices
-7. Skills choice consequences
-8. Title credits gain
-9. Title pictures
-10. Title pre-requisities and consequences
+3. COMBAT STATS
+4. Sponsor choice consequences
+5. Starting Location text & pictures, also incomplete choices
+6. Skills choice consequences
+7. Title credits gain
+8. Title pictures
+9. Title pre-requisities and consequences
 
-11. Your Fleet pre-requisities & consequences (mostly receiving consequences)
+10. Your Fleet pre-requisities & consequences (mostly receiving consequences)
 
-12. Check for accuracy
-13. Credits page
-14. Publish
+11. Check for accuracy
+12. Credits page
+13. Publish
 
-15. Reserve contracts & battle for next update
+14. Reserve contracts & battle for next update
 
-Deadline: 22/07/2025
+Deadline: 25/07/2025
