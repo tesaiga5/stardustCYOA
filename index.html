@@ -612,21 +612,22 @@
 
 
   <div class ="section" id="section-crew">
-    <div id="title-Archetypes">
+    <div id="title-namedCrew">
       <span>
         <div>
-          <h3>Crew Archetypes</h3>
+          <h3>Named Crew</h3>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
       </span>
     </div>
     <div style="display:none;" id="endOfCrew"></div>
-    <div id="title-Archetypes">
+    <div id="title-archetypes">
       <span>
         <div>
           <h3>Crew Archetypes</h3>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
       </span>
     </div>
+    <div style="display:none;" id="endOfArchetype"></div>
 
   </div>
 
@@ -966,7 +967,7 @@
     //populate start position
     import {startPos} from '/Script/choiceData.js'; //TODO
     //populate crew
-    import {crew} from '/Script/crewData.js'; // Import crew data
+    import {crew, archetype, addCrewToSection} from '/Script/crewData.js'; // Import crew data
     //populate hulls
     import {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones} from '/Script/shipData.js';
     //populate equipment
@@ -1361,7 +1362,8 @@
     const sectionCrew1 = document.getElementById('section-crew');
     choiceCrew1.addEventListener('click', () => {
       sectionCrew1.classList.toggle('active');
-      addChoiceDataToSection(crew, 'choice', 'endOfCrew');
+      addCrewToSection(crew, 'choice', 'endOfCrew', 'crew');
+      addCrewToSection(archetype, 'choice', 'endOfArchetype', 'archetype');
     });
 
     choiceHull1.addEventListener('click', () => {

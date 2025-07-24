@@ -508,7 +508,7 @@ const hulls = [
         image: '/Images/Other/Beatrice R&D.webp'
     },
     {
-        name: "X66 \"Omen\,
+        name: "X66 \\Omen\\",
         manufacturer: "Triglav Innovations",
         type: 'frigate', cost: 20000000, // "20m"
         spinalMount: 3,
@@ -899,7 +899,7 @@ const hulls = [
         image: '/Images/Other/Beatrice R&D.webp'
     },
     {
-        name: "X65 \"Odysseus\,
+        name: "X65 \\Odysseus\\",
         manufacturer: "Triglav Innovations",
         type: 'frigate', cost: 220000000, // "220m"
         spinalMount: 3,
@@ -1083,7 +1083,7 @@ const energy = [
   {
     name: "Solar Panels",
     cost: 2000000,
-    energyOutput: ,
+    energyOutput: 0,
     chargeDuration: "30 minutes",
     description: "Solar energy is plentiful, so long as you're near a star. Works great as a hybrid energy system. +Does not count towards your energy system maximum count *Can only be bought once",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
@@ -1091,7 +1091,7 @@ const energy = [
   {
     name: "Power Capacitors",
     cost: 10000000,
-    energyOutput: ,
+    energyOutput: 0,
     chargeDuration: "8 days",
     description: "Capacitors are small enough to fit in fighters, though they must be recharged often. However, they can also be coupled with other energy systems instead boost their effectiveness.",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
@@ -1099,7 +1099,7 @@ const energy = [
   {
     name: "Nuclear Fission",
     cost: 16000000,
-    energyOutput: ,
+    energyOutput: 0,
     chargeDuration: "25 years",
     description: "Large and bulky, fission reactors are best kept in larger and better defended vessels. Great power output and great efficiency. *Cannot be equipped on fighters *Requires a nuclear engineer",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
@@ -1107,7 +1107,7 @@ const energy = [
   {
     name: "Nuclear Fusion",
     cost: 26000000,
-    energyOutput: ,
+    energyOutput: 0,
     chargeDuration: "15 years",
     description: "Fusion has a much more potent energy output than fission, but is also less efficient. *Cannot be equipped on fighters *Requires a nuclear engineer",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
@@ -1115,7 +1115,7 @@ const energy = [
   {
     name: "Mana Core",
     cost: 50000000,
-    energyOutput: ,
+    energyOutput: 0,
     chargeDuration: "Lifetimes",
     description: "Mana energy was reverse engineered from the \"Ghost\" family of Herald technology. Current tech is still difficult to wire with mana. +Herald ships get +1 energy output and get 10m off",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
@@ -1123,7 +1123,7 @@ const energy = [
   {
     name: "Anti-Matter Core",
     cost: 40000000,
-    energyOutput: ,
+    energyOutput: 0,
     chargeDuration: "12 years",
     description: "A very volatile energy substance, anti-matter has brought endless potential technology and sciences. This core safely decommissions itself if it's forcefully broken into.",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
@@ -1135,14 +1135,14 @@ const shield = [
     name: "Basic Shielding",
     cost: 1000000,
     shieldStrength: "+7",
-    description: , // No description provided in the source for this item
+    description: "", // No description provided in the source for this item
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
   },
   {
     name: "Standard Shielding",
     cost: 5000000,
     shieldStrength: "+10",
-    description: , // No description provided in the source for this item
+    description: "", // No description provided in the source for this item
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
   },
   {
@@ -1256,7 +1256,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "CBL2 \"Banshee\,
+    name: "CBL2 \"Banshee\"",
     manufacturer: "Luos Syndicate",
     cost: 4000000,
     specialAbility: "Moonshine",
@@ -1289,7 +1289,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "MI520 \"Visage\,
+    name: "MI520 \"Visage\"",
     manufacturer: "Talons",
     cost: 5000000,
     specialAbility: "Kraken",
@@ -1300,7 +1300,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Herald \"Blink\,
+    name: "Herald \"Blink\"",
     manufacturer: "Heralds",
     cost: 7000000,
     specialAbility: "Umbra",
@@ -1315,7 +1315,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     cost: 1000000,
     maximumUpgrades: 3,
     pointDefenceMounts: 2, // Specific mount type
-    description: , // No general description provided, only stats
+    description: "", // No general description provided, only stats
     type: "hull", // Added type to differentiate
     image: "/Images/Other/Beatrice R&D.webp"
   },
@@ -1342,7 +1342,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     cost: 3000000,
     maximumUpgrades: 5,
     navigation: 1, // Specific stat
-    description: , // No general description provided, only stats
+    description: "", // No general description provided, only stats
     type: "hull",
     image: "/Images/Other/Beatrice R&D.webp"
   },
@@ -1351,7 +1351,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     cost: 4000000,
     maximumUpgrades: 1,
     hullArmor: "20%", // Keep as string as it's a percentage
-    description: , // No general description provided, only stats
+    description: "", // No general description provided, only stats
     type: "hull",
     image: "/Images/Other/Beatrice R&D.webp"
   },
@@ -1393,8 +1393,8 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     name: "Hull Extension",
     cost: 1000000,
     maximumUpgrades: 2,
-    navigation: , // No specific navigation value provided
-    extraRooms: , // No specific extra rooms value provided
+    navigation: 0, // No specific navigation value provided
+    extraRooms: 0, // No specific extra rooms value provided
     description: "+Frigates gain 2 crew slots *Can't be fit on fighters",
     type: "hull",
     image: "/Images/Other/Beatrice R&D.webp"
@@ -1412,8 +1412,8 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     name: "Hull Reduction",
     cost: 0, // Free!
     maximumUpgrades: 2,
-    navigation: , // No specific navigation value provided
-    extraRooms: , // No specific extra rooms value provided
+    navigation: 0, // No specific navigation value provided
+    extraRooms: -2, // No specific extra rooms value provided
     description: "*Frigates lose 2 crew slots *Can't be fit on fighters",
     type: "hull",
     image: "/Images/Other/Beatrice R&D.webp"
@@ -1479,7 +1479,7 @@ const eWar = [
     name: "Honey Pot Module",
     cost: 3000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "0", // Range was blank in source for this item
     description: "Set up a fake scapegoat server on your vessel that looks appealing to hostile hackers, and use it to monitor their every move while they try to attack your systems in futile.",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
@@ -1487,7 +1487,7 @@ const eWar = [
     name: "Warp Jammer",
     cost: 6000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "1 light hour", // Range was blank in source for this item
     description: "You can point this module at a hostile ship to effectively disable their warp drive, giving them no chance to escape.",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
@@ -1495,7 +1495,7 @@ const eWar = [
     name: "Comm Scrambler",
     cost: 5000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "1 light hour", // Range was blank in source for this item
     description: "Pointing this at a hostile ship will scramble their comms, cutting off their outside and inside communi- cations if done well.",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
@@ -1503,7 +1503,7 @@ const eWar = [
     name: "MITM Module",
     cost: 4000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "1 light hour", // Range was blank in source for this item
     description: "This specialized terminal and tools allow your cybersec officer to easily conduct a man-in-the-middle attack to intercept any sort of data from a ship, giving you information about all of a ship's systems.",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
@@ -1511,7 +1511,7 @@ const eWar = [
     name: "Penetration Module",
     cost: 8000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "1 light hour", // Range was blank in source for this item
     description: "This module helps your cybersec officer by giving them tools to penetrate through a system's defences. In bypassing their securi- ty grid, you lower the hostile's shield strength by 21",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
@@ -1519,7 +1519,7 @@ const eWar = [
     name: "Bridge Module",
     cost: 8000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "1 light hour", // Range was blank in source for this item
     description: "If successful, this module will disable the teleport jammer of a ship while this process continues to run.",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
@@ -1527,7 +1527,7 @@ const eWar = [
     name: "Incident Module",
     cost: 6000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "0", // Range was blank in source for this item
     description: "This module implements a wide array of cyber defense tools to help your cybersec officer, such as network security monitoring frameworks. Attacks are easier to determine and isolate..",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
@@ -1535,7 +1535,7 @@ const eWar = [
     name: "Efficiency Module",
     cost: 4000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "0", // Range was blank in source for this item
     description: "Installing this in your digital securi- ty room vastly improves the efficiency of digital systems on your ship, reducing your ship's radar cross-section by a significant amount.",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
@@ -1543,7 +1543,7 @@ const eWar = [
     name: "Presence Module",
     cost: 5000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "0", // Range was blank in source for this item
     description: "Using complex polymorphic code engines and rootkits, this module helps ensure your digital offensive has staying power. It is more difficult for enemies to find and eliminate your attacks.",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
@@ -1551,7 +1551,7 @@ const eWar = [
     name: "Overflow Module",
     cost: 10000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "1 light hour", // Range was blank in source for this item
     description: "If done well, this module can effectively disable up to 2 ship weapons of an enemy ship, or one anti-matter cannon.",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
@@ -1559,7 +1559,7 @@ const eWar = [
     name: "Security Grid",
     cost: 14000000,
     moduleType: "E-War",
-    range: , // Range was blank in source for this item
+    range: "1 light hour", // Range was blank in source for this item
     description: "Your ship can project its e-war capabilities across all allied ships in a wide range, allowing you to apply defensive modules to more vulnerable ships and even conduct offensives from them.",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   }
@@ -2378,8 +2378,8 @@ function createShip() { //initialize ship object
         { industrialChoice: [] }, { energyChoice: [] },
         { eWarChoice: [] }, { spinalChoice: [] },
         { broadSideChoice: [] }, { pointDefenseChoice: [] },
-        { hangarChoice: [] }, { aiChoice:  },
-        { commandMods:  },
+        { hangarChoice: [] }, { aiChoice: [] },
+        { commandMods: [] }
       ]
     };
 

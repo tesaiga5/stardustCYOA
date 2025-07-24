@@ -1,4 +1,4 @@
-export { catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection };
+export { catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection, appendDropdown };
 const catalyst = [
   {
     name: "Base Catalyst: Arm Blade",
@@ -457,7 +457,19 @@ function appendDropdown(parentElement, tier) {
 
     // Create the dropdown menu (select element)
     const selectElement = document.createElement('select');
-    if (tier === 1){
+    //for crewData
+    if (tier === 5) {
+      selectElement.innerHTML = `
+        <option value="x-1">x1</option>
+        <option value="x-5">x5</option>
+        <option value="x-10">x10</option>
+        <option value="x-50">x50</option>
+        <option value="x-100">x100</option>
+        <option value="x-500">x500</option>
+    `;
+    }
+    //for weaponData on ship
+    else if (tier === 1){
       selectElement.innerHTML = `
         <option value="point-defence">Point-Defence</option>
     `;
@@ -494,9 +506,9 @@ function appendDropdown(parentElement, tier) {
     // Create the increment button
     const incrementButton = document.createElement('button');
     incrementButton.textContent = '+';
-    incrementButton.classList.add(
+    /*incrementButton.classList.add(
         'btn-secondary', 'px-4', 'py-2', 'rounded-lg', 'font-bold', 'text-xl'
-    );
+    );*/
     incrementButton.addEventListener('click', () => {
         let currentNum = parseInt(numberSpan.textContent);
         numberSpan.textContent = currentNum + 1;
