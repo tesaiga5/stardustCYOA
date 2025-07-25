@@ -1082,7 +1082,7 @@ const rigs = [
   {
     name: "Rocket Catalysts",
     rigType: "offensive",
-    image: '', description: "Propellants for explosive-based weapons use more efficient compounds, significantly increasing payload velocity."
+    image: '/Images/Equipment/rig257.webp', description: "Propellants for explosive-based weapons use more efficient compounds, significantly increasing payload velocity."
   },
   {
     name: "Nanite Superconductors",
@@ -1177,12 +1177,13 @@ const rigs = [
   {
     name: "Armour: Electro-Magnetic Plating",
     rigType: "defensive",
-    image: '', description: "Charged plating that defends against energy-based attacks by adjusting its electro-magnetic charge."
+    image: '/Images/Equipment/magia-artificial-lightning-paladin.webp', description: "Charged plating that defends against energy-based attacks by adjusting its electro-magnetic charge."
   },
   {
     name: "Armour: Elemental Hardening",
     rigType: "defensive",
-    image: '', description: "Plating that uses an alloy of metal that's charged with mana, adding a mild resistance to mana-based attacks."
+    image: '/Images/Equipment/magia-artificial-nostryan-frostknight.webp', 
+    description: "Plating that uses an alloy of metal that's charged with mana, adding a mild resistance to mana-based attacks."
   },
   {
     name: "Armour: Nanite Charging Bank",
@@ -1302,7 +1303,7 @@ const rigs = [
   {
     name: "Elusive",
     rigType: "command",
-    image: '/Images/Equipment/rig015.webp', description: "Weapon systems have a harder time tracking the suit and take longer to lock on."
+    image: '/Images/Equipment/alex-figini-exo-chick.webp', description: "Weapon systems have a harder time tracking the suit and take longer to lock on."
   },
   {
     name: "Cognition Enhancement",
@@ -1364,7 +1365,7 @@ const rigs = [
     name: "Assimilation",
     rigType: "utility",
     image: '/Images/Equipment/rig015.webp', 
-    description: "Integrates an AI with a huge database of almost all known and in-use technology."
+    description: "Physically connects the pilot's mind and leylines to the suit. As a result, the suit gets much harder to get out of."
   },
   {
     name: "Hazardous Waste Collector",
@@ -1374,7 +1375,7 @@ const rigs = [
   {
     name: "Repair & Diagnostics",
     rigType: "utility",
-    image: '/Images/Equipment/rig017.webp', description: "Physically connects the pilot's mind and leylines to the suit. As a result, the suit gets much harder to get out of."
+    image: '/Images/Equipment/rig017.webp', description: "Integrates an AI with a huge database of almost all known and in-use technology."
   }
 ];
 
@@ -1418,6 +1419,7 @@ function populateRigs(dataArray, choicePrefix, sectionID) {
     const imgElement = document.createElement('img');
     imgElement.src = item.image || 'https://placehold.co/100x100/eeeeee/ffffff?text=NoImage';
     imgElement.alt = `${item.name} image`;
+    //imgElement.style.maxHeight = '300px';
     newSpan.appendChild(imgElement); // Image added after newSpan
 
     const costP = document.createElement("p");
