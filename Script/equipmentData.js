@@ -1,5 +1,5 @@
 import { formatterIntl } from "/Script/manaData.js";
-export {equipment, vehicles, rigs, populateRigs};
+export {equipment, vehicles, rigs, populateRigs, frame};
 
 // This array contains all equipment objects with their attributes.
 // Blank attributes are set to '0'.
@@ -1377,6 +1377,12 @@ const rigs = [
     rigType: "utility",
     image: '/Images/Equipment/rig017.webp', description: "Integrates an AI with a huge database of almost all known and in-use technology."
   }
+];
+
+const frame = [
+  {
+    
+  },{},{}
 ];
 
 
