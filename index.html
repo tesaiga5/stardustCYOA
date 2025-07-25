@@ -495,6 +495,7 @@
           <h3>Rigs</h3>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
       </span></div>
+      <div id="endOfRigs"></div>
     <div id="title-dragoon">
       <span>
         <div>
@@ -971,7 +972,7 @@
     //populate hulls
     import {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones} from '/Script/shipData.js';
     //populate equipment
-    import {equipment, vehicles} from '/Script/equipmentData.js';
+    import {equipment, vehicles, rigs, populateRigs} from '/Script/equipmentData.js';
     //populate spells and unified population function
     import {catalyst, affinity, spellBases, populateDataToSection, 
       populateCatalystToSection
@@ -1372,8 +1373,10 @@
       populateDataToSection(hulls, 'choice', 'endOfHull', 'hull');
     });
 
+
     choiceEquipment1.addEventListener('click', () => {
       sectionEquipment1.classList.toggle('active');
+      populateRigs(rigs, 'choice', 'endOfRigs');
       addEquipmentDataToSection(equipment, 'choice', 'endOfEquipment');
     });
     

@@ -1,9 +1,10 @@
 import { formatterIntl } from "/Script/manaData.js";
+export {equipment, vehicles, rigs, populateRigs};
 
 // This array contains all equipment objects with their attributes.
 // Blank attributes are set to '0'.
 // Costs are converted to numerical values (k = thousand, m = million).
-export const equipment = [ //change to weapons later
+const equipment = [ //change to weapons later
   {
     name: ".362 Snub Lawmaker",
     type: "Kinetic",
@@ -924,7 +925,7 @@ export const equipment = [ //change to weapons later
   }
 ];
 
-export const vehicles = [
+const vehicles = [
   {
     name: "AT Dunebuggy",
     cost: 500000,
@@ -932,7 +933,7 @@ export const vehicles = [
     crew: 4,
     T1WeaponSlots: 2,
     T2WeaponSlots: 0,
-    Mobility: "000000000",
+    mobility: "000000000",
     Armour: "8m",
     Length: "4m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "The all-terrain dunebuggy allows for great ground coverage. Its high-traction wheels can be replaced with skates or skiis. +Comes with a free machine gun"
@@ -944,7 +945,7 @@ export const vehicles = [
     crew: 6,
     T1WeaponSlots: 2,
     T2WeaponSlots: 0,
-    Mobility: "D0000",
+    mobility: "D0000",
     Armour: "E", // Assuming 'E' is a string value for Armour
     Length: "4m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "This mlitary light utility vehicle has a good balance of mobility, armour, and firepower, perfect for troop transportation and support. +Comes with a free T1 weapon"
@@ -956,7 +957,7 @@ export const vehicles = [
     crew: 12,
     T1WeaponSlots: 2,
     T2WeaponSlots: 0,
-    Mobility: "D0000",
+    mobility: "D0000",
     Armour: "4m",
     Length: "6m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Large and bulky, these Armoured Personnel Carriers can transport a good handful of troops or VIPs and protect them with thick armour. +Comes with a free T1 weapon"
@@ -968,7 +969,7 @@ export const vehicles = [
     crew: 5,
     T1WeaponSlots: 2,
     T2WeaponSlots: 1,
-    Mobility: "", // Mobility value was blank in source for this item
+    mobility: "", // mobility value was blank in source for this item
     Armour: "6m",
     Length: "6m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These tanks are light armoured, but with their special quarduped tank treads, they can cover many kinds of terrain with good speed. +Comes with a free T2 weapon"
@@ -980,7 +981,7 @@ export const vehicles = [
     crew: 6,
     T1WeaponSlots: 4,
     T2WeaponSlots: 1,
-    Mobility: "", // Mobility value was blank in source for this item
+    mobility: "", // mobility value was blank in source for this item
     Armour: "8m",
     Length: "11m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Fit for convoys, heavy firepower, artillery support, and everything tank-like, these beasts can lead the charge into combat. +Comes with a free T2 weapon"
@@ -992,7 +993,7 @@ export const vehicles = [
     crew: 4,
     T1WeaponSlots: 3,
     T2WeaponSlots: 1,
-    Mobility: "", // Mobility value was blank in source for this item
+    mobility: "", // mobility value was blank in source for this item
     Armour: "5m",
     Length: "9m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Spider tanks are a more experi- mental platform, but unlike tradi- tional tanks, they have less trouble overcoming terrain. +Comes with a free T2 weapon"
@@ -1004,7 +1005,7 @@ export const vehicles = [
     crew: 1,
     T1WeaponSlots: 2,
     T2WeaponSlots: 0,
-    Mobility: "0000000",
+    mobility: "0000000",
     Armour: "5m",
     Length: "5m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "This personal ground mech has ample firepower with versatile movement. The perfect firepower support platform for your troops. +Comes with a free T1 weapon"
@@ -1016,7 +1017,7 @@ export const vehicles = [
     crew: 2,
     T1WeaponSlots: 3,
     T2WeaponSlots: 1,
-    Mobility: "000000SS",
+    mobility: "000000SS",
     Armour: "8m",
     Length: "8m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These mechs are equipped with extremely hard hitting ordnance, particularily against air targets and other vehicles. +Comes with a free T2 weapon"
@@ -1028,7 +1029,7 @@ export const vehicles = [
     crew: 8,
     T1WeaponSlots: 1,
     T2WeaponSlots: 0,
-    Mobility: "0000000",
+    mobility: "0000000",
     Armour: "10m",
     Length: "10m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Single-piloted, but extremely versatile. An upgrade from your standard power armour, these can fly in atmosphere or space. +Comes with a free T2 weapon"
@@ -1040,7 +1041,7 @@ export const vehicles = [
     crew: 12,
     T1WeaponSlots: 1,
     T2WeaponSlots: 0,
-    Mobility: "0000000000",
+    mobility: "0000000000",
     Armour: "25m",
     Length: "25m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These submarines can withstand extreme temperatures and pres- sures, and can withstand many liquids. +Comes with a free T1 weapon"
@@ -1052,7 +1053,7 @@ export const vehicles = [
     crew: 12,
     T1WeaponSlots: 2,
     T2WeaponSlots: 0,
-    Mobility: "000000SS",
+    mobility: "000000SS",
     Armour: "12m",
     Length: "12m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "This ship uses high-powered lasers to cut through hulls to allow its boarding party inside. However, it cannot fly through ship shields. +Has 2 hangar space capacity"
@@ -1064,9 +1065,370 @@ export const vehicles = [
     crew: 12,
     T1WeaponSlots: 3,
     T2WeaponSlots: 0,
-    Mobility: "0000000",
+    mobility: "0000000",
     Armour: "15m",
     Length: "15m",
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Heavily armoured and perfectly capable of transporting troops and vehicles. +Comes with a free T1 weapon +Has 3 hangar space capacity"
   }
 ];
+
+const rigs = [
+  {
+    name: "Kinetic Counterbalancers",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig259.webp', 
+    description: "Counterbalancers for kinetic weapon types, allowing for greatly reduced recoil when firing."
+  },
+  {
+    name: "Rocket Catalysts",
+    rigType: "offensive",
+    image: '', description: "Propellants for explosive-based weapons use more efficient compounds, significantly increasing payload velocity."
+  },
+  {
+    name: "Nanite Superconductors",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig255.webp', description: "Enhances the magnetic capabilities of railguns, allowing them to cycle through rounds faster."
+  },
+  {
+    name: "Lens Calibrator",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig253.webp', description: "A management system for lenses on laser-based weaponry, causing them to reach maximum power output faster."
+  },
+  {
+    name: "Particle Fuse Batteries",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig251.webp', description: "Powerful batteries for plasma-based weapons that allows for a longer uptime of firing before overheating."
+  },
+  {
+    name: "Trajectory Analysis",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig249.webp', description: "A suite that enhances the suit's capability of using ranged weaponry, allowing for pinpoint motion prediction and accuracy."
+  },
+  {
+    name: "Munitions Reconstructor",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig233.webp', description: "Adds a compartment to the suit that, when fed appropriate hyperdense material cubes, can construct ammunition."
+  },
+  {
+    name: "Thermal Management System",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig231.webp', description: "Logistical attachments to the suit that improves weapon heat management, allowing for greater volumes of fire."
+  },
+  {
+    name: "Integrated Rangefinder",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig229.webp', description: "A rig embedded into the suit's HUD, feeding back helpful ballistics calculations for long range shooting."
+  },
+  {
+    name: "Weapon Mass Compensator",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig227.webp', description: "A series of synthetic muscle fibres that cater to handling the suit's specific weapon systems for extreme handling."
+  },
+  {
+    name: "Martial Engine",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig225.webp', description: "Installs a machine learning program that assists in close-quarters combat, using vast libraries of data on martial arts."
+  },
+  {
+    name: "Hypertense Muscle Fibres",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig223.webp', description: "Self-regenerating artificial muscle fibres that significantly increases the physical strength of the suit."
+  },
+  {
+    name: "Spell Cache Circuits",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig207.webp', description: "Improves the execution of spells, reducing the cast time for most spell types."
+  },
+  {
+    name: "Spell Burst Capacitors",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig205.webp', description: "The suit's mana catalyst passively drains mana charge from surrounding environments, improving spell potencies."
+  },
+  {
+    name: "Leyline Memory Bridge",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig203.webp', description: "Improves the successive re-casting of the same spell or similar ones when used in frequent amounts."
+  },
+  {
+    name: "Ancillary Leyline Subroutines",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig201.webp', description: "For the longer the suit is outputting spells from its mana catalyst in battle, spell handling exponentially improves."
+  },
+  {
+    name: "Mana Grid Management",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig199.webp', description: "Reserves some of the suit's computing power to make mana consumption more efficient, reducing spell mana costs."
+  },
+  {
+    name: "Void-wave Algorithm Injector",
+    rigType: "offensive",
+    image: '/Images/Equipment/rig197.webp', description: "Casting spells from the one spell affinity family will increase the potencies of other spells from the same family."
+  },
+  {
+    name: "Armour: Reactive Nanite Hardening",
+    rigType: "defensive",
+    image: '/Images/Equipment/rig181.webp', description: "Improves the suit's armour nanites to counteract all incoming damage by a significant amount."
+  },
+  {
+    name: "Armour: Perforated Padding",
+    rigType: "defensive",
+    image: '/Images/Equipment/rig179.webp', description: "A perforated layer to the suit's armour that significantly reduces the impact of kinetic projectiles, especially AP rounds."
+  },
+  {
+    name: "Armour: Electro-Magnetic Plating",
+    rigType: "defensive",
+    image: '', description: "Charged plating that defends against energy-based attacks by adjusting its electro-magnetic charge."
+  },
+  {
+    name: "Armour: Elemental Hardening",
+    rigType: "defensive",
+    image: '', description: "Plating that uses an alloy of metal that's charged with mana, adding a mild resistance to mana-based attacks."
+  },
+  {
+    name: "Armour: Nanite Charging Bank",
+    rigType: "defensive",
+    image: '/Images/Equipment/rig173.webp', description: "A reservoir attached to the suit that charges armour nanites, allowing for faster self-repair."
+  },
+  {
+    name: "PAIN Suit",
+    rigType: "defensive",
+    image: '/Images/Equipment/rig171.webp', description: "An integration with the pilot's neurolink suit which helps inhibit pain and keeps the mind focused while in combat."
+  },
+  {
+    name: "Shield: Crysalis Protocol",
+    rigType: "defensive",
+    image: '/Images/Equipment/rig155.webp', description: "Suit shield gains compounding defence against currently incoming damage types while reducing other resistances."
+  },
+  {
+    name: "Shield: Reactive Force Grid",
+    rigType: "defensive",
+    image: '/Images/Equipment/rig153.webp', description: "Counteracts kinetic impacts to the shield with small bursts of shockwaves, reducing impact significantly."
+  },
+  {
+    name: "Shield: Mana Dispersion",
+    rigType: "defensive",
+    image: '/Images/Equipment/rig149.webp', description: "A protocol in the shield that increases the entropy of mana-based attacks, potentially dispersing them."
+  },
+  {
+    name: "Shield: Wavelength Nullification",
+    rigType: "defensive",
+    image: '/Images/Equipment/rig151.webp', description: "Attempts to deter incoming electro-magnetic attacks with nullifying wavelengths of energy, albeit only slightly."
+  },
+  {
+    name: "Shield: Auxiliary Shield Generator",
+    rigType: "defensive",
+    image: '/Images/Equipment/rig147.webp', description: "Greatly increases the efficiency of the suit's shield operation, allowing for a longer uptime against sustained attacks."
+  },
+  {
+    name: "Chaff Fullers",
+    rigType: "defensive",
+    image: '/Images/Equipment/rig145.webp', description: "Add strips of stealthy material around your suit, increasing resistance to radar, hacking and optics."
+  },
+  {
+    name: "Parkour",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig129.webp', description: "A servos that significantly improves ground mobility and agility, allowing for seamless dodging and acrobatics."
+  },
+  {
+    name: "Dancer",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig127.webp', description: "Uses small thrusters to give brief bursts of speed to either individual limbs or the entire suit."
+  },
+  {
+    name: "Roller",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig125.webp', description: "Adds retractable wheels that allow for fast ground speeds. Stabilizers allow for smooth gliding, even while shooting."
+  },
+  {
+    name: "Harrier",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig123.webp', description: "Adds a jetpack that allows for agile hovering above ground, but somewhat reduces ground mobility."
+  },
+  {
+    name: "Warhawk",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig121.webp', description: "Afterburners for extreme flight speeds while also significantly reducing mobility when on the ground."
+  },
+  {
+    name: "Launch",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig119.webp', description: "Special thrusters that allows suits to launch from the ground at incredible vertical velocities."
+  },
+  {
+    name: "Inertia",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig103.webp', description: "Significantly minimizes damage taken from severe heights by directing impact kinetic energy outwards on landing."
+  },
+  {
+    name: "Hyperspatial Subcontroller",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig101.webp', description: "Analyzes immediate surroundings and factors that in to all suit mobility functions for greater use of the environment."
+  },
+  {
+    name: "Astrometer-Gyro Sensor",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig099.webp', description: "Improves the thrusters on the suit meant for manoeuvrability while in space. Goes well with Warhawk or Harrier."
+  },
+  {
+    name: "Hazardous Protection",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig097.webp', description: "Improves the suit's survivability in hazardous environments with better oxygen efficiency and temperature control."
+  },
+  {
+    name: "Tilt",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig095.webp', description: "A magnet-based servos that boosts the suit's mobility in more electrically-conductive environments."
+  },
+  {
+    name: "Phantom",
+    rigType: "mobility",
+    image: '/Images/Equipment/rig093.webp', description: "When activated, this cloak masks the suit from detection while disabling most of the suit's other major functions."
+  },
+  {
+    name: "Warhound",
+    rigType: "command",
+    image: '/Images/Equipment/rig077.webp', description: "When activated, boosts the functionality of all of the suit's functions at a mild rate temporarily."
+  },
+  {
+    name: "Bastion",
+    rigType: "command",
+    image: '/Images/Equipment/rig075.webp', description: "Activating causes nanites to harden for an extreme defence, but this locks up the suit and only lasts for a minute."
+  },
+  {
+    name: "Prometheus",
+    rigType: "command",
+    image: '/Images/Equipment/rig073.webp', description: "When initiated, this reroutes most of the suit's energy reserves to instantly recharge shield capacity to max."
+  },
+  {
+    name: "Elusive",
+    rigType: "command",
+    image: '/Images/Equipment/rig015.webp', description: "Weapon systems have a harder time tracking the suit and take longer to lock on."
+  },
+  {
+    name: "Cognition Enhancement",
+    rigType: "utility",
+    image: '/Images/Equipment/rig051.webp', description: "An attachment to the pilot's neurolink suit which improves the pilot's cognition by a large amount when worn."
+  },
+  {
+    name: "Deep Dive",
+    rigType: "utility",
+    image: '/Images/Equipment/rig049.webp', 
+    description: "A neurolink boost that integrates the pilot's mind with the suit's security grid more intimately."
+  },
+  {
+    name: "Overmind",
+    rigType: "command",
+    image: '/Images/Equipment/rig069.webp', description: "Frees up processing power when executing an e-war module, allowing for faster uses of subsequent e-war modules."
+  },
+  {
+    name: "Redeemer",
+    rigType: "command",
+    image: '/Images/Equipment/rig067.webp', description: "Executes all of the suit's available spells at once with increased potency, but significantly depletes mana reserves."
+  },
+  {
+    name: "Probe Assistant Modules",
+    rigType: "utility",
+    image: '/Images/Equipment/rig047.webp', description: "Small probes that can be launched from the suit and use e-war modules up to Tech 2 at a reduced effectiveness."
+  },
+  {
+    name: "Neurolink Implants",
+    rigType: "utility",
+    image: '/Images/Equipment/rig045.webp', description: "Grants the pilot cybernetic implants that allows the suit's neurolink to integrate with their mind more effectively."
+  },
+  {
+    name: "Mana Flux Converter",
+    rigType: "utility",
+    image: '/Images/Equipment/rig043.webp', description: "Reroutes a portion of the suit's mana capacity to help with the processing of e-war modules."
+  },
+  {
+    name: "Energy Grid Override",
+    rigType: "utility",
+    image: '/Images/Equipment/rig041.webp', description: "Allows the pilot to utilize the energy grid more effectively, pumping energy from some modules and into others at will."
+  },
+  {
+    name: "Signals Amplifier",
+    rigType: "utility",
+    image: '/Images/Equipment/rig025.webp', description: "A multitude of signal amplifiers that boosts the effectiveness of emissions-type e-war modules."
+  },
+  {
+    name: "Machine Learning Diagnostics",
+    rigType: "utility",
+    image: '/Images/Equipment/rig023.webp', description: "Advances the suit's multiple artificial intelligence systems to better use digital-type e-war modules."
+  },
+  {
+    name: "Logistics Controls",
+    rigType: "utility",
+    image: '/Images/Equipment/rig021.webp', description: "Expands the suit's inventory of handling logistics-type e-war modules, providing additional effects and reserves."
+  },
+  {
+    name: "Assimilation",
+    rigType: "utility",
+    image: '/Images/Equipment/rig015.webp', 
+    description: "Integrates an AI with a huge database of almost all known and in-use technology."
+  },
+  {
+    name: "Hazardous Waste Collector",
+    rigType: "utility",
+    image: '/Images/Equipment/rig019.webp', description: "Essentially a vacuum that the suit may be equipped with."
+  },
+  {
+    name: "Repair & Diagnostics",
+    rigType: "utility",
+    image: '/Images/Equipment/rig017.webp', description: "Physically connects the pilot's mind and leylines to the suit. As a result, the suit gets much harder to get out of."
+  }
+];
+
+
+function populateRigs(dataArray, choicePrefix, sectionID) {
+  const targetSection = document.getElementById(sectionID);
+
+  if (!targetSection) {
+    console.error(`Target section with ID "${sectionID}" not found.`);
+    return;
+  }
+
+  dataArray.forEach(item => {
+    const newDiv = document.createElement("div");
+    newDiv.classList.add('choice');
+    newDiv.style.flexBasis = 'calc(100%/5)';
+    newDiv.id = `${choicePrefix}-${item.name}`;
+    switch(item.rigType){
+      case ('offensive'): 
+        newDiv.style.backgroundColor = 'rgb(253,88,95, 0.4)';
+        newDiv.style.borderColor = 'rgb(141,69,73)';
+        break;
+      case ('defensive'): 
+        newDiv.style.backgroundColor = 'rgb(90,152,255, 0.4)';
+        newDiv.style.borderColor = 'rgb(40,81,199)';
+        break;
+      case ('utility'):
+        newDiv.style.backgroundColor = 'rgb(244,255,82, 0.4)';
+        newDiv.style.borderColor = 'rgb(99,90,51)';
+        break;
+      case ('command'):
+        newDiv.style.backgroundColor = 'rgb(114,255,84, 0.4)';
+        newDiv.style.borderColor = 'rgb(59,129,40)';
+        break;
+    }
+
+    const newSpan = document.createElement("span");
+    newDiv.appendChild(newSpan);
+
+    // Image element - common to all
+    const imgElement = document.createElement('img');
+    imgElement.src = item.image || 'https://placehold.co/100x100/eeeeee/ffffff?text=NoImage';
+    imgElement.alt = `${item.name} image`;
+    newSpan.appendChild(imgElement); // Image added after newSpan
+
+    const costP = document.createElement("p");
+    costP.innerHTML = `Rig Type: ${item.rigType}`;
+    newSpan.appendChild(costP);  
+
+
+    const descriptionP = document.createElement("p");
+    descriptionP.innerHTML = item.description;
+    newSpan.appendChild(descriptionP);
+
+    targetSection.before(newDiv); // Append to the target section
+  });
+}
