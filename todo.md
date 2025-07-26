@@ -1,29 +1,21 @@
-Features:
-
-1. Each ship is an object containing: hull, guns, crew
-2. Choices will have pre-requisites & consequences
-3. I want a button to automatically open the buttons above
-4.
-
 TODO:
 
-From display:
+3. Update credits gain/cost (1)
+4. remaining weapon slot display (1)
+   crew text (2)
 
-2. Moneysource choice consequences
+5. hull, subsystem, mods, weapons, industrial, e-war, room pictures (3)
+6. Starting Location pictures , Title pictures (3)
+7. Credits page (3)
+8. add crew, weapons from other CYOA (3)
+   crew pictures (3)
 
-3. COMBAT STATS
-4. Sponsor choice consequences
-5. Starting Location pictures
-6. Skills choice consequences
-7. Title pictures
-8. Title pre-requisities and consequences (apply in title not in relevant (e.g. traitor apply in titles section))
+(4) 8. COMBAT STATS at the end of Equipment 9. Sponsor choice consequences 2. Moneysource choice consequences 11. Skills choice, Start Loc consequences 13. Title pre-requisities and consequences (apply in title not in relevant (e.g. traitor apply in titles section)) 14. Your Fleet pre-requisities & consequences (mostly receiving consequences)
 
-9. Your Fleet pre-requisities & consequences (mostly receiving consequences)
+15. Check for accuracy
 
-10. Check for accuracy
-11. Credits page
-12. Publish
+16. Publish
 
-13. Reserve contracts & battle for next update
+17. Reserve contracts & battle for next update
 
 Deadline: 25/07/2025
