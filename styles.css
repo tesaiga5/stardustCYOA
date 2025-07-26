@@ -97,6 +97,13 @@ div {
   flex-basis: calc((100% / 4))
 }
 
+.choice-frame {
+  width: 300px;
+  flex-basis: calc(100%/3.4);
+  margin: 0;
+  padding: 0;
+}
+
 .choice h3{
   font-size:32px;
 }
@@ -388,5 +395,9 @@ body b{
 .gauge-cell.filled-light-red {  
   background-color: rgb(239, 119, 120); /* Tailwind red-400 */
   
+}
+
+.p-frame {
+  font-size: 15px;
 }
 

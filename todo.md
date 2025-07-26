@@ -13,18 +13,17 @@ From display:
 
 3. COMBAT STATS
 4. Sponsor choice consequences
-5. Starting Location text & pictures, also incomplete choices
+5. Starting Location pictures
 6. Skills choice consequences
-7. Title credits gain
-8. Title pictures
-9. Title pre-requisities and consequences (apply in title not in relevant (e.g. traitor apply in titles section))
+7. Title pictures
+8. Title pre-requisities and consequences (apply in title not in relevant (e.g. traitor apply in titles section))
 
-10. Your Fleet pre-requisities & consequences (mostly receiving consequences)
+9. Your Fleet pre-requisities & consequences (mostly receiving consequences)
 
-11. Check for accuracy
-12. Credits page
-13. Publish
+10. Check for accuracy
+11. Credits page
+12. Publish
 
-14. Reserve contracts & battle for next update
+13. Reserve contracts & battle for next update
 
 Deadline: 25/07/2025
