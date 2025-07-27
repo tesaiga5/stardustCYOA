@@ -1,3 +1,4 @@
+
 .section {
   display: flex;
   flex-wrap: wrap; /* NEW: Allows flex items to wrap to the next line */
@@ -244,12 +245,12 @@ body { /*make galaxy background image*/
 
 body b{
   color: rgb(255, 204, 0);
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  text-shadow: 0 0 10px rgb(177, 59, 255), 0 0 20px rgb(177, 59, 255), 0 0 30px rgb(177, 59, 255);
 }
 
 .highlighted-bold {
   color: rgb(255, 204, 0);
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  text-shadow: 0 0 10px rgb(177, 59, 255), 0 0 20px rgb(177, 59, 255), 0 0 30px rgb(177, 59, 255);
 }
 
 /* This is the container for the pseudoChoice elements */
@@ -401,3 +402,9 @@ body b{
   font-size: 15px;
 }
 
+ul {
+  list-style-type: none; 
+  margin: 0; 
+  margin-left:5px; 
+  padding: 0;
+}

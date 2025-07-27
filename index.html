@@ -627,7 +627,7 @@
               <p style="margin:5px;">Resources: </p>
               <p style="text-align: center;">75 12</p>
               <h4 style="margin:5px;">Rig Slots: </h4>
-              <ul  style="list-style-type: none; margin: 0; margin-left:5px; padding: 0;">
+              <ul>
               <li>Offensive: 8</li>
               <li>Defensive: 6</li>
               <li>Mobility: 4</li>
@@ -666,7 +666,7 @@
               <p style="margin:5px;">Resources: </p>
               <p style="text-align: center;">75 8</p>
               <h4 style="margin:5px;">Rig Slots: </h4>
-              <ul  style="list-style-type: none; margin: 0; margin-left:5px; padding: 0;">
+              <ul >
               <li>Offensive: 4</li>
               <li>Defensive: 4</li>
               <li>Mobility: 5</li>
@@ -705,7 +705,7 @@
               <p style="margin:5px;">Resources: </p>
               <p style="text-align: center;">60 8 +45</p>
               <h4 style="margin:5px;">Rig Slots: </h4>
-              <ul  style="list-style-type: none; margin: 0; margin-left:5px; padding: 0;">
+              <ul>
               <li>Offensive: 4</li>
               <li>Defensive: 4</li>
               <li>Mobility: 4</li>
@@ -757,7 +757,7 @@
           Like frames, these vehicles have resources for the attachment of equipment which can only be used when the Dragoon pilot
           is interfaced with the vehicle. 
           <h4>They also have a few stats:</h4>
-          <ul style="columns: 2; list-style-type: none; padding: 0; margin: 0;">
+          <ul style="columns: 2;">
           <li>Armour: Determines the durability of the vehicle's armour. </li>
           <li>Shields: Determines the capacity of the vehicle's shields in taking damage.</li>
           <li></li>Mobility: The manoeuvrability of the vehicle.</li>
@@ -786,7 +786,7 @@
 
           <p style="font-size: 20px;">The weapons that your suit can support is determined by its munitions capacity and available weapon hard- points. Conventional weapons are split among four different types: kinetic, explosive, laser and plasma. Each individual weapon has three main components: the style, the calibre or charge, and the ammunition type. </p>
           <h4 style="font-size: 20px;">Weapons have the following stats (<b>yellow</b> stats replace default stats on some weapon types):</h4>
-          <ul class="p-frame" style="columns: 2; list-style-type: none; padding: 0; margin: 0;">   
+          <ul class="p-frame" style="columns: 2;">   
             <li>Stopping Power: The ability to incapacitate a moving target.</li>
             <li>Piercing Power: The ability to penetrate material.</li>
             <li>Rate of Fire: The ability to fire rapidly and in succession, including reload speeds.</li>
@@ -842,6 +842,124 @@
   </div>
 
   <div class="section" id="section-hull">
+    <!-- Ship Hulls -->
+<div id="title-hull">
+  <span>
+    <div>
+      <h3>Ship Hulls</h3>
+      <p>Now you may purchase your ship, or multiple. There are seven main classes of ship hulls, mainly determined by size. Those classes include fighters, frigates, destroyers, cruisers, battleships, carriers, and dreadnoughts. While all of these ships are for space-faring, most ships up to the destroyer class can also operate within atmospheres that are similar to the Federation's capital planet, New Terra.</p>
+    </div>
+  </span>
+</div>
+
+<!-- Ship Stats Information -->
+<div id="title-shipStatInfo">
+  <span>
+    <div>
+      <h3>Ship Stats Information</h3>
+      <ul>
+        <li>Spinal Weapon Mounts: Weapons mounted at the front in an almost fixed, front-facing position. Weapons here are larger and deadlier than broadside or point-defence weapons.</li>
+        <li>Broadside Turret Mounts: Weapons mounted on the sides of a ship. Weapons here are standard sized. On frigates or larger, only half of these face your targets at one time. *Limited to T3 weapons or less</li>
+        <li>Point-Defence Mounts: Weapons mounted around the ship for point-defence. Smaller than broadside weapons. *Limited to T1 weapons</li>
+        <li>Hangar Space: Hangar spaces may hold drones or vehicles, and may house fighters for 4 hangar spaces each. You may fit frigates in carriers or larger for 8 hangar spaces each. Things that are docked in a hangar can re-fit their weapon modules.</li>
+        <li>Navigation: The rating at which how quickly a ship can accelerate, decelerate, and manoeuvre. Cannot go over 25 or under 0.</li>
+        <li>Hull Armour: The defence of a ship's hull armour. Cannot go over 25 or under 0.</li>
+        <li>Shield Strength: The defence of a ship's shields. Cannot go over 25 or under 0.</li>
+        <li>Length: The length of the longest axis of the ship.</li>
+        <li>Max Crew: A ship's max crew member count.</li>
+        <li>Extra Rooms: Rooms available for repurposing.</li>
+        <li>Energy Use: A ship's energy requirements</li>
+      </ul>
+    </div>
+  </span>
+</div>
+
+<!-- Buying Multiple Ships -->
+<div id="title-buyMultiple">
+  <span>
+    <div>
+      <h3>Buying Multiple Ships</h3>
+      <p>If you plan on buying multiple ships, then you should be pleased to hear that you'll get a discount on all additional hulls. The ship with the most expensive hull will be your Primary Ship, which will go through prices as normal. All additional ship hulls will receive a discount depending on their ship class in relation to your Primary Ship:</p>
+      <ul>
+        <li>Equal or greater: 20% off</li>
+        <li>1 class below: 30% off</li>
+        <li>2 classes below: 40% off</li>
+        <li>3 classes below or lower: 50% off</li>
+      </ul>
+    </div>
+  </span>
+</div>
+
+    <!-- Fighters -->
+<div id="title-fighters">
+  <span>
+    <div>
+      <h3>Fighters</h3>
+      <p>Fighters are the smallest ship classes and usually only have enough space for one or two pilots. Fighters can't have more than 0 extra rooms.</p>
+    </div>
+  </span>
+</div>
+
+<!-- Frigates -->
+<div id="title-frigates">
+  <span>
+    <div>
+      <h3>Frigates</h3>
+      <p>Frigates are small and quick, but can still pack a punch. They can equip to either hit hard for fleet fights, or equip light for exploring. Frigates cannot have a hangar that exceeds 8 hangar spaces.</p>
+    </div>
+  </span>
+</div>
+
+<!-- Destroyers -->
+<div id="title-destroyers">
+  <span>
+    <div>
+      <h3>Destroyers</h3>
+      <p>Destroyers are the most common warships seen in most fleets, and for their size, pack a large amount of firepower.</p>
+    </div>
+  </span>
+</div>
+
+<!-- Cruisers -->
+<div id="title-cruisers">
+  <span>
+    <div>
+      <h3>Cruisers</h3>
+      <p>A cruiser can be a platform for almost any operation. Crews start to become less close knit, and more of a large community.</p>
+    </div>
+  </span>
+</div>
+
+<!-- Battleships -->
+<div id="title-battleships">
+  <span>
+    <div>
+      <h3>Battleships</h3>
+      <p>When things get serious, enter the Battleship. Their presence alone can drastically change the mood of the battlefield.</p>
+    </div>
+  </span>
+</div>
+
+<!-- Carriers -->
+<div id="title-carriers">
+  <span>
+    <div>
+      <h3>Carriers</h3>
+      <p>Carriers forgo the traditional broadside weapon approach and roll with having a large amount of hangar space.</p>
+    </div>
+  </span>
+</div>
+
+<!-- Dreadnoughts -->
+<div id="title-dreadnoughts">
+  <span>
+    <div>
+      <h3>Dreadnoughts</h3>
+      <p>Large behemoths of the battlefield. The mere appearance sends ripples across the galaxy. Owning one is sure to attract a lot of attention.</p>
+    </div>
+  </span>
+</div>
+
     <div id="endOfHull"></div>
   </div>
 
@@ -850,7 +968,8 @@
       <span>
         <div>
           <h3>Ship AI</h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+          Ships need a ship Al, so you must choose one that can fit your specific needs. However, all ship Als are more than capable of handling most tasks, and can even auto-pilot your ship for you.
+        </div>
       </span>
     </div>
     <div style= "display: none;" id="endOfAI"></div>
@@ -858,7 +977,15 @@
       <span>
         <div>
           <h3>Energy Subsystems</h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+          Your ship needs power, so you must choose at least one energy system.
+          You can have up to 2 energy systems and 2 batteries per ship. Total energy output doesn't have to equal its ship's energy use requirements (you would use battery charge). If you buy two of the same type, the second one is 50% off.
+          <ul>
+            <li>1 unit of energy output = 1 MW  (n<sup>n</sup> thereafter)</li>
+            <li>1 unit of battery capacity = 1 TWh (e<sup>n</sup> thereafter)</li>
+            <li>1 unit of energy usage = 1 GWh (2<sup>n</sup> thereafter)</li>
+            <li>Charge Duration: How long does the energy last in ideal conditions?</li>
+          </ul>
+        </div>
       </span>
     </div>
     <div style= "display: none;" id="endOfEnergy"></div>
@@ -866,7 +993,7 @@
       <span>
         <div>
           <h3>Shield Subsystems</h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+          Shield defence is equal to equivalent hull armour ratings. While hull armour can potentially be more protective, shields only need recharging as opposed to repairing. To regenerate 1 shield unit, you need 1 unit of battery charge. You may only pick 1 shield system per ship. </div>
       </span>
     </div>
     <div style= "display: none;" id="endOfShield"></div>
@@ -874,34 +1001,128 @@
   </div>
 
   <div class="section" id="section-mod">
+    <div id="title-mod">
+      <span>
+        <div>
+          <h3>Ship Mods</h3>
+          You have your ship, and now you can attach additional modules to change
+          how it behaves. The cost of <b>all ship mods</b> are multiplied by your ship's class:
+            <ul style="columns:2;">
+              <li>Battleship: 3x</li>
+              <li>Carrier: 3x</li>
+              <li>Dreadnought 4x</li>
+              <li>Fighter: 1x</li>
+              <li>Frigate: 1x</li>
+              <li>Destroyer: 2x</li>
+              <li>Cruiser: 2x </li>
+            </ul>
+          </div>
+      </span>
+    </div>
+    <div id="title-commandMods">
+      <span>
+        <div>
+          <h3>Command Mods</h3>
+          These mods add a special ability to your ship. You may only attach one command mod per ship. Their effects scale with your ship size.
+        </div>
+      </span>
+    </div>
+    <div id="title-hullMods">
+      <span>
+        <div>
+          <h3>Hull Mods</h3>
+            A lot of pilots aren't satisfied with the capabilities of the base hull of their
+            ship, so they tend to add additional mods to their liking.
+            <b>Dreadnoughts can't fit hull mods</b>
+
+        </div>
+      </span>
+    </div>
     <div id="endOfMod"></div>
   </div>
 
   <div class="section" id="section-weapon">
-    <div id="endOfWeapons"></div>
+    <div id="title-weapon">
+      <span>
+        <div>
+          <h3>Ship Weapons</h3>
+          Almost every ship that enters space is equipped with some form of self defence. With our practiced art in warfare, weapons have come a long way. A weapon's cost is reduced after purchasing it once (in brackets).</div>
+      </span>
+    </div>
+    <div style="font-size: 20px;" id="weapon-info">
+      <span>
+        <h3>Weapon Stat Information</h3>
+        <div style="display: flex; flex-basis: 25%;">
+          <div>    
+          <p><h3>Tier:</h3>
+          The grading of the weapon, concerning size, weight, and damage potential.
+          <p><h3>Damage Per Volley:</h3>
+          The amount of damage that can be inflicted by a single volley from the weapon. </p></div>      
+          <div><p><h3>Rate of Fire:</h3>
+          The amount of volleys a weapon can fire per minute.</p>
+          <p><h3>Accuracy:</h3>
+          The likelihood that a projectile from the weapon will hit its target, concerning recoil and trajectory.</p></div>      
+          <div><p><h3>Range:</h3>
+          The effective distance that a weapon can fire to still hit its target with maximum integrity.</p>
+          <p><h3>Projectile Velocity: </h3>
+          The velocity of a weapon's ordnance.</p> </div>      
+          <div><p><h3>Tracking:</h3>
+          The ability of the weapon to track its targets, concerning turret rotation, tracking computer accu- racy, and (if missiles) the ability for projectiles to follow targets.</p>
+          <p><h3>Weapon Types:</h3>
+          The archetype of a weapon, be it a kinetic-based weapon, energy- based weapon, blaster-based weapon, or explosive-based weapon. </p></div>      
+
+
+          </div>
+      </span>
+    </div>
+    <div style="display: none;" id="endOfWeapons"></div>
   </div>
 
   <div class="section" id="section-industrial">
+    <div id="title-industrial">
+      <span>
+        <div>
+          <h3>Industrial Implements</h3>
+          There are plenty of other implements to equip on your ship that aren't warfare based.</div>
+      </span>
+    </div>
     <div id="endOfIndustrial"></div>
   </div>
 
   <div class="section" id="section-ewar">
+    <div id="title-ewar">
+      <span>
+        <div>
+          <h3>E-War Equipment</h3>
+          Having a strong e-war offensive can be just as powerful as conventional weapons. Each e-war module can only be equipped once per ship, and requires a digital security room in order to operate.
+          </div>
+      </span>
+    </div>
     <div id="endOfEwar"></div>
   </div>
 
   <div class="section" id="section-room">
+    <div id="title-room">
+      <span>
+        <div>
+          <h3>Rooms & Compartments</h3>
+          If your ship has extra rooms for refurnishing or repurposing, you can turn them into something useful. Some rooms can combine with others to only take up 1 room slot. The size of most rooms scale with your ship size. Energy inputs (i.e. uranium, thorium, mana stones) require a storage room.
+          </div>
+      </span>
+    </div>
     <div id="endOfRooms"></div>
   </div>
 
-
-
-
   <div class ="section" id="section-crew">
     <div id="title-namedCrew">
-      <span>
+      <span style="text-align: left;">
         <div>
           <h3>Named Crew</h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+          Each crew member takes up one slot on your ship. If you've got more ships, they'll need pilots too! Don't hire anyone who's hostile to your origin, that's just asking for trouble. 
+          <ul>
+            <li>Pilots: Fighters and frigates can have up to 2 pilots. Destroyers or bigger ships can have 3 pilots.</li> <li> You, the captain, count as one of the pilots on the ship you're flying. </li>
+            </ul>          
+          </div>
       </span>
     </div>
     <div style="display:none;" id="endOfCrew"></div>
@@ -909,7 +1130,7 @@
       <span>
         <div>
           <h3>Crew Archetypes</h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit ducimus odit.</div>
+          These fill out your ship's crew slots, and big ships (Destroyers or larger) need at least half their slots filled!</div>
       </span>
     </div>
     <div style="display:none;" id="endOfArchetype"></div>

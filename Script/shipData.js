@@ -1084,52 +1084,108 @@ const shipAI = [
 const energy = [
   {
     name: "Solar Panels",
+    type: 'generation',
     cost: 2000000,
-    energyOutput: 0,
-    chargeDuration: "30 minutes",
+    energyOutput: 1,
     description: "Solar energy is plentiful, so long as you're near a star. Works great as a hybrid energy system. +Does not count towards your energy system maximum count *Can only be bought once",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "Power Capacitors",
-    cost: 10000000,
-    energyOutput: 0,
-    chargeDuration: "8 days",
-    description: "Capacitors are small enough to fit in fighters, though they must be recharged often. However, they can also be coupled with other energy systems instead boost their effectiveness.",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
-  },
-  {
     name: "Nuclear Fission",
+    type: 'generation',
     cost: 16000000,
-    energyOutput: 0,
-    chargeDuration: "25 years",
+    energyOutput: 5,
     description: "Large and bulky, fission reactors are best kept in larger and better defended vessels. Great power output and great efficiency. *Cannot be equipped on fighters *Requires a nuclear engineer",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
     name: "Nuclear Fusion",
+    type: 'generation',
     cost: 26000000,
-    energyOutput: 0,
+    energyOutput: 6,
     chargeDuration: "15 years",
     description: "Fusion has a much more potent energy output than fission, but is also less efficient. *Cannot be equipped on fighters *Requires a nuclear engineer",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
     name: "Mana Core",
-    cost: 50000000,
-    energyOutput: 0,
+    type: 'generation',
+    cost: 70000000,
+    energyOutput: 6,
     chargeDuration: "Lifetimes",
-    description: "Mana energy was reverse engineered from the \"Ghost\" family of Herald technology. Current tech is still difficult to wire with mana. +Herald ships get +1 energy output and get 10m off",
+    description: "Mana energy was reverse engineered from the \"Ghost\" family of Herald technology. Mana energy produced can be stored as mana stones. +Herald ships get +1 energy output and get 10m off",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
     name: "Anti-Matter Core",
-    cost: 40000000,
-    energyOutput: 0,
-    chargeDuration: "12 years",
+    type: 'generation',
+    cost: 50000000,
+    energyOutput: 7,
     description: "A very volatile energy substance, anti-matter has brought endless potential technology and sciences. This core safely decommissions itself if it's forcefully broken into.",
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
-  }
+  },
+  {
+    name: "Zero-Point Module",
+    type: 'generation',
+    cost: 100000000,
+    energyOutput: 8,
+    description: "Taps into the energy that exists in a vacuum due to quantum fluctuations. Loses efficiency in debris field.",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+  {
+    name: "Subspace Energy Extraction",
+    type: 'generation',
+    cost: 300000000,
+    energyOutput: 10,
+    description: "Gathers energy from alternate dimensions or subspace realms that operate under different physical laws. Effectively limitless, as the energy is drawn from outside the conventional universe. <b>Must complete all Herald contracts. Can only be fitted on Herald ships.</b>",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+  {
+    name: "Power Capacitors",
+    type: 'battery',
+    cost: 12000000,
+    energyOutput: 3,
+    chargeDuration: "8 days",
+    description: "Capacitors are small enough to fit in fighters, though they must be recharged often. However, they can also be coupled with other energy systems instead boost their effectiveness.",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+  {
+    name: "Exotic Matter Battery",
+    type: 'battery',
+    cost: 24000000,
+    energyOutput: 4,
+    chargeDuration: "8 weeks",
+    description: "After inventing the Warp Drive, Dr.Yau invented a hyper lattice made of exotic matter, which could fit in the palm of your hand or inside the cartridge of a gun. Alas, his inventions were stolen by Luos and he died penniless.",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+  {
+    name: "The Holy Grail",
+    type: 'battery',
+    cost: 0,
+    energyOutput: 7,
+    chargeDuration: "As long as your conscience",
+    description: "It escaped your notice that Comet destroyed enemy ships even when your ship had run out of ammo. You remembered the machines that she was hooked up to, the strange tablet that warned her future allies, and how applicances lose power whenever shes around. You are now tempted. <b>Must take Comet's Contract.</b>",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+  {
+    name: "Beatrice's Bosom",
+    type: 'battery',
+    cost: 100000000,
+    energyOutput: 8,
+    chargeDuration: "8 months",
+    description: "A descendant of Yau stole a classified prototype from Luos during the Siege of Haven. She further developed its design and patented it with Beatrice R&D. The technology is blackboxed and only available to those 'who are unattached'. <b>Only available to Gazers, Dustkeepers, and Beatrice R&D</b>",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+  },
+  {
+    name: "Subspace Battery",
+    type: 'battery',
+    cost: 120000000,
+    energyOutput: 10,
+    chargeDuration: "Forever",
+    description: "Store limitless energy in a pocket dimension. Even if the battery is destroyed, can access the pocket dimension if you remember the (4D,2T) coordinates. <b>Only available in Herald Dreadnoughts</b>",
+    image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
+  },
+
 ];
 
 const shield = [

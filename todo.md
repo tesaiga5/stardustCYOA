@@ -3,6 +3,7 @@ TODO:
 3. Update credits gain/cost (1)
 4. remaining weapon slot display (1)
    crew text (2)
+   populate mana, catalyst
 
 5. hull, subsystem, mods, weapons, industrial, e-war, room pictures (3)
 6. Starting Location pictures , Title pictures (3)
