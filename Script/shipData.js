@@ -1,6 +1,6 @@
 // This file contains data for various ship hulls available in the game.
 
-export {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
+export {hulls1, hulls2,hulls3,hulls4,hulls5,hulls6,hulls7, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
         createShip, deleteShip, addHull, addWeapon, addAI,addEnergyGen, addShield, 
         addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom, 
         resetShipConfigUI, renderShipConfigUI, editShipName};
@@ -11,7 +11,7 @@ import { formatterIntl } from "/Script/manaData.js";
 
 
 // The structure is based on the existing shipData.js forma
-const hulls = [
+const hulls1 = [
     // Fighters from 'ship Data.docx'
     {
         name: "S92-TMC",
@@ -107,384 +107,13 @@ const hulls = [
     },
 
     // Frigates from 'ship Data.docx'
-    {
-        name: "Stingray",
-        manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 25000000,
-        spinalMount: 1,
-        spinal: [],
-        broadsideMount: 4,
-        broadside: [],
-        pointDefenceMount: 6,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 18, // 18/25
-        hullArmor: 7, // 07/25
-        shieldStrength: 2, // 02/25
-        length: '120m',
-        maxCrew: 20,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Stingray is a Hammerhead Industries frigate, designed for versatile engagements.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Valkyrie",
-        manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 30000000,
-        spinalMount: 1,
-        spinal: [],
-        broadsideMount: 6,
-        broadside: [],
-        pointDefenceMount: 4,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 22, // 22/25
-        hullArmor: 6, // 06/25
-        shieldStrength: 2, // 02/25
-        length: '100m',
-        maxCrew: 25,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A Beatrice R&D frigate, known for its strong broadside weaponry.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Manta",
-        manufacturer: "Federation Navy",
-        type: 'frigate', cost: 35000000,
-        spinalMount: 1,
-        spinal: [],
-        broadsideMount: 5,
-        broadside: [],
-        pointDefenceMount: 5,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 19, // 19/25
-        hullArmor: 8, // 08/25
-        shieldStrength: 3, // 03/25
-        length: '110m',
-        maxCrew: 22,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A robust frigate in the Federation Navy's arsenal, balanced for defense and offense.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
+    
 
-    // Destroyers from 'ship Data.docx'
-    {
-        name: "Javelin",
-        manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 50000000,
-        spinalMount: 2,
-        spinal: [],
-        broadsideMount: 8,
-        broadside: [],
-        pointDefenceMount: 8,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 15, // 15/25
-        hullArmor: 10, // 10/25
-        shieldStrength: 4, // 04/25
-        length: '250m',
-        maxCrew: 50,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Javelin is a Hammerhead Industries destroyer, capable of sustained engagements.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Aegis",
-        manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 60000000,
-        spinalMount: 2,
-        spinal: [],
-        broadsideMount: 10,
-        broadside: [],
-        pointDefenceMount: 6,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 18, // 18/25
-        hullArmor: 9, // 09/25
-        shieldStrength: 5, // 05/25
-        length: '220m',
-        maxCrew: 60,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A Beatrice R&D destroyer, featuring strong defensive capabilities.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Gladius",
-        manufacturer: "Federation Navy",
-        type: 'frigate', cost: 70000000,
-        spinalMount: 2,
-        spinal: [],
-        broadsideMount: 9,
-        broadside: [],
-        pointDefenceMount: 7,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 16, // 16/25
-        hullArmor: 11, // 11/25
-        shieldStrength: 6, // 06/25
-        length: '240m',
-        maxCrew: 55,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Gladius is a Federation Navy destroyer, a balanced and reliable warship.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
+    
 
-    // Cruisers from 'ship Data.docx'
-    {
-        name: "Colossus",
-        manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 90000000,
-        spinalMount: 3,
-        spinal: [],
-        broadsideMount: 12,
-        broadside: [],
-        pointDefenceMount: 10,
-        pointDefence: [],
-        hangarSpace: 2,
-        hangar: [],
-        navigation: 12, // 12/25
-        hullArmor: 14, // 14/25
-        shieldStrength: 7, // 07/25
-        length: '500m',
-        maxCrew: 150,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A Hammerhead Industries cruiser, built for heavy firepower and some fighter support.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Oracle",
-        manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 100000000,
-        spinalMount: 3,
-        spinal: [],
-        broadsideMount: 14,
-        broadside: [],
-        pointDefenceMount: 8,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 15, // 15/25
-        hullArmor: 13, // 13/25
-        shieldStrength: 8, // 08/25
-        length: '480m',
-        maxCrew: 180,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Oracle is a Beatrice R&D cruiser, focusing on broadside attacks and advanced systems.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Vanguard",
-        manufacturer: "Federation Navy",
-        type: 'frigate', cost: 110000000,
-        spinalMount: 3,
-        spinal: [],
-        broadsideMount: 13,
-        broadside: [],
-        pointDefenceMount: 9,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 13, // 13/25
-        hullArmor: 15, // 15/25
-        shieldStrength: 9, // 09/25
-        length: '520m',
-        maxCrew: 160,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A Federation Navy cruiser, known for its balanced combat capabilities and robust armor.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
+    
 
-    // Battleships from 'ship Data.docx'
-    {
-        name: "Behemoth",
-        manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 150000000,
-        spinalMount: 4,
-        spinal: [],
-        broadsideMount: 18,
-        broadside: [],
-        pointDefenceMount: 12,
-        pointDefence: [],
-        hangarSpace: 4,
-        hangar: [],
-        navigation: 9, // 09/25
-        hullArmor: 20, // 20/25
-        shieldStrength: 10, // 10/25
-        length: '1.2km',
-        maxCrew: 500,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A Hammerhead Industries battleship, featuring immense firepower and significant hangar capacity.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Paladin",
-        manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 160000000,
-        spinalMount: 4,
-        spinal: [],
-        broadsideMount: 20,
-        broadside: [],
-        pointDefenceMount: 10,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 11, // 11/25
-        hullArmor: 19, // 19/25
-        shieldStrength: 11, // 11/25
-        length: '1.1km',
-        maxCrew: 600,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Paladin is a Beatrice R&D battleship, a formidable vessel with strong broadside and shielding.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Conqueror",
-        manufacturer: "Federation Navy",
-        type: 'frigate', cost: 170000000,
-        spinalMount: 4,
-        spinal: [],
-        broadsideMount: 19,
-        broadside: [],
-        pointDefenceMount: 11,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 10, // 10/25
-        hullArmor: 21, // 21/25
-        shieldStrength: 12, // 12/25
-        length: '1.3km',
-        maxCrew: 550,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Conqueror is a Federation Navy battleship, a balanced and heavily armored warship.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-
-    // Carriers from 'ship Data.docx'
-    {
-        name: "Leviathan",
-        manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 200000000,
-        spinalMount: 1,
-        spinal: [],
-        broadsideMount: 10,
-        broadside: [],
-        pointDefenceMount: 14,
-        pointDefence: [],
-        hangarSpace: 50,
-        hangar: [],
-        navigation: 7, // 07/25
-        hullArmor: 16, // 16/25
-        shieldStrength: 6, // 06/25
-        length: '2km',
-        maxCrew: 2500,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A massive Hammerhead Industries carrier, designed to deploy a large number of fighters.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Gáe Bulg",
-        manufacturer: "Blackhawk Elite",
-        type: 'frigate', cost: 120000000,
-        spinalMount: 1,
-        spinal: [],
-        broadsideMount: 0, // No value in docx, default to 0
-        broadside: [],
-        pointDefenceMount: 16,
-        pointDefence: [],
-        hangarSpace: 66,
-        hangar: [],
-        navigation: 1, // 01/25
-        hullArmor: 19, // 19/25
-        shieldStrength: 8, // 08/25
-        length: '2.5km',
-        maxCrew: 3800,
-        extraRooms: 20,
-        rooms: [],
-        energyUse: 0,
-        description: "The Gáe Bulg is a Blackhawk Elite carrier, specializing in overwhelming fighter deployment.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-
-    // Dreadnoughts from 'ship Data.docx'
-    {
-        name: "Gungnir",
-        manufacturer: "Blackhawk Elite",
-        type: 'frigate', cost: 300000000,
-        spinalMount: 5,
-        spinal: [],
-        broadsideMount: 36,
-        broadside: [],
-        pointDefenceMount: 16,
-        pointDefence: [],
-        hangarSpace: 38,
-        hangar: [],
-        navigation: 0, // 00/25
-        hullArmor: 40, // 40/25
-        shieldStrength: 10, // 10/25
-        length: '6.5km',
-        maxCrew: 6000,
-        extraRooms: 32,
-        rooms: [],
-        energyUse: 0,
-        description: "The Gungnir is a Blackhawk Elite dreadnought, a true behemoth of the battlefield.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Dhyana",
-        manufacturer: "Triglav Innovations",
-        type: 'frigate', cost: 340000000,
-        spinalMount: 6,
-        spinal: [],
-        broadsideMount: 42,
-        broadside: [],
-        pointDefenceMount: 14,
-        pointDefence: [],
-        hangarSpace: 28,
-        hangar: [],
-        navigation: 0, // 00/25
-        hullArmor: 34, // 34/25
-        shieldStrength: 10, // 10/25
-        length: '7km',
-        maxCrew: 5000, // Assuming 5,000 as per snippet
-        extraRooms: 0, // No value in docx, default to 0
-        rooms: [],
-        energyUse: 0,
-        description: "The Dhyana is a Triglav Innovations dreadnought, known for its immense firepower and advanced design.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
+    
     // New entries from 'Page 2 Stardust.md'
     {
         name: "PI V18",
@@ -993,6 +622,392 @@ const hulls = [
         image: '/Images/Other/Beatrice R&D.webp'
     },
 ];
+
+const hulls2 = [ //frigates
+  {
+        name: "Stingray",
+        manufacturer: "Hammerhead Ind.",
+        type: 'frigate', cost: 25000000,
+        spinalMount: 1,
+        spinal: [],
+        broadsideMount: 4,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 18, // 18/25
+        hullArmor: 7, // 07/25
+        shieldStrength: 2, // 02/25
+        length: '120m',
+        maxCrew: 20,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "The Stingray is a Hammerhead Industries frigate, designed for versatile engagements.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+    {
+        name: "Valkyrie",
+        manufacturer: "Beatrice R&D",
+        type: 'frigate', cost: 30000000,
+        spinalMount: 1,
+        spinal: [],
+        broadsideMount: 6,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 22, // 22/25
+        hullArmor: 6, // 06/25
+        shieldStrength: 2, // 02/25
+        length: '100m',
+        maxCrew: 25,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "A Beatrice R&D frigate, known for its strong broadside weaponry.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+    {
+        name: "Manta",
+        manufacturer: "Federation Navy",
+        type: 'frigate', cost: 35000000,
+        spinalMount: 1,
+        spinal: [],
+        broadsideMount: 5,
+        broadside: [],
+        pointDefenceMount: 5,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 19, // 19/25
+        hullArmor: 8, // 08/25
+        shieldStrength: 3, // 03/25
+        length: '110m',
+        maxCrew: 22,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "A robust frigate in the Federation Navy's arsenal, balanced for defense and offense.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+];
+const hulls3 = [ //destroyers
+  // Destroyers from 'ship Data.docx'
+    {
+        name: "Javelin",
+        manufacturer: "Hammerhead Ind.",
+        type: 'frigate', cost: 50000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 8,
+        broadside: [],
+        pointDefenceMount: 8,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 15, // 15/25
+        hullArmor: 10, // 10/25
+        shieldStrength: 4, // 04/25
+        length: '250m',
+        maxCrew: 50,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "The Javelin is a Hammerhead Industries destroyer, capable of sustained engagements.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+    {
+        name: "Aegis",
+        manufacturer: "Beatrice R&D",
+        type: 'frigate', cost: 60000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 10,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 18, // 18/25
+        hullArmor: 9, // 09/25
+        shieldStrength: 5, // 05/25
+        length: '220m',
+        maxCrew: 60,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "A Beatrice R&D destroyer, featuring strong defensive capabilities.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+    {
+        name: "Gladius",
+        manufacturer: "Federation Navy",
+        type: 'frigate', cost: 70000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 9,
+        broadside: [],
+        pointDefenceMount: 7,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 16, // 16/25
+        hullArmor: 11, // 11/25
+        shieldStrength: 6, // 06/25
+        length: '240m',
+        maxCrew: 55,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "The Gladius is a Federation Navy destroyer, a balanced and reliable warship.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+
+    // Cruisers from 'ship Data.docx'
+    {
+        name: "Colossus",
+        manufacturer: "Hammerhead Ind.",
+        type: 'frigate', cost: 90000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 12,
+        broadside: [],
+        pointDefenceMount: 10,
+        pointDefence: [],
+        hangarSpace: 2,
+        hangar: [],
+        navigation: 12, // 12/25
+        hullArmor: 14, // 14/25
+        shieldStrength: 7, // 07/25
+        length: '500m',
+        maxCrew: 150,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "A Hammerhead Industries cruiser, built for heavy firepower and some fighter support.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+    {
+        name: "Oracle",
+        manufacturer: "Beatrice R&D",
+        type: 'frigate', cost: 100000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 14,
+        broadside: [],
+        pointDefenceMount: 8,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 15, // 15/25
+        hullArmor: 13, // 13/25
+        shieldStrength: 8, // 08/25
+        length: '480m',
+        maxCrew: 180,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "The Oracle is a Beatrice R&D cruiser, focusing on broadside attacks and advanced systems.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+    {
+        name: "Vanguard",
+        manufacturer: "Federation Navy",
+        type: 'frigate', cost: 110000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 13,
+        broadside: [],
+        pointDefenceMount: 9,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 13, // 13/25
+        hullArmor: 15, // 15/25
+        shieldStrength: 9, // 09/25
+        length: '520m',
+        maxCrew: 160,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "A Federation Navy cruiser, known for its balanced combat capabilities and robust armor.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+
+    // Battleships from 'ship Data.docx'
+    {
+        name: "Behemoth",
+        manufacturer: "Hammerhead Ind.",
+        type: 'frigate', cost: 150000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 18,
+        broadside: [],
+        pointDefenceMount: 12,
+        pointDefence: [],
+        hangarSpace: 4,
+        hangar: [],
+        navigation: 9, // 09/25
+        hullArmor: 20, // 20/25
+        shieldStrength: 10, // 10/25
+        length: '1.2km',
+        maxCrew: 500,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "A Hammerhead Industries battleship, featuring immense firepower and significant hangar capacity.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+    {
+        name: "Paladin",
+        manufacturer: "Beatrice R&D",
+        type: 'frigate', cost: 160000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 20,
+        broadside: [],
+        pointDefenceMount: 10,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 11, // 11/25
+        hullArmor: 19, // 19/25
+        shieldStrength: 11, // 11/25
+        length: '1.1km',
+        maxCrew: 600,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "The Paladin is a Beatrice R&D battleship, a formidable vessel with strong broadside and shielding.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+    {
+        name: "Conqueror",
+        manufacturer: "Federation Navy",
+        type: 'frigate', cost: 170000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 19,
+        broadside: [],
+        pointDefenceMount: 11,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 10, // 10/25
+        hullArmor: 21, // 21/25
+        shieldStrength: 12, // 12/25
+        length: '1.3km',
+        maxCrew: 550,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "The Conqueror is a Federation Navy battleship, a balanced and heavily armored warship.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+];
+const hulls4 = [ //Carriers
+  // Carriers from 'ship Data.docx'
+    {
+        name: "Leviathan",
+        manufacturer: "Hammerhead Ind.",
+        type: 'frigate', cost: 200000000,
+        spinalMount: 1,
+        spinal: [],
+        broadsideMount: 10,
+        broadside: [],
+        pointDefenceMount: 14,
+        pointDefence: [],
+        hangarSpace: 50,
+        hangar: [],
+        navigation: 7, // 07/25
+        hullArmor: 16, // 16/25
+        shieldStrength: 6, // 06/25
+        length: '2km',
+        maxCrew: 2500,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "A massive Hammerhead Industries carrier, designed to deploy a large number of fighters.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+    {
+        name: "Gáe Bulg",
+        manufacturer: "Blackhawk Elite",
+        type: 'frigate', cost: 120000000,
+        spinalMount: 1,
+        spinal: [],
+        broadsideMount: 0, // No value in docx, default to 0
+        broadside: [],
+        pointDefenceMount: 16,
+        pointDefence: [],
+        hangarSpace: 66,
+        hangar: [],
+        navigation: 1, // 01/25
+        hullArmor: 19, // 19/25
+        shieldStrength: 8, // 08/25
+        length: '2.5km',
+        maxCrew: 3800,
+        extraRooms: 20,
+        rooms: [],
+        energyUse: 0,
+        description: "The Gáe Bulg is a Blackhawk Elite carrier, specializing in overwhelming fighter deployment.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+];
+const hulls5 = [ //dreadnoughts
+  // Dreadnoughts from 'ship Data.docx'
+    {
+        name: "Gungnir",
+        manufacturer: "Blackhawk Elite",
+        type: 'dreadnought', cost: 300000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 36,
+        broadside: [],
+        pointDefenceMount: 16,
+        pointDefence: [],
+        hangarSpace: 38,
+        hangar: [],
+        navigation: 0, // 00/25
+        hullArmor: 40, // 40/25
+        shieldStrength: 10, // 10/25
+        length: '6.5km',
+        maxCrew: 6000,
+        extraRooms: 32,
+        rooms: [],
+        energyUse: 0,
+        description: "The Gungnir is a Blackhawk Elite dreadnought, a true behemoth of the battlefield.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+    {
+        name: "Dhyana",
+        manufacturer: "Triglav Innovations",
+        type: 'dreadnought', cost: 340000000,
+        spinalMount: 6,
+        spinal: [],
+        broadsideMount: 42,
+        broadside: [],
+        pointDefenceMount: 14,
+        pointDefence: [],
+        hangarSpace: 28,
+        hangar: [],
+        navigation: 0, // 00/25
+        hullArmor: 34, // 34/25
+        shieldStrength: 10, // 10/25
+        length: '7km',
+        maxCrew: 5000, // Assuming 5,000 as per snippet
+        extraRooms: 0, // No value in docx, default to 0
+        rooms: [],
+        energyUse: 0,
+        description: "The Dhyana is a Triglav Innovations dreadnought, known for its immense firepower and advanced design.",
+        image: '/Images/Other/Beatrice R&D.webp'
+    },
+];
+const hulls6 = [];
+const hulls7 = [];
 
 const shipAI = [
   {

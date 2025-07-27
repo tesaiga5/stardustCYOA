@@ -1475,7 +1475,9 @@
 
     import {crew, archetype, addCrewToSection} from '/Script/crewData.js'; // Import crew data
     //populate hulls
-    import {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones} from '/Script/shipData.js';
+    import {hulls1, hulls2,hulls3,hulls4,hulls5,hulls6,hulls7, 
+      shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones
+    } from '/Script/shipData.js';
     //populate equipment
     import {equipment, vehicles, rigs, populateRigs} from '/Script/equipmentData.js';
     //populate spells and unified population function
@@ -1877,7 +1879,13 @@
     choiceHull1.addEventListener('click', () => {
       choiceHull1.classList.toggle('active');
       sectionHull1.classList.toggle('active');
-      populateDataToSection(hulls, 'choice', 'endOfHull', 'hull');
+      populateDataToSection(hulls1, 'choice', 'title-frigates', 'hull');
+      populateDataToSection(hulls2, 'choice', 'title-destroyers', 'hull');
+      populateDataToSection(hulls3, 'choice', 'title-cruisers', 'hull');
+      populateDataToSection(hulls4, 'choice', 'title-battleships', 'hull');
+      populateDataToSection(hulls5, 'choice', 'title-carriers', 'hull');
+      populateDataToSection(hulls6, 'choice', 'title-dreadnoughts', 'hull');
+      populateDataToSection(hulls7, 'choice', 'endOfHull', 'hull');
     });
 
 
