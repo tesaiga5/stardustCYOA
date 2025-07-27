@@ -717,6 +717,39 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
 }
 
 function populateCatalystToSection(choiceArray, choicePrefix, sectionID) {
+  //name, cost, description, image
+  const targetSection = document.getElementById(sectionID);
+  choiceArray.forEach(item => {
+    const newDiv = document.createElement("div");
+    newDiv.classList.add('choice', 'ship');
+    newDiv.id = `${choicePrefix}-${item.name.replace(/\s/g, '-')}`;
+
+    const newSpan = document.createElement("span");
+    newDiv.appendChild(newSpan);
+
+    // Image element - common to all
+    const imgElement = document.createElement('img');
+    imgElement.src = item.image || 'https://placehold.co/100x100/eeeeee/ffffff?text=NoImage';
+    imgElement.alt = `${item.name} image`;
+    newSpan.appendChild(imgElement); // Image added after newSpan
+
+    // Title (name) - common to all
+    const h3Element = document.createElement('h3');
+    h3Element.style.marginTop = '0px';
+    h3Element.style.marginBottom = '0px';
+    h3Element.textContent = item.name || 'No Name';
+    newSpan.appendChild(h3Element);
+  
+    const costP = document.createElement('p');
+    costP.innerHTML = `Cost: ${item.cost}`;
+    newSpan.appendChild(costP);
+
+    const descriptionP = document.createElement("p");
+    descriptionP.innerHTML = item.description || 'No description available.';
+    newSpan.appendChild(descriptionP);
+
+    targetSection.before(newDiv); // Append to the target section
+  });
 
 }
 

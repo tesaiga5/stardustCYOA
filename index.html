@@ -570,7 +570,9 @@
             </div>
         </span>
       </div>
+      
     </div>
+    <div id="endOfAffinities" style ="display: none;"></div>
 
     <div id="origin-spell" >
       <div>
@@ -587,12 +589,14 @@
             <li>Radius: The radius that the spell base physically encompasses.</li>
             <li>Uptime: The duration that the spell base lingers before dissipating.</li>
             <li>Mana Usage: The amount of mana that the spell base takes to cast, taken from the suit's reserves.</li></ul>
-</div>
+          </div>
         </span>
       </div>
     </div>
 
+    <div id="endOfSpell" style ="display: none;"></div>
   </div>
+  
 
   <!--You-Equipment, this will scroll no clickable choices because too long
   dependencies: choice-origin --> 
@@ -1851,6 +1855,8 @@
     choiceOrigin1.addEventListener('click', () => {
       addChoiceDataToSection(skills, 'choice', 'origin-mana'); 
       populateCatalystToSection(catalyst, 'choice', 'endOfCatalyst');
+      populateCatalystToSection(affinity, 'choice', 'endOfAffinities');
+      populateCatalystToSection(spellBases, 'choice', 'endOfSpell');
     });
 
     const choiceTitles1 = document.getElementById('choice-titles');
