@@ -94,6 +94,11 @@ div {
   flex-basis: calc((100% / 5));
 }
 
+.ship1 {
+  flex-basis: calc((100% / 3.4));
+  min-width: 300px;
+}
+
 .choice-sponsor {
   flex-basis: calc((100% / 4))
 }
@@ -399,7 +404,7 @@ body b{
 }
 
 .p-frame {
-  font-size: 15px;
+  font-size: 15px; 
 }
 
 ul {

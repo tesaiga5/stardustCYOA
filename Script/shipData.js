@@ -1,45 +1,43 @@
 // This file contains data for various ship hulls available in the game.
 
-export {hulls1, hulls2,hulls3,hulls4,hulls5,hulls6,hulls7, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
+export {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
         createShip, deleteShip, addHull, addWeapon, addAI,addEnergyGen, addShield, 
         addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom, 
-        resetShipConfigUI, renderShipConfigUI, editShipName};
+        resetShipConfigUI, renderShipConfigUI, editShipName, populateHullToSection};
 
-import { formatterIntl } from "/Script/manaData.js";
+import { formatterIntl, appendParagraph, appendList1 } from "/Script/manaData.js";
 
-
-
-
-// The structure is based on the existing shipData.js forma
-const hulls1 = [
-    // Fighters from 'ship Data.docx'
+const hulls = [
+    // Fighters
     {
+        image: 'Images/Ships/bob009.webp', 
         name: "S92-TMC",
         manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 7000000,
+        type: 'fighter',
+        cost: 7000000,
         spinalMount: 3,
-        spinal: [], // Default empty array
+        spinal: [],
         broadsideMount: 2,
-        broadside: [], // Default empty array
+        broadside: [],
         pointDefenceMount: 4,
-        pointDefence: [], // Default empty array
+        pointDefence: [],
         hangarSpace: 1,
-        hangar: [], // Default empty array
-        navigation: 20, // 20/25
-        hullArmor: 3, // 03/25
-        shieldStrength: 1, // 01/25
+        hangar: [],
+        navigation: 20,
+        hullArmor: 3,
+        shieldStrength: 1,
         length: '18m',
         maxCrew: 1,
         extraRooms: 0,
-        rooms: [], // Default empty array
-        energyUse: 0, // No specific value in docx, default to 0
-        description: "A standard fighter from Hammerhead Industries, equipped for combat.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        rooms: [],
+        energyUse: 0,
+        description: "Perhaps the most basic fighter ship hull you can get that can fit a multi-purpose role, even for out-of combat activities."
     },
     {
-        name: "S97-TRN",
+        image: 'Images/Ships/bob009.webp', name: "S97-TRN",
         manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 9000000,
+        type: 'fighter',
+        cost: 9000000,
         spinalMount: 3,
         spinal: [],
         broadsideMount: 4,
@@ -48,21 +46,21 @@ const hulls1 = [
         pointDefence: [],
         hangarSpace: 0,
         hangar: [],
-        navigation: 20, // 20/25
-        hullArmor: 2, // 02/25
-        shieldStrength: 1, // 01/25
+        navigation: 20,
+        hullArmor: 2,
+        shieldStrength: 1,
         length: '24m',
         maxCrew: 1,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
-        description: "A versatile Hammerhead Industries fighter with enhanced broadside capabilities.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        description: "Perhaps the most common single pilot ship in the galaxy, it's safe to assume that every space-faring group owns at least four. They're affordable and effective."
     },
     {
-        name: "Beyond",
+        image: 'Images/Ships/Beyond_Beatrice_R&D_midjourney.webp', name: "Beyond",
         manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 9000000, // Corrected from 10m in original shipData.js to 9m as per docx
+        type: 'fighter',
+        cost: 9000000,
         spinalMount: 3,
         spinal: [],
         broadsideMount: 2,
@@ -71,21 +69,21 @@ const hulls1 = [
         pointDefence: [],
         hangarSpace: 2,
         hangar: [],
-        navigation: 24, // 24/25
-        hullArmor: 4, // 04/25
-        shieldStrength: 1, // 01/25
+        navigation: 24,
+        hullArmor: 4,
+        shieldStrength: 1,
         length: '16m',
         maxCrew: 2,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
-        description: "The Beyond is a Beatrice R&D fighter known for its advanced navigation systems.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        description: "The Beyond is often employed as a support craft for Beatrice R&D exploration teams, but it often sees its use in intercepting threats."
     },
     {
-        name: "Wasp",
+        image: 'Images/Ships/Algos by EveOnline.jpg', name: "Wasp",
         manufacturer: "Federation Navy",
-        type: 'frigate', cost: 11000000,
+        type: 'fighter',
+        cost: 11000000,
         spinalMount: 3,
         spinal: [],
         broadsideMount: 4,
@@ -94,31 +92,136 @@ const hulls1 = [
         pointDefence: [],
         hangarSpace: 0,
         hangar: [],
-        navigation: 21, // 21/25
-        hullArmor: 4, // 04/25
-        shieldStrength: 0, // No value in docx, default to 0
-        length: '14m', // No value in docx, default to 0
+        navigation: 21,
+        hullArmor: 4,
+        shieldStrength: 1,
+        length: '20m',
         maxCrew: 1,
         extraRooms: 0,
         rooms: [],
         energyUse: 0,
-        description: "A nimble fighter used by the Federation Navy.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        description: "The main interceptor spacecraft for the Federation Navy, Wasps have become an icon. Most pilots learn how to fly one early on, and many tend to stick with this ship."
     },
-
-    // Frigates from 'ship Data.docx'
-    
-
-    
-
-    
-
-    
-    // New entries from 'Page 2 Stardust.md'
     {
-        name: "PI V18",
+        image: 'Images/Ships/bob009.webp', name: "Moth",
+        manufacturer: "Federation Navy",
+        type: 'fighter',
+        cost: 13000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 4,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 3,
+        hangar: [],
+        navigation: 18,
+        hullArmor: 5,
+        shieldStrength: 1,
+        length: '26m',
+        maxCrew: 2,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "Usually escorted by Wasps, the Moths carry the firepower to the battlefield. A common tactic is to load Moths up with bomber drones to overwhelm enemy heavy ships."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Tomahawk",
+        manufacturer: "Red Dagger Pirates",
+        type: 'fighter',
+        cost: 13000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 4,
+        broadside: [],
+        pointDefenceMount: 2,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 24,
+        hullArmor: 2,
+        shieldStrength: 1,
+        length: '18m',
+        maxCrew: 1,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "The Red Daggers produce these en masse, likely using stolen tech. While rookies usually fly them, these lightning-fast Tomahawks pose a serious threat to convoys."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "PI V17",
         manufacturer: "Pulsar Inc.",
-        type: 'frigate', cost: 15000000, // "15m"
+        type: 'fighter',
+        cost: 13000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 4,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 3,
+        hangar: [],
+        navigation: 22,
+        hullArmor: 4,
+        shieldStrength: 1,
+        length: '24m',
+        maxCrew: 2,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "Most pilots strive to fly one of these, if only for the sheer comfort of being in its cockpit. For any solo pilot wishing to travel the unknown, this is the ship to be in."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Pike",
+        manufacturer: "Red Dagger Pirates",
+        type: 'fighter',
+        cost: 15000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 6,
+        broadside: [],
+        pointDefenceMount: 2,
+        pointDefence: [],
+        hangarSpace: 1,
+        hangar: [],
+        navigation: 22,
+        hullArmor: 2,
+        shieldStrength: 1,
+        length: '21m',
+        maxCrew: 2,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "When the Daggers get serious, they deploy their fearsome assault fighters, the Pikes. These ships often turn the tide in small confrontations and skirmishes."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "X61 Stark",
+        manufacturer: "Triglav Innovations",
+        type: 'fighter',
+        cost: 15000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 4,
+        broadside: [],
+        pointDefenceMount: 2,
+        pointDefence: [],
+        hangarSpace: 2,
+        hangar: [],
+        navigation: 21,
+        hullArmor: 3,
+        shieldStrength: 3,
+        length: '24m',
+        maxCrew: 1,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "Only recently did the scientists at Triglav reverse-engineer the strange green coating of Herald craft. The X61 Stark reflects this with powerful native shields."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Knight",
+        manufacturer: "Blackhawk Elite",
+        type: 'fighter',
+        cost: 18000000,
         spinalMount: 4,
         spinal: [],
         broadsideMount: 4,
@@ -127,206 +230,858 @@ const hulls1 = [
         pointDefence: [],
         hangarSpace: 3,
         hangar: [],
-        navigation: 4, // "04/25"
-        hullArmor: 2, // "02/25"
-        shieldStrength: 1, // "01/25"
+        navigation: 20,
+        hullArmor: 5,
+        shieldStrength: 1,
+        length: '28m',
+        maxCrew: 1,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "What It lacks in agility, the Knight makes up for in its powerful thrust- ers. As a solid assault fighter, the Knight boasts sturdy defence with a generous drone bay."
+    },
+    {
+        image: 'Images/Ships/long-ouyang-fighter-4000.webp', 
+        name: "Yōkai",
+        manufacturer: "Talons",
+        type: 'fighter',
+        cost: 18000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 6,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 22,
+        hullArmor: 3,
+        shieldStrength: 1,
+        length: '23m',
+        maxCrew: 1,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "A favourite for elite Talon pilots who often venture out alone, mainly because the Yōkai excels at almost every role, especially when it comes to outgunning opponents."
+    },
+    {
+        image: 'Images/Ships/ship-coercer EveOnline.jpg', name: "Scab",
+        manufacturer: "Heralds",
+        type: 'fighter',
+        cost: 30000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 6,
+        broadside: [],
+        pointDefenceMount: 2,
+        pointDefence: [],
+        hangarSpace: 2,
+        hangar: [],
+        navigation: 23,
+        hullArmor: 6,
+        shieldStrength: 3,
+        length: '25m',
+        maxCrew: 2,
+        extraRooms: 0,
+        rooms: [],
+        energyUse: 0,
+        description: "Unlike most Herald tech, \"Scabs\" are often found in abundance. Whoever they were, the Heralds most definitely loved to swarm their enemies with these."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "PI V18",
+        manufacturer: "Pulsar Inc.",
+        type: 'fighter',
+        cost: 15000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 4,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 3,
+        hangar: [],
+        navigation: 22,
+        hullArmor: 4,
+        shieldStrength: 1,
         length: '24m',
         maxCrew: 2,
         extraRooms: 0,
         rooms: [],
         energyUse: 1,
-        description: "Integrated PI Control V6 may be installed without occupying slots. Although Pulsar's next generation fighter is only in an incremental improvement on its previous efforts, the integrated PIO system is a classy touch that leaves room for a second command module. It is still very comfortable, and has a cozy cabin area for longer voyages.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        description: "Although Pulsar’s next generation fighter is only an incremental improvement on its previous efforts, the integrated V6 system is a classy touch that leaves room for a second command module."
     },
     {
-        name: "X66 \\Omen\\",
+        image: 'Images/Ships/bob008.webp', name: "X66 “Omen”",
         manufacturer: "Triglav Innovations",
-        type: 'frigate', cost: 20000000, // "20m"
-        spinalMount: 3,
+        type: 'fighter',
+        cost: 20000000,
+        spinalMount: 5,
         spinal: [],
-        broadsideMount: 4,
+        broadsideMount: 3,
         broadside: [],
-        pointDefenceMount: 2,
+        pointDefenceMount: 3,
         pointDefence: [],
-        hangarSpace: 1,
+        hangarSpace: 2,
         hangar: [],
-        navigation: 24, // "24/25"
-        hullArmor: 2, // "02/25"
-        shieldStrength: 2, // "02/25"
+        navigation: 24,
+        hullArmor: 3,
+        shieldStrength: 2,
         length: '18m',
         maxCrew: 1,
         extraRooms: 0,
         rooms: [],
         energyUse: 1,
-        description: "May perform missions for a mech, dropship, or drone. Incorporates integrated power capacitor to X66. With both automated flight and extended reconnaissance. While capable of carrying a pilot, it doesn't like it.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        description: "The X66 is a fully autonomous drone fighter adept at assault, ambush, and extended reconnaissance. While capable of carrying a pilot, it doesn't likely need one."
     },
     {
-        name: "Cygnus",
+        image: 'Images/Ships/bob007.webp', name: "Cygnus",
         manufacturer: "Talons",
-        type: 'frigate', cost: 30000000, // "30m"
+        type: 'fighter',
+        cost: 20000000,
         spinalMount: 4,
         spinal: [],
         broadsideMount: 6,
         broadside: [],
         pointDefenceMount: 2,
         pointDefence: [],
-        hangarSpace: 3,
+        hangarSpace: 2,
         hangar: [],
-        navigation: 22, // "22/25"
-        hullArmor: 2, // "02/25"
-        shieldStrength: 2, // "02/25"
-        length: '23m',
+        navigation: 24,
+        hullArmor: 3,
+        shieldStrength: 2,
+        length: '21m',
         maxCrew: 2,
         extraRooms: 0,
         rooms: [],
         energyUse: 1,
-        description: "Digital Security may be installed without occupying slots. Recognizing the increasing uselessness of drone warfare, the Talon developed the Cygnus command and control fighter. It is fast and has a good range. The Federation finds the recent advances in the sophistication of Talon engineering concerning.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        description: "Recognizing the increasing usefulness of drone warfare, the Talon developed the Cygnus command and control fighter as a test bed for their new squadron synchronization system."
     },
     {
-        name: "Scorpion",
+        image: 'Images/Ships/bob006.webp', name: "Scorpion",
         manufacturer: "Heralds",
-        type: 'frigate', cost: 36000000, // "36m"
-        spinalMount: 4,
+        type: 'fighter',
+        cost: 36000000,
+        spinalMount: 6,
         spinal: [],
-        broadsideMount: 6,
+        broadsideMount: 4,
         broadside: [],
-        pointDefenceMount: 2,
+        pointDefenceMount: 4,
         pointDefence: [],
         hangarSpace: 3,
         hangar: [],
-        navigation: 24, // "24/25"
-        hullArmor: 2, // "02/25"
-        shieldStrength: 2, // "02/25"
+        navigation: 25,
+        hullArmor: 5,
+        shieldStrength: 3,
         length: '25m',
         maxCrew: 2,
         extraRooms: 0,
         rooms: [],
         energyUse: 2,
-        description: "May perform missions for a mech, dropship, or submarine. The \"Scorpion\" is a multi-environment fighter whose field-linked modules allow it to operate effectively in an atmosphere and perform a wide variety of tasks.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        description: "The “Scorpion” is a multi-environment fighter whose field-linked modules and gravity drive place it in the newly discovered “Ghul” family of Herald technologies. Its unconventional propulsion allows it to maneuver effortlessly in an atmosphere."
     },
+
+    // Frigates
     {
-        name: "Hermes",
-        manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 16000000, // "16m"
-        spinalMount: 2,
-        spinal: [],
-        broadsideMount: 6,
-        broadside: [],
-        pointDefenceMount: 4,
-        pointDefence: [],
-        hangarSpace: 2,
-        hangar: [],
-        navigation: 21, // "21/25"
-        hullArmor: 2, // "02/25"
-        shieldStrength: 2, // "02/25"
-        length: '49m',
-        maxCrew: 5,
-        extraRooms: 1,
-        rooms: [],
-        energyUse: 2,
-        description: "The Hermes is useful as a shuttle or scout craft for Beatrice's larger ships. But it has also become a popular courier ship on its own merits.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Dirk",
-        manufacturer: "Red Dagger Pirates",
-        type: 'frigate', cost: 19000000, // "19m"
-        spinalMount: 4,
-        spinal: [],
-        broadsideMount: 2,
-        broadside: [],
-        pointDefenceMount: 1,
-        pointDefence: [],
-        hangarSpace: 1,
-        hangar: [],
-        navigation: 23, // "23/25"
-        hullArmor: 2, // "02/25"
-        shieldStrength: 2, // "02/25"
-        length: '46m',
-        maxCrew: 3,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 2,
-        description: "Don't be fooled by its small size. The Dirk never travels alone. These scout ships are always on the lookout for new prey, and are notorious for jamming a victim's warp drive while calling in their mothership for the kill.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "PI Vk2",
-        manufacturer: "Pulsar Inc.",
-        type: 'frigate', cost: 20000000, // "20m"
+        image: 'Images/Ships/Corax by EveOnline.jpg', name: "S47-LTM",
+        manufacturer: "Hammerhead Ind.",
+        type: 'frigate',
+        cost: 18000000,
         spinalMount: 3,
         spinal: [],
         broadsideMount: 6,
         broadside: [],
         pointDefenceMount: 4,
         pointDefence: [],
-        hangarSpace: 1,
+        hangarSpace: 4,
         hangar: [],
-        navigation: 20, // "20/25"
-        hullArmor: 2, // "02/25"
-        shieldStrength: 2, // "02/25"
-        length: '50m',
-        maxCrew: 5,
-        extraRooms: 0,
+        navigation: 15,
+        hullArmor: 6,
+        shieldStrength: 2,
+        length: '120m',
+        maxCrew: 12,
+        extraRooms: 7,
         rooms: [],
-        energyUse: 2,
-        description: "The PI Vk2 is often used as a shuttle for civilian liners or a luxury yacht for wealthy businessmen. Roomy, spacious, and surprisingly comfortable, the Vk2 is an increasingly common sight.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 1,
+        description: "A cheap frigate that was initially designed as a hauling ship, but has since seen universal use across the galaxy. For its price, it can be used in any application."
     },
     {
-        name: "Morning Star",
-        manufacturer: "Talons",
-        type: 'frigate', cost: 28000000, // "28m"
+        image: 'Images/Ships/Missile Frigate Animation by DionStabber.gif', name: "M8-GG",
+        manufacturer: "Hammerhead Ind.",
+        type: 'frigate',
+        cost: 20000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 8,
+        broadside: [],
+        pointDefenceMount: 3,
+        pointDefence: [],
+        hangarSpace: 3,
+        hangar: [],
+        navigation: 16,
+        hullArmor: 5,
+        shieldStrength: 3,
+        length: '135m',
+        maxCrew: 12,
+        extraRooms: 7,
+        rooms: [],
+        energyUse: 1,
+        description: "These were discontinued by Hammerhead Industries after receiving pressure from the Blackhawks; they claim that the M8-GG was too prevalent in bandit doctrines."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Venture",
+        manufacturer: "Beatrice R&D",
+        type: 'frigate',
+        cost: 22000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 8,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 5,
+        hangar: [],
+        navigation: 19,
+        hullArmor: 8,
+        shieldStrength: 3,
+        length: '118m',
+        maxCrew: 7,
+        extraRooms: 9,
+        rooms: [],
+        energyUse: 1,
+        description: "A common frigate frequently put to use at Beatrice R&D. Not only is it ideal for exploration with its exceptional navigation systems, it can also hold its own in a fight."
+    },
+    {
+        image: 'Images/Ships/SSTO gunship by Aleksandre Lortkipanidze.webp', name: "Skate",
+        manufacturer: "Federation Navy",
+        type: 'frigate',
+        cost: 24000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 10,
+        broadside: [],
+        pointDefenceMount: 5,
+        pointDefence: [],
+        hangarSpace: 2,
+        hangar: [],
+        navigation: 17,
+        hullArmor: 7,
+        shieldStrength: 3,
+        length: '115m',
+        maxCrew: 12,
+        extraRooms: 7,
+        rooms: [],
+        energyUse: 1,
+        description: "Skates are the Navy's primary patrol craft, and are also a favorite for local security forces. Its high mobility also earns its use as an effective scout ship."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Rhino",
+        manufacturer: "Federation Navy",
+        type: 'frigate',
+        cost: 24000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 6,
+        broadside: [],
+        pointDefenceMount: 8,
+        pointDefence: [],
+        hangarSpace: 8,
+        hangar: [],
+        navigation: 15,
+        hullArmor: 9,
+        shieldStrength: 3,
+        length: '138m',
+        maxCrew: 13,
+        extraRooms: 8,
+        rooms: [],
+        energyUse: 1,
+        description: "The Navy loves their drone ships, and the Rhino mirrors that mentality to a tee. Rhinos are a favorite for star system security, often supported by Wasps and Moths."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Viper",
+        manufacturer: "Federation Navy",
+        type: 'frigate',
+        cost: 26000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 10,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 4,
+        hangar: [],
+        navigation: 16,
+        hullArmor: 10,
+        shieldStrength: 3,
+        length: '134m',
+        maxCrew: 12,
+        extraRooms: 8,
+        rooms: [],
+        energyUse: 1,
+        description: "Sometimes seen as the backbone of the Navy, the Viper packs a punch. It's primarily designed for assault purposes and sees a lot of action in naval warfare."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Sabre",
+        manufacturer: "Red Dagger Pirates",
+        type: 'frigate',
+        cost: 26000000,
         spinalMount: 4,
         spinal: [],
         broadsideMount: 10,
         broadside: [],
-        pointDefenceMount: 2,
+        pointDefenceMount: 4,
         pointDefence: [],
-        hangarSpace: 1,
+        hangarSpace: 2,
         hangar: [],
-        navigation: 20, // "20/25"
-        hullArmor: 2, // "02/25"
-        shieldStrength: 2, // "02/25"
-        length: '65m',
-        maxCrew: 8,
-        extraRooms: 0,
+        navigation: 20,
+        hullArmor: 6,
+        shieldStrength: 3,
+        length: '124m',
+        maxCrew: 11,
+        extraRooms: 7,
         rooms: [],
-        energyUse: 2,
-        description: "The Morning Star is one of the earliest corvettes, and one of the most successful. Highly adaptable, it can fill the role of scout, interceptor, light support, heavy fighter, or planetary landing craft.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 1,
+        description: "Intimidating in design, the mere presence of the Sabre is sure to raise many hairs. When a Sabre comes in, many unfortunate victims know they have no chance."
     },
     {
-        name: "Shrike",
-        manufacturer: "Heralds",
-        type: 'frigate', cost: 45000000, // "45m"
-        spinalMount: 5,
+        image: 'Images/Ships/bob009.webp', name: "PI Vf8",
+        manufacturer: "Pulsar Inc.",
+        type: 'frigate',
+        cost: 28000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 8,
+        broadside: [],
+        pointDefenceMount: 7,
+        pointDefence: [],
+        hangarSpace: 6,
+        hangar: [],
+        navigation: 18,
+        hullArmor: 8,
+        shieldStrength: 3,
+        length: '122m',
+        maxCrew: 15,
+        extraRooms: 9,
+        rooms: [],
+        energyUse: 1,
+        description: "Pulsar's state-of-the-art exploration ship, the PI Vf8 can also find itself in more industrious roles. That said, its core functionality is deep- space exploration."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "X12 Crypt",
+        manufacturer: "Triglav Innovations",
+        type: 'frigate',
+        cost: 30000000,
+        spinalMount: 4,
         spinal: [],
         broadsideMount: 10,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 2,
+        hangar: [],
+        navigation: 17,
+        hullArmor: 9,
+        shieldStrength: 3,
+        length: '140m',
+        maxCrew: 13,
+        extraRooms: 9,
+        rooms: [],
+        energyUse: 1,
+        description: "The origins of the X12 Crypt is still kept hush-hush by Triglav, but its capabilities at navigation as well as firepower easily put it at odds with Stalwarts or Rulsaklas."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Stalwart",
+        manufacturer: "Blackhawk Elite",
+        type: 'frigate',
+        cost: 33000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 10,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 6,
+        hangar: [],
+        navigation: 14,
+        hullArmor: 11,
+        shieldStrength: 3,
+        length: '136m',
+        maxCrew: 14,
+        extraRooms: 9,
+        rooms: [],
+        energyUse: 1,
+        description: "With the heavily organized structure of the Blackhawk armadas, many merc squads find themselves inside one of these heavily armoured ships sooner or later."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Rusalka",
+        manufacturer: "Talons",
+        type: 'frigate',
+        cost: 34000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 12,
+        broadside: [],
+        pointDefenceMount: 5,
+        pointDefence: [],
+        hangarSpace: 3,
+        hangar: [],
+        navigation: 17,
+        hullArmor: 7,
+        shieldStrength: 3,
+        length: '139m',
+        maxCrew: 12,
+        extraRooms: 8,
+        rooms: [],
+        energyUse: 1,
+        description: "Rusalkas are known to be capable of taking on heavier hulls. Whether it's because of its efficient design or that it's mostly piloted by skilled Talon pilots is up for debate."
+    },
+    {
+        image: 'Images/Ships/Chremoas Frigate by EveOnline.jpg', name: "Grin",
+        manufacturer: "Heralds",
+        type: 'frigate',
+        cost: 60000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 12,
+        broadside: [],
+        pointDefenceMount: 2,
+        pointDefence: [],
+        hangarSpace: 5,
+        hangar: [],
+        navigation: 18,
+        hullArmor: 9,
+        shieldStrength: 4,
+        length: '132m',
+        maxCrew: 9,
+        extraRooms: 8,
+        rooms: [],
+        energyUse: 1,
+        description: "Part of the \"Ghost\" family of Herald tech, the \"Grin\" took Triglav scientists almost a century to figure out. It was this ship where they discovered mana shielding."
+    },
+    // Corvettes (using Frigate rules) from stardust-powercreep-dlc-by-bob-grue-1.txt
+    {
+        image: 'Images/Ships/Levy 9 heavy torpedo corvette-Infinite Lagrange by Jie Ni.jpg', name: "Hermes",
+        manufacturer: "Beatrice R&D",
+        type: 'corvette',
+        cost: 20000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 3,
         broadside: [],
         pointDefenceMount: 2,
         pointDefence: [],
         hangarSpace: 1,
         hangar: [],
-        navigation: 21, // "21/25"
-        hullArmor: 7, // "07/25"
-        shieldStrength: 3, // "03/25"
-        length: '70m',
-        maxCrew: 10,
-        extraRooms: 0,
+        navigation: 21,
+        hullArmor: 6,
+        shieldStrength: 2,
+        length: '45m',
+        maxCrew: 2,
+        extraRooms: 2,
         rooms: [],
-        energyUse: 3,
-        description: "The Shrike is usually found as a plaything of the super rich, who take pains to outfit them in the most expensive way possible.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 1,
+        description: "The Hermes is useful as a shuttle or scout craft for Beatrice's larger ships. It has also become a popular courier ship on its own merits."
     },
     {
-        name: "Medusa",
-        manufacturer: "Heralds",
-        type: 'frigate', cost: 74000000, // "74m"
+        image: 'Images/Ships/bob004.webp', name: "Dirk",
+        manufacturer: "Red Dagger Pirates",
+        type: 'corvette',
+        cost: 20000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 3,
+        broadside: [],
+        pointDefenceMount: 2,
+        pointDefence: [],
+        hangarSpace: 1,
+        hangar: [],
+        navigation: 22,
+        hullArmor: 4,
+        shieldStrength: 2,
+        length: '61m',
+        maxCrew: 2,
+        extraRooms: 2,
+        rooms: [],
+        energyUse: 1,
+        description: "Don't be fooled by its small size. The Dirk never travels alone. These scout ships are always on the lookout for new prey, and are notorious for jamming a victim's warp drive while calling in their mothership."
+    },
+    {
+        image: 'Images/Ships/bob002.webp', name: "PI Vk2",
+        manufacturer: "Pulsar Inc.",
+        type: 'corvette',
+        cost: 20000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 3,
+        broadside: [],
+        pointDefenceMount: 2,
+        pointDefence: [],
+        hangarSpace: 1,
+        hangar: [],
+        navigation: 20,
+        hullArmor: 6,
+        shieldStrength: 2,
+        length: '54m',
+        maxCrew: 2,
+        extraRooms: 2,
+        rooms: [],
+        energyUse: 1,
+        description: "The PI Vk2 is often used as a shuttle for couriers or a luxury yacht for wealthy businessmen. Fast, spacious, and surprisingly comfortable, the Vk2 is an increasingly common sight."
+    },
+    {
+        image: 'Images/Ships/bob001.webp', name: "Morning Star",
+        manufacturer: "Federation Navy",
+        type: 'corvette',
+        cost: 20000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 3,
+        broadside: [],
+        pointDefenceMount: 2,
+        pointDefence: [],
+        hangarSpace: 1,
+        hangar: [],
+        navigation: 20,
+        hullArmor: 5,
+        shieldStrength: 2,
+        length: '65m',
+        maxCrew: 2,
+        extraRooms: 2,
+        rooms: [],
+        energyUse: 1,
+        description: "The Morning Star is one of the earliest corvettes, and one of the most successful. Highly adaptable, it can fill the role of scout, interceptor, wing support, heavy fighter, or planetary landing craft."
+    },
+    {
+        image: 'Images/Ships/bob003.webp', name: "Shrike",
+        manufacturer: "Blackhawk Elite",
+        type: 'corvette',
+        cost: 20000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 3,
+        broadside: [],
+        pointDefenceMount: 3,
+        pointDefence: [],
+        hangarSpace: 1,
+        hangar: [],
+        navigation: 21,
+        hullArmor: 7,
+        shieldStrength: 3,
+        length: '70m',
+        maxCrew: 3,
+        extraRooms: 3,
+        rooms: [],
+        energyUse: 2,
+        description: "The Shrike is usually found as a plaything of the super rich, who take pains to outfit them in the most expensive way possible."
+    },
+
+    // Destroyers
+    {
+        image: 'Images/Ships/entangled-studio-ent-x4-veh-ship-ter-xl-builder-01.webp', name: "K792-UN4",
+        manufacturer: "Hammerhead Ind.",
+        type: 'destroyer',
+        cost: 24000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 8,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 8,
+        hangar: [],
+        navigation: 12,
+        hullArmor: 10,
+        shieldStrength: 3,
+        length: '210m',
+        maxCrew: 32,
+        extraRooms: 10,
+        rooms: [],
+        energyUse: 2,
+        description: "This hull was produced primarily for security forces for when security situations become critical. You can bet that most star systems have these for emergencies."
+    },
+    {
+        image: 'Images/Ships/Cargo Spaceship [Part II] by Jakub Wysocki.webp', name: "V77-SLT",
+        manufacturer: "Hammerhead Ind.",
+        type: 'destroyer',
+        cost: 26000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 10,
+        broadside: [],
+        pointDefenceMount: 3,
+        pointDefence: [],
+        hangarSpace: 5,
+        hangar: [],
+        navigation: 12,
+        hullArmor: 10,
+        shieldStrength: 4,
+        length: '240m',
+        maxCrew: 40,
+        extraRooms: 12,
+        rooms: [],
+        energyUse: 2,
+        description: "Originally a hauler hull that was repurposed for war during the Pirate War, long ago. Its relatively thick armour coupled with wide- spread availability was ideal."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Voyage",
+        manufacturer: "Beatrice R&D",
+        type: 'destroyer',
+        cost: 26000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 8,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 9,
+        hangar: [],
+        navigation: 13,
+        hullArmor: 10,
+        shieldStrength: 4,
+        length: '242m',
+        maxCrew: 46,
+        extraRooms: 15,
+        rooms: [],
+        energyUse: 2,
+        description: "While classified as a destroyer- class hull, the Voyage often finds itself in courier or personnel transport jobs. Being in one can almost ensure your safe travels."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Dart",
+        manufacturer: "Red Dagger Pirates",
+        type: 'destroyer',
+        cost: 28000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 10,
+        broadside: [],
+        pointDefenceMount: 5,
+        pointDefence: [],
+        hangarSpace: 6,
+        hangar: [],
+        navigation: 16,
+        hullArmor: 9,
+        shieldStrength: 4,
+        length: '223m',
+        maxCrew: 38,
+        extraRooms: 10,
+        rooms: [],
+        energyUse: 2,
+        description: "The Dart is a destroyer hull that often sees its roles in convoy escort or scouting for something the Red Daggers deem valuable."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Wolf",
+        manufacturer: "Federation Navy",
+        type: 'destroyer',
+        cost: 28000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 8,
+        broadside: [],
+        pointDefenceMount: 5,
+        pointDefence: [],
+        hangarSpace: 10,
+        hangar: [],
+        navigation: 10,
+        hullArmor: 12,
+        shieldStrength: 4,
+        length: '236m',
+        maxCrew: 44,
+        extraRooms: 13,
+        rooms: [],
+        energyUse: 2,
+        description: "The Wolf got its name from the classical Navy doctrine of 3-5 of these hulls roaming the outskirts like a pack. When they catch scent of prey, there's no turning back."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Longbow",
+        manufacturer: "Red Dagger Pirates",
+        type: 'destroyer',
+        cost: 30000000,
         spinalMount: 6,
+        spinal: [],
+        broadsideMount: 10,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 6,
+        hangar: [],
+        navigation: 14,
+        hullArmor: 10,
+        shieldStrength: 4,
+        length: '235m',
+        maxCrew: 42,
+        extraRooms: 12,
+        rooms: [],
+        energyUse: 2,
+        description: "When the Daggers go to war, they bring out their Longbows. They're supremely agile for destroyers and have a huge amount of firepower."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Vulture",
+        manufacturer: "Federation Navy",
+        type: 'destroyer',
+        cost: 30000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 14,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 6,
+        hangar: [],
+        navigation: 11,
+        hullArmor: 13,
+        shieldStrength: 4,
+        length: '229m',
+        maxCrew: 42,
+        extraRooms: 12,
+        rooms: [],
+        energyUse: 2,
+        description: "Unlike its namesake, the Vulture hull is for direct confrontations. They're notorious for being able to take a beating while still dishing out decent firepower."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "PI Vd3",
+        manufacturer: "Pulsar Inc.",
+        type: 'destroyer',
+        cost: 32000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 12,
+        broadside: [],
+        pointDefenceMount: 7,
+        pointDefence: [],
+        hangarSpace: 10,
+        hangar: [],
+        navigation: 13,
+        hullArmor: 11,
+        shieldStrength: 4,
+        length: '252m',
+        maxCrew: 56,
+        extraRooms: 15,
+        rooms: [],
+        energyUse: 2,
+        description: "This hull is one of the rare few that Pulsar created for the sole purpose of combat. In particular, they're made almost exclusively to escort deep-space exploration craft."
+    },
+    {
+        image: 'Images/Ships/Belvor by Thibault Girard.webp', name: "X33 Tribe",
+        manufacturer: "Triglav Innovations",
+        type: 'destroyer',
+        cost: 36000000,
+        spinalMount: 6,
+        spinal: [],
+        broadsideMount: 12,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 7,
+        hangar: [],
+        navigation: 13,
+        hullArmor: 12,
+        shieldStrength: 4,
+        length: '247m',
+        maxCrew: 44,
+        extraRooms: 14,
+        rooms: [],
+        energyUse: 2,
+        description: "The X33 Tribe is an extremely rare vessel, likely from not having been mass produced by Triglav. It's speculated that it's an early design for experimentation purposes."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Viking",
+        manufacturer: "Blackhawk Elite",
+        type: 'destroyer',
+        cost: 42000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 14,
+        broadside: [],
+        pointDefenceMount: 5,
+        pointDefence: [],
+        hangarSpace: 11,
+        hangar: [],
+        navigation: 10,
+        hullArmor: 14,
+        shieldStrength: 4,
+        length: '255m',
+        maxCrew: 48,
+        extraRooms: 13,
+        rooms: [],
+        energyUse: 2,
+        description: "Vikings often form up the majority of the support firepower in Black- hawk fleets. Many also find themselves in Blackhawk blockades, set up around the outer rims."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Acheri",
+        manufacturer: "Talons",
+        type: 'destroyer',
+        cost: 45000000,
+        spinalMount: 6,
+        spinal: [],
+        broadsideMount: 14,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 7,
+        hangar: [],
+        navigation: 14,
+        hullArmor: 11,
+        shieldStrength: 4,
+        length: '244m',
+        maxCrew: 46,
+        extraRooms: 12,
+        rooms: [],
+        energyUse: 2,
+        description: "Despite its capability of excelling at almost any task, the Acheri is never alone. When the Talons want to win, they'll throw in more than one of these just to be sure."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Carapace",
+        manufacturer: "Heralds",
+        type: 'destroyer',
+        cost: 70000000,
+        spinalMount: 7,
+        spinal: [],
+        broadsideMount: 14,
+        broadside: [],
+        pointDefenceMount: 5,
+        pointDefence: [],
+        hangarSpace: 10,
+        hangar: [],
+        navigation: 16,
+        hullArmor: 13,
+        shieldStrength: 5,
+        length: '237m',
+        maxCrew: 36,
+        extraRooms: 12,
+        rooms: [],
+        energyUse: 2,
+        description: "Long, slender, and organic-looking, the \"Carapace\" hull is an extremely rare sight. Only those who don't mind the attention of others fly these."
+    },
+
+    // Cruisers
+    {
+        image: 'Images/Ships/bob009.webp', name: "S07-DD",
+        manufacturer: "Hammerhead Ind.",
+        type: 'cruiser',
+        cost: 40000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 12,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 7,
+        hangar: [],
+        navigation: 6,
+        hullArmor: 12,
+        shieldStrength: 6,
+        length: '497m',
+        maxCrew: 250,
+        extraRooms: 12,
+        rooms: [],
+        energyUse: 3,
+        description: "A popular ship among new merc companies looking to get an effective start, mainly due to the cost factor allowing quick fleet assembly of cruiser-class hulls."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "TCO-7B",
+        manufacturer: "Hammerhead Ind.",
+        type: 'cruiser',
+        cost: 42000000,
+        spinalMount: 2,
         spinal: [],
         broadsideMount: 14,
         broadside: [],
@@ -334,44 +1089,298 @@ const hulls1 = [
         pointDefence: [],
         hangarSpace: 10,
         hangar: [],
-        navigation: 17, // "17/25"
-        hullArmor: 12, // "12/25"
-        shieldStrength: 5, // "05/25"
-        length: '245m',
-        maxCrew: 42,
-        extraRooms: 1,
+        navigation: 5,
+        hullArmor: 13,
+        shieldStrength: 6,
+        length: '512m',
+        maxCrew: 300,
+        extraRooms: 14,
         rooms: [],
-        energyUse: 4,
-        description: "Fast and deadly, the \"Medusa\" is the quintessential raider. However the large number of point-defense mounts suggest the Heralds designed it as an escort vessel.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 3,
+        description: "This is the main support vessel for the venerable Security corporation, who dedicate themselves to guarding the assets of companies such as Beatrice or Pulsar."
     },
     {
-        name: "Rapier",
-        manufacturer: "Red Dagger",
-        type: 'frigate', cost: 40000000, // "40m"
+        image: 'Images/Ships/bob009.webp', name: "Prospect",
+        manufacturer: "Beatrice R&D",
+        type: 'cruiser',
+        cost: 44000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 10,
+        broadside: [],
+        pointDefenceMount: 8,
+        pointDefence: [],
+        hangarSpace: 9,
+        hangar: [],
+        navigation: 8,
+        hullArmor: 13,
+        shieldStrength: 7,
+        length: '480m',
+        maxCrew: 320,
+        extraRooms: 16,
+        rooms: [],
+        energyUse: 3,
+        description: "Prospect hulls are seldom a common sight, but that's their purpose. These vessels tend to keep a low profile and are avid at avoiding unnecessary conflict."
+    },
+    {
+        image: 'Images/Ships/Jeanne d\'Arc by admiralkew.webp', name: "Joan of Arc",
+        manufacturer: "Federation Navy",
+        type: 'cruiser',
+        cost: 48000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 18,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 14,
+        hangar: [],
+        navigation: 6,
+        hullArmor: 14,
+        shieldStrength: 6,
+        length: '491m',
+        maxCrew: 310,
+        extraRooms: 13,
+        rooms: [],
+        energyUse: 3,
+        description: "In any Navy armada doctrine, you're bound to find a lot of the front-line brawler Manticore hulls. Many Joan pilots often zealously charge into battle."
+    },
+    {
+        image: 'Images/Ships/Heavy cruiser by Pyrrhus Draws.jpeg', name: "Chimera",
+        manufacturer: "Federation Navy",
+        type: 'cruiser',
+        cost: 48000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 12,
+        broadside: [],
+        pointDefenceMount: 8,
+        pointDefence: [],
+        hangarSpace: 8,
+        hangar: [],
+        navigation: 4,
+        hullArmor: 16,
+        shieldStrength: 6,
+        length: '488m',
+        maxCrew: 290,
+        extraRooms: 14,
+        rooms: [],
+        energyUse: 3,
+        description: "Supporting Joans from the back lines are the Chimeras, their brothers-in-arms. They're mostly drone ships, but they can hold their own in a gun fight."
+    },
+    {
+        image: 'Images/Ships/Laevatain class Battlecruiser by Jie Ni.webp', name: "Glaive",
+        manufacturer: "Red Dagger Pirates",
+        type: 'cruiser',
+        cost: 52000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 18,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 14,
+        hangar: [],
+        navigation: 8,
+        hullArmor: 12,
+        shieldStrength: 6,
+        length: '502m',
+        maxCrew: 280,
+        extraRooms: 12,
+        rooms: [],
+        energyUse: 3,
+        description: "Every pirate group in the Red Daggers has a leader, and you can bet that most of them fly a Glaive. This cruiser hull is the perfect flagship for such swift-moving pirates."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "PI VC9",
+        manufacturer: "Pulsar Inc.",
+        type: 'cruiser',
+        cost: 54000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 14,
+        broadside: [],
+        pointDefenceMount: 9,
+        pointDefence: [],
+        hangarSpace: 17,
+        hangar: [],
+        navigation: 6,
+        hullArmor: 17,
+        shieldStrength: 6,
+        length: '523m',
+        maxCrew: 340,
+        extraRooms: 17,
+        rooms: [],
+        energyUse: 3,
+        description: "If you're looking for a hull to enter and never have the need to leave, this is it. This is the epitome of deep-space exploration, packed with the brunt of Pulsar's tech."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "X21 Riptide",
+        manufacturer: "Triglav Innovations",
+        type: 'cruiser',
+        cost: 58000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 18,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 10,
+        hangar: [],
+        navigation: 15,
+        hullArmor: 15,
+        shieldStrength: 7,
+        length: '514m',
+        maxCrew: 310,
+        extraRooms: 14,
+        rooms: [],
+        energyUse: 3,
+        description: "A size down-grade of the X7 Phantom, the X21 Riptide has received nothing but praise in its performance at the battle of the Solaria system in the Luos war."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Orestes",
+        manufacturer: "Luos Syndicate",
+        type: 'cruiser',
+        cost: 60000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 20,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 13,
+        hangar: [],
+        navigation: 5,
+        hullArmor: 18,
+        shieldStrength: 6,
+        length: '480m',
+        maxCrew: 320,
+        extraRooms: 15,
+        rooms: [],
+        energyUse: 3,
+        description: "The Orestes was produced so much that despite the Syndicate losing almost all of its armada, many intact Orestes hulls found their ways onto the market."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Myrmidon",
+        manufacturer: "Blackhawk Elite",
+        type: 'cruiser',
+        cost: 54000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 20,
+        broadside: [],
+        pointDefenceMount: 8,
+        pointDefence: [],
+        hangarSpace: 10,
+        hangar: [],
+        navigation: 3,
+        hullArmor: 16,
+        shieldStrength: 6,
+        length: '535m',
+        maxCrew: 340,
+        extraRooms: 15,
+        rooms: [],
+        energyUse: 3,
+        description: "This is the standard-issue cruiser hull of the Blackhawks, awarded to any mercenary group in the conglomerate that achieves a Blackhawk-certified \"Tier 2\" ranking."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Er'el",
+        manufacturer: "Talons",
+        type: 'cruiser',
+        cost: 66000000,
         spinalMount: 5,
+        spinal: [],
+        broadsideMount: 22,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 13,
+        hangar: [],
+        navigation: 6,
+        hullArmor: 14,
+        shieldStrength: 7,
+        length: '527m',
+        maxCrew: 300,
+        extraRooms: 14,
+        rooms: [],
+        energyUse: 3,
+        description: "A common Talon tactic is to use this ship as bait; show one defenseless and let the enemy swarm it. Then, warp in the other Er'els to clean up the job."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Waltz",
+        manufacturer: "Heralds",
+        type: 'cruiser',
+        cost: 92000000,
+        spinalMount: 5,
+        spinal: [],
+        broadsideMount: 24,
+        broadside: [],
+        pointDefenceMount: 4,
+        pointDefence: [],
+        hangarSpace: 10,
+        hangar: [],
+        navigation: 7,
+        hullArmor: 15,
+        shieldStrength: 8,
+        length: '509m',
+        maxCrew: 290,
+        extraRooms: 14,
+        rooms: [],
+        energyUse: 3,
+        description: "The discovery of this ship marked the formation of the \"Angel\" tech family. It was most definitely time, almost completely different."
+    },
+    // cruisers from stardust-powercreep-dlc-by-bob-grue-2.txt
+    {
+        image: 'Images/Ships/bob009.webp', name: "Medusa",
+        manufacturer: "Heralds",
+        type: 'cruiser',
+        cost: 74000000,
+        spinalMount: 6,
         spinal: [],
         broadsideMount: 14,
         broadside: [],
         pointDefenceMount: 5,
         pointDefence: [],
-        hangarSpace: 7,
+        hangarSpace: 0,
         hangar: [],
-        navigation: 12, // "12/25"
-        hullArmor: 11, // "11/25"
-        shieldStrength: 5, // "05/25"
-        length: '349m',
-        maxCrew: 11,
-        extraRooms: 4,
+        navigation: 17,
+        hullArmor: 12,
+        shieldStrength: 5,
+        length: '205m',
+        maxCrew: 3,
+        extraRooms: 5,
         rooms: [],
-        energyUse: 4,
-        description: "Introduced in the battle of BRSRB-4, the Rapier quickly became the pirates’ favorite heavy skirmish vessel.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 2,
+        description: "Fast and deadly, the Medusa is the quintessential raider. However, the large number of point defense mounts suggest the Heralds designed it as an escort vessel."
     },
     {
-        name: "PI Vc11",
+        image: 'Images/Ships/Rifter-Screenshot_3840x2160.jpg', name: "Rapier",
+        manufacturer: "Red Dagger",
+        type: 'cruiser',
+        cost: 40000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 14,
+        broadside: [],
+        pointDefenceMount: 5,
+        pointDefence: [],
+        hangarSpace: 0,
+        hangar: [],
+        navigation: 12,
+        hullArmor: 10,
+        shieldStrength: 2,
+        length: '349m',
+        maxCrew: 3,
+        extraRooms: 11,
+        rooms: [],
+        energyUse: 2,
+        description: "Introduced in the Battle of BR R84, the Rapier quickly became the pirates' favorite heavy skirmish vessel."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "PI Vcll",
         manufacturer: "Pulsar Inc.",
-        type: 'frigate', cost: 49000000, // "49m"
+        type: 'cruiser',
+        cost: 40000000,
         spinalMount: 5,
         spinal: [],
         broadsideMount: 16,
@@ -380,67 +1389,347 @@ const hulls1 = [
         pointDefence: [],
         hangarSpace: 10,
         hangar: [],
-        navigation: 10, // "10/25"
-        hullArmor: 12, // "12/25"
-        shieldStrength: 5, // "05/25"
+        navigation: 10,
+        hullArmor: 12,
+        shieldStrength: 5,
         length: '364m',
-        maxCrew: 15,
-        extraRooms: 4,
+        maxCrew: 130,
+        extraRooms: 15,
         rooms: [],
-        energyUse: 4,
-        description: "Intent on overtaking Triglav’s technological lead, Pulsar Inc. engaged with a new partner to develop the PI Vc11 light cruiser. These compact, highly efficient ships retain Pulsar’s signature space-saving refinements while incorporating a more martial configuration.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 2,
+        description: "Intent on overtaking Triglav's technological lead, Pulsar Inc. engaged with a new partner to develop the PI Vcll cruiser. These compact, highly efficient ships retain Pulsar's signature space-saving refinements while incorporating a more martial configuration."
     },
     {
-        name: "Fury",
+        image: 'Images/Ships/bob009.webp', name: "Fury",
         manufacturer: "Talons",
-        type: 'frigate', cost: 64000000, // "64m"
+        type: 'cruiser',
+        cost: 64000000,
         spinalMount: 6,
         spinal: [],
         broadsideMount: 18,
         broadside: [],
-        pointDefenceMount: 6,
+        pointDefenceMount: 0,
         pointDefence: [],
         hangarSpace: 8,
         hangar: [],
-        navigation: 11, // "11/25"
-        hullArmor: 12, // "12/25"
-        shieldStrength: 5, // "05/25"
+        navigation: 11,
+        hullArmor: 12,
+        shieldStrength: 5,
         length: '360m',
-        maxCrew: 12,
-        extraRooms: 4,
+        maxCrew: 120,
+        extraRooms: 13,
         rooms: [],
-        energyUse: 4,
-        description: "Furies have become a menace in the Clover systems. Dedicated gunships capable of catching and killing Viking class destroyers, they operate in packs to take down larger vessels.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 2,
+        description: "Furies have become a menace in the Clover systems. Dedicated gunships capable of catching and killing Viking class destroyers, they operate in packs to take down larger vessels."
     },
     {
-        name: "Harrower",
+        image: 'Images/Ships/bob009.webp', name: "Harrower",
         manufacturer: "Heralds",
-        type: 'frigate', cost: 99000000, // "99m"
+        type: 'cruiser',
+        cost: 50000000,
         spinalMount: 6,
         spinal: [],
         broadsideMount: 20,
         broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 12,
+        hangar: [],
+        navigation: 13,
+        hullArmor: 14,
+        shieldStrength: 1,
+        length: '347m',
+        maxCrew: 102,
+        extraRooms: 13,
+        rooms: [],
+        energyUse: 2,
+        description: "Three Harrower cruisers were found with the Monarch battleships. They possess reactionless drives that give them incredible agility and allow them to safely land on planets."
+    },
+
+    // Battleships
+    {
+        image: 'Images/Ships/bob009.webp', name: "Excursion",
+        manufacturer: "Beatrice R&D",
+        type: 'battleship',
+        cost: 60000000,
+        spinalMount: 1,
+        spinal: [],
+        broadsideMount: 22,
+        broadside: [],
         pointDefenceMount: 12,
         pointDefence: [],
-        hangarSpace: 13,
+        hangarSpace: 24,
         hangar: [],
-        navigation: 14, // "14/25"
-        hullArmor: 13, // "13/25"
-        shieldStrength: 6, // "06/25"
-        length: '347m',
-        maxCrew: 10,
-        extraRooms: 5,
+        navigation: 1,
+        hullArmor: 20,
+        shieldStrength: 7,
+        length: '1.1km',
+        maxCrew: 2400,
+        extraRooms: 18,
         rooms: [],
         energyUse: 4,
-        description: "These \"Harrower\" light cruisers were found with the \"Monarch\" battleships. They possess reactionless drives that give them incredible agility and allow them to safely land on planets.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        description: "When humanity began its efforts at colonizing other star systems, this was the ship of choice that was sent out into the void. Most were never heard from again."
     },
     {
-        name: "X45 Scythe",
+        image: 'Images/Ships/hans-palm-long ouyang.jpg', name: "G8-BS",
+        manufacturer: "Hammerhead Ind.",
+        type: 'battleship',
+        cost: 62000000,
+        spinalMount: 1,
+        spinal: [],
+        broadsideMount: 26,
+        broadside: [],
+        pointDefenceMount: 8,
+        pointDefence: [],
+        hangarSpace: 15,
+        hangar: [],
+        navigation: 3,
+        hullArmor: 18,
+        shieldStrength: 7,
+        length: '1.1km',
+        maxCrew: 2200,
+        extraRooms: 18,
+        rooms: [],
+        energyUse: 4,
+        description: "Hammerhead only ever produced one battleship hull, and this is the result. Actually, this is the upgrade; it was received so well that they kept to original similar schematics."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Ogre",
+        manufacturer: "Federation Navy",
+        type: 'battleship',
+        cost: 70000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 30,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 18,
+        hangar: [],
+        navigation: 2,
+        hullArmor: 20,
+        shieldStrength: 7,
+        length: '1.2km',
+        maxCrew: 2500,
+        extraRooms: 19,
+        rooms: [],
+        energyUse: 4,
+        description: "Ogres have the reputation of being pseudo-space stations, able to peacefully rest in a planet's orbit. They often act as great stationary platforms for refueling and repair."
+    },
+    {
+        image: 'Images/Ships/Abaddon Battlecruisers EveOnline.jpg', name: "Halberd",
+        manufacturer: "Red Dagger Pirates",
+        type: 'battleship',
+        cost: 72000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 28,
+        broadside: [],
+        pointDefenceMount: 6,
+        pointDefence: [],
+        hangarSpace: 24,
+        hangar: [],
+        navigation: 3,
+        hullArmor: 17,
+        shieldStrength: 7,
+        length: '878m',
+        maxCrew: 1900,
+        extraRooms: 15,
+        rooms: [],
+        energyUse: 4,
+        description: "The Halberd is the largest ship hull that the Daggers care to fly, and they put it to crafty use. It's notorious at being used as a \"battering ram\" to break through blockades."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Skinwalker",
+        manufacturer: "Federation Navy",
+        type: 'battleship',
+        cost: 74000000,
+        spinalMount: 1,
+        spinal: [],
+        broadsideMount: 26,
+        broadside: [],
+        pointDefenceMount: 12,
+        pointDefence: [],
+        hangarSpace: 21,
+        hangar: [],
+        navigation: 2,
+        hullArmor: 18,
+        shieldStrength: 8,
+        length: '1.1km',
+        maxCrew: 2100,
+        extraRooms: 16,
+        rooms: [],
+        energyUse: 4,
+        description: "Named after a popular urban legend among Navy personnel, the Skinwalker has an uncanny appearance. Fitting, for a fleet of Skinwalkers is surely hair raising."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "PLV64",
+        manufacturer: "Pulsar Inc.",
+        type: 'battleship',
+        cost: 75000000,
+        spinalMount: 1,
+        spinal: [],
+        broadsideMount: 24,
+        broadside: [],
+        pointDefenceMount: 10,
+        pointDefence: [],
+        hangarSpace: 18,
+        hangar: [],
+        navigation: 3,
+        hullArmor: 19,
+        shieldStrength: 8,
+        length: '1km',
+        maxCrew: 2200,
+        extraRooms: 17,
+        rooms: [],
+        energyUse: 4,
+        description: "When posed with a challenge to create the greatest planet-terra- forming ship in the galaxy, Pulsar came out with this hull. Now, almost all organizations own one."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Troilus",
+        manufacturer: "Luos Syndicate",
+        type: 'battleship',
+        cost: 85000000,
+        spinalMount: 1,
+        spinal: [],
+        broadsideMount: 30,
+        broadside: [],
+        pointDefenceMount: 9,
+        pointDefence: [],
+        hangarSpace: 18,
+        hangar: [],
+        navigation: 2,
+        hullArmor: 18,
+        shieldStrength: 7,
+        length: '1km',
+        maxCrew: 2100,
+        extraRooms: 17,
+        rooms: [],
+        energyUse: 4,
+        description: "This was more of a trophy ship employed by Luos Core Ring corporations. While still a capable vessel, these painted the fearsome and oppressive picture of Luos."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "X7 Phantom",
         manufacturer: "Triglav Innovations",
-        type: 'frigate', cost: 80000000, // "80m"
+        type: 'battleship',
+        cost: 96000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 30,
+        broadside: [],
+        pointDefenceMount: 8,
+        pointDefence: [],
+        hangarSpace: 21,
+        hangar: [],
+        navigation: 1,
+        hullArmor: 22,
+        shieldStrength: 7,
+        length: '1.5km',
+        maxCrew: 2500,
+        extraRooms: 18,
+        rooms: [],
+        energyUse: 4,
+        description: "Almost as old as Triglav Itself, the X7 Phantom is a staple in the Federation Navy. These are usually piloted by the higher ranks, or used by spec ops."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Razertail",
+        manufacturer: "Luos Syndicate",
+        type: 'battleship',
+        cost: 100000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 32,
+        broadside: [],
+        pointDefenceMount: 11,
+        pointDefence: [],
+        hangarSpace: 18,
+        hangar: [],
+        navigation: 2,
+        hullArmor: 20,
+        shieldStrength: 8,
+        length: '1.4km',
+        maxCrew: 2200,
+        extraRooms: 17,
+        rooms: [],
+        energyUse: 4,
+        description: "A favourite for the Syndicate's more elite Outer Ring corporations, like the militaristic Cerberus Legion. They symbolize the side of Luos that kept to its morals."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Paladin",
+        manufacturer: "Blackhawk Elite",
+        type: 'battleship',
+        cost: 105000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 30,
+        broadside: [],
+        pointDefenceMount: 10,
+        pointDefence: [],
+        hangarSpace: 23,
+        hangar: [],
+        navigation: 3,
+        hullArmor: 19,
+        shieldStrength: 8,
+        length: '1.6km',
+        maxCrew: 2300,
+        extraRooms: 19,
+        rooms: [],
+        energyUse: 4,
+        description: "With the Talon conflict, rising bandit threats, and increasing threat from the Fire Legion, It's not uncommon to find Paladins roaming the outer rims these days."
+    },
+    {
+        image: 'Images/Ships/long-ouyang-flagship3a-5000.jpg', 
+        name: "Ophanim",
+        manufacturer: "Talons",
+        type: 'battleship',
+        cost: 112000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 34,
+        broadside: [],
+        pointDefenceMount: 8,
+        pointDefence: [],
+        hangarSpace: 17,
+        hangar: [],
+        navigation: 3,
+        hullArmor: 23,
+        shieldStrength: 9,
+        length: '1.4km',
+        maxCrew: 2300,
+        extraRooms: 19,
+        rooms: [],
+        energyUse: 4,
+        description: "The Talons rarely deploy these, as they prefer small-scale skirmishes to direct conflict. That said, the Ophanim has seen increasing use in the bitter Blackhawk conflict."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Pyramid",
+        manufacturer: "Heralds",
+        type: 'battleship',
+        cost: 150000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 32,
+        broadside: [],
+        pointDefenceMount: 10,
+        pointDefence: [],
+        hangarSpace: 26,
+        hangar: [],
+        navigation: 3,
+        hullArmor: 23,
+        shieldStrength: 9,
+        length: '1.6km',
+        maxCrew: 2500,
+        extraRooms: 19,
+        rooms: [],
+        energyUse: 4,
+        description: "When they were first discovered by a small group of Dustkeepers, the \"Pyramid\" was mistaken for a Herald space station. That said, it probably wasn't too far fetched."
+    },
+    // New Battleships from stardust-powercreep-dlc-by-bob-grue-2.txt
+    {
+        image: 'Images/Ships/bob009.webp', name: "Manta",
+        manufacturer: "Heralds",
+        type: 'battleship',
+        cost: 120000000,
         spinalMount: 4,
         spinal: [],
         broadsideMount: 24,
@@ -449,21 +1738,21 @@ const hulls1 = [
         pointDefence: [],
         hangarSpace: 18,
         hangar: [],
-        navigation: 5, // "05/25"
-        hullArmor: 15, // "15/25"
-        shieldStrength: 8, // "08/25"
-        length: '785m',
-        maxCrew: 8,
-        extraRooms: 5,
+        navigation: 5,
+        hullArmor: 15,
+        shieldStrength: 8,
+        length: '755m',
+        maxCrew: 850,
+        extraRooms: 18,
         rooms: [],
-        energyUse: 6,
-        description: "May not mount anti-matter cannon. Triglav found something out there, and they reverse-engineered it into the X45 Scythe. Although only time will tell if the battlecruiser design is viable, the Scythe’s ability to quickly bring heavy firepower to the battlefield has proven invaluable on several occasions.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 0,
+        description: "The technology and design of the Manta are distinct from those found in other Herald ships. Triglav won't be happy you have one of the original Herald battlecruiser."
     },
     {
-        name: "Manta (Herald)", // Renamed to avoid conflict with Federation Navy Manta
-        manufacturer: "Heralds",
-        type: 'frigate', cost: 120000000, // "120m"
+        image: 'Images/Ships/bob009.webp', name: "X45 Scythe",
+        manufacturer: "Triglav Innovations",
+        type: 'battleship',
+        cost: 50000000,
         spinalMount: 4,
         spinal: [],
         broadsideMount: 28,
@@ -472,21 +1761,21 @@ const hulls1 = [
         pointDefence: [],
         hangarSpace: 20,
         hangar: [],
-        navigation: 9, // "09/25"
-        hullArmor: 19, // "19/25"
-        shieldStrength: 9, // "09/25"
-        length: '817m',
-        maxCrew: 6,
-        extraRooms: 5,
+        navigation: 8,
+        hullArmor: 19,
+        shieldStrength: 9,
+        length: '902m',
+        maxCrew: 817,
+        extraRooms: 18,
         rooms: [],
-        energyUse: 7,
-        description: "May not mount anti-matter cannon. The technology and design of the \"Manta\" are distinct from those found in other Herald ships. Triglav won’t be happy you have one of the original Herald battlecruisers.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 0,
+        description: "Triglav found something out there, and they reverse-engineered it into the X45 Scythe. Although only time will tell if the battlecruiser design is viable, the Scythe's ability to quickly bring heavy firepower to the battlefield has proven invaluable on several occasions."
     },
     {
-        name: "Monarch",
+        image: 'Images/Ships/bob009.webp', name: "Monarch",
         manufacturer: "Heralds",
-        type: 'frigate', cost: 224000000, // "224m"
+        type: 'battleship',
+        cost: 224000000,
         spinalMount: 4,
         spinal: [],
         broadsideMount: 30,
@@ -495,474 +1784,164 @@ const hulls1 = [
         pointDefence: [],
         hangarSpace: 28,
         hangar: [],
-        navigation: 9, // "09/25"
-        hullArmor: 22, // "22/25"
-        shieldStrength: 9, // "09/25"
-        length: '1960m',
-        maxCrew: 21,
-        extraRooms: 6,
+        navigation: 6,
+        hullArmor: 21,
+        shieldStrength: 9,
+        length: '1950m',
+        maxCrew: 2100,
+        extraRooms: 21,
         rooms: [],
-        energyUse: 7,
-        description: "Advanced Jump Drive allows the \"Monarch\" to travel freely between systems without jump gates. Kings of the \"Ghul\" tech family, two \"Monarch\" fast battleships were recently found. These ships feel alive, and maneuver with a grace unheard of in such a large vessel. Their gravity sails tacking against some unseen medium.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 6,
+        description: "Advanced Jump Drive allows the Monarch to travel freely between systems without jump gates. Kings of the Ghul tech family, two Monarch fast battleships were recently found. These ships feel alive, and maneuver with a grace unheard of in such a large vessel."
     },
+
+    // Carriers
     {
-        name: "Charon",
-        manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 96000000, // "96m, Unique" - taking 96m
-        spinalMount: 2,
-        spinal: [],
-        broadsideMount: 15,
-        broadside: [],
-        pointDefenceMount: 48,
-        pointDefence: [],
-        hangarSpace: 3, // "03/25"
-        hangar: [],
-        navigation: 22, // "22/25"
-        hullArmor: 22, // "22/25"
-        shieldStrength: 9, // "09/25"
-        length: '1390m',
-        maxCrew: 28,
-        extraRooms: 8,
-        rooms: [],
-        energyUse: 7,
-        description: "Jump Field allows Charon’s fleet to travel freely between systems without jump gates. The Charon is Beatrice R&D’s flagship and the product of decades of work: a jump ship capable of conveying an entire fleet of vessels to an unexplored system in a single leap. Cynical minds note it can bypass jump gates for a back door attack.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "X65 \\Odysseus\\",
-        manufacturer: "Triglav Innovations",
-        type: 'frigate', cost: 220000000, // "220m"
-        spinalMount: 3,
-        spinal: [],
-        broadsideMount: 26,
-        broadside: [],
-        pointDefenceMount: 8,
-        pointDefence: [],
-        hangarSpace: 24,
-        hangar: [],
-        navigation: 2, // "02/25"
-        hullArmor: 22, // "22/25"
-        shieldStrength: 9, // "09/25"
-        length: '3700m',
-        maxCrew: 24,
-        extraRooms: 8,
-        rooms: [],
-        energyUse: 7,
-        description: "Uses Dreadnought rules. Within the Odysseus, Triglav fused the titanic might of the dreadnought with the more versatile nature of the battleship, creating a new breed of super-capital ship.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "PI Va2",
-        manufacturer: "Pulsar Inc.",
-        type: 'frigate', cost: 380000000, // "380m"
-        spinalMount: 4,
-        spinal: [],
-        broadsideMount: 32,
-        broadside: [],
-        pointDefenceMount: 20,
-        pointDefence: [],
-        hangarSpace: 30,
-        hangar: [],
-        navigation: 9, // "09/25"
-        hullArmor: 20, // "20/25"
-        shieldStrength: 10, // "10/25"
-        length: '6km',
-        maxCrew: 40,
-        extraRooms: 7,
-        rooms: [],
-        energyUse: 7,
-        description: "Advanced Jump Drive lets the Va2 travel freely between systems without jump gates. Designed for Pulsar’s corporate field headquarters, the Va2 is the ultimate deep space exploration vessel. It serves as a base for traversing and researching multiple systems in comfort and relative safety.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Archangel",
-        manufacturer: "Talons",
-        type: 'frigate', cost: 380000000, // "380m"
-        spinalMount: 6,
-        spinal: [],
-        broadsideMount: 42,
-        broadside: [],
-        pointDefenceMount: 14,
-        pointDefence: [],
-        hangarSpace: 44,
-        hangar: [],
-        navigation: 8, // "08/25"
-        hullArmor: 32, // "32/25"
-        shieldStrength: 10, // "10/25"
-        length: '7km',
-        maxCrew: 34,
-        extraRooms: 7,
-        rooms: [],
-        energyUse: 7,
-        description: "Although formidable in combat, the Archangel’s primary task is to watch over uncharted systems. It acts as a mobile fortress securing new worlds during the early terraforming and colonization stages. Only once a system is well established is it added to the galactic network.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Hades",
-        manufacturer: "Heralds",
-        type: 'frigate', cost: 0, // "Special, Unique" - defaulting to 0
+        image: 'Images/Ships/bob009.webp', name: "ID-9F",
+        manufacturer: "Hammerhead Ind.",
+        type: 'carrier',
+        cost: 78000000,
         spinalMount: 0,
         spinal: [],
-        broadsideMount: 48,
+        broadsideMount: 0,
         broadside: [],
-        pointDefenceMount: 24,
+        pointDefenceMount: 10,
         pointDefence: [],
-        hangarSpace: 84,
+        hangarSpace: 54,
         hangar: [],
-        navigation: 9, // "09/25"
-        hullArmor: 0, // "-/25" - defaulting to 0
-        shieldStrength: 0, // "-/25" - defaulting to 0
-        length: '12km',
-        maxCrew: 20000, // "4,000 - 20,000" - taking max crew
-        extraRooms: 10,
+        navigation: 2,
+        hullArmor: 20,
+        shieldStrength: 8,
+        length: '1.6km',
+        maxCrew: 2800,
+        extraRooms: 18,
         rooms: [],
-        energyUse: 10,
-        description: "Wormhole Generator creates a temporary gateway to any designated star system. Energy Damping Field negates 80% of damage received. Anti-matter cannon strike overloads damping field for five minutes, but \"Hades\" survives otherwise intact. \"Hades\" is a mobile space station the size of a small city, recovered from a decaying orbit around a black hole. Formerly a scientific research outpost, \"Hades\" possesses unique technologies that will have a strong impact on space travel once they are reverse engineered.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-];
-
-const hulls2 = [ //frigates
-  {
-        name: "Stingray",
-        manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 25000000,
-        spinalMount: 1,
-        spinal: [],
-        broadsideMount: 4,
-        broadside: [],
-        pointDefenceMount: 6,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 18, // 18/25
-        hullArmor: 7, // 07/25
-        shieldStrength: 2, // 02/25
-        length: '120m',
-        maxCrew: 20,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Stingray is a Hammerhead Industries frigate, designed for versatile engagements.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 5,
+        description: "After a request from Io Security to produce a carrier-class hull, Hammerhead created this. It's been used in critical operations to repel bandits from the Sturg system."
     },
     {
-        name: "Valkyrie",
+        image: 'Images/Ships/Cube by Beeple.webp', name: "Cube",
         manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 30000000,
+        type: 'carrier',
+        cost: 180000000,
+        spinalMount: 0,
+        spinal: [],
+        broadsideMount: 0,
+        broadside: [],
+        pointDefenceMount: 15,
+        pointDefence: [],
+        hangarSpace: 52,
+        hangar: [],
+        navigation: 19,
+        hullArmor: 8,
+        shieldStrength: 3,
+        length: '1km',
+        maxCrew: 3000,
+        extraRooms: 22,
+        rooms: [],
+        energyUse: 5,
+        description: "A reverse-engineering attempt of Herald pocket dimension technology. The inside is larger than the outside by a factor of 2."
+    },
+    {
+        image: 'Images/Ships/pierre-e-fieschi-maersk-highliner.jpg', name: "Typhon",
+        manufacturer: "Federation Navy",
+        type: 'carrier',
+        cost: 90000000,
+        spinalMount: 0,
+        spinal: [],
+        broadsideMount: 0,
+        broadside: [],
+        pointDefenceMount: 13,
+        pointDefence: [],
+        hangarSpace: 54,
+        hangar: [],
+        navigation: 1,
+        hullArmor: 22,
+        shieldStrength: 9,
+        length: '1.6km',
+        maxCrew: 2800,
+        extraRooms: 20,
+        rooms: [],
+        energyUse: 5,
+        description: "\"And Earth first bore starry eyes in his marvelous heads\""
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Ouranos",
+        manufacturer: "Luos Syndicate",
+        type: 'carrier',
+        cost: 100000000,
+        spinalMount: 0,
+        spinal: [],
+        broadsideMount: 0,
+        broadside: [],
+        pointDefenceMount: 16,
+        pointDefence: [],
+        hangarSpace: 60,
+        hangar: [],
+        navigation: 1,
+        hullArmor: 19,
+        shieldStrength: 8,
+        length: '2.2km',
+        maxCrew: 3200,
+        extraRooms: 19,
+        rooms: [],
+        energyUse: 5,
+        description: "\"... And from under the brows of his Heaven, equal to herself, to cover flashed fire, and fire burned from her on every side, and to be an ever-sure abiding-place for the blessed Gods.\""
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Asmodai",
+        manufacturer: "Talons",
+        type: 'carrier',
+        cost: 100000000,
         spinalMount: 1,
         spinal: [],
         broadsideMount: 6,
         broadside: [],
-        pointDefenceMount: 4,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 22, // 22/25
-        hullArmor: 6, // 06/25
-        shieldStrength: 2, // 02/25
-        length: '100m',
-        maxCrew: 25,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A Beatrice R&D frigate, known for its strong broadside weaponry.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Manta",
-        manufacturer: "Federation Navy",
-        type: 'frigate', cost: 35000000,
-        spinalMount: 1,
-        spinal: [],
-        broadsideMount: 5,
-        broadside: [],
-        pointDefenceMount: 5,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 19, // 19/25
-        hullArmor: 8, // 08/25
-        shieldStrength: 3, // 03/25
-        length: '110m',
-        maxCrew: 22,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A robust frigate in the Federation Navy's arsenal, balanced for defense and offense.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-];
-const hulls3 = [ //destroyers
-  // Destroyers from 'ship Data.docx'
-    {
-        name: "Javelin",
-        manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 50000000,
-        spinalMount: 2,
-        spinal: [],
-        broadsideMount: 8,
-        broadside: [],
-        pointDefenceMount: 8,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 15, // 15/25
-        hullArmor: 10, // 10/25
-        shieldStrength: 4, // 04/25
-        length: '250m',
-        maxCrew: 50,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Javelin is a Hammerhead Industries destroyer, capable of sustained engagements.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Aegis",
-        manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 60000000,
-        spinalMount: 2,
-        spinal: [],
-        broadsideMount: 10,
-        broadside: [],
-        pointDefenceMount: 6,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 18, // 18/25
-        hullArmor: 9, // 09/25
-        shieldStrength: 5, // 05/25
-        length: '220m',
-        maxCrew: 60,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A Beatrice R&D destroyer, featuring strong defensive capabilities.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Gladius",
-        manufacturer: "Federation Navy",
-        type: 'frigate', cost: 70000000,
-        spinalMount: 2,
-        spinal: [],
-        broadsideMount: 9,
-        broadside: [],
-        pointDefenceMount: 7,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 16, // 16/25
-        hullArmor: 11, // 11/25
-        shieldStrength: 6, // 06/25
-        length: '240m',
-        maxCrew: 55,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Gladius is a Federation Navy destroyer, a balanced and reliable warship.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-
-    // Cruisers from 'ship Data.docx'
-    {
-        name: "Colossus",
-        manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 90000000,
-        spinalMount: 3,
-        spinal: [],
-        broadsideMount: 12,
-        broadside: [],
-        pointDefenceMount: 10,
-        pointDefence: [],
-        hangarSpace: 2,
-        hangar: [],
-        navigation: 12, // 12/25
-        hullArmor: 14, // 14/25
-        shieldStrength: 7, // 07/25
-        length: '500m',
-        maxCrew: 150,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A Hammerhead Industries cruiser, built for heavy firepower and some fighter support.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Oracle",
-        manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 100000000,
-        spinalMount: 3,
-        spinal: [],
-        broadsideMount: 14,
-        broadside: [],
-        pointDefenceMount: 8,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 15, // 15/25
-        hullArmor: 13, // 13/25
-        shieldStrength: 8, // 08/25
-        length: '480m',
-        maxCrew: 180,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Oracle is a Beatrice R&D cruiser, focusing on broadside attacks and advanced systems.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Vanguard",
-        manufacturer: "Federation Navy",
-        type: 'frigate', cost: 110000000,
-        spinalMount: 3,
-        spinal: [],
-        broadsideMount: 13,
-        broadside: [],
-        pointDefenceMount: 9,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 13, // 13/25
-        hullArmor: 15, // 15/25
-        shieldStrength: 9, // 09/25
-        length: '520m',
-        maxCrew: 160,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A Federation Navy cruiser, known for its balanced combat capabilities and robust armor.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-
-    // Battleships from 'ship Data.docx'
-    {
-        name: "Behemoth",
-        manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 150000000,
-        spinalMount: 4,
-        spinal: [],
-        broadsideMount: 18,
-        broadside: [],
         pointDefenceMount: 12,
-        pointDefence: [],
-        hangarSpace: 4,
-        hangar: [],
-        navigation: 9, // 09/25
-        hullArmor: 20, // 20/25
-        shieldStrength: 10, // 10/25
-        length: '1.2km',
-        maxCrew: 500,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A Hammerhead Industries battleship, featuring immense firepower and significant hangar capacity.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Paladin",
-        manufacturer: "Beatrice R&D",
-        type: 'frigate', cost: 160000000,
-        spinalMount: 4,
-        spinal: [],
-        broadsideMount: 20,
-        broadside: [],
-        pointDefenceMount: 10,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 11, // 11/25
-        hullArmor: 19, // 19/25
-        shieldStrength: 11, // 11/25
-        length: '1.1km',
-        maxCrew: 600,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Paladin is a Beatrice R&D battleship, a formidable vessel with strong broadside and shielding.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Conqueror",
-        manufacturer: "Federation Navy",
-        type: 'frigate', cost: 170000000,
-        spinalMount: 4,
-        spinal: [],
-        broadsideMount: 19,
-        broadside: [],
-        pointDefenceMount: 11,
-        pointDefence: [],
-        hangarSpace: 0,
-        hangar: [],
-        navigation: 10, // 10/25
-        hullArmor: 21, // 21/25
-        shieldStrength: 12, // 12/25
-        length: '1.3km',
-        maxCrew: 550,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "The Conqueror is a Federation Navy battleship, a balanced and heavily armored warship.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-];
-const hulls4 = [ //Carriers
-  // Carriers from 'ship Data.docx'
-    {
-        name: "Leviathan",
-        manufacturer: "Hammerhead Ind.",
-        type: 'frigate', cost: 200000000,
-        spinalMount: 1,
-        spinal: [],
-        broadsideMount: 10,
-        broadside: [],
-        pointDefenceMount: 14,
         pointDefence: [],
         hangarSpace: 50,
         hangar: [],
-        navigation: 7, // 07/25
-        hullArmor: 16, // 16/25
-        shieldStrength: 6, // 06/25
-        length: '2km',
-        maxCrew: 2500,
-        extraRooms: 0,
-        rooms: [],
-        energyUse: 0,
-        description: "A massive Hammerhead Industries carrier, designed to deploy a large number of fighters.",
-        image: '/Images/Other/Beatrice R&D.webp'
-    },
-    {
-        name: "Gáe Bulg",
-        manufacturer: "Blackhawk Elite",
-        type: 'frigate', cost: 120000000,
-        spinalMount: 1,
-        spinal: [],
-        broadsideMount: 0, // No value in docx, default to 0
-        broadside: [],
-        pointDefenceMount: 16,
-        pointDefence: [],
-        hangarSpace: 66,
-        hangar: [],
-        navigation: 1, // 01/25
-        hullArmor: 19, // 19/25
-        shieldStrength: 8, // 08/25
+        navigation: 1,
+        hullArmor: 22,
+        shieldStrength: 8,
         length: '2.5km',
         maxCrew: 3800,
         extraRooms: 20,
         rooms: [],
-        energyUse: 0,
-        description: "The Gáe Bulg is a Blackhawk Elite carrier, specializing in overwhelming fighter deployment.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 5,
+        description: "\"So do not ask me so many things, Solomon, for eventually your kingdom will be divided. This glory of yours is temporary... Then shall be worshipped as Gods.\""
     },
-];
-const hulls5 = [ //dreadnoughts
-  // Dreadnoughts from 'ship Data.docx'
     {
-        name: "Gungnir",
+        image: 'Images/Ships/bob009.webp', name: "Gáe Bulg",
         manufacturer: "Blackhawk Elite",
-        type: 'dreadnought', cost: 300000000,
+        type: 'carrier',
+        cost: 120000000,
+        spinalMount: 0,
+        spinal: [],
+        broadsideMount: 4,
+        broadside: [],
+        pointDefenceMount: 12,
+        pointDefence: [],
+        hangarSpace: 66,
+        hangar: [],
+        navigation: 1,
+        hullArmor: 22,
+        shieldStrength: 8,
+        length: '1.7km',
+        maxCrew: 2700,
+        extraRooms: 17,
+        rooms: [],
+        energyUse: 5,
+        description: "\"Láeg came forward and cut Fer Diad open and took out the Gáe Bulg. Cú Chulainn saw his weapon bloody and crimson from Fer Diad's body...\""
+    },
+    
+
+    // Dreadnoughts
+    {
+        image: 'Images/Ships/bob009.webp', name: "Gungnir",
+        manufacturer: "Blackhawk Elite",
+        type: 'dreadnought',
+        cost: 300000000,
         spinalMount: 5,
         spinal: [],
         broadsideMount: 36,
@@ -971,21 +1950,21 @@ const hulls5 = [ //dreadnoughts
         pointDefence: [],
         hangarSpace: 38,
         hangar: [],
-        navigation: 0, // 00/25
-        hullArmor: 40, // 40/25
-        shieldStrength: 10, // 10/25
-        length: '6.5km',
-        maxCrew: 6000,
-        extraRooms: 32,
+        navigation: 0,
+        hullArmor: 40,
+        shieldStrength: 10,
+        length: '7km',
+        maxCrew: 5600,
+        extraRooms: 30,
         rooms: [],
-        energyUse: 0,
-        description: "The Gungnir is a Blackhawk Elite dreadnought, a true behemoth of the battlefield.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 6,
+        description: "During the Battle of the Carceri system in the Pirate War decades ago, the Gungnir made its name when three defended a lone Blackhawk forward base from swarms of ships before succumbing to overwhelming numbers."
     },
     {
-        name: "Dhyana",
+        image: 'Images/Ships/bob009.webp', name: "Dhyana",
         manufacturer: "Triglav Innovations",
-        type: 'dreadnought', cost: 340000000,
+        type: 'dreadnought',
+        cost: 340000000,
         spinalMount: 6,
         spinal: [],
         broadsideMount: 42,
@@ -994,101 +1973,272 @@ const hulls5 = [ //dreadnoughts
         pointDefence: [],
         hangarSpace: 28,
         hangar: [],
-        navigation: 0, // 00/25
-        hullArmor: 34, // 34/25
-        shieldStrength: 10, // 10/25
-        length: '7km',
-        maxCrew: 5000, // Assuming 5,000 as per snippet
-        extraRooms: 0, // No value in docx, default to 0
+        navigation: 0,
+        hullArmor: 34,
+        shieldStrength: 10,
+        length: '6.5km',
+        maxCrew: 6000,
+        extraRooms: 32,
         rooms: [],
-        energyUse: 0,
-        description: "The Dhyana is a Triglav Innovations dreadnought, known for its immense firepower and advanced design.",
-        image: '/Images/Other/Beatrice R&D.webp'
+        energyUse: 6,
+        description: "It is said that the entire reason that Triglav Innovations was founded was for the Dhyana (often called \"Diana\"), and that every piece of technology that Triglav had discovered and invented was put into it."
     },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Azrael",
+        manufacturer: "Luos Syndicate & Talons",
+        type: 'dreadnought',
+        cost: 370000000,
+        spinalMount: 7,
+        spinal: [],
+        broadsideMount: 48,
+        broadside: [],
+        pointDefenceMount: 12,
+        pointDefence: [],
+        hangarSpace: 26,
+        hangar: [],
+        navigation: 0,
+        hullArmor: 33,
+        shieldStrength: 9,
+        length: '7km',
+        maxCrew: 5400,
+        extraRooms: 28,
+        rooms: [],
+        energyUse: 6,
+        description: "The Azrael project was a joint endeavor between the Luos Syndicate's top research firms and the Talons to produce the greatest and most destructive ship in the galaxy."
+    },
+    {
+        image: 'Images/Ships/bob009.webp', name: "Mothership",
+        manufacturer: "Heralds",
+        type: 'dreadnought',
+        cost: 470000000,
+        spinalMount: 8,
+        spinal: [],
+        broadsideMount: 44,
+        broadside: [],
+        pointDefenceMount: 15,
+        pointDefence: [],
+        hangarSpace: 42,
+        hangar: [],
+        navigation: 0,
+        hullArmor: 38,
+        shieldStrength: 10,
+        length: '8.5km',
+        maxCrew: 6000,
+        extraRooms: 36,
+        rooms: [],
+        energyUse: 6,
+        description: "This is the rarest ship in the galaxy and the greatest piece of technology uncovered from the Heralds. The only ones known to exist belong to the wealthiest, most obscure, and most powerful organizations."
+    },
+    // Dreadnoughts from stardust-powercreep-dlc-by-bob-grue-2.txt
+    {
+        image: 'Images/Ships/bob009.webp', name: "Charon",
+        manufacturer: "Beatrice R&D",
+        type: 'dreadnought',
+        cost: 96000000,
+        spinalMount: 2,
+        spinal: [],
+        broadsideMount: 0,
+        broadside: [],
+        pointDefenceMount: 15,
+        pointDefence: [],
+        hangarSpace: 48,
+        hangar: [],
+        navigation: 3,
+        hullArmor: 22,
+        shieldStrength: 9,
+        length: '19km',
+        maxCrew: 2800,
+        extraRooms: 18,
+        rooms: [],
+        energyUse: 8,
+        description: "The Charon is Beatrice R&D's flagship and the product of decades of work, a jump ship capable of conveying an entire fleet of vessels to an unexplored system in a single leap."
+    },
+    {
+        image: 'Images/Ships/Archangel by CDFreedom, BANDAI.webp', 
+        name: "X65 “Odysseus”",
+        manufacturer: "Triglav Innovations",
+        type: 'dreadnought',
+        cost: 220000000,
+        spinalMount: 3,
+        spinal: [],
+        broadsideMount: 28,
+        broadside: [],
+        pointDefenceMount: 8,
+        pointDefence: [],
+        hangarSpace: 2,
+        hangar: [],
+        navigation: 2,
+        hullArmor: 22,
+        shieldStrength: 9,
+        length: '29km',
+        maxCrew: 3700,
+        extraRooms: 2,
+        rooms: [],
+        energyUse: 6,
+        description: "Within the Odysseus, Triglav fused the titanic might of the dreadnought with the more versatile nature of the battleship, creating a new breed of super-capital ship."
+    }, 
+    {
+        name: "PI Va2",
+        image: 'Images/Ships/bob012.webp',
+        manufacturer: "Pulsar Inc.",
+        type: 'dreadnought',
+        cost: 280000000,
+        spinalMount: 4,
+        spinal: [],
+        broadsideMount: 32,
+        broadside: [],
+        pointDefenceMount: 20,
+        pointDefence: [],
+        hangarSpace: 50,
+        hangar: [],
+        navigation: 0,
+        hullArmor: 30,
+        shieldStrength: 10,
+        length: '10km',
+        maxCrew: 6000,
+        extraRooms: 40,
+        rooms: [],
+        energyUse: 7,
+        description: "Officially designated as Pulsar's corporate field headquarters, the Va2 is the ultimate deep space exploration vessel. It serves as a base for traversing and researching multiple systems in comfort and relative safety. Advanced Jump Drive lets the Va2 travel freely between systems without jump gates."
+    },
+    {
+        name: "Archangel",
+        image: 'Images/Ships/bob011.webp',
+        manufacturer: "Talons",
+        type: 'dreadnought',
+        cost: 380000000,
+        spinalMount: 6,
+        spinal: [],
+        broadsideMount: 42,
+        broadside: [],
+        pointDefenceMount: 14,
+        pointDefence: [],
+        hangarSpace: 38,
+        hangar: [],
+        navigation: 0,
+        hullArmor: 32,
+        shieldStrength: 10,
+        length: '7km',
+        maxCrew: 6000,
+        extraRooms: 34,
+        rooms: [],
+        energyUse: 7,
+        description: "Although formidable in combat, the Archangel’s primary task is to watch over uncharted systems. It acts as a mobile fortress securing new worlds during the early terraforming and colonization stages. Only once a system is well established is it added to the galactic network."
+    },
+    {
+        name: "Hades",
+        image: 'Images/Ships/bob010.webp',
+        manufacturer: "Heralds",
+        type: 'dreadnought',
+        cost: 500000000, // Special cost
+        spinalMount: 0,
+        spinal: [],
+        broadsideMount: 48,
+        broadside: [],
+        pointDefenceMount: 24,
+        pointDefence: [],
+        hangarSpace: 81,
+        hangar: [],
+        navigation: 0,
+        hullArmor: 36,
+        shieldStrength: "Energy Damping Field: 80% Damage", // Special shield strength
+        length: '124m', // This length seems very small for a dreadnought, but it's from the source.
+        maxCrew: "4,000-20,000", // Special crew range
+        extraRooms: 60,
+        rooms: [],
+        energyUse: 10,
+        description: "Hades is a mobile space station the size of a small city, recovered from a decaying orbit around a black hole. Formerly a scientific research outpost, Hades possesses unique technologies that will have a strong impact on space travel once they are reverse engineered. Wormhole Generator creates a temporary gateway to any designated star system. Damping field negates 80% of damage received. Anti-matter cannon strike overloads damping field for five minutes, but Hades survives otherwise intact."
+    }
 ];
-const hulls6 = [];
-const hulls7 = [];
+
+
+
+
+
+
+
+
 
 const shipAI = [
   {
-    name: "Winston v9.0.3",
+    image: 'Images/Ships/bob009.webp', name: "Winston v9.0.3",
     manufacturer: "Beatrice R&D",
     role: "Multi-Role",
     description: "A minimalistic and subtle ship AI that has all of the basic functions any ship-farer could want. Most ships will be well off with this AI.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Beatrice v6.8.2",
+    image: 'Images/Ships/bob009.webp', name: "Beatrice v6.8.2",
     manufacturer: "Beatrice R&D",
     role: "Exploration",
     description: "Named after the founder of the corporation herself while also utilizing her voice, the Beatrice AI is reknown for being efficient at managing exploration voyages.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Targray v3.3",
+    image: 'Images/Ships/bob009.webp', name: "Targray v3.3",
     manufacturer: "Hammerhead Ind.",
     role: "Industry",
     description: "Targray keeps production and mining operations at tip-top shape. He's full of many frameworks built to keep things running.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Cassandra v16.0.2",
+    image: 'Images/Ships/bob009.webp', name: "Cassandra v16.0.2",
     manufacturer: "Beatrice R&D",
     role: "Entertainment",
     description: "If you're planning on flying a vessel for civillian use or comfort, Cassandra is the AI you need. She's programmed to keep everyone happy on your ship.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Luke v9.5.1",
+    image: 'Images/Ships/bob009.webp', name: "Luke v9.5.1",
     manufacturer: "Pulsar Inc.",
     role: "Deep Space Exploration",
     description: "Luke specializes in max efficiency and recycling of resources for those extremely long journeys.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Rom v22.4",
+    image: 'Images/Ships/bob009.webp', name: "Rom v22.4",
     manufacturer: "Red Dagger Pirates",
     role: "Skirmish & Interception",
     description: "Rom was made by Red Dagger programmers specifically to maximize output into navigation, giving ships the best advantage when it comes to scaling the battlefield. He's very adaptable for any situation you may come across.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Jacob v13.0.4",
+    image: 'Images/Ships/bob009.webp', name: "Jacob v13.0.4",
     manufacturer: "Federation Navy",
     role: "Fire Support",
     description: "Fleet synergy is the epitome of the Federation Navy, and that's partially thanks to Jacob. He synergizes well with other combat AIs and is a great tactician.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Remington v3.0.1",
+    image: 'Images/Ships/bob009.webp', name: "Remington v3.0.1",
     manufacturer: "Triglav Innovations",
     role: "Covert Ops",
     description: "Nothing's more discrete than the latest version of Remington. For any special ops ship-farers out there, there's no AI better than him.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Lai'na v15.3.2",
+    image: 'Images/Ships/bob009.webp', name: "Lai'na v15.3.2",
     manufacturer: "Luos Syndicate",
     role: "Assault",
     description: "There are a lot of assault-based AI out there, but none are better than Lai'na. Programmed by a brilliant Outer Ring programmer, she holds top record in combat performance.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Cedrick v9.2.10",
+    image: 'Images/Ships/bob009.webp', name: "Cedrick v9.2.10",
     manufacturer: "Blackhawk Elite",
     role: "Siege & Defence",
     description: "When it comes to prolonged battles, Cedrick comes out to be the most stalwart. He's able to manage ship defences perfectly with minimal resources.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Blueberry v7.3.2",
+    image: 'Images/Ships/bob009.webp', name: "Blueberry v7.3.2",
     manufacturer: "Talons",
     role: "Guerilla",
     description: "She's a little sassy and sinister, but that's how the Talons programmed her. She's easily one of the most fearsome AIs, full of ingenious tactics to wither down foes.",
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Sophocles v1.0.3",
+    image: 'Images/Ships/bob009.webp', name: "Sophocles v1.0.3",
     manufacturer: "Triglav Innovations",
     role: "Mana Interfacing",
     description: "Sophocles is Triglav's best attempt at utilizing mana power. His AI is incredibly complex compared to others, and has the potential to make ships incredible.",
@@ -1098,7 +2248,7 @@ const shipAI = [
 
 const energy = [
   {
-    name: "Solar Panels",
+    image: 'Images/Ships/bob009.webp', name: "Solar Panels",
     type: 'generation',
     cost: 2000000,
     energyOutput: 1,
@@ -1106,7 +2256,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "Nuclear Fission",
+    image: 'Images/Ships/bob009.webp', name: "Nuclear Fission",
     type: 'generation',
     cost: 16000000,
     energyOutput: 5,
@@ -1114,7 +2264,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "Nuclear Fusion",
+    image: 'Images/Ships/bob009.webp', name: "Nuclear Fusion",
     type: 'generation',
     cost: 26000000,
     energyOutput: 6,
@@ -1123,7 +2273,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "Mana Core",
+    image: 'Images/Ships/bob009.webp', name: "Mana Core",
     type: 'generation',
     cost: 70000000,
     energyOutput: 6,
@@ -1132,7 +2282,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "Anti-Matter Core",
+    image: 'Images/Ships/bob009.webp', name: "Anti-Matter Core",
     type: 'generation',
     cost: 50000000,
     energyOutput: 7,
@@ -1140,7 +2290,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "Zero-Point Module",
+    image: 'Images/Ships/bob009.webp', name: "Zero-Point Module",
     type: 'generation',
     cost: 100000000,
     energyOutput: 8,
@@ -1148,7 +2298,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "Subspace Energy Extraction",
+    image: 'Images/Ships/bob009.webp', name: "Subspace Energy Extraction",
     type: 'generation',
     cost: 300000000,
     energyOutput: 10,
@@ -1156,7 +2306,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "Power Capacitors",
+    image: 'Images/Ships/bob009.webp', name: "Power Capacitors",
     type: 'battery',
     cost: 12000000,
     energyOutput: 3,
@@ -1165,7 +2315,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "Exotic Matter Battery",
+    image: 'Images/Ships/bob009.webp', name: "Exotic Matter Battery",
     type: 'battery',
     cost: 24000000,
     energyOutput: 4,
@@ -1174,7 +2324,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "The Holy Grail",
+    image: 'Images/Ships/bob009.webp', name: "The Holy Grail",
     type: 'battery',
     cost: 0,
     energyOutput: 7,
@@ -1183,7 +2333,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy"
   },
   {
-    name: "Beatrice's Bosom",
+    image: 'Images/Ships/bob009.webp', name: "Beatrice's Bosom",
     type: 'battery',
     cost: 100000000,
     energyOutput: 8,
@@ -1192,7 +2342,7 @@ const energy = [
     image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
   },
   {
-    name: "Subspace Battery",
+    image: 'Images/Ships/bob009.webp', name: "Subspace Battery",
     type: 'battery',
     cost: 120000000,
     energyOutput: 10,
@@ -1205,42 +2355,42 @@ const energy = [
 
 const shield = [
   {
-    name: "Basic Shielding",
+    image: 'Images/Ships/bob009.webp', name: "Basic Shielding",
     cost: 1000000,
     shieldStrength: "+7",
     description: "", // No description provided in the source for this item
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
   },
   {
-    name: "Standard Shielding",
+    image: 'Images/Ships/bob009.webp', name: "Standard Shielding",
     cost: 5000000,
     shieldStrength: "+10",
     description: "", // No description provided in the source for this item
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
   },
   {
-    name: "Advanced Shielding",
+    image: 'Images/Ships/bob009.webp', name: "Advanced Shielding",
     cost: 20000000,
     shieldStrength: "+12",
     description: "+Ships with power capacitors or better 10m off",
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
   },
   {
-    name: "Aegis Shielding",
+    image: 'Images/Ships/bob009.webp', name: "Aegis Shielding",
     cost: 30000000,
     shieldStrength: "+14",
     description: "+Ships with nuclear fusion or better get 15m off",
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
   },
   {
-    name: "Stalwart Shielding",
+    image: 'Images/Ships/bob009.webp', name: "Stalwart Shielding",
     cost: 40000000,
     shieldStrength: "+16",
     description: "+Ships with anti-matter core or better get 10m off",
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield"
   },
   {
-    name: "Mana Shielding",
+    image: 'Images/Ships/bob009.webp', name: "Mana Shielding",
     cost: 40000000,
     shieldStrength: "+15",
     description: "+Ships with a mana core get this for 5m off and with +2 defence",
@@ -1252,7 +2402,7 @@ const shield = [
 
 const mods = [ // This array contains both Command Mods and Hull Mods
     {
-    name: "Cool Paint Job",
+    image: 'Images/Ships/bob009.webp', name: "Cool Paint Job",
     manufacturer: "Civillian",
     cost: 0, // Free!
     specialAbility: "None",
@@ -1263,7 +2413,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "V77-SLT Control Room",
+    image: 'Images/Ships/bob009.webp', name: "V77-SLT Control Room",
     manufacturer: "Hammerhead Ind.",
     cost: 1000000,
     specialAbility: "Willpower",
@@ -1274,7 +2424,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "\"Columbus\" BTR37",
+    image: 'Images/Ships/bob009.webp', name: "\"Columbus\" BTR37",
     manufacturer: "Beatrice R&D",
     cost: 2000000,
     specialAbility: "Elusive",
@@ -1285,7 +2435,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "FDN Control zrt3",
+    image: 'Images/Ships/bob009.webp', name: "FDN Control zrt3",
     manufacturer: "Federation Navy",
     cost: 3000000,
     specialAbility: "Bulwark",
@@ -1296,7 +2446,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "\"Zip\" MK III",
+    image: 'Images/Ships/bob009.webp', name: "\"Zip\" MK III",
     manufacturer: "Red Dagger Pirates",
     cost: 3000000,
     specialAbility: "Raptor",
@@ -1307,7 +2457,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "PI Control V6",
+    image: 'Images/Ships/bob009.webp', name: "PI Control V6",
     manufacturer: "Pulsar Inc.",
     cost: 3000000,
     specialAbility: "Atlas",
@@ -1318,7 +2468,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "X38 \"Tribe\" TDNK",
+    image: 'Images/Ships/bob009.webp', name: "X38 \"Tribe\" TDNK",
     manufacturer: "Triglav Innovations",
     cost: 3000000,
     specialAbility: "Valkyrie",
@@ -1329,7 +2479,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "CBL2 \"Banshee\"",
+    image: 'Images/Ships/bob009.webp', name: "CBL2 \"Banshee\"",
     manufacturer: "Luos Syndicate",
     cost: 4000000,
     specialAbility: "Moonshine",
@@ -1340,7 +2490,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "SH ExmT",
+    image: 'Images/Ships/bob009.webp', name: "SH ExmT",
     manufacturer: "Luos Syndicate",
     cost: 4000000,
     specialAbility: "Prometheus",
@@ -1351,7 +2501,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "BH Command VR",
+    image: 'Images/Ships/bob009.webp', name: "BH Command VR",
     manufacturer: "Blackhawk Elite",
     cost: 5000000,
     specialAbility: "Leviathan",
@@ -1362,7 +2512,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "MI520 \"Visage\"",
+    image: 'Images/Ships/bob009.webp', name: "MI520 \"Visage\"",
     manufacturer: "Talons",
     cost: 5000000,
     specialAbility: "Kraken",
@@ -1373,7 +2523,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Herald \"Blink\"",
+    image: 'Images/Ships/bob009.webp', name: "Herald \"Blink\"",
     manufacturer: "Heralds",
     cost: 7000000,
     specialAbility: "Umbra",
@@ -1384,7 +2534,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Point-Defence Upgrade",
+    image: 'Images/Ships/bob009.webp', name: "Point-Defence Upgrade",
     cost: 1000000,
     maximumUpgrades: 3,
     pointDefenceMounts: 2, // Specific mount type
@@ -1393,7 +2543,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Broadside Upgrade",
+    image: 'Images/Ships/bob009.webp', name: "Broadside Upgrade",
     cost: 2000000,
     maximumUpgrades: 3,
     broadsideTurretMounts: 2, // Specific mount type
@@ -1402,7 +2552,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Spinal Weapon Mount",
+    image: 'Images/Ships/bob009.webp', name: "Spinal Weapon Mount",
     cost: 3000000,
     maximumUpgrades: 2,
     spinalWeaponMounts: 1, // Specific mount type
@@ -1411,7 +2561,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Overdrive Afterburner",
+    image: 'Images/Ships/bob009.webp', name: "Overdrive Afterburner",
     cost: 3000000,
     maximumUpgrades: 5,
     navigation: 1, // Specific stat
@@ -1420,7 +2570,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Nano Armour Coating",
+    image: 'Images/Ships/bob009.webp', name: "Nano Armour Coating",
     cost: 4000000,
     maximumUpgrades: 1,
     hullArmor: "20%", // Keep as string as it's a percentage
@@ -1429,7 +2579,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Vehicle Bay",
+    image: 'Images/Ships/bob009.webp', name: "Vehicle Bay",
     cost: 3000000,
     maximumUpgrades: 4,
     hangarSpace: 2, // Specific stat
@@ -1438,7 +2588,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Active Cloaking",
+    image: 'Images/Ships/bob009.webp', name: "Active Cloaking",
     cost: 6000000,
     maximumUpgrades: 1,
     description: "Activating this turns your ship invisible to sight or scans. You cannot do anything (including FTL warp) but navigate at half speed.",
@@ -1446,7 +2596,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Teleport Jammer",
+    image: 'Images/Ships/bob009.webp', name: "Teleport Jammer",
     cost: 2000000,
     maximumUpgrades: 1,
     description: "Prevents boarding parties from teleporting into your vessel. +Dreadnoughts have this for free +Fighters don't need a jammer",
@@ -1454,7 +2604,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Shield Extender",
+    image: 'Images/Ships/bob009.webp', name: "Shield Extender",
     cost: 4000000,
     maximumUpgrades: 1,
     shieldStrength: 2, // Specific stat
@@ -1463,7 +2613,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Hull Extension",
+    image: 'Images/Ships/bob009.webp', name: "Hull Extension",
     cost: 1000000,
     maximumUpgrades: 2,
     navigation: 0, // No specific navigation value provided
@@ -1473,7 +2623,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Hangar Bay",
+    image: 'Images/Ships/bob009.webp', name: "Hangar Bay",
     cost: 5000000,
     maximumUpgrades: 4,
     hangarSpace: 2, // Specific stat
@@ -1482,7 +2632,7 @@ const mods = [ // This array contains both Command Mods and Hull Mods
     image: "/Images/Other/Beatrice R&D.webp"
   },
   {
-    name: "Hull Reduction",
+    image: 'Images/Ships/bob009.webp', name: "Hull Reduction",
     cost: 0, // Free!
     maximumUpgrades: 2,
     navigation: 0, // No specific navigation value provided
@@ -1495,42 +2645,42 @@ const mods = [ // This array contains both Command Mods and Hull Mods
 
 const industrial = [
   {
-    name: "Mining Harvester",
+    image: 'Images/Ships/bob009.webp', name: "Mining Harvester",
     cost: 2000000,
     moduleType: "Industrial",
     description: "This harvester uses infrared light to separate common ores from asteroids. It has its own unique built-in tractor beam to bring the ore to your ship while mining. +Can mine low-grade ore *Uses a broadside or point-defence turret mount *Requires ore processing facility",
     image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   },
   {
-    name: "MK2 Frequency Lens",
+    image: 'Images/Ships/bob009.webp', name: "MK2 Frequency Lens",
     cost: 1000000,
     moduleType: "Industrial",
     description: "You can replace the lens of a mining harvester with this lens that uses a smaller green laser to mine more complex ores. Lenses can be changed on the fly. +Can switch with mining harvester lenses to mine mid-grade ore *Requires a mining harvester",
     image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   },
   {
-    name: "MK3 Frequency Lens",
+    image: 'Images/Ships/bob009.webp', name: "MK3 Frequency Lens",
     cost: 1000000,
     moduleType: "Industrial",
     description: "The most precise and powerful lens, the MK3 is capable of pin-pointing the most valuable ore from asteroids. It's inefficient for mining lower grade ores, however. +Can switch with mining harvester lenses to mine high-grade ore *Requires a mining harvester",
     image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   },
   {
-    name: "Salvage Harvester",
+    image: 'Images/Ships/bob009.webp', name: "Salvage Harvester",
     cost: 3000000,
     moduleType: "Industrial",
     description: "Using similar technology to the mining harvesters, this laser is specialized in taking apart machines. Perfect for salvaging debris or ship wrecks. It also comes with its own tractor beam. *Uses a broadside or point-defence turret mount *Requires a cargo space room",
     image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   },
   {
-    name: "Tractor Beam",
+    image: 'Images/Ships/bob009.webp', name: "Tractor Beam",
     cost: 3000000,
     moduleType: "Logistics",
     description: "A universal tractor beam that harnesses light to attract or push matter not limited to ore or scrap. It's useful for retrieving free- floating objects, or that one maintenance crew member who accidentally cut his safety wire. *Can only be bought once per ship *Cannot target other active ships",
     image: "https://placehold.co/100x100/987654/ffffff?text=Industrial"
   },
   {
-    name: "Composition Scanner",
+    image: 'Images/Ships/bob009.webp', name: "Composition Scanner",
     cost: 4000000,
     moduleType: "Logistics",
     description: "This very complex module can scan objects and bring back very precise results. It can detect ore/mineral compositions in asteroids, energy sources, electri- cal activity, and even life forms. It can also scan other ships to give you intel on their systems. *Can only be bought once per ship",
@@ -1541,7 +2691,7 @@ const industrial = [
 
 const eWar = [
   {
-    name: "Poisoning Module",
+    image: 'Images/Ships/bob009.webp', name: "Poisoning Module",
     cost: 7000000,
     moduleType: "E-War",
     range: "000000886",
@@ -1549,7 +2699,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "Honey Pot Module",
+    image: 'Images/Ships/bob009.webp', name: "Honey Pot Module",
     cost: 3000000,
     moduleType: "E-War",
     range: "0", // Range was blank in source for this item
@@ -1557,7 +2707,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "Warp Jammer",
+    image: 'Images/Ships/bob009.webp', name: "Warp Jammer",
     cost: 6000000,
     moduleType: "E-War",
     range: "1 light hour", // Range was blank in source for this item
@@ -1565,7 +2715,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "Comm Scrambler",
+    image: 'Images/Ships/bob009.webp', name: "Comm Scrambler",
     cost: 5000000,
     moduleType: "E-War",
     range: "1 light hour", // Range was blank in source for this item
@@ -1573,7 +2723,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "MITM Module",
+    image: 'Images/Ships/bob009.webp', name: "MITM Module",
     cost: 4000000,
     moduleType: "E-War",
     range: "1 light hour", // Range was blank in source for this item
@@ -1581,7 +2731,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "Penetration Module",
+    image: 'Images/Ships/bob009.webp', name: "Penetration Module",
     cost: 8000000,
     moduleType: "E-War",
     range: "1 light hour", // Range was blank in source for this item
@@ -1589,7 +2739,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "Bridge Module",
+    image: 'Images/Ships/bob009.webp', name: "Bridge Module",
     cost: 8000000,
     moduleType: "E-War",
     range: "1 light hour", // Range was blank in source for this item
@@ -1597,7 +2747,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "Incident Module",
+    image: 'Images/Ships/bob009.webp', name: "Incident Module",
     cost: 6000000,
     moduleType: "E-War",
     range: "0", // Range was blank in source for this item
@@ -1605,7 +2755,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "Efficiency Module",
+    image: 'Images/Ships/bob009.webp', name: "Efficiency Module",
     cost: 4000000,
     moduleType: "E-War",
     range: "0", // Range was blank in source for this item
@@ -1613,7 +2763,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "Presence Module",
+    image: 'Images/Ships/bob009.webp', name: "Presence Module",
     cost: 5000000,
     moduleType: "E-War",
     range: "0", // Range was blank in source for this item
@@ -1621,7 +2771,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "Overflow Module",
+    image: 'Images/Ships/bob009.webp', name: "Overflow Module",
     cost: 10000000,
     moduleType: "E-War",
     range: "1 light hour", // Range was blank in source for this item
@@ -1629,7 +2779,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar"
   },
   {
-    name: "Security Grid",
+    image: 'Images/Ships/bob009.webp', name: "Security Grid",
     cost: 14000000,
     moduleType: "E-War",
     range: "1 light hour", // Range was blank in source for this item
@@ -1641,7 +2791,7 @@ const eWar = [
 
 const rooms = [
     {
-        name: "Command Room",
+        image: 'Images/Ships/bob009.webp', name: "Command Room",
         description: "The central hub for ship operations and command.",
         cost: 5000000,
         consequences: "Increases command efficiency and crew morale.",
@@ -1649,252 +2799,252 @@ const rooms = [
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Crew Quarters Upgrade",
+        image: 'Images/Ships/bob009.webp', name: "Crew Quarters Upgrade",
         cost: 1000000,
         description: "All ships have sleeping quarters for your entire crew, but they are cramped and not too comfortable. Upgrade with this if you want more privacy and better comfort. +Does not cost a room slot",
         type: "quarters",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Officer's Quarters",
+        image: 'Images/Ships/bob009.webp', name: "Officer's Quarters",
         cost: 2000000,
         description: "Comfy, furnished dwellings that can accomodate 1-6 people on a frigate, up to 12 on a destroyer, and 10% of your crew on a cruiser or larger. Keep your important crew members with high morale!",
         type: "quarters",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Captain's Quarters",
+        image: 'Images/Ships/bob009.webp', name: "Captain's Quarters",
         cost: 5000000,
         description: "It will be a very luxurious suite for you on a frigate or destroyer, and a penthouse on a cruiser or larger.",
         type: "quarters",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Basic Infirmary",
+        image: 'Images/Ships/bob009.webp', name: "Basic Infirmary",
         cost: 1000000,
         description: "Got a headache? Maybe you need a bandage? Okay, you can do stitches and make-shift broken-bone splints here too, but don't expect much more.",
         type: "infirmary",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Standard Infirmary",
+        image: 'Images/Ships/bob009.webp', name: "Standard Infirmary",
         cost: 2000000,
         description: "Equipped with decent medical equipment, enough to perform surgeries. Your wounded may live another day, and with a good doctor, your crew's in good hands. *Requires a doctor",
         type: "infirmary",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Advanced Infirmary",
+        image: 'Images/Ships/bob009.webp', name: "Advanced Infirmary",
         cost: 12000000,
         description: "The most advanced medical technology is at your finger tips, including magical space beds that can almost instantaneously repair damaged body parts. *Requires a doctor",
         type: "infirmary",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Evacuation Room",
+        image: 'Images/Ships/bob009.webp', name: "Evacuation Room",
         cost: 1000000,
         description: "This will have enough escape pods for your crew and will get them out of your burning wreckage of a ship. They are equipped with survival equipment and can even navigate to the closest safe spot.",
         type: "evacuation",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Advanced Evacuation",
+        image: 'Images/Ships/bob009.webp', name: "Advanced Evacuation",
         cost: 9000000,
         description: "Your escape pods have warp drives built into them and are even moderately armoured with a small shield to protect their inhabitants more effectively. Comes with a sparkling wine bottle in each.",
         type: "evacuation",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Standard Mess Hall",
+        image: 'Images/Ships/bob009.webp', name: "Standard Mess Hall",
         cost: 2000000,
         description: "Monday is burger day, Tuesday is turkey day, Wednesday is spaghetti day, Thursday is... you get the idea. +Can combine with a tavern *Requires a chef",
         type: "messhall",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Fancy Mess Hall",
+        image: 'Images/Ships/bob009.webp', name: "Fancy Mess Hall",
         cost: 7000000,
         description: "All of the good crew members can sit with the captain for the day (that's you)! Enjoy mouth-watering exotic and delicious foods. +Can combine with a tavern *Requires a chef",
         type: "messhall",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Tavern",
+        image: 'Images/Ships/bob009.webp', name: "Tavern",
         cost: 1000000,
         description: "Sometimes you need a good drink after a long day of hard work. Kick back and relax. Bar food is good too, but not that filling. +Can combine with a mess hall *Requires a chef or bartender",
         type: "tavern",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Gravity Control Room",
+        image: 'Images/Ships/bob009.webp', name: "Gravity Control Room",
         cost: 2000000,
         description: "All ships come with basic, built-in gravity control, but maybe you want to manipulate it more precisely, and control it for separate rooms in your ship.",
         type: "control",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Lounge",
+        image: 'Images/Ships/bob009.webp', name: "Lounge",
         cost: 0, // Free!
         description: "Maybe you don't fancy the fancy stuff. Get a few couches, a coffee table, maybe a TV, and suddenly you have a room to laze around in. +Can combine with a recreational room and an observatory",
         type: "recreational",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Recreational Room",
+        image: 'Images/Ships/bob009.webp', name: "Recreational Room",
         cost: 1000000,
         description: "During times of no action, your crew might get bored. Why not turn a room into a pool, gym, spa, library, mini-golf course, or more? +Can combine with a lounge and an observatory",
         type: "recreational",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Observatory",
+        image: 'Images/Ships/bob009.webp', name: "Observatory",
         cost: 2000000,
         description: "You're living amongst the stars, so why not pay attention to them once in awhile? +Can combine with a recreational room and a lounge",
         type: "recreational",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Laboratory",
+        image: 'Images/Ships/bob009.webp', name: "Laboratory",
         cost: 1000000,
         description: "You might want this if you want to analyze ancient artifacts or other anomalies. Otherwise, enjoy mixing chemicals, running volatile experiments, and other fun things. *Requires a scientist",
         type: "research",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Terraforming Bay",
+        image: 'Images/Ships/bob009.webp', name: "Terraforming Bay",
         cost: 9000000,
         description: "It takes many years to terraform a planet. This room comes equipped with the means to get started, but It's not cheap. +Can combine with a laboratory *Requires a laboratory",
         type: "industrial",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Cryosleep Chambers",
+        image: 'Images/Ships/bob009.webp', name: "Cryosleep Chambers",
         cost: 8000000,
         description: "You may want to go to cryosleep for those really long voyages into unknown space. These chambers ensure you're in good health while you're out cold. *Requires a doctor and scientist",
         type: "medical",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Ore Processing Facility",
+        image: 'Images/Ships/bob009.webp', name: "Ore Processing Facility",
         cost: 3000000,
         description: "With all of the ore you will be dealing with, you wil need a place to process them. +Can combine with a factory wing *Requires a production manager",
         type: "industrial",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Factory Wing",
+        image: 'Images/Ships/bob009.webp', name: "Factory Wing",
         cost: 3000000,
         description: "This factory wing is fitted with heavy machinery, capable of producing things en masse. It can also process scrap metal. +Can combine with an ore processing facility",
         type: "industrial",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Cargo Space",
+        image: 'Images/Ships/bob009.webp', name: "Cargo Space",
         cost: 0, // Free!
         description: "With the blink of an eye, you can turn an empty room into... an empty room. Where else will you keep your excessive space loot? +Can combine with an engineering bay",
         type: "storage",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Engineering Bay",
+        image: 'Images/Ships/bob009.webp', name: "Engineering Bay",
         cost: 3000000,
         description: "Need to repair something? Bring it here. It's a mechanic's heaven. +Can combine with a cargo space *Requires a mechanical engineer",
         type: "utility",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Hypercomms Room",
+        image: 'Images/Ships/bob009.webp', name: "Hypercomms Room",
         cost: 2000000,
         description: "This high-tech room comes with hypercommunications tech, able to send communications across star systems almost instantly. +Can combine with a digital security room",
         type: "communications",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Digital Security Room",
+        image: 'Images/Ships/bob009.webp', name: "Digital Security Room",
         cost: 4000000,
         description: "Defend your ship's vulnerable digital systems with top of the line encryption grids. +Can combine with a hypercomms room *Requires a cyber security officer",
         type: "security",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Arsenal",
+        image: 'Images/Ships/bob009.webp', name: "Arsenal",
         cost: 4000000,
         description: "Maybe you are a gun nut, or have a few on board with you. Keep all of your small arms, here. Comes with all kinds of weaponry fit for your standard soldier's hands.",
         type: "storage",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Advanced Arsenal",
+        image: 'Images/Ships/bob009.webp', name: "Advanced Arsenal",
         cost: 9000000,
         description: "This arsenal comes with charging stations for power armour, if you or your crew have them. It also comes with all sorts of experimental and advanced weaponry.",
         type: "storage",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Training Room",
+        image: 'Images/Ships/bob009.webp', name: "Training Room",
         cost: 3000000,
         description: "Give yourself some venting space. Get up close and personal and With this state-of-the-art virtual reality training room, you can emulate almost any hand-to-hand combat situation.",
         type: "recreational",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Teleporting Platform",
+        image: 'Images/Ships/bob009.webp', name: "Teleporting Platform",
         cost: 5000000,
         description: "beam you and your crew into the enemy ship, or onto the surface of a planet.",
         type: "transport",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Holding Cells",
+        image: 'Images/Ships/bob009.webp', name: "Holding Cells",
         cost: 1000000,
         description: "Maybe you've got some volatile prisoners you need to hold somewhere, or maybe you just want to put Styx on time-out.",
         type: "security",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Stasis Cell",
+        image: 'Images/Ships/bob009.webp', name: "Stasis Cell",
         cost: 2000000,
         description: "Got an extremely volatile prisoner or lifeform that you need to contain at all costs? Throw it in the stasis cell to ensure it doesn't do anything you'd regret. Can only hold up to one specimen.",
         type: "security",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Meat Fridge",
+        image: 'Images/Ships/bob009.webp', name: "Meat Fridge",
         cost: 3000000,
         description: "Stemcell-grown meat is popular in space-faring vessels. All you have to do is make sure to refill the growing solution and the meat multiplies. Comes in many flavours such as beef, chicken, kanye, etc.",
         type: "food",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Aquaculture Room",
+        image: 'Images/Ships/bob009.webp', name: "Aquaculture Room",
         cost: 1000000,
         description: "Raise some space fish! While you might get some good eats, you will need to replace the water often... They will need nutrients, however. +Can combine with a hydroponic garden",
         type: "food",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Hydroponic Garden",
+        image: 'Images/Ships/bob009.webp', name: "Hydroponic Garden",
         cost: 1000000,
         description: "Have an in-ship garden by raising plants in water; enjoy the fresh air! unless you have plants for that. +Can combine with an aquaculture room",
         type: "food",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Secure Vault",
+        image: 'Images/Ships/bob009.webp', name: "Secure Vault",
         cost: 2000000,
         description: "Transporting critical material worth hundreds of millions of credits? Maybe you don't want to keep it in your cargo space, or maybe you Some aquaculture might help.... Just don't trust your crew mates. +Counts as a cargo space",
         type: "storage",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Safe Room",
+        image: 'Images/Ships/bob009.webp', name: "Safe Room",
         cost: 3000000,
         description: "Got invaders in your ship and need a place to hide? Get a safe room... also known as a panic room. It's a hidden compartment in your ship that's hard to find, and comes with full life support. Easily defensible.",
         type: "security",
         image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room"
     },
     {
-        name: "Upgraded Ship Security",
+        image: 'Images/Ships/bob009.webp', name: "Upgraded Ship Security",
         cost: 8000000,
         description: "All ships come with mild in-ship security drones. Perhaps you want to install more robust automated turrets and camera systems? +Does not cost a room slot",
         type: "security",
@@ -1904,7 +3054,7 @@ const rooms = [
 
 const weapons = [
   {
-    name: "Machine Gun",
+    image: 'Images/Ships/bob009.webp', name: "Machine Gun",
     cost: 1000000,
     secondaryCost: 500000,
     energyUse: 1,
@@ -1920,7 +3070,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Light Particle Blaster",
+    image: 'Images/Ships/bob009.webp', name: "Light Particle Blaster",
     cost: 1000000,
     secondaryCost: 500000,
     energyUse: 3,
@@ -1936,7 +3086,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Light Laser Cannon",
+    image: 'Images/Ships/bob009.webp', name: "Light Laser Cannon",
     cost: 1000000,
     secondaryCost: 500000,
     energyUse: 4,
@@ -1952,7 +3102,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Missile Pod",
+    image: 'Images/Ships/bob009.webp', name: "Missile Pod",
     cost: 2000000,
     secondaryCost: 1000000,
     energyUse: 2,
@@ -1967,7 +3117,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Flak Cannon",
+    image: 'Images/Ships/bob009.webp', name: "Flak Cannon",
     cost: 2000000,
     secondaryCost: 1000000,
     energyUse: 1,
@@ -1982,7 +3132,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Auto Cannon",
+    image: 'Images/Ships/bob009.webp', name: "Auto Cannon",
     cost: 2000000,
     secondaryCost: 1000000,
     energyUse: 1,
@@ -1997,7 +3147,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Artillery Cannon",
+    image: 'Images/Ships/bob009.webp', name: "Artillery Cannon",
     cost: 3000000,
     secondaryCost: 1500000,
     energyUse: 2,
@@ -2012,7 +3162,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Heavy Particle Blaster",
+    image: 'Images/Ships/bob009.webp', name: "Heavy Particle Blaster",
     cost: 3000000,
     secondaryCost: 1500000,
     energyUse: 4,
@@ -2027,7 +3177,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Mana Blaster",
+    image: 'Images/Ships/bob009.webp', name: "Mana Blaster",
     cost: 4000000,
     secondaryCost: 2000000,
     energyUse: 5,
@@ -2042,7 +3192,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Heavy Laser Cannon",
+    image: 'Images/Ships/bob009.webp', name: "Heavy Laser Cannon",
     cost: 4000000,
     secondaryCost: 2000000,
     energyUse: 6,
@@ -2057,7 +3207,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Rail Gun",
+    image: 'Images/Ships/bob009.webp', name: "Rail Gun",
     cost: 4000000,
     secondaryCost: 2000000,
     energyUse: 5,
@@ -2072,7 +3222,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Missile Launcher",
+    image: 'Images/Ships/bob009.webp', name: "Missile Launcher",
     cost: 5000000,
     secondaryCost: 2000000,
     energyUse: 3,
@@ -2087,7 +3237,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Tesla Overcharger",
+    image: 'Images/Ships/bob009.webp', name: "Tesla Overcharger",
     cost: 6000000,
     secondaryCost: 4000000,
     energyUse: 6,
@@ -2102,7 +3252,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Torpedo Silo",
+    image: 'Images/Ships/bob009.webp', name: "Torpedo Silo",
     cost: 6000000,
     secondaryCost: 4000000,
     energyUse: 3,
@@ -2117,7 +3267,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Ragefire Rail Gun",
+    image: 'Images/Ships/bob009.webp', name: "Ragefire Rail Gun",
     cost: 8000000,
     secondaryCost: 4000000,
     energyUse: 7,
@@ -2132,7 +3282,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Tachyon Laser Cannon",
+    image: 'Images/Ships/bob009.webp', name: "Tachyon Laser Cannon",
     cost: 6000000,
     secondaryCost: 4000000,
     energyUse: 7,
@@ -2147,7 +3297,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Pulse Beam Cannon",
+    image: 'Images/Ships/bob009.webp', name: "Pulse Beam Cannon",
     cost: 8000000,
     secondaryCost: 4000000,
     energyUse: 6,
@@ -2162,7 +3312,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Anti-Matter Cannon",
+    image: 'Images/Ships/bob009.webp', name: "Anti-Matter Cannon",
     cost: 60000000,
     secondaryCost: 30000000,
     energyUse: 8,
@@ -2177,7 +3327,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   }, 
   {
-    name: "Graser",
+    image: 'Images/Ships/bob009.webp', name: "Graser",
     cost: 2000000,
     secondaryCost: 1000000,
     energyUse: 6,
@@ -2192,7 +3342,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Quantum Disruptor",
+    image: 'Images/Ships/bob009.webp', name: "Quantum Disruptor",
     cost: 8000000,
     secondaryCost: 4000000,
     energyUse: 7,
@@ -2207,7 +3357,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Ion Array",
+    image: 'Images/Ships/bob009.webp', name: "Ion Array",
     cost: 8000000,
     secondaryCost: 4000000,
     energyUse: 7,
@@ -2222,7 +3372,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Hellbore Cannon",
+    image: 'Images/Ships/bob009.webp', name: "Hellbore Cannon",
     cost: 18000000,
     secondaryCost: 9000000,
     energyUse: 8,
@@ -2237,7 +3387,7 @@ const weapons = [
     image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon"
   },
   {
-    name: "Phase Cannon",
+    image: 'Images/Ships/bob009.webp', name: "Phase Cannon",
     cost: 24000000,
     secondaryCost: 12000000,
     energyUse: 8,
@@ -2256,7 +3406,7 @@ const weapons = [
 
 const drones = [
   {
-    name: "Scout Drone",
+    image: 'Images/Ships/bob009.webp', name: "Scout Drone",
     cost: 500000,
     hangarSpaceUse: 0.5,
     spinalWeaponMounts: 1,
@@ -2270,7 +3420,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Beacon Drone",
+    image: 'Images/Ships/bob009.webp', name: "Beacon Drone",
     cost: 1000000,
     hangarSpaceUse: 1,
     spinalWeaponMounts: 0,
@@ -2284,7 +3434,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Combat Drone",
+    image: 'Images/Ships/bob009.webp', name: "Combat Drone",
     cost: 1000000,
     hangarSpaceUse: 1,
     spinalWeaponMounts: 1,
@@ -2298,7 +3448,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Brawler Drone",
+    image: 'Images/Ships/bob009.webp', name: "Brawler Drone",
     cost: 2000000,
     hangarSpaceUse: 2,
     spinalWeaponMounts: 1,
@@ -2312,7 +3462,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Stealth Drone",
+    image: 'Images/Ships/bob009.webp', name: "Stealth Drone",
     cost: 4000000,
     hangarSpaceUse: 2,
     spinalWeaponMounts: 1,
@@ -2326,7 +3476,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Bomber Drone",
+    image: 'Images/Ships/bob009.webp', name: "Bomber Drone",
     cost: 5000000,
     hangarSpaceUse: 3,
     spinalWeaponMounts: 1,
@@ -2340,7 +3490,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Mining Drone",
+    image: 'Images/Ships/bob009.webp', name: "Mining Drone",
     cost: 1000000,
     hangarSpaceUse: 1,
     spinalWeaponMounts: 0,
@@ -2354,7 +3504,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Shield Drone",
+    image: 'Images/Ships/bob009.webp', name: "Shield Drone",
     cost: 2000000,
     hangarSpaceUse: 1,
     spinalWeaponMounts: 0,
@@ -2368,7 +3518,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Hull Repair Drone",
+    image: 'Images/Ships/bob009.webp', name: "Hull Repair Drone",
     cost: 2000000,
     hangarSpaceUse: 1,
     spinalWeaponMounts: 0,
@@ -2382,7 +3532,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Combat Repair Drone",
+    image: 'Images/Ships/bob009.webp', name: "Combat Repair Drone",
     cost: 2000000,
     hangarSpaceUse: 1,
     spinalWeaponMounts: 0,
@@ -2396,7 +3546,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Science Probe",
+    image: 'Images/Ships/bob009.webp', name: "Science Probe",
     cost: 2000000,
     hangarSpaceUse: 0.5,
     spinalWeaponMounts: 0,
@@ -2410,7 +3560,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone"
   },
   {
-    name: "Lasso Drone",
+    image: 'Images/Ships/bob009.webp', name: "Lasso Drone",
     cost: 8000000,
     hangarSpaceUse: 2,
     spinalWeaponMounts: 0,
@@ -2683,4 +3833,105 @@ function editShipName(shipId) {
       console.error(`Ship name display div not found within ship ID "${shipId}".`);
     }
   }
+}
+
+function populateHullToSection(dataArray, choicePrefix) {
+  // Check if the section already has population to prevent duplicate entries
+  if (dataArray.length > 0) {
+    const checkDiv = document.getElementById(`${choicePrefix}-${dataArray[0].name.replace(/\s/g, '-')}`);
+    if (document.contains(checkDiv)) {
+      return;
+    }
+  }
+
+  dataArray.forEach(item => {
+    const newDiv = document.createElement("div");
+    newDiv.classList.add('choice', 'ship');
+    newDiv.id = `${choicePrefix}-${item.name.replace(/\s/g, '-')}`;
+
+    const newSpan = document.createElement("span");
+    newDiv.appendChild(newSpan);
+
+    // Image element - common to all
+    const imgElement = document.createElement('img');
+    imgElement.src = item.image || 'https://placehold.co/100x100/eeeeee/ffffff?text=NoImage';
+    imgElement.alt = `${item.name} image`;
+    newSpan.appendChild(imgElement); // Image added after newSpan
+
+    // Title (name) - common to all
+    const h3Element = document.createElement('h3');
+    h3Element.style.marginTop = '0px';
+    h3Element.style.marginBottom = '0px';
+    h3Element.textContent = item.name || 'No Name';
+    newSpan.appendChild(h3Element);
+
+    // Cost - common to most, with special handling for secondaryCost in weapons
+    if (item.cost !== undefined) {
+      const costP = document.createElement('p');
+      costP.style = "margin-top: 0;"
+      costP.innerHTML = `Cost: ${formatterIntl.format(item.cost)}`;
+      newSpan.appendChild(costP);
+    }
+    const uList1 = document.createElement('ul');
+    uList1.style = "display: grid; grid-template-columns: 1fr 1fr; list-style: none; padding: 0; margin: 0; font-size: 15px; text-align: left;"
+    
+    appendList1(uList1, 'Manufacturer: ', item.manufacturer);
+    appendList1(uList1, 'Type: ', item.type);
+    appendList1(uList1, 'Spinal Mounts: ',item.spinalMount);
+    appendList1(uList1, 'Broadside Mounts: ',item.broadsideMount);
+    appendList1(uList1, 'Point Defence Mounts: ',item.pointDefenceMount);
+    appendList1(uList1, 'Hangar Space: ',item.hangarSpace);
+    appendList1(uList1, 'Navigation: ',item.navigation);
+    appendList1(uList1, 'Hull Armor: ',item.hullArmor);
+    appendList1(uList1, 'Shield Strength: ',item.shieldStrength);
+    appendList1(uList1, 'Length: ',item.length);
+    appendList1(uList1, 'Max Crew: ',item.maxCrew);
+    appendList1(uList1, 'Extra Rooms: ',item.extraRooms);
+    appendList1(uList1, 'Energy Use: ',item.energyUse);
+    newSpan.appendChild(uList1); 
+
+    // Description - common to all
+    const descriptionP = document.createElement("p");
+    descriptionP.innerHTML = item.description || 'No description available.';
+    newSpan.appendChild(descriptionP);
+
+    const targetSection = document.getElementById(`title-${item.type}`);
+
+    switch(item.type){
+      case 'fighter':
+        targetSection.after(newDiv);
+        break;
+      case 'frigate':
+        targetSection.after(newDiv);
+        break;
+      case 'destroyer': 
+        targetSection.after(newDiv);
+        break;
+      case 'cruiser':
+        targetSection.after(newDiv);
+        break;
+      case 'corvette':
+        targetSection.after(newDiv);
+        break;
+      case 'battleship':
+        targetSection.after(newDiv);
+        newDiv.classList.remove('ship');
+        newDiv.classList.add('ship1');
+        break;
+      case 'carrier':
+        targetSection.after(newDiv);
+        newDiv.classList.remove('ship');
+        newDiv.classList.add('ship1');
+        break;
+      case 'dreadnought':
+        targetSection.after(newDiv);
+        newDiv.classList.remove('ship');
+        newDiv.classList.add('ship1');
+        break;
+      
+
+     // Append to the target section
+    }
+
+  });
 }

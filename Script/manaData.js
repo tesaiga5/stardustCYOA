@@ -1,4 +1,6 @@
-export { catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection, appendDropdown, formatterIntl };
+export { catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection, appendDropdown, formatterIntl, appendParagraph,
+          appendList1
+ };
 const catalyst = [
   {
     name: "Base Catalyst: Arm Blade",
@@ -716,6 +718,8 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
   });
 }
 
+
+
 function populateCatalystToSection(choiceArray, choicePrefix, sectionID) {
   //name, cost, description, image
   const targetSection = document.getElementById(sectionID);
@@ -756,4 +760,15 @@ function populateCatalystToSection(choiceArray, choicePrefix, sectionID) {
 const formatterIntl = new Intl.NumberFormat('en-US', {
             minimumFractionDigits: 0, // Ensure no decimal places if not needed
             maximumFractionDigits: 0 // Allow up to 2 decimal places if present
-    });
+});
+
+function appendList1(newUl, content1, content2) {
+  const li1 = document.createElement('li');
+  const li2 = document.createElement('li');
+  li1.style = "margin-left: 10px;"
+  li2.style = "margin-left: 10px;"
+  li1.textContent = content1;
+  li2.textContent = content2;
+  newUl.appendChild(li1);
+  newUl.appendChild(li2);
+}

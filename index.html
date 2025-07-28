@@ -845,7 +845,7 @@
     <div class="choice" id="choice-room">Rooms & Compartments</div>
   </div>
 
-  <div class="section" id="section-hull">
+<div class="section" id="section-hull">
     <!-- Ship Hulls -->
 <div id="title-hull">
   <span>
@@ -861,18 +861,18 @@
   <span>
     <div>
       <h3>Ship Stats Information</h3>
-      <ul>
-        <li>Spinal Weapon Mounts: Weapons mounted at the front in an almost fixed, front-facing position. Weapons here are larger and deadlier than broadside or point-defence weapons.</li>
-        <li>Broadside Turret Mounts: Weapons mounted on the sides of a ship. Weapons here are standard sized. On frigates or larger, only half of these face your targets at one time. *Limited to T3 weapons or less</li>
-        <li>Point-Defence Mounts: Weapons mounted around the ship for point-defence. Smaller than broadside weapons. *Limited to T1 weapons</li>
-        <li>Hangar Space: Hangar spaces may hold drones or vehicles, and may house fighters for 4 hangar spaces each. You may fit frigates in carriers or larger for 8 hangar spaces each. Things that are docked in a hangar can re-fit their weapon modules.</li>
-        <li>Navigation: The rating at which how quickly a ship can accelerate, decelerate, and manoeuvre. Cannot go over 25 or under 0.</li>
-        <li>Hull Armour: The defence of a ship's hull armour. Cannot go over 25 or under 0.</li>
-        <li>Shield Strength: The defence of a ship's shields. Cannot go over 25 or under 0.</li>
-        <li>Length: The length of the longest axis of the ship.</li>
-        <li>Max Crew: A ship's max crew member count.</li>
-        <li>Extra Rooms: Rooms available for repurposing.</li>
-        <li>Energy Use: A ship's energy requirements</li>
+      <ul style ="font-size: 20px; columns:2; text-align: left;">
+        <li><b>Spinal Weapon Mounts:</b> Weapons mounted at the front in an almost fixed, front-facing position. Weapons here are larger and deadlier than broadside or point-defence weapons.</li>
+        <li><b>Broadside Turret Mounts:</b> Weapons mounted on the sides of a ship. Weapons here are standard sized. On frigates or larger, only half of these face your targets at one time. *Limited to T3 weapons or less</li>
+        <li><b>Point-Defence Mounts:</b> Weapons mounted around the ship for point-defence. Smaller than broadside weapons. *Limited to T1 weapons</li>
+        <li><b>Hangar Space:</b> Hangar spaces may hold drones or vehicles, and may house fighters for 4 hangar spaces each. You may fit frigates in carriers or larger for 8 hangar spaces each. Things that are docked in a hangar can re-fit their weapon modules.</li>
+        <li><b>Navigation:</b> The rating at which how quickly a ship can accelerate, decelerate, and manoeuvre. Cannot go over 25 or under 0.</li>
+        <li><b>Hull Armour:</b> The defence of a ship's hull armour. Cannot go over 25 or under 0.</li>
+        <li><b>Shield Strength:</b> The defence of a ship's shields. Cannot go over 25 or under 0.</li>
+        <li><b>Length:</b> The length of the longest axis of the ship.</li>
+        <li><b>Max Crew:</b> A ship's max crew member count.</li>
+        <li><b>Extra Rooms:</b> Rooms available for repurposing.</li>
+        <li><b>Energy Use:</b> A ship's energy requirements</li>
       </ul>
     </div>
   </span>
@@ -895,7 +895,7 @@
 </div>
 
     <!-- Fighters -->
-<div id="title-fighters">
+<div id="title-fighter">
   <span>
     <div>
       <h3>Fighters</h3>
@@ -905,7 +905,7 @@
 </div>
 
 <!-- Frigates -->
-<div id="title-frigates">
+<div id="title-frigate">
   <span>
     <div>
       <h3>Frigates</h3>
@@ -915,7 +915,7 @@
 </div>
 
 <!-- Destroyers -->
-<div id="title-destroyers">
+<div style="width: 100%;" id="title-destroyer">
   <span>
     <div>
       <h3>Destroyers</h3>
@@ -925,7 +925,7 @@
 </div>
 
 <!-- Cruisers -->
-<div id="title-cruisers">
+<div style="width: 100%;" id="title-cruiser">
   <span>
     <div>
       <h3>Cruisers</h3>
@@ -934,8 +934,19 @@
   </span>
 </div>
 
+<!-- Corvettes -->
+<div id="title-corvette">
+  <span>
+    <div>
+      <h3>Corvettes</h3>
+      <p>Corvettes typically serve as auxillary craft for cruisers and larger vessels. Occasionally corvettes operate independently as couriers, explorers,
+          picket ships, or wary yachts. Uses frigate rules. May carry out missions intended for frigates, fighters, and dropships.</p>
+    </div>
+  </span>
+</div>
+
 <!-- Battleships -->
-<div id="title-battleships">
+<div style="width: 100%;" id="title-battleship">
   <span>
     <div>
       <h3>Battleships</h3>
@@ -945,7 +956,7 @@
 </div>
 
 <!-- Carriers -->
-<div id="title-carriers">
+<div style="width: 100%;" id="title-carrier">
   <span>
     <div>
       <h3>Carriers</h3>
@@ -955,7 +966,7 @@
 </div>
 
 <!-- Dreadnoughts -->
-<div id="title-dreadnoughts">
+<div id="title-dreadnought">
   <span>
     <div>
       <h3>Dreadnoughts</h3>
@@ -1153,10 +1164,6 @@
 
 <script type="module">
     //formats credits to have decimals
-    const formatterIntl = new Intl.NumberFormat('en-US', {
-            minimumFractionDigits: 0, // Ensure no decimal places if not needed
-            maximumFractionDigits: 0 // Allow up to 2 decimal places if present
-    });
 
     function handleChoice (section, chosenChoice, creditChange, maxChoices) { //passthru section, the choice selected, the credit change, and maximum amount of choices
       const activeChoices = section.querySelectorAll('.choice.active'); //check how many choices are active
@@ -1475,14 +1482,14 @@
 
     import {crew, archetype, addCrewToSection} from '/Script/crewData.js'; // Import crew data
     //populate hulls
-    import {hulls1, hulls2,hulls3,hulls4,hulls5,hulls6,hulls7, 
-      shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones
+    import {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
+            populateHullToSection,
     } from '/Script/shipData.js';
     //populate equipment
     import {equipment, vehicles, rigs, populateRigs} from '/Script/equipmentData.js';
     //populate spells and unified population function
     import {catalyst, affinity, spellBases, populateDataToSection, 
-      populateCatalystToSection
+      populateCatalystToSection, formatterIntl,
     } from '/Script/manaData.js';
 
     //populate skills, titles, and crew
@@ -1879,13 +1886,8 @@
     choiceHull1.addEventListener('click', () => {
       choiceHull1.classList.toggle('active');
       sectionHull1.classList.toggle('active');
-      populateDataToSection(hulls1, 'choice', 'title-frigates', 'hull');
-      populateDataToSection(hulls2, 'choice', 'title-destroyers', 'hull');
-      populateDataToSection(hulls3, 'choice', 'title-cruisers', 'hull');
-      populateDataToSection(hulls4, 'choice', 'title-battleships', 'hull');
-      populateDataToSection(hulls5, 'choice', 'title-carriers', 'hull');
-      populateDataToSection(hulls6, 'choice', 'title-dreadnoughts', 'hull');
-      populateDataToSection(hulls7, 'choice', 'endOfHull', 'hull');
+      populateHullToSection(hulls, 'choice',);
+      
     });
 
 
