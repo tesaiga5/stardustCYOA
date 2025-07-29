@@ -193,6 +193,7 @@ const crew = [
     description: "Requires 'The Guardian' title. Quiet, psi powers, knows what you'll say.",
     specialty: "Pilot",
     equipment: 0,
+    image: 'Images/Titles/hailey-crew-midjourney.webp',
    },
   {
     title: "Conrad Byrant",
@@ -551,6 +552,7 @@ const crew = [
     description: "Requires 'The Sorcerer' title, body mingles with energy.",
     specialty: "Ship Gunner",
     equipment: 0,
+    image: 'Images/Crew/sorcerer-crew-midjourney.webp',
    },
   {
     title: "Viktor",

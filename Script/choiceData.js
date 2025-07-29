@@ -338,7 +338,7 @@ import { formatterIntl } from "/Script/manaData.js";
         prerequisites: "none",
         consequences: [],
         credits: 50000000,
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "/Images/Titles/title051.webp",
         subDescription: "Name up to 5 traitors from the named crew members. Every additional traitor adds 30m.",
         description: "One or more of your crew will betray you at some point while you are adventuring the stars. You best hope you have good security personnel... unless they're the traitors. "
     },
@@ -348,7 +348,7 @@ import { formatterIntl } from "/Script/manaData.js";
         prerequisites: "none",
         consequences: [],
         credits: 130000000,
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "/Images/Titles/title045.webp",
         subDescription: "", 
         description: "It takes awhile for you to catch on, but you find out that your ship Al has began to develop a more... emotional personality. How it happened, you're not sure, but it's become moody and will reject your orders if not treated well... some- thing Al shouldn't do. It's probably best you don't piss it off."
     },
@@ -361,7 +361,7 @@ import { formatterIntl } from "/Script/manaData.js";
             "Cannot take nuclear fusion, mana core, or anti-matter energy.",
             "Cannot take aegis or mana shields."
         ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "/Images/Titles/title049.webp",
         subDescription: "Can't take nuclear fusion, mana core, or anti-matter energy. Can't take aegis or mana shields.", 
         description: "You never saw the reason to upgrade. What you have is perfect- ly fine, and you don't need anything fancier to accomplish what you do.",
         prerequisites: [],
@@ -374,7 +374,7 @@ import { formatterIntl } from "/Script/manaData.js";
         complications: [
             "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously."
         ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "/Images/Titles/title047.webp",
         subDescription: "", 
         description: "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously.",
         prerequisites: [],
@@ -387,7 +387,7 @@ import { formatterIntl } from "/Script/manaData.js";
         complications: [
             "A hostile bandit group has a bone to pick with you. They will show up at the most inconvenient times, but almost never to confront you directly. Sabotage, traps, and spies await you when you least expect it. The larger your crew, the more likely they can infiltrate. You might want intimidating crew members."
         ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "/Images/Titles/title043.webp",
         subDescription: "", 
         description: "A hostile bandit group has a bone to pick with you. They will show up at the most inconvenient times, but almost never to confront you directly. Sabotage, traps, and spies await you when you least expect it. The larger your crew, the more likely they can infiltrate. You might want intimidating crew members.",
         prerequisites: [],
@@ -400,7 +400,7 @@ import { formatterIntl } from "/Script/manaData.js";
         complications: [
             "The notorious (former) \"Siblings of Death\" both join your crew at the same time, unbeknownst to each other. However, they don't find out until you're in the middle of space, and they hate each other's guts with a violent zeal."
         ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "/Images/Titles/title041.webp",
         subDescription: "+Can get Alessia (combat) and Ricce (combat) for free", 
         description: "The notorious (former) \"Siblings of Death\" both join your crew at the same time, unbeknownst to each other. However, they don't find out until you're in the middle of space, and they hate each other's guts with a violent zeal.",
         playerUpdates: [
@@ -419,7 +419,7 @@ import { formatterIntl } from "/Script/manaData.js";
             "All ship shields permanently lose 2 points, to a minimum of 1.",
             "Shields cannot exceed 23/25."
         ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "Images/Titles/spaceship-forcefield-midjourney.webp",
         subDescription: "All ship shields permanently lose 2 points, to a minmum of 1. Shields cannot exceed 23/25. +All ship weapons permanently gain 1 point of damage per volley.", 
         description: "Something's wrong with the shields of your ships, but no matter what you do, it can't be fixed. However, your weapons seem improved.",
         playerUpdates: [
@@ -437,7 +437,7 @@ import { formatterIntl } from "/Script/manaData.js";
         complications: [
             "Somewhere out there in the galaxy, someone sees you as the 'Perfect Rival.' They fly a similar ship or fleet doctrine that is every bit as good as yours. Their leader? A notorious pilot who has had a fearsome record of flawless victo- ries, winning with genius tact. Your hope is to not face them alone..."
         ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "/Images/Titles/title023.webp",
         subDescription: "", 
         description: "Somewhere out there in the galaxy, someone sees you as the 'Perfect Rival.' They fly a similar ship or fleet doctrine that is every bit as good as yours. Their leader? A notorious pilot who has had a fearsome record of flawless victo- ries, winning with genius tact. Your hope is to not face them alone...",
         prerequisites: [],
@@ -450,7 +450,7 @@ import { formatterIntl } from "/Script/manaData.js";
         complications: [
             "You get horrendously lost and come across a huge ancient space station made completely out of Herald tech. However, you find yourself surrounded by a lot of mysterious Herald vessels. You know their ships are powerful, but they don't sem happy to see you. Better make a good impression..."
         ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "/Images/Titles/title021.webp",
         subDescription: "", description: "You get horrendously lost and come across a huge ancient space station made completely out of Herald tech. However, you find yourself surrounded by a lot of mysterious Herald vessels. You know their ships are powerful, but they don't sem happy to see you. Better make a good impression...",
         prerequisites: [],
         consequences: []
@@ -478,7 +478,7 @@ import { formatterIntl } from "/Script/manaData.js";
         complications: [
             "Someone unsavoury actively wants your head, and they've made that knowledge public. Anyone who wants to get in good with them or has something against you will be coming after you, knowing that there's a fat bounty reward waiting for them should they succeed."
         ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "Images/Titles/mitch-mohrhauser-swordfish-ship-final2.jpg",
         subDescription: "", description: "Someone unsavoury actively wants your head, and they've made that knowledge public. Anyone who wants to get in good with them or has something against you will be coming after you, knowing that there's a fat bounty reward waiting for them should they succeed. ",
         prerequisites: [],
         consequences: []
@@ -514,7 +514,7 @@ import { formatterIntl } from "/Script/manaData.js";
         complications: [
             "After finding an abandoned facility on a remote moon, you find a woman. You take her in; she was put through many experiments, mostly involving mind-link tech. On hearing about this, certain shady Federation entities will seek to capture her for some reason... and also hunt you and your crew down, regardless of your standings."
         ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "Images/Titles/hailey-crew-midjourney.webp",
         subDescription: "+Can get \"Hailey\" (co-pilot) for free", 
         description: "After finding an abandoned facility on a remote moon, you find a woman. You take her in; she was put through many experiments, mostly involving mind-link tech. On hearing about this, certain shady Federation entities will seek to capture her for some reason... and also hunt you and your crew down, regardless of your standings.",
         playerUpdates: [{ attribute: "crew", action: "add", value: "Hailey" }],
@@ -528,7 +528,7 @@ import { formatterIntl } from "/Script/manaData.js";
         complications: [
             "While passing by wreckages littering the former Luos Syndicate, you come across an SOS signal coming from a supposed aban- doned station. You investigate and find a woman hooked up to some sort of machines. Upon saving her, the twisted, possessed pirates of the Fire Legion will try to seek and eradicate you and your crew."
         ],
-        imageSrc: "/Images/Other/Beatrice R&D.webp",
+        imageSrc: "Images/Titles/sorcerer-midjourney.webp",
         subDescription: "+Can get \"Comet\" (gunner) for free", 
         description: "While passing by wreckages littering the former Luos Syndicate, you come across an SOS signal coming from a supposed aban- doned station. You investigate and find a woman hooked up to some sort of machines. Upon saving her, the twisted, possessed pirates of the Fire Legion will try to seek and eradicate you and your crew.",
         playerUpdates: [{ attribute: "crew", action: "add", value: "Comet" }],

@@ -136,7 +136,7 @@ div {
 .choice img{
   max-width: 100%; /* Ensure images don't overflow their parent pseudoChoice */
   height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Added rounded corners to images */
+  border-radius: 20px; /* Added rounded corners to images */
   margin-bottom: 10px; /* Space between image and text */
 }
 
