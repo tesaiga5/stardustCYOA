@@ -20,6 +20,7 @@
       choices: [],
       currentActiveShip: "", //div id
       ships: [], //array of objects
+      hostiles: [], //array of strings
     };
       
 
@@ -350,178 +351,200 @@
           The known galaxy is approximately 200,000 LY across with 50 billion stars and planets, 50 thousand habitable systems, 5,000 earth-like planets but only 124 Known Systems. So, where did you grow up?</div> <!--124 systems-->
       </span>
     </div>
-    <div class= "federation-system choice" >
-      <span><img src="/Images/Other/Beatrice R&D.webp">
-        <h3  style="margin-top: 0px; margin-bottom: 0px;">New Terra</h3>
+    <div class="federation-system choice section-startingPos" id="choose-new-terra">
+    <span><img src="/Images/Other/Beatrice R&D.webp">
+        <h3 style="margin-top: 0px; margin-bottom: 0px;">New Terra</h3>
         <div class="choice-cost">tax: 50 million</div>
         <p style="font-size: medium;">The crown jewel of the Federation, New Terra is what's considered as the 'core' of the sovereignty. While it contains some of the most important people to the Federation, it is also considered to be the safest place in the entire galaxy. Wealth prospers here, and provides ample opportunity to those seeking it. <b>Pay tax if you're not hostile</b>
-        </span>
-    </div>
-    <div class= "federation-system choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+        </p>
+    </span>
+</div>
+<div class="federation-system choice section-startingPos" id="choose-arcadia"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Arcadia</h3>
         <div class="choice-cost"></div>
         <p>Arcadia Situated in the 'galactic far east' of the Federation, Arcadia is both loyal and yet distant to New Terra
-          and its influence. It's much more modest and is a lot more approachable to outside entities willing to trade. It has three space stations orbiting different planets,
-          </span></div>
-    <div class="federation-system choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            and its influence. It's much more modest and is a lot more approachable to outside entities willing to trade. It has three space stations orbiting different planets,
+        </p>
+    </span></div>
+<div class="federation-system choice section-startingPos" id="choose-laporte"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Laporte</h3>
         <div class="choice-cost">tax: 25 million</div>
         <p>Laporte is less of a trade hub and more of a cargo gathering of freighters ferrying goods to and from New Terra. It has one station orbiting the single civillized planet, and is open to the public for trade. With all of the mass of products available, prices are fairly desirable here.
-        </span></div>
-    <div class="federation-system choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+        </p>
+    </span></div>
+<div class="federation-system choice section-startingPos" id="choose-dellsin"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Dellsin</h3>
         <div class="choice-cost">tax: 25 million</div>
         <p>Dellsin is considered to be within the 'outer reaches' of the Federation, and like Arcadia, it sees a great mix of people coming and going. It is surrounded by several star systems in which planets are civillized with great urban cities.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-wayward"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Wayward</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>At the back of the Federation is Wayward, the Federation's top industry system that provides ore for almost half of the galactic nation. The surrounding systems are dotted with a network of ore-rich mining facilities with an almost endless supply. Wayward is home to some of the Federation's most prevalent corporations of
-        industry.
-        </span></div>
-    <div class="beatrice-system choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            industry.
+        </p>
+    </span></div>
+<div class="beatrice-system choice section-startingPos" id="choose-capitolus"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Capitolus</h3>
         <div class="choice-cost"></div>
         <p>Capitolus sees a lot more solitude than the other trade hub systems
-          of the Federation. It's dubbed as the "Centre of Knowledge", a gathering of the civilized galaxy's most brilliant minds. Top research and development firms such as Beatrice R&D and Pulsar Inc. trace their roots to this system.
-        </span></div>
-    <div class="federation-system choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            of the Federation. It's dubbed as the "Centre of Knowledge", a gathering of the civilized galaxy's most brilliant minds. Top research and development firms such as Beatrice R&D and Pulsar Inc. trace their roots to this system.
+        </p>
+    </span></div>
+<div class="federation-system choice section-startingPos" id="choose-archer"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Archer</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>As the Federation's top military staging system, Archer houses the largest legions of the Federation Navy Armada-the strongest mili-
             tary power in the civilized galaxy. It has access to many routes that give them the leverage to insert almost anywhere in the outer rims.
             <b>Gain credits if hostile to Federation</b>
-        </span></div>
-    <div class="blackhawk-system choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+        </p>
+    </span></div>
+<div class="blackhawk-system choice section-startingPos" id="choose-ysgard"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Ysgard</h3>
         <div class="choice-cost">tax: 50 million</div>
         <p>Facing constant threats from powerful pirate organizations where the Federation was not as present, groups like the Black- hawk Elite arose. Ysgard was the
-            first system that became the Blackhawk Elite's growing sovereignty, and as they drove pirate influence out, the Blackhawks captured more. Ysgard and the surrounding systems acted as a powerful shield for the Federation against the growing threat of the time that was the Luos Syndicate. 
-          </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            first system that became the Blackhawk Elite's growing sovereignty, and as they drove pirate influence out, the Blackhawks captured more. Ysgard and the surrounding systems acted as a powerful shield for the Federation against the growing threat of the time that was the Luos Syndicate.
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-ragnarok"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Ragnarok</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>Seeking to take their righteous- ness further into dangerous territory, the Blackhawk Elites established Ragnarök, their second stronghold system. For decades, the Blackhawks defended Ragnarok fiercely, and through lots of blood, sweat, and tears, used Ragnarök's leverage to push far into pirate territory.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-valhalla"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Valhalla</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>The Blackhawk Elite were unstop- pable and shredded through their enemies with ease... until they
-        came upon the Talons. Matching them in power, the Blackhawks were stalled and thus were forced
-        to settle down in Valhalla. Even after the Pirate Coalition War where much Blackhawk territory
-        was lost and after the fall of the Luos Syndicate, Valhalla and Ragnarök remain defended with
-        unbreakable, iron might.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            came upon the Talons. Matching them in power, the Blackhawks were stalled and thus were forced
+            to settle down in Valhalla. Even after the Pirate Coalition War where much Blackhawk territory
+            was lost and after the fall of the Luos Syndicate, Valhalla and Ragnarök remain defended with
+            unbreakable, iron might.
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-talon-prime"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Talon Prime</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p> Only the Talons know the true origins of how they came to be, but the notorious, high-class society held their small sovereignty for a
-        very long time, long before they were first discovered by the Black- hawk Elite. Talon Prime is everything opposite of what you
-        would expect of an outer-ring nation; it's clean, it's professional, and it's pleasant to live in. It's often said that the Talons have a sense of humour despite their professional appearance-they still, somehow, retain their outer-rim mentality and like to pick on those who take themselves too seriously.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            very long time, long before they were first discovered by the Black- hawk Elite. Talon Prime is everything opposite of what you
+            would expect of an outer-ring nation; it's clean, it's professional, and it's pleasant to live in. It's often said that the Talons have a sense of humour despite their professional appearance-they still, somehow, retain their outer-rim mentality and like to pick on those who take themselves too seriously.
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-zona"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Zona</h3>
         <div class="choice-cost">gain: 50 million</div>
-        <p>The source of the Talon power is in all of which are open to the public. their access to valuable, high-grade ore, and Zona is abundant in this, on top of being of a rare breed of star systems in which a planet is habitable. Using technolo- gy likely stolen from the Federa- tion and possibly Pulsar Inc., the Talons are able to self-sustain their small sovereignty with surprising efficiency. 
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+        <p>The source of the Talon power is in all of which are open to the public. their access to valuable, high-grade ore, and Zona is abundant in this, on top of being of a rare breed of star systems in which a planet is habitable. Using technolo- gy likely stolen from the Federa- tion and possibly Pulsar Inc., the Talons are able to self-sustain their small sovereignty with surprising efficiency.
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-ten-cred"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Ten Cred</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>Despite being one of the (former)
-        smaller pirate groups, the Red Daggers are also one of the oldest. After the Pirate Coalition War with star systems the Blackhawks and the fall of the Luos Syndicate, they've become a prevelant power. And ever since their first of thousands of heists against neighboring powers, Ten Cred has been the Red Dagger's home system. It's also a very active trade system for inter relations between gangs and for powers they don't entirely hate.
+            smaller pirate groups, the Red Daggers are also one of the oldest. After the Pirate Coalition War with star systems the Blackhawks and the fall of the Luos Syndicate, they've become a prevelant power. And ever since their first of thousands of heists against neighboring powers, Ten Cred has been the Red Dagger's home system. It's also a very active trade system for inter relations between gangs and for powers they don't entirely hate.
 
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-las-stop"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Las Stop</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>When the Lastop system was first scouted out by the Talons, the Red
-          Daggers were surprised to find that they were offered it in return of having a trade deal with them. It seemed that the Talons had no interest in expanding territory, but the Red Daggers took it without hesitating, and has since become a very powerful asset and ally. Lastop is rich in the much-needed common ores, and the Talons and Red Daggers have taken advantage of it.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            Daggers were surprised to find that they were offered it in return of having a trade deal with them. It seemed that the Talons had no interest in expanding territory, but the Red Daggers took it without hesitating, and has since become a very powerful asset and ally. Lastop is rich in the much-needed common ores, and the Talons and Red Daggers have taken advantage of it.
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-detritus"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Detritus</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>The Federation has plenty of virtues, but some groups have
-        failed to see them within the galactic nation. The rising threats from pirate groups such as the Luos Syndicate caused uprising in the outer Federation systems; where was the Navy when they were most needed? Detritus was the second system to claim sepa- ratism from the Federation, having been long fed up with the incom- petency. And to make matters worse, the Federation simply dismissed the claim and labeled them as a "pirate group", along with the Exodus system. Being left they've to fend for themselves, held out against bandits and pirates using guerilla tactics and make-shift hardware.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            failed to see them within the galactic nation. The rising threats from pirate groups such as the Luos Syndicate caused uprising in the outer Federation systems; where was the Navy when they were most needed? Detritus was the second system to claim sepa- ratism from the Federation, having been long fed up with the incom- petency. And to make matters worse, the Federation simply dismissed the claim and labeled them as a "pirate group", along with the Exodus system. Being left they've to fend for themselves, held out against bandits and pirates using guerilla tactics and make-shift hardware.
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-exodus"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Exodus</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>Exodus, though not having been under as much threat from bandits as Detritus has, was the first to
-          claim separatism from the Federa- tion. Having started out as a simple mining colony, resources were limited and were only ferried
-          in small amounts from Wayward. Despite Exodus' calls for increased support, they went unanswered and began to establish the colony
-          as their own, starting agricultural projects with what they had. Soon they became self-sustaining, but when support from the Federation finally cut off, they ended up not caring anymore.
-          </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            claim separatism from the Federa- tion. Having started out as a simple mining colony, resources were limited and were only ferried
+            in small amounts from Wayward. Despite Exodus' calls for increased support, they went unanswered and began to establish the colony
+            as their own, starting agricultural projects with what they had. Soon they became self-sustaining, but when support from the Federation finally cut off, they ended up not caring anymore.
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-haven"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Haven</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>Much of the once powerful Luos Syndicate now lies in ruin. Thou- sands of tons of twisted metal litter the entire Syndicate space from destroyed warships to unservicable space stations. Pirate and Federation activity is still rampant after the Syndicate's fall, and unrest is evident throughout the many remaining cities. Haven was the Syndicate capital, and it was also bombarded the most by the Federation and mercenary armada.
-        Although Haven was largely considered the centre of the Core Ring corporations, it was bitter irony to them that the last vestiges of the Luos armada that defended the system were made up of their Outer Ring counterparts; groups that they didn't see eye-to-eye with. At this point in the war, most of the companies in the Syndicate forces were either routed or just deserted completely.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            Although Haven was largely considered the centre of the Core Ring corporations, it was bitter irony to them that the last vestiges of the Luos armada that defended the system were made up of their Outer Ring counterparts; groups that they didn't see eye-to-eye with. At this point in the war, most of the companies in the Syndicate forces were either routed or just deserted completely.
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-olympus"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Olympus</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>Several years after the Pirate Coalition War, the Blackhawk Elite and Federation fought back. With an armada spanning several thousand ships including nearly sixty dreadnoughts, the Navy-led assault took them to the three entry-systems of the Luos Syndi- cate: Olympus, Elysium and Solar- la. The Syndicate had prepared but despite their power, could not withstand their might. They held for a mere four days before being forced to retreat. Elysium saw the heaviest of the fights, but was also the last to fall.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-erebus"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Erebus</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>Erebus was home to many of the Syndicate's Outer Ring corpora- tions, such as the industrious Reibar manufacturing company or the venerable Cerberus Legion. Living conditions here were a stark contrast to Haven; it was a much harsher environment stricken with a more rustic atmosphere. Strange enough, the people were friendlier, and it's likely that the inhabitants here were the original founders of the Syndicate who envisioned a prosperous nation. A mercenary coalition led by the Blackhawk Elites had planned a back-door attack from Valhalla and it was at Erebus where they entered the Syndicate. Unfortu- nately for them, however, they were met not by Syndicate forces but by Talons and Red Daggers in an ingenious ambush; almost half
-        of the fleet was decimated by pre-aimed anti-matter cannon blasts as they landed in the system, predicted to the tee by Talon spies. The mercenary fleet was forced to flee, but so were the Talons and Red Daggers after they had heard that the Syndicate defence had failed up at the 'galactic north'. Rumors spread that both groups left due to other reasons, but neither elected to comment.
-      </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            of the fleet was decimated by pre-aimed anti-matter cannon blasts as they landed in the system, predicted to the tee by Talon spies. The mercenary fleet was forced to flee, but so were the Talons and Red Daggers after they had heard that the Syndicate defence had failed up at the 'galactic north'. Rumors spread that both groups left due to other reasons, but neither elected to comment.
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-abyss"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Abyss</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>After the devastating Luos defeat at Olympus, Elysium and Solaria, the Federation forces tore through the remaining systems like a plague. Cities were bombarded to submission and Syndicate fleets were outnumbered and shredded apart by relentless firepower. The remaining Syndicate forces gathered at Abyss for a final defence led by Ise Ley'is, who was one of the only remaining Syndicate commanders that wasn't missing or had abandoned the Syndicate as a whole. Under valiant and ruthless leadership, she and the remaining Syndicate forces defended the system for two months before attrition burned them out. No ship was spared, and the few thousand surviving
-        souls of an armada of nearly two million fled to Haven.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+            souls of an armada of nearly two million fled to Haven.
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-star-dust"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">Star Dust</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>Star Dust system is a very, very popular system for all factions. Namely, for the Stardust Space Station that orbits a barren planet With such leverage for all corners of the civilized galaxy, trade is rampant here, and you could find almost anything. The massive station attracts some of the most curious people who often bring rare things like Herald artifacts, or even entire Herald ships. Under a silent agreement of pirate organizations and even the Federation, the Star Dust system is one of the few places to be left out of conflicts. Groups have tried, but the system has a very strong militia funded by the wealthy station owners.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
+        </p>
+    </span></div>
+<div class="choice section-startingPos" id="choose-br-5rb"><span><img src="/Images/Other/Beatrice R&D.webp">
         <h3 style="margin-top: 0px; margin-bottom: 0px;">BR-5RB</h3>
         <div class="choice-cost">gain: 50 million</div>
         <p>During the long, tedious and fierce Pirate Coalition War, it was at BR-5RB where the Blackhawk Elite
-        suffered their first major defeat. Bringing nearly twenty dread- noughts and many battleships, they left the field with almost none left. It was through utilizing much
-        quicker swarms of destroyers and cruisers that the pirates over- whelmed the Blackhawks.
-
-</span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
-        <h3 style="margin-top: 0px; margin-bottom: 0px;">DL7-2E</h3>
-        <div class="choice-cost">gain: 50 million</div>
-        <p>After BR-5RB, the Blackhawk Elite staged another defence here, but morale was devastated and their might was stricken. They put up little to no resistance, and fled. Mjölnir was abandoned, and the Blackhawks fortified at their other two staging systems before the Pirate Coalition declared a victory. </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
-        <h3 style="margin-top: 0px; margin-bottom: 0px;">Crown, Forge</h3>
-        <div class="choice-cost">gain: 50 million</div>
-        <p>After the Pirate Coalition War, the pirates who settled at Mjölnir named themselves the Fire Legion and began to raise hostilities against their former allies, the Red Daggers. The Crown and Forge systems are both witnesses to some of the most violent encoun- ters that have been escalating throughout the years between the Legion, the Red Daggers, and Blackhawk Elites. Full out war seems to be brewing again, and sides are going to be taken. </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
-        <h3 style="margin-top: 0px; margin-bottom: 0px;">Clover Region</h3>
-        <div class="choice-cost">gain: 50 million</div>
-        <p>In between the Blackhawk Elite's Valhalla sovereignty and the Talon sovereignty is a scant four systems that link the two powers. Silent and unseen from the rest of the civilized galaxy is a constant demonstration of might and tact, neither side ever getting an advan- tage over the other. When one side gets a victory, they lose the next encounter. It's gotten so bad that the two sides have silently agreed to wave their pride at each other in the form of 'wargames' instead of blowing each other into oblivion (most of the time), and fights have often turned into conflicting opin- ions and name-calling. They hate each other. A lot.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
-        <h3 style="margin-top: 0px; margin-bottom: 0px;">Mjolnir</h3>
-        <div class="choice-cost">gain: 50 million</div>
-        <p>established during their crusade in the outer rims. For many decades, Ragnarök, Mjölnir and Valhalla were unbreakable, until the pirates formed a coalition led by the Luos Core Ring and began a full out assault. After the devastating Blackhawk losses at BR-5RB and DL7-2E, they were forced to aban- don Mjölnir, and a part of the pirate coalition took over the region. Ever since, they have almost always kept to themselves, despite the collaboration with the Luos Syndicate and the Red Dag- gers. They called themselves the Fire Legion. It was not until recently when they began raising hostilities with the Red Daggers and even the Blackhawk Elites, their
-        skirmishes growing more and more violent. As of late, the Blackhawks have responded by setting up strong blockades across the region of space surrounding the Fire Legion. Meanwhile, the rest of the galaxy has resorted to watching with anxious curiosity. Rumors are spreading that this all has to do with the Heralds, but even more ominous rumors suggest about something called the Harbinger. Others say it has something to do with mana energy. Either way, those on the front lines claim that
-        the Legion can hardly be claimed as human anymore.
+            suffered their first major defeat. Bringing nearly twenty dread- noughts and many battleships, they left the field with almost none left. It was through utilizing much
+            quicker swarms of destroyers and cruisers that the pirates over- whelmed the Blackhawks.
+        </p>
+    </span></div>
+    <div class="choice section-startingPos" id="choose-DL7-2E"><span><img src="/Images/Other/Beatrice R&D.webp">
+      <h3 style="margin-top: 0px; margin-bottom: 0px;">DL7-2E</h3>
+      <div class="choice-cost">gain: 50 million</div>
+      <p>After BR-5RB, the Blackhawk Elite staged another defence here, but morale was devastated and their might was stricken. They put up little to no resistance, and fled. Mjölnir was abandoned, and the Blackhawks fortified at their other two staging systems before the Pirate Coalition declared a victory. </span>
+      </div>
+    <div class="choice section-startingPos" id="choose-Crown,-Forge"><span><img src="/Images/Other/Beatrice R&D.webp">
+      <h3 style="margin-top: 0px; margin-bottom: 0px;">Crown, Forge</h3>
+      <div class="choice-cost">gain: 50 million</div>
+      <p>After the Pirate Coalition War, the pirates who settled at Mjölnir named themselves the Fire Legion and began to raise hostilities against their former allies, the Red Daggers. The Crown and Forge systems are both witnesses to some of the most violent encoun- ters that have been escalating throughout the years between the Legion, the Red Daggers, and Blackhawk Elites. Full out war seems to be brewing again, and sides are going to be taken. </span></div>
+    <div class="choice section-startingPos" id="choose-Clover-Region"><span><img src="/Images/Other/Beatrice R&D.webp">
+      <h3 style="margin-top: 0px; margin-bottom: 0px;">Clover Region</h3>
+      <div class="choice-cost">gain: 50 million</div>
+      <p>In between the Blackhawk Elite's Valhalla sovereignty and the Talon sovereignty is a scant four systems that link the two powers. Silent and unseen from the rest of the civilized galaxy is a constant demonstration of might and tact, neither side ever getting an advan- tage over the other. When one side gets a victory, they lose the next encounter. It's gotten so bad that the two sides have silently agreed to wave their pride at each other in the form of 'wargames' instead of blowing each other into oblivion (most of the time), and fights have often turned into conflicting opin- ions and name-calling. They hate each other. A lot.
       </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
-        <h3 style="margin-top: 0px; margin-bottom: 0px;">Prion</h3>
-        <div class="choice-cost">gain: 50 million</div>
-        <p>Pulsar Incorporated started out as a research and development company in the Federation, but after striking gold at Prion, they became one of the civilized galaxy's most prevalent industrial companies. The surrounding systems are rich with high-grade ore and allowed the company to establish the region as their own. Prion is one of the more popular systems, being a dependent source of high-grade metals for many differnt parties.
-        </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
-        <h3 style="margin-top: 0px; margin-bottom: 0px;">Bastion</h3>
-        <div class="choice-cost">gain: 50 million</div>
-        <p>Very similar to Pulsar Inc., Beatrice Research and Development start- ed off as a pursuit for exploration, terraforming and research. Many of the accesssible systems in the civilized galaxy are thanks to the technology developed by Beatrice, and they have since established their own few systems as a base of operations. Bastion is fitted with some of the most advanced tech- nology ever built by humanity, and with an endless amount of stars within human reach, Beatrice continues to lead the charge into the unknown universe.
+    <div class="choice section-startingPos" id="choose-Mjolnir"><span><img src="/Images/Other/Beatrice R&D.webp">
+      <h3 style="margin-top: 0px; margin-bottom: 0px;">Mjolnir</h3>
+      <div class="choice-cost">gain: 50 million</div>
+      <p>established during their crusade in the outer rims. For many decades, Ragnarök, Mjölnir and Valhalla were unbreakable, until the pirates formed a coalition led by the Luos Core Ring and began a full out assault. After the devastating Blackhawk losses at BR-5RB and DL7-2E, they were forced to aban- don Mjölnir, and a part of the pirate coalition took over the region. Ever since, they have almost always kept to themselves, despite the collaboration with the Luos Syndicate and the Red Dag- gers. They called themselves the Fire Legion. It was not until recently when they began raising hostilities with the Red Daggers and even the Blackhawk Elites, their
+      skirmishes growing more and more violent. As of late, the Blackhawks have responded by setting up strong blockades across the region of space surrounding the Fire Legion. Meanwhile, the rest of the galaxy has resorted to watching with anxious curiosity. Rumors are spreading that this all has to do with the Heralds, but even more ominous rumors suggest about something called the Harbinger. Others say it has something to do with mana energy. Either way, those on the front lines claim that
+      the Legion can hardly be claimed as human anymore.
+      </span></div>
+    <div class="choice section-startingPos" id="choose-Prion"><span><img src="/Images/Other/Beatrice R&D.webp">
+      <h3 style="margin-top: 0px; margin-bottom: 0px;">Prion</h3>
+      <div class="choice-cost">gain: 50 million</div>
+      <p>Pulsar Incorporated started out as a research and development company in the Federation, but after striking gold at Prion, they became one of the civilized galaxy's most prevalent industrial companies. The surrounding systems are rich with high-grade ore and allowed the company to establish the region as their own. Prion is one of the more popular systems, being a dependent source of high-grade metals for many differnt parties.
       </span></div>
-    <div class="choice" ><span><img src="/Images/Other/Beatrice R&D.webp">
-        <h3 style="margin-top: 0px; margin-bottom: 0px;">Synchordia</h3>
-        <div class="choice-cost">gain: 50 million</div>
-        <p>Unlike Beatrice R&D and Pulsar Inc, Hammerhead Industries was an industrious company from its roots. Inspired by the success of Pulsar, Hammerhead industries, one of the lead manufacturers of ships and vehicles in the Federa- tion already, funded their own expedition across the galaxy. It was at Synchordia where they struck their own gold mine and established a strong, industrious fortress. They began mass producing ships ever since, and have become the most used ship hull brand for pilots across the galaxy.
-</span></div>
+    <div class="choice section-startingPos" id="choose-Bastion"><span><img src="/Images/Other/Beatrice R&D.webp">
+      <h3 style="margin-top: 0px; margin-bottom: 0px;">Bastion</h3>
+      <div class="choice-cost">gain: 50 million</div>
+      <p>Very similar to Pulsar Inc., Beatrice Research and Development start- ed off as a pursuit for exploration, terraforming and research. Many of the accesssible systems in the civilized galaxy are thanks to the technology developed by Beatrice, and they have since established their own few systems as a base of operations. Bastion is fitted with some of the most advanced tech- nology ever built by humanity, and with an endless amount of stars within human reach, Beatrice continues to lead the charge into the unknown universe.
+            </span></div>
+    <div class="choice section-startingPos" id="choose-Synchordia"><span><img src="/Images/Other/Beatrice R&D.webp">
+      <h3 style="margin-top: 0px; margin-bottom: 0px;">Synchordia</h3>
+      <div class="choice-cost">gain: 50 million</div>
+      <p>Unlike Beatrice R&D and Pulsar Inc, Hammerhead Industries was an industrious company from its roots. Inspired by the success of Pulsar, Hammerhead industries, one of the lead manufacturers of ships and vehicles in the Federa- tion already, funded their own expedition across the galaxy. It was at Synchordia where they struck their own gold mine and established a strong, industrious fortress. They began mass producing ships ever since, and have become the most used ship hull brand for pilots across the galaxy.
+      </span></div>
 
     <div id="origin-skills">
       <div>
@@ -1190,6 +1213,31 @@
       }
     }
 
+    function handleChoicePos (section, chosenChoice, creditChange, maxChoices) { //passthru section, the choice selected, the credit change, and maximum amount of choices
+      const activeChoices = section.querySelectorAll('div.section-startingPos.active'); //check how many choices are active
+      const isChosenActive = chosenChoice.classList.contains('active');
+      if (isChosenActive) {
+        // If the chosen choice is already active, deactivate it (deselect)
+        chosenChoice.classList.toggle('active');
+        player.credits -= creditChange; // Remove credits
+
+        //remove choice
+        const index = player.choices.indexOf(chosenChoice.id);
+        if(index !== -1){
+          player.choices.splice(index, 1);
+        }
+        document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+      } else {
+                // If the chosen choice is not active, try to activate it (select)
+        if (activeChoices.length < maxChoices) { //as long as the num of active choices are less than allowed active
+            chosenChoice.classList.toggle('active'); //you may toggle the selected choice to be active
+            player.credits += creditChange; // and Add credits 
+            player.choices.push(chosenChoice.id);
+            document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+        }
+      }
+    }
+
     
 
   
@@ -1370,6 +1418,7 @@
             else {
               handleChoice(sectionToToggle, choiceElement, 536200000, 1);
             }
+
             break; 
           case 'choose-civillian':
            if(player.choices.includes('choose-sponsorScam')){
@@ -1458,7 +1507,39 @@
             else {
               handleChoice(sectionToToggle, choiceElement, 150000000, 1);
             }
-            break;                         
+            break;
+          case 'choose-laporte':
+          case 'choose-dellsin':
+            handleChoicePos(sectionOrigin1, choiceElement, -25000000, 1);
+            break;
+          case 'choose-capitolus':
+          case 'choose-arcadia':
+            handleChoicePos(sectionOrigin1, choiceElement, 0, 1);
+            break;
+          
+
+          case 'choose-new-terra': 
+            const strings1 = ['choose-pirates', 'choose-luos', 'choose-talons'];
+            if (strings1.some(str => player.choices.includes(str))){
+                alert('hostile to Federation!!'); 
+            } else {
+              handleChoicePos(sectionOrigin1, choiceElement, -50000000, 1);
+            }
+            break;
+
+          case 'choose-archer':
+            const strings2 = ['choose-pirates', 'choose-luos', 'choose-talons'];
+            if (strings2.some(str => player.choices.includes(str))){
+                handleChoicePos(sectionOrigin1, choiceElement, 50000000, 1);
+            }
+            break;
+          case 'choose-ysgard':
+            handleChoicePos(sectionOrigin1, choiceElement, -50000000, 1);
+            break;
+          case 'choose-wayward':case 'choose-ragnarok':case 'choose-valhalla':case 'choose-talon-prime':case 'choose-zona':case 'choose-ten-cred':case 'choose-las-stop':case 'choose-detritus':case 'choose-exodus':case 'choose-haven':case 'choose-olympus':case 'choose-erebus':case 'choose-abyss':case 'choose-star-dust':case 'choose-br-5rb':case 'choose-dl7-2e':case 'choose-crown-forge':case 'choose-clover-region':case 'choose-mjolnir':case 'choose-prion':case 'choose-bastion':case 'choose-synchordia': 
+            handleChoicePos(sectionOrigin1, choiceElement, 50000000, 1);
+            break;
+                             
         }
       } 
     });   
