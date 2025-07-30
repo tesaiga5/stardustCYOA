@@ -267,11 +267,9 @@ function switchChoose(id, choiceElement, sectionToToggle, originToggleArray, pla
       handleChoicePos(sectionToToggle, choiceElement, 50000000, 1);
       break;
     case 'title-rogue':
-      console.log(chosenTitle,titleCredits);
       handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
       break;
     case 'title-whisperer':
-      console.log(chosenTitle,titleCredits);
       handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
       break;
     case 'title-old-timer':
