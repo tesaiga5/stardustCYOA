@@ -354,7 +354,7 @@ import { formatterIntl } from "/Script/manaData.js";
     },
     // Titles from "Page 1 Stardust word.docx"
     {
-        id: "title-the-old-timer",
+        id: "title-old-timer",
         title: "The Old Timer",
         credits: 100000000,
         complications: [
@@ -368,7 +368,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-ghost",
+        id: "title-ghost",
         title: "The Ghost",
         credits: 120000000,
         complications: [
@@ -381,7 +381,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-leader",
+        id: "title-leader",
         title: "The Leader",
         credits: 140000000,
         complications: [
@@ -394,7 +394,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-saint",
+        id: "title-saint",
         title: "The Saint",
         credits: 150000000,
         complications: [
@@ -411,7 +411,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-berserk",
+        id: "title-berserk",
         title: "The Berserk",
         credits: 170000000,
         complications: [
@@ -431,7 +431,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-nemesis",
+        id: "title-nemesis",
         title: "The Nemesis",
         credits: 180000000,
         complications: [
@@ -444,7 +444,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-harbinger",
+        id: "title-harbinger",
         title: "The Harbinger",
         credits: 190000000,
         complications: [
@@ -456,7 +456,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-prisoner",
+        id: "title-prisoner",
         title: "The Prisoner",
         credits: 200000000,
         complications: [
@@ -472,7 +472,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-space-cowboy",
+        id: "title-space-cowboy",
         title: "The Space Cowboy",
         credits: 200000000,
         complications: [
@@ -484,7 +484,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-sleeper",
+        id: "title-sleeper",
         title: "The Sleeper",
         credits: 210000000,
         complications: [
@@ -496,7 +496,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-traveler",
+        id: "title-traveler",
         title: "The Traveler",
         credits: 220000000,
         complications: [
@@ -508,7 +508,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-guardian",
+        id: "title-guardian",
         title: "The Guardian",
         credits: 240000000,
         complications: [
@@ -522,7 +522,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-sorcerer",
+        id: "title-sorcerer",
         title: "The Sorcerer",
         credits: 240000000,
         complications: [
@@ -536,7 +536,7 @@ import { formatterIntl } from "/Script/manaData.js";
         consequences: []
     },
     {
-        id: "title-the-hellraiser",
+        id: "title-hellraiser",
         title: "The Hellraiser",
         credits: 420000000,
         complications: [
@@ -545,14 +545,14 @@ import { formatterIntl } from "/Script/manaData.js";
         imageSrc: "/Images/Other/Beatrice R&D.webp",
         subDescription: "Cannot take The Leader, The Nemesis, or The Space Cowboy", description: "Receive all complications from The Leader, The Nemesis, and The Space Cowboy.\n",
         prerequisites: [
-            { type: "not-title", value: "title-the-leader" },
-            { type: "not-title", value: "title-the-nemesis" },
-            { type: "not-title", value: "title-the-space-cowboy" }
+            { type: "not-title", value: "title-leader" },
+            { type: "not-title", value: "title-nemesis" },
+            { type: "not-title", value: "title-space-cowboy" }
         ],
         consequences: []
     },
     {
-        id: "title-the-fatebreaker",
+        id: "title-fatebreaker",
         title: "The Fatebreaker",
         credits: 420000000,
         complications: [
@@ -562,14 +562,14 @@ import { formatterIntl } from "/Script/manaData.js";
         subDescription: "Cannot take The Whisperer, The Sleeper, or The Traveler", 
         description: "Receive all complications from The Whisperer, The Sleeper and The Traveler.",
         prerequisites: [
-            { type: "not-title", value: "title-the-whisperer" },
-            { type: "not-title", value: "title-the-sleeper" },
-            { type: "not-title", value: "title-the-traveler" }
+            { type: "not-title", value: "title-whisperer" },
+            { type: "not-title", value: "title-sleeper" },
+            { type: "not-title", value: "title-traveler" }
         ],
         consequences: []
     },
     {
-        id: "title-the-demigod",
+        id: "title-demigod",
         title: "The Demigod",
         credits: 440000000,
         complications: [
@@ -578,8 +578,8 @@ import { formatterIntl } from "/Script/manaData.js";
         imageSrc: "/Images/Other/Beatrice R&D.webp",
         subDescription: "Cannot take The Guardian or The Sorcerer", description: "Receive all complications and crew members from The Guardian and The Sorcerer.",
         prerequisites: [
-            { type: "not-title", value: "title-the-guardian" },
-            { type: "not-title", value: "title-the-sorcerer" }
+            { type: "not-title", value: "title-guardian" },
+            { type: "not-title", value: "title-sorcerer" }
         ],
         consequences: []
     }
@@ -863,7 +863,7 @@ import { formatterIntl } from "/Script/manaData.js";
     }
 ];
 
-function addTitlesToSection(titlesArray, choicePrefix, sectionID) {
+function addTitlesToSection(titlesArray, sectionID) {
     const targetSection = document.getElementById(sectionID);
 
     if (!targetSection) {
@@ -880,7 +880,7 @@ function addTitlesToSection(titlesArray, choicePrefix, sectionID) {
     // Assuming the first item's ID is representative for checking
     if (titlesArray.length > 0) {
         // Sanitize the ID for use in the DOM
-        const checkDiv = document.getElementById(`${choicePrefix}-${titlesArray[0].id.replace(/\s/g, '-').replace(/[^a-zA-Z0-9-]/g, '')}`);
+        const checkDiv = document.getElementById(`${titlesArray[0].id}`);
         if (document.contains(checkDiv)) {
             return; // Section already populated, do nothing
         }
@@ -891,7 +891,7 @@ function addTitlesToSection(titlesArray, choicePrefix, sectionID) {
         const newDiv = document.createElement("div");
         newDiv.classList.add("choice");
         // Ensure unique ID for each choice element, sanitize ID
-        newDiv.id = `${choicePrefix}-${item.id.replace(/\s/g, '-').replace(/[^a-zA-Z0-9-]/g, '')}`;
+        newDiv.id = `${item.id}`;
 
         const newSpan = document.createElement("span");
         newDiv.appendChild(newSpan);
