@@ -481,6 +481,10 @@ function switchChoose(id, choiceElement, sectionToToggle, originToggleArray, pla
     case "skill-defence":
         handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
         break;
+    /*case 'frame-vulcan': 
+    case 'frame-dragoon':
+    case 'frame-imperator':*/
+
   }
 }
 

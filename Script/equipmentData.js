@@ -1,5 +1,5 @@
 import { formatterIntl } from "/Script/manaData.js";
-export {equipment, vehicles, rigs, populateRigs, frame};
+export {equipment, vehicles, rigs, populateRigs, frames};
 
 // This array contains all equipment objects with their attributes.
 // Blank attributes are set to '0'.
@@ -925,7 +925,7 @@ const equipment = [ //change to weapons later
   }
 ];
 
-const vehicles = [
+const vehicles = [ //aka dragoon mounts, need to insert
   {
     name: "AT Dunebuggy",
     cost: 500000,
@@ -1379,10 +1379,44 @@ const rigs = [
   }
 ];
 
-const frame = [
+const frames = [
   {
-    
-  },{},{}
+    id: "",
+    name: "", 
+    frameIntegrity: 75,
+    weaponPoints: 8,
+    offensiveSlot: 4,
+    defensiveSlot: 4,
+    mobilitySlot: 5,
+    commandSlot: 1,
+    utilitySlot: 4,
+    upgrades: "",
+  },
+  {
+    id: "",
+    name: "", 
+    frameIntegrity: 75,
+    weaponPoints: 8,
+    offensiveSlot: 4,
+    defensiveSlot: 4,
+    mobilitySlot: 5,
+    commandSlot: 1,
+    utilitySlot: 4,
+    upgrades: "",
+  },
+  {
+    id: "",
+    name: "", 
+    frameIntegrity: 75,
+    weaponPoints: 8,
+    offensiveSlot: 4,
+    defensiveSlot: 4,
+    mobilitySlot: 5,
+    commandSlot: 1,
+    utilitySlot: 4,
+    upgrades: "",
+  },
+  
 ];
 
 
