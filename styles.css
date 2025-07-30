@@ -413,3 +413,68 @@ ul {
   margin-left:5px; 
   padding: 0;
 }
+
+/* Base styles for Federation System (Blue) */
+.federation-system {
+  border: 3px solid #033669 !important; /* Navy-like border */
+  background-color: rgba(62, 113, 230, 0.486) !important;
+   /* Smooth transition for hover/active states */
+}
+
+/* Deeper/darker color when Federation System is clicked */
+.federation-system.active {
+  border: 3px solid #011E3F !important; /* Darker navy */
+  background-color: rgba(30, 70, 180, 0.6) !important; /* Darker blue */
+}
+
+/* Base styles for Blackhawk System (Green) */
+.blackhawk-system {
+  border: 3px solid #006400 !important; /* Dark Green border */
+  background-color: rgba(0, 128, 0, 0.486) !important; /* Green background */
+  
+}
+
+/* Deeper/darker color when Blackhawk System is clicked */
+.blackhawk-system.active {
+  border: 3px solid #003300 !important; /* Even darker green */
+  background-color: rgba(0, 80, 0, 0.6) !important; /* Darker green */
+}
+
+/* Base styles for Talon System (Pink) */
+.talon-system {
+  border: 3px solid #C71585 !important; /* Medium Violet Red border */
+  background-color: rgba(255, 105, 180, 0.486) !important; /* Hot Pink background */
+  
+}
+
+/* Deeper/darker color when Talon System is clicked */
+.talon-system.active {
+  border: 3px solid #8B0A50 !important; /* Darker pink/red */
+  background-color: rgba(200, 50, 140, 0.6) !important; /* Darker pink */
+}
+
+/* Base styles for Red-Dagger Pirates (Red) */
+.red-dagger-pirates {
+  border: 3px solid #8B0000 !important; /* Dark Red border */
+  background-color: rgba(255, 0, 0, 0.486) !important; /* Red background */
+  
+}
+
+/* Deeper/darker color when Red-Dagger Pirates is clicked */
+.red-dagger-pirates.active {
+  border: 3px solid #550000 !important; /* Even darker red */
+  background-color: rgba(200, 0, 0, 0.6) !important; /* Darker red */
+}
+
+/* Base styles for Independent System (Purple) */
+.independent-system {
+  border: 3px solid #4B0082 !important; /* Indigo border */
+  background-color: rgba(128, 0, 128, 0.486) !important; /* Purple background */
+  
+}
+
+/* Deeper/darker color when Independent System is clicked */
+.independent-system.active {
+  border: 3px solid #2F0050 !important; /* Darker indigo */
+  background-color: rgba(80, 0, 80, 0.6) !important; /* Darker purple */
+}
