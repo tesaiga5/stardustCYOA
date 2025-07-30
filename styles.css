@@ -115,11 +115,11 @@ div {
 }
 
 .choice p, .choice div{
-  font-size:16px;
+  font-size:18px;
 }
 
 .choice-cost {
-  font-size:16px;
+  font-size:18px;
   color:rgb(255, 204, 0);
 }
 
@@ -154,7 +154,7 @@ h1, h2, h3 {
   border: 3px solid #336699; /* Navy-like border */
   background-color: #224466; /* Darker navy background */
   color: #ffffff;
-  font-size: 16px;
+  font-size: 18px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   /* Adjust min-width and height based on the new button size */
   min-width: 250px; /* Example: 200px (button) + some padding */
@@ -244,7 +244,7 @@ body { /*make galaxy background image*/
   background-attachment: fixed;
   color: white;
   font-family: 'Roboto';
-  font-size: 16px;
+  font-size: 18px;
   padding-bottom: 70px; /* Add padding to the bottom to prevent content from being hidden behind the fixed point bar */
 }
 
@@ -404,7 +404,7 @@ body b{
 }
 
 .p-frame {
-  font-size: 15px; 
+  font-size: 18px; 
 }
 
 ul {
