@@ -84,7 +84,7 @@ div {
      (100% / 6) makes each item target 1/6th of the container width.
      (10px * 5 / 6) subtracts a portion of the gap space (5 gaps for 6 items)
      to ensure they fit perfectly. */
-  flex-basis: calc((100% / 6));
+  flex-basis: calc((100% / 5));
   min-width: 140px; /* Ensure items don't shrink below this size on smaller screens */
   box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
   border-radius: 15px;
@@ -111,7 +111,7 @@ div {
 }
 
 .choice h3{
-  font-size:32px;
+  font-size:28px;
 }
 
 .choice p, .choice div{
@@ -154,7 +154,7 @@ h1, h2, h3 {
   border: 3px solid #336699; /* Navy-like border */
   background-color: #224466; /* Darker navy background */
   color: #ffffff;
-  font-size: 18px;
+  font-size: 16px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   /* Adjust min-width and height based on the new button size */
   min-width: 250px; /* Example: 200px (button) + some padding */
@@ -244,7 +244,7 @@ body { /*make galaxy background image*/
   background-attachment: fixed;
   color: white;
   font-family: 'Roboto';
-  font-size: 20px;
+  font-size: 16px;
   padding-bottom: 70px; /* Add padding to the bottom to prevent content from being hidden behind the fixed point bar */
 }
 

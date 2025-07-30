@@ -1,6 +1,6 @@
-export {switchChoose};
+export {switchChoose, handleChoiceSkills};
 import {formatterIntl} from "/Script/manaData.js";
-import {titles} from "/Script/choiceData.js";
+import {titles, skills} from "/Script/choiceData.js";
 
     function handleChoice (section, chosenChoice, creditChange, maxChoices) { //passthru section, the choice selected, the credit change, and maximum amount of choices
       const activeChoices = section.querySelectorAll('.choice.active'); //check how many choices are active
@@ -52,15 +52,71 @@ import {titles} from "/Script/choiceData.js";
       }
     }
 
+    function handleChoiceSkills (section, chosenChoice, creditChange, chosenSkill) { //passthru section, the choice selected, the credit change, and maximum amount of choices
+      const activeChoices = section.querySelectorAll('div.section-skills.active'); //check how many choices are active
+      const isChosenActive = chosenChoice.classList.contains('active');
+      if (isChosenActive) {
+        // If the chosen choice is already active, deactivate it (deselect)
+        chosenChoice.classList.toggle('active');
+        player.credits -= creditChange; // Remove credits
+
+        //remove choice
+        const index = player.choices.indexOf(chosenChoice.id);
+        if(index !== -1){
+          player.choices.splice(index, 1);
+        }
+        document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+      } else {
+        
+          //check for pre-requisities, if there are pre-requisities
+        if (chosenSkill.prerequisites.length > 0) {
+          let fulfilled = 0; // Changed from const to let because its value is modified
+          for (let i = 0; i < chosenSkill.prerequisites.length; i++) { // Changed length() to length
+            
+            activeChoices.forEach(choice => { // Corrected forEach syntax
+                if (choice.id === chosenSkill.prerequisites[i]) { // Added missing if condition
+                    fulfilled += 1;
+                    }
+                });
+          }
+          
+          if (fulfilled === chosenSkill.prerequisites.length) {
+            chosenChoice.classList.toggle('active'); //you may toggle the selected choice to be active
+            player.credits += creditChange; // and Add credits 
+            player.choices.push(chosenChoice.id);
+            document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+          }
+          else {
+            return;
+          } 
+        } else {
+            chosenChoice.classList.toggle('active'); //you may toggle the selected choice to be active
+            player.credits += creditChange; // and Add credits 
+            player.choices.push(chosenChoice.id);
+            document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+        }
+      }
+    }
+
+
+
 
 function switchChoose(id, choiceElement, sectionToToggle, originToggleArray, player){
   //for titles
-
   const chosenTitle = titles.find(title=> title.id === id);
   let titleCredits = 0; 
   if (chosenTitle) {
     if (chosenTitle.credits !== undefined) {
       titleCredits = chosenTitle.credits;
+    }}
+  
+  //for skills
+  const chosenSkill = skills.find(skill=> skill.id === id);
+  
+  let skillCredits = 0; 
+  if (chosenSkill) {
+    if (chosenSkill.credits !== undefined) {
+      skillCredits = chosenSkill.credits;
     }}
 
   switch (id) {
@@ -320,6 +376,111 @@ function switchChoose(id, choiceElement, sectionToToggle, originToggleArray, pla
     case 'title-demigod':
       handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
       break;
+    case 'title-demigod':
+      handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
+      break;
+    case "skill-basic-piloting":
+      handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+      break;
+    case "skill-standard-piloting":
+      handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+      break;
+    case "skill-advanced-piloting":
+      handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+      break;
+    case "skill-ship-gunnery":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-ship-weapon-specialization":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-medical":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-computer-science":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-cyber-security":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-mechanics":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-nuclear":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-industry":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-diplomacy":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-mind-link":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-mercantile":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-basicTraining":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-closeQuartersCombat":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-security":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-patrol":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-advanced-firearms":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-field-medic":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-hit":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-recovery":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-long-ranged-combat":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-wilderness-survival":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-raid":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-infiltration":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-demolition":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-combat-driving":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-assault":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-guerilla":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-weaponsmith":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-combat-engineering":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-leadership":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
+    case "skill-defence":
+        handleChoiceSkills(sectionToToggle, choiceElement, skillCredits, chosenSkill);
+        break;
   }
 }
 

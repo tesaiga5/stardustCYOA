@@ -554,12 +554,13 @@
       <div>
         <span>
           <div>
-            <h3>Skills</h3>
-            You may take courses during your formation years. A course lasts a semester. For every course you take, you gain 1 Skill Level up to a maximum of 20.
+            <h3>Courses</h3>
+            You may take up to 20 courses during your formation years, for every course you take, you gain 1 Skill Level up to a maximum of 20. A course lasts a semester. 
             You are only able to do one job in addition to being the pilot at the same time.</div>
         </span>
       </div>
     </div>
+    <div id="endOfSkills" style="display:none;"></div>
       
     <div id="origin-mana" >
       <div>
@@ -1284,7 +1285,42 @@
 
     //startingPos
     'choose-new-terra':'section-origin', 'choose-arcadia':'section-origin', 'choose-laporte':'section-origin', 'choose-dellsin':'section-origin', 'choose-wayward':'section-origin', 'choose-capitolus':'section-origin', 'choose-archer':'section-origin', 'choose-ysgard':'section-origin', 'choose-ragnarok':'section-origin', 'choose-valhalla':'section-origin', 'choose-talon-prime':'section-origin', 'choose-zona':'section-origin', 'choose-ten-cred':'section-origin', 'choose-las-stop':'section-origin', 'choose-detritus':'section-origin', 'choose-exodus':'section-origin', 'choose-haven':'section-origin', 'choose-olympus':'section-origin', 'choose-erebus':'section-origin', 'choose-abyss':'section-origin', 'choose-star-dust':'section-origin', 'choose-br-5rb':'section-origin', 'choose-dl7-2e':'section-origin', 'choose-crown-forge':'section-origin', 'choose-clover-region':'section-origin', 'choose-mjolnir':'section-origin', 'choose-prion':'section-origin', 'choose-bastion':'section-origin', 'choose-synchordia':'section-origin',
-
+    
+    //skills
+    'skill-basic-piloting': 'section-origin',
+    'skill-standard-piloting': 'section-origin',
+    'skill-advanced-piloting': 'section-origin',
+    'skill-ship-gunnery': 'section-origin',
+    'skill-ship-weapon-specialization': 'section-origin',
+    'skill-medical': 'section-origin',
+    'skill-computer-science': 'section-origin',
+    'skill-cyber-security': 'section-origin',
+    'skill-mechanics': 'section-origin',
+    'skill-nuclear': 'section-origin',
+    'skill-industry': 'section-origin',
+    'skill-diplomacy': 'section-origin',
+    'skill-mind-link': 'section-origin',
+    'skill-mercantile': 'section-origin',
+    'skill-basicTraining': 'section-origin',
+    'skill-closeQuartersCombat': 'section-origin',
+    'skill-security': 'section-origin',
+    'skill-patrol': 'section-origin',
+    'skill-advanced-firearms': 'section-origin',
+    'skill-field-medic': 'section-origin',
+    'skill-hit': 'section-origin',
+    'skill-recovery': 'section-origin',
+    'skill-long-ranged-combat': 'section-origin',
+    'skill-wilderness-survival': 'section-origin',
+    'skill-raid': 'section-origin',
+    'skill-infiltration': 'section-origin',
+    'skill-demolition': 'section-origin',
+    'skill-combat-driving': 'section-origin',
+    'skill-assault': 'section-origin',
+    'skill-guerilla': 'section-origin',
+    'skill-weaponsmith': 'section-origin',
+    'skill-combat-engineering': 'section-origin',
+    'skill-leadership': 'section-origin',
+    'skill-defence': 'section-origin',
     };
 
     const originToggleArray = ['origin-startingPos', 'origin-skills', 'origin-mana', 'origin-catalyst', 'origin-spell', 'origin-affinities'];
@@ -1356,8 +1392,9 @@
       choiceArray.forEach(item => {
           const newDiv = document.createElement("div");
           newDiv.classList.add("choice");
+          newDiv.classList.add(`section-${choicePrefix}`);
           // Ensure unique ID for each choice element
-          newDiv.id = `${choicePrefix}-${item.id}`; 
+          newDiv.id = `${item.id}`; 
           const newSpan = document.createElement("span");
           newDiv.appendChild(newSpan);
 
@@ -1377,13 +1414,8 @@
           newSpanDiv.classList.add("choice-cost");
           // Determine if it's a 'gain' or 'cost' based on the item's properties or context
           // Assuming 'cost' property implies a cost, otherwise it's a gain.
-          if (typeof item.cost === 'number' && item.cost >= 0) {
-              newSpanDiv.innerHTML = `cost: `+formatterIntl.format(item.cost);
-          } else if (typeof item.gain === 'number' && item.gain >= 0) {
-              newSpanDiv.innerHTML = `gain: `+ formatterIntl.format(item.gain);
-          } else {
-              newSpanDiv.innerHTML = ''; // Or some default if neither is present
-          }
+          
+          newSpanDiv.innerHTML = `cost: `+formatterIntl.format(item.credits);
 
           const prereqDiv = document.createElement("div");
           prereqDiv.classList.add("choice-prereq");
@@ -1705,7 +1737,7 @@
     
     //populate skills & mana
     choiceOrigin1.addEventListener('click', () => {
-      addChoiceDataToSection(skills, 'choice', 'origin-mana'); 
+      addChoiceDataToSection(skills, 'skills', 'endOfSkills'); 
       populateCatalystToSection(catalyst, 'choice', 'endOfCatalyst');
       populateCatalystToSection(affinity, 'choice', 'endOfAffinities');
       populateCatalystToSection(spellBases, 'choice', 'endOfSpell');
