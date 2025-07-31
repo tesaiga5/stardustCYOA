@@ -1,123 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Toggleable Envelope</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom CSS for smooth transition */
-        .envelope-container {
-            transition: right 0.3s ease-in-out;
-        }
+      /* Custom CSS for smooth transition */
+      .envelope-container {
+        transition: right 0.3s ease-in-out;
+      }
     </style>
-</head>
-<body class="font-sans bg-gray-100 min-h-screen flex flex-col">
-
+  </head>
+  <body class="font-sans bg-gray-100 min-h-screen flex flex-col">
     <!-- Main Content Area (to demonstrate scrolling) -->
     <div class="flex-grow p-8 max-w-4xl mx-auto">
-        <h1 class="text-4xl font-extrabold text-gray-800 mb-6 text-center">Welcome to Our Page!</h1>
-        <p class="text-lg text-gray-700 leading-relaxed mb-4">
-            This is some sample content to make the page scrollable. You'll notice the envelope icon on the right
-            side of the screen stays in place as you scroll down. Click on it to reveal a hidden message!
+      <h1 class="text-4xl font-extrabold text-gray-800 mb-6 text-center">
+        Welcome to Our Page!
+      </h1>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        This is some sample content to make the page scrollable. You'll notice
+        the envelope icon on the right side of the screen stays in place as you
+        scroll down. Click on it to reveal a hidden message!
+      </p>
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-3">Section One</h2>
+        <p class="text-gray-600">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">Section One</h2>
-            <p class="text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-            </p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">Section Two</h2>
-            <p class="text-gray-600">
-                Curabitur pretium tincidunt lacus, in consequat ipsum vestibulum non. Donec in arcu eget justo
-                fermentum eleifend. Phasellus id justo non nulla vehicula fermentum. Proin eget odio nec orci
-                consectetur efficitur. Mauris vitae libero at justo scelerisque pulvinar. Suspendisse potenti.
-                Nullam ac odio quis mauris consectetur scelerisque.
-            </p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">Section Three</h2>
-            <p class="text-gray-600">
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac
-                habitasse platea dictumst. Integer vitae velit nec justo lacinia tincidunt. Sed non justo nec libero
-                tincidunt consectetur. Sed euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi,
-                eget consectetur nisi nisi eu consectetur.
-            </p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">Section Four</h2>
-            <p class="text-gray-600">
-                Fusce nec tellus sed odio cursus commodo. Praesent non sem id quam consectetur ullamcorper.
-                Aliquam erat volutpat. Nam ac metus in libero consectetur consectetur. Sed euismod, nisi eu
-                consectetur consectetur, nisl nisi consectetur nisi, eget consectetur nisi nisi eu consectetur.
-            </p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">Section Five</h2>
-            <p class="text-gray-600">
-                Donec euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eget consectetur nisi
-                nisi eu consectetur. Sed euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi,
-                eget consectetur nisi nisi eu consectetur.
-            </p>
-        </div>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-3">Section Two</h2>
+        <p class="text-gray-600">
+          Curabitur pretium tincidunt lacus, in consequat ipsum vestibulum non.
+          Donec in arcu eget justo fermentum eleifend. Phasellus id justo non
+          nulla vehicula fermentum. Proin eget odio nec orci consectetur
+          efficitur. Mauris vitae libero at justo scelerisque pulvinar.
+          Suspendisse potenti. Nullam ac odio quis mauris consectetur
+          scelerisque.
+        </p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-3">Section Three</h2>
+        <p class="text-gray-600">
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+          posuere cubilia Curae; In hac habitasse platea dictumst. Integer vitae
+          velit nec justo lacinia tincidunt. Sed non justo nec libero tincidunt
+          consectetur. Sed euismod, nisi eu consectetur consectetur, nisl nisi
+          consectetur nisi, eget consectetur nisi nisi eu consectetur.
+        </p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-3">Section Four</h2>
+        <p class="text-gray-600">
+          Fusce nec tellus sed odio cursus commodo. Praesent non sem id quam
+          consectetur ullamcorper. Aliquam erat volutpat. Nam ac metus in libero
+          consectetur consectetur. Sed euismod, nisi eu consectetur consectetur,
+          nisl nisi consectetur nisi, eget consectetur nisi nisi eu consectetur.
+        </p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-gray-800 mb-3">Section Five</h2>
+        <p class="text-gray-600">
+          Donec euismod, nisi eu consectetur consectetur, nisl nisi consectetur
+          nisi, eget consectetur nisi nisi eu consectetur. Sed euismod, nisi eu
+          consectetur consectetur, nisl nisi consectetur nisi, eget consectetur
+          nisi nisi eu consectetur.
+        </p>
+      </div>
     </div>
 
     <!-- Envelope Container -->
-    <div id="envelopeContainer"
-         class="envelope-container fixed top-1/2 -translate-y-1/2 bg-blue-600 text-white p-4 rounded-l-lg shadow-lg cursor-pointer flex items-center z-50"
-         style="right: -200px; width: 250px;">
-        <!-- Envelope Icon (simple SVG for an envelope) -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 19v-8.93a2 2 0 01.89-1.664L12 3l7.11 5.406a2 2 0 01.89 1.664V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19h18M12 11l7.11 5.406a2 2 0 00.89 1.664V19M12 11L3.89 16.406a2 2 0 01-.89 1.664V19" />
-        </svg>
-        <span class="font-semibold text-lg">Open Me!</span>
+    <div
+      id="envelopeContainer"
+      class="envelope-container fixed top-1/2 -translate-y-1/2 bg-blue-600 text-white p-4 rounded-l-lg shadow-lg cursor-pointer flex items-center z-50"
+      style="right: -200px; width: 250px"
+    >
+      <!-- Envelope Icon (simple SVG for an envelope) -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8 mr-3"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3 19v-8.93a2 2 0 01.89-1.664L12 3l7.11 5.406a2 2 0 01.89 1.664V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19h18M12 11l7.11 5.406a2 2 0 00.89 1.664V19M12 11L3.89 16.406a2 2 0 01-.89 1.664V19"
+        />
+      </svg>
+      <span class="font-semibold text-lg">Open Me!</span>
 
-        <!-- Envelope Content (initially hidden) -->
-        <div id="envelopeContent" class="absolute top-0 left-0 w-full h-full bg-blue-700 p-4 rounded-l-lg opacity-0 pointer-events-none transition-opacity duration-300">
-            <p class="text-sm">
-                Hello there! This is a secret message inside the envelope.
-                <br>
-                Thanks for clicking!
-            </p>
-        </div>
+      <!-- Envelope Content (initially hidden) -->
+      <div
+        id="envelopeContent"
+        class="absolute top-0 left-0 w-full h-full bg-blue-700 p-4 rounded-l-lg opacity-0 pointer-events-none transition-opacity duration-300"
+      >
+        <p class="text-sm">
+          Hello there! This is a secret message inside the envelope.
+          <br />
+          Thanks for clicking!
+        </p>
+      </div>
     </div>
 
     <script>
-        const envelopeContainer = document.getElementById('envelopeContainer');
-        const envelopeContent = document.getElementById('envelopeContent');
-        let isOpen = false; // State to track if the envelope is open
+      const envelopeContainer = document.getElementById("envelopeContainer");
+      const envelopeContent = document.getElementById("envelopeContent");
+      let isOpen = false; // State to track if the envelope is open
 
-        // Function to toggle the envelope's state
-        function toggleEnvelope() {
-            if (isOpen) {
-                // If open, slide it back out of view
-                envelopeContainer.style.right = '-200px';
-                envelopeContent.style.opacity = '0';
-                envelopeContent.style.pointerEvents = 'none'; // Disable interaction with content when hidden
-            } else {
-                // If closed, slide it into view
-                envelopeContainer.style.right = '0px';
-                // Delay showing content slightly to allow slide animation to start
-                setTimeout(() => {
-                    envelopeContent.style.opacity = '1';
-                    envelopeContent.style.pointerEvents = 'auto'; // Enable interaction with content when visible
-                }, 100);
-            }
-            isOpen = !isOpen; // Toggle the state
+      // Function to toggle the envelope's state
+      function toggleEnvelope() {
+        if (isOpen) {
+          // If open, slide it back out of view
+          envelopeContainer.style.right = "-200px";
+          envelopeContent.style.opacity = "0";
+          envelopeContent.style.pointerEvents = "none"; // Disable interaction with content when hidden
+        } else {
+          // If closed, slide it into view
+          envelopeContainer.style.right = "0px";
+          // Delay showing content slightly to allow slide animation to start
+          setTimeout(() => {
+            envelopeContent.style.opacity = "1";
+            envelopeContent.style.pointerEvents = "auto"; // Enable interaction with content when visible
+          }, 100);
         }
+        isOpen = !isOpen; // Toggle the state
+      }
 
-        // Add click listener to the envelope container
-        envelopeContainer.addEventListener('click', toggleEnvelope);
+      // Add click listener to the envelope container
+      envelopeContainer.addEventListener("click", toggleEnvelope);
 
-        // Initially, position the envelope so only a small part is visible
-        // This is done via inline style `right: -200px;` and `width: 250px;` in HTML
-        // which makes 50px visible (250 - 200 = 50)
+      // Initially, position the envelope so only a small part is visible
+      // This is done via inline style `right: -200px;` and `width: 250px;` in HTML
+      // which makes 50px visible (250 - 200 = 50)
     </script>
-</body>
+  </body>
 </html>

@@ -1,4 +1,3 @@
-
 .section {
   display: flex;
   flex-wrap: wrap; /* NEW: Allows flex items to wrap to the next line */
@@ -26,7 +25,12 @@
 }
 
 .section > div:hover {
-  background-color: rgb(71, 19, 150, 0.8); /* Darker background on hover for better visibility */
+  background-color: rgb(
+    71,
+    19,
+    150,
+    0.8
+  ); /* Darker background on hover for better visibility */
   cursor: pointer; /* Changes cursor to pointer on hover */
   transform: translateY(-2px); /* Slight lift effect on hover */
 }
@@ -42,37 +46,72 @@
   border-radius: 20px;
   background-color: rgb(71, 19, 150, 1);
   width: max-content; /* Ensures button width is determined by its content */
-
 }
 
 .section > button:hover {
-  background-color: rgb(71, 19, 150, 0.5); /* Darker background on hover for better visibility */
+  background-color: rgb(
+    71,
+    19,
+    150,
+    0.5
+  ); /* Darker background on hover for better visibility */
   cursor: pointer; /* Changes cursor to pointer on hover */
   transform: translateY(-2px); /* Slight lift effect on hover */
 }
-
-
 
 div {
   margin: 10px;
 }
 
-#section-lore, #section-you, #section-moneysource,
-#section-origin, #section-equipment,
-#section-titles, #section-fleet, #section-ship, #section-hull,
-#section-sponsor, #section-subsystem,
-#origin-education, #origin-skills, #origin-mana, #origin-catalyst, #origin-spell, #origin-affinities, #section-crew,
-#section-mod, #section-weapon, #section-industrial, #section-ewar, #section-room {
+#section-lore,
+#section-you,
+#section-moneysource,
+#section-origin,
+#section-equipment,
+#section-titles,
+#section-fleet,
+#section-ship,
+#section-hull,
+#section-sponsor,
+#section-subsystem,
+#origin-education,
+#origin-skills,
+#origin-mana,
+#origin-catalyst,
+#origin-spell,
+#origin-affinities,
+#section-crew,
+#section-mod,
+#section-weapon,
+#section-industrial,
+#section-ewar,
+#section-room {
   display: none; /* Hidden by default */
 }
 
-#section-lore.visible, #section-you.visible, #section-moneysource.visible,
-#section-origin.visible, #section-equipment.visible,
-#section-titles.visible, #section-fleet.visible, #section-ship.visible,
-#section-hull.visible, #section-sponsor.visible,
-#origin-education.visible, #origin-skills.visible, #origin-mana.visible, #origin-catalyst.visible, #origin-spell.visible, #origin-affinities.visible,
-#section-crew.visible, #section-subsystem.visible,
-#section-mod.visible, #section-weapon.visible, #section-industrial.visible, #section-ewar.visible, #section-room.visible {
+#section-lore.visible,
+#section-you.visible,
+#section-moneysource.visible,
+#section-origin.visible,
+#section-equipment.visible,
+#section-titles.visible,
+#section-fleet.visible,
+#section-ship.visible,
+#section-hull.visible,
+#section-sponsor.visible,
+#origin-education.visible,
+#origin-skills.visible,
+#origin-mana.visible,
+#origin-catalyst.visible,
+#origin-spell.visible,
+#origin-affinities.visible,
+#section-crew.visible,
+#section-subsystem.visible,
+#section-mod.visible,
+#section-weapon.visible,
+#section-industrial.visible,
+#section-ewar.visible,
+#section-room.visible {
   display: flex; /* Hidden by default */
 }
 
@@ -100,47 +139,55 @@ div {
 }
 
 .choice-sponsor {
-  flex-basis: calc((100% / 4))
+  flex-basis: calc((100% / 4));
 }
 
 .choice-frame {
   width: 300px;
-  flex-basis: calc(100%/3.4);
+  flex-basis: calc(100% / 3.4);
   margin: 0;
   padding: 0;
 }
 
-.choice h3{
-  font-size:28px;
+.choice h3 {
+  font-size: 28px;
 }
 
-.choice p, .choice div{
-  font-size:18px;
+.choice p,
+.choice div {
+  font-size: 18px;
 }
 
 .choice-cost {
-  font-size:18px;
-  color:rgb(255, 204, 0);
+  font-size: 18px;
+  color: rgb(255, 204, 0);
 }
 
-.choice:hover{
+.choice:hover {
   cursor: pointer;
-  background-color: rgb(9, 0, 64, 0.7); /* A more vibrant blue with transparency for hover */
+  background-color: rgb(
+    9,
+    0,
+    64,
+    0.7
+  ); /* A more vibrant blue with transparency for hover */
   transform: translateY(-2px);
 }
 
-.choice.active{
-  background-color:  rgb(9, 0, 64, 0.7); /* Consistent active color */
+.choice.active {
+  background-color: rgb(9, 0, 64, 0.7); /* Consistent active color */
 }
 
-.choice img{
+.choice img {
   max-width: 100%; /* Ensure images don't overflow their parent pseudoChoice */
   height: auto; /* Maintain aspect ratio */
   border-radius: 20px; /* Added rounded corners to images */
   margin-bottom: 10px; /* Space between image and text */
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
   color: #ffffff; /* White color for headings */
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 1); /* Stronger shadow for headings */
@@ -205,11 +252,10 @@ h1, h2, h3 {
 .x-button {
   background-color: rgb(198, 35, 0); /* Reddish */
   color: white;
-
 }
 
 .x-button:hover {
-  background-color: #F14A00; /* Lighter red on hover */
+  background-color: #f14a00; /* Lighter red on hover */
 }
 
 /* Specific styles for the Edit button */
@@ -236,26 +282,29 @@ img {
   height: 200px;
 }
 
-body { /*make galaxy background image*/
+body {
+  /*make galaxy background image*/
   background-image: url(/Images/Other/timBartonSunsetNebulae.webp); /* Replace with your image path */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: white;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 18px;
   padding-bottom: 70px; /* Add padding to the bottom to prevent content from being hidden behind the fixed point bar */
 }
 
-body b{
+body b {
   color: rgb(255, 204, 0);
-  text-shadow: 0 0 10px rgb(177, 59, 255), 0 0 20px rgb(177, 59, 255), 0 0 30px rgb(177, 59, 255);
+  text-shadow: 0 0 10px rgb(177, 59, 255), 0 0 20px rgb(177, 59, 255),
+    0 0 30px rgb(177, 59, 255);
 }
 
 .highlighted-bold {
   color: rgb(255, 204, 0);
-  text-shadow: 0 0 10px rgb(177, 59, 255), 0 0 20px rgb(177, 59, 255), 0 0 30px rgb(177, 59, 255);
+  text-shadow: 0 0 10px rgb(177, 59, 255), 0 0 20px rgb(177, 59, 255),
+    0 0 30px rgb(177, 59, 255);
 }
 
 /* This is the container for the pseudoChoice elements */
@@ -294,7 +343,7 @@ body b{
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-.pseudoChoice div{
+.pseudoChoice div {
   /* This div is now a direct child of pseudoChoice, so it inherits flex properties */
   border: 3px solid rgb(177, 59, 255);
   background-color: rgb(71, 19, 150, 0.4);
@@ -323,7 +372,7 @@ body b{
   height: auto; /* Keep auto height, or set a fixed height if needed */
   flex-direction: column; /* Stack children vertically if you want the text below the image */
 }
-.image-container img{
+.image-container img {
   /* No specific centering properties needed here if parent is flex */
   max-width: 100%; /* Ensure image scales down if larger than container */
   height: auto; /* Maintain aspect ratio */
@@ -351,66 +400,62 @@ body b{
 
 /* for gauge*/
 .gauge-container {
-    display: flex;
-    flex-grow: 1;
-    margin-bottom: 10px; /* Allow wrapping for responsiveness */
-    margin-left: 30px;
-    max-width: 300px; /* Full width to allow label and cells to align properly */
+  display: flex;
+  flex-grow: 1;
+  margin-bottom: 10px; /* Allow wrapping for responsiveness */
+  margin-left: 30px;
+  max-width: 300px; /* Full width to allow label and cells to align properly */
 }
 .gauge-label {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #4a5568;
-    margin-right: 20px;
-    max-width: 100%;
-    align-self: center; /* Center the label vertically */
-    flex-shrink: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-right: 20px;
+  max-width: 100%;
+  align-self: center; /* Center the label vertically */
+  flex-shrink: 0;
 }
 .gauge-cells {
-    display: flex;
-    align-self: center;
-    gap: 1px; /* Small gap between cells */
-     /* Allow cells to take up remaining space */
-    max-width: 100%; /* Adjust max-width based on container width */
-    border: 2px solid white;
-    box-shadow: 0 0 4px 1px rgba(255, 204, 0, 0.7); /* Soft yellow glow */
-    transition: box-shadow 0.2s ease-in-out; /* Smooth transition for glow */
-    filter: brightness(0.9); /* Slightly dim the glow for a more subtle effect */
+  display: flex;
+  align-self: center;
+  gap: 1px; /* Small gap between cells */
+  /* Allow cells to take up remaining space */
+  max-width: 100%; /* Adjust max-width based on container width */
+  border: 2px solid white;
+  box-shadow: 0 0 4px 1px rgba(255, 204, 0, 0.7); /* Soft yellow glow */
+  transition: box-shadow 0.2s ease-in-out; /* Smooth transition for glow */
+  filter: brightness(0.9); /* Slightly dim the glow for a more subtle effect */
 }
 .gauge-cell {
-    width: 18px; /* Fixed width for each cell */
-    height: 18px; /* Fixed height for each cell */
-    border: 2px yellow; /* Default border color for empty cells */
-    border-radius: 2px; /* Slightly rounded corners for cells */
-    background-color: rgb(241, 241, 241, 0.3); /* Default empty color */    
+  width: 18px; /* Fixed width for each cell */
+  height: 18px; /* Fixed height for each cell */
+  border: 2px yellow; /* Default border color for empty cells */
+  border-radius: 2px; /* Slightly rounded corners for cells */
+  background-color: rgb(241, 241, 241, 0.3); /* Default empty color */
 }
 
 /* Custom filled colors based on cell index */
 .gauge-cell.filled-white {
-    background-color: whitesmoke; /* White */
-    
+  background-color: whitesmoke; /* White */
 }
 .gauge-cell.filled-light-purple {
-    background-color: rgb(108, 144, 230); /* Tailwind purple-400 */
-    
+  background-color: rgb(108, 144, 230); /* Tailwind purple-400 */
 }
 .gauge-cell.filled-dark-purple {
-    background-color: rgb(197, 124, 239); /* Tailwind purple-700 */
-    
+  background-color: rgb(197, 124, 239); /* Tailwind purple-700 */
 }
-.gauge-cell.filled-light-red {  
+.gauge-cell.filled-light-red {
   background-color: rgb(239, 119, 120); /* Tailwind red-400 */
-  
 }
 
 .p-frame {
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 ul {
-  list-style-type: none; 
-  margin: 0; 
-  margin-left:5px; 
+  list-style-type: none;
+  margin: 0;
+  margin-left: 5px;
   padding: 0;
 }
 
@@ -418,12 +463,12 @@ ul {
 .federation-system {
   border: 3px solid #033669 !important; /* Navy-like border */
   background-color: rgba(62, 113, 230, 0.486) !important;
-   /* Smooth transition for hover/active states */
+  /* Smooth transition for hover/active states */
 }
 
 /* Deeper/darker color when Federation System is clicked */
 .federation-system.active {
-  border: 3px solid #011E3F !important; /* Darker navy */
+  border: 3px solid #011e3f !important; /* Darker navy */
   background-color: rgba(30, 70, 180, 0.6) !important; /* Darker blue */
 }
 
@@ -431,7 +476,6 @@ ul {
 .blackhawk-system {
   border: 3px solid #006400 !important; /* Dark Green border */
   background-color: rgba(0, 128, 0, 0.486) !important; /* Green background */
-  
 }
 
 /* Deeper/darker color when Blackhawk System is clicked */
@@ -442,22 +486,25 @@ ul {
 
 /* Base styles for Talon System (Pink) */
 .talon-system {
-  border: 3px solid #C71585 !important; /* Medium Violet Red border */
-  background-color: rgba(255, 105, 180, 0.486) !important; /* Hot Pink background */
-  
+  border: 3px solid #c71585 !important; /* Medium Violet Red border */
+  background-color: rgba(
+    255,
+    105,
+    180,
+    0.486
+  ) !important; /* Hot Pink background */
 }
 
 /* Deeper/darker color when Talon System is clicked */
 .talon-system.active {
-  border: 3px solid #8B0A50 !important; /* Darker pink/red */
+  border: 3px solid #8b0a50 !important; /* Darker pink/red */
   background-color: rgba(200, 50, 140, 0.6) !important; /* Darker pink */
 }
 
 /* Base styles for Red-Dagger Pirates (Red) */
 .red-dagger-pirates {
-  border: 3px solid #8B0000 !important; /* Dark Red border */
+  border: 3px solid #8b0000 !important; /* Dark Red border */
   background-color: rgba(255, 0, 0, 0.486) !important; /* Red background */
-  
 }
 
 /* Deeper/darker color when Red-Dagger Pirates is clicked */
@@ -468,13 +515,12 @@ ul {
 
 /* Base styles for Independent System (Purple) */
 .independent-system {
-  border: 3px solid #4B0082 !important; /* Indigo border */
+  border: 3px solid #4b0082 !important; /* Indigo border */
   background-color: rgba(128, 0, 128, 0.486) !important; /* Purple background */
-  
 }
 
 /* Deeper/darker color when Independent System is clicked */
 .independent-system.active {
-  border: 3px solid #2F0050 !important; /* Darker indigo */
+  border: 3px solid #2f0050 !important; /* Darker indigo */
   background-color: rgba(80, 0, 80, 0.6) !important; /* Darker purple */
 }

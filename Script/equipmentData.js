@@ -1,10 +1,11 @@
 import { formatterIntl, appendList1 } from "/Script/manaData.js";
-export {equipment, vehicles, rigs, populateRigs, frames, populateVehicles};
+export { equipment, vehicles, rigs, populateRigs, frames, populateVehicles };
 
 // This array contains all equipment objects with their attributes.
 // Blank attributes are set to '0'.
 // Costs are converted to numerical values (k = thousand, m = million).
-const equipment = [ //change to weapons later
+const equipment = [
+  //change to weapons later
   {
     name: ".362 Snub Lawmaker",
     type: "Kinetic",
@@ -19,8 +20,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 7,
     action: "Revolver",
     calibre: ".362 LCat",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A snub-nosed revolver, perfect for concealment while still being able to pack a punch."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A snub-nosed revolver, perfect for concealment while still being able to pack a punch.",
   },
   {
     name: "KML Compact",
@@ -36,8 +38,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 12,
     action: "Semi-auto",
     calibre: "8.8mm PIL",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Extremely popular for concealed carry. Perfect for those who don't want to attract attention."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Extremely popular for concealed carry. Perfect for those who don't want to attract attention.",
   },
   {
     name: "Forcify MK VII",
@@ -53,8 +56,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "980nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A compact plasma gun. Energy guns need no reload, but overheat, and need regular battery changes."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A compact plasma gun. Energy guns need no reload, but overheat, and need regular battery changes.",
   },
   {
     name: "Bandit-12",
@@ -70,8 +74,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 6,
     action: "Revolver",
     calibre: ".48 RE",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A favourite of bandits, this revolver can take off arms. Hold it well, as the recoil could take off your own."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A favourite of bandits, this revolver can take off arms. Hold it well, as the recoil could take off your own.",
   },
   {
     name: ".362 Deputy",
@@ -87,8 +92,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 6,
     action: "Revolver",
     calibre: ".362 LCat",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These handguns bolster accuracy with a hard hitting calibre. Usually owned by badasses."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "These handguns bolster accuracy with a hard hitting calibre. Usually owned by badasses.",
   },
   {
     name: "C 2911",
@@ -104,8 +110,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 9,
     action: "Semi-auto",
     calibre: "11mm FR",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Been in use for a long time, but never discarded for its iconic rep. Still shoots bullets, so it kills."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Been in use for a long time, but never discarded for its iconic rep. Still shoots bullets, so it kills.",
   },
   {
     name: "FD17 Daybreak",
@@ -121,8 +128,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 15,
     action: "Semi-auto",
     calibre: "8.8mm Pil",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A lightweight calibre in a double-stacked magazine is perfect for a well balanced handgun."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A lightweight calibre in a double-stacked magazine is perfect for a well balanced handgun.",
   },
   {
     name: "Sabre 6",
@@ -138,8 +146,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "1025nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A popular plasma gun that hits hard. This model is known to have good heat sinks."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A popular plasma gun that hits hard. This model is known to have good heat sinks.",
   },
   {
     name: "Pallach Or2",
@@ -155,8 +164,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Full-auto",
     calibre: "405nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Shoots brief, high-powered pulses of laser, reaching temperatures hotter than the surface of a star."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Shoots brief, high-powered pulses of laser, reaching temperatures hotter than the surface of a star.",
   },
   {
     name: "H56",
@@ -172,8 +182,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 24,
     action: "Full-auto",
     calibre: "8.8mm PIL",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A simple machine pistol with a high rate of fire. Its low calibre has low recoil."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A simple machine pistol with a high rate of fire. Its low calibre has low recoil.",
   },
   {
     name: "FD9 Judge",
@@ -189,8 +200,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 18,
     action: "Select-fire",
     calibre: "10mm INF",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Perfect in the hands of those who love versatility. Can select to be semi, full, or burst. Silenced."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Perfect in the hands of those who love versatility. Can select to be semi, full, or burst. Silenced.",
   },
   {
     name: "Gretel MK III",
@@ -206,8 +218,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 4,
     action: "Semi-auto",
     calibre: "22mm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Essentially a portable rail-gun. Known to pierce through tank armour."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Essentially a portable rail-gun. Known to pierce through tank armour.",
   },
   {
     name: "Kayta F5",
@@ -223,8 +236,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 30,
     action: "Full-auto",
     calibre: "8.8mm PIL",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Mass produced and found virtually everywhere, this balanced SMG is universally loved for its simplicity."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Mass produced and found virtually everywhere, this balanced SMG is universally loved for its simplicity.",
   },
   {
     name: "Rinn-J",
@@ -240,8 +254,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Full-auto",
     calibre: "980nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "If you want to rain hundreds of burning-hot plasma on your enemies, look no further."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "If you want to rain hundreds of burning-hot plasma on your enemies, look no further.",
   },
   {
     name: "Hellfang",
@@ -257,8 +272,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 16,
     action: "Full-auto",
     calibre: "320nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Nothing is scarier than the rapid fire of deadly red laser pulses. Has the highest PTSD-inducing rate. Loved by spec-ops."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Nothing is scarier than the rapid fire of deadly red laser pulses. Has the highest PTSD-inducing rate. Loved by spec-ops.",
   },
   {
     name: "FD39 Echo",
@@ -274,8 +290,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 28,
     action: "Full-auto",
     calibre: "10mm INF",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Very wieldly with all of the aspects of an SMG perfected to a tee."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Very wieldly with all of the aspects of an SMG perfected to a tee.",
   },
   {
     name: "LK Banshee",
@@ -291,11 +308,12 @@ const equipment = [ //change to weapons later
     roundCapacity: 16,
     action: "Full-auto/chg",
     calibre: "1025nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "You can either go full-auto with torrents of hot plasma, or charged burst shots for more destruction."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "You can either go full-auto with torrents of hot plasma, or charged burst shots for more destruction.",
   },
   {
-    name: "H \"Frill\"",
+    name: 'H "Frill"',
     type: "Special",
     cost: 800000,
     equipmentLevel: 3,
@@ -308,8 +326,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Full-auto",
     calibre: "Unknown",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Experimental reverse-engineered tech from the Heralds. Rapidly shoots volatile mana bolts."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Experimental reverse-engineered tech from the Heralds. Rapidly shoots volatile mana bolts.",
   },
   {
     name: "Spatha 2100FP",
@@ -325,8 +344,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 9,
     action: "Pump",
     calibre: "10ga",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A reliable pump-action that's used in virtually every security and military doctrine."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A reliable pump-action that's used in virtually every security and military doctrine.",
   },
   {
     name: "Espingarda Model 80",
@@ -342,8 +362,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 8,
     action: "Semi-auto",
     calibre: "12ga",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "One of the best weapons for storming and taking out hostiles in tight spaces, like ship interiors."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "One of the best weapons for storming and taking out hostiles in tight spaces, like ship interiors.",
   },
   {
     name: "Starburst MK VI",
@@ -359,8 +380,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "80nm x6",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A more experimental weapon that utilizes multiple diodes to burst out a 'fan' of high-powered lasers."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A more experimental weapon that utilizes multiple diodes to burst out a 'fan' of high-powered lasers.",
   },
   {
     name: "Ogoun M31",
@@ -376,8 +398,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "4x675nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Delivers a face-full of piping hot plasma. One of the more cruel weapons out there."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Delivers a face-full of piping hot plasma. One of the more cruel weapons out there.",
   },
   {
     name: "AS-12/45",
@@ -393,8 +416,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 8,
     action: "Full-auto",
     calibre: "12ga",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Not often used despite its full-auto capabilities, but a favourite for outer-rim bandits."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Not often used despite its full-auto capabilities, but a favourite for outer-rim bandits.",
   },
   {
     name: "Wraithsong A4",
@@ -410,8 +434,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 4,
     action: "Burst",
     calibre: "4mm x3",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Shoots an insanely fast burst of 3 high-velocity darts, which is known to make a ghostly whistling sound."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Shoots an insanely fast burst of 3 high-velocity darts, which is known to make a ghostly whistling sound.",
   },
   {
     name: "UN200-42",
@@ -427,8 +452,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Full-auto",
     calibre: "980nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A standard full-auto plasma gun... until you mark a target with the tag that the plasma orbs follow."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A standard full-auto plasma gun... until you mark a target with the tag that the plasma orbs follow.",
   },
   {
     name: "FD49 Reverb",
@@ -444,8 +470,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 30,
     action: "Semi-auto",
     calibre: "5.91mm IN",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A very niche gun usually only found with bodyguards. Has an underslug ranged taser."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A very niche gun usually only found with bodyguards. Has an underslug ranged taser.",
   },
   {
     name: "Angel",
@@ -461,8 +488,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 28,
     action: "Select-fire",
     calibre: "6.4mm Ws",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "The PDW improvement over the FD39 with a harder hitting and longer-ranged cartridge."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "The PDW improvement over the FD39 with a harder hitting and longer-ranged cartridge.",
   },
   {
     name: "Devil's Kiss",
@@ -478,8 +506,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Full-auto/alt",
     calibre: "995nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Unknown origin. Has a secondary firing mode that overheats more but shoots explosive plasma shots."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Unknown origin. Has a secondary firing mode that overheats more but shoots explosive plasma shots.",
   },
   {
     name: "Bastard-21",
@@ -495,8 +524,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 30,
     action: "Select-fire",
     calibre: "6.16mm UNI",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Extremely cheap and shoddy, but that's its charm. Usually only found in the outer rim systems."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Extremely cheap and shoddy, but that's its charm. Usually only found in the outer rim systems.",
   },
   {
     name: "The Ivan",
@@ -512,8 +542,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 30,
     action: "Full-auto",
     calibre: "7.75mm SV",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A popular, cheap, and highly customizable assault rifle made in surplus for a war, long ago."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A popular, cheap, and highly customizable assault rifle made in surplus for a war, long ago.",
   },
   {
     name: "Sharktooth-T751",
@@ -529,8 +560,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Full-auto",
     calibre: "1155nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Looks cheaply put together, but is known to be one of the most well balanced plasma guns made."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Looks cheaply put together, but is known to be one of the most well balanced plasma guns made.",
   },
   {
     name: "FD22 Sprint",
@@ -546,8 +578,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 22,
     action: "Semi-auto",
     calibre: "6.16mm UNI",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A lightweight scout rifle, perfect for precision shooting and general recon."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A lightweight scout rifle, perfect for precision shooting and general recon.",
   },
   {
     name: "LK Scarlet",
@@ -563,8 +596,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "405nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A versatile and effective laser rifle for scouting and recon. Perfect against armoured personnel."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A versatile and effective laser rifle for scouting and recon. Perfect against armoured personnel.",
   },
   {
     name: "The EVI Platform",
@@ -580,8 +614,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 32,
     action: "Select-fire",
     calibre: "6.16mm UNI",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A favourite for gun nuts, mainly due to the high availability of after market parts for customization."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A favourite for gun nuts, mainly due to the high availability of after market parts for customization.",
   },
   {
     name: "H23",
@@ -597,8 +632,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 28,
     action: "Select-fire",
     calibre: "6.8mm BH",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "An elite bullpup with a unique, hard-hitting calibre. Some say it's the perfect assault rifle."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "An elite bullpup with a unique, hard-hitting calibre. Some say it's the perfect assault rifle.",
   },
   {
     name: "Gloom MK III",
@@ -614,11 +650,12 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Select-fire",
     calibre: "995+440nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A plasma and laser gun put into one; plasma for full-auto punches and laser for semi-auto piercing."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A plasma and laser gun put into one; plasma for full-auto punches and laser for semi-auto piercing.",
   },
   {
-    name: "H \"Mantis\"",
+    name: 'H "Mantis"',
     type: "Special",
     cost: 1400000,
     equipmentLevel: 4,
@@ -631,8 +668,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Burst",
     calibre: "Unknown",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Experimental Herald tech. Shoots a quick burst of 3 mana bolts that uncharacteristically move quickly."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Experimental Herald tech. Shoots a quick burst of 3 mana bolts that uncharacteristically move quickly.",
   },
   {
     name: "Burial M55",
@@ -648,8 +686,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 12,
     action: "Semi-auto",
     calibre: "8.02mm TB",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Used in some of the most famous assassinations in history. High-powered and deadly accurate."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Used in some of the most famous assassinations in history. High-powered and deadly accurate.",
   },
   {
     name: "Atrophy",
@@ -665,8 +704,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "625nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "It is said that the victims don't even feel the pain, dropping dead as if it had come from nowhere..."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "It is said that the victims don't even feel the pain, dropping dead as if it had come from nowhere...",
   },
   {
     name: "Orca A7",
@@ -682,8 +722,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 6,
     action: "Semi-auto",
     calibre: "28mm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A skilled shooter with this weapon can become one of the deadliest people in the galaxy."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A skilled shooter with this weapon can become one of the deadliest people in the galaxy.",
   },
   {
     name: "Hail-92",
@@ -699,8 +740,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 200,
     action: "Full-auto",
     calibre: "6.16mm UNI",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A light machine gun that's often used by bandits. Uses two barrels to unleash a torrent of bullets."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A light machine gun that's often used by bandits. Uses two barrels to unleash a torrent of bullets.",
   },
   {
     name: "FD7 Optimum",
@@ -716,8 +758,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 80,
     action: "Full-auto",
     calibre: "8.02mm TB",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A medium machine gun that can punch holes in armour and is perfect for suppressive fire."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A medium machine gun that can punch holes in armour and is perfect for suppressive fire.",
   },
   {
     name: "Salamander Or2",
@@ -733,11 +776,12 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Thrower",
     calibre: "n/a",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A flamethrower often employed by the Dustkeepers. Perfect for burning away biomass."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A flamethrower often employed by the Dustkeepers. Perfect for burning away biomass.",
   },
   {
-    name: "H \"Flare\"",
+    name: 'H "Flare"',
     type: "Special",
     cost: 1600000,
     equipmentLevel: 5,
@@ -750,26 +794,11 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Continuous",
     calibre: "Unknown",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Fires a deadly continuous beam of mana that intensifies the longer you hold it. Overheats quickly."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Fires a deadly continuous beam of mana that intensifies the longer you hold it. Overheats quickly.",
   },
-  {
-    name: "Ratio MK II",
-    type: "Rail",
-    cost: 2000000,
-    equipmentLevel: 5,
-    stoppingPower: 9,
-    piercingPower: 10,
-    rateOfFire: 2,
-    range: 10,
-    accuracy: 9,
-    handling: 2,
-    roundCapacity: 4,
-    action: "Bolt-action",
-    calibre: "42mm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Accelerates particles at a very high speed, creating rays of super-charged, volatile particles. A magnetic anti-materiel weapon that uses coils instead of rails."
-  },
+
   {
     name: "Sardonic 9",
     type: "Plasma",
@@ -784,8 +813,8 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "1990nm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Unknown."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "Unknown.",
   },
   {
     name: "H12",
@@ -801,8 +830,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 1,
     action: "Launcher",
     calibre: "82mm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Can launch any type of grenade. Used for destructive purposes as well as crowd control."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Can launch any type of grenade. Used for destructive purposes as well as crowd control.",
   },
   {
     name: "Stark-4",
@@ -818,8 +848,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 8,
     action: "Semi-auto",
     calibre: "28mm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Cheap for a rocket launcher but effective at taking out heavy and expensive targets."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Cheap for a rocket launcher but effective at taking out heavy and expensive targets.",
   },
   {
     name: "KM Swarm",
@@ -835,8 +866,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 1,
     action: "Launcher",
     calibre: "110mm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A launcher that's more focused for taking out personnel, rather than materiel."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A launcher that's more focused for taking out personnel, rather than materiel.",
   },
   {
     name: "FD102 Toler",
@@ -852,8 +884,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 12,
     action: "Semi-auto",
     calibre: "40mm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Locks onto targets and launches high-destructive missiles which seek them."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Locks onto targets and launches high-destructive missiles which seek them.",
   },
   {
     name: "Explody Thing",
@@ -869,8 +902,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 4,
     action: "Semi-auto",
     calibre: "82mm",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "The weapon used by Sya'ra the Mad Roller to repel a small Black-hawk convoy during the Luos wars."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "The weapon used by Sya'ra the Mad Roller to repel a small Black-hawk convoy during the Luos wars.",
   },
   {
     name: "Moses Or19",
@@ -886,8 +920,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Burst",
     calibre: "720nm x4",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "A specialized heavy laser gun that fires volatile ion particles, causing explosions."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "A specialized heavy laser gun that fires volatile ion particles, causing explosions.",
   },
   {
     name: "Hel",
@@ -903,8 +938,9 @@ const equipment = [ //change to weapons later
     roundCapacity: 0,
     action: "Thrower",
     calibre: "n/a",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Spews a burning chemical liquid solution that can instantaneously melt through rock."
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Spews a burning chemical liquid solution that can instantaneously melt through rock.",
   },
   {
     name: "FD99x Perfection",
@@ -920,12 +956,307 @@ const equipment = [ //change to weapons later
     roundCapacity: 1000,
     action: "Gatling",
     calibre: "45mm Qn",
-    
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Usually mounted on vehicles, this monster's roar can be heard from many kilometers away."
-  }
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description:
+      "Usually mounted on vehicles, this monster's roar can be heard from many kilometers away.",
+  },
+  // --- Start of data from equipment stardustSoldier.txt ---
+  {
+    name: "Clothing",
+    type: null,
+    cost: 0,
+    equipmentLevel: 0,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: 0,
+    energyDefence: 0,
+    mobility: 0,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Bulletproof Vest",
+    type: null,
+    cost: 50000,
+    equipmentLevel: 2,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: 82,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Full-Body Tactical",
+    type: null,
+    cost: 150000,
+    equipmentLevel: 3,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: null,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Wastelander",
+    type: null,
+    cost: 150000,
+    equipmentLevel: 3,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: null,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Infiltrator",
+    type: null,
+    cost: 300000,
+    equipmentLevel: 4,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: 0,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Hydra Vest",
+    type: null,
+    cost: 350000,
+    equipmentLevel: 4,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: 0,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Survivalist",
+    type: null,
+    cost: 500000,
+    equipmentLevel: 5,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: 0,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Infantry",
+    type: null,
+    cost: 600000,
+    equipmentLevel: 5,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: 0,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Exo-Skeleton",
+    type: null,
+    cost: 700000,
+    equipmentLevel: 5,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: 0,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Phorcys",
+    type: null,
+    cost: 1200000,
+    equipmentLevel: 6,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: null,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Reactive Plating",
+    type: null,
+    cost: 2000000,
+    equipmentLevel: 6,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: 0,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Nano Suit",
+    type: null,
+    cost: 2500000,
+    equipmentLevel: 7,
+    stoppingPower: null,
+    piercingPower: null,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: null,
+    action: null,
+    calibre: null,
+    kineticDefence: null,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+ 
+ 
+ 
+ 
+  
+  {
+    name: "Ratio MK II",
+    type: null,
+    cost: 2000000,
+    equipmentLevel: 5,
+    stoppingPower: 0,
+    piercingPower: 0,
+    rateOfFire: null,
+    range: null,
+    accuracy: null,
+    handling: null,
+    roundCapacity: 300,
+    action: "bolt-action",
+    calibre: "42mm",
+    kineticDefence: null,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+  {
+    name: "Sardonic-9",
+    type: null,
+    cost: 2200000,
+    equipmentLevel: 5,
+    stoppingPower: 0,
+    piercingPower: 0,
+    rateOfFire: null,
+    range: 10,
+    accuracy: null,
+    handling: null,
+    roundCapacity: 12,
+    action: "Rocket",
+    calibre: "1990nm",
+    kineticDefence: null,
+    energyDefence: null,
+    mobility: null,
+    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    description: "",
+  },
+ 
+  
+  
+  
+  
+  
+  
 ];
 
-const vehicles = [ //aka dragoon mounts, need to insert
+const vehicles = [
+  //aka dragoon mounts, need to insert
   {
     id: "vehicle-dunebuggy",
     name: "AT Dunebuggy",
@@ -938,10 +1269,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: 0, // Standardized to 'armour' (camelCase)
     length: "4m", // Changed to camelCase
     image: "/Images/Vehicles/icle051.webp",
-    description: "The all-terrain dunebuggy allows for great ground coverage. Its high-traction wheels can be replaced with skates or skiis. +Comes with a free machine gun",
+    description:
+      "The all-terrain dunebuggy allows for great ground coverage. Its high-traction wheels can be replaced with skates or skiis. +Comes with a free machine gun",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-MLUV",
@@ -955,10 +1288,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: 0, // Standardized to 'armour' (camelCase)
     length: "4m",
     image: "/Images/Vehicles/icle049.webp",
-    description: "This mlitary light utility vehicle has a good balance of mobility, armour, and firepower, perfect for troop transportation and support. +Comes with a free T1 weapon",
-   shields: 0,
+    description:
+      "This mlitary light utility vehicle has a good balance of mobility, armour, and firepower, perfect for troop transportation and support. +Comes with a free T1 weapon",
+    shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-APC",
@@ -972,10 +1307,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: 4, // Standardized to 'armour' (camelCase)
     length: "6m",
     image: "/Images/Vehicles/icle047.webp",
-    description: "Large and bulky, these Armoured Personnel Carriers can transport a good handful of troops or VIPs and protect them with thick armour. +Comes with a free T1 weapon",
+    description:
+      "Large and bulky, these Armoured Personnel Carriers can transport a good handful of troops or VIPs and protect them with thick armour. +Comes with a free T1 weapon",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-terrain-tank",
@@ -989,10 +1326,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: 6, // Standardized to 'armour' (camelCase)
     length: "6m",
     image: "/Images/Vehicles/icle045.webp",
-    description: "These tanks are light armoured, but with their special quarduped tank treads, they can cover many kinds of terrain with good speed. +Comes with a free T2 weapon",
+    description:
+      "These tanks are light armoured, but with their special quarduped tank treads, they can cover many kinds of terrain with good speed. +Comes with a free T2 weapon",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-heavy-tank",
@@ -1006,10 +1345,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: 8, // Standardized to 'armour' (camelCase)
     length: "11m",
     image: "/Images/Vehicles/icle043.webp",
-    description: "Fit for convoys, heavy firepower, artillery support, and everything tank-like, these beasts can lead the charge into combat. +Comes with a free T2 weapon",
+    description:
+      "Fit for convoys, heavy firepower, artillery support, and everything tank-like, these beasts can lead the charge into combat. +Comes with a free T2 weapon",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-spider-tank",
@@ -1023,10 +1364,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: 5, // Standardized to 'armour' (camelCase)
     length: "9m",
     image: "/Images/Vehicles/icle041.webp",
-    description: "Spider tanks are a more experi- mental platform, but unlike tradi- tional tanks, they have less trouble overcoming terrain. +Comes with a free T2 weapon",
+    description:
+      "Spider tanks are a more experi- mental platform, but unlike tradi- tional tanks, they have less trouble overcoming terrain. +Comes with a free T2 weapon",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-ground-mech",
@@ -1040,10 +1383,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: 3, // Standardized to 'armour' (camelCase)
     length: "5m",
     image: "/Images/Vehicles/icle023.webp",
-    description: "This personal ground mech has ample firepower with versatile movement. The perfect firepower support platform for your troops. +Comes with a free T1 weapon",
+    description:
+      "This personal ground mech has ample firepower with versatile movement. The perfect firepower support platform for your troops. +Comes with a free T1 weapon",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-heavy-ground-mech",
@@ -1057,10 +1402,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: 5, // Standardized to 'armour' (camelCase)
     length: "8m",
     image: "/Images/Vehicles/icle025.webp",
-    description: "These mechs are equipped with extremely hard hitting ordnance, particularily against air targets and other vehicles. +Comes with a free T2 weapon",
+    description:
+      "These mechs are equipped with extremely hard hitting ordnance, particularily against air targets and other vehicles. +Comes with a free T2 weapon",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-og-mobile-suit",
@@ -1074,10 +1421,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: 5, // Standardized to 'armour' (camelCase)
     length: "10m",
     image: "/Images/Vehicles/icle021.webp",
-    description: "Single-piloted, but extremely versatile. An upgrade from your standard power armour, these can fly in atmosphere or space. +Comes with a free T2 weapon",
+    description:
+      "Single-piloted, but extremely versatile. An upgrade from your standard power armour, these can fly in atmosphere or space. +Comes with a free T2 weapon",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-submarine",
@@ -1091,10 +1440,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: "25m", // Standardized to 'armour' (camelCase)
     length: "25m",
     image: "/Images/Vehicles/icle019.webp",
-    description: "These submarines can withstand extreme temperatures and pres- sures, and can withstand many liquids. +Comes with a free T1 weapon",
+    description:
+      "These submarines can withstand extreme temperatures and pres- sures, and can withstand many liquids. +Comes with a free T1 weapon",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-lamprey-boarding-ship",
@@ -1108,10 +1459,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: "12m", // Standardized to 'armour' (camelCase)
     length: "12m",
     image: "/Images/Vehicles/icle017.webp",
-    description: "This ship uses high-powered lasers to cut through hulls to allow its boarding party inside. However, it cannot fly through ship shields. +Has 2 hangar space capacity",
+    description:
+      "This ship uses high-powered lasers to cut through hulls to allow its boarding party inside. However, it cannot fly through ship shields. +Has 2 hangar space capacity",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-drop-ship",
@@ -1125,10 +1478,12 @@ const vehicles = [ //aka dragoon mounts, need to insert
     armour: 3, // Standardized to 'armour' (camelCase)
     length: "15m",
     image: "/Images/Vehicles/icle015.webp",
-    description: "Heavily armoured and perfectly capable of transporting troops and vehicles. +Comes with a free T1 weapon +Has 3 hangar space capacity",
+    description:
+      "Heavily armoured and perfectly capable of transporting troops and vehicles. +Comes with a free T1 weapon +Has 3 hangar space capacity",
     shields: 0,
     uptime: 0,
-    recharge: 0, type: 'regular'
+    recharge: 0,
+    type: "regular",
   },
   {
     id: "vehicle-armoured-rover",
@@ -1138,17 +1493,16 @@ const vehicles = [ //aka dragoon mounts, need to insert
     mobility: 4,
     uptime: 8,
     recharge: 5,
-    type: 'dragoonMount',
+    type: "dragoonMount",
     cost: 0,
     hangarSpaceUse: 1,
     crew: 6,
-    t1WeaponSlots:0,
+    t1WeaponSlots: 0,
     t2WeaponSlots: 0,
-    length: '5m',
+    length: "5m",
     image: "/Images/Vehicles/veh033.webp",
-    description: 'An amphibious all-terrain rover used by Beatrice R&D for exploration that can go underwater. It\'s a mobile transport and base.'
- 
-
+    description:
+      "An amphibious all-terrain rover used by Beatrice R&D for exploration that can go underwater. It's a mobile transport and base.",
   },
   {
     id: "vehicle-tyrant",
@@ -1158,16 +1512,16 @@ const vehicles = [ //aka dragoon mounts, need to insert
     mobility: 8,
     uptime: 6,
     recharge: 4,
-    type: 'dragoonMount',
+    type: "dragoonMount",
     cost: 0,
     hangarSpaceUse: 1,
     crew: 1,
-    t1WeaponSlots:0,
+    t1WeaponSlots: 0,
     t2WeaponSlots: 0,
-    length: '3m',
+    length: "3m",
     image: "/Images/Vehicles/veh015.webp",
-    description: 'One of the most advanced mobile suits that costed the Federation a fortune. It\'s highly mobile in the air and in space.'
-
+    description:
+      "One of the most advanced mobile suits that costed the Federation a fortune. It's highly mobile in the air and in space.",
   },
   {
     id: "vehicle-stingray",
@@ -1177,16 +1531,16 @@ const vehicles = [ //aka dragoon mounts, need to insert
     mobility: 9,
     uptime: 7,
     recharge: 6,
-    type: 'dragoonMount',
+    type: "dragoonMount",
     cost: 0,
     hangarSpaceUse: 1,
     crew: 3,
     t1WeaponSlots: 2,
     t2WeaponSlots: 0,
-    length: '5m',
+    length: "5m",
     image: "/Images/Vehicles/veh031.webp",
-    description: 'Considered the top of its class in manoeuvrability, the Stingray is a drone often used for aerial and space scouting.'
-
+    description:
+      "Considered the top of its class in manoeuvrability, the Stingray is a drone often used for aerial and space scouting.",
   },
   {
     id: "vehicle-conduit",
@@ -1196,18 +1550,16 @@ const vehicles = [ //aka dragoon mounts, need to insert
     mobility: 5,
     uptime: 2,
     recharge: 2,
-    type: 'dragoonMount',
+    type: "dragoonMount",
     cost: 0,
     hangarSpaceUse: 1,
     crew: 0,
     t1WeaponSlots: 0,
     t2WeaponSlots: 0,
-    length: '0m',
+    length: "0m",
     image: "/Images/Vehicles/veh013.webp",
-    description: 'An exoskeleton specifically made for interfacing with a Dragoon frame to amplify the pilot\'s spell capabilities by a massive amount.'
-
-
-
+    description:
+      "An exoskeleton specifically made for interfacing with a Dragoon frame to amplify the pilot's spell capabilities by a massive amount.",
   },
   {
     id: "vehicle-dropship",
@@ -1224,8 +1576,9 @@ const vehicles = [ //aka dragoon mounts, need to insert
     t2WeaponSlots: 0,
     length: "15m",
     image: "/Images/Vehicles/veh029.webp",
-    description: 'Hardy VTOL dropships manufactured by Hammerhead Industries that can transport your Apocalypse fireteam and provide aerial support.', 
-    type: 'dragoonMount',
+    description:
+      "Hardy VTOL dropships manufactured by Hammerhead Industries that can transport your Apocalypse fireteam and provide aerial support.",
+    type: "dragoonMount",
   },
   {
     id: "vehicle-golem",
@@ -1235,17 +1588,17 @@ const vehicles = [ //aka dragoon mounts, need to insert
     mobility: 4,
     uptime: 2,
     recharge: 2,
-    type: 'dragoonMount',
+    type: "dragoonMount",
     cost: 0,
     hangarSpaceUse: 1,
     crew: 1,
     t1WeaponSlots: 1,
     t2WeaponSlots: 0,
-    length: '7m',
+    length: "7m",
     image: "/Images/Vehicles/veh011.webp",
-    description: 'An experimental Triglav weapon platform that never found success until Dragoon interfacing technology made it viable.',
-    type: 'dragoonMount',
-
+    description:
+      "An experimental Triglav weapon platform that never found success until Dragoon interfacing technology made it viable.",
+    type: "dragoonMount",
   },
   {
     id: "vehicle-dunebike",
@@ -1255,16 +1608,16 @@ const vehicles = [ //aka dragoon mounts, need to insert
     mobility: 9,
     uptime: 9,
     recharge: 9,
-    type: 'dragoonMount',
+    type: "dragoonMount",
     cost: 0,
     hangarSpaceUse: 1,
     crew: 1,
     t1WeaponSlots: 0,
     t2WeaponSlots: 0,
-    length: '2m',
+    length: "2m",
     image: "/Images/Vehicles/veh035.webp",
-    description: 'An all-terrain motorcycle that can reach top speed on any solid terrain, and comes with interchangeable wheels for different environments.' 
-
+    description:
+      "An all-terrain motorcycle that can reach top speed on any solid terrain, and comes with interchangeable wheels for different environments.",
   },
   {
     id: "vehicle-doppelsoldner",
@@ -1273,329 +1626,446 @@ const vehicles = [ //aka dragoon mounts, need to insert
     shields: 6,
     mobility: 5,
     uptime: 5,
-    recharge: 5, type: 'dragoonMount',
+    recharge: 5,
+    type: "dragoonMount",
     cost: 0,
     hangarSpaceUse: 1,
     crew: 2,
     t1WeaponSlots: 1,
     t2WeaponSlots: 0,
-    length: '11m',
+    length: "11m",
     image: "/Images/Vehicles/veh017.webp",
-    description: 'A tank with hyper-reactive armour that was never able to support its own energy demands, now possible with a Dragoon pilot.',
-  }
+    description:
+      "A tank with hyper-reactive armour that was never able to support its own energy demands, now possible with a Dragoon pilot.",
+  },
 ];
 
 const rigs = [
   {
     name: "Kinetic Counterbalancers",
     rigType: "offensive",
-    image: '/Images/Equipment/rig259.webp', 
-    description: "Counterbalancers for kinetic weapon types, allowing for greatly reduced recoil when firing."
+    image: "/Images/Equipment/rig259.webp",
+    description:
+      "Counterbalancers for kinetic weapon types, allowing for greatly reduced recoil when firing.",
   },
   {
     name: "Rocket Catalysts",
     rigType: "offensive",
-    image: '/Images/Equipment/rig257.webp', description: "Propellants for explosive-based weapons use more efficient compounds, significantly increasing payload velocity."
+    image: "/Images/Equipment/rig257.webp",
+    description:
+      "Propellants for explosive-based weapons use more efficient compounds, significantly increasing payload velocity.",
   },
   {
     name: "Nanite Superconductors",
     rigType: "offensive",
-    image: '/Images/Equipment/rig255.webp', description: "Enhances the magnetic capabilities of railguns, allowing them to cycle through rounds faster."
+    image: "/Images/Equipment/rig255.webp",
+    description:
+      "Enhances the magnetic capabilities of railguns, allowing them to cycle through rounds faster.",
   },
   {
     name: "Lens Calibrator",
     rigType: "offensive",
-    image: '/Images/Equipment/rig253.webp', description: "A management system for lenses on laser-based weaponry, causing them to reach maximum power output faster."
+    image: "/Images/Equipment/rig253.webp",
+    description:
+      "A management system for lenses on laser-based weaponry, causing them to reach maximum power output faster.",
   },
   {
     name: "Particle Fuse Batteries",
     rigType: "offensive",
-    image: '/Images/Equipment/rig251.webp', description: "Powerful batteries for plasma-based weapons that allows for a longer uptime of firing before overheating."
+    image: "/Images/Equipment/rig251.webp",
+    description:
+      "Powerful batteries for plasma-based weapons that allows for a longer uptime of firing before overheating.",
   },
   {
     name: "Trajectory Analysis",
     rigType: "offensive",
-    image: '/Images/Equipment/rig249.webp', description: "A suite that enhances the suit's capability of using ranged weaponry, allowing for pinpoint motion prediction and accuracy."
+    image: "/Images/Equipment/rig249.webp",
+    description:
+      "A suite that enhances the suit's capability of using ranged weaponry, allowing for pinpoint motion prediction and accuracy.",
   },
   {
     name: "Munitions Reconstructor",
     rigType: "offensive",
-    image: '/Images/Equipment/rig233.webp', description: "Adds a compartment to the suit that, when fed appropriate hyperdense material cubes, can construct ammunition."
+    image: "/Images/Equipment/rig233.webp",
+    description:
+      "Adds a compartment to the suit that, when fed appropriate hyperdense material cubes, can construct ammunition.",
   },
   {
     name: "Thermal Management System",
     rigType: "offensive",
-    image: '/Images/Equipment/rig231.webp', description: "Logistical attachments to the suit that improves weapon heat management, allowing for greater volumes of fire."
+    image: "/Images/Equipment/rig231.webp",
+    description:
+      "Logistical attachments to the suit that improves weapon heat management, allowing for greater volumes of fire.",
   },
   {
     name: "Integrated Rangefinder",
     rigType: "offensive",
-    image: '/Images/Equipment/rig229.webp', description: "A rig embedded into the suit's HUD, feeding back helpful ballistics calculations for long range shooting."
+    image: "/Images/Equipment/rig229.webp",
+    description:
+      "A rig embedded into the suit's HUD, feeding back helpful ballistics calculations for long range shooting.",
   },
   {
     name: "Weapon Mass Compensator",
     rigType: "offensive",
-    image: '/Images/Equipment/rig227.webp', description: "A series of synthetic muscle fibres that cater to handling the suit's specific weapon systems for extreme handling."
+    image: "/Images/Equipment/rig227.webp",
+    description:
+      "A series of synthetic muscle fibres that cater to handling the suit's specific weapon systems for extreme handling.",
   },
   {
     name: "Martial Engine",
     rigType: "offensive",
-    image: '/Images/Equipment/rig225.webp', description: "Installs a machine learning program that assists in close-quarters combat, using vast libraries of data on martial arts."
+    image: "/Images/Equipment/rig225.webp",
+    description:
+      "Installs a machine learning program that assists in close-quarters combat, using vast libraries of data on martial arts.",
   },
   {
     name: "Hypertense Muscle Fibres",
     rigType: "offensive",
-    image: '/Images/Equipment/rig223.webp', description: "Self-regenerating artificial muscle fibres that significantly increases the physical strength of the suit."
+    image: "/Images/Equipment/rig223.webp",
+    description:
+      "Self-regenerating artificial muscle fibres that significantly increases the physical strength of the suit.",
   },
   {
     name: "Spell Cache Circuits",
     rigType: "offensive",
-    image: '/Images/Equipment/rig207.webp', description: "Improves the execution of spells, reducing the cast time for most spell types."
+    image: "/Images/Equipment/rig207.webp",
+    description:
+      "Improves the execution of spells, reducing the cast time for most spell types.",
   },
   {
     name: "Spell Burst Capacitors",
     rigType: "offensive",
-    image: '/Images/Equipment/rig205.webp', description: "The suit's mana catalyst passively drains mana charge from surrounding environments, improving spell potencies."
+    image: "/Images/Equipment/rig205.webp",
+    description:
+      "The suit's mana catalyst passively drains mana charge from surrounding environments, improving spell potencies.",
   },
   {
     name: "Leyline Memory Bridge",
     rigType: "offensive",
-    image: '/Images/Equipment/rig203.webp', description: "Improves the successive re-casting of the same spell or similar ones when used in frequent amounts."
+    image: "/Images/Equipment/rig203.webp",
+    description:
+      "Improves the successive re-casting of the same spell or similar ones when used in frequent amounts.",
   },
   {
     name: "Ancillary Leyline Subroutines",
     rigType: "offensive",
-    image: '/Images/Equipment/rig201.webp', description: "For the longer the suit is outputting spells from its mana catalyst in battle, spell handling exponentially improves."
+    image: "/Images/Equipment/rig201.webp",
+    description:
+      "For the longer the suit is outputting spells from its mana catalyst in battle, spell handling exponentially improves.",
   },
   {
     name: "Mana Grid Management",
     rigType: "offensive",
-    image: '/Images/Equipment/rig199.webp', description: "Reserves some of the suit's computing power to make mana consumption more efficient, reducing spell mana costs."
+    image: "/Images/Equipment/rig199.webp",
+    description:
+      "Reserves some of the suit's computing power to make mana consumption more efficient, reducing spell mana costs.",
   },
   {
     name: "Void-wave Algorithm Injector",
     rigType: "offensive",
-    image: '/Images/Equipment/rig197.webp', description: "Casting spells from the one spell affinity family will increase the potencies of other spells from the same family."
+    image: "/Images/Equipment/rig197.webp",
+    description:
+      "Casting spells from the one spell affinity family will increase the potencies of other spells from the same family.",
   },
   {
     name: "Armour: Reactive Nanite Hardening",
     rigType: "defensive",
-    image: '/Images/Equipment/rig181.webp', description: "Improves the suit's armour nanites to counteract all incoming damage by a significant amount."
+    image: "/Images/Equipment/rig181.webp",
+    description:
+      "Improves the suit's armour nanites to counteract all incoming damage by a significant amount.",
   },
   {
     name: "Armour: Perforated Padding",
     rigType: "defensive",
-    image: '/Images/Equipment/rig179.webp', description: "A perforated layer to the suit's armour that significantly reduces the impact of kinetic projectiles, especially AP rounds."
+    image: "/Images/Equipment/rig179.webp",
+    description:
+      "A perforated layer to the suit's armour that significantly reduces the impact of kinetic projectiles, especially AP rounds.",
   },
   {
     name: "Armour: Electro-Magnetic Plating",
     rigType: "defensive",
-    image: '/Images/Equipment/magia-artificial-lightning-paladin.webp', description: "Charged plating that defends against energy-based attacks by adjusting its electro-magnetic charge."
+    image: "/Images/Equipment/magia-artificial-lightning-paladin.webp",
+    description:
+      "Charged plating that defends against energy-based attacks by adjusting its electro-magnetic charge.",
   },
   {
     name: "Armour: Elemental Hardening",
     rigType: "defensive",
-    image: '/Images/Equipment/magia-artificial-nostryan-frostknight.webp', 
-    description: "Plating that uses an alloy of metal that's charged with mana, adding a mild resistance to mana-based attacks."
+    image: "/Images/Equipment/magia-artificial-nostryan-frostknight.webp",
+    description:
+      "Plating that uses an alloy of metal that's charged with mana, adding a mild resistance to mana-based attacks.",
   },
   {
     name: "Armour: Nanite Charging Bank",
     rigType: "defensive",
-    image: '/Images/Equipment/rig173.webp', description: "A reservoir attached to the suit that charges armour nanites, allowing for faster self-repair."
+    image: "/Images/Equipment/rig173.webp",
+    description:
+      "A reservoir attached to the suit that charges armour nanites, allowing for faster self-repair.",
   },
   {
     name: "PAIN Suit",
     rigType: "defensive",
-    image: '/Images/Equipment/rig171.webp', description: "An integration with the pilot's neurolink suit which helps inhibit pain and keeps the mind focused while in combat."
+    image: "/Images/Equipment/rig171.webp",
+    description:
+      "An integration with the pilot's neurolink suit which helps inhibit pain and keeps the mind focused while in combat.",
   },
   {
     name: "Shield: Crysalis Protocol",
     rigType: "defensive",
-    image: '/Images/Equipment/rig155.webp', description: "Suit shield gains compounding defence against currently incoming damage types while reducing other resistances."
+    image: "/Images/Equipment/rig155.webp",
+    description:
+      "Suit shield gains compounding defence against currently incoming damage types while reducing other resistances.",
   },
   {
     name: "Shield: Reactive Force Grid",
     rigType: "defensive",
-    image: '/Images/Equipment/rig153.webp', description: "Counteracts kinetic impacts to the shield with small bursts of shockwaves, reducing impact significantly."
+    image: "/Images/Equipment/rig153.webp",
+    description:
+      "Counteracts kinetic impacts to the shield with small bursts of shockwaves, reducing impact significantly.",
   },
   {
     name: "Shield: Mana Dispersion",
     rigType: "defensive",
-    image: '/Images/Equipment/rig149.webp', description: "A protocol in the shield that increases the entropy of mana-based attacks, potentially dispersing them."
+    image: "/Images/Equipment/rig149.webp",
+    description:
+      "A protocol in the shield that increases the entropy of mana-based attacks, potentially dispersing them.",
   },
   {
     name: "Shield: Wavelength Nullification",
     rigType: "defensive",
-    image: '/Images/Equipment/rig151.webp', description: "Attempts to deter incoming electro-magnetic attacks with nullifying wavelengths of energy, albeit only slightly."
+    image: "/Images/Equipment/rig151.webp",
+    description:
+      "Attempts to deter incoming electro-magnetic attacks with nullifying wavelengths of energy, albeit only slightly.",
   },
   {
     name: "Shield: Auxiliary Shield Generator",
     rigType: "defensive",
-    image: '/Images/Equipment/rig147.webp', description: "Greatly increases the efficiency of the suit's shield operation, allowing for a longer uptime against sustained attacks."
+    image: "/Images/Equipment/rig147.webp",
+    description:
+      "Greatly increases the efficiency of the suit's shield operation, allowing for a longer uptime against sustained attacks.",
   },
   {
     name: "Chaff Fullers",
     rigType: "defensive",
-    image: '/Images/Equipment/rig145.webp', description: "Add strips of stealthy material around your suit, increasing resistance to radar, hacking and optics."
+    image: "/Images/Equipment/rig145.webp",
+    description:
+      "Add strips of stealthy material around your suit, increasing resistance to radar, hacking and optics.",
   },
   {
     name: "Parkour",
     rigType: "mobility",
-    image: '/Images/Equipment/rig129.webp', description: "A servos that significantly improves ground mobility and agility, allowing for seamless dodging and acrobatics."
+    image: "/Images/Equipment/rig129.webp",
+    description:
+      "A servos that significantly improves ground mobility and agility, allowing for seamless dodging and acrobatics.",
   },
   {
     name: "Dancer",
     rigType: "mobility",
-    image: '/Images/Equipment/rig127.webp', description: "Uses small thrusters to give brief bursts of speed to either individual limbs or the entire suit."
+    image: "/Images/Equipment/rig127.webp",
+    description:
+      "Uses small thrusters to give brief bursts of speed to either individual limbs or the entire suit.",
   },
   {
     name: "Roller",
     rigType: "mobility",
-    image: '/Images/Equipment/rig125.webp', description: "Adds retractable wheels that allow for fast ground speeds. Stabilizers allow for smooth gliding, even while shooting."
+    image: "/Images/Equipment/rig125.webp",
+    description:
+      "Adds retractable wheels that allow for fast ground speeds. Stabilizers allow for smooth gliding, even while shooting.",
   },
   {
     name: "Harrier",
     rigType: "mobility",
-    image: '/Images/Equipment/rig123.webp', description: "Adds a jetpack that allows for agile hovering above ground, but somewhat reduces ground mobility."
+    image: "/Images/Equipment/rig123.webp",
+    description:
+      "Adds a jetpack that allows for agile hovering above ground, but somewhat reduces ground mobility.",
   },
   {
     name: "Warhawk",
     rigType: "mobility",
-    image: '/Images/Equipment/rig121.webp', description: "Afterburners for extreme flight speeds while also significantly reducing mobility when on the ground."
+    image: "/Images/Equipment/rig121.webp",
+    description:
+      "Afterburners for extreme flight speeds while also significantly reducing mobility when on the ground.",
   },
   {
     name: "Launch",
     rigType: "mobility",
-    image: '/Images/Equipment/rig119.webp', description: "Special thrusters that allows suits to launch from the ground at incredible vertical velocities."
+    image: "/Images/Equipment/rig119.webp",
+    description:
+      "Special thrusters that allows suits to launch from the ground at incredible vertical velocities.",
   },
   {
     name: "Inertia",
     rigType: "mobility",
-    image: '/Images/Equipment/rig103.webp', description: "Significantly minimizes damage taken from severe heights by directing impact kinetic energy outwards on landing."
+    image: "/Images/Equipment/rig103.webp",
+    description:
+      "Significantly minimizes damage taken from severe heights by directing impact kinetic energy outwards on landing.",
   },
   {
     name: "Hyperspatial Subcontroller",
     rigType: "mobility",
-    image: '/Images/Equipment/rig101.webp', description: "Analyzes immediate surroundings and factors that in to all suit mobility functions for greater use of the environment."
+    image: "/Images/Equipment/rig101.webp",
+    description:
+      "Analyzes immediate surroundings and factors that in to all suit mobility functions for greater use of the environment.",
   },
   {
     name: "Astrometer-Gyro Sensor",
     rigType: "mobility",
-    image: '/Images/Equipment/rig099.webp', description: "Improves the thrusters on the suit meant for manoeuvrability while in space. Goes well with Warhawk or Harrier."
+    image: "/Images/Equipment/rig099.webp",
+    description:
+      "Improves the thrusters on the suit meant for manoeuvrability while in space. Goes well with Warhawk or Harrier.",
   },
   {
     name: "Hazardous Protection",
     rigType: "mobility",
-    image: '/Images/Equipment/rig097.webp', description: "Improves the suit's survivability in hazardous environments with better oxygen efficiency and temperature control."
+    image: "/Images/Equipment/rig097.webp",
+    description:
+      "Improves the suit's survivability in hazardous environments with better oxygen efficiency and temperature control.",
   },
   {
     name: "Tilt",
     rigType: "mobility",
-    image: '/Images/Equipment/rig095.webp', description: "A magnet-based servos that boosts the suit's mobility in more electrically-conductive environments."
+    image: "/Images/Equipment/rig095.webp",
+    description:
+      "A magnet-based servos that boosts the suit's mobility in more electrically-conductive environments.",
   },
   {
     name: "Phantom",
     rigType: "mobility",
-    image: '/Images/Equipment/rig093.webp', description: "When activated, this cloak masks the suit from detection while disabling most of the suit's other major functions."
+    image: "/Images/Equipment/rig093.webp",
+    description:
+      "When activated, this cloak masks the suit from detection while disabling most of the suit's other major functions.",
   },
   {
     name: "Warhound",
     rigType: "command",
-    image: '/Images/Equipment/rig077.webp', description: "When activated, boosts the functionality of all of the suit's functions at a mild rate temporarily."
+    image: "/Images/Equipment/rig077.webp",
+    description:
+      "When activated, boosts the functionality of all of the suit's functions at a mild rate temporarily.",
   },
   {
     name: "Bastion",
     rigType: "command",
-    image: '/Images/Equipment/rig075.webp', description: "Activating causes nanites to harden for an extreme defence, but this locks up the suit and only lasts for a minute."
+    image: "/Images/Equipment/rig075.webp",
+    description:
+      "Activating causes nanites to harden for an extreme defence, but this locks up the suit and only lasts for a minute.",
   },
   {
     name: "Prometheus",
     rigType: "command",
-    image: '/Images/Equipment/rig073.webp', description: "When initiated, this reroutes most of the suit's energy reserves to instantly recharge shield capacity to max."
+    image: "/Images/Equipment/rig073.webp",
+    description:
+      "When initiated, this reroutes most of the suit's energy reserves to instantly recharge shield capacity to max.",
   },
   {
     name: "Elusive",
     rigType: "command",
-    image: '/Images/Equipment/alex-figini-exo-chick.webp', description: "Weapon systems have a harder time tracking the suit and take longer to lock on."
+    image: "/Images/Equipment/alex-figini-exo-chick.webp",
+    description:
+      "Weapon systems have a harder time tracking the suit and take longer to lock on.",
   },
   {
     name: "Cognition Enhancement",
     rigType: "utility",
-    image: '/Images/Equipment/rig051.webp', description: "An attachment to the pilot's neurolink suit which improves the pilot's cognition by a large amount when worn."
+    image: "/Images/Equipment/rig051.webp",
+    description:
+      "An attachment to the pilot's neurolink suit which improves the pilot's cognition by a large amount when worn.",
   },
   {
     name: "Deep Dive",
     rigType: "utility",
-    image: '/Images/Equipment/rig049.webp', 
-    description: "A neurolink boost that integrates the pilot's mind with the suit's security grid more intimately."
+    image: "/Images/Equipment/rig049.webp",
+    description:
+      "A neurolink boost that integrates the pilot's mind with the suit's security grid more intimately.",
   },
   {
     name: "Overmind",
     rigType: "command",
-    image: '/Images/Equipment/rig069.webp', description: "Frees up processing power when executing an e-war module, allowing for faster uses of subsequent e-war modules."
+    image: "/Images/Equipment/rig069.webp",
+    description:
+      "Frees up processing power when executing an e-war module, allowing for faster uses of subsequent e-war modules.",
   },
   {
     name: "Redeemer",
     rigType: "command",
-    image: '/Images/Equipment/rig067.webp', description: "Executes all of the suit's available spells at once with increased potency, but significantly depletes mana reserves."
+    image: "/Images/Equipment/rig067.webp",
+    description:
+      "Executes all of the suit's available spells at once with increased potency, but significantly depletes mana reserves.",
   },
   {
     name: "Probe Assistant Modules",
     rigType: "utility",
-    image: '/Images/Equipment/rig047.webp', description: "Small probes that can be launched from the suit and use e-war modules up to Tech 2 at a reduced effectiveness."
+    image: "/Images/Equipment/rig047.webp",
+    description:
+      "Small probes that can be launched from the suit and use e-war modules up to Tech 2 at a reduced effectiveness.",
   },
   {
     name: "Neurolink Implants",
     rigType: "utility",
-    image: '/Images/Equipment/rig045.webp', description: "Grants the pilot cybernetic implants that allows the suit's neurolink to integrate with their mind more effectively."
+    image: "/Images/Equipment/rig045.webp",
+    description:
+      "Grants the pilot cybernetic implants that allows the suit's neurolink to integrate with their mind more effectively.",
   },
   {
     name: "Mana Flux Converter",
     rigType: "utility",
-    image: '/Images/Equipment/rig043.webp', description: "Reroutes a portion of the suit's mana capacity to help with the processing of e-war modules."
+    image: "/Images/Equipment/rig043.webp",
+    description:
+      "Reroutes a portion of the suit's mana capacity to help with the processing of e-war modules.",
   },
   {
     name: "Energy Grid Override",
     rigType: "utility",
-    image: '/Images/Equipment/rig041.webp', description: "Allows the pilot to utilize the energy grid more effectively, pumping energy from some modules and into others at will."
+    image: "/Images/Equipment/rig041.webp",
+    description:
+      "Allows the pilot to utilize the energy grid more effectively, pumping energy from some modules and into others at will.",
   },
   {
     name: "Signals Amplifier",
     rigType: "utility",
-    image: '/Images/Equipment/rig025.webp', description: "A multitude of signal amplifiers that boosts the effectiveness of emissions-type e-war modules."
+    image: "/Images/Equipment/rig025.webp",
+    description:
+      "A multitude of signal amplifiers that boosts the effectiveness of emissions-type e-war modules.",
   },
   {
     name: "Machine Learning Diagnostics",
     rigType: "utility",
-    image: '/Images/Equipment/rig023.webp', description: "Advances the suit's multiple artificial intelligence systems to better use digital-type e-war modules."
+    image: "/Images/Equipment/rig023.webp",
+    description:
+      "Advances the suit's multiple artificial intelligence systems to better use digital-type e-war modules.",
   },
   {
     name: "Logistics Controls",
     rigType: "utility",
-    image: '/Images/Equipment/rig021.webp', description: "Expands the suit's inventory of handling logistics-type e-war modules, providing additional effects and reserves."
+    image: "/Images/Equipment/rig021.webp",
+    description:
+      "Expands the suit's inventory of handling logistics-type e-war modules, providing additional effects and reserves.",
   },
   {
     name: "Assimilation",
     rigType: "utility",
-    image: '/Images/Equipment/rig015.webp', 
-    description: "Physically connects the pilot's mind and leylines to the suit. As a result, the suit gets much harder to get out of."
+    image: "/Images/Equipment/rig015.webp",
+    description:
+      "Physically connects the pilot's mind and leylines to the suit. As a result, the suit gets much harder to get out of.",
   },
   {
     name: "Hazardous Waste Collector",
     rigType: "utility",
-    image: '/Images/Equipment/rig019.webp', description: "Essentially a vacuum that the suit may be equipped with."
+    image: "/Images/Equipment/rig019.webp",
+    description: "Essentially a vacuum that the suit may be equipped with.",
   },
   {
     name: "Repair & Diagnostics",
     rigType: "utility",
-    image: '/Images/Equipment/rig017.webp', description: "Integrates an AI with a huge database of almost all known and in-use technology."
-  }
+    image: "/Images/Equipment/rig017.webp",
+    description:
+      "Integrates an AI with a huge database of almost all known and in-use technology.",
+  },
 ];
 
 const frames = [
   {
     id: "",
-    name: "", 
+    name: "",
     frameIntegrity: 75,
     weaponPoints: 8,
     offensiveSlot: 4,
@@ -1607,7 +2077,7 @@ const frames = [
   },
   {
     id: "",
-    name: "", 
+    name: "",
     frameIntegrity: 75,
     weaponPoints: 8,
     offensiveSlot: 4,
@@ -1619,7 +2089,7 @@ const frames = [
   },
   {
     id: "",
-    name: "", 
+    name: "",
     frameIntegrity: 75,
     weaponPoints: 8,
     offensiveSlot: 4,
@@ -1629,10 +2099,7 @@ const frames = [
     utilitySlot: 4,
     upgrades: "",
   },
-  
 ];
-
-const eWarFrame = [];
 
 
 function populateRigs(dataArray, choicePrefix, sectionID) {
@@ -1643,27 +2110,27 @@ function populateRigs(dataArray, choicePrefix, sectionID) {
     return;
   }
 
-  dataArray.forEach(item => {
+  dataArray.forEach((item) => {
     const newDiv = document.createElement("div");
-    newDiv.classList.add('choice');
-    newDiv.style.flexBasis = 'calc(100%/5)';
+    newDiv.classList.add("choice");
+    newDiv.style.flexBasis = "calc(100%/5)";
     newDiv.id = `${choicePrefix}-${item.name}`;
-    switch(item.rigType){
-      case ('offensive'): 
-        newDiv.style.backgroundColor = 'rgb(253,88,95, 0.4)';
-        newDiv.style.borderColor = 'rgb(141,69,73)';
+    switch (item.rigType) {
+      case "offensive":
+        newDiv.style.backgroundColor = "rgb(253,88,95, 0.4)";
+        newDiv.style.borderColor = "rgb(141,69,73)";
         break;
-      case ('defensive'): 
-        newDiv.style.backgroundColor = 'rgb(90,152,255, 0.4)';
-        newDiv.style.borderColor = 'rgb(40,81,199)';
+      case "defensive":
+        newDiv.style.backgroundColor = "rgb(90,152,255, 0.4)";
+        newDiv.style.borderColor = "rgb(40,81,199)";
         break;
-      case ('utility'):
-        newDiv.style.backgroundColor = 'rgb(244,255,82, 0.4)';
-        newDiv.style.borderColor = 'rgb(99,90,51)';
+      case "utility":
+        newDiv.style.backgroundColor = "rgb(244,255,82, 0.4)";
+        newDiv.style.borderColor = "rgb(99,90,51)";
         break;
-      case ('command'):
-        newDiv.style.backgroundColor = 'rgb(114,255,84, 0.4)';
-        newDiv.style.borderColor = 'rgb(59,129,40)';
+      case "command":
+        newDiv.style.backgroundColor = "rgb(114,255,84, 0.4)";
+        newDiv.style.borderColor = "rgb(59,129,40)";
         break;
     }
 
@@ -1671,16 +2138,16 @@ function populateRigs(dataArray, choicePrefix, sectionID) {
     newDiv.appendChild(newSpan);
 
     // Image element - common to all
-    const imgElement = document.createElement('img');
-    imgElement.src = item.image || 'https://placehold.co/100x100/eeeeee/ffffff?text=NoImage';
+    const imgElement = document.createElement("img");
+    imgElement.src =
+      item.image || "https://placehold.co/100x100/eeeeee/ffffff?text=NoImage";
     imgElement.alt = `${item.name} image`;
     //imgElement.style.maxHeight = '300px';
     newSpan.appendChild(imgElement); // Image added after newSpan
 
     const costP = document.createElement("p");
     costP.innerHTML = `Rig Type: ${item.rigType}`;
-    newSpan.appendChild(costP);  
-
+    newSpan.appendChild(costP);
 
     const descriptionP = document.createElement("p");
     descriptionP.innerHTML = item.description;
@@ -1698,23 +2165,24 @@ function populateVehicles(dataArray, choicePrefix, sectionID) {
     return;
   }
 
-  dataArray.forEach(item => {
+  dataArray.forEach((item) => {
     const newDiv = document.createElement("div");
-    newDiv.classList.add('choice');
-    newDiv.style.flexBasis = 'calc(100%/5)';
+    newDiv.classList.add("choice");
+    newDiv.style.flexBasis = "calc(100%/5)";
     newDiv.id = `${item.id}`;
 
-    if(item.type === 'dragoonMount'){
-      newDiv.style.backgroundColor = 'rgb(90,152,255, 0.4)';
-      newDiv.style.borderColor = 'rgb(40,81,199)';
-    } 
+    if (item.type === "dragoonMount") {
+      newDiv.style.backgroundColor = "rgb(90,152,255, 0.4)";
+      newDiv.style.borderColor = "rgb(40,81,199)";
+    }
 
     const newSpan = document.createElement("span");
     newDiv.appendChild(newSpan);
 
     // Image element - common to all
-    const imgElement = document.createElement('img');
-    imgElement.src = item.image || 'https://placehold.co/100x100/eeeeee/ffffff?text=NoImage';
+    const imgElement = document.createElement("img");
+    imgElement.src =
+      item.image || "https://placehold.co/100x100/eeeeee/ffffff?text=NoImage";
     imgElement.alt = `${item.name} image`;
     newSpan.appendChild(imgElement);
 
@@ -1723,22 +2191,23 @@ function populateVehicles(dataArray, choicePrefix, sectionID) {
     nameP.innerHTML = `${item.name}`;
     newSpan.appendChild(nameP);
 
-    const uList1 = document.createElement('ul');
-    uList1.style = "display: grid; grid-template-columns: 1fr 1fr; list-style: none; padding: 0; margin: 0; font-size: 15px; text-align: left;"
-    
+    const uList1 = document.createElement("ul");
+    uList1.style =
+      "display: grid; grid-template-columns: 1fr 1fr; list-style: none; padding: 0; margin: 0; font-size: 15px; text-align: left;";
+
     // Adjusted appendList1 calls to reflect vehicles attributes
-    appendList1(uList1, 'Cost: ', formatterIntl.format(item.cost));
-    appendList1(uList1, 'Hangar Space Use: ', item.hangarSpaceUse);
-    appendList1(uList1, 'Crew: ', item.crew);
-    appendList1(uList1, 'T1 Weapon Slots: ', item.t1WeaponSlots);
-    appendList1(uList1, 'T2 Weapon Slots: ', item.t2WeaponSlots);
-    appendList1(uList1, 'Mobility: ', item.mobility);
-    appendList1(uList1, 'Armour: ', item.armour);
-    appendList1(uList1, 'Length: ', item.length);
-    appendList1(uList1, 'Shields: ', item.shields);
-    appendList1(uList1, 'Uptime: ', item.uptime);
-    appendList1(uList1, 'Recharge: ', item.recharge);
-    newSpan.appendChild(uList1); 
+    appendList1(uList1, "Cost: ", formatterIntl.format(item.cost));
+    appendList1(uList1, "Hangar Space Use: ", item.hangarSpaceUse);
+    appendList1(uList1, "Crew: ", item.crew);
+    appendList1(uList1, "T1 Weapon Slots: ", item.t1WeaponSlots);
+    appendList1(uList1, "T2 Weapon Slots: ", item.t2WeaponSlots);
+    appendList1(uList1, "Mobility: ", item.mobility);
+    appendList1(uList1, "Armour: ", item.armour);
+    appendList1(uList1, "Length: ", item.length);
+    appendList1(uList1, "Shields: ", item.shields);
+    appendList1(uList1, "Uptime: ", item.uptime);
+    appendList1(uList1, "Recharge: ", item.recharge);
+    newSpan.appendChild(uList1);
 
     const descriptionP = document.createElement("p");
     descriptionP.innerHTML = item.description;
