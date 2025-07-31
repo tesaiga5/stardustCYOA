@@ -157,7 +157,7 @@
 
   <!--You-How'd you get the money Section--> 
   <div class="section" id="section-moneysource">
-    <div >
+    <div style="flex-basis: 80%;" >
       <span>
         <div>
           <h3>How'd you get the Money?</h3>
@@ -1812,6 +1812,8 @@
     const choiceRoom1 = document.getElementById('choice-room');
     const sectionRoom1 = document.getElementById('section-room');
 
+    
+
     const sectionToggleMap = {
     'choice-lore': 'section-lore', 
     'choice-you': 'section-you',
@@ -1906,7 +1908,10 @@
         const id = choiceElement.id; // Get the ID of the clicked choice
         const targetSectionID = sectionToggleMap[id];
         const sectionToToggle = document.getElementById(targetSectionID);
-
+        
+        /*if a frame is active, 
+          switchChoose(id, choiceElement, sectionToToggle, originToggleArray, frames);
+        */
         //handles all choices
         switchChoose(id, choiceElement, sectionToToggle, originToggleArray, player);
 
@@ -1940,7 +1945,7 @@
             populateHullToSection,
     } from '/Script/shipData.js';
     //populate equipment
-    import {equipment, vehicles, rigs, populateRigs, populateVehicles} from '/Script/equipmentData.js';
+    import {equipment, vehicles, rigs, populateRigs, populateVehicles, frames, createFrame} from '/Script/equipmentData.js';
     //populate spells and unified population function
     import {catalyst, affinity, spellBases, populateDataToSection, 
       populateCatalystToSection, formatterIntl,
@@ -2349,6 +2354,7 @@
       populateCatalystToSection(affinity, 'choice', 'endOfAffinities');
       populateCatalystToSection(spellBases, 'choice', 'endOfSpell');
     });
+
     
     choiceMod1.addEventListener('click', () => {
       choiceMod1.classList.toggle('active');
@@ -2388,6 +2394,8 @@
       sectionRoom1.classList.toggle('visible');
       populateDataToSection(rooms, 'choice', 'endOfRooms', 'room');
     });
+
+
 
 
   //Ship Creation Script

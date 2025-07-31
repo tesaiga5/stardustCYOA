@@ -1,5 +1,5 @@
 import { formatterIntl, appendList1 } from "/Script/manaData.js";
-export { equipment, vehicles, rigs, populateRigs, frames, populateVehicles };
+export { equipment, vehicles, rigs, populateRigs, frames, populateVehicles,createFrame };
 
 // This array contains all equipment objects with their attributes.
 // Blank attributes are set to '0'.
@@ -1642,6 +1642,7 @@ const vehicles = [
 
 const rigs = [
   {
+    id: "offensive-kinetic-counterbalancers",
     name: "Kinetic Counterbalancers",
     rigType: "offensive",
     image: "/Images/Equipment/rig259.webp",
@@ -1649,6 +1650,7 @@ const rigs = [
       "Counterbalancers for kinetic weapon types, allowing for greatly reduced recoil when firing.",
   },
   {
+    id: "offensive-rocket-catalysts",
     name: "Rocket Catalysts",
     rigType: "offensive",
     image: "/Images/Equipment/rig257.webp",
@@ -1656,6 +1658,7 @@ const rigs = [
       "Propellants for explosive-based weapons use more efficient compounds, significantly increasing payload velocity.",
   },
   {
+    id: "offensive-nanite-superconductors",
     name: "Nanite Superconductors",
     rigType: "offensive",
     image: "/Images/Equipment/rig255.webp",
@@ -1663,6 +1666,7 @@ const rigs = [
       "Enhances the magnetic capabilities of railguns, allowing them to cycle through rounds faster.",
   },
   {
+    id: "offensive-lens-calibrator",
     name: "Lens Calibrator",
     rigType: "offensive",
     image: "/Images/Equipment/rig253.webp",
@@ -1670,6 +1674,7 @@ const rigs = [
       "A management system for lenses on laser-based weaponry, causing them to reach maximum power output faster.",
   },
   {
+    id: "offensive-particle-fuse-batteries",
     name: "Particle Fuse Batteries",
     rigType: "offensive",
     image: "/Images/Equipment/rig251.webp",
@@ -1677,6 +1682,7 @@ const rigs = [
       "Powerful batteries for plasma-based weapons that allows for a longer uptime of firing before overheating.",
   },
   {
+    id: "offensive-trajectory-analysis",
     name: "Trajectory Analysis",
     rigType: "offensive",
     image: "/Images/Equipment/rig249.webp",
@@ -1684,6 +1690,7 @@ const rigs = [
       "A suite that enhances the suit's capability of using ranged weaponry, allowing for pinpoint motion prediction and accuracy.",
   },
   {
+    id: "offensive-munitions-reconstructor",
     name: "Munitions Reconstructor",
     rigType: "offensive",
     image: "/Images/Equipment/rig233.webp",
@@ -1691,6 +1698,7 @@ const rigs = [
       "Adds a compartment to the suit that, when fed appropriate hyperdense material cubes, can construct ammunition.",
   },
   {
+    id: "offensive-thermal-management-system",
     name: "Thermal Management System",
     rigType: "offensive",
     image: "/Images/Equipment/rig231.webp",
@@ -1698,6 +1706,7 @@ const rigs = [
       "Logistical attachments to the suit that improves weapon heat management, allowing for greater volumes of fire.",
   },
   {
+    id: "offensive-integrated-rangefinder",
     name: "Integrated Rangefinder",
     rigType: "offensive",
     image: "/Images/Equipment/rig229.webp",
@@ -1705,6 +1714,7 @@ const rigs = [
       "A rig embedded into the suit's HUD, feeding back helpful ballistics calculations for long range shooting.",
   },
   {
+    id: "offensive-weapon-mass-compensator",
     name: "Weapon Mass Compensator",
     rigType: "offensive",
     image: "/Images/Equipment/rig227.webp",
@@ -1712,6 +1722,7 @@ const rigs = [
       "A series of synthetic muscle fibres that cater to handling the suit's specific weapon systems for extreme handling.",
   },
   {
+    id: "offensive-martial-engine",
     name: "Martial Engine",
     rigType: "offensive",
     image: "/Images/Equipment/rig225.webp",
@@ -1719,6 +1730,7 @@ const rigs = [
       "Installs a machine learning program that assists in close-quarters combat, using vast libraries of data on martial arts.",
   },
   {
+    id: "offensive-hypertense-muscle-fibres",
     name: "Hypertense Muscle Fibres",
     rigType: "offensive",
     image: "/Images/Equipment/rig223.webp",
@@ -1726,6 +1738,7 @@ const rigs = [
       "Self-regenerating artificial muscle fibres that significantly increases the physical strength of the suit.",
   },
   {
+    id: "offensive-spell-cache-circuits",
     name: "Spell Cache Circuits",
     rigType: "offensive",
     image: "/Images/Equipment/rig207.webp",
@@ -1733,6 +1746,7 @@ const rigs = [
       "Improves the execution of spells, reducing the cast time for most spell types.",
   },
   {
+    id: "offensive-spell-burst-capacitors",
     name: "Spell Burst Capacitors",
     rigType: "offensive",
     image: "/Images/Equipment/rig205.webp",
@@ -1740,6 +1754,7 @@ const rigs = [
       "The suit's mana catalyst passively drains mana charge from surrounding environments, improving spell potencies.",
   },
   {
+    id: "offensive-leyline-memory-bridge",
     name: "Leyline Memory Bridge",
     rigType: "offensive",
     image: "/Images/Equipment/rig203.webp",
@@ -1747,6 +1762,7 @@ const rigs = [
       "Improves the successive re-casting of the same spell or similar ones when used in frequent amounts.",
   },
   {
+    id: "offensive-ancillary-leyline-subroutines",
     name: "Ancillary Leyline Subroutines",
     rigType: "offensive",
     image: "/Images/Equipment/rig201.webp",
@@ -1754,6 +1770,7 @@ const rigs = [
       "For the longer the suit is outputting spells from its mana catalyst in battle, spell handling exponentially improves.",
   },
   {
+    id: "offensive-mana-grid-management",
     name: "Mana Grid Management",
     rigType: "offensive",
     image: "/Images/Equipment/rig199.webp",
@@ -1761,6 +1778,7 @@ const rigs = [
       "Reserves some of the suit's computing power to make mana consumption more efficient, reducing spell mana costs.",
   },
   {
+    id: "offensive-void-wave-algorithm-injector",
     name: "Void-wave Algorithm Injector",
     rigType: "offensive",
     image: "/Images/Equipment/rig197.webp",
@@ -1768,6 +1786,7 @@ const rigs = [
       "Casting spells from the one spell affinity family will increase the potencies of other spells from the same family.",
   },
   {
+    id: "defensive-armour:-reactive-nanite-hardening",
     name: "Armour: Reactive Nanite Hardening",
     rigType: "defensive",
     image: "/Images/Equipment/rig181.webp",
@@ -1775,6 +1794,7 @@ const rigs = [
       "Improves the suit's armour nanites to counteract all incoming damage by a significant amount.",
   },
   {
+    id: "defensive-armour:-perforated-padding",
     name: "Armour: Perforated Padding",
     rigType: "defensive",
     image: "/Images/Equipment/rig179.webp",
@@ -1782,6 +1802,7 @@ const rigs = [
       "A perforated layer to the suit's armour that significantly reduces the impact of kinetic projectiles, especially AP rounds.",
   },
   {
+    id: "defensive-armour:-electro-magnetic-plating",
     name: "Armour: Electro-Magnetic Plating",
     rigType: "defensive",
     image: "/Images/Equipment/magia-artificial-lightning-paladin.webp",
@@ -1789,6 +1810,7 @@ const rigs = [
       "Charged plating that defends against energy-based attacks by adjusting its electro-magnetic charge.",
   },
   {
+    id: "defensive-armour:-elemental-hardening",
     name: "Armour: Elemental Hardening",
     rigType: "defensive",
     image: "/Images/Equipment/magia-artificial-nostryan-frostknight.webp",
@@ -1796,6 +1818,7 @@ const rigs = [
       "Plating that uses an alloy of metal that's charged with mana, adding a mild resistance to mana-based attacks.",
   },
   {
+    id: "defensive-armour:-nanite-charging-bank",
     name: "Armour: Nanite Charging Bank",
     rigType: "defensive",
     image: "/Images/Equipment/rig173.webp",
@@ -1803,6 +1826,7 @@ const rigs = [
       "A reservoir attached to the suit that charges armour nanites, allowing for faster self-repair.",
   },
   {
+    id: "defensive-pain-suit",
     name: "PAIN Suit",
     rigType: "defensive",
     image: "/Images/Equipment/rig171.webp",
@@ -1810,6 +1834,7 @@ const rigs = [
       "An integration with the pilot's neurolink suit which helps inhibit pain and keeps the mind focused while in combat.",
   },
   {
+    id: "defensive-shield:-crysalis-protocol",
     name: "Shield: Crysalis Protocol",
     rigType: "defensive",
     image: "/Images/Equipment/rig155.webp",
@@ -1817,6 +1842,7 @@ const rigs = [
       "Suit shield gains compounding defence against currently incoming damage types while reducing other resistances.",
   },
   {
+    id: "defensive-shield:-reactive-force-grid",
     name: "Shield: Reactive Force Grid",
     rigType: "defensive",
     image: "/Images/Equipment/rig153.webp",
@@ -1824,6 +1850,7 @@ const rigs = [
       "Counteracts kinetic impacts to the shield with small bursts of shockwaves, reducing impact significantly.",
   },
   {
+    id: "defensive-shield:-mana-dispersion",
     name: "Shield: Mana Dispersion",
     rigType: "defensive",
     image: "/Images/Equipment/rig149.webp",
@@ -1831,6 +1858,7 @@ const rigs = [
       "A protocol in the shield that increases the entropy of mana-based attacks, potentially dispersing them.",
   },
   {
+    id: "defensive-shield:-wavelength-nullification",
     name: "Shield: Wavelength Nullification",
     rigType: "defensive",
     image: "/Images/Equipment/rig151.webp",
@@ -1838,6 +1866,7 @@ const rigs = [
       "Attempts to deter incoming electro-magnetic attacks with nullifying wavelengths of energy, albeit only slightly.",
   },
   {
+    id: "defensive-shield:-auxiliary-shield-generator",
     name: "Shield: Auxiliary Shield Generator",
     rigType: "defensive",
     image: "/Images/Equipment/rig147.webp",
@@ -1845,6 +1874,7 @@ const rigs = [
       "Greatly increases the efficiency of the suit's shield operation, allowing for a longer uptime against sustained attacks.",
   },
   {
+    id: "defensive-chaff-fullers",
     name: "Chaff Fullers",
     rigType: "defensive",
     image: "/Images/Equipment/rig145.webp",
@@ -1852,6 +1882,7 @@ const rigs = [
       "Add strips of stealthy material around your suit, increasing resistance to radar, hacking and optics.",
   },
   {
+    id: "mobility-parkour",
     name: "Parkour",
     rigType: "mobility",
     image: "/Images/Equipment/rig129.webp",
@@ -1859,6 +1890,7 @@ const rigs = [
       "A servos that significantly improves ground mobility and agility, allowing for seamless dodging and acrobatics.",
   },
   {
+    id: "mobility-dancer",
     name: "Dancer",
     rigType: "mobility",
     image: "/Images/Equipment/rig127.webp",
@@ -1866,6 +1898,7 @@ const rigs = [
       "Uses small thrusters to give brief bursts of speed to either individual limbs or the entire suit.",
   },
   {
+    id: "mobility-roller",
     name: "Roller",
     rigType: "mobility",
     image: "/Images/Equipment/rig125.webp",
@@ -1873,6 +1906,7 @@ const rigs = [
       "Adds retractable wheels that allow for fast ground speeds. Stabilizers allow for smooth gliding, even while shooting.",
   },
   {
+    id: "mobility-harrier",
     name: "Harrier",
     rigType: "mobility",
     image: "/Images/Equipment/rig123.webp",
@@ -1880,6 +1914,7 @@ const rigs = [
       "Adds a jetpack that allows for agile hovering above ground, but somewhat reduces ground mobility.",
   },
   {
+    id: "mobility-warhawk",
     name: "Warhawk",
     rigType: "mobility",
     image: "/Images/Equipment/rig121.webp",
@@ -1887,6 +1922,7 @@ const rigs = [
       "Afterburners for extreme flight speeds while also significantly reducing mobility when on the ground.",
   },
   {
+    id: "mobility-launch",
     name: "Launch",
     rigType: "mobility",
     image: "/Images/Equipment/rig119.webp",
@@ -1894,6 +1930,7 @@ const rigs = [
       "Special thrusters that allows suits to launch from the ground at incredible vertical velocities.",
   },
   {
+    id: "mobility-inertia",
     name: "Inertia",
     rigType: "mobility",
     image: "/Images/Equipment/rig103.webp",
@@ -1901,6 +1938,7 @@ const rigs = [
       "Significantly minimizes damage taken from severe heights by directing impact kinetic energy outwards on landing.",
   },
   {
+    id: "mobility-hyperspatial-subcontroller",
     name: "Hyperspatial Subcontroller",
     rigType: "mobility",
     image: "/Images/Equipment/rig101.webp",
@@ -1908,6 +1946,7 @@ const rigs = [
       "Analyzes immediate surroundings and factors that in to all suit mobility functions for greater use of the environment.",
   },
   {
+    id: "mobility-astrometer-gyro-sensor",
     name: "Astrometer-Gyro Sensor",
     rigType: "mobility",
     image: "/Images/Equipment/rig099.webp",
@@ -1915,6 +1954,7 @@ const rigs = [
       "Improves the thrusters on the suit meant for manoeuvrability while in space. Goes well with Warhawk or Harrier.",
   },
   {
+    id: "mobility-hazardous-protection",
     name: "Hazardous Protection",
     rigType: "mobility",
     image: "/Images/Equipment/rig097.webp",
@@ -1922,6 +1962,7 @@ const rigs = [
       "Improves the suit's survivability in hazardous environments with better oxygen efficiency and temperature control.",
   },
   {
+    id: "mobility-tilt",
     name: "Tilt",
     rigType: "mobility",
     image: "/Images/Equipment/rig095.webp",
@@ -1929,6 +1970,7 @@ const rigs = [
       "A magnet-based servos that boosts the suit's mobility in more electrically-conductive environments.",
   },
   {
+    id: "mobility-phantom",
     name: "Phantom",
     rigType: "mobility",
     image: "/Images/Equipment/rig093.webp",
@@ -1936,6 +1978,7 @@ const rigs = [
       "When activated, this cloak masks the suit from detection while disabling most of the suit's other major functions.",
   },
   {
+    id: "command-warhound",
     name: "Warhound",
     rigType: "command",
     image: "/Images/Equipment/rig077.webp",
@@ -1943,6 +1986,7 @@ const rigs = [
       "When activated, boosts the functionality of all of the suit's functions at a mild rate temporarily.",
   },
   {
+    id: "command-bastion",
     name: "Bastion",
     rigType: "command",
     image: "/Images/Equipment/rig075.webp",
@@ -1950,6 +1994,7 @@ const rigs = [
       "Activating causes nanites to harden for an extreme defence, but this locks up the suit and only lasts for a minute.",
   },
   {
+    id: "command-prometheus",
     name: "Prometheus",
     rigType: "command",
     image: "/Images/Equipment/rig073.webp",
@@ -1957,6 +2002,7 @@ const rigs = [
       "When initiated, this reroutes most of the suit's energy reserves to instantly recharge shield capacity to max.",
   },
   {
+    id: "command-elusive",
     name: "Elusive",
     rigType: "command",
     image: "/Images/Equipment/alex-figini-exo-chick.webp",
@@ -1964,6 +2010,7 @@ const rigs = [
       "Weapon systems have a harder time tracking the suit and take longer to lock on.",
   },
   {
+    id: "utility-cognition-enhancement",
     name: "Cognition Enhancement",
     rigType: "utility",
     image: "/Images/Equipment/rig051.webp",
@@ -1971,6 +2018,7 @@ const rigs = [
       "An attachment to the pilot's neurolink suit which improves the pilot's cognition by a large amount when worn.",
   },
   {
+    id: "utility-deep-dive",
     name: "Deep Dive",
     rigType: "utility",
     image: "/Images/Equipment/rig049.webp",
@@ -1978,6 +2026,7 @@ const rigs = [
       "A neurolink boost that integrates the pilot's mind with the suit's security grid more intimately.",
   },
   {
+    id: "command-overmind",
     name: "Overmind",
     rigType: "command",
     image: "/Images/Equipment/rig069.webp",
@@ -1985,6 +2034,7 @@ const rigs = [
       "Frees up processing power when executing an e-war module, allowing for faster uses of subsequent e-war modules.",
   },
   {
+    id: "command-redeemer",
     name: "Redeemer",
     rigType: "command",
     image: "/Images/Equipment/rig067.webp",
@@ -1992,6 +2042,7 @@ const rigs = [
       "Executes all of the suit's available spells at once with increased potency, but significantly depletes mana reserves.",
   },
   {
+    id: "utility-probe-assistant-modules",
     name: "Probe Assistant Modules",
     rigType: "utility",
     image: "/Images/Equipment/rig047.webp",
@@ -1999,6 +2050,7 @@ const rigs = [
       "Small probes that can be launched from the suit and use e-war modules up to Tech 2 at a reduced effectiveness.",
   },
   {
+    id: "utility-neurolink-implants",
     name: "Neurolink Implants",
     rigType: "utility",
     image: "/Images/Equipment/rig045.webp",
@@ -2006,6 +2058,7 @@ const rigs = [
       "Grants the pilot cybernetic implants that allows the suit's neurolink to integrate with their mind more effectively.",
   },
   {
+    id: "utility-mana-flux-converter",
     name: "Mana Flux Converter",
     rigType: "utility",
     image: "/Images/Equipment/rig043.webp",
@@ -2013,6 +2066,7 @@ const rigs = [
       "Reroutes a portion of the suit's mana capacity to help with the processing of e-war modules.",
   },
   {
+    id: "utility-energy-grid-override",
     name: "Energy Grid Override",
     rigType: "utility",
     image: "/Images/Equipment/rig041.webp",
@@ -2020,6 +2074,7 @@ const rigs = [
       "Allows the pilot to utilize the energy grid more effectively, pumping energy from some modules and into others at will.",
   },
   {
+    id: "utility-signals-amplifier",
     name: "Signals Amplifier",
     rigType: "utility",
     image: "/Images/Equipment/rig025.webp",
@@ -2027,6 +2082,7 @@ const rigs = [
       "A multitude of signal amplifiers that boosts the effectiveness of emissions-type e-war modules.",
   },
   {
+    id: "utility-machine-learning-diagnostics",
     name: "Machine Learning Diagnostics",
     rigType: "utility",
     image: "/Images/Equipment/rig023.webp",
@@ -2034,6 +2090,7 @@ const rigs = [
       "Advances the suit's multiple artificial intelligence systems to better use digital-type e-war modules.",
   },
   {
+    id: "utility-logistics-controls",
     name: "Logistics Controls",
     rigType: "utility",
     image: "/Images/Equipment/rig021.webp",
@@ -2041,6 +2098,7 @@ const rigs = [
       "Expands the suit's inventory of handling logistics-type e-war modules, providing additional effects and reserves.",
   },
   {
+    id: "utility-assimilation",
     name: "Assimilation",
     rigType: "utility",
     image: "/Images/Equipment/rig015.webp",
@@ -2048,12 +2106,14 @@ const rigs = [
       "Physically connects the pilot's mind and leylines to the suit. As a result, the suit gets much harder to get out of.",
   },
   {
+    id: "utility-hazardous-waste-collector",
     name: "Hazardous Waste Collector",
     rigType: "utility",
     image: "/Images/Equipment/rig019.webp",
     description: "Essentially a vacuum that the suit may be equipped with.",
   },
   {
+    id: "utility-repair-&-diagnostics",
     name: "Repair & Diagnostics",
     rigType: "utility",
     image: "/Images/Equipment/rig017.webp",
@@ -2062,44 +2122,45 @@ const rigs = [
   },
 ];
 
-const frames = [
-  {
-    id: "",
-    name: "",
+
+
+function createFrame(num) {
+  const newFrame = {
+    id: "frame-vulcan",
+    name: "Vulcan",
     frameIntegrity: 75,
-    weaponPoints: 8,
-    offensiveSlot: 4,
-    defensiveSlot: 4,
-    mobilitySlot: 5,
+    weaponPoints: 12,
+    offensiveSlot: 8,
+    defensiveSlot: 6,
+    mobilitySlot: 4,
     commandSlot: 1,
     utilitySlot: 4,
     upgrades: "",
-  },
-  {
-    id: "",
-    name: "",
-    frameIntegrity: 75,
-    weaponPoints: 8,
-    offensiveSlot: 4,
-    defensiveSlot: 4,
-    mobilitySlot: 5,
-    commandSlot: 1,
-    utilitySlot: 4,
-    upgrades: "",
-  },
-  {
-    id: "",
-    name: "",
-    frameIntegrity: 75,
-    weaponPoints: 8,
-    offensiveSlot: 4,
-    defensiveSlot: 4,
-    mobilitySlot: 5,
-    commandSlot: 1,
-    utilitySlot: 4,
-    upgrades: "",
-  },
-];
+    choices: [],
+  }
+  switch (num) {
+    case 1:
+      break;
+    case 2:
+      newFrame.id = 'frame-dragoon';
+      newFrame.name = 'Dragoon';
+      newFrame.weaponPoints= 8;
+      newFrame.offensiveSlot= 4;
+      newFrame.defensiveSlot= 4;
+      newFrame.mobilitySlot= 5;
+      break;
+    case 3: 
+      newFrame.id= "frame-imperator";
+      newFrame.name= "Imperator";
+      newFrame.frameIntegrity= 60;
+      newFrame.weaponPoints= 8;
+      newFrame.offensiveSlot= 4;
+      newFrame.defensiveSlot= 4;  
+      newFrame.utilitySlot= 8;
+      break;
+  }
+  return newFrame;
+}
 
 
 function populateRigs(dataArray, choicePrefix, sectionID) {
@@ -2114,7 +2175,7 @@ function populateRigs(dataArray, choicePrefix, sectionID) {
     const newDiv = document.createElement("div");
     newDiv.classList.add("choice");
     newDiv.style.flexBasis = "calc(100%/5)";
-    newDiv.id = `${choicePrefix}-${item.name}`;
+    newDiv.id = `${item.id}`;
     switch (item.rigType) {
       case "offensive":
         newDiv.style.backgroundColor = "rgb(253,88,95, 0.4)";
