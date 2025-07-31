@@ -1,5 +1,5 @@
-import { formatterIntl } from "/Script/manaData.js";
-export {equipment, vehicles, rigs, populateRigs, frames};
+import { formatterIntl, appendList1 } from "/Script/manaData.js";
+export {equipment, vehicles, rigs, populateRigs, frames, populateVehicles};
 
 // This array contains all equipment objects with their attributes.
 // Blank attributes are set to '0'.
@@ -927,148 +927,361 @@ const equipment = [ //change to weapons later
 
 const vehicles = [ //aka dragoon mounts, need to insert
   {
+    id: "vehicle-dunebuggy",
     name: "AT Dunebuggy",
     cost: 500000,
     hangarSpaceUse: 1,
     crew: 4,
-    T1WeaponSlots: 2,
-    T2WeaponSlots: 0,
-    mobility: "000000000",
-    Armour: "8m",
-    Length: "4m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "The all-terrain dunebuggy allows for great ground coverage. Its high-traction wheels can be replaced with skates or skiis. +Comes with a free machine gun"
+    t1WeaponSlots: 2, // Changed to camelCase
+    t2WeaponSlots: 0, // Changed to camelCase
+    mobility: 5,
+    armour: 0, // Standardized to 'armour' (camelCase)
+    length: "4m", // Changed to camelCase
+    image: "/Images/Vehicles/icle051.webp",
+    description: "The all-terrain dunebuggy allows for great ground coverage. Its high-traction wheels can be replaced with skates or skiis. +Comes with a free machine gun",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-MLUV",
     name: "MLUV",
     cost: 1000000,
     hangarSpaceUse: 1,
     crew: 6,
-    T1WeaponSlots: 2,
-    T2WeaponSlots: 0,
-    mobility: "D0000",
-    Armour: "E", // Assuming 'E' is a string value for Armour
-    Length: "4m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "This mlitary light utility vehicle has a good balance of mobility, armour, and firepower, perfect for troop transportation and support. +Comes with a free T1 weapon"
+    t1WeaponSlots: 2,
+    t2WeaponSlots: 0,
+    mobility: 3,
+    armour: 0, // Standardized to 'armour' (camelCase)
+    length: "4m",
+    image: "/Images/Vehicles/icle049.webp",
+    description: "This mlitary light utility vehicle has a good balance of mobility, armour, and firepower, perfect for troop transportation and support. +Comes with a free T1 weapon",
+   shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-APC",
     name: "APC",
     cost: 2000000,
     hangarSpaceUse: 2,
     crew: 12,
-    T1WeaponSlots: 2,
-    T2WeaponSlots: 0,
-    mobility: "D0000",
-    Armour: "4m",
-    Length: "6m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Large and bulky, these Armoured Personnel Carriers can transport a good handful of troops or VIPs and protect them with thick armour. +Comes with a free T1 weapon"
+    t1WeaponSlots: 2,
+    t2WeaponSlots: 0,
+    mobility: "4",
+    armour: 4, // Standardized to 'armour' (camelCase)
+    length: "6m",
+    image: "/Images/Vehicles/icle047.webp",
+    description: "Large and bulky, these Armoured Personnel Carriers can transport a good handful of troops or VIPs and protect them with thick armour. +Comes with a free T1 weapon",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-terrain-tank",
     name: "Terrain Tank",
     cost: 3000000,
     hangarSpaceUse: 2,
     crew: 5,
-    T1WeaponSlots: 2,
-    T2WeaponSlots: 1,
-    mobility: "", // mobility value was blank in source for this item
-    Armour: "6m",
-    Length: "6m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These tanks are light armoured, but with their special quarduped tank treads, they can cover many kinds of terrain with good speed. +Comes with a free T2 weapon"
+    t1WeaponSlots: 2,
+    t2WeaponSlots: 1,
+    mobility: "4",
+    armour: 6, // Standardized to 'armour' (camelCase)
+    length: "6m",
+    image: "/Images/Vehicles/icle045.webp",
+    description: "These tanks are light armoured, but with their special quarduped tank treads, they can cover many kinds of terrain with good speed. +Comes with a free T2 weapon",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-heavy-tank",
     name: "Heavy Tank",
     cost: 4000000,
     hangarSpaceUse: 2,
     crew: 6,
-    T1WeaponSlots: 4,
-    T2WeaponSlots: 1,
-    mobility: "", // mobility value was blank in source for this item
-    Armour: "8m",
-    Length: "11m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Fit for convoys, heavy firepower, artillery support, and everything tank-like, these beasts can lead the charge into combat. +Comes with a free T2 weapon"
+    t1WeaponSlots: 4,
+    t2WeaponSlots: 1,
+    mobility: "3",
+    armour: 8, // Standardized to 'armour' (camelCase)
+    length: "11m",
+    image: "/Images/Vehicles/icle043.webp",
+    description: "Fit for convoys, heavy firepower, artillery support, and everything tank-like, these beasts can lead the charge into combat. +Comes with a free T2 weapon",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-spider-tank",
     name: "Spider Tank",
     cost: 6000000,
     hangarSpaceUse: 2,
     crew: 4,
-    T1WeaponSlots: 3,
-    T2WeaponSlots: 1,
-    mobility: "", // mobility value was blank in source for this item
-    Armour: "5m",
-    Length: "9m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Spider tanks are a more experi- mental platform, but unlike tradi- tional tanks, they have less trouble overcoming terrain. +Comes with a free T2 weapon"
+    t1WeaponSlots: 3,
+    t2WeaponSlots: 1,
+    mobility: "3",
+    armour: 5, // Standardized to 'armour' (camelCase)
+    length: "9m",
+    image: "/Images/Vehicles/icle041.webp",
+    description: "Spider tanks are a more experi- mental platform, but unlike tradi- tional tanks, they have less trouble overcoming terrain. +Comes with a free T2 weapon",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-ground-mech",
     name: "Ground Mech",
     cost: 1000000,
     hangarSpaceUse: 1,
     crew: 1,
-    T1WeaponSlots: 2,
-    T2WeaponSlots: 0,
-    mobility: "0000000",
-    Armour: "5m",
-    Length: "5m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "This personal ground mech has ample firepower with versatile movement. The perfect firepower support platform for your troops. +Comes with a free T1 weapon"
+    t1WeaponSlots: 2,
+    t2WeaponSlots: 0,
+    mobility: 3,
+    armour: 3, // Standardized to 'armour' (camelCase)
+    length: "5m",
+    image: "/Images/Vehicles/icle023.webp",
+    description: "This personal ground mech has ample firepower with versatile movement. The perfect firepower support platform for your troops. +Comes with a free T1 weapon",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-heavy-ground-mech",
     name: "Heavy Ground Mech",
     cost: 4000000,
     hangarSpaceUse: 2,
     crew: 2,
-    T1WeaponSlots: 3,
-    T2WeaponSlots: 1,
-    mobility: "000000SS",
-    Armour: "8m",
-    Length: "8m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These mechs are equipped with extremely hard hitting ordnance, particularily against air targets and other vehicles. +Comes with a free T2 weapon"
+    t1WeaponSlots: 3,
+    t2WeaponSlots: 1,
+    mobility: 4,
+    armour: 5, // Standardized to 'armour' (camelCase)
+    length: "8m",
+    image: "/Images/Vehicles/icle025.webp",
+    description: "These mechs are equipped with extremely hard hitting ordnance, particularily against air targets and other vehicles. +Comes with a free T2 weapon",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-og-mobile-suit",
     name: "OG Mobile Suit",
     cost: 7000000,
     hangarSpaceUse: 2,
     crew: 8,
-    T1WeaponSlots: 1,
-    T2WeaponSlots: 0,
-    mobility: "0000000",
-    Armour: "10m",
-    Length: "10m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Single-piloted, but extremely versatile. An upgrade from your standard power armour, these can fly in atmosphere or space. +Comes with a free T2 weapon"
+    t1WeaponSlots: 1,
+    t2WeaponSlots: 0,
+    mobility: 7,
+    armour: 5, // Standardized to 'armour' (camelCase)
+    length: "10m",
+    image: "/Images/Vehicles/icle021.webp",
+    description: "Single-piloted, but extremely versatile. An upgrade from your standard power armour, these can fly in atmosphere or space. +Comes with a free T2 weapon",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-submarine",
     name: "Submarine",
     cost: 3000000,
     hangarSpaceUse: 3,
     crew: 12,
-    T1WeaponSlots: 1,
-    T2WeaponSlots: 0,
-    mobility: "0000000000",
-    Armour: "25m",
-    Length: "25m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "These submarines can withstand extreme temperatures and pres- sures, and can withstand many liquids. +Comes with a free T1 weapon"
+    t1WeaponSlots: 1,
+    t2WeaponSlots: 0,
+    mobility: 7,
+    armour: "25m", // Standardized to 'armour' (camelCase)
+    length: "25m",
+    image: "/Images/Vehicles/icle019.webp",
+    description: "These submarines can withstand extreme temperatures and pres- sures, and can withstand many liquids. +Comes with a free T1 weapon",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-lamprey-boarding-ship",
     name: "Lamprey Boarding Ship",
     cost: 5000000,
     hangarSpaceUse: 4,
     crew: 12,
-    T1WeaponSlots: 2,
-    T2WeaponSlots: 0,
-    mobility: "000000SS",
-    Armour: "12m",
-    Length: "12m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "This ship uses high-powered lasers to cut through hulls to allow its boarding party inside. However, it cannot fly through ship shields. +Has 2 hangar space capacity"
+    t1WeaponSlots: 2,
+    t2WeaponSlots: 0,
+    mobility: 7,
+    armour: "12m", // Standardized to 'armour' (camelCase)
+    length: "12m",
+    image: "/Images/Vehicles/icle017.webp",
+    description: "This ship uses high-powered lasers to cut through hulls to allow its boarding party inside. However, it cannot fly through ship shields. +Has 2 hangar space capacity",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
   },
   {
+    id: "vehicle-drop-ship",
     name: "Drop Ship",
     cost: 5000000,
     hangarSpaceUse: 2,
     crew: 12,
-    T1WeaponSlots: 3,
-    T2WeaponSlots: 0,
-    mobility: "0000000",
-    Armour: "15m",
-    Length: "15m",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment", description: "Heavily armoured and perfectly capable of transporting troops and vehicles. +Comes with a free T1 weapon +Has 3 hangar space capacity"
+    t1WeaponSlots: 3,
+    t2WeaponSlots: 0,
+    mobility: 7,
+    armour: 3, // Standardized to 'armour' (camelCase)
+    length: "15m",
+    image: "/Images/Vehicles/icle015.webp",
+    description: "Heavily armoured and perfectly capable of transporting troops and vehicles. +Comes with a free T1 weapon +Has 3 hangar space capacity",
+    shields: 0,
+    uptime: 0,
+    recharge: 0, type: 'regular'
+  },
+  {
+    id: "vehicle-armoured-rover",
+    name: "ARMOURED ROVER",
+    armour: 6,
+    shields: 6,
+    mobility: 4,
+    uptime: 8,
+    recharge: 5,
+    type: 'dragoonMount',
+    cost: 0,
+    hangarSpaceUse: 1,
+    crew: 6,
+    t1WeaponSlots:0,
+    t2WeaponSlots: 0,
+    length: '5m',
+    image: "/Images/Vehicles/veh033.webp",
+    description: 'An amphibious all-terrain rover used by Beatrice R&D for exploration that can go underwater. It\'s a mobile transport and base.'
+ 
+
+  },
+  {
+    id: "vehicle-tyrant",
+    name: "TYRANT",
+    armour: 4,
+    shields: 7,
+    mobility: 8,
+    uptime: 6,
+    recharge: 4,
+    type: 'dragoonMount',
+    cost: 0,
+    hangarSpaceUse: 1,
+    crew: 1,
+    t1WeaponSlots:0,
+    t2WeaponSlots: 0,
+    length: '3m',
+    image: "/Images/Vehicles/veh015.webp",
+    description: 'One of the most advanced mobile suits that costed the Federation a fortune. It\'s highly mobile in the air and in space.'
+
+  },
+  {
+    id: "vehicle-stingray",
+    name: "STINGRAY",
+    armour: 1,
+    shields: 5,
+    mobility: 9,
+    uptime: 7,
+    recharge: 6,
+    type: 'dragoonMount',
+    cost: 0,
+    hangarSpaceUse: 1,
+    crew: 3,
+    t1WeaponSlots: 2,
+    t2WeaponSlots: 0,
+    length: '5m',
+    image: "/Images/Vehicles/veh031.webp",
+    description: 'Considered the top of its class in manoeuvrability, the Stingray is a drone often used for aerial and space scouting.'
+
+  },
+  {
+    id: "vehicle-conduit",
+    name: "CONDUIT",
+    armour: 3,
+    shields: 9,
+    mobility: 5,
+    uptime: 2,
+    recharge: 2,
+    type: 'dragoonMount',
+    cost: 0,
+    hangarSpaceUse: 1,
+    crew: 0,
+    t1WeaponSlots: 0,
+    t2WeaponSlots: 0,
+    length: '0m',
+    image: "/Images/Vehicles/veh013.webp",
+    description: 'An exoskeleton specifically made for interfacing with a Dragoon frame to amplify the pilot\'s spell capabilities by a massive amount.'
+
+
+
+  },
+  {
+    id: "vehicle-dropship",
+    name: "DROPSHIP",
+    armour: 5,
+    cost: 0,
+    shields: 6,
+    mobility: 7,
+    uptime: 7,
+    recharge: 3,
+    hangarSpaceUse: 2,
+    crew: 12,
+    t1WeaponSlots: 3,
+    t2WeaponSlots: 0,
+    length: "15m",
+    image: "/Images/Vehicles/veh029.webp",
+    description: 'Hardy VTOL dropships manufactured by Hammerhead Industries that can transport your Apocalypse fireteam and provide aerial support.', 
+    type: 'dragoonMount',
+  },
+  {
+    id: "vehicle-golem",
+    name: "GOLEM",
+    armour: 8,
+    shields: 6,
+    mobility: 4,
+    uptime: 2,
+    recharge: 2,
+    type: 'dragoonMount',
+    cost: 0,
+    hangarSpaceUse: 1,
+    crew: 1,
+    t1WeaponSlots: 1,
+    t2WeaponSlots: 0,
+    length: '7m',
+    image: "/Images/Vehicles/veh011.webp",
+    description: 'An experimental Triglav weapon platform that never found success until Dragoon interfacing technology made it viable.',
+    type: 'dragoonMount',
+
+  },
+  {
+    id: "vehicle-dunebike",
+    name: "DUNEBIKE",
+    armour: 3,
+    shields: 5,
+    mobility: 9,
+    uptime: 9,
+    recharge: 9,
+    type: 'dragoonMount',
+    cost: 0,
+    hangarSpaceUse: 1,
+    crew: 1,
+    t1WeaponSlots: 0,
+    t2WeaponSlots: 0,
+    length: '2m',
+    image: "/Images/Vehicles/veh035.webp",
+    description: 'An all-terrain motorcycle that can reach top speed on any solid terrain, and comes with interchangeable wheels for different environments.' 
+
+  },
+  {
+    id: "vehicle-doppelsoldner",
+    name: "DOPPELSÖLDNER",
+    armour: 9,
+    shields: 6,
+    mobility: 5,
+    uptime: 5,
+    recharge: 5, type: 'dragoonMount',
+    cost: 0,
+    hangarSpaceUse: 1,
+    crew: 2,
+    t1WeaponSlots: 1,
+    t2WeaponSlots: 0,
+    length: '11m',
+    image: "/Images/Vehicles/veh017.webp",
+    description: 'A tank with hyper-reactive armour that was never able to support its own energy demands, now possible with a Dragoon pilot.',
   }
 ];
 
@@ -1419,6 +1632,8 @@ const frames = [
   
 ];
 
+const eWarFrame = [];
+
 
 function populateRigs(dataArray, choicePrefix, sectionID) {
   const targetSection = document.getElementById(sectionID);
@@ -1472,5 +1687,63 @@ function populateRigs(dataArray, choicePrefix, sectionID) {
     newSpan.appendChild(descriptionP);
 
     targetSection.before(newDiv); // Append to the target section
+  });
+}
+
+function populateVehicles(dataArray, choicePrefix, sectionID) {
+  const targetSection = document.getElementById(sectionID);
+
+  if (!targetSection) {
+    console.error(`Target section with ID "${sectionID}" not found.`);
+    return;
+  }
+
+  dataArray.forEach(item => {
+    const newDiv = document.createElement("div");
+    newDiv.classList.add('choice');
+    newDiv.style.flexBasis = 'calc(100%/5)';
+    newDiv.id = `${item.id}`;
+
+    if(item.type === 'dragoonMount'){
+      newDiv.style.backgroundColor = 'rgb(90,152,255, 0.4)';
+      newDiv.style.borderColor = 'rgb(40,81,199)';
+    } 
+
+    const newSpan = document.createElement("span");
+    newDiv.appendChild(newSpan);
+
+    // Image element - common to all
+    const imgElement = document.createElement('img');
+    imgElement.src = item.image || 'https://placehold.co/100x100/eeeeee/ffffff?text=NoImage';
+    imgElement.alt = `${item.name} image`;
+    newSpan.appendChild(imgElement);
+
+    // Display the vehicle name
+    const nameP = document.createElement("h3");
+    nameP.innerHTML = `${item.name}`;
+    newSpan.appendChild(nameP);
+
+    const uList1 = document.createElement('ul');
+    uList1.style = "display: grid; grid-template-columns: 1fr 1fr; list-style: none; padding: 0; margin: 0; font-size: 15px; text-align: left;"
+    
+    // Adjusted appendList1 calls to reflect vehicles attributes
+    appendList1(uList1, 'Cost: ', formatterIntl.format(item.cost));
+    appendList1(uList1, 'Hangar Space Use: ', item.hangarSpaceUse);
+    appendList1(uList1, 'Crew: ', item.crew);
+    appendList1(uList1, 'T1 Weapon Slots: ', item.t1WeaponSlots);
+    appendList1(uList1, 'T2 Weapon Slots: ', item.t2WeaponSlots);
+    appendList1(uList1, 'Mobility: ', item.mobility);
+    appendList1(uList1, 'Armour: ', item.armour);
+    appendList1(uList1, 'Length: ', item.length);
+    appendList1(uList1, 'Shields: ', item.shields);
+    appendList1(uList1, 'Uptime: ', item.uptime);
+    appendList1(uList1, 'Recharge: ', item.recharge);
+    newSpan.appendChild(uList1); 
+
+    const descriptionP = document.createElement("p");
+    descriptionP.innerHTML = item.description;
+    newSpan.appendChild(descriptionP);
+
+    targetSection.before(newDiv);
   });
 }
