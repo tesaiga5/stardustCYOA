@@ -149,6 +149,10 @@ div {
   padding: 0;
 }
 
+.choice-frame.active {
+  background-color: rgb(9, 0, 64, 0.7);;
+}
+
 .choice h3 {
   font-size: 28px;
 }

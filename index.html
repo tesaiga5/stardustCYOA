@@ -21,6 +21,7 @@
       currentActiveShip: "", //div id
       ships: [], //array of objects
       hostiles: [], //array of strings
+      frame: {},
     };
 
     //collect frame attributes
@@ -592,7 +593,7 @@
           The attachment points for conventional weapons on the suit. Larger weapons require more hard- points to attach.</div></span>
           </div>
       </span></div>
-    <div class="choice-frame">
+    <div class="choice-frame" id="choice-frame1">
       <span>
         <div>Vulcan</div>
         
@@ -631,7 +632,7 @@
         </div>
       </span>
     </div>
-    <div class="choice-frame">
+    <div class="choice-frame" id="choice-frame2">
       <span>
         <div>Dragoon</div>
         
@@ -670,7 +671,7 @@
         </div>
       </span>
     </div>
-    <div class="choice-frame">
+    <div class="choice-frame" id="choice-frame3">
       <span>
         <div>Imperator</div>
         
@@ -1945,7 +1946,7 @@
             populateHullToSection,
     } from '/Script/shipData.js';
     //populate equipment
-    import {equipment, vehicles, rigs, populateRigs, populateVehicles, frames, createFrame} from '/Script/equipmentData.js';
+    import {equipment, vehicles, rigs, populateRigs, populateVehicles, handleFrame} from '/Script/equipmentData.js';
     //populate spells and unified population function
     import {catalyst, affinity, spellBases, populateDataToSection, 
       populateCatalystToSection, formatterIntl,
@@ -2342,6 +2343,12 @@
       sectionHull1.classList.toggle('active');
       populateHullToSection(hulls, 'choice',);
       
+    });
+
+    document.addEventListener('click', (event) => {
+      const choiceFrame = event.target.closest('.choice-frame'); 
+      console.log(choiceFrame);
+      handleFrame(choiceFrame);
     });
 
 
