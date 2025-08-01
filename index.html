@@ -615,13 +615,13 @@
           <p class="p-frame">The Vulcan was built as a stout weapon platform, capable of using heavy weapons usually mounted on vehicles or ships. Its technological roots trace back to the Federation Navy and can serve as a staple for any doctrine, as its vast reserves for muni- tions may be replaced for greater capacity for mana grid support. A single Vulcan is capable of wide- spread destruction.</p></div>
         <h4 class ="p-frame">Frame Upgrades (Select One): </h4>
         <div style="display:flex;">
-          <div class="choice" style="flex-basis: 50%; margin:0;" id="frame-hellion">
+          <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-hellion">
             <img src="Images\Other\Beatrice R&D.webp">
             <p>Hellion</p>
             <p>+30 usable for conventional weapons only. An upgrade focused on destruction at a versatile level with expanded munition reserves.
             </p>
           </div>
-          <div class="choice" style="flex-basis: 50%; margin:0;" id="frame-seraph">
+          <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-seraph">
             <img src="Images\Other\Beatrice R&D.webp">
             <p>Seraph</p>
             <p>+40 usable for spell bases or mana interfacing only
@@ -655,13 +655,13 @@
           </p></div>
         <h4 class ="p-frame">Frame Upgrades (Select One): </h4>
         <div style="display:flex;">
-          <div class="choice" style="flex-basis: 50%; margin:0;" id="frame-upgrade">
+          <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-raptor">
             <img src="Images\Other\Beatrice R&D.webp">
             <p>Raptor</p>
             <p>+2 Mobility rigs & "Perfect" stealth Maximizes the mobility potential of the suit. When using the "Phantom" rig, it can still use all of its other functions.
               </p>
           </div>
-          <div class="choice" style="flex-basis: 50%; margin:0;" id="frame-upgrade">
+          <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-corvette">
             <img src="Images\Other\Beatrice R&D.webp">
             <p>Corvette</p>
             <p>+2 Dragoon mounts
@@ -694,7 +694,7 @@
           </p></div>
         <h4 class ="p-frame">Frame Upgrades (Select One): </h4>
         <div style="display:flex;">
-          <div class="choice" style="flex-basis: 50%; margin:0;" id="frame-upgrade">
+          <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-monsoon">
             <img src="Images\Other\Beatrice R&D.webp">
             <p>Monsoon</p>
             <p>+20 usable for emissions- type e-war modules only
@@ -702,7 +702,7 @@
               </p>
           </div>
           
-          <div class="choice" style="flex-basis: 50%; margin:0;" id="frame-upgrade">
+          <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-inquisitor">
             <img src="Images\Other\Beatrice R&D.webp">
             <p>Inquisitor</p>
             <p>+20 usable for digital-type e-war modules only
@@ -2346,9 +2346,17 @@
     });
 
     document.addEventListener('click', (event) => {
-      const choiceFrame = event.target.closest('.choice-frame'); 
-      console.log(choiceFrame);
-      handleFrame(choiceFrame);
+
+      if(event.target.closest('.choice-frame-upgrade')){
+
+        const choiceFrame = event.target.closest('.choice-frame-upgrade'); 
+        console.log(choiceFrame);
+        handleFrame(choiceFrame);
+      } else if (event.target.closest('.choice-frame')) {
+
+        const choiceFrame = event.target.closest('.choice-frame'); 
+        handleFrame(choiceFrame);
+      }
     });
 
 

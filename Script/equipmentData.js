@@ -2157,83 +2157,37 @@ function createFrame(num) {
 }
 
 function handleFrame(choiceFrame) {
-  //check if other choices are active
-  //case 1: User clicked frame upgrade 1st
-  if (choiceFrame.classList.contains("choice")) {
-    const parentFrame = choiceFrame.closest(".choice-frame");
-    const parentFrameId = parentFrame.id;
-
-    // Requirement 1 & 2: Activate the parent choice-frame if not already active
-    if (!parentFrame.classList.contains("active")) {
-      // Deactivate any other active frame and its choices first
-      const activeFrame = document.querySelector(".choice-frame.active");
-      if (activeFrame) {
-        activeFrame.classList.remove("active");
-      }
-      parentFrame.classList.add("active");
-      let num = choiceFrame.id.substring(12);
+  //if choiceFrame is already active, remove active
+  if(choiceFrame.classList.contains('active')){
+    choiceFrame.classList.remove('active'); 
+    //if choiceframe is a frame upgrade, deactivate parent
+    if(choiceFrame.classList.contains('choice-frame-upgrade')){choiceFrame.closest('.choice-frame').classList.remove('active');} 
+    player.frame = null; 
+  } else { //choiceFrame is not active
+    //remove all active choices
+    const activeFrame = document.querySelectorAll('.choice-frame.active, .choice-frame-upgrade.active');
+    activeFrame.forEach(choice => choice.classList.remove('active')); 
+    player.frame = null;
+    
+    
+    
+    //if choiceframe is a frame upgrade, activate it first, then the parent
+    if(choiceFrame.classList.contains('choice-frame-upgrade')){
+      const parentFrame = choiceFrame.closest('.choice-frame');
+      choiceFrame.classList.add('active');
+      parentFrame.classList.add('active');
+      let num = parentFrame.id.substring(12);
       player.frame = createFrame(num);
-    }
-    //ensure frame upgrade is mutually exclusive
-    const siblingChoices = parentFrame.querySelector(".choice");
-    siblingChoices.classList.remove("active");
-
-    choiceFrame.classList.toggle("active");
-    if (choiceFrame.classList.contains("active")) {
       player.frame.upgrades = choiceFrame.id;
-    } else {
-      player.frame.upgrades = null;
-    }
-  } else if (choiceFrame.classList.contains(".choice-frame")) {
-    //case 2: User clicked main frame 1st
-
-    const parentFrameId = choiceFrame.id;
-    if (choiceFrame.classList.contains("active")) {
-      choiceFrame.classList.remove("active");
-      // Deselect all nested choices as well
-      choiceFrame
-        .querySelectorAll(".choice.active")
-        .forEach((c) => c.classList.remove("active"));
-      player.frame = null;
-    } else {
-      // If not active, deselect any other active frames and activate this one
-      const activeFrame = document.querySelector(".choice-frame.active");
-      if (activeFrame) {
-        activeFrame.classList.remove("active");
-        // Make sure to deselect choices in the old frame
-        activeFrame
-          .querySelectorAll(".choice.active")
-          .forEach((c) => c.classList.remove("active"));
-      }
-
-      choiceFrame.classList.add("active");
-      // The nested choices are not activated by this action, per requirement 2.
+    } 
+    //if choiceframe is a frame, activate only it
+    else if (choiceFrame.classList.contains('choice-frame')) {
+      choiceFrame.classList.add('active');
       let num = choiceFrame.id.substring(12);
       player.frame = createFrame(num);
-      player.upgrades = null; // No upgrade selected yet
-    }
-
-    //if selected is active, deselect it
-    if (choiceFrame.classList.contains("active")) {
-      choiceFrame.classList.remove("active");
-      player.frame = null; //delete existing frame
-      //if non-selected is active, deselect it
-    } else if (isActive) {
-      //turn all choices off
-      isActive.classList.remove("active");
-      player.frame = null; //delete existing frame
-
-      //turn selection on
-      choiceFrame.classList.add("active");
-      let num = choiceFrame.substring(12); //get the '1' from choice-frame1
-      player.frame = createFrame(num);
-    } else {
-      //if none is active
-      choiceFrame.classList.add("active");
-      let num = choiceFrame.substring(12); //get the '1' from choice-frame1
-      player.frame = createFrame(num);
-    }
+    } 
   }
+  return;
 }
 
 function populateRigs(dataArray, choicePrefix, sectionID) {

@@ -115,7 +115,7 @@ div {
   display: flex; /* Hidden by default */
 }
 
-.choice {
+.choice, .choice-frame-upgrade {
   justify-content: center;
   align-items: center;
   width: 140px; /* Keep your existing fixed width */
@@ -150,15 +150,21 @@ div {
 }
 
 .choice-frame.active {
-  background-color: rgb(9, 0, 64, 0.7);;
+  background-color: rgb(9, 0, 64, 0.7);
 }
 
-.choice h3 {
+.choice-frame-upgrade.active {
+  background-color: rgb(177, 59, 255, 0.7) !important ;
+}
+
+
+.choice, .choice-frame-upgrade h3 {
   font-size: 28px;
 }
 
 .choice p,
-.choice div {
+.choice div, 
+.choice-frame-upgrade p, .choice-frame-upgrade div {
   font-size: 18px;
 }
 
@@ -167,7 +173,7 @@ div {
   color: rgb(255, 204, 0);
 }
 
-.choice:hover {
+.choice:hover, .choice-frame-upgrade:hover {
   cursor: pointer;
   background-color: rgb(
     9,
@@ -178,11 +184,11 @@ div {
   transform: translateY(-2px);
 }
 
-.choice.active {
+.choice.active, .choice-frame-upgrade.active {
   background-color: rgb(9, 0, 64, 0.7); /* Consistent active color */
 }
 
-.choice img {
+.choice img, .choice-frame-upgrade img {
   max-width: 100%; /* Ensure images don't overflow their parent pseudoChoice */
   height: auto; /* Maintain aspect ratio */
   border-radius: 20px; /* Added rounded corners to images */
