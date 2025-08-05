@@ -1760,7 +1760,7 @@
   </div>
 
 <script type="module">
-    import {switchChoose} from '/Script/switchChoose.js';
+    import {switchChoose, handleChoiceRigs, handleChoiceVehicle} from '/Script/switchChoose.js';
 
     
 
@@ -1946,7 +1946,7 @@
             populateHullToSection,
     } from '/Script/shipData.js';
     //populate equipment
-    import {equipment, vehicles, rigs, populateRigs, populateVehicles, handleFrame} from '/Script/equipmentData.js';
+    import {equipment, vehicles, rigs, populateRigs, populateVehicles, handleFrame, createFrame} from '/Script/equipmentData.js';
     //populate spells and unified population function
     import {catalyst, affinity, spellBases, populateDataToSection, 
       populateCatalystToSection, formatterIntl,
@@ -2345,18 +2345,52 @@
       
     });
 
+    //to handle frames and rigs
     document.addEventListener('click', (event) => {
 
       if(event.target.closest('.choice-frame-upgrade')){
 
         const choiceFrame = event.target.closest('.choice-frame-upgrade'); 
-        console.log(choiceFrame);
         handleFrame(choiceFrame);
       } else if (event.target.closest('.choice-frame')) {
 
         const choiceFrame = event.target.closest('.choice-frame'); 
         handleFrame(choiceFrame);
+      } else if (event.target.closest('.choice-rigs')) { //handle rigs
+        const choiceRig = event.target.closest('.choice-rigs');
+        switch(choiceRig.id){
+          case 'vehicle-dunebuggy':
+          case 'vehicle-MLUV':
+          case 'vehicle-APC':
+          case 'vehicle-terrain-tank':
+          case 'vehicle-heavy-tank':
+          case 'vehicle-spider-tank':
+          case 'vehicle-ground-mech':
+          case 'vehicle-heavy-ground-mech':
+          case 'vehicle-og-mobile-suit':
+          case 'vehicle-submarine':
+          case 'vehicle-lamprey-boarding-ship':
+          case 'vehicle-drop-ship':
+            handleChoiceVehicle(choiceRig, 0, 'vehicle');
+            break;
+          case 'vehicle-armoured-rover':
+          case 'vehicle-tyrant':
+          case 'vehicle-stingray':
+          case 'vehicle-conduit':
+          case 'vehicle-dropship':
+          case 'vehicle-golem':
+          case 'vehicle-dunebike':
+          case 'vehicle-doppelsoldner':
+            handleChoiceVehicle(choiceRig, 1, 'vehicle');
+            break;
+          default: 
+          const parts = choiceRig.id.split('-'); 
+          const rigType = parts[0];
+          handleChoiceRigs(choiceRig, 1, rigType); 
+          break;
+        }
       }
+
     });
 
 

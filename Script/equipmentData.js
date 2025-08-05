@@ -6,6 +6,7 @@ export {
   populateRigs,
   populateVehicles,
   handleFrame,
+  createFrame,
 };
 
 // This array contains all equipment objects with their attributes.
@@ -2119,7 +2120,7 @@ const rigs = [
 ];
 
 function createFrame(num) {
-  const newFrame = {
+  let newFrame = {
     id: "frame-vulcan",
     name: "Vulcan",
     frameIntegrity: 75,
@@ -2129,12 +2130,12 @@ function createFrame(num) {
     mobilitySlot: 4,
     commandSlot: 1,
     utilitySlot: 4,
+    vehicleSlot: 0,
     upgrades: "",
     choices: [],
-  };
+  }
+
   switch (num) {
-    case 1:
-      break;
     case 2:
       newFrame.id = "frame-dragoon";
       newFrame.name = "Dragoon";
@@ -2142,6 +2143,8 @@ function createFrame(num) {
       newFrame.offensiveSlot = 4;
       newFrame.defensiveSlot = 4;
       newFrame.mobilitySlot = 5;
+      newFrame.vehicleSlot = 1;
+      console.log(newFrame);
       break;
     case 3:
       newFrame.id = "frame-imperator";
@@ -2151,6 +2154,10 @@ function createFrame(num) {
       newFrame.offensiveSlot = 4;
       newFrame.defensiveSlot = 4;
       newFrame.utilitySlot = 8;
+      console.log(newFrame);
+      break;
+    case 1:
+      console.log(newFrame);
       break;
   }
   return newFrame;
@@ -2167,24 +2174,24 @@ function handleFrame(choiceFrame) {
     //remove all active choices
     const activeFrame = document.querySelectorAll('.choice-frame.active, .choice-frame-upgrade.active');
     activeFrame.forEach(choice => choice.classList.remove('active')); 
-    player.frame = null;
-    
-    
+    player.frame = null;    
     
     //if choiceframe is a frame upgrade, activate it first, then the parent
     if(choiceFrame.classList.contains('choice-frame-upgrade')){
       const parentFrame = choiceFrame.closest('.choice-frame');
       choiceFrame.classList.add('active');
       parentFrame.classList.add('active');
-      let num = parentFrame.id.substring(12);
+      let num = parseInt(parentFrame.id.substring(12));
       player.frame = createFrame(num);
       player.frame.upgrades = choiceFrame.id;
+     
     } 
     //if choiceframe is a frame, activate only it
     else if (choiceFrame.classList.contains('choice-frame')) {
       choiceFrame.classList.add('active');
-      let num = choiceFrame.id.substring(12);
+      let num = parseInt(choiceFrame.id.substring(12));
       player.frame = createFrame(num);
+
     } 
   }
   return;
@@ -2200,25 +2207,24 @@ function populateRigs(dataArray, choicePrefix, sectionID) {
 
   dataArray.forEach((item) => {
     const newDiv = document.createElement("div");
-    newDiv.classList.add("choice");
+    newDiv.classList.add('choice-rigs');
     newDiv.style.flexBasis = "calc(100%/5)";
     newDiv.id = `${item.id}`;
     switch (item.rigType) {
       case "offensive":
-        newDiv.style.backgroundColor = "rgb(253,88,95, 0.4)";
-        newDiv.style.borderColor = "rgb(141,69,73)";
+        newDiv.classList.add('offensive-rigs');
         break;
       case "defensive":
-        newDiv.style.backgroundColor = "rgb(90,152,255, 0.4)";
-        newDiv.style.borderColor = "rgb(40,81,199)";
+        newDiv.classList.add('defensive-rigs');
         break;
       case "utility":
-        newDiv.style.backgroundColor = "rgb(244,255,82, 0.4)";
-        newDiv.style.borderColor = "rgb(99,90,51)";
+        newDiv.classList.add('utility-rigs');
         break;
       case "command":
-        newDiv.style.backgroundColor = "rgb(114,255,84, 0.4)";
-        newDiv.style.borderColor = "rgb(59,129,40)";
+        newDiv.classList.add('command-rigs');
+        break;
+      case "mobility":
+        newDiv.classList.add('mobility-rigs');
         break;
     }
 
@@ -2255,13 +2261,14 @@ function populateVehicles(dataArray, choicePrefix, sectionID) {
 
   dataArray.forEach((item) => {
     const newDiv = document.createElement("div");
-    newDiv.classList.add("choice");
+    newDiv.classList.add("choice-rigs");
     newDiv.style.flexBasis = "calc(100%/5)";
     newDiv.id = `${item.id}`;
 
     if (item.type === "dragoonMount") {
-      newDiv.style.backgroundColor = "rgb(90,152,255, 0.4)";
-      newDiv.style.borderColor = "rgb(40,81,199)";
+      newDiv.classList.add('defensive-rigs');
+    } else {
+      newDiv.classList.add('mobility-rigs');
     }
 
     const newSpan = document.createElement("span");

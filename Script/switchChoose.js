@@ -1,4 +1,4 @@
-export { switchChoose, handleChoiceSkills, handleChoiceRigs };
+export { switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle };
 import { formatterIntl } from "/Script/manaData.js";
 import { titles, skills } from "/Script/choiceData.js";
 
@@ -113,35 +113,62 @@ function handleChoiceSkills(section, chosenChoice, creditChange, chosenSkill) {
   }
 }
 
-function handleChoiceRigs(section, chosenChoice, creditChange, rigType) {
+function handleChoiceRigs(chosenChoice, creditChange, rigType) {
   //passthru section, the choice selected, the credit change, and maximum amount of choices
-  const activeChoices = section.querySelectorAll(".choice.active"); //check how many choices are active
+  //const activeChoices = section.querySelectorAll(".rigs"); //check how many choices are active
   const isChosenActive = chosenChoice.classList.contains("active");
   const whatSlot = `${rigType}Slot`;
   if (isChosenActive) {
     // If the chosen choice is already active, deactivate it (deselect)
-    chosenChoice.classList.toggle("active");
+    chosenChoice.classList.remove("active");
     
-    player[whatSlot] -= creditChange; // player here = frames
-        
+    player.frame[whatSlot] += creditChange; // player here = player.frame   
     
     //remove choice
-    const index = player.choices.indexOf(chosenChoice.id);
+    const index = player.frame.choices.indexOf(chosenChoice.id);
     if (index !== -1) {
-      player.choices.splice(index, 1);
+      player.frame.choices.splice(index, 1);
     }
+    
     //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
-  } else {
-    // If the chosen choice is not active, try to activate it (select)
-    if (frames[whatSlot] > 0) {
+  } else if (player.frame[whatSlot]>0){
+      
       //as long as the num of active choices are less than allowed active
-      chosenChoice.classList.toggle("active"); //you may toggle the selected choice to be active
-      player[whatSlot] += creditChange; // and Add credits
-      player.choices.push(chosenChoice.id);
+      chosenChoice.classList.add("active"); //you may toggle the selected choice to be active
+      player.frame[whatSlot] -= creditChange; // and Add credits
+      player.frame.choices.push(chosenChoice.id);
       //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
     }
-  }
 }
+
+function handleChoiceVehicle(chosenChoice, creditChange, rigType) {
+  console.log(creditChange);
+  //passthru section, the choice selected, the credit change, and maximum amount of choices
+  //const activeChoices = section.querySelectorAll(".rigs"); //check how many choices are active
+  const isChosenActive = chosenChoice.classList.contains("active");
+  const whatSlot = `${rigType}Slot`;
+  if (isChosenActive) {
+    // If the chosen choice is already active, deactivate it (deselect)
+    chosenChoice.classList.remove("active");
+    
+    player.frame[whatSlot] += creditChange; // player here = player.frame   
+    
+    //remove choice
+    const index = player.frame.choices.indexOf(chosenChoice.id);
+    if (index !== -1) {
+      player.frame.choices.splice(index, 1);
+    }
+    
+    //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+  } else if (creditChange === 0 || player.frame[whatSlot]>0){ // || 
+      //as long as the num of active choices are less than allowed active
+      chosenChoice.classList.add("active"); //you may toggle the selected choice to be active
+      player.frame[whatSlot] -= creditChange; // and Add credits
+      player.frame.choices.push(chosenChoice.id);
+      //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+    }
+}
+
 
 function switchChoose(
   id,
@@ -709,79 +736,6 @@ function switchChoose(
       );
       break;
     
-    /*case 'frame-vulcan': 
-    case 'frame-dragoon':
-    case 'frame-imperator':*/
-    case 'offensive-kinetic-counterbalancers':
-    case 'offensive-rocket-catalysts':
-    case 'offensive-nanite-superconductors':
-    case 'offensive-lens-calibrator':
-    case 'offensive-particle-fuse-batteries':
-    case 'offensive-trajectory-analysis':
-    case 'offensive-munitions-reconstructor':
-    case 'offensive-thermal-management-system':
-    case 'offensive-integrated-rangefinder':
-    case 'offensive-weapon-mass-compensator':
-    case 'offensive-martial-engine':
-    case 'offensive-hypertense-muscle-fibres':
-    case 'offensive-spell-cache-circuits':
-    case 'offensive-spell-burst-capacitors':
-    case 'offensive-leyline-memory-bridge':
-    case 'offensive-ancillary-leyline-subroutines':
-    case 'offensive-mana-grid-management':
-    case 'offensive-void-wave-algorithm-injector':
-      handleChoiceRigs(sectionToToggle, choiceElement, 1, 'offensive');
-      break;
-    case 'defensive-armour:-reactive-nanite-hardening':
-    case 'defensive-armour:-perforated-padding':
-    case 'defensive-armour:-electro-magnetic-plating':
-    case 'defensive-armour:-elemental-hardening':
-    case 'defensive-armour:-nanite-charging-bank':
-    case 'defensive-pain-suit':
-    case 'defensive-shield:-crysalis-protocol':
-    case 'defensive-shield:-reactive-force-grid':
-    case 'defensive-shield:-mana-dispersion':
-    case 'defensive-shield:-wavelength-nullification':
-    case 'defensive-shield:-auxiliary-shield-generator':
-    case 'defensive-chaff-fullers':
-      handleChoiceRigs(sectionToToggle, choiceElement, 1, 'defensive');
-      break;
-    case 'mobility-parkour':
-    case 'mobility-dancer':
-    case 'mobility-roller':
-    case 'mobility-harrier':
-    case 'mobility-warhawk':
-    case 'mobility-launch':
-    case 'mobility-inertia':
-    case 'mobility-hyperspatial-subcontroller':
-    case 'mobility-astrometer-gyro-sensor':
-    case 'mobility-hazardous-protection':
-    case 'mobility-tilt':
-    case 'mobility-phantom':
-      handleChoiceRigs(sectionToToggle, choiceElement, 1, 'mobility');
-      break;
-    case 'command-warhound':
-    case 'command-bastion':
-    case 'command-prometheus':
-    case 'command-elusive':
-    case 'command-overmind':
-    case 'command-redeemer':
-      handleChoiceRigs(sectionToToggle, choiceElement, 1, 'command');
-      break;
-    case 'utility-cognition-enhancement':
-    case 'utility-deep-dive':
-    case 'utility-probe-assistant-modules':
-    case 'utility-neurolink-implants':
-    case 'utility-mana-flux-converter':
-    case 'utility-energy-grid-override':
-    case 'utility-signals-amplifier':
-    case 'utility-machine-learning-diagnostics':
-    case 'utility-logistics-controls':
-    case 'utility-assimilation':
-    case 'utility-hazardous-waste-collector':
-    case 'utility-repair-&-diagnostics':
-      handleChoiceRigs(sectionToToggle, choiceElement, 1, 'utility');
-      break;
-
+    
   }
 }
