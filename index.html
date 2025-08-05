@@ -2371,7 +2371,7 @@
           case 'vehicle-submarine':
           case 'vehicle-lamprey-boarding-ship':
           case 'vehicle-drop-ship':
-            handleChoiceVehicle(choiceRig, 0, 'vehicle');
+            handleChoiceVehicle(choiceRig, 0, vehicles);
             break;
           case 'vehicle-armoured-rover':
           case 'vehicle-tyrant':
@@ -2381,7 +2381,7 @@
           case 'vehicle-golem':
           case 'vehicle-dunebike':
           case 'vehicle-doppelsoldner':
-            handleChoiceVehicle(choiceRig, 1, 'vehicle');
+            handleChoiceVehicle(choiceRig, 1, vehicles);
             break;
           default: 
           const parts = choiceRig.id.split('-'); 

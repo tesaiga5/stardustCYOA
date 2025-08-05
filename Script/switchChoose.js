@@ -141,17 +141,21 @@ function handleChoiceRigs(chosenChoice, creditChange, rigType) {
     }
 }
 
-function handleChoiceVehicle(chosenChoice, creditChange, rigType) {
-  console.log(creditChange);
+function handleChoiceVehicle(chosenChoice, creditChange, vehicles) {
   //passthru section, the choice selected, the credit change, and maximum amount of choices
   //const activeChoices = section.querySelectorAll(".rigs"); //check how many choices are active
   const isChosenActive = chosenChoice.classList.contains("active");
-  const whatSlot = `${rigType}Slot`;
+  const chosenVehicle = vehicles.find(object => object.id === chosenChoice.id); 
+  
   if (isChosenActive) {
     // If the chosen choice is already active, deactivate it (deselect)
     chosenChoice.classList.remove("active");
     
-    player.frame[whatSlot] += creditChange; // player here = player.frame   
+    if(creditChange===0){
+      player.credits += chosenVehicle.cost;
+      document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+    }
+    else {player.frame.vehicleSlot += creditChange;}
     
     //remove choice
     const index = player.frame.choices.indexOf(chosenChoice.id);
@@ -159,16 +163,19 @@ function handleChoiceVehicle(chosenChoice, creditChange, rigType) {
       player.frame.choices.splice(index, 1);
     }
     
-    //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
-  } else if (creditChange === 0 || player.frame[whatSlot]>0){ // || 
+    //
+  } else if (creditChange === 0 || player.frame.vehicleSlot>0){ // || 
       //as long as the num of active choices are less than allowed active
       chosenChoice.classList.add("active"); //you may toggle the selected choice to be active
-      player.frame[whatSlot] -= creditChange; // and Add credits
+      if(creditChange===0){
+        player.credits -= chosenVehicle.cost;
+        document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+      }
+      else {player.frame.vehicleSlot -= creditChange;}
       player.frame.choices.push(chosenChoice.id);
       //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
     }
 }
-
 
 function switchChoose(
   id,
