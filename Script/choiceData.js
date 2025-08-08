@@ -14,7 +14,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "basic-piloting" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/basic-piloting-indotort-midjourney.webp",
   },
   {
     id: "skill-standard-piloting",
@@ -27,7 +27,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "standard-piloting" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills053.webp",
   },
   {
     id: "skill-advanced-piloting",
@@ -40,7 +40,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "advanced-piloting" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills051.webp",
   },
   {
     id: "skill-ship-gunnery",
@@ -70,7 +70,7 @@ const skills = [
         value: "ship-weapon-specialization",
       },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills051.webp",
   },
   {
     id: "skill-medical",
@@ -81,7 +81,7 @@ const skills = [
     prerequisites: [],
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "medical" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills067.webp",
   },
   {
     id: "skill-computer-science",
@@ -94,7 +94,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "computer-science" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills047.webp",
   },
   {
     id: "skill-cyber-security",
@@ -107,7 +107,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "cyber-security" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/ryouta-otsuka-28hight.webp",
   },
   {
     id: "skill-mechanics",
@@ -118,7 +118,7 @@ const skills = [
     prerequisites: [],
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "mechanics" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/aurore-folny-thepersonaltouch-aurorefolny.webp",
   },
   {
     id: "skill-nuclear",
@@ -129,7 +129,7 @@ const skills = [
     prerequisites: [],
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "nuclear" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills031.webp",
   },
   {
     id: "skill-industry",
@@ -140,7 +140,7 @@ const skills = [
     prerequisites: [],
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "industry" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills029.webp",
   },
   {
     id: "skill-diplomacy",
@@ -153,7 +153,7 @@ const skills = [
       { type: "crew-hire-limit", value: 4, condition: "hostile-faction" },
     ],
     playerUpdates: [{ attribute: "skills", action: "add", value: "diplomacy" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/adam-o-donnell-portrait-mainlight.webp",
   },
 
   {
@@ -171,7 +171,7 @@ const skills = [
     ],
     consequences: [{ type: "job-slots", value: 3 }], // Can assume 3 jobs instead of 2
     playerUpdates: [{ attribute: "skills", action: "add", value: "mind-link" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "/Images/Skills/skills013.webp",
   },
   {
     id: "skill-mercantile",
@@ -184,7 +184,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "mercantile" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills011.webp",
   },
   {
     id: "skill-basicTraining",
@@ -197,7 +197,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "mercantile" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/usarmyphoto-capt-Stephanie-Snyder.jpg",
   },
   {
     id: "skill-closeQuartersCombat",
@@ -210,7 +210,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "mercantile" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/geirrod-van-dyke-chun-li-full.webp",
   },
   {
     id: "skill-security",
@@ -221,7 +221,7 @@ const skills = [
     prerequisites: [],
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "security" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/patrol-soldier-indort-midjourney.webp",
   },
   {
     id: "skill-patrol",
@@ -232,7 +232,7 @@ const skills = [
     prerequisites: [],
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "patrol" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/soldier-accompanied-spiderbot-indotort-midjourney.webp",
   },
   {
     id: "skill-advanced-firearms",
@@ -258,7 +258,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "field-medic" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/ian-llanas-medicfinalfinal.jpg",
   },
   {
     id: "skill-hit",
@@ -269,7 +269,7 @@ const skills = [
     prerequisites: ["skill-security", "skill-patrol"], // Assuming 'or' means either one
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "hit" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/silencer-indotort-midjourney.webp",
   },
   {
     id: "skill-recovery",
@@ -280,7 +280,7 @@ const skills = [
     prerequisites: ["skill-security", "skill-patrol"], // Assuming 'or' means either one
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "recovery" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/walkinthedesert-indotort-midjourney.webp",
   },
   {
     id: "skill-long-ranged-combat",
@@ -293,7 +293,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "long-ranged-combat" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills134.webp",
   },
   {
     id: "skill-wilderness-survival",
@@ -306,7 +306,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "wilderness-survival" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/man-walkinginsnow-indotort-midjourney.webp",
   },
   {
     id: "skill-raid",
@@ -317,7 +317,7 @@ const skills = [
     prerequisites: ["skill-security", "skill-patrol"], // Assuming 'or' means either one
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "raid" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills130.webp",
   },
   {
     id: "skill-infiltration",
@@ -330,7 +330,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "infiltration" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills128.webp",
   },
   {
     id: "skill-demolition",
@@ -343,7 +343,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "demolition" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills116.webp",
   },
   {
     id: "skill-combat-driving",
@@ -356,7 +356,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "combat-driving" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills114.webp",
   },
   {
     id: "skill-assault",
@@ -378,7 +378,7 @@ const skills = [
     prerequisites: ["skill-recovery", "skill-infiltration"], // Assuming 'or' means either one
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "guerilla" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/guerilla-indotort-midjourney.webp",
   },
   {
     id: "skill-weaponsmith",
@@ -417,7 +417,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "leadership" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills094.webp",
   },
   {
     id: "skill-defence",
@@ -428,7 +428,7 @@ const skills = [
     prerequisites: ["skill-assault", "skill-guerilla"], // Assuming 'or' means either one
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "defence" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/skills092.webp",
   },
 ];
 
