@@ -70,7 +70,7 @@ const skills = [
         value: "ship-weapon-specialization",
       },
     ],
-    imageSrc: "Images/Skills/skills051.webp",
+    imageSrc: "Images/Skills/cannons-from-space.webp",
   },
   {
     id: "skill-medical",
