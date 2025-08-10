@@ -1365,7 +1365,7 @@ const archetype = [
   },
   {
     title: "Red Dagger Pirates",
-    image: 'Images/Crew/cyber-samurai-indotort-midjourney.webp',
+    image: 'Images/Crew/future-akatsuki-indotort-midjourney.webp',
     skillLevel: 0,
     alignment: "Red Daggers",
     cost: {
