@@ -2,12 +2,11 @@ TODO:
 
 FRAME:
 
-3. Handlechoice frame
 4. Handlechoice rigs
 5. Handlechoice personal weapons
 6. Handlechoice dragoon
 7. Handlechoice ewar
-7. Pictures: frame, dragoon, e-war, personal weapons
+8. Pictures: frame, dragoon, e-war, personal weapons
 
 SHIP: 3. Handlechoice choice-hull 4. Handlechoice subsystems (3) 5. Handlechoice ship weapons 6. Handlechoice dragoon 7. Pictures: ships, shipAI, energy, shield, shipweapons, industrial (easy), ewar, rooms, crew 8. shipWeapons spinal/broadside mechanic 9. Handlechoice industrial (easy) 10. Handlechoice ewar 11. Handlechoice rooms 12. Handlechoice crew
 

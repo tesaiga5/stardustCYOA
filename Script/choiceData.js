@@ -40,20 +40,20 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "advanced-piloting" },
     ],
-    imageSrc: "Images/Skills/skills051.webp",
+    imageSrc: "Images/Skills/advancedpiloting-indotort-midjourney.webp",
   },
   {
     id: "skill-ship-gunnery",
     title: "Ship Gunnery",
     description:
-      "Learning how to fire a ship's weapons is almost an essential skill needed when space-faring. Hostiles. can find the sneakiest ways of getting you where they want you to be, so you best be prepared to defend yourself from them. You'll be able to ade- quately fire any ship weapon from this course.",
+      "Learning how to fire a ship's weapons is almost an essential skill needed when space-faring. Hostiles. can find the sneakiest ways of getting you where they want you to be, so you best be prepared to defend yourself from them. You'll be able to adequately fire any ship weapon from this course.",
     credits: -2000000,
     prerequisites: [],
     consequences: [],
     playerUpdates: [
       { attribute: "skills", action: "add", value: "ship-gunnery" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/encho-enchev-ready1.webp",
   },
   {
     id: "skill-ship-weapon-specialization",
@@ -100,7 +100,7 @@ const skills = [
     id: "skill-cyber-security",
     title: "Cyber Security",
     description:
-      "Take information technology a step further and into the world of info-sec. For as long humanity can remember, hacking and cyber defence has been a volatile field that requires top-of-the-line intuition and craftiness. E-war is just as dangerous as conven- tional warfare, and some argue it is more so.",
+      "Take information technology a step further and into the world of info-sec. For as long humanity can remember, hacking and cyber defence has been a volatile field that requires top-of-the-line intuition and craftiness. E-war is just as dangerous as conventional warfare, and some argue it is more so.",
     credits: -2000000,
     prerequisites: ["skill-computer-science"],
     consequences: [],
@@ -140,7 +140,7 @@ const skills = [
     prerequisites: [],
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "industry" }],
-    imageSrc: "Images/Skills/skills029.webp",
+    imageSrc: "Images/Skills/industry-indotort-midjourney.webp",
   },
   {
     id: "skill-diplomacy",
@@ -184,7 +184,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "mercantile" },
     ],
-    imageSrc: "Images/Skills/skills011.webp",
+    imageSrc: "Images/Skills/mercantile-indotort-midjourney.webp",
   },
   {
     id: "skill-basicTraining",
@@ -317,7 +317,7 @@ const skills = [
     prerequisites: ["skill-security", "skill-patrol"], // Assuming 'or' means either one
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "raid" }],
-    imageSrc: "Images/Skills/skills130.webp",
+    imageSrc: "Images/Skills/raid-indotort-midjourney.webp",
   },
   {
     id: "skill-infiltration",
@@ -367,7 +367,7 @@ const skills = [
     prerequisites: ["skill-hit", "skill-raid"], // Assuming 'or' means either one
     consequences: [],
     playerUpdates: [{ attribute: "skills", action: "add", value: "assault" }],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/assault-indotort-midjourney.webp",
   },
   {
     id: "skill-guerilla",
@@ -391,7 +391,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "weaponsmith" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/weaponsmith-indotort-midjourney.webp",
   },
   {
     id: "skill-combat-engineering",
@@ -404,7 +404,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "combat-engineering" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Skills/combatengineering-indotort-midjourney.webp",
   },
   {
     id: "skill-leadership",

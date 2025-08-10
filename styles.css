@@ -63,6 +63,11 @@ div {
   margin: 10px;
 }
 
+p {
+  text-align: start;
+  text-wrap: pretty;
+}
+
 #section-lore,
 #section-you,
 #section-moneysource,
@@ -512,13 +517,13 @@ ul {
 }
 
 /* Base styles for Red-Dagger Pirates (Red) */
-.red-dagger-pirates {
+.pirate-system {
   border: 3px solid #8b0000 !important; /* Dark Red border */
   background-color: rgba(255, 0, 0, 0.486) !important; /* Red background */
 }
 
 /* Deeper/darker color when Red-Dagger Pirates is clicked */
-.red-dagger-pirates.active {
+.pirate-system.active {
   border: 3px solid #550000 !important; /* Even darker red */
   background-color: rgba(200, 0, 0, 0.6) !important; /* Darker red */
 }
@@ -533,6 +538,15 @@ ul {
 .independent-system.active {
   border: 3px solid #2f0050 !important; /* Darker indigo */
   background-color: rgba(80, 0, 80, 0.6) !important; /* Darker purple */
+}
+
+.luos-system {
+  border: 3px solid whitesmoke !important;
+  background-color: rgba(185, 166, 166, 0.404) !important;
+}
+.luos-system.active {
+  border: 3px solid white !important;
+  background-color: rgba(185, 166, 166, 0.6) !important;
 }
 
 /*for rigs*/ 
