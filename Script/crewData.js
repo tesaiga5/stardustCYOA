@@ -1201,17 +1201,17 @@ const crew = [
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Hal",
   },
   {
-    name: "Nettie",
+    title: "Nettie",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Nettie",
     cost: 0,
     specialty: "Survival",
     equipment: 2,
     skillLevel: 1,
     alignment: "Neutral",
-    description: "A young girl found wandering the streets of an abandoned city in Faraday. She claims to not know her name nor her family. She survived for years, alone."
+    description: "A young girl found wandering the streets of an abandoned city in Faraday. She claims to not know her title nor her family. She survived for years, alone."
   },
   {
-    name: "Kristina Hines",
+    title: "Kristina Hines",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Kristina+Hines",
     cost: 1000000,
     specialty: "Long-range",
@@ -1221,7 +1221,7 @@ const crew = [
     description: "A new recruit in the Wolf Hunt gang who has shown promise in her marksmanship. She's becoming a quick favourite to Yula, the gang leader."
   },
   {
-    name: "Robby Delgarv",
+    title: "Robby Delgarv",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Robby+Delgarv",
     cost: 2000000,
     specialty: "Survival",
@@ -1231,7 +1231,7 @@ const crew = [
     description: "A Dustkeeper who likes to keep his gear modest. Has extensive knowledge on survival skills in harsh environments. Always seems to know what he's doing."
   },
   {
-    name: "Maxim Cyril",
+    title: "Maxim Cyril",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Maxim+Cyril",
     cost: 2000000,
     specialty: "Medic",
@@ -1241,7 +1241,7 @@ const crew = [
     description: "A field medic fresh out of med school, looking to bolster his battlefield experience. He's self-funded his own equipment, which is fairly expensive. His equipment is 'DOOSE'."
   },
   {
-    name: "Francesca Osvalt",
+    title: "Francesca Osvalt",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Francesca+Osvalt",
     cost: 2000000,
     specialty: "Front-line assault",
@@ -1251,7 +1251,7 @@ const crew = [
     description: "A Seraph employee who has worked on Fenris for several years. Her adventurous attitude eggs her to do something else. Her equipment is 'D0000 Blackhawk Elite'."
   },
   {
-    name: "Moya LaCroix",
+    title: "Moya LaCroix",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Moya+LaCroix",
     cost: 3000000,
     specialty: "Front-line assault",
@@ -1261,7 +1261,7 @@ const crew = [
     description: "Moya is a dedicated lo Security veteran who's both a top fighter and is very knowledgable about his high-tech gear. He searches for his long lost twin, Faulka. His equipment is '00000SS'."
   },
   {
-    name: "Faulka LaCroix",
+    title: "Faulka LaCroix",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Faulka+LaCroix",
     cost: 3000000,
     specialty: "Sniping",
@@ -1271,7 +1271,7 @@ const crew = [
     description: "Faulka was an ex-lo Security operant, but has left for unknown reasons. Since then, she joined the Dustkeepers on Faraday as a skilled marksman."
   },
   {
-    name: "'Ms. Green'",
+    title: "'Ms. Green'",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Ms.+Green",
     cost: 3000000,
     specialty: "Guerilla warfare",
@@ -1281,7 +1281,7 @@ const crew = [
     description: "Shady and mysterious, like all of the Gazers. She usually relays intel and orders to her comrades, but is known to take matters into her own hands."
   },
   {
-    name: "Sya'ra Degala",
+    title: "Sya'ra Degala",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Sya'ra+Degala",
     cost: 3000000,
     specialty: "Demolition",
@@ -1291,7 +1291,7 @@ const crew = [
     description: "Called the Mad Roller friends, Sya'ra has a love for weapons. She'll follow you around if you show any interest in weaponry. Likes to wear roller blades."
   },
   {
-    name: "Jerilyn Hyata",
+    title: "Jerilyn Hyata",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Jerilyn+Hyata",
     cost: 5000000,
     specialty: "Infiltration",
@@ -1301,7 +1301,7 @@ const crew = [
     description: "A Talon at the top of her class. She's snuck through some of the most complex security systems in the galaxy, most of them owned by the Blackhawk Elite."
   },
   {
-    name: "Connell Xuan",
+    title: "Connell Xuan",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Connell+Xuan",
     cost: 6000000,
     specialty: "Front-line assault",
@@ -1311,7 +1311,7 @@ const crew = [
     description: "It's thanks to men like Connell why the Dustkeeper base on Faraday has not been breached by the mutants. His valiant battlecry rallies his comrades. His equipment is '0000000'."
   },
   {
-    name: "Maren Krause",
+    title: "Maren Krause",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Maren+Krause",
     cost: 7000000,
     specialty: "Hand-to-hand",
@@ -1321,7 +1321,7 @@ const crew = [
     description: "Seeing Maren on the opposite end of your barrel means it's already too late. She prioritizes efficiency above all else, and she's very good at its practice."
   },
   {
-    name: "Ley'ra Laur",
+    title: "Ley'ra Laur",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Ley'ra+Laur",
     cost: 3000000,
     specialty: "Point position",
@@ -1331,7 +1331,7 @@ const crew = [
     description: "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy. Her equipment is 'EEEEEEE.'.",
   },
   {
-    name: "Lex StPierre",
+    title: "Lex StPierre",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Lex+StPierre",
     cost: 7000000,
     specialty: "Sentry?",
@@ -1341,7 +1341,7 @@ const crew = [
     description: "He (or she) bolsters some of the greatest fighting skills and equipment in the galaxy... but he (or she) tends to not move until he (or she) is really needed."
   },
   {
-    name: "'Begger'",
+    title: "'Begger'",
     image: "https://placehold.co/250x250/20344d/F2E9E4?text=Begger",
     cost: 20000000,
     specialty: "Heavy weapons",
@@ -1351,9 +1351,6 @@ const crew = [
     description: "Some say he's a fifth Apoc, but he openly hates them with a passion. No one knows where he came from, only that he's bloodthirsty and lives for conflict."
   }
 ];
-
-
-
 
 
 const archetype = [
@@ -1616,7 +1613,7 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
     const imgElement = document.createElement("img");
     imgElement.src =
       item.image || "https://placehold.co/100x100/eeeeee/ffffff?text=NoImage";
-    imgElement.alt = `${item.name} image`;
+    imgElement.alt = `${item.title} image`;
     newSpan.appendChild(imgElement); // Image added after newSpan
 
     // Create an h3 element for the title
@@ -1636,12 +1633,12 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
 
       Object.keys(item.cost).forEach((key) => {
         let costPerCrew = document.createElement("p");
-        costPerCrew.innerHTML = `${key}: ${item.cost[key]}`;
+        costPerCrew.innerHTML = `${key}: ${formatterIntl.format(item.cost[key])}`;
         newSpan.appendChild(costPerCrew);
       });
     } else {
       const costP = document.createElement("p");
-      costP.innerHTML = `Cost: ${item.cost}`;
+      costP.innerHTML = `Cost: ${formatterIntl.format(item.cost)}`;
       newSpan.appendChild(costP);
     }
 
