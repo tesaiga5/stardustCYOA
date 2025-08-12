@@ -13,14 +13,14 @@ const crew = [
     image: "Images/Crew/IsekaiLanayaya-civitai.webp",
   },
   {
-    title: "Gregor Hunter",
+    title: "Gregory Hunter",
     skillLevel: 7,
     alignment: "Neutral",
     cost: 2000000,
     description: "This guy would give an arm or two for you. He is everything you see in a brother, and has a lot of experience in the outer-rim systems.",
     specialty: "Pilot",
     equipment: 3,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Gregor+Hunter",
+    image: "Images/Crew/Awhimsical-Nixst3r-civitai.webp",
   },
   {
     title: "Pepper",
@@ -60,7 +60,7 @@ const crew = [
     description: "An old fashioned but skilled pilot, Elijah was often offered courier contracts that took him deep into the outer rim systems. Great at negotiating.",
     specialty: "Pilot",
     equipment: 4,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Elijah+Horton",
+    image: "Images/Crew/blackjawline-Nixst3r-civitai.webp",
   },
   {
     title: "Sgt. Mark LeCruz",
@@ -110,7 +110,7 @@ const crew = [
     description: "Susie flew with a powerful gang in the Red Daggers. She's as sharp as she looks, and has partaken in very risky heists.",
     specialty: "Pilot",
     equipment: 6,
-    image: "Images/Crew/fepirate1-indotort-midjourney.webp",
+    image: "",
   },
   {
     title: "Tyler Vaughn",
@@ -234,12 +234,12 @@ const crew = [
   },
   {
     title: "Tera en Chasteaux",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Federation",
     cost: 7000000,
     description: "Tera's been through some of the best pilot training the Federation has to offer, and was in control of her own patrol fleet around Freeport space for awhile.",
     specialty: "Pilot",
-    equipment: null,
+    equipment: 8,
     image: "Images/Crew/corporat2-civitai.webp",
   },
   {
@@ -249,7 +249,7 @@ const crew = [
     cost: 9000000,
     description: "Dorian is a battle-hardened pilot from one of the Federation's SOF. He's a man of few words, but every rare word of his carries intimidating weight.",
     specialty: "Pilot",
-    equipment: null,
+    equipment: 8,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Dorian+Krueger",
   },
   {
@@ -259,30 +259,30 @@ const crew = [
     cost: 9000000,
     description: "Ise was a high-rank in the Core Ring PMC, Dramvel, but it has since dissolved after the war. She's ruthless, and will only respect you if you are, too.",
     specialty: "Pilot",
-    equipment: null,
+    equipment: 9,
     image: "Images/Crew/matasvolkovas350-civitai.webp",
   },
   {
     title: "Misa",
-    skillLevel: null,
+    skillLevel: 10,
     alignment: "Neutral",
     cost: 14000000,
-    description: "While Lux is one of the best pilots up for hire, she also has a sense of humor. She doesn't talk about her past very much, and not much of her is known.",
+    description: "While Misa is one of the best pilots up for hire, she also has a sense of humor. She doesn't talk about her past very much, and not much of her is known.",
     specialty: "Pilot",
-    equipment: null,
+    equipment: 1,
     image: "Images/Crew/misa-amane-indotort-civitai.webp",
   },
   {
     title: "Zetta",
-    skillLevel: null,
+    skillLevel: 10,
     alignment: "Neutral",
     cost: 18000000,
     description: "His origins unknown, some think he's an Al, others think he's a Herald. He is obedient to those who lead him, but only if you are competent enough.",
     specialty: "Pilot",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Zetta",
+    equipment: 10,
+    image: "Images/Crew/cubeman-indotort-midjourney.webp",
   },
-  // --- ENGINEERS ---
+  // --- engineerS ---
   {
     title: "Enrico Jourdan",
     skillLevel: null,
@@ -329,7 +329,7 @@ const crew = [
     alignment: "Neutral",
     cost: 3000000,
     description: "Terrible radiation burns cover his skin, so Adan relies on a life-support suit for his survival. That being said, he's highly intelligent and insightful.",
-    specialty: "Nuclear Engineer",
+    specialty: "Nuclear",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Adan+Cervantes",
   },
@@ -379,7 +379,7 @@ const crew = [
     alignment: "Federation",
     cost: 4000000,
     description: "While Amy is a revered scientist, she's also graceful and likes to sing as a hobby. While she's a little shy, she would love it if you had a tavern.",
-    specialty: "Scientist (Engineer)",
+    specialty: "Scientist",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Amy+McCartney",
   },
@@ -389,7 +389,7 @@ const crew = [
     alignment: "Talons",
     cost: 4000000,
     description: "Roxanne led the forefront of nuclear research in Talon labs, and has contributed highly to the advancement of anti-matter technology.",
-    specialty: "Nuclear Research (Engineer)",
+    specialty: "Nuclear",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Roxanne+Gilliam",
   },
@@ -399,7 +399,7 @@ const crew = [
     alignment: "Federation",
     cost: 4000000,
     description: "Equip a geek with some of the Federation's best gadgets, and you get Mireille. She seems to have a device for almost any situation.",
-    specialty: "Gadgeteer (Engineer)",
+    specialty: "Gadgeteer",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Mereille+Fairley",
   },
@@ -419,11 +419,11 @@ const crew = [
     alignment: "Neutral",
     cost: 6000000,
     description: "Mad scientist, knows lots about nuclear tech.",
-    specialty: "Nuclear Tech (Engineer)",
+    specialty: "Nuclear",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Reid+Enos",
   },
-  // --- Doctors ---
+  // --- doctors ---
   {
     title: "Kelly Moss",
     skillLevel: null,
@@ -460,7 +460,7 @@ const crew = [
     alignment: "Neutral",
     cost: 4000000,
     description: "Former merc medic, used to stress of high demand.",
-    specialty: "Merc Medic",
+    specialty: "Medic",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Tina+Wei",
   },
@@ -470,7 +470,7 @@ const crew = [
     alignment: "Red Daggers",
     cost: 4000000,
     description: "He's technically a doctor... just don't expect him to be very conventional. He's notorious among the pirates as a miracle worker, however.",
-    specialty: "Unconventional Doctor",
+    specialty: "Witch Doctor",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Lupe",
   },
@@ -480,7 +480,7 @@ const crew = [
     alignment: "Blackhawk Elite",
     cost: 5000000,
     description: "Stalwart Blackhawk, favors less violent life, skilled in combat.",
-    specialty: "Medic (Combat Skilled)",
+    specialty: "Medic",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Devon+Trice",
   },
@@ -494,14 +494,14 @@ const crew = [
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Lyra+Miralda",
   },
-  // --- Ship Gunners ---
+  // --- Ship gunners ---
   {
     title: "Brian Richardson",
     skillLevel: null,
     alignment: "Neutral",
     cost: 1000000,
     description: "Brian knows everything about ship weapons. While still a student, he'd drop his studies in a heart beat just to be a ship gunner.",
-    specialty: "Ship Weapons",
+    specialty: "Ship Gunner",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Brian+Richardson",
   },
@@ -635,35 +635,35 @@ const crew = [
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Amanda+Lynch",
   },
-  // --- Combat & Security ---
+  // --- combat & Security ---
   {
     title: "Owen Baker",
     skillLevel: 8,
     alignment: "Neutral",
     cost: 1000000,
     description: "Owen's home world was under constant threat from bandits, and he was part of the planet's resistance force that drove them out for good.",
-    specialty: "Guerilla warfare",
+    specialty: "Guerilla Warfare",
     equipment: 4,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Owen+Baker",
+    image: "Images/Crew/takeshiobata3-Nixst3r-civitai.webp",
   },
   {
     title: "Sasha Baker",
-    skillLevel: null,
+    skillLevel: 7,
     alignment: "Neutral",
     cost: 1000000,
     description: "The younger sister of Owen, Sasha, too, helped drive out the bandits from her homeworld. She's a crack shot with her rifle, and has too many kill notches.",
     specialty: "Sniping",
     equipment: 7,
-    image: "Images/Crew/soldiergirl2-indotort-civitai.webp",
+    image: "Images/Crew/fepirate1-indotort-midjourney.webp",
   },
   {
     title: "Myrie Shaffer",
-    skillLevel: null,
+    skillLevel: 6,
     alignment: "Red Daggers",
     cost: 2000000,
     description: "Myrie worked for a notorious pirate gang that ran the black market in nearly a fifth of the galaxy. When she's present, a deal will go her way.",
-    specialty: "Storming",
-    equipment: 3,
+    specialty: "Sniping",
+    equipment: 5,
     image: "Images/Crew/fepirate2-indotort-midjourney.webp",
   },
   {
@@ -672,9 +672,9 @@ const crew = [
     alignment: "Neutral",
     cost: 2000000,
     description: "Good cops usually come with a decent set of skills, and Pierre is no exception. He's been a part of plenty of high-stake raids on criminal warehouses.",
-    specialty: "Ship security",
+    specialty: "Ship Security",
     equipment: 8,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Pierre+Mikisugi",
+    image: "Images/Crew/soldierboy1-indotort-civitai.webp",
   },
   {
     title: "Sophie Haynes",
@@ -682,7 +682,7 @@ const crew = [
     alignment: "Federation",
     cost: 2000000,
     description: "A good friend of Faith Nichols, Sophie came from the same detachment. She's quick and very witty, and has a sixth sense for no-good intentions.",
-    specialty: "Covert ops",
+    specialty: "Covert Ops",
     equipment: 5,
     image: "Images/Crew/stu42-civitai.webp",
   },
@@ -692,9 +692,9 @@ const crew = [
     alignment: "Neutral",
     cost: 2000000,
     description: "Always seen working together with Pierre, Gregorz is an ex-cop working to pay for his little sister's education. He often does things his own way.",
-    specialty: "Ship security",
+    specialty: "Ship Security",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Grzegorz+Grzegrzółka",
+    image: "Images/Crew/robocop-indotort-midjourney.webp",
   },
   {
     title: "Ley'ra Laur",
@@ -702,9 +702,9 @@ const crew = [
     alignment: "Luos Syndicate",
     cost: 3000000,
     description: "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy.",
-    specialty: "Point position",
+    specialty: "Point Position",
     equipment: 6,
-    image: "Images/Crew/lou-ll-asuka-079-2.jpg",
+    image: "Images/Crew/lou-ll-asuka-079-2.webp",
   },
   {
     title: 'Dani "Cuts" Laine',
@@ -717,14 +717,14 @@ const crew = [
     image: "Images/Crew/eagelaxis-civitai.webp",
   },
   {
-    title: "Ward Shapiro",
-    skillLevel: null,
+    title: "Ward Baker",
+    skillLevel: 6,
     alignment: "Neutral",
     cost: 3000000,
     description: "Ward joined a small local security force as a doss to finish writing his book, but got conscripted for combat and shipped out to the front lines.",
     specialty: "Sentry",
     equipment: 4,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Ward+Shapiro",
+    image: "Images/Crew/whimsicalboy-NXT3R2point1-civitai.webp",
   },
   {
     title: "Sgt. Raul Miller",
@@ -732,9 +732,9 @@ const crew = [
     alignment: "Federation",
     cost: 3000000,
     description: "Raul was stationed on an ice planet for nearly a decade. He's dealt with a lot of pirate and cartel activity, and can navigate across many kinds of terrain.",
-    specialty: "Front-line assault",
+    specialty: "Front-line Assault",
     equipment: 5,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Sgt.+Raul+Miller",
+    image: "Images/Crew/dkok-cowardly-civitai.webp",
   },
   {
     title: 'Erik "Sooter" Burke',
@@ -742,7 +742,7 @@ const crew = [
     alignment: "Red Daggers",
     cost: 3000000,
     description: "He's not very intelligent in other fields, but give him a weapon and he will make a great rank-and-file pirate. Just don't make him angry.",
-    specialty: "Front-line assault",
+    specialty: "Front-line Assault",
     equipment: 6,
     image: "Images/Crew/malepirate2-indotort-midjourney.webp",
   },
@@ -752,7 +752,7 @@ const crew = [
     alignment: "Neutral",
     cost: 4000000,
     description: "He has a penchant for laser based weapons and a refusal to use conventional ammunition because it's \"messy\". He's a bit of a neat freak that way.",
-    specialty: "Long-range (Laser Weapons)",
+    specialty: "Long-range",
     equipment: 8,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Vikram+Solar",
   },
@@ -762,9 +762,9 @@ const crew = [
     alignment: "Blackhawk Elite",
     cost: 4000000,
     description: "Darrel has flown in many fleets, making sure that on-ship security is as good as it can be. The Blackhawks are tough, and Darrel mirrors that to a tee.",
-    specialty: "Sentry (On-ship security)",
+    specialty: "Sentry",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Darrel+Wallace",
+    image: "Images/Crew/exoboy-archangel_ai-civitai.webp",
   },
   {
     title: "Rooks King",
@@ -772,9 +772,9 @@ const crew = [
     alignment: "Gazers",
     cost: 5000000,
     description: "Rooks is a skilled Gazer operator, but can be found hanging around Dustkeepers often. His comrades learned to ignore his disappearances.",
-    specialty: "Guerilla warfare",
-    equipment: 10,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Rooks+King",
+    specialty: "Guerilla Warfare",
+    equipment: 5,
+    image: "Images/Crew/johnson-ting-destiny-publishing-warlock.webp",
   },
   {
     title: "Livia Amaruq",
@@ -784,7 +784,7 @@ const crew = [
     description: "An ex-operative from a one of the Federation's top SOF groups, Livia worked on the same ice planet Sgt. Raul worked at. She's as deadly as she looks.",
     specialty: "Hand-to-hand",
     equipment: 10,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Livia+Amaruq",
+    image: "Images/Crew/soldiergirl2-indotort-civitai.webp",
   },
   {
     title: "Scot Shephard",
@@ -794,7 +794,7 @@ const crew = [
     description: "SWAT in a big city, seen the worst of humanity.",
     specialty: "Storming",
     equipment: 8,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Scot+Shephard",
+    image: "Images/Crew/exosoldier-ruanyi-civitai.webp",
   },
   {
     title: "Alessia",
@@ -812,9 +812,9 @@ const crew = [
     alignment: "Federation",
     cost: 5000000,
     description: "A stalwart soldier in high tech power armour, Ricce is a force to be reckoned with on the battlefield. When asked about his sister Alessia, he'll remain silent.",
-    specialty: "Front-line assault",
+    specialty: "Front-line Assault",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Ricce",
+    image: "Images/Crew/mak-oosayam-civitai.webp",
   },
   {
     title: "Arabelle Meyer",
@@ -822,49 +822,189 @@ const crew = [
     alignment: "Neutral",
     cost: 5000000,
     description: "It takes discipline, patience and cunning to be a professional assassin, and Arabelle has all of them. She's exceptionally good at hiding out of sight.",
-    specialty: "Sniping (Assassin)",
+    specialty: "Sniping",
     equipment: 9,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Arabelle+Meyer",
+    image: "Images/Crew/jinyi-zhu-ruler-adjust2.webp",
   },
   {
     title: "Marcelo Lee",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Talons",
     cost: 6000000,
     description: "Talons up for hire are very rare, and Marcelo is one of the few. He is equipped with lots of nifty gadgets, and has experience in running solo missions.",
-    specialty: "Guerilla warfare",
+    specialty: "Guerilla Warfare",
     equipment: 7,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Marcelo+Lee",
+    image: "Images/Crew/johnson-ting-destiny-publishing-voidarmor-hunter.webp",
   },
   {
     title: "Lt. Jenny Larue",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Federation",
     cost: 6000000,
     description: "A top tier officer in the Federation SOF, Jen commands with a valiant heart, and is known for her \"strict kindness.\" Often finds herself working under Tera.",
-    specialty: "Point position",
+    specialty: "Point Position",
     equipment: 8,
     image: "Images/Crew/Maggs-civitai.webp",
   },
   {
-    title: "Martin Jenkins",
-    skillLevel: null,
+    title: "David 'Dado' Elazar ",
+    skillLevel: 8,
     alignment: "Blackhawk Elite",
     cost: 6000000,
-    description: "One of the iconic Blackhawk Elite shock troopers, Martin leads the charge into all of his conflicts with an unstoppable momentum.",
+    description: "One of the iconic Blackhawk Elite shock troopers, Dado leads the charge into all of his conflicts with an unstoppable momentum.",
     specialty: "Storming (Shock Trooper)",
     equipment: 10,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Martin+Jenkins",
+    image: "Images/Crew/Untitled-lykon-civitai.webp",
+  },
+  {
+    title: "Nettie",
+    image: "Images/Crew/bohemian-aaz777-civitai.webp",
+    cost: 0,
+    specialty: "Survival",
+    equipment: 2,
+    skillLevel: 1,
+    alignment: "Neutral",
+    description: "A young girl found wandering the streets of an abandoned city in Faraday. She claims to not know her title nor her family. She survived for years, alone."
+  },
+  {
+    title: "Kristina Hines",
+    image: "Images/Crew/batonlady-Nixst3r-civitai.webp",
+    cost: 1000000,
+    specialty: "Long-range",
+    equipment: 3,
+    skillLevel: 4,
+    alignment: 'Red Dagger Pirates',
+    description: "A new recruit in the Wolf Hunt gang who has shown promise in her marksmanship. She's becoming a quick favourite to Yula, the gang leader."
+  },
+  {
+    title: "Robby Delgarv",
+    image: "Images/Crew/elfprince-jacob_ailoveu-civitai.webp",
+    cost: 2000000,
+    specialty: "Survival",
+    equipment: 3,
+    skillLevel: 5,
+    alignment: "Neutral",
+    description: "A Dustkeeper who likes to keep his gear modest. Has extensive knowledge on survival skills in harsh environments. Always seems to know what he's doing."
+  },
+  {
+    title: "Maxim Cyril",
+    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Maxim+Cyril",
+    cost: 2000000,
+    specialty: "Medic",
+    equipment: 6,
+    skillLevel: 3,
+    alignment: "Federation",
+    description: "A field medic fresh out of med school, looking to bolster his battlefield experience. He's self-funded his own equipment, which is fairly expensive."
+  },
+  {
+    title: "Francesca Osvalt",
+    image: "",
+    cost: 2000000,
+    specialty: "Front-line Assault",
+    equipment: 5,
+    skillLevel: 5,
+    alignment: 'Blackhawk Elite',
+    description: "A Seraph employee who has worked on Fenris for several years. Her adventurous attitude eggs her to do something else."
+  },
+  {
+    title: "Moya LaCroix",
+    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Moya+LaCroix",
+    cost: 3000000,
+    specialty: "Front-line Assault",
+    equipment: 6,
+    skillLevel: 5,
+    alignment: "Neutral",
+    description: "Moya is a dedicated lo Security veteran who's both a top fighter and is very knowledgable about his high-tech gear. He searches for his long lost twin, Faulka. His equipment is '00000SS'."
+  },
+  {
+    title: "Faulka LaCroix",
+    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Faulka+LaCroix",
+    cost: 3000000,
+    specialty: "Sniping",
+    equipment: 5,
+    skillLevel: 6,
+    alignment: "Neutral",
+    description: "Faulka was an ex-lo Security operant, but has left for unknown reasons. Since then, she joined the Dustkeepers on Faraday as a skilled marksman."
+  },
+  {
+    title: "'Ms. Green'",
+    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Ms.+Green",
+    cost: 3000000,
+    specialty: "Guerilla Warfare",
+    equipment: 5,
+    skillLevel: 7,
+    alignment: "Gazers",
+    description: "Shady and mysterious, like all of the Gazers. She usually relays intel and orders to her comrades, but is known to take matters into her own hands."
+  },
+  {
+    title: "Sya'ra Degala",
+    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Sya'ra+Degala",
+    cost: 3000000,
+    specialty: "Demolition",
+    equipment: 6,
+    skillLevel: 6,
+    alignment: "Luos Syndicate",
+    description: "Called the Mad Roller friends, Sya'ra has a love for weapons. She'll follow you around if you show any interest in weaponry. Likes to wear roller blades."
+  },
+  {
+    title: "Jerilyn Hyata",
+    image: "Images/Crew/janku-yoruuu-civitai.webp",
+    cost: 5000000,
+    specialty: "Infiltration",
+    equipment: 6,
+    skillLevel: 8,
+    alignment: "Talons",
+    description: "A Talon at the top of her class. She's snuck through some of the most complex security systems in the galaxy, most of them owned by the Blackhawk Elite."
+  },
+  {
+    title: "Connell Xuan",
+    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Connell+Xuan",
+    cost: 6000000,
+    specialty: "Front-line Assault",
+    equipment: 8,
+    skillLevel: 7,
+    alignment: "Neutral",
+    description: "It's thanks to men like Connell why the Dustkeeper base on Faraday has not been breached by the mutants. His valiant battlecry rallies his comrades."
+  },
+  {
+    title: "Maren Krause",
+    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Maren+Krause",
+    cost: 7000000,
+    specialty: "Hand-to-hand",
+    equipment: 7,
+    skillLevel: 9,
+    alignment: "Federation",
+    description: "Seeing Maren on the opposite end of your barrel means it's already too late. She prioritizes efficiency above all else, and she's very good at its practice."
+  },
+  {
+    title: "Ley'ra Laur",
+    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Ley'ra+Laur",
+    cost: 3000000,
+    specialty: "Point Position",
+    equipment: 9,
+    skillLevel: 8,
+    alignment: "Luos Syndicate",
+    description: "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy. Her equipment is 'EEEEEEE.'.",
+  },
+  {
+    title: "Lex StPierre",
+    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Lex+StPierre",
+    cost: 7000000,
+    specialty: "Sentry?",
+    equipment: 9,
+    skillLevel: 8,
+    alignment: "Neutral",
+    description: "He (or she) bolsters some of the greatest fighting skills and equipment in the galaxy... but he (or she) tends to not move until he (or she) is really needed."
   },
   {
     title: "My'hra Jos",
-    skillLevel: null,
+    skillLevel: 9,
     alignment: "Luos Syndicate",
     cost: 7000000,
     description: "My'hra was a skilled ground officer in the small Outer Ring PMC, the Cerberus Legion. She helped defend the Abyss system from the Federation onslaught.",
     specialty: "Infiltration",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=My%27hra+Jos",
+    equipment: 8,
+    image: "Images/Crew/ryouta-otsuka-cyborg-body-1.webp",
   },
   {
     title: "Patch Newton",
@@ -874,87 +1014,97 @@ const crew = [
     description: "A notorious assassin who's very deadly behind a rifle. His unique hardware was built by himself; It's often said that he's \"one with his armour.\"",
     specialty: "Sniping (Assassin)",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Patch+Newton",
+    image: "Images/Crew/valentine-sorokin-em-rifle-14-1.webp",
   },
   {
     title: "Locust",
-    skillLevel: null,
+    skillLevel: 10,
     alignment: "Neutral",
     cost: 14000000,
-    description: "\"Rider of Famine.\" Locust can rend armies with his blade. The highly classified Apocalypse program produced four of the greatest soldiers in the galaxy.",
-    specialty: "Hand-to-hand (Blade)",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Locust",
+    description: "\"Rider of Famine.\" Locust can 'melt' armies with his eye. The highly classified Apocalypse program produced four of the greatest soldiers in the galaxy.",
+    specialty: "Hand-to-hand (Fists)",
+    equipment: 10,
+    image: "Images/Crew/matthew-hjellen-lowpoly-torso-color-turn-01.webp",
   },
   {
     title: "Plague",
-    skillLevel: null,
+    skillLevel: 10,
     alignment: "Neutral",
     cost: 15000000,
     description: "\"Rider of Pestilence.\" Plague has the toughest armour of the four, and is also the strongest in brute force. The four Riders have since separated.",
     specialty: "Front-line assault (Brute Force)",
-    equipment: 9,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Plague",
+    equipment: 10,
+    image: "Images/Crew/l-j-koh-mortarion-commission-final-for-portfolios (1).webp",
   },
   {
     title: "Archangel",
-    skillLevel: null,
+    skillLevel: 10,
     alignment: "Federation",
     cost: 17000000,
-    description: "\"Rider of War.\" Archangel wields a one-of-a-kind, hand-held lon Cannon, capable of leveling city blocks. She is still loyal to the Federation.",
-    specialty: "Heavy weapons",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Archangel",
+    description: "\"Rider of War.\" Archangel wields a one-of-a-kind, hand-held nuclear Saber, capable of leveling city blocks. She is still loyal to the Federation.",
+    specialty: "Mass Destruction",
+    equipment: 10,
+    image: "Images/Crew/l-j-koh-sanguinius-new.webp",
   },
   {
     title: "Styx",
-    skillLevel: null,
+    skillLevel: 10,
     alignment: "Herself",
     cost: 18000000,
     description: "\"Rider of Death.\" No one knows why, but Styx holds a terrible grudge against the Federation after her defection. She still respects her siblings, though.",
     specialty: "Infiltration",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Styx",
+    equipment: 10,
+    image: "Images/Crew/reptileentity-diegocr-civitai.webp",
+  },
+  {
+    title: "Begger",
+    image: "Images/Crew/l-j-koh-angron-throne-1-edited-2022.webp",
+    cost: 20000000,
+    specialty: "Heavy weapons",
+    equipment: 10,
+    skillLevel: 9,
+    alignment: "Himself",
+    description: "Some say he's a fifth Apoc, but he openly hates them with a passion. No one knows where he came from, only that he's bloodthirsty and lives for conflict."
   },
   // --- CYBER SECURITY OFFICERS ---
   {
     title: "Perry West",
-    skillLevel: 8,
+    skillLevel: 5,
     alignment: "Neutral",
     cost: 3000000,
     description: "Hailing from a large company, Perry is perfectly capable at handling most electronic warfare. Your ship should be well defended with him.",
-    specialty: "Electronic warfare",
-    equipment: null,
+    specialty: "Electronic Warfare",
+    equipment: 4,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Perry+West",
   },
   {
     title: "Erica Chung",
-    skillLevel: null,
+    skillLevel: 6,
     alignment: "Neutral",
     cost: 4000000,
     description: "After dropping out of university, Erica cut ties to everyone, stopped drinking replicated water, and now wants to join your ship crew.",
     specialty: "Cyber Security",
-    equipment: null,
-    image: "Images/Crew/asianwoman-indotort-midjourney.png",
+    equipment: 3,
+    image: "Images/Crew/asianwoman-indotort-midjourney.webp",
   },
   {
     title: "Damian Galt",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Red Daggers",
     cost: 4000000,
     description: "This man brings an excellent service record and forty exobytes of illegally-obtained porn. Will awkwardly hit on female crew. Constantly. Over the PA.",
     specialty: "Cyber Security",
-    equipment: null,
+    equipment: 1,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Damian+Galt",
   },
   {
     title: "Slash Singer",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Neutral",
     cost: 4000000,
     description: "An ex-military intelligence officer who can go head to head with some of the most notorious hackers in the galaxy in cyberwarfare.",
     specialty: "Programmer (Security Bypass)",
-    equipment: null,
+    equipment: 5,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Slash+Singer",
   },
   {
@@ -964,37 +1114,37 @@ const crew = [
     cost: 6000000,
     description: "A well-known Talon hacker who's an expert with Al and is extremely good at multitasking. She's often encountered Veslav in fierce cyber battles.",
     specialty: "Hacker (AI Expert)",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Veslav+Smertodov",
+    equipment: 8,
+    image: "Images/Crew/sergei kamennoy-Nixst3r-civitai.webp",
   },
   {
     title: "Arachne",
-    skillLevel: null,
+    skillLevel: 9,
     alignment: "Federation",
     cost: 6000000,
     description: "Ex-military intelligence officer, can go head-to-head with notorious hackers in cyber warfare.",
     specialty: "Cyber warfare",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Arachne",
+    equipment: 9,
+    image: "Images/Crew/ryouta-otsuka-wf01.webp",
   },
   {
     title: "Uplink",
-    skillLevel: null,
+    skillLevel: 10,
     alignment: "Neutral",
     cost: 12000000,
     description: "Installing her isn't cheap, but she's one of the very few Al androids with sapience, Uplink wants nothing more than more access to information. All of it.",
     specialty: "AI Android (Information Access)",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Uplink",
+    equipment: 10,
+    image: "Images/Crew/mexicangirl-indotort-civitai.webp",
   },
-  // --- SCIENTISTS ---
+  // --- scientistS ---
   {
     title: "Lauren L. Lazuli",
     skillLevel: 4,
     alignment: "Neutral",
     cost: 0,
     description: "Your crew found her in your lab after leaving a port once, caffeine packets everywhere while she was feverishly working on a thesis. She sleeps in the lab.",
-    specialty: "Scientist (Thesis)",
+    specialty: "Scientist",
     equipment: null,
     image: "Images/Crew/IsekaiLanayaya2-civitai.webp",
   },
@@ -1004,7 +1154,7 @@ const crew = [
     alignment: "Federation",
     cost: 1000000,
     description: "Curt believes that you should never abandon your own body. He's a specialist in human biology, and is very tall at the result of his biological research.",
-    specialty: "Human biology",
+    specialty: "Human Biology",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Curt+Robertson",
   },
@@ -1023,10 +1173,10 @@ const crew = [
     skillLevel: 6,
     alignment: "Red Daggers",
     cost: 2000000,
-    description: "Incredibly intelligent, but with a very short attention span. Her frequent experiments with mana energy has earned her an eerie, permanent glow.",
-    specialty: "Mana energy experiments",
+    description: "Incredibly intelligent, but with a very short attention span. Her frequent experiments with mana energy has earned her unnerving red eyes.",
+    specialty: "Mana Energy Experiments",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Sarah+Escher",
+    image: "Images/Crew/goth nun by tentacles-riders.webp",
   },
   {
     title: "Shinichi Yagazen",
@@ -1034,7 +1184,7 @@ const crew = [
     alignment: "Neutral",
     cost: 3000000,
     description: "With numerous years of study, his research has made an increase in the agricultural production of the galaxy by half a percent. Likes candied fish.",
-    specialty: "Agricultural production research",
+    specialty: "Agriculture",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Shinichi+Yagazen",
   },
@@ -1054,11 +1204,11 @@ const crew = [
     alignment: "Neutral",
     cost: 5000000,
     description: "Both brilliant and a mad man at the same time, Wilhelm is a strict scientist who has an obsession with the pursuit of knowledge about the Heralds.",
-    specialty: "Heralds research",
+    specialty: "Heralds Research",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Wilhelm+von+Welch",
   },
-  // --- PRODUCTION MANAGERS ---
+  // --- production MANAGERS ---
   {
     title: "Sibyl",
     skillLevel: null,
@@ -1080,14 +1230,14 @@ const crew = [
     image: "Images/Crew/female-engineer-indotort-midjourney.webp",
   },
   {
-    title: "Wesley Chalmers",
+    title: "Skelly",
     skillLevel: 6,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Wesley will always get the job done, even if your ship is falling apart at the seams.",
+    description: "Skelly will always get the job done, at the cost of your crew's mental health",
     specialty: "Production Management",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Wesley+Chalmers",
+    image: "Images/Crew/thomas-du-crest-theadministrator-frame12-thomasducrest.webp",
   },
   {
     title: "Corrine Peyton",
@@ -1100,256 +1250,108 @@ const crew = [
     image: "Images/Crew/LordTerror-civitai.webp",
   },
   {
-    title: "Ty Piper",
+    title: "Horatio Piper",
     skillLevel: 7,
     alignment: "Federation",
     cost: 3000000,
     description: "Great production manager, excellent track record from Fed industrial systems, promotes efficiency and work ethics.",
-    specialty: "Production Management (Efficiency)",
+    specialty: "Production Management",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Ty+Piper",
+    image: "Images/Crew/thomas-du-crest-leader-horatio.webp",
   },
   {
     title: "May Padilla",
-    skillLevel: 8,
+    skillLevel: 5,
     alignment: "Neutral",
     cost: 4000000,
     description: "Hard worker, speeds things up, likes to boast about her strength.",
     specialty: "Production Management",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=May+Padilla",
+    equipment: 5,
+    image: "Images/Crew/00085-donko2_donq-civitai.webp",
   },
   {
     title: "Michael Danagger",
-    skillLevel: null,
+    skillLevel: 7,
     alignment: "Neutral",
     cost: 6000000,
     description: "An extremely successful industrialist, Danagger's company provided fuel for the shipping businesses over a dozen systems.",
     specialty: "Industrialist",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Michael+Danagger",
+    equipment: 1,
+    image: "Images/Crew/dmitry-vishnevsky-44-4-23.webp",
   },
   // --- CHEFS & BARTENDERS ---
   {
     title: "Jorgen Masterson",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Neutral",
     cost: 1000000,
     description: "A retired mercenary who decided to become a chef. Having served on several prison transports, he is a capable and ingenious cook.",
     specialty: "Chef",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Jorgen+Masterson",
+    equipment: 8,
+    image: "Images/Crew/gordonramsay-indotort-midjourney.webp",
   },
   {
     title: "Mikka Akimoto",
-    skillLevel: null,
+    skillLevel: 6,
     alignment: "Red Daggers",
     cost: 1000000,
     description: "Mikka specializes in Japanese and some other Asian cuisines. Sushi and ramen never went out of fashion after thousands of years.",
     specialty: "Chef (Japanese/Asian Cuisine)",
-    equipment: null,
+    equipment: 6,
     image: "Images/Crew/chef-indotort-civitai.webp",
   },
   {
     title: "Patricia Cooper",
-    skillLevel: null,
+    skillLevel: 3,
     alignment: "Neutral",
     cost: 2000000,
     description: "Patricia loves to cook, and when she's in a kitchen, she's the one who's in charge. She loves working with European cuisines.",
     specialty: "Chef (European Cuisine)",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Patricia+Cooper",
+    equipment: 3,
+    image: "Images/Crew/ratatouie-wikkitikki-civitai.webp",
   },
   {
     title: "Vito Lozano",
-    skillLevel: null,
+    skillLevel: 9,
     alignment: "Neutral",
     cost: 4000000,
     description: "Do not disturb; Chef at work. Nobody dares get in Vito's way when he's cooking. His spaghetti is perfection. *Will only use a fancy mess hall",
     specialty: "Chef",
-    equipment: null,
+    equipment: 3,
     image: "Images/Crew/Italianchef-indotort-midjourney.webp",
   },
   {
-    title: "Laura Sofía - Pérez Gómez",
-    skillLevel: null,
+    title: "Laura Sofía Pérez Gómez",
+    skillLevel: 4,
     alignment: "Federation",
     cost: 1000000,
     description: "Typical bartender, listens to your problems, perfect for standard mixes.",
     specialty: "Bartender",
-    equipment: null,
+    equipment: 1,
     image: "Images/Crew/female-chef-indotort-midjourney.webp",
   },
   {
     title: "Carolyn Brooks",
-    skillLevel: null,
+    skillLevel: 5,
     alignment: "Neutral",
     cost: 2000000,
     description: "Playful and outgoing, always aiming to earn a smile with every serve. She's a great bartender who loves mixing the fancier drinks.",
     specialty: "Bartender (Fancy Drinks)",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Carolyn+Brooks",
+    equipment: 3,
+    image: "Images/Crew/blackbartender-indotort-midjourney.webp",
   },
   {
     title: "Hal",
-    skillLevel: null,
+    skillLevel: 10,
     alignment: "Neutral",
     cost: 4000000,
-    description: "Former assassin, has many stories, might have 'special' mixes that need a lab.",
+    description: "Repentant bio-terrorist, has many stories, might have 'special' mixes that need a lab.",
     specialty: "Bartender",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Hal",
-  },
-  {
-    title: "Nettie",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Nettie",
-    cost: 0,
-    specialty: "Survival",
-    equipment: 2,
-    skillLevel: 1,
-    alignment: "Neutral",
-    description: "A young girl found wandering the streets of an abandoned city in Faraday. She claims to not know her title nor her family. She survived for years, alone."
-  },
-  {
-    title: "Kristina Hines",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Kristina+Hines",
-    cost: 1000000,
-    specialty: "Long-range",
-    equipment: 3,
-    skillLevel: 4,
-    alignment: 'Red Dagger Pirates',
-    description: "A new recruit in the Wolf Hunt gang who has shown promise in her marksmanship. She's becoming a quick favourite to Yula, the gang leader."
-  },
-  {
-    title: "Robby Delgarv",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Robby+Delgarv",
-    cost: 2000000,
-    specialty: "Survival",
-    equipment: 3,
-    skillLevel: 5,
-    alignment: "Neutral",
-    description: "A Dustkeeper who likes to keep his gear modest. Has extensive knowledge on survival skills in harsh environments. Always seems to know what he's doing."
-  },
-  {
-    title: "Maxim Cyril",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Maxim+Cyril",
-    cost: 2000000,
-    specialty: "Medic",
-    equipment: 6,
-    skillLevel: 3,
-    alignment: "Federation",
-    description: "A field medic fresh out of med school, looking to bolster his battlefield experience. He's self-funded his own equipment, which is fairly expensive. His equipment is 'DOOSE'."
-  },
-  {
-    title: "Francesca Osvalt",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Francesca+Osvalt",
-    cost: 2000000,
-    specialty: "Front-line assault",
-    equipment: 5,
-    skillLevel: 5,
-    alignment: 'Blackhawk Elite',
-    description: "A Seraph employee who has worked on Fenris for several years. Her adventurous attitude eggs her to do something else. Her equipment is 'D0000 Blackhawk Elite'."
-  },
-  {
-    title: "Moya LaCroix",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Moya+LaCroix",
-    cost: 3000000,
-    specialty: "Front-line assault",
-    equipment: 6,
-    skillLevel: 5,
-    alignment: "Neutral",
-    description: "Moya is a dedicated lo Security veteran who's both a top fighter and is very knowledgable about his high-tech gear. He searches for his long lost twin, Faulka. His equipment is '00000SS'."
-  },
-  {
-    title: "Faulka LaCroix",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Faulka+LaCroix",
-    cost: 3000000,
-    specialty: "Sniping",
-    equipment: 5,
-    skillLevel: 6,
-    alignment: "Neutral",
-    description: "Faulka was an ex-lo Security operant, but has left for unknown reasons. Since then, she joined the Dustkeepers on Faraday as a skilled marksman."
-  },
-  {
-    title: "'Ms. Green'",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Ms.+Green",
-    cost: 3000000,
-    specialty: "Guerilla warfare",
-    equipment: 5,
-    skillLevel: 7,
-    alignment: "Gazers",
-    description: "Shady and mysterious, like all of the Gazers. She usually relays intel and orders to her comrades, but is known to take matters into her own hands."
-  },
-  {
-    title: "Sya'ra Degala",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Sya'ra+Degala",
-    cost: 3000000,
-    specialty: "Demolition",
-    equipment: 6,
-    skillLevel: 6,
-    alignment: "Luos Syndicate",
-    description: "Called the Mad Roller friends, Sya'ra has a love for weapons. She'll follow you around if you show any interest in weaponry. Likes to wear roller blades."
-  },
-  {
-    title: "Jerilyn Hyata",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Jerilyn+Hyata",
-    cost: 5000000,
-    specialty: "Infiltration",
-    equipment: 6,
-    skillLevel: 8,
-    alignment: "Talons",
-    description: "A Talon at the top of her class. She's snuck through some of the most complex security systems in the galaxy, most of them owned by the Blackhawk Elite."
-  },
-  {
-    title: "Connell Xuan",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Connell+Xuan",
-    cost: 6000000,
-    specialty: "Front-line assault",
-    equipment: 8,
-    skillLevel: 7,
-    alignment: "Neutral",
-    description: "It's thanks to men like Connell why the Dustkeeper base on Faraday has not been breached by the mutants. His valiant battlecry rallies his comrades. His equipment is '0000000'."
-  },
-  {
-    title: "Maren Krause",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Maren+Krause",
-    cost: 7000000,
-    specialty: "Hand-to-hand",
     equipment: 7,
-    skillLevel: 9,
-    alignment: "Federation",
-    description: "Seeing Maren on the opposite end of your barrel means it's already too late. She prioritizes efficiency above all else, and she's very good at its practice."
+    image: "Images/Crew/jaime-martinez-fabius-bile-02.webp",
   },
-  {
-    title: "Ley'ra Laur",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Ley'ra+Laur",
-    cost: 3000000,
-    specialty: "Point position",
-    equipment: 9,
-    skillLevel: 8,
-    alignment: "Luos Syndicate",
-    description: "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy. Her equipment is 'EEEEEEE.'.",
-  },
-  {
-    title: "Lex StPierre",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Lex+StPierre",
-    cost: 7000000,
-    specialty: "Sentry?",
-    equipment: 9,
-    skillLevel: 8,
-    alignment: "Neutral",
-    description: "He (or she) bolsters some of the greatest fighting skills and equipment in the galaxy... but he (or she) tends to not move until he (or she) is really needed."
-  },
-  {
-    title: "'Begger'",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Begger",
-    cost: 20000000,
-    specialty: "Heavy weapons",
-    equipment: 10,
-    skillLevel: 9,
-    alignment: "Himself",
-    description: "Some say he's a fifth Apoc, but he openly hates them with a passion. No one knows where he came from, only that he's bloodthirsty and lives for conflict."
-  }
+  
+  
 ];
 
 
@@ -1461,7 +1463,7 @@ const archetype = [
       "Medical knowledge is a valuable asset. Unfortunately, not every one's a medic, so why not hire some professionals?",
   },
   {
-    title: "Engineers",
+    title: "engineers",
     skillLevel: 0,
     alignment: "Neutral",
     cost: {
@@ -1569,7 +1571,7 @@ const archetype = [
 ];
 
 function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
-  const targetSection = document.getElementById(sectionID);
+  let targetSection = document.getElementById(sectionID);
 
   if (!targetSection) {
     console.error(`Target section with ID "${sectionID}" not found.`);
@@ -1599,6 +1601,7 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
 
   // If not populated, create new divs to populate choices
   crewArray.forEach((item) => {
+    
     const newDiv = document.createElement("div");
     newDiv.classList.add("choice");
     // Ensure unique ID for each choice element, sanitize title for ID
@@ -1646,7 +1649,87 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
     if (item.specialty !== undefined) {
       const specialtyP = document.createElement("p");
       specialtyP.textContent = `Specialty: ${item.specialty}`;
-      newSpan.appendChild(specialtyP);
+      newSpan.appendChild(specialtyP);      
+
+      switch(item.specialty){
+      case 'Pilot':
+          // The section for engineers comes after the pilot section.
+          targetSection = document.getElementById('title-engineerCrew');
+          console.log(targetSection);
+          break;
+      case 'Ship Gunner':
+          // The section for combat crew comes after the gunner section.
+          targetSection = document.getElementById('title-combatCrew');
+          break;
+      case 'Engineer':
+      case 'Mechanic':
+      case 'Nuclear':
+      case 'Gadgeteer':
+          // The section for doctors comes after the engineer section.
+          targetSection = document.getElementById('title-doctorCrew');
+          break;
+      case 'Scientist':
+      case 'Scientist (Thesis)':
+      case 'Human Biology':
+      case 'Xenobiology, Terraforming':
+      case 'Mana Energy Experiments':
+      case 'Agriculture':
+      case 'Biology, Bioengineering, Chemistry, Biological Warfare':
+      case 'Heralds Research':
+          // The section for production comes after the scientist section.
+          targetSection = document.getElementById('title-productionCrew');
+          break;
+      case 'Witch Doctor':
+      case 'Medic':
+          // The section for gunners comes after the doctor section.
+          targetSection = document.getElementById('title-gunnerCrew');
+          break;
+      case 'Mining, Manufacturing':
+      case 'Hardware Production':
+      case 'Production Management':
+      case 'Industrial Management':
+      case 'Industrialist':
+          // The section for chefs comes after the production section.
+          targetSection = document.getElementById('title-chefs');
+          break;
+      case 'Guerilla Warfare':
+      case 'Sniping':
+      case 'Ship Security':
+      case 'Covert Ops':
+      case 'Point Position':
+      case 'Long-range':
+      case 'Front-line Assault':
+      case 'Long-range (Laser Weapons)':
+      case 'Sentry':
+      case 'Hand-to-hand':
+      case 'Storming':
+      case 'Sniping (Assassin)':
+      case 'Storming (Shock Trooper)':
+          // The section for cybersec comes after the combat section.
+          targetSection = document.getElementById('title-cybersecCrew');
+          break;
+      case 'Electronic Warfare':
+      case 'Cyber Security':
+      case 'Programmer (Security Bypass)':
+      case 'Hacker (AI Expert)':
+      case 'Cyber warfare':
+      case 'AI Android (Information Access)':
+          // The section for mages comes after the cybersec section.
+          targetSection = document.getElementById('title-mageCrew');
+          break;
+      case 'mage':
+          // The section for scientists comes after the mage section.
+          targetSection = document.getElementById('title-scientistCrew');
+          break;
+      case 'Chef':
+      case 'Chef (Japanese/Asian Cuisine)':
+      case 'Chef (European Cuisine)':
+      case 'Bartender':
+      case 'Bartender (Fancy Drinks)':
+        targetSection = document.getElementById('endOfCrew');
+      case null:
+          break;
+      }
     }
 
     if (item.equipment !== undefined) {
@@ -1671,7 +1754,7 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
     // Description
     if (item.description !== undefined) {
       const descriptionP = document.createElement("p");
-      descriptionP.textContent = `Description: ${item.description}`;
+      descriptionP.textContent = `${item.description}`;
       newSpan.appendChild(descriptionP);
     }
 
