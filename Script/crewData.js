@@ -7,7 +7,8 @@ const crew = [
     skillLevel: 2,
     alignment: "Neutral",
     cost: 1000000,
-    description: "Anna recently graduated from the pilot program at Beatrice Tech. She is incredibly loyal and will follow you wherever you go.",
+    description:
+      "Anna recently graduated from the pilot program at Beatrice Tech. She is incredibly loyal and will follow you wherever you go.",
     specialty: "Pilot",
     equipment: 7,
     image: "Images/Crew/IsekaiLanayaya-civitai.webp",
@@ -17,7 +18,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Neutral",
     cost: 2000000,
-    description: "This guy would give an arm or two for you. He is everything you see in a brother, and has a lot of experience in the outer-rim systems.",
+    description:
+      "This guy would give an arm or two for you. He is everything you see in a brother, and has a lot of experience in the outer-rim systems.",
     specialty: "Pilot",
     equipment: 3,
     image: "Images/Crew/Awhimsical-Nixst3r-civitai.webp",
@@ -27,7 +29,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Neutral",
     cost: 1000000,
-    description: "Naive but incredibly outgoing, Pepper hasn't had much training, but she loves flying and does it a lot. She wants to try her hand at being a co-pilot.",
+    description:
+      "Naive but incredibly outgoing, Pepper hasn't had much training, but she loves flying and does it a lot. She wants to try her hand at being a co-pilot.",
     specialty: "Pilot",
     equipment: 2,
     image: "Images/Crew/gothgirl-indotort-civitai.webp",
@@ -37,7 +40,8 @@ const crew = [
     skillLevel: 3,
     alignment: "Neutral",
     cost: 2000000,
-    description: "He loves his cars, he loves ships, and is passionate about all things vehicles. Horace would kill to get a chance of becoming a pilot-for-hire.",
+    description:
+      "He loves his cars, he loves ships, and is passionate about all things vehicles. Horace would kill to get a chance of becoming a pilot-for-hire.",
     specialty: "Pilot",
     equipment: 6,
     image: "Images/Crew/mifune-oskarvega-gelbooru.webp",
@@ -47,7 +51,8 @@ const crew = [
     skillLevel: 2,
     alignment: "Neutral",
     cost: 2000000,
-    description: "The younger sister of Gregor, Kay actually took her studies seriously. She also has virtually no experience, and needs you to lead her properly.",
+    description:
+      "The younger sister of Gregor, Kay actually took her studies seriously. She also has virtually no experience, and needs you to lead her properly.",
     specialty: "Pilot",
     equipment: 8,
     image: "Images/Crew/reijlita3-civitai.webp",
@@ -57,7 +62,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Neutral",
     cost: 2000000,
-    description: "An old fashioned but skilled pilot, Elijah was often offered courier contracts that took him deep into the outer rim systems. Great at negotiating.",
+    description:
+      "An old fashioned but skilled pilot, Elijah was often offered courier contracts that took him deep into the outer rim systems. Great at negotiating.",
     specialty: "Pilot",
     equipment: 4,
     image: "Images/Crew/blackjawline-Nixst3r-civitai.webp",
@@ -67,7 +73,8 @@ const crew = [
     skillLevel: 5,
     alignment: "Federation",
     cost: 2000000,
-    description: "Mark is a sergeant who led his own squad of fighter pilots during the war against the Luos Syndicate. He is an ace pilot, and proves a great asset to any crew.",
+    description:
+      "Mark is a sergeant who led his own squad of fighter pilots during the war against the Luos Syndicate. He is an ace pilot, and proves a great asset to any crew.",
     specialty: "Pilot",
     equipment: 6,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Sgt.+Mark+LeCruz",
@@ -77,7 +84,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Jackie got her flying skills from piloting scouting vessels for Pulsar Inc., having lots of practice dodging dangerous, fast-moving asteroids.",
+    description:
+      "Jackie got her flying skills from piloting scouting vessels for Pulsar Inc., having lots of practice dodging dangerous, fast-moving asteroids.",
     specialty: "Pilot",
     equipment: 5,
     image: "Images/Crew/IsekaiLanayaya3-civitai.webp",
@@ -87,7 +95,8 @@ const crew = [
     skillLevel: 4,
     alignment: "Blackhawk Elite",
     cost: 3000000,
-    description: "Often called a \"kid\" by his Blachawk superiors, Alvin longs for proper experience to prove to them he's capable. He assures you he would be a great asset.",
+    description:
+      'Often called a "kid" by his Blachawk superiors, Alvin longs for proper experience to prove to them he\'s capable. He assures you he would be a great asset.',
     specialty: "Pilot",
     equipment: 7,
     image: "Images/Crew/beautifulboy-azarado-civitai.webp",
@@ -97,7 +106,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Neutral",
     cost: 3000000,
-    description: "Targeting Beatrice R&D ships is looked down upon by everyone, but it happens. Tiffany often escorted science and exploration vessels in a fighter ship.",
+    description:
+      "Targeting Beatrice R&D ships is looked down upon by everyone, but it happens. Tiffany often escorted science and exploration vessels in a fighter ship.",
     specialty: "Pilot",
     equipment: 4,
     image: "Images/Crew/spacegirl2-indotort-civitai.webp",
@@ -107,7 +117,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Red Daggers",
     cost: 3000000,
-    description: "Susie flew with a powerful gang in the Red Daggers. She's as sharp as she looks, and has partaken in very risky heists.",
+    description:
+      "Susie flew with a powerful gang in the Red Daggers. She's as sharp as she looks, and has partaken in very risky heists.",
     specialty: "Pilot",
     equipment: 6,
     image: "",
@@ -117,7 +128,8 @@ const crew = [
     skillLevel: 4,
     alignment: "Federation",
     cost: 3000000,
-    description: "Tyler comes from a wealthy line and found himself in the Navy. He is regarded as a master tactician, and now wants to put his knowledge to the test.",
+    description:
+      "Tyler comes from a wealthy line and found himself in the Navy. He is regarded as a master tactician, and now wants to put his knowledge to the test.",
     specialty: "Pilot",
     equipment: 7,
     image: "Images/Crew/meliodas-imge-civitai.webp",
@@ -127,7 +139,8 @@ const crew = [
     skillLevel: 5,
     alignment: "Neutral",
     cost: 4000000,
-    description: "He might never take off his mask, but he really is a friendly guy, despite all of his experience flying with mercs. Never take him to a kebab parlour.",
+    description:
+      "He might never take off his mask, but he really is a friendly guy, despite all of his experience flying with mercs. Never take him to a kebab parlour.",
     specialty: "Pilot",
     equipment: 8,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Ivan+Chesnikov",
@@ -137,7 +150,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Red Daggers",
     cost: 4000000,
-    description: "Milka's polite, shy, and friendly... everything that you wouldn't expect from a Red Dagger. She, as she puts it, \"greatly dislikes\" the Federation. Has a pet dog.",
+    description:
+      "Milka's polite, shy, and friendly... everything that you wouldn't expect from a Red Dagger. She, as she puts it, \"greatly dislikes\" the Federation. Has a pet dog.",
     specialty: "Pilot",
     equipment: 7,
     image: "Images/Crew/runaheadofme-civitai.webp",
@@ -147,7 +161,8 @@ const crew = [
     skillLevel: 9,
     alignment: "Neutral",
     cost: 4000000,
-    description: "Large cities need their police force, and Royce is an exceptional cop. He's chased down criminals in some of the highest speed chas n the galaxy.",
+    description:
+      "Large cities need their police force, and Royce is an exceptional cop. He's chased down criminals in some of the highest speed chas n the galaxy.",
     specialty: "Pilot",
     equipment: 7,
     image: "Images/Crew/kaneki-imge-civitai.webp",
@@ -157,7 +172,8 @@ const crew = [
     skillLevel: 5,
     alignment: "Blackhawk Elite",
     cost: 4000000,
-    description: "A former drill sergeant from the Blackhawk Elite, Mokhov turned to piloting to search for vengeance. Vengeance for what, he'll only tell thos trusts.",
+    description:
+      "A former drill sergeant from the Blackhawk Elite, Mokhov turned to piloting to search for vengeance. Vengeance for what, he'll only tell thos trusts.",
     specialty: "Pilot",
     equipment: 8,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Mokhov+Petrovich",
@@ -167,7 +183,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 5000000,
-    description: "Eri was a maid-purposed android who had a malfunction in the factory, gaining sapience. She doesn't know much about social cues, but she's a great pilot.",
+    description:
+      "Eri was a maid-purposed android who had a malfunction in the factory, gaining sapience. She doesn't know much about social cues, but she's a great pilot.",
     specialty: "Pilot",
     equipment: 5,
     image: "Images/Crew/robotgirl-3mcg33-civitai.jpeg",
@@ -177,7 +194,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 5000000,
-    description: "Wes used to work for a mercenary group, but has since left and is looking for a change in pace. He is very passionate for flying and racing.",
+    description:
+      "Wes used to work for a mercenary group, but has since left and is looking for a change in pace. He is very passionate for flying and racing.",
     specialty: "Pilot",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Wes+Lunso",
@@ -187,7 +205,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Neutral",
     cost: 5000000,
-    description: "With a thirst for adventure, Lia will hitch on any ride that will take her to the stars. As an opportunist, she'll often take interesting detours if you let her.",
+    description:
+      "With a thirst for adventure, Lia will hitch on any ride that will take her to the stars. As an opportunist, she'll often take interesting detours if you let her.",
     specialty: "Pilot",
     equipment: 8,
     image: "Images/Crew/corporat3-civitai.webp",
@@ -197,7 +216,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: "Special cost",
-    description: "While she's not very talkative, Hailey seems to have some sort of psi powers. She knows what you're gonna say efore you do.",
+    description:
+      "While she's not very talkative, Hailey seems to have some sort of psi powers. She knows what you're gonna say efore you do.",
     specialty: "Pilot",
     equipment: null,
     image: "Images/Titles/hailey-crew-midjourney.webp",
@@ -207,7 +227,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Blackhawk Elite",
     cost: 5000000,
-    description: "Conrad is a man who can stay to his duty and really commit to it. As a loyal Blackhawk pilot, he's flown for several days at a time without rest.",
+    description:
+      "Conrad is a man who can stay to his duty and really commit to it. As a loyal Blackhawk pilot, he's flown for several days at a time without rest.",
     specialty: "Pilot",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Conrad+Byrant",
@@ -217,7 +238,8 @@ const crew = [
     skillLevel: null,
     alignment: "Gazers",
     cost: 6000000,
-    description: "Mikayla is one of the Gazer's elite pilots, and has baited many fleets to their deaths. She's bold and brash, but always keeps her cool, even under high pressure.",
+    description:
+      "Mikayla is one of the Gazer's elite pilots, and has baited many fleets to their deaths. She's bold and brash, but always keeps her cool, even under high pressure.",
     specialty: "Pilot",
     equipment: null,
     image: "Images/Crew/I_never_Did707-civitai.webp",
@@ -227,17 +249,20 @@ const crew = [
     skillLevel: 8,
     alignment: "Talons",
     cost: 6000000,
-    description: "A pilot prodigy ever since he could get behind a wheel, Tabs has been a part of some of the Talon's riskiest operations. He's a little haughty, though.",
+    description:
+      "A pilot prodigy ever since he could get behind a wheel, Tabs has been a part of some of the Talon's riskiest operations. He's a little haughty, though.",
     specialty: "Pilot",
     equipment: 7,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=David+%22Tabs%22+Sharp",
+    image:
+      "https://placehold.co/200x200/512929/e7a3a3?text=David+%22Tabs%22+Sharp",
   },
   {
     title: "Tera en Chasteaux",
     skillLevel: 8,
     alignment: "Federation",
     cost: 7000000,
-    description: "Tera's been through some of the best pilot training the Federation has to offer, and was in control of her own patrol fleet around Freeport space for awhile.",
+    description:
+      "Tera's been through some of the best pilot training the Federation has to offer, and was in control of her own patrol fleet around Freeport space for awhile.",
     specialty: "Pilot",
     equipment: 8,
     image: "Images/Crew/corporat2-civitai.webp",
@@ -247,7 +272,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Federation",
     cost: 9000000,
-    description: "Dorian is a battle-hardened pilot from one of the Federation's SOF. He's a man of few words, but every rare word of his carries intimidating weight.",
+    description:
+      "Dorian is a battle-hardened pilot from one of the Federation's SOF. He's a man of few words, but every rare word of his carries intimidating weight.",
     specialty: "Pilot",
     equipment: 8,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Dorian+Krueger",
@@ -257,7 +283,8 @@ const crew = [
     skillLevel: 10,
     alignment: "Luos Syndicate",
     cost: 9000000,
-    description: "Ise was a high-rank in the Core Ring PMC, Dramvel, but it has since dissolved after the war. She's ruthless, and will only respect you if you are, too.",
+    description:
+      "Ise was a high-rank in the Core Ring PMC, Dramvel, but it has since dissolved after the war. She's ruthless, and will only respect you if you are, too.",
     specialty: "Pilot",
     equipment: 9,
     image: "Images/Crew/matasvolkovas350-civitai.webp",
@@ -267,7 +294,8 @@ const crew = [
     skillLevel: 10,
     alignment: "Neutral",
     cost: 14000000,
-    description: "While Misa is one of the best pilots up for hire, she also has a sense of humor. She doesn't talk about her past very much, and not much of her is known.",
+    description:
+      "While Misa is one of the best pilots up for hire, she also has a sense of humor. She doesn't talk about her past very much, and not much of her is known.",
     specialty: "Pilot",
     equipment: 1,
     image: "Images/Crew/misa-amane-indotort-civitai.webp",
@@ -277,7 +305,8 @@ const crew = [
     skillLevel: 10,
     alignment: "Neutral",
     cost: 18000000,
-    description: "His origins unknown, some think he's an Al, others think he's a Herald. He is obedient to those who lead him, but only if you are competent enough.",
+    description:
+      "His origins unknown, some think he's an Al, others think he's a Herald. He is obedient to those who lead him, but only if you are competent enough.",
     specialty: "Pilot",
     equipment: 10,
     image: "Images/Crew/cubeman-indotort-midjourney.webp",
@@ -288,7 +317,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 1000000,
-    description: "Kind hearted and loyal, Enrico can do a lot of handiwork for relatively cheap. He doesn't ask many questions either, he just loves doing his job.",
+    description:
+      "Kind hearted and loyal, Enrico can do a lot of handiwork for relatively cheap. He doesn't ask many questions either, he just loves doing his job.",
     specialty: "Engineer",
     equipment: null,
     image: "Images/Crew/enrico-indotort-midjourney.webp",
@@ -298,7 +328,8 @@ const crew = [
     skillLevel: 5,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Derek is from a very rare line mechanics. He claims his people were one with nature; he believes that he is one with metal, wires, and static.",
+    description:
+      "Derek is from a very rare line mechanics. He claims his people were one with nature; he believes that he is one with metal, wires, and static.",
     specialty: "Engineer",
     equipment: null,
     image: "Images/Crew/dhiseveled-indotort-midjourney.webp",
@@ -308,7 +339,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Alena was an exceptional inventor from when she was child. She just started her career in starship mechanics, and would like to impress you with her work.",
+    description:
+      "Alena was an exceptional inventor from when she was child. She just started her career in starship mechanics, and would like to impress you with her work.",
     specialty: "Engineer",
     equipment: null,
     image: "Images/Crew/kindeng-indotort-midjourney.webp",
@@ -318,7 +350,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Malcolm blames exploding ships, bandit raids and bounty hunters as to why he has been barely able to actually do his job. Skilled with a crowbar.",
+    description:
+      "Malcolm blames exploding ships, bandit raids and bounty hunters as to why he has been barely able to actually do his job. Skilled with a crowbar.",
     specialty: "Engineer",
     equipment: null,
     image: "Images/Crew/trauma-indotort-midjourney.webp",
@@ -328,7 +361,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 3000000,
-    description: "Terrible radiation burns cover his skin, so Adan relies on a life-support suit for his survival. That being said, he's highly intelligent and insightful.",
+    description:
+      "Terrible radiation burns cover his skin, so Adan relies on a life-support suit for his survival. That being said, he's highly intelligent and insightful.",
     specialty: "Nuclear",
     equipment: null,
     image: "Images/Crew/radiationburn-indotort-midjourney.webp",
@@ -338,7 +372,8 @@ const crew = [
     skillLevel: null,
     alignment: "Red Daggers",
     cost: 3000000,
-    description: "\"Study for 10 years, toll for 5 more, get passed up in favour of some Fed snot. Sure, I can keep a shit sandwich moving, but sell it and let me build you a tank.\"",
+    description:
+      '"Study for 10 years, toll for 5 more, get passed up in favour of some Fed snot. Sure, I can keep a shit sandwich moving, but sell it and let me build you a tank."',
     specialty: "Engineer",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Trainwreck",
@@ -348,7 +383,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Neutral",
     cost: 3000000,
-    description: "Props is a hobbyist mechanic and loves to tinker. As a kid, she loved gears and wires over dolls. She also has a very active and bubbly personality.",
+    description:
+      "Props is a hobbyist mechanic and loves to tinker. As a kid, she loved gears and wires over dolls. She also has a very active and bubbly personality.",
     specialty: "Mechanic",
     equipment: null,
     image: "Images/Crew/engineer-indotort-civitai.webp",
@@ -358,7 +394,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Neutral",
     cost: 3000000,
-    description: "With a love for working with machines, Troy could spend many hours inside a workshop. His metal arm can be put to many good uses.",
+    description:
+      "With a love for working with machines, Troy could spend many hours inside a workshop. His metal arm can be put to many good uses.",
     specialty: "Engineer",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Troy+Hall",
@@ -368,7 +405,8 @@ const crew = [
     skillLevel: null,
     alignment: "Red Daggers",
     cost: 4000000,
-    description: "Popular among the Red Daggers, Cindy has worked with an immeasurable amount of questionable machinery. She's not much for politics.",
+    description:
+      "Popular among the Red Daggers, Cindy has worked with an immeasurable amount of questionable machinery. She's not much for politics.",
     specialty: "Engineer",
     equipment: null,
     image: "Images/Crew/liyihao1999-civitai.webp",
@@ -378,7 +416,8 @@ const crew = [
     skillLevel: null,
     alignment: "Federation",
     cost: 4000000,
-    description: "While Amy is a revered scientist, she's also graceful and likes to sing as a hobby. While she's a little shy, she would love it if you had a tavern.",
+    description:
+      "While Amy is a revered scientist, she's also graceful and likes to sing as a hobby. While she's a little shy, she would love it if you had a tavern.",
     specialty: "Scientist",
     equipment: null,
     image: "Images/Crew/IsekaiLanayaya2-civitai.webp",
@@ -388,7 +427,8 @@ const crew = [
     skillLevel: 4,
     alignment: "Talons",
     cost: 4000000,
-    description: "Roxanne led the forefront of nuclear research in Talon labs, and has contributed highly to the advancement of anti-matter technology.",
+    description:
+      "Roxanne led the forefront of nuclear research in Talon labs, and has contributed highly to the advancement of anti-matter technology.",
     specialty: "Nuclear",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Roxanne+Gilliam",
@@ -398,7 +438,8 @@ const crew = [
     skillLevel: null,
     alignment: "Federation",
     cost: 4000000,
-    description: "Equip a geek with some of the Federation's best gadgets, and you get Mireille. She seems to have a device for almost any situation.",
+    description:
+      "Equip a geek with some of the Federation's best gadgets, and you get Mireille. She seems to have a device for almost any situation.",
     specialty: "Gadgeteer",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Mereille+Fairley",
@@ -429,7 +470,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 0,
-    description: "Kelly was part of a volunteer program to aid the unfortunate in poverty-stricken planets. Cannot be alone in an advanced infirmary.",
+    description:
+      "Kelly was part of a volunteer program to aid the unfortunate in poverty-stricken planets. Cannot be alone in an advanced infirmary.",
     specialty: "Medic",
     equipment: null,
     image: "Images/Crew/corporat4-civitai.webp",
@@ -439,7 +481,8 @@ const crew = [
     skillLevel: 5,
     alignment: "Federation",
     cost: 1000000,
-    description: "Straight out of medical school, Bethany seeks to get field experience. She would like nothing more than to be a space doctor. Loves cats.",
+    description:
+      "Straight out of medical school, Bethany seeks to get field experience. She would like nothing more than to be a space doctor. Loves cats.",
     specialty: "Medic",
     equipment: null,
     image: "Images/Crew/KandooAI-civitai.webp",
@@ -449,7 +492,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Ignacio cares for nothing more than to study his medical books, and as long as you give him a workplace, he will be a competent medic.",
+    description:
+      "Ignacio cares for nothing more than to study his medical books, and as long as you give him a workplace, he will be a competent medic.",
     specialty: "Medic",
     equipment: 8,
     image: "Images/Crew/AIDigitalMediaAgency-civitai.webp",
@@ -469,7 +513,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Red Daggers",
     cost: 4000000,
-    description: "He's technically a doctor... just don't expect him to be very conventional. He's notorious among the pirates as a miracle worker, however.",
+    description:
+      "He's technically a doctor... just don't expect him to be very conventional. He's notorious among the pirates as a miracle worker, however.",
     specialty: "Witch Doctor",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Lupe",
@@ -479,7 +524,8 @@ const crew = [
     skillLevel: null,
     alignment: "Blackhawk Elite",
     cost: 5000000,
-    description: "Stalwart Blackhawk, favors less violent life, skilled in combat.",
+    description:
+      "Stalwart Blackhawk, favors less violent life, skilled in combat.",
     specialty: "Medic",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Devon+Trice",
@@ -489,7 +535,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 7000000,
-    description: "Young, in medical textbooks, quick, efficient, a little awkward.",
+    description:
+      "Young, in medical textbooks, quick, efficient, a little awkward.",
     specialty: "Medic",
     equipment: null,
     image: "Images/Crew/max-frorer-dhaliafinal.webp",
@@ -500,7 +547,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 1000000,
-    description: "Brian knows everything about ship weapons. While still a student, he'd drop his studies in a heart beat just to be a ship gunner.",
+    description:
+      "Brian knows everything about ship weapons. While still a student, he'd drop his studies in a heart beat just to be a ship gunner.",
     specialty: "Ship Gunner",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Brian+Richardson",
@@ -510,7 +558,8 @@ const crew = [
     skillLevel: null,
     alignment: "Red Daggers",
     cost: 1000000,
-    description: "A bad history of theft, murder, and drug addiction, Seer is the prime example of a pirate. Even the Red Daggers see him as unsavoury.",
+    description:
+      "A bad history of theft, murder, and drug addiction, Seer is the prime example of a pirate. Even the Red Daggers see him as unsavoury.",
     specialty: "Ship Gunner",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Seer",
@@ -530,7 +579,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 2000000,
-    description: "A man who comes from some backwater planet and somehow happens to be skilled in the highly stressful and violent art of ship gunning.",
+    description:
+      "A man who comes from some backwater planet and somehow happens to be skilled in the highly stressful and violent art of ship gunning.",
     specialty: "Ship Gunner",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Alton+Daniel",
@@ -550,7 +600,8 @@ const crew = [
     skillLevel: null,
     alignment: "Blackhawk Elite",
     cost: 3000000,
-    description: "Former Fed gunner, Blackhawk Elite, disciplined but laid-back off work.",
+    description:
+      "Former Fed gunner, Blackhawk Elite, disciplined but laid-back off work.",
     specialty: "Ship Gunner",
     equipment: null,
     image: "Images/Crew/IsekaiLanayaya4-civitai.webp",
@@ -560,7 +611,8 @@ const crew = [
     skillLevel: null,
     alignment: "Luos Syndicate",
     cost: 4000000,
-    description: "Mysterious, took down three cruisers himself in Haven defence.",
+    description:
+      "Mysterious, took down three cruisers himself in Haven defence.",
     specialty: "Ship Gunner",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Vis%27yeth",
@@ -590,7 +642,8 @@ const crew = [
     skillLevel: 9,
     alignment: "Neutral",
     cost: "Special cost",
-    description: "Her body seems to mingle with energy sources whenever she's near them, almost as if it courses through her veins...",
+    description:
+      "Her body seems to mingle with energy sources whenever she's near them, almost as if it courses through her veins...",
     specialty: "Ship Gunner",
     equipment: null,
     image: "Images/Crew/sorcerer-crew-midjourney.webp",
@@ -600,7 +653,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Neutral",
     cost: 5000000,
-    description: "He is very down to earth and simple (in the sense of being a professional ship gunner). He's reliable, and everybody just calls him Viktor.",
+    description:
+      "He is very down to earth and simple (in the sense of being a professional ship gunner). He's reliable, and everybody just calls him Viktor.",
     specialty: "Ship Gunner",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Viktor",
@@ -610,7 +664,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Talons",
     cost: 5000000,
-    description: "Echo is of a rare breed from the Talons who offers up her skills for hire. She looks intimidating, but she's actually pretty down-to-earth... just don't call her Tavi.",
+    description:
+      "Echo is of a rare breed from the Talons who offers up her skills for hire. She looks intimidating, but she's actually pretty down-to-earth... just don't call her Tavi.",
     specialty: "Ship Gunner",
     equipment: null,
     image: "Images/Crew/awegirl-reijlita-civitai (1).webp",
@@ -620,7 +675,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Federation",
     cost: 5000000,
-    description: "Don't let his boring name fool you-Bill has a track record for being a veteran gunner in the Federation Navy. You can rely on him to hit hard and ruthlessly.",
+    description:
+      "Don't let his boring name fool you-Bill has a track record for being a veteran gunner in the Federation Navy. You can rely on him to hit hard and ruthlessly.",
     specialty: "Ship Gunner",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Lt.+Bill+Smith",
@@ -630,7 +686,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 6000000,
-    description: "She's fast, strong-willed and packs a punch, Amanda has never lost in a fleet fight. Her efforts have defended industrial from bandit incursions.",
+    description:
+      "She's fast, strong-willed and packs a punch, Amanda has never lost in a fleet fight. Her efforts have defended industrial from bandit incursions.",
     specialty: "Ship Gunner",
     equipment: null,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Amanda+Lynch",
@@ -641,7 +698,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Neutral",
     cost: 1000000,
-    description: "Owen's home world was under constant threat from bandits, and he was part of the planet's resistance force that drove them out for good.",
+    description:
+      "Owen's home world was under constant threat from bandits, and he was part of the planet's resistance force that drove them out for good.",
     specialty: "Guerilla Warfare",
     equipment: 4,
     image: "Images/Crew/takeshiobata3-Nixst3r-civitai.webp",
@@ -651,7 +709,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Neutral",
     cost: 1000000,
-    description: "The younger sister of Owen, Sasha, too, helped drive out the bandits from her homeworld. She's a crack shot with her rifle, and has too many kill notches.",
+    description:
+      "The younger sister of Owen, Sasha, too, helped drive out the bandits from her homeworld. She's a crack shot with her rifle, and has too many kill notches.",
     specialty: "Sniping",
     equipment: 7,
     image: "Images/Crew/fepirate1-indotort-midjourney.webp",
@@ -661,7 +720,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Red Daggers",
     cost: 2000000,
-    description: "Myrie worked for a notorious pirate gang that ran the black market in nearly a fifth of the galaxy. When she's present, a deal will go her way.",
+    description:
+      "Myrie worked for a notorious pirate gang that ran the black market in nearly a fifth of the galaxy. When she's present, a deal will go her way.",
     specialty: "Sniping",
     equipment: 5,
     image: "Images/Crew/fepirate2-indotort-midjourney.webp",
@@ -671,7 +731,8 @@ const crew = [
     skillLevel: 4,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Good cops usually come with a decent set of skills, and Pierre is no exception. He's been a part of plenty of high-stake raids on criminal warehouses.",
+    description:
+      "Good cops usually come with a decent set of skills, and Pierre is no exception. He's been a part of plenty of high-stake raids on criminal warehouses.",
     specialty: "Ship Security",
     equipment: 8,
     image: "Images/Crew/soldierboy1-indotort-civitai.webp",
@@ -681,7 +742,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Federation",
     cost: 2000000,
-    description: "A good friend of Faith Nichols, Sophie came from the same detachment. She's quick and very witty, and has a sixth sense for no-good intentions.",
+    description:
+      "A good friend of Faith Nichols, Sophie came from the same detachment. She's quick and very witty, and has a sixth sense for no-good intentions.",
     specialty: "Covert Ops",
     equipment: 5,
     image: "Images/Crew/stu42-civitai.webp",
@@ -691,7 +753,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Always seen working together with Pierre, Gregorz is an ex-cop working to pay for his little sister's education. He often does things his own way.",
+    description:
+      "Always seen working together with Pierre, Gregorz is an ex-cop working to pay for his little sister's education. He often does things his own way.",
     specialty: "Ship Security",
     equipment: null,
     image: "Images/Crew/robocop-indotort-midjourney.webp",
@@ -701,7 +764,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Luos Syndicate",
     cost: 3000000,
-    description: "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy.",
+    description:
+      "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy.",
     specialty: "Point Position",
     equipment: 6,
     image: "Images/Crew/lou-ll-asuka-079-2.webp",
@@ -711,7 +775,8 @@ const crew = [
     skillLevel: null,
     alignment: "Blackhawk Elite",
     cost: 3000000,
-    description: "Aggressive and blunt, Dani makes a natural, valiant fireteam leader. She helped drive crime rates down hard in 3 star systems.",
+    description:
+      "Aggressive and blunt, Dani makes a natural, valiant fireteam leader. She helped drive crime rates down hard in 3 star systems.",
     specialty: "Long-range",
     equipment: 6,
     image: "Images/Crew/eagelaxis-civitai.webp",
@@ -721,7 +786,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Neutral",
     cost: 3000000,
-    description: "Ward joined a small local security force as a doss to finish writing his book, but got conscripted for combat and shipped out to the front lines.",
+    description:
+      "Ward joined a small local security force as a doss to finish writing his book, but got conscripted for combat and shipped out to the front lines.",
     specialty: "Sentry",
     equipment: 4,
     image: "Images/Crew/whimsicalboy-NXT3R2point1-civitai.webp",
@@ -731,7 +797,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Federation",
     cost: 3000000,
-    description: "Raul was stationed on an ice planet for nearly a decade. He's dealt with a lot of pirate and cartel activity, and can navigate across many kinds of terrain.",
+    description:
+      "Raul was stationed on an ice planet for nearly a decade. He's dealt with a lot of pirate and cartel activity, and can navigate across many kinds of terrain.",
     specialty: "Front-line Assault",
     equipment: 5,
     image: "Images/Crew/dkok-cowardly-civitai.webp",
@@ -741,7 +808,8 @@ const crew = [
     skillLevel: 5,
     alignment: "Red Daggers",
     cost: 3000000,
-    description: "He's not very intelligent in other fields, but give him a weapon and he will make a great rank-and-file pirate. Just don't make him angry.",
+    description:
+      "He's not very intelligent in other fields, but give him a weapon and he will make a great rank-and-file pirate. Just don't make him angry.",
     specialty: "Front-line Assault",
     equipment: 6,
     image: "Images/Crew/malepirate2-indotort-midjourney.webp",
@@ -751,7 +819,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Neutral",
     cost: 4000000,
-    description: "He has a penchant for laser based weapons and a refusal to use conventional ammunition because it's \"messy\". He's a bit of a neat freak that way.",
+    description:
+      "He has a penchant for laser based weapons and a refusal to use conventional ammunition because it's \"messy\". He's a bit of a neat freak that way.",
     specialty: "Long-range",
     equipment: 8,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Vikram+Solar",
@@ -761,7 +830,8 @@ const crew = [
     skillLevel: null,
     alignment: "Blackhawk Elite",
     cost: 4000000,
-    description: "Darrel has flown in many fleets, making sure that on-ship security is as good as it can be. The Blackhawks are tough, and Darrel mirrors that to a tee.",
+    description:
+      "Darrel has flown in many fleets, making sure that on-ship security is as good as it can be. The Blackhawks are tough, and Darrel mirrors that to a tee.",
     specialty: "Sentry",
     equipment: null,
     image: "Images/Crew/exoboy-archangel_ai-civitai.webp",
@@ -771,7 +841,8 @@ const crew = [
     skillLevel: null,
     alignment: "Gazers",
     cost: 5000000,
-    description: "Rooks is a skilled Gazer operator, but can be found hanging around Dustkeepers often. His comrades learned to ignore his disappearances.",
+    description:
+      "Rooks is a skilled Gazer operator, but can be found hanging around Dustkeepers often. His comrades learned to ignore his disappearances.",
     specialty: "Guerilla Warfare",
     equipment: 5,
     image: "Images/Crew/johnson-ting-destiny-publishing-warlock.webp",
@@ -781,7 +852,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Federation",
     cost: 5000000,
-    description: "An ex-operative from a one of the Federation's top SOF groups, Livia worked on the same ice planet Sgt. Raul worked at. She's as deadly as she looks.",
+    description:
+      "An ex-operative from a one of the Federation's top SOF groups, Livia worked on the same ice planet Sgt. Raul worked at. She's as deadly as she looks.",
     specialty: "Hand-to-hand",
     equipment: 10,
     image: "Images/Crew/soldiergirl2-indotort-civitai.webp",
@@ -801,7 +873,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Talons",
     cost: 5000000,
-    description: "Hot-headed, Alessia wants nothing more than to strangle her brother, Ricce, to death. She won't say much about it, but you best not get in her way.",
+    description:
+      "Hot-headed, Alessia wants nothing more than to strangle her brother, Ricce, to death. She won't say much about it, but you best not get in her way.",
     specialty: "Long-ranged",
     equipment: 6,
     image: "Images/Crew/detective-we11-civitai.webp",
@@ -811,7 +884,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Federation",
     cost: 5000000,
-    description: "A stalwart soldier in high tech power armour, Ricce is a force to be reckoned with on the battlefield. When asked about his sister Alessia, he'll remain silent.",
+    description:
+      "A stalwart soldier in high tech power armour, Ricce is a force to be reckoned with on the battlefield. When asked about his sister Alessia, he'll remain silent.",
     specialty: "Front-line Assault",
     equipment: null,
     image: "Images/Crew/mak-oosayam-civitai.webp",
@@ -821,7 +895,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 5000000,
-    description: "It takes discipline, patience and cunning to be a professional assassin, and Arabelle has all of them. She's exceptionally good at hiding out of sight.",
+    description:
+      "It takes discipline, patience and cunning to be a professional assassin, and Arabelle has all of them. She's exceptionally good at hiding out of sight.",
     specialty: "Sniping",
     equipment: 9,
     image: "Images/Crew/jinyi-zhu-ruler-adjust2.webp",
@@ -831,7 +906,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Talons",
     cost: 6000000,
-    description: "Talons up for hire are very rare, and Marcelo is one of the few. He is equipped with lots of nifty gadgets, and has experience in running solo missions.",
+    description:
+      "Talons up for hire are very rare, and Marcelo is one of the few. He is equipped with lots of nifty gadgets, and has experience in running solo missions.",
     specialty: "Guerilla Warfare",
     equipment: 7,
     image: "Images/Crew/johnson-ting-destiny-publishing-voidarmor-hunter.webp",
@@ -841,7 +917,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Federation",
     cost: 6000000,
-    description: "A top tier officer in the Federation SOF, Jen commands with a valiant heart, and is known for her \"strict kindness.\" Often finds herself working under Tera.",
+    description:
+      'A top tier officer in the Federation SOF, Jen commands with a valiant heart, and is known for her "strict kindness." Often finds herself working under Tera.',
     specialty: "Point Position",
     equipment: 8,
     image: "Images/Crew/Maggs-civitai.webp",
@@ -851,7 +928,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Blackhawk Elite",
     cost: 6000000,
-    description: "One of the iconic Blackhawk Elite shock troopers, Dado leads the charge into all of his conflicts with an unstoppable momentum.",
+    description:
+      "One of the iconic Blackhawk Elite shock troopers, Dado leads the charge into all of his conflicts with an unstoppable momentum.",
     specialty: "Storming (Shock Trooper)",
     equipment: 10,
     image: "Images/Crew/Untitled-lykon-civitai.webp",
@@ -864,7 +942,8 @@ const crew = [
     equipment: 2,
     skillLevel: 1,
     alignment: "Neutral",
-    description: "A young girl found wandering the streets of an abandoned city in Faraday. She claims to not know her title nor her family. She survived for years, alone."
+    description:
+      "A young girl found wandering the streets of an abandoned city in Faraday. She claims to not know her title nor her family. She survived for years, alone.",
   },
   {
     title: "Kristina Hines",
@@ -873,8 +952,9 @@ const crew = [
     specialty: "Long-range",
     equipment: 3,
     skillLevel: 4,
-    alignment: 'Red Dagger Pirates',
-    description: "A new recruit in the Wolf Hunt gang who has shown promise in her marksmanship. She's becoming a quick favourite to Yula, the gang leader."
+    alignment: "Red Dagger Pirates",
+    description:
+      "A new recruit in the Wolf Hunt gang who has shown promise in her marksmanship. She's becoming a quick favourite to Yula, the gang leader.",
   },
   {
     title: "Robby Delgarv",
@@ -884,7 +964,8 @@ const crew = [
     equipment: 3,
     skillLevel: 5,
     alignment: "Neutral",
-    description: "A Dustkeeper who likes to keep his gear modest. Has extensive knowledge on survival skills in harsh environments. Always seems to know what he's doing."
+    description:
+      "A Dustkeeper who likes to keep his gear modest. Has extensive knowledge on survival skills in harsh environments. Always seems to know what he's doing.",
   },
   {
     title: "Maxim Cyril",
@@ -894,7 +975,8 @@ const crew = [
     equipment: 6,
     skillLevel: 3,
     alignment: "Federation",
-    description: "A field medic fresh out of med school, looking to bolster his battlefield experience. He's self-funded his own equipment, which is fairly expensive."
+    description:
+      "A field medic fresh out of med school, looking to bolster his battlefield experience. He's self-funded his own equipment, which is fairly expensive.",
   },
   {
     title: "Francesca Osvalt",
@@ -903,8 +985,9 @@ const crew = [
     specialty: "Sniping",
     equipment: 5,
     skillLevel: 5,
-    alignment: 'Blackhawk Elite',
-    description: "A Seraph employee who has worked on Fenris for several years. Her adventurous attitude eggs her to do something else."
+    alignment: "Blackhawk Elite",
+    description:
+      "A Seraph employee who has worked on Fenris for several years. Her adventurous attitude eggs her to do something else.",
   },
   {
     title: "Moya LaCroix",
@@ -914,7 +997,8 @@ const crew = [
     equipment: 6,
     skillLevel: 5,
     alignment: "Neutral",
-    description: "Moya is a dedicated lo Security veteran who's both a top fighter and is very knowledgable about his high-tech gear. He searches for his long lost twin, Faulka."
+    description:
+      "Moya is a dedicated lo Security veteran who's both a top fighter and is very knowledgable about his high-tech gear. He searches for his long lost twin, Faulka.",
   },
   {
     title: "Faulka LaCroix",
@@ -924,7 +1008,8 @@ const crew = [
     equipment: 5,
     skillLevel: 6,
     alignment: "Neutral",
-    description: "Faulka was an ex-lo Security operant, but has left for unknown reasons. Since then, she joined the Dustkeepers on Faraday as a skilled marksman."
+    description:
+      "Faulka was an ex-lo Security operant, but has left for unknown reasons. Since then, she joined the Dustkeepers on Faraday as a skilled marksman.",
   },
   {
     title: "'Ms. Green'", //Cammy
@@ -934,7 +1019,8 @@ const crew = [
     equipment: 5,
     skillLevel: 7,
     alignment: "Gazers",
-    description: "Strong-willed and brutal, unlike typical Gazers. She usually relays intel and orders to her comrades, but is known to take matters into her own hands."
+    description:
+      "Strong-willed and brutal, unlike typical Gazers. She usually relays intel and orders to her comrades, but is known to take matters into her own hands.",
   },
   {
     title: "Sya'ra Degala", //HarleyQuinn
@@ -944,7 +1030,8 @@ const crew = [
     equipment: 6,
     skillLevel: 6,
     alignment: "Luos Syndicate",
-    description: "Called the Mad Roller friends, Sya'ra has a love for weapons. She'll follow you around if you show any interest in weaponry. Likes to wear roller blades."
+    description:
+      "Called the Mad Roller friends, Sya'ra has a love for weapons. She'll follow you around if you show any interest in weaponry. Likes to wear roller blades.",
   },
   {
     title: "Jerilyn Hyata",
@@ -954,7 +1041,8 @@ const crew = [
     equipment: 6,
     skillLevel: 8,
     alignment: "Talons",
-    description: "A Talon at the top of her class. She's snuck through some of the most complex security systems in the galaxy, most of them owned by the Blackhawk Elite."
+    description:
+      "A Talon at the top of her class. She's snuck through some of the most complex security systems in the galaxy, most of them owned by the Blackhawk Elite.",
   },
   {
     title: "Connell Xuan",
@@ -964,7 +1052,8 @@ const crew = [
     equipment: 8,
     skillLevel: 7,
     alignment: "Neutral",
-    description: "It's thanks to men like Connell why the Dustkeeper base on Faraday has not been breached by the mutants. His valiant battlecry rallies his comrades."
+    description:
+      "It's thanks to men like Connell why the Dustkeeper base on Faraday has not been breached by the mutants. His valiant battlecry rallies his comrades.",
   },
   {
     title: "Maren Krause",
@@ -974,7 +1063,8 @@ const crew = [
     equipment: 7,
     skillLevel: 9,
     alignment: "Federation",
-    description: "Seeing Maren on the opposite end of your barrel means it's already too late. She prioritizes efficiency above all else, and she's very good at its practice."
+    description:
+      "Seeing Maren on the opposite end of your barrel means it's already too late. She prioritizes efficiency above all else, and she's very good at its practice.",
   },
   {
     title: "Ley'ra Laur",
@@ -984,7 +1074,8 @@ const crew = [
     equipment: 9,
     skillLevel: 8,
     alignment: "Luos Syndicate",
-    description: "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy. Her equipment is 'EEEEEEE.'.",
+    description:
+      "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy. Her equipment is 'EEEEEEE.'.",
   },
   {
     title: "Lex StPierre",
@@ -994,14 +1085,16 @@ const crew = [
     equipment: 9,
     skillLevel: 8,
     alignment: "Neutral",
-    description: "He (or she) bolsters some of the greatest fighting skills and equipment in the galaxy... but he (or she) tends to not move until he (or she) is really needed."
+    description:
+      "He (or she) bolsters some of the greatest fighting skills and equipment in the galaxy... but he (or she) tends to not move until he (or she) is really needed.",
   },
   {
     title: "My'hra Jos",
     skillLevel: 9,
     alignment: "Luos Syndicate",
     cost: 7000000,
-    description: "My'hra was a skilled ground officer in the small Outer Ring PMC, the Cerberus Legion. She helped defend the Abyss system from the Federation onslaught.",
+    description:
+      "My'hra was a skilled ground officer in the small Outer Ring PMC, the Cerberus Legion. She helped defend the Abyss system from the Federation onslaught.",
     specialty: "Infiltration",
     equipment: 8,
     image: "Images/Crew/ryouta-otsuka-cyborg-body-1.webp",
@@ -1011,7 +1104,8 @@ const crew = [
     skillLevel: null,
     alignment: "Neutral",
     cost: 7000000,
-    description: "A notorious assassin who's very deadly behind a rifle. His unique hardware was built by himself; It's often said that he's \"one with his armour.\"",
+    description:
+      "A notorious assassin who's very deadly behind a rifle. His unique hardware was built by himself; It's often said that he's \"one with his armour.\"",
     specialty: "Sniping (Assassin)",
     equipment: null,
     image: "Images/Crew/valentine-sorokin-em-rifle-14-1.webp",
@@ -1021,7 +1115,8 @@ const crew = [
     skillLevel: 10,
     alignment: "Neutral",
     cost: 14000000,
-    description: "\"Rider of Famine.\" Locust can 'melt' armies with his eye. The highly classified Apocalypse program produced four of the greatest soldiers in the galaxy.",
+    description:
+      "\"Rider of Famine.\" Locust can 'melt' armies with his eye. The highly classified Apocalypse program produced four of the greatest soldiers in the galaxy.",
     specialty: "Hand-to-hand (Fists)",
     equipment: 10,
     image: "Images/Crew/matthew-hjellen-lowpoly-torso-color-turn-01.webp",
@@ -1031,17 +1126,20 @@ const crew = [
     skillLevel: 10,
     alignment: "Neutral",
     cost: 15000000,
-    description: "\"Rider of Pestilence.\" Plague has the toughest armour of the four, and is also the strongest in brute force. The four Riders have since separated.",
+    description:
+      '"Rider of Pestilence." Plague has the toughest armour of the four, and is also the strongest in brute force. The four Riders have since separated.',
     specialty: "Front-line assault (Brute Force)",
     equipment: 10,
-    image: "Images/Crew/l-j-koh-mortarion-commission-final-for-portfolios (1).webp",
+    image:
+      "Images/Crew/l-j-koh-mortarion-commission-final-for-portfolios (1).webp",
   },
   {
     title: "Archangel",
     skillLevel: 10,
     alignment: "Federation",
     cost: 17000000,
-    description: "\"Rider of War.\" Archangel wields a one-of-a-kind, hand-held nuclear Saber, capable of leveling city blocks. She is still loyal to the Federation.",
+    description:
+      '"Rider of War." Archangel wields a one-of-a-kind, hand-held nuclear Saber, capable of leveling city blocks. She is still loyal to the Federation.',
     specialty: "Mass Destruction",
     equipment: 10,
     image: "Images/Crew/l-j-koh-sanguinius-new.webp",
@@ -1051,7 +1149,8 @@ const crew = [
     skillLevel: 10,
     alignment: "Herself",
     cost: 18000000,
-    description: "\"Rider of Death.\" No one knows why, but Styx holds a terrible grudge against the Federation after her defection. She still respects her siblings, though.",
+    description:
+      '"Rider of Death." No one knows why, but Styx holds a terrible grudge against the Federation after her defection. She still respects her siblings, though.',
     specialty: "Infiltration",
     equipment: 10,
     image: "Images/Crew/reptileentity-diegocr-civitai.webp",
@@ -1064,7 +1163,8 @@ const crew = [
     equipment: 10,
     skillLevel: 9,
     alignment: "Himself",
-    description: "Some say he's a fifth Apoc, but he openly hates them with a passion. No one knows where he came from, only that he's bloodthirsty and lives for conflict."
+    description:
+      "Some say he's a fifth Apoc, but he openly hates them with a passion. No one knows where he came from, only that he's bloodthirsty and lives for conflict.",
   },
   // --- CYBER SECURITY OFFICERS ---
   {
@@ -1072,7 +1172,8 @@ const crew = [
     skillLevel: 5,
     alignment: "Neutral",
     cost: 3000000,
-    description: "Hailing from a large company, Perry is perfectly capable at handling most electronic warfare. Your ship should be well defended with him.",
+    description:
+      "Hailing from a large company, Perry is perfectly capable at handling most electronic warfare. Your ship should be well defended with him.",
     specialty: "Electronic Warfare",
     equipment: 4,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Perry+West",
@@ -1082,7 +1183,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Neutral",
     cost: 4000000,
-    description: "After dropping out of university, Erica cut ties to everyone, stopped drinking replicated water, and now wants to join your ship crew.",
+    description:
+      "After dropping out of university, Erica cut ties to everyone, stopped drinking replicated water, and now wants to join your ship crew.",
     specialty: "Cyber Security",
     equipment: 3,
     image: "Images/Crew/asianwoman-indotort-midjourney.webp",
@@ -1092,7 +1194,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Red Daggers",
     cost: 4000000,
-    description: "This man brings an excellent service record and forty exobytes of illegally-obtained porn. Will awkwardly hit on female crew. Constantly. Over the PA.",
+    description:
+      "This man brings an excellent service record and forty exobytes of illegally-obtained porn. Will awkwardly hit on female crew. Constantly. Over the PA.",
     specialty: "Cyber Security",
     equipment: 1,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Damian+Galt",
@@ -1102,7 +1205,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Neutral",
     cost: 4000000,
-    description: "An ex-military intelligence officer who can go head to head with some of the most notorious hackers in the galaxy in cyberwarfare.",
+    description:
+      "An ex-military intelligence officer who can go head to head with some of the most notorious hackers in the galaxy in cyberwarfare.",
     specialty: "Programmer (Security Bypass)",
     equipment: 5,
     image: "https://placehold.co/200x200/512929/e7a3a3?text=Slash+Singer",
@@ -1112,7 +1216,8 @@ const crew = [
     skillLevel: 9,
     alignment: "Talons",
     cost: 6000000,
-    description: "A well-known Talon hacker who's an expert with Al and is extremely good at multitasking. She's often encountered Veslav in fierce cyber battles.",
+    description:
+      "A well-known Talon hacker who's an expert with Al and is extremely good at multitasking. She's often encountered Veslav in fierce cyber battles.",
     specialty: "Hacker (AI Expert)",
     equipment: 8,
     image: "Images/Crew/sergei kamennoy-Nixst3r-civitai.webp",
@@ -1122,7 +1227,8 @@ const crew = [
     skillLevel: 9,
     alignment: "Federation",
     cost: 6000000,
-    description: "Ex-military intelligence officer, can go head-to-head with notorious hackers in cyber warfare.",
+    description:
+      "Ex-military intelligence officer, can go head-to-head with notorious hackers in cyber warfare.",
     specialty: "Cyber warfare",
     equipment: 9,
     image: "Images/Crew/ryouta-otsuka-wf01.webp",
@@ -1132,7 +1238,8 @@ const crew = [
     skillLevel: 10,
     alignment: "Neutral",
     cost: 12000000,
-    description: "Installing her isn't cheap, but she's one of the very few Al androids with sapience, Uplink wants nothing more than more access to information. All of it.",
+    description:
+      "Installing her isn't cheap, but she's one of the very few Al androids with sapience, Uplink wants nothing more than more access to information. All of it.",
     specialty: "AI Android (Information Access)",
     equipment: 10,
     image: "Images/Crew/mexicangirl-indotort-civitai.webp",
@@ -1143,7 +1250,8 @@ const crew = [
     skillLevel: 4,
     alignment: "Neutral",
     cost: 0,
-    description: "Your crew found her in your lab after leaving a port once, caffeine packets everywhere while she was feverishly working on a thesis. She sleeps in the lab.",
+    description:
+      "Your crew found her in your lab after leaving a port once, caffeine packets everywhere while she was feverishly working on a thesis. She sleeps in the lab.",
     specialty: "Scientist",
     equipment: null,
     image: "Images/Crew/agnes-kadokura(sushiu max)-gelbooru.webp",
@@ -1153,7 +1261,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Federation",
     cost: 1000000,
-    description: "Curt believes that you should never abandon your own body. He's a specialist in human biology, and is very tall at the result of his biological research.",
+    description:
+      "Curt believes that you should never abandon your own body. He's a specialist in human biology, and is very tall at the result of his biological research.",
     specialty: "Human Biology",
     equipment: null,
     image: "Images/Crew/ben-erdt-ally-all.webp",
@@ -1163,7 +1272,8 @@ const crew = [
     skillLevel: 5,
     alignment: "Neutral",
     cost: 1000000,
-    description: "Morally opposed to combat-purpose vessels, Dr. Newton is an expert at xenobiology and terraforming. She's a bit eccentric, though.",
+    description:
+      "Morally opposed to combat-purpose vessels, Dr. Newton is an expert at xenobiology and terraforming. She's a bit eccentric, though.",
     specialty: "Xenobiology, Terraforming",
     equipment: null,
     image: "Images/Crew/reijlita4-civitai.webp",
@@ -1173,7 +1283,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Red Daggers",
     cost: 2000000,
-    description: "Incredibly intelligent, but with a very short attention span. Her frequent experiments with mana energy has earned her unnerving red eyes.",
+    description:
+      "Incredibly intelligent, but with a very short attention span. Her frequent experiments with mana energy has earned her unnerving red eyes.",
     specialty: "Mana Energy Experiments",
     equipment: null,
     image: "Images/Crew/goth nun by tentacles-riders.webp",
@@ -1183,7 +1294,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Neutral",
     cost: 3000000,
-    description: "With numerous years of study, his research has made an increase in the agricultural production of the galaxy by half a percent. Likes candied fish.",
+    description:
+      "With numerous years of study, his research has made an increase in the agricultural production of the galaxy by half a percent. Likes candied fish.",
     specialty: "Agriculture",
     equipment: 6,
     image: "Images/Crew/okabe-epkbaybay-gelbooru.webp",
@@ -1193,7 +1305,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Federation",
     cost: 3000000,
-    description: "Expert in biology, bioengineering, chemistry and biological warfare. Wanted for morally ambiguous experiments and creation of biological weapons.",
+    description:
+      "Expert in biology, bioengineering, chemistry and biological warfare. Wanted for morally ambiguous experiments and creation of biological weapons.",
     specialty: "Biology, Bioengineering, Chemistry, Biological Warfare",
     equipment: 7,
     image: "Images/Crew/jakub-bazyluk-crafter-action-jb.webp",
@@ -1203,7 +1316,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Neutral",
     cost: 5000000,
-    description: "Both brilliant and a mad man at the same time, Wilhelm is a strict scientist who has an obsession with the pursuit of knowledge about the Heralds.",
+    description:
+      "Both brilliant and a mad man at the same time, Wilhelm is a strict scientist who has an obsession with the pursuit of knowledge about the Heralds.",
     specialty: "Heralds Research",
     equipment: null,
     image: "Images/Crew/javier-charro-murray-30-solo.webp",
@@ -1214,7 +1328,8 @@ const crew = [
     skillLevel: null,
     alignment: "Red Daggers",
     cost: 1000000,
-    description: "Sibyl has worked in industrial wings for the Red Daggers for over 20 years. He knows lots of tricks and methods on mining and manufacturing.",
+    description:
+      "Sibyl has worked in industrial wings for the Red Daggers for over 20 years. He knows lots of tricks and methods on mining and manufacturing.",
     specialty: "Mining, Manufacturing",
     equipment: null,
     image: "Images/Crew/audec-aenaluck-gelbooru.webp",
@@ -1224,7 +1339,8 @@ const crew = [
     skillLevel: null,
     alignment: "Blackhawk Elite",
     cost: 2000000,
-    description: "The Blackhawk Elite's might is largely due to their hardware, and with production managers like Madeline, they're set for a long, long time.",
+    description:
+      "The Blackhawk Elite's might is largely due to their hardware, and with production managers like Madeline, they're set for a long, long time.",
     specialty: "Hardware production",
     equipment: null,
     image: "Images/Crew/female-engineer-indotort-midjourney.webp",
@@ -1234,17 +1350,20 @@ const crew = [
     skillLevel: 6,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Skelly will always get the job done, at the cost of your crew's mental health",
+    description:
+      "Skelly will always get the job done, at the cost of your crew's mental health",
     specialty: "Production Management",
     equipment: null,
-    image: "Images/Crew/thomas-du-crest-theadministrator-frame12-thomasducrest.webp",
+    image:
+      "Images/Crew/thomas-du-crest-theadministrator-frame12-thomasducrest.webp",
   },
   {
     title: "Corrine Peyton",
     skillLevel: null,
     alignment: "Neutral",
     cost: 3000000,
-    description: "Serious and authoritative in industrial wings, workers obey or face a long, deafening scolding.",
+    description:
+      "Serious and authoritative in industrial wings, workers obey or face a long, deafening scolding.",
     specialty: "Industrial Management",
     equipment: null,
     image: "Images/Crew/LordTerror-civitai.webp",
@@ -1254,7 +1373,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Federation",
     cost: 3000000,
-    description: "Great production manager, excellent track record from Fed industrial systems, promotes efficiency and work ethics.",
+    description:
+      "Great production manager, excellent track record from Fed industrial systems, promotes efficiency and work ethics.",
     specialty: "Production Management",
     equipment: null,
     image: "Images/Crew/thomas-du-crest-leader-horatio.webp",
@@ -1264,7 +1384,8 @@ const crew = [
     skillLevel: 5,
     alignment: "Neutral",
     cost: 4000000,
-    description: "Hard worker, speeds things up, likes to boast about her strength.",
+    description:
+      "Hard worker, speeds things up, likes to boast about her strength.",
     specialty: "Production Management",
     equipment: 5,
     image: "Images/Crew/00085-donko2_donq-civitai.webp",
@@ -1274,7 +1395,8 @@ const crew = [
     skillLevel: 7,
     alignment: "Neutral",
     cost: 6000000,
-    description: "An extremely successful industrialist, Danagger's company provided fuel for the shipping businesses over a dozen systems.",
+    description:
+      "An extremely successful industrialist, Danagger's company provided fuel for the shipping businesses over a dozen systems.",
     specialty: "Industrialist",
     equipment: 1,
     image: "Images/Crew/dmitry-vishnevsky-44-4-23.webp",
@@ -1285,7 +1407,8 @@ const crew = [
     skillLevel: 8,
     alignment: "Neutral",
     cost: 1000000,
-    description: "A retired mercenary who decided to become a chef. Having served on several prison transports, he is a capable and ingenious cook.",
+    description:
+      "A retired mercenary who decided to become a chef. Having served on several prison transports, he is a capable and ingenious cook.",
     specialty: "Chef",
     equipment: 8,
     image: "Images/Crew/gordonramsay-indotort-midjourney.webp",
@@ -1295,7 +1418,8 @@ const crew = [
     skillLevel: 6,
     alignment: "Red Daggers",
     cost: 1000000,
-    description: "Mikka specializes in Japanese and some other Asian cuisines. Sushi and ramen never went out of fashion after thousands of years.",
+    description:
+      "Mikka specializes in Japanese and some other Asian cuisines. Sushi and ramen never went out of fashion after thousands of years.",
     specialty: "Chef (Japanese/Asian Cuisine)",
     equipment: 6,
     image: "Images/Crew/chef-indotort-civitai.webp",
@@ -1305,7 +1429,8 @@ const crew = [
     skillLevel: 3,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Patricia loves to cook, and when she's in a kitchen, she's the one who's in charge. She loves working with European cuisines.",
+    description:
+      "Patricia loves to cook, and when she's in a kitchen, she's the one who's in charge. She loves working with European cuisines.",
     specialty: "Chef (European Cuisine)",
     equipment: 3,
     image: "Images/Crew/ratatouie-wikkitikki-civitai.webp",
@@ -1315,7 +1440,8 @@ const crew = [
     skillLevel: 9,
     alignment: "Neutral",
     cost: 4000000,
-    description: "Do not disturb; Chef at work. Nobody dares get in Vito's way when he's cooking. His spaghetti is perfection. *Will only use a fancy mess hall",
+    description:
+      "Do not disturb; Chef at work. Nobody dares get in Vito's way when he's cooking. His spaghetti is perfection. *Will only use a fancy mess hall",
     specialty: "Chef",
     equipment: 3,
     image: "Images/Crew/Italianchef-indotort-midjourney.webp",
@@ -1325,7 +1451,8 @@ const crew = [
     skillLevel: 4,
     alignment: "Federation",
     cost: 1000000,
-    description: "Typical bartender, listens to your problems, perfect for standard mixes.",
+    description:
+      "Typical bartender, listens to your problems, perfect for standard mixes.",
     specialty: "Bartender",
     equipment: 1,
     image: "Images/Crew/female-chef-indotort-midjourney.webp",
@@ -1335,7 +1462,8 @@ const crew = [
     skillLevel: 5,
     alignment: "Neutral",
     cost: 2000000,
-    description: "Playful and outgoing, always aiming to earn a smile with every serve. She's a great bartender who loves mixing the fancier drinks.",
+    description:
+      "Playful and outgoing, always aiming to earn a smile with every serve. She's a great bartender who loves mixing the fancier drinks.",
     specialty: "Bartender (Fancy Drinks)",
     equipment: 3,
     image: "Images/Crew/blackbartender-indotort-midjourney.webp",
@@ -1345,15 +1473,13 @@ const crew = [
     skillLevel: 10,
     alignment: "Neutral",
     cost: 4000000,
-    description: "Repentant bio-terrorist, has many stories, might have 'special' mixes that need a lab.",
+    description:
+      "Repentant bio-terrorist, has many stories, might have 'special' mixes that need a lab.",
     specialty: "Bartender",
     equipment: 7,
     image: "Images/Crew/jaime-martinez-fabius-bile-02.webp",
   },
-  
-  
 ];
-
 
 const archetype = [
   {
@@ -1601,7 +1727,6 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
 
   // If not populated, create new divs to populate choices
   crewArray.forEach((item) => {
-    
     const newDiv = document.createElement("div");
     newDiv.classList.add("choice", "crew");
     // Ensure unique ID for each choice element, sanitize title for ID
@@ -1634,7 +1759,9 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
 
       Object.keys(item.cost).forEach((key) => {
         let costPerCrew = document.createElement("p");
-        costPerCrew.innerHTML = `${key}: ${formatterIntl.format(item.cost[key])}`;
+        costPerCrew.innerHTML = `${key}: ${formatterIntl.format(
+          item.cost[key]
+        )}`;
         newSpan.appendChild(costPerCrew);
       });
     } else {
@@ -1647,84 +1774,84 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
     if (item.specialty !== undefined) {
       const specialtyP = document.createElement("p");
       specialtyP.textContent = `Specialty: ${item.specialty}`;
-      newSpan.appendChild(specialtyP);      
+      newSpan.appendChild(specialtyP);
 
-      switch(item.specialty){
-      case 'Pilot':
+      switch (item.specialty) {
+        case "Pilot":
           // The section for engineers comes after the pilot section.
-          targetSection = document.getElementById('title-engineerCrew');
+          targetSection = document.getElementById("title-engineerCrew");
           break;
-      case 'Ship Gunner':
+        case "Ship Gunner":
           // The section for combat crew comes after the gunner section.
-          targetSection = document.getElementById('title-combatCrew');
+          targetSection = document.getElementById("title-combatCrew");
           break;
-      case 'Engineer':
-      case 'Mechanic':
-      case 'Nuclear':
-      case 'Gadgeteer':
+        case "Engineer":
+        case "Mechanic":
+        case "Nuclear":
+        case "Gadgeteer":
           // The section for doctors comes after the engineer section.
-          targetSection = document.getElementById('title-doctorCrew');
+          targetSection = document.getElementById("title-doctorCrew");
           break;
-      case 'Scientist':
-      case 'Scientist (Thesis)':
-      case 'Human Biology':
-      case 'Xenobiology, Terraforming':
-      case 'Mana Energy Experiments':
-      case 'Agriculture':
-      case 'Biology, Bioengineering, Chemistry, Biological Warfare':
-      case 'Heralds Research':
+        case "Scientist":
+        case "Scientist (Thesis)":
+        case "Human Biology":
+        case "Xenobiology, Terraforming":
+        case "Mana Energy Experiments":
+        case "Agriculture":
+        case "Biology, Bioengineering, Chemistry, Biological Warfare":
+        case "Heralds Research":
           // The section for production comes after the scientist section.
-          targetSection = document.getElementById('title-productionCrew');
+          targetSection = document.getElementById("title-productionCrew");
           break;
-      case 'Witch Doctor':
-      case 'Medic':
+        case "Witch Doctor":
+        case "Medic":
           // The section for gunners comes after the doctor section.
-          targetSection = document.getElementById('title-gunnerCrew');
+          targetSection = document.getElementById("title-gunnerCrew");
           break;
-      case 'Mining, Manufacturing':
-      case 'Hardware Production':
-      case 'Production Management':
-      case 'Industrial Management':
-      case 'Industrialist':
+        case "Mining, Manufacturing":
+        case "Hardware Production":
+        case "Production Management":
+        case "Industrial Management":
+        case "Industrialist":
           // The section for chefs comes after the production section.
-          targetSection = document.getElementById('title-chefs');
+          targetSection = document.getElementById("title-chefs");
           break;
-      case 'Guerilla Warfare':
-      case 'Sniping':
-      case 'Ship Security':
-      case 'Covert Ops':
-      case 'Point Position':
-      case 'Long-range':
-      case 'Front-line Assault':
-      case 'Long-range (Laser Weapons)':
-      case 'Sentry':
-      case 'Hand-to-hand':
-      case 'Storming':
-      case 'Sniping (Assassin)':
-      case 'Storming (Shock Trooper)':
+        case "Guerilla Warfare":
+        case "Sniping":
+        case "Ship Security":
+        case "Covert Ops":
+        case "Point Position":
+        case "Long-range":
+        case "Front-line Assault":
+        case "Long-range (Laser Weapons)":
+        case "Sentry":
+        case "Hand-to-hand":
+        case "Storming":
+        case "Sniping (Assassin)":
+        case "Storming (Shock Trooper)":
           // The section for cybersec comes after the combat section.
-          targetSection = document.getElementById('title-cybersecCrew');
+          targetSection = document.getElementById("title-cybersecCrew");
           break;
-      case 'Electronic Warfare':
-      case 'Cyber Security':
-      case 'Programmer (Security Bypass)':
-      case 'Hacker (AI Expert)':
-      case 'Cyber warfare':
-      case 'AI Android (Information Access)':
+        case "Electronic Warfare":
+        case "Cyber Security":
+        case "Programmer (Security Bypass)":
+        case "Hacker (AI Expert)":
+        case "Cyber warfare":
+        case "AI Android (Information Access)":
           // The section for mages comes after the cybersec section.
-          targetSection = document.getElementById('title-mageCrew');
+          targetSection = document.getElementById("title-mageCrew");
           break;
-      case 'mage':
+        case "mage":
           // The section for scientists comes after the mage section.
-          targetSection = document.getElementById('title-scientistCrew');
+          targetSection = document.getElementById("title-scientistCrew");
           break;
-      case 'Chef':
-      case 'Chef (Japanese/Asian Cuisine)':
-      case 'Chef (European Cuisine)':
-      case 'Bartender':
-      case 'Bartender (Fancy Drinks)':
-        targetSection = document.getElementById('endOfCrew');
-      case null:
+        case "Chef":
+        case "Chef (Japanese/Asian Cuisine)":
+        case "Chef (European Cuisine)":
+        case "Bartender":
+        case "Bartender (Fancy Drinks)":
+          targetSection = document.getElementById("endOfCrew");
+        case null:
           break;
       }
     }
