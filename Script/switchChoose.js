@@ -1,6 +1,7 @@
-export { switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle };
+export { switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew};
 import { formatterIntl } from "/Script/manaData.js";
-import { titles, skills } from "/Script/choiceData.js";
+import { titles, skills, } from "/Script/choiceData.js";
+import {crew} from "/Script/crewData.js";
 
 function handleChoice(section, chosenChoice, creditChange, maxChoices) {
   //passthru section, the choice selected, the credit change, and maximum amount of choices
@@ -175,6 +176,30 @@ function handleChoiceVehicle(chosenChoice, creditChange, vehicles) {
       player.frame.choices.push(chosenChoice.id);
       //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
     }
+}
+
+function handleChoiceCrew(chosenChoice){
+   const isChosenActive = chosenChoice.classList.contains("active");
+
+   const chosenCrew = crew.find(employee => employee.title === chosenChoice.id); 
+
+   if (isChosenActive) {
+    // If the chosen choice is already active, deactivate it (deselect)
+    chosenChoice.classList.remove("active");
+    player.credits += chosenCrew.cost;
+    document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+    
+    //remove choice
+    const index = player.crew.indexOf(chosenCrew);
+    if (index !== -1) {
+      player.crew.splice(index, 1);
+    }
+  } else {
+    chosenChoice.classList.add("active");
+    player.credits -= chosenCrew.cost;
+    document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+    player.crew.push(chosenCrew);
+  }
 }
 
 function switchChoose(

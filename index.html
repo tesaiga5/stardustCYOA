@@ -22,6 +22,7 @@
       ships: [], //array of objects
       hostiles: [], //array of strings
       frame: {},
+      crew: [],
     };
 
     //collect frame attributes
@@ -1831,10 +1832,21 @@
   </div>
 
 <script type="module">
-    import {switchChoose, handleChoiceRigs, handleChoiceVehicle} from '/Script/switchChoose.js';
+    import {switchChoose, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew} from '/Script/switchChoose.js';
+        //populate titles
+    import {titles, skills, addTitlesToSection, startPos} from '/Script/choiceData.js';
 
-    
-
+    import {crew, archetype, addCrewToSection} from '/Script/crewData.js'; // Import crew data
+    //populate hulls
+    import {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
+            populateHullToSection,
+    } from '/Script/shipData.js';
+    //populate equipment
+    import {equipment, vehicles, rigs, populateRigs, populateVehicles, handleFrame, createFrame} from '/Script/equipmentData.js';
+    //populate spells and unified population function
+    import {catalyst, affinity, spellBases, populateDataToSection, 
+      populateCatalystToSection, formatterIntl,
+    } from '/Script/manaData.js'; 
   
   
                          
@@ -1975,8 +1987,12 @@
     document.addEventListener('click', (event) => {
       // Check if the clicked element (or its closest parent) has the 'choice' class
       const choiceElement = event.target.closest('.choice');
+      const crewChoiceElement = event.target.closest('.crew');
       
-      if (choiceElement) {
+      if(crewChoiceElement) {
+        handleChoiceCrew(crewChoiceElement);
+
+      } else if (choiceElement) {
         const id = choiceElement.id; // Get the ID of the clicked choice
         const targetSectionID = sectionToggleMap[id];
         const sectionToToggle = document.getElementById(targetSectionID);
@@ -2008,20 +2024,7 @@
 
     document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
 
-    //populate titles
-    import {titles, skills, addTitlesToSection, startPos} from '/Script/choiceData.js';
 
-    import {crew, archetype, addCrewToSection} from '/Script/crewData.js'; // Import crew data
-    //populate hulls
-    import {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
-            populateHullToSection,
-    } from '/Script/shipData.js';
-    //populate equipment
-    import {equipment, vehicles, rigs, populateRigs, populateVehicles, handleFrame, createFrame} from '/Script/equipmentData.js';
-    //populate spells and unified population function
-    import {catalyst, affinity, spellBases, populateDataToSection, 
-      populateCatalystToSection, formatterIntl,
-    } from '/Script/manaData.js';
 
     //populate skills, titles, and crew
     function addChoiceDataToSection(choiceArray, choicePrefix, sectionID) {

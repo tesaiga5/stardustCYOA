@@ -40,7 +40,7 @@ const crew = [
     description: "He loves his cars, he loves ships, and is passionate about all things vehicles. Horace would kill to get a chance of becoming a pilot-for-hire.",
     specialty: "Pilot",
     equipment: 6,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Horace+Carter",
+    image: "Images/Crew/mifune-oskarvega-gelbooru.webp",
   },
   {
     title: "Kay Hunter",
@@ -90,7 +90,7 @@ const crew = [
     description: "Often called a \"kid\" by his Blachawk superiors, Alvin longs for proper experience to prove to them he's capable. He assures you he would be a great asset.",
     specialty: "Pilot",
     equipment: 7,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Alvin+Reyes",
+    image: "Images/Crew/beautifulboy-azarado-civitai.webp",
   },
   {
     title: "Tiffany Manson",
@@ -120,7 +120,7 @@ const crew = [
     description: "Tyler comes from a wealthy line and found himself in the Navy. He is regarded as a master tactician, and now wants to put his knowledge to the test.",
     specialty: "Pilot",
     equipment: 7,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Tyler+Vaughn",
+    image: "Images/Crew/meliodas-imge-civitai.webp",
   },
   {
     title: "Ivan Chesnikov",
@@ -150,7 +150,7 @@ const crew = [
     description: "Large cities need their police force, and Royce is an exceptional cop. He's chased down criminals in some of the highest speed chas n the galaxy.",
     specialty: "Pilot",
     equipment: 7,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Royce+Kodai",
+    image: "Images/Crew/kaneki-imge-civitai.webp",
   },
   {
     title: "Mokhov Petrovich",
@@ -291,7 +291,7 @@ const crew = [
     description: "Kind hearted and loyal, Enrico can do a lot of handiwork for relatively cheap. He doesn't ask many questions either, he just loves doing his job.",
     specialty: "Engineer",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Enrico+Jourdan",
+    image: "Images/Crew/enrico-indotort-midjourney.webp",
   },
   {
     title: "Derek Windtalker",
@@ -301,7 +301,7 @@ const crew = [
     description: "Derek is from a very rare line mechanics. He claims his people were one with nature; he believes that he is one with metal, wires, and static.",
     specialty: "Engineer",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Derek+Windtalker",
+    image: "Images/Crew/dhiseveled-indotort-midjourney.webp",
   },
   {
     title: "Alena Bach",
@@ -311,7 +311,7 @@ const crew = [
     description: "Alena was an exceptional inventor from when she was child. She just started her career in starship mechanics, and would like to impress you with her work.",
     specialty: "Engineer",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Alena+Bach",
+    image: "Images/Crew/kindeng-indotort-midjourney.webp",
   },
   {
     title: "Malcolm Red",
@@ -321,7 +321,7 @@ const crew = [
     description: "Malcolm blames exploding ships, bandit raids and bounty hunters as to why he has been barely able to actually do his job. Skilled with a crowbar.",
     specialty: "Engineer",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Malcolm+Red",
+    image: "Images/Crew/trauma-indotort-midjourney.webp",
   },
   {
     title: "Adan Cervantes",
@@ -331,7 +331,7 @@ const crew = [
     description: "Terrible radiation burns cover his skin, so Adan relies on a life-support suit for his survival. That being said, he's highly intelligent and insightful.",
     specialty: "Nuclear",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Adan+Cervantes",
+    image: "Images/Crew/radiationburn-indotort-midjourney.webp",
   },
   {
     title: "Trainwreck",
@@ -381,7 +381,7 @@ const crew = [
     description: "While Amy is a revered scientist, she's also graceful and likes to sing as a hobby. While she's a little shy, she would love it if you had a tavern.",
     specialty: "Scientist",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Amy+McCartney",
+    image: "Images/Crew/IsekaiLanayaya2-civitai.webp",
   },
   {
     title: "Roxanne Gilliam",
@@ -446,12 +446,12 @@ const crew = [
   },
   {
     title: "Ignacio Lopez",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Neutral",
     cost: 2000000,
     description: "Ignacio cares for nothing more than to study his medical books, and as long as you give him a workplace, he will be a competent medic.",
     specialty: "Medic",
-    equipment: null,
+    equipment: 8,
     image: "Images/Crew/AIDigitalMediaAgency-civitai.webp",
   },
   {
@@ -492,7 +492,7 @@ const crew = [
     description: "Young, in medical textbooks, quick, efficient, a little awkward.",
     specialty: "Medic",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Lyra+Miralda",
+    image: "Images/Crew/max-frorer-dhaliafinal.webp",
   },
   // --- Ship gunners ---
   {
@@ -888,7 +888,7 @@ const crew = [
   },
   {
     title: "Maxim Cyril",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Maxim+Cyril",
+    image: "Images/Crew/link-lykon-civitai.webp",
     cost: 2000000,
     specialty: "Medic",
     equipment: 6,
@@ -898,9 +898,9 @@ const crew = [
   },
   {
     title: "Francesca Osvalt",
-    image: "",
+    image: "Images/Crew/eagleowl-jinkwangpark-artstation.webp",
     cost: 2000000,
-    specialty: "Front-line Assault",
+    specialty: "Sniping",
     equipment: 5,
     skillLevel: 5,
     alignment: 'Blackhawk Elite',
@@ -908,17 +908,17 @@ const crew = [
   },
   {
     title: "Moya LaCroix",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Moya+LaCroix",
+    image: "Images/Crew/rafael-amarante-3new223812.webp",
     cost: 3000000,
     specialty: "Front-line Assault",
     equipment: 6,
     skillLevel: 5,
     alignment: "Neutral",
-    description: "Moya is a dedicated lo Security veteran who's both a top fighter and is very knowledgable about his high-tech gear. He searches for his long lost twin, Faulka. His equipment is '00000SS'."
+    description: "Moya is a dedicated lo Security veteran who's both a top fighter and is very knowledgable about his high-tech gear. He searches for his long lost twin, Faulka."
   },
   {
     title: "Faulka LaCroix",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Faulka+LaCroix",
+    image: "Images/Crew/t-j-geisen-sniper-render-cloak-artstation (1).webp",
     cost: 3000000,
     specialty: "Sniping",
     equipment: 5,
@@ -927,18 +927,18 @@ const crew = [
     description: "Faulka was an ex-lo Security operant, but has left for unknown reasons. Since then, she joined the Dustkeepers on Faraday as a skilled marksman."
   },
   {
-    title: "'Ms. Green'",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Ms.+Green",
+    title: "'Ms. Green'", //Cammy
+    image: "Images/Crew/cammy-XUERYCJ-civitai.webp",
     cost: 3000000,
     specialty: "Guerilla Warfare",
     equipment: 5,
     skillLevel: 7,
     alignment: "Gazers",
-    description: "Shady and mysterious, like all of the Gazers. She usually relays intel and orders to her comrades, but is known to take matters into her own hands."
+    description: "Strong-willed and brutal, unlike typical Gazers. She usually relays intel and orders to her comrades, but is known to take matters into her own hands."
   },
   {
-    title: "Sya'ra Degala",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Sya'ra+Degala",
+    title: "Sya'ra Degala", //HarleyQuinn
+    image: "Images/Crew/harley-indotort-midjourney.webp",
     cost: 3000000,
     specialty: "Demolition",
     equipment: 6,
@@ -958,7 +958,7 @@ const crew = [
   },
   {
     title: "Connell Xuan",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Connell+Xuan",
+    image: "Images/Crew/jinyi-zhu-9-22.webp",
     cost: 6000000,
     specialty: "Front-line Assault",
     equipment: 8,
@@ -1146,7 +1146,7 @@ const crew = [
     description: "Your crew found her in your lab after leaving a port once, caffeine packets everywhere while she was feverishly working on a thesis. She sleeps in the lab.",
     specialty: "Scientist",
     equipment: null,
-    image: "Images/Crew/IsekaiLanayaya2-civitai.webp",
+    image: "Images/Crew/agnes-kadokura(sushiu max)-gelbooru.webp",
   },
   {
     title: "Curt Robertson",
@@ -1156,11 +1156,11 @@ const crew = [
     description: "Curt believes that you should never abandon your own body. He's a specialist in human biology, and is very tall at the result of his biological research.",
     specialty: "Human Biology",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Curt+Robertson",
+    image: "Images/Crew/ben-erdt-ally-all.webp",
   },
   {
     title: "Emily Park",
-    skillLevel: null,
+    skillLevel: 5,
     alignment: "Neutral",
     cost: 1000000,
     description: "Morally opposed to combat-purpose vessels, Dr. Newton is an expert at xenobiology and terraforming. She's a bit eccentric, though.",
@@ -1180,23 +1180,23 @@ const crew = [
   },
   {
     title: "Shinichi Yagazen",
-    skillLevel: null,
+    skillLevel: 6,
     alignment: "Neutral",
     cost: 3000000,
     description: "With numerous years of study, his research has made an increase in the agricultural production of the galaxy by half a percent. Likes candied fish.",
     specialty: "Agriculture",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Shinichi+Yagazen",
+    equipment: 6,
+    image: "Images/Crew/okabe-epkbaybay-gelbooru.webp",
   },
   {
     title: "Isaac J. Bidlack",
-    skillLevel: null,
+    skillLevel: 7,
     alignment: "Federation",
     cost: 3000000,
     description: "Expert in biology, bioengineering, chemistry and biological warfare. Wanted for morally ambiguous experiments and creation of biological weapons.",
     specialty: "Biology, Bioengineering, Chemistry, Biological Warfare",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Isaac+J.+Bidlack",
+    equipment: 7,
+    image: "Images/Crew/jakub-bazyluk-crafter-action-jb.webp",
   },
   {
     title: "Wilhelm von Welch",
@@ -1206,7 +1206,7 @@ const crew = [
     description: "Both brilliant and a mad man at the same time, Wilhelm is a strict scientist who has an obsession with the pursuit of knowledge about the Heralds.",
     specialty: "Heralds Research",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Wilhelm+von+Welch",
+    image: "Images/Crew/javier-charro-murray-30-solo.webp",
   },
   // --- production MANAGERS ---
   {
@@ -1217,7 +1217,7 @@ const crew = [
     description: "Sibyl has worked in industrial wings for the Red Daggers for over 20 years. He knows lots of tricks and methods on mining and manufacturing.",
     specialty: "Mining, Manufacturing",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Sibyl",
+    image: "Images/Crew/audec-aenaluck-gelbooru.webp",
   },
   {
     title: "Madeline Moran",
@@ -1603,11 +1603,9 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
   crewArray.forEach((item) => {
     
     const newDiv = document.createElement("div");
-    newDiv.classList.add("choice");
+    newDiv.classList.add("choice", "crew");
     // Ensure unique ID for each choice element, sanitize title for ID
-    newDiv.id = `${choicePrefix}-${item.title
-      .replace(/\s/g, "-")
-      .replace(/[^a-zA-Z0-9-]/g, "")}`;
+    newDiv.id = item.title;
 
     const newSpan = document.createElement("span");
     newDiv.appendChild(newSpan);
@@ -1655,7 +1653,6 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
       case 'Pilot':
           // The section for engineers comes after the pilot section.
           targetSection = document.getElementById('title-engineerCrew');
-          console.log(targetSection);
           break;
       case 'Ship Gunner':
           // The section for combat crew comes after the gunner section.
