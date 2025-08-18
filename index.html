@@ -1313,10 +1313,8 @@
     <div id="title-personalWeapons">
       <span style="text-align: left;">
         <div>
-          <h3>Personal Weapons</h3>
-          <p style="font-size: 20px;">Spirits on high, we fought for every patch of land like it was our dearest keepsakes in a fever dream. And yet, legions still poured out from the gate to their crumbling world. If it was going to take a storm to give them pause, then a hurricane we had to become. Rage given form with nothing but a lust for blood that clouded our eyes with a red mist.
-          We've grown weak in our respite, but our end will not be subjugation.
-          Behold you, a Rider of War.</p>
+          <h3>Equipment</h3>
+          <p style="font-size: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt explicabo voluptatibus enim iste minima eos at animi maxime qui sapiente, aspernatur reprehenderit ad perspiciatis tenetur, provident dolore. Accusantium, animi totam?</p>
 
           <p style="font-size: 20px;">The weapons that your suit can support is determined by its munitions capacity and available weapon hard- points. Conventional weapons are split among four different types: kinetic, explosive, laser and plasma. Each individual weapon has three main components: the style, the calibre or charge, and the ammunition type. </p>
           <h4 style="font-size: 20px;">Weapons have the following stats (<b>yellow</b> stats replace default stats on some weapon types):</h4>
@@ -1334,6 +1332,76 @@
 
         </div>
       </span></div>
+    <div id="title-handguns" >
+      <div>
+        <span>
+          <div>
+            <h3>Hand Guns</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed? Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione mollitia officiis officia quis.
+            </div>
+        </span>
+      </div>
+    </div>
+    <div id="title-submachineguns" >
+      <div>
+        <span>
+          <div>
+            <h3>Sub-Machine Guns</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed? Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione mollitia officiis officia quis.
+            </div>
+        </span>
+      </div>
+    </div>
+    <div id="title-shotguns" >
+      <div>
+        <span>
+          <div>
+            <h3>Shotguns</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed? Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione mollitia officiis officia quis.
+            </div>
+        </span>
+      </div>
+    </div>
+    <div id="title-rifles" >
+      <div>
+        <span>
+          <div>
+            <h3>Rifles</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed? Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione mollitia officiis officia quis.
+            </div>
+        </span>
+      </div>
+    </div>
+    <div id="title-lightweapons" >
+      <div>
+        <span>
+          <div>
+            <h3>Light Weapons</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed? Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione mollitia officiis officia quis.
+            </div>
+        </span>
+      </div>
+    </div>
+    <div id="title-launchers" >
+      <div>
+        <span>
+          <div>
+            <h3>Launchers</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed? Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione mollitia officiis officia quis.
+            </div>
+        </span>
+      </div>
+    </div>
+    <div id="title-heavyweapons" >
+      <div>
+        <span>
+          <div>
+            <h3>Heavy Weapons</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed? Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione mollitia officiis officia quis.
+            </div>
+        </span>
+      </div>
+    </div>
      
     <div style="display:none;" id="endOfEquipment"></div>
     <div id="origin-mana" >
@@ -1833,7 +1901,9 @@
   </div>
 
 <script type="module">
-    import {switchChoose, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew} from '/Script/switchChoose.js';
+    import {switchChoose, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew, getImgName,
+      handleChoiceGun,
+    } from '/Script/switchChoose.js';
         //populate titles
     import {titles, skills, addTitlesToSection, startPos} from '/Script/choiceData.js';
 
@@ -1843,7 +1913,9 @@
             populateHullToSection,
     } from '/Script/shipData.js';
     //populate equipment
-    import {equipment, vehicles, rigs, populateRigs, populateVehicles, handleFrame, createFrame} from '/Script/equipmentData.js';
+    import {equipment, vehicles, rigs, populateRigs, populateVehicles, handleFrame, createFrame, 
+      guns, addGunDataToSection, 
+    } from '/Script/equipmentData.js';
     //populate spells and unified population function
     import {catalyst, affinity, spellBases, populateDataToSection, 
       populateCatalystToSection, formatterIntl,
@@ -1989,9 +2061,15 @@
       // Check if the clicked element (or its closest parent) has the 'choice' class
       const choiceElement = event.target.closest('.choice');
       const crewChoiceElement = event.target.closest('.crew');
+      const choiceGun = event.target.closest('.gun');
       
+      //handle choice of crew
       if(crewChoiceElement) {
         handleChoiceCrew(crewChoiceElement);
+
+      } else if (choiceGun) {
+        console.log(choiceGun);
+        handleChoiceGun(choiceGun);
 
       } else if (choiceElement) {
         const id = choiceElement.id; // Get the ID of the clicked choice
@@ -2003,9 +2081,8 @@
         */
         //handles all choices
         switchChoose(id, choiceElement, sectionToToggle, originToggleArray, player);
-
-      }
-      });   
+      } 
+    });   
 
     choiceEquipment1.addEventListener('click', () => {
       choiceEquipment1.classList.toggle('active');
@@ -2219,176 +2296,7 @@
           });
         }
     
-    function addEquipmentDataToSection(equipmentArray, choicePrefix, sectionID) {
-      const targetSection = document.getElementById(sectionID);
-
-      if (!targetSection) {
-          console.error(`Target section with ID "${sectionID}" not found.`);
-          return;
-      }
-
-      if (!Array.isArray(equipmentArray)) {
-          console.error(`Global variable "${equipmentArray}" is not an array or does not exist.`);
-          return;
-      }
-
-      // Check if the section already has population to prevent duplicate entries
-      // Assuming the first item's ID is representative for checking
-      if (equipmentArray.length > 0) {
-          // Sanitize the name for use as an ID
-          const checkDiv = document.getElementById(`${choicePrefix}-${equipmentArray[0].name.replace(/\s/g, '-').replace(/[^a-zA-Z0-9-]/g, '')}`);
-          if (document.contains(checkDiv)) {
-              return; // Section already populated, do nothing
-          }
-      }
-
-      // If not populated, create new divs to populate choices
-      equipmentArray.forEach(item => {
-          const newDiv = document.createElement("div");
-          newDiv.classList.add("choice");
-          // Ensure unique ID for each choice element, sanitize name for ID
-          newDiv.id = `${choicePrefix}-${item.name.replace(/\s/g, '-').replace(/[^a-zA-Z0-9-]/g, '')}`;
-
-          const newSpan = document.createElement("span");
-          newDiv.appendChild(newSpan);
-
-          const imgElement = document.createElement('img');
-          imgElement.src = item.image;
-          imgElement.alt = `${item.name} image`; // Add alt text for accessibility
-          newSpan.appendChild(imgElement);
-
-          // Create an h3 element for the name
-          const h3Element = document.createElement('h3');
-          h3Element.style.marginTop = '0px';
-          h3Element.style.marginBottom = '0px';
-          h3Element.textContent = item.name || 'No Name';
-          newSpan.appendChild(h3Element);
-
-          // Type
-          const typeP = document.createElement('p');
-          typeP.textContent = `Type: ${item.type || 'N/A'}`;
-          newSpan.appendChild(typeP);
-
-          // Cost
-          const costP = document.createElement('p');
-          // Assuming formatterIntl is defined globally or passed in
-          costP.innerHTML = `Cost: ${typeof item.cost === 'number' ? (typeof formatterIntl !== 'undefined' ? formatterIntl.format(item.cost) : item.cost) : 'N/A'}`;
-          newSpan.appendChild(costP);
-
-          // Equipment Level
-          const levelP = document.createElement('p');
-          levelP.textContent = `Equipment Level: ${item.equipmentLevel || 0}`;
-          newSpan.appendChild(levelP);
-
-          // Stopping Power
-          if (item.stoppingPower !== null && item.stoppingPower !== undefined) {
-              const stoppingPowerP = document.createElement('p');
-              stoppingPowerP.textContent = `Stopping Power: ${item.stoppingPower}`;
-              newSpan.appendChild(stoppingPowerP);
-          }
-
-          // Piercing Power
-          if (item.piercingPower !== null && item.piercingPower !== undefined) {
-              const piercingPowerP = document.createElement('p');
-              piercingPowerP.textContent = `Piercing Power: ${item.piercingPower}`;
-              newSpan.appendChild(piercingPowerP);
-          }
-
-          // Rate of Fire
-          if (item.rateOfFire !== null && item.rateOfFire !== undefined) {
-              const rateOfFireP = document.createElement('p');
-              rateOfFireP.textContent = `Rate of Fire: ${item.rateOfFire}`;
-              newSpan.appendChild(rateOfFireP);
-          }
-
-          // Range
-          if (item.range !== null && item.range !== undefined) {
-              const rangeP = document.createElement('p');
-              rangeP.textContent = `Range: ${item.range}`;
-              newSpan.appendChild(rangeP);
-          }
-
-          // Accuracy
-          if (item.accuracy !== null && item.accuracy !== undefined) {
-              const accuracyP = document.createElement('p');
-              accuracyP.textContent = `Accuracy: ${item.accuracy}`;
-              newSpan.appendChild(accuracyP);
-          }
-
-          // Handling
-          if (item.handling !== null && item.handling !== undefined) {
-              const handlingP = document.createElement('p');
-              handlingP.textContent = `Handling: ${item.handling}`;
-              newSpan.appendChild(handlingP);
-          }
-
-          // Round Capacity
-          if (item.roundCapacity !== null && item.roundCapacity !== undefined) {
-              const roundCapacityP = document.createElement('p');
-              roundCapacityP.textContent = `Round Capacity: ${item.roundCapacity}`;
-              newSpan.appendChild(roundCapacityP);
-          }
-
-          // Action
-          if (item.action !== undefined) {
-              const actionP = document.createElement('p');
-              actionP.textContent = `Action: ${item.action}`;
-              newSpan.appendChild(actionP);
-          }
-
-          // Calibre (now includes diode/bolt values from the image)
-          if (item.calibre !== undefined) {
-              const calibreP = document.createElement('p');
-              calibreP.textContent = `Calibre: ${item.calibre}`;
-              newSpan.appendChild(calibreP);
-          }
-
-          // Energy Use
-          if (item.energyUse !== null && item.energyUse !== undefined) {
-              const energyUseP = document.createElement('p');
-              energyUseP.textContent = `Energy Use: ${item.energyUse}`;
-              newSpan.appendChild(energyUseP);
-          }
-
-          // Tier
-          if (item.tier !== null && item.tier !== undefined) {
-              const tierP = document.createElement('p');
-              tierP.textContent = `Tier: ${item.tier}`;
-              newSpan.appendChild(tierP);
-          }
-
-          // Damage Per Volley
-          if (item.damagePerVolley !== null && item.damagePerVolley !== undefined) {
-              const damagePerVolleyP = document.createElement('p');
-              damagePerVolleyP.textContent = `Damage Per Volley: ${item.damagePerVolley}`;
-              newSpan.appendChild(damagePerVolleyP);
-          }
-
-          // Projectile Velocity
-          if (item.projectileVelocity !== null && item.projectileVelocity !== undefined) {
-              const projectileVelocityP = document.createElement('p');
-              projectileVelocityP.textContent = `Projectile Velocity: ${item.projectileVelocity}`;
-              newSpan.appendChild(projectileVelocityP);
-          }
-
-          // Tracking
-          if (item.tracking !== null && item.tracking !== undefined) {
-              const trackingP = document.createElement('p');
-              trackingP.textContent = `Tracking: ${item.tracking}`;
-              newSpan.appendChild(trackingP);
-          }
-
-          // Description
-          if (item.description !== undefined) {
-              const descriptionP = document.createElement('p');
-              descriptionP.textContent = `Description: ${item.description}`;
-              newSpan.appendChild(descriptionP);
-          }
-
-          targetSection.before(newDiv); // Append to the target section
-        });
-      }
-
+    
     //make choices visible (populate)
     const choiceSkills1 = document.getElementById('origin-skills');
     
@@ -2473,7 +2381,7 @@
       sectionEquipment1.classList.toggle('active');
       populateRigs(rigs, 'choice', 'endOfRigs');
       populateVehicles(vehicles, 'choice', 'endOfVehicles');
-      addEquipmentDataToSection(equipment, 'choice', 'endOfEquipment');
+      addGunDataToSection(); //populate guns
       populateCatalystToSection(catalyst, 'choice', 'endOfCatalyst');
       populateCatalystToSection(affinity, 'choice', 'endOfAffinities');
       populateCatalystToSection(spellBases, 'choice', 'endOfSpell');

@@ -1,7 +1,20 @@
-export { switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew};
+export { switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew,
+  handleChoiceGun, getImgName
+};
 import { formatterIntl } from "/Script/manaData.js";
 import { titles, skills, } from "/Script/choiceData.js";
 import {crew} from "/Script/crewData.js";
+import {guns} from "/Script/equipmentData.js";
+
+function getImgName(url) {
+  // Use the URL object to correctly parse the pathname
+  // Get the part of the path after the last slash, which is the filename.
+  const filename = url.substring(url.lastIndexOf('/') + 1);
+  // Find the last dot in the filename to determine the extension.
+  const lastDotIndex = filename.lastIndexOf('.');
+  // If a dot is found, return the substring before it. Otherwise, return the full filename.
+  return lastDotIndex !== -1 ? filename.substring(0, lastDotIndex) : filename;
+}
 
 function handleChoice(section, chosenChoice, creditChange, maxChoices) {
   //passthru section, the choice selected, the credit change, and maximum amount of choices
@@ -113,7 +126,30 @@ function handleChoiceSkills(section, chosenChoice, creditChange, chosenSkill) {
     }
   }
 }
+function handleChoiceGun(chosenChoice) {
+  const isChosenActive = chosenChoice.classList.contains("active");
 
+  const chosenGun = guns.find(gun => gun.name === chosenChoice.id); 
+
+  if (isChosenActive) {
+    // If the chosen choice is already active, deactivate it (deselect)
+    chosenChoice.classList.remove("active");
+    player.credits += chosenGun.cost;
+    document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+    
+    //remove choice
+    const index = player.gear.indexOf(chosenGun);
+    if (index !== -1) {
+      player.gear.splice(index, 1);
+    }
+  } else {
+    chosenChoice.classList.add("active");
+    player.credits -= chosenGun.cost;
+    document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+    player.gear.push(chosenGun);
+  }
+
+}
 function handleChoiceRigs(chosenChoice, creditChange, rigType) {
   //passthru section, the choice selected, the credit change, and maximum amount of choices
   //const activeChoices = section.querySelectorAll(".rigs"); //check how many choices are active
@@ -771,3 +807,4 @@ function switchChoose(
     
   }
 }
+
