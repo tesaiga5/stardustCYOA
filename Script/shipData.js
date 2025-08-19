@@ -2497,17 +2497,17 @@ const energy = [
     image: "Images/Subsystem/purecrystallizedmana-titaniumdragon-deviantart.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+
     name: "Anti-Matter Core",
     type: "generation",
     cost: 50000000,
     energyOutput: 7,
     description:
       "A very volatile energy substance, anti-matter has brought endless potential technology and sciences. This core safely decommissions itself if it's forcefully broken into.",
-    image: "Images/Subsystem/natural-warp-grid-exploration-18-05-2022-001.webp",
+    image: "Images/Subsystem/gridexploration-natural-warp-artstation.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+
     name: "Zero-Point Module",
     type: "generation",
     cost: 100000000,
@@ -2517,17 +2517,17 @@ const energy = [
     image: "Images/Subsystem/concentric rinds by MS Escher.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+
     name: "Subspace Energy Extraction",
     type: "generation",
     cost: 300000000,
     energyOutput: 10,
     description:
       "Gathers energy from alternate dimensions or subspace realms that operate under different physical laws. Effectively limitless, as the energy is drawn from outside the conventional universe. <b>Must complete all Herald contracts. Can only be fitted on Herald ships.</b>",
-    image: "Images/Subsystem/natural-warp-hexatech-baroque-wallpaper-02.webp",
+    image: "Images/Subsystem/hexatechbaroque-naturalwarp-artstation.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+
     name: "Power Capacitors",
     type: "battery",
     cost: 12000000,
@@ -2535,10 +2535,10 @@ const energy = [
     chargeDuration: "8 days",
     description:
       "Capacitors are small enough to fit in fighters, though they must be recharged often. However, they can also be coupled with other energy systems instead boost their effectiveness.",
-    image: "Images/Subsystem/king-fung-ng-battery-02a.webp",
+    image: "Images/Subsystem/02abattery-king-fung-ng-artstation.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+
     name: "Exotic Matter Battery",
     type: "battery",
     cost: 24000000,
@@ -2549,7 +2549,7 @@ const energy = [
     image: "Images/Subsystem/exoticmatter-indotort-midjourney.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+
     name: "The Energy Grail",
     type: "battery",
     cost: 0,
@@ -2560,7 +2560,7 @@ const energy = [
     image: "Images/Subsystem/cometsacrifice-indotort-civitai.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+
     name: "Beatrice's Bosom",
     type: "battery",
     cost: 100000000,
@@ -2571,7 +2571,7 @@ const energy = [
     image: "Images/Subsystem/bubble-xxliang-civitai.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+
     name: "Subspace Battery",
     type: "battery",
     cost: 120000000,
@@ -2579,7 +2579,7 @@ const energy = [
     chargeDuration: "Forever",
     description:
       "Store limitless energy in a pocket dimension. Even if the battery is destroyed, can access the pocket dimension if you remember the (4D,2T) coordinates. <b>Only available in Herald Dreadnoughts</b>",
-    image: "Images/Subsystem/natural-warp-stripping-the-onion-wallpaper.webp",
+    image: "Images/Subsystem/strippingtheonion-naturalwarp-artstation.webp",
   },
 ];
 

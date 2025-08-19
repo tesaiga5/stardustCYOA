@@ -2,7 +2,6 @@ export {
   catalyst,
   affinity,
   spellBases,
-  columnHeaders,
   populateDataToSection,
   populateCatalystToSection,
   appendDropdown,
@@ -12,7 +11,7 @@ export {
   createAffinityTable,
 };
 
-import {getImgName} from "/Script/switchChoose.js";
+import { getImgName } from "/Script/switchChoose.js";
 
 const catalyst = [
   {
@@ -168,7 +167,7 @@ const affinity = [
   [
     {
       title: "Void",
-      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Void",
+      image: "Images/Mana/void3-indotort-midjourney (11).webp",
       items: [
         {
           title: "Void Tier 1 Affinity",
@@ -189,7 +188,7 @@ const affinity = [
     },
     {
       title: "Erosion",
-      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Erosion",
+      image: "Images/Mana/gangrene-indotort-midjourney (8).webp",
       items: [
         {
           title: "Erosion Tier 1 Affinity",
@@ -210,7 +209,7 @@ const affinity = [
     },
     {
       title: "Vorpal",
-      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Vorpal",
+      image: "Images/Mana/braindestruct-indotort-midjourney (7).webp",
       items: [
         {
           title: "Vorpal Tier 1 Affinity",
@@ -234,7 +233,7 @@ const affinity = [
   [
     {
       title: "Thermal",
-      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Thermal",
+      image: "Images/Mana/ironslab-indotort-midjourney.webp",
       items: [
         {
           title: "Thermal Tier 1 Affinity",
@@ -255,7 +254,7 @@ const affinity = [
     },
     {
       title: "Arc",
-      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Arc",
+      image: "Images/Mana/robotsith-indotort-midjourney.webp",
       items: [
         {
           title: "Arc Tier 1 Affinity",
@@ -276,7 +275,7 @@ const affinity = [
     },
     {
       title: "Kinetic",
-      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Kinetic",
+      image: "Images/Mana/murasaki-hana-blackhole-composite3.webp",
       items: [
         {
           title: "Kinetic Tier 1 Affinity",
@@ -300,7 +299,7 @@ const affinity = [
   [
     {
       title: "Resonance",
-      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Resonance",
+      image: "Images/Mana/bastien-grivet-gold-path-ld.webp",
       items: [
         {
           title: "Resonance Tier 1 Affinity",
@@ -321,7 +320,7 @@ const affinity = [
     },
     {
       title: "Corruption",
-      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Corruption",
+      image: "Images/Mana/mitch-aseltine-garden-island-design-01-v4-ma.webp",
       items: [
         {
           title: "Corruption Tier 1 Affinity",
@@ -342,7 +341,7 @@ const affinity = [
     },
     {
       title: "Retribution",
-      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Retribution",
+      image: "Images/Mana/stars by MC Escher.webp",
       items: [
         {
           title: "Retribution Tier 1 Affinity",
@@ -362,12 +361,6 @@ const affinity = [
       ],
     },
   ],
-];
-
-const columnHeaders = [
-  "PARALOGICAL AFFINITIES",
-  "ELEMENTAL AFFINITIES",
-  "ANTICAUSAL AFFINITIES",
 ];
 
 const spellBases = [
@@ -1013,7 +1006,7 @@ function createAffinityTable(data, headers, containerID) {
       imgElement.src =
         group.image ||
         `https://placehold.co/80x280/2f3a4b/9333ea?text=${group.title}`;
-      imgElement.alt = `Placeholder image for ${group.title} affinities`;
+      imgElement.title = getImgName(group.image);
       imgElement.classList.add("affinity-group-image");
       affinityGroup.appendChild(imgElement);
 
@@ -1065,7 +1058,5 @@ function createAffinityTable(data, headers, containerID) {
   });
 
   // Append the entire table to the specified container
-  container.appendChild(tableContainer);
+  container.before(tableContainer);
 }
-
-

@@ -120,7 +120,9 @@ p {
   display: flex; /* Hidden by default */
 }
 
-.choice, .choice-frame-upgrade, .choice-rigs {
+.choice,
+.choice-frame-upgrade,
+.choice-rigs {
   justify-content: center;
   align-items: center;
   width: 140px; /* Keep your existing fixed width */
@@ -166,14 +168,17 @@ p {
   background-color: rgb(177, 59, 255, 0.7) !important ;
 }
 
-
-.choice, .choice-frame-upgrade h3 {
+.choice,
+.choice-frame-upgrade h3 {
   font-size: 28px;
 }
 
-.choice p, .choice-rigs p,
-.choice div, .choice-rigs div,
-.choice-frame-upgrade p, .choice-frame-upgrade div {
+.choice p,
+.choice-rigs p,
+.choice div,
+.choice-rigs div,
+.choice-frame-upgrade p,
+.choice-frame-upgrade div {
   font-size: 18px;
 }
 
@@ -182,7 +187,9 @@ p {
   color: rgb(255, 204, 0);
 }
 
-.choice:hover, .choice-frame-upgrade:hover, .choice-rigs:hover {
+.choice:hover,
+.choice-frame-upgrade:hover,
+.choice-rigs:hover {
   cursor: pointer;
   background-color: rgb(
     9,
@@ -193,11 +200,14 @@ p {
   transform: translateY(-2px);
 }
 
-.choice.active, .choice-frame-upgrade.active {
+.choice.active,
+.choice-frame-upgrade.active {
   background-color: rgb(9, 0, 64, 0.7); /* Consistent active color */
 }
 
-.choice img, .choice-frame-upgrade img, .choice-rigs img {
+.choice img,
+.choice-frame-upgrade img,
+.choice-rigs img {
   max-width: 100%; /* Ensure images don't overflow their parent pseudoChoice */
   height: auto; /* Maintain aspect ratio */
   border-radius: 20px; /* Added rounded corners to images */
@@ -299,7 +309,7 @@ h3 {
 
 img {
   height: 400px;
-  max-width:300px;
+  max-width: 300px;
 }
 
 body {
@@ -554,45 +564,138 @@ ul {
   background-color: rgba(185, 166, 166, 0.6) !important;
 }
 
-/*for rigs*/ 
+/*for rigs*/
 
 .offensive-rigs {
-  background-color: rgb(253,88,95, 0.4)!important;
-  border-color: rgb(141,69,73)!important;
+  background-color: rgb(253, 88, 95, 0.4) !important;
+  border-color: rgb(141, 69, 73) !important;
 }
 .offensive-rigs.active {
-  background-color: rgb(253,88,95, 0.7)!important;
+  background-color: rgb(253, 88, 95, 0.7) !important;
 }
 
 .defensive-rigs {
-  background-color: rgb(90,152,255, 0.4)!important;
-  border-color: rgb(40,81,199)!important;
+  background-color: rgb(90, 152, 255, 0.4) !important;
+  border-color: rgb(40, 81, 199) !important;
 }
 .defensive-rigs.active {
-  background-color: rgb(90,152,255, 0.7)!important;
+  background-color: rgb(90, 152, 255, 0.7) !important;
 }
 
 .utility-rigs {
-  background-color: rgb(244,255,82, 0.4)!important;
-  border-color: rgb(99,90,51)!important;
+  background-color: rgb(244, 255, 82, 0.4) !important;
+  border-color: rgb(99, 90, 51) !important;
 }
 .utility-rigs.active {
-  background-color: rgb(244,255,82, 0.7)!important;
+  background-color: rgb(244, 255, 82, 0.7) !important;
 }
 
 .command-rigs {
-  background-color: rgb(114,255,84, 0.4)!important;
-  border-color: rgb(59,129,40)!important;
+  background-color: rgb(114, 255, 84, 0.4) !important;
+  border-color: rgb(59, 129, 40) !important;
 }
 .command-rigs.active {
-  background-color: rgb(114,255,84, 0.7)!important;
+  background-color: rgb(114, 255, 84, 0.7) !important;
 }
 
 .mobility-rigs {
-  background-color: rgb(9, 0, 64, 0.4)!important;
+  background-color: rgb(9, 0, 64, 0.4) !important;
   border: 3px solid rgb(177, 59, 255) !important;
 }
 .mobility-rigs.active {
-  background-color: rgb(9, 0, 64, 0.7)!important;
+  background-color: rgb(9, 0, 64, 0.7) !important;
 }
 
+/*For Affinities*/
+.affinity-table-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 1500px;
+  border: 3px solid rgb(177, 59, 255) !important;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgb(71, 19, 150, 0.4) !important;
+}
+
+/* Column Header Styling */
+.column-header {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px solid #4f46e5;
+  color: #a855f7;
+  background-color: #1f2533;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Affinity Card Styling */
+.affinity-card {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Container for each group of 3 affinities + a single large image */
+.affinity-group {
+  display: flex;
+  align-items: stretch; /* Stretch items to match height */
+  gap: 10px;
+  padding: 10px;
+  background-color: #1f2533;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.affinity-group-image {
+  width: 160px;
+  flex-shrink: 0; /* Prevents the image from shrinking */
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.affinity-group-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Styling for a single affinity item within the group */
+.affinity-item {
+  padding: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hover effect for individual items */
+.affinity-item:hover {
+  transform: translateY(-3px);
+  background-color: #2a3340;
+}
+
+/* Selected/Active state for an item */
+.affinity-item.selected {
+  background-color: #0b0d0f; /* A darker color for the selected state */
+  border-left: 3px solid #818cf8; /* Optional highlight for selection */
+  padding-left: 2px;
+}
+
+.affinity-item h3 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  color: #818cf8;
+}
+
+.affinity-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #9ca3af;
+}

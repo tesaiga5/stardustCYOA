@@ -1440,7 +1440,6 @@
             </div>
         </span>
       </div>
-      
     </div>
     <div id="endOfAffinities" style ="display: none;"></div>
 
@@ -1917,7 +1916,7 @@
       guns, addGunDataToSection, 
     } from '/Script/equipmentData.js';
     //populate spells and unified population function
-    import {catalyst, affinity, spellBases, columnHeaders, populateDataToSection, populateCatalystToSection, appendDropdown, formatterIntl,
+    import {catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection, appendDropdown, formatterIntl,
             appendParagraph, appendList1, createAffinityTable,
     } from '/Script/manaData.js'; 
   
@@ -2376,6 +2375,12 @@
 
     });
 
+    //for affinity
+    const affHeaders = [
+      "PARALOGICAL AFFINITIES",
+      "ELEMENTAL AFFINITIES",
+      "ANTICAUSAL AFFINITIES",
+    ];
 
     choiceEquipment1.addEventListener('click', () => {
       sectionEquipment1.classList.toggle('active');
@@ -2383,7 +2388,8 @@
       populateVehicles(vehicles, 'choice', 'endOfVehicles');
       addGunDataToSection(); //populate guns
       populateCatalystToSection(catalyst, 'choice', 'endOfCatalyst');
-      populateCatalystToSection(affinity, 'choice', 'endOfAffinities');
+      createAffinityTable(affinity, affHeaders, 'endOfAffinities')
+      //populateCatalystToSection(affinity, 'choice', 'endOfAffinities');
       populateCatalystToSection(spellBases, 'choice', 'endOfSpell');
     });
 
