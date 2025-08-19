@@ -134,6 +134,10 @@ p {
   border-radius: 15px;
 }
 
+.gun {
+  flex-basis: calc((100% / 4.5)) !important;
+}
+
 .ship {
   flex-basis: calc((100% / 5));
 }

@@ -1,4 +1,5 @@
 import { formatterIntl, appendList1 } from "/Script/manaData.js";
+import {getImgName} from "/Script/switchChoose.js";
 export {
   equipment,
   vehicles,
@@ -7,16 +8,20 @@ export {
   populateVehicles,
   handleFrame,
   createFrame,
+  guns, addGunDataToSection,
 };
 
 // This array contains all equipment objects with their attributes.
 // Blank attributes are set to '0'.
 // Costs are converted to numerical values (k = thousand, m = million).
-const equipment = [
-  //change to weapons later
+const equipment = [ 
+];
+
+const guns = [
   {
     name: ".362 Snub Lawmaker",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 50000,
     equipmentLevel: 1,
     stoppingPower: 5,
@@ -28,13 +33,14 @@ const equipment = [
     roundCapacity: 7,
     action: "Revolver",
     calibre: ".362 LCat",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/ben-bolton-360pd-013.webp",
     description:
       "A snub-nosed revolver, perfect for concealment while still being able to pack a punch.",
   },
   {
     name: "KML Compact",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 50000,
     equipmentLevel: 1,
     stoppingPower: 3,
@@ -46,13 +52,14 @@ const equipment = [
     roundCapacity: 12,
     action: "Semi-auto",
     calibre: "8.8mm PIL",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/lucas-soler-screenshot007.webp",
     description:
       "Extremely popular for concealed carry. Perfect for those who don't want to attract attention.",
   },
   {
     name: "Forcify MK VII",
-    type: "Plasma",
+    type1: "Plasma", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 100000,
     equipmentLevel: 1,
     stoppingPower: 5,
@@ -64,13 +71,14 @@ const equipment = [
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "980nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/antar-1.webp",
     description:
       "A compact plasma gun. Energy guns need no reload, but overheat, and need regular battery changes.",
   },
   {
     name: "Bandit-12",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 400000,
     equipmentLevel: 2,
     stoppingPower: 8,
@@ -82,13 +90,14 @@ const equipment = [
     roundCapacity: 6,
     action: "Revolver",
     calibre: ".48 RE",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/evan-cwiertny-screenshot010.webp",
     description:
       "A favourite of bandits, this revolver can take off arms. Hold it well, as the recoil could take off your own.",
   },
   {
     name: ".362 Deputy",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 500000,
     equipmentLevel: 2,
     stoppingPower: 6,
@@ -100,13 +109,14 @@ const equipment = [
     roundCapacity: 6,
     action: "Revolver",
     calibre: ".362 LCat",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/revolver-jinyi-zhu-artstation.webp",
     description:
       "These handguns bolster accuracy with a hard hitting calibre. Usually owned by badasses.",
   },
   {
     name: "C 2911",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 100000,
     equipmentLevel: 1,
     stoppingPower: 6,
@@ -118,13 +128,14 @@ const equipment = [
     roundCapacity: 9,
     action: "Semi-auto",
     calibre: "11mm FR",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/vitaliy-ishkov-mezzan-4-34.webp",
     description:
       "Been in use for a long time, but never discarded for its iconic rep. Still shoots bullets, so it kills.",
   },
   {
     name: "FD17 Daybreak",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 100000,
     equipmentLevel: 1,
     stoppingPower: 4,
@@ -136,13 +147,14 @@ const equipment = [
     roundCapacity: 15,
     action: "Semi-auto",
     calibre: "8.8mm Pil",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/linus-scheffel-stopper-pistol-01.webp",
     description:
       "A lightweight calibre in a double-stacked magazine is perfect for a well balanced handgun.",
   },
   {
     name: "Sabre 6",
-    type: "Plasma",
+    type1: "Plasma", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 150000,
     equipmentLevel: 1,
     stoppingPower: 7,
@@ -154,13 +166,14 @@ const equipment = [
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "1025nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/filippo-ubertino-numa-pistol-immaginefinale3low.webp",
     description:
       "A popular plasma gun that hits hard. This model is known to have good heat sinks.",
   },
   {
     name: "Pallach Or2",
-    type: "Laser",
+    type1: "Laser", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 200000,
     equipmentLevel: 2,
     stoppingPower: 1,
@@ -172,13 +185,14 @@ const equipment = [
     roundCapacity: 0,
     action: "Full-auto",
     calibre: "405nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/garuda-alex-senechal-artstation.webp",
     description:
       "Shoots brief, high-powered pulses of laser, reaching temperatures hotter than the surface of a star.",
   },
   {
     name: "H56",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 200000,
     equipmentLevel: 2,
     stoppingPower: 3,
@@ -190,13 +204,14 @@ const equipment = [
     roundCapacity: 24,
     action: "Full-auto",
     calibre: "8.8mm PIL",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/des-zhu-3.webp",
     description:
       "A simple machine pistol with a high rate of fire. Its low calibre has low recoil.",
   },
   {
     name: "FD9 Judge",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 500000,
     equipmentLevel: 3,
     stoppingPower: 4,
@@ -208,13 +223,14 @@ const equipment = [
     roundCapacity: 18,
     action: "Select-fire",
     calibre: "10mm INF",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/josip-mihic-handgun-model-19-image-02-mihic-josip.webp",
     description:
       "Perfect in the hands of those who love versatility. Can select to be semi, full, or burst. Silenced.",
   },
   {
     name: "Gretel MK III",
-    type: "Rail",
+    type1: "Rail", // Changed from 'type'
+    type2: "handgun", // New attribute
     cost: 800000,
     equipmentLevel: 3,
     stoppingPower: 7,
@@ -226,13 +242,15 @@ const equipment = [
     roundCapacity: 4,
     action: "Semi-auto",
     calibre: "22mm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/marcelo-m-prado-open-pistol-1080.webp",
     description:
       "Essentially a portable rail-gun. Known to pierce through tank armour.",
   },
+
   {
     name: "Kayta F5",
-    type: "Kinetic",
+    type1: "Kinetic",
+    type2: "smg",
     cost: 200000,
     equipmentLevel: 2,
     stoppingPower: 4,
@@ -244,13 +262,14 @@ const equipment = [
     roundCapacity: 30,
     action: "Full-auto",
     calibre: "8.8mm PIL",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/des-zhu-4.webp",
     description:
       "Mass produced and found virtually everywhere, this balanced SMG is universally loved for its simplicity.",
   },
   {
     name: "Rinn-J",
-    type: "Plasma",
+    type1: "Plasma",
+    type2: "smg",
     cost: 200000,
     equipmentLevel: 2,
     stoppingPower: 4,
@@ -262,13 +281,14 @@ const equipment = [
     roundCapacity: 0,
     action: "Full-auto",
     calibre: "980nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/till-freitag-orangesmg.jpg",
     description:
       "If you want to rain hundreds of burning-hot plasma on your enemies, look no further.",
   },
   {
     name: "Hellfang",
-    type: "Laser",
+    type1: "Laser",
+    type2: "smg",
     cost: 500000,
     equipmentLevel: 3,
     stoppingPower: 1,
@@ -280,13 +300,14 @@ const equipment = [
     roundCapacity: 16,
     action: "Full-auto",
     calibre: "320nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/zhu-george-1.webp",
     description:
       "Nothing is scarier than the rapid fire of deadly red laser pulses. Has the highest PTSD-inducing rate. Loved by spec-ops.",
   },
   {
     name: "FD39 Echo",
-    type: "Kinetic",
+    type1: "Kinetic",
+    type2: "smg",
     cost: 550000,
     equipmentLevel: 3,
     stoppingPower: 5,
@@ -298,13 +319,14 @@ const equipment = [
     roundCapacity: 28,
     action: "Full-auto",
     calibre: "10mm INF",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/youngkwon-yi-ml-001.webp",
     description:
       "Very wieldly with all of the aspects of an SMG perfected to a tee.",
   },
   {
     name: "LK Banshee",
-    type: "Plasma",
+    type1: "Plasma",
+    type2: "smg",
     cost: 700000,
     equipmentLevel: 3,
     stoppingPower: 6,
@@ -316,13 +338,14 @@ const equipment = [
     roundCapacity: 16,
     action: "Full-auto/chg",
     calibre: "1025nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/filippo-ubertino-mauser-m2-138-finale1low.webp",
     description:
       "You can either go full-auto with torrents of hot plasma, or charged burst shots for more destruction.",
   },
   {
     name: 'H "Frill"',
-    type: "Special",
+    type1: "Special",
+    type2: "smg",
     cost: 800000,
     equipmentLevel: 3,
     stoppingPower: 5,
@@ -334,13 +357,15 @@ const equipment = [
     roundCapacity: 0,
     action: "Full-auto",
     calibre: "Unknown",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/andrew-bradbury-needler-hi-02.webp",
     description:
       "Experimental reverse-engineered tech from the Heralds. Rapidly shoots volatile mana bolts.",
   },
+
   {
     name: "Spatha 2100FP",
-    type: "Kinetic",
+    type1: "Kinetic",
+    type2: "shotgun",
     cost: 100000,
     equipmentLevel: 3,
     stoppingPower: 9,
@@ -352,13 +377,14 @@ const equipment = [
     roundCapacity: 9,
     action: "Pump",
     calibre: "10ga",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/felix-leyendecker-17-ssg-01.webp",
     description:
       "A reliable pump-action that's used in virtually every security and military doctrine.",
   },
   {
     name: "Espingarda Model 80",
-    type: "Kinetic",
+    type1: "Kinetic",
+    type2: "shotgun",
     cost: 150000,
     equipmentLevel: 3,
     stoppingPower: 7,
@@ -370,13 +396,14 @@ const equipment = [
     roundCapacity: 8,
     action: "Semi-auto",
     calibre: "12ga",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/csaba-szilagyi-csaba-portfolio-rostovic-db-2-satara-1.webp",
     description:
       "One of the best weapons for storming and taking out hostiles in tight spaces, like ship interiors.",
   },
   {
     name: "Starburst MK VI",
-    type: "Laser",
+    type1: "Laser",
+    type2: "shotgun",
     cost: 200000,
     equipmentLevel: 3,
     stoppingPower: 1,
@@ -388,13 +415,14 @@ const equipment = [
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "80nm x6",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/boy-sichterman-front.webp",
     description:
       "A more experimental weapon that utilizes multiple diodes to burst out a 'fan' of high-powered lasers.",
   },
   {
     name: "Ogoun M31",
-    type: "Plasma",
+    type1: "Plasma",
+    type2: "shotgun",
     cost: 400000,
     equipmentLevel: 3,
     stoppingPower: 9,
@@ -406,13 +434,14 @@ const equipment = [
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "4x675nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/serge-samsonov-01-end-revolver.webp",
     description:
       "Delivers a face-full of piping hot plasma. One of the more cruel weapons out there.",
   },
   {
     name: "AS-12/45",
-    type: "Kinetic",
+    type1: "Kinetic",
+    type2: "shotgun",
     cost: 400000,
     equipmentLevel: 3,
     stoppingPower: 7,
@@ -424,13 +453,14 @@ const equipment = [
     roundCapacity: 8,
     action: "Full-auto",
     calibre: "12ga",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/kris-thaler-shotgunhr-v2.webp",
     description:
       "Not often used despite its full-auto capabilities, but a favourite for outer-rim bandits.",
   },
   {
     name: "Wraithsong A4",
-    type: "Rail",
+    type1: "Rail",
+    type2: "shotgun",
     cost: 800000,
     equipmentLevel: 4,
     stoppingPower: 7,
@@ -442,13 +472,15 @@ const equipment = [
     roundCapacity: 4,
     action: "Burst",
     calibre: "4mm x3",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/weiyi-qin-shotgun.webp",
     description:
       "Shoots an insanely fast burst of 3 high-velocity darts, which is known to make a ghostly whistling sound.",
   },
+
   {
     name: "UN200-42",
-    type: "Plasma",
+    type1: "Plasma", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 400000,
     equipmentLevel: 3,
     stoppingPower: 5,
@@ -466,7 +498,8 @@ const equipment = [
   },
   {
     name: "FD49 Reverb",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 500000,
     equipmentLevel: 3,
     stoppingPower: 5,
@@ -484,7 +517,8 @@ const equipment = [
   },
   {
     name: "Angel",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 700000,
     equipmentLevel: 4,
     stoppingPower: 5,
@@ -502,7 +536,8 @@ const equipment = [
   },
   {
     name: "Devil's Kiss",
-    type: "Plasma",
+    type1: "Plasma", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 1000000,
     equipmentLevel: 4,
     stoppingPower: 6,
@@ -520,7 +555,8 @@ const equipment = [
   },
   {
     name: "Bastard-21",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 200000,
     equipmentLevel: 3,
     stoppingPower: 5,
@@ -538,7 +574,8 @@ const equipment = [
   },
   {
     name: "The Ivan",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 250000,
     equipmentLevel: 4,
     stoppingPower: 6,
@@ -556,7 +593,8 @@ const equipment = [
   },
   {
     name: "Sharktooth-T751",
-    type: "Plasma",
+    type1: "Plasma", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 400000,
     equipmentLevel: 4,
     stoppingPower: 7,
@@ -574,7 +612,8 @@ const equipment = [
   },
   {
     name: "FD22 Sprint",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 450000,
     equipmentLevel: 4,
     stoppingPower: 6,
@@ -592,7 +631,8 @@ const equipment = [
   },
   {
     name: "LK Scarlet",
-    type: "Laser",
+    type1: "Laser", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 650000,
     equipmentLevel: 4,
     stoppingPower: 2,
@@ -610,7 +650,8 @@ const equipment = [
   },
   {
     name: "The EVI Platform",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 700000,
     equipmentLevel: 4,
     stoppingPower: 5,
@@ -628,7 +669,8 @@ const equipment = [
   },
   {
     name: "H23",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 800000,
     equipmentLevel: 4,
     stoppingPower: 6,
@@ -646,7 +688,8 @@ const equipment = [
   },
   {
     name: "Gloom MK III",
-    type: "Plasma/Laser",
+    type1: "Plasma/Laser", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 1000000,
     equipmentLevel: 4,
     stoppingPower: 5,
@@ -664,7 +707,8 @@ const equipment = [
   },
   {
     name: 'H "Mantis"',
-    type: "Special",
+    type1: "Special", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 1400000,
     equipmentLevel: 4,
     stoppingPower: 7,
@@ -682,7 +726,8 @@ const equipment = [
   },
   {
     name: "Burial M55",
-    type: "Kinetic",
+    type1: "Kinetic", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 700000,
     equipmentLevel: 4,
     stoppingPower: 9,
@@ -700,7 +745,8 @@ const equipment = [
   },
   {
     name: "Atrophy",
-    type: "Laser",
+    type1: "Laser", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 1000000,
     equipmentLevel: 4,
     stoppingPower: 6,
@@ -718,7 +764,8 @@ const equipment = [
   },
   {
     name: "Orca A7",
-    type: "Rail",
+    type1: "Rail", // Changed from 'type'
+    type2: "rifle", // New attribute
     cost: 1800000,
     equipmentLevel: 4,
     stoppingPower: 9,
@@ -730,13 +777,15 @@ const equipment = [
     roundCapacity: 6,
     action: "Semi-auto",
     calibre: "28mm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/su-wang-demonstone-op-1.webp",
     description:
       "A skilled shooter with this weapon can become one of the deadliest people in the galaxy.",
   },
+
   {
     name: "Hail-92",
-    type: "Kinetic",
+    type1: "Kinetic",
+    type2: "lightweapon",
     cost: 650000,
     equipmentLevel: 4,
     stoppingPower: 5,
@@ -748,13 +797,14 @@ const equipment = [
     roundCapacity: 200,
     action: "Full-auto",
     calibre: "6.16mm UNI",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/anuj-kansara-view-01.webp",
     description:
-      "A light machine gun that's often used by bandits. Uses two barrels to unleash a torrent of bullets.",
+      "A light machine gun that's often used by bandits. Uses seven barrels to unleash a torrent of bullets.",
   },
   {
     name: "FD7 Optimum",
-    type: "Kinetic",
+    type1: "Kinetic",
+    type2: "lightweapon",
     cost: 900000,
     equipmentLevel: 5,
     stoppingPower: 7,
@@ -766,13 +816,14 @@ const equipment = [
     roundCapacity: 80,
     action: "Full-auto",
     calibre: "8.02mm TB",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/sean-drake-8.webp",
     description:
       "A medium machine gun that can punch holes in armour and is perfect for suppressive fire.",
   },
   {
     name: "Salamander Or2",
-    type: "Special",
+    type1: "Special",
+    type2: "lightweapon",
     cost: 800000,
     equipmentLevel: 4,
     stoppingPower: 9,
@@ -784,13 +835,14 @@ const equipment = [
     roundCapacity: 0,
     action: "Thrower",
     calibre: "n/a",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/andrey-bushkov-2-1.webp",
     description:
       "A flamethrower often employed by the Dustkeepers. Perfect for burning away biomass.",
   },
   {
     name: 'H "Flare"',
-    type: "Special",
+    type1: "Special",
+    type2: "lightweapon",
     cost: 1600000,
     equipmentLevel: 5,
     stoppingPower: 6,
@@ -802,14 +854,14 @@ const equipment = [
     roundCapacity: 0,
     action: "Continuous",
     calibre: "Unknown",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/andrey-bushkov-thundercaster2.webp",
     description:
       "Fires a deadly continuous beam of mana that intensifies the longer you hold it. Overheats quickly.",
   },
-
   {
     name: "Sardonic 9",
-    type: "Plasma",
+    type1: "Plasma",
+    type2: "lightweapon",
     cost: 2200000,
     equipmentLevel: 5,
     stoppingPower: 10,
@@ -821,12 +873,13 @@ const equipment = [
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "1990nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "Unknown.",
-  },
+    image: "Images/Guns/enclave-interactive-plusma-gun-enclave-interactive.webp",
+    description: "Made from lost technology. When dismantled, the parts don't make sense yet functions realiably when put together.",
+  }, 
   {
     name: "H12",
-    type: "Explosive",
+    type1: "Explosive",
+    type2: "launcher",
     cost: 500000,
     equipmentLevel: 4,
     stoppingPower: 6,
@@ -844,7 +897,8 @@ const equipment = [
   },
   {
     name: "Stark-4",
-    type: "Explosive",
+    type1: "Explosive",
+    type2: "launcher",
     cost: 700000,
     equipmentLevel: 5,
     stoppingPower: 8,
@@ -862,7 +916,8 @@ const equipment = [
   },
   {
     name: "KM Swarm",
-    type: "Explosive",
+    type1: "Explosive",
+    type2: "launcher",
     cost: 1200000,
     equipmentLevel: 5,
     stoppingPower: 5,
@@ -874,13 +929,14 @@ const equipment = [
     roundCapacity: 1,
     action: "Launcher",
     calibre: "110mm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/csaba-szilagyi-csaba-portfolio-kang-tao-zhuo-2.webp",
     description:
       "A launcher that's more focused for taking out personnel, rather than materiel.",
   },
   {
     name: "FD102 Toler",
-    type: "Explosive",
+    type1: "Explosive",
+    type2: "launcher",
     cost: 2000000,
     equipmentLevel: 5,
     stoppingPower: 10,
@@ -898,7 +954,8 @@ const equipment = [
   },
   {
     name: "Explody Thing",
-    type: "Explosive",
+    type1: "Explosive",
+    type2: "launcher",
     cost: 2200000,
     equipmentLevel: 5,
     stoppingPower: 8,
@@ -910,13 +967,14 @@ const equipment = [
     roundCapacity: 4,
     action: "Semi-auto",
     calibre: "82mm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/alex-savelev-back-weapon-copy.webp",
     description:
       "The weapon used by Sya'ra the Mad Roller to repel a small Black-hawk convoy during the Luos wars.",
   },
   {
     name: "Moses Or19",
-    type: "Laser/Plasma",
+    type1: "Laser/Plasma",
+    type2: "launcher",
     cost: 3000000,
     equipmentLevel: 5,
     stoppingPower: 7,
@@ -928,31 +986,35 @@ const equipment = [
     roundCapacity: 0,
     action: "Burst",
     calibre: "720nm x4",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/georgiy-nomerovsky-beaty-shot.webp",
     description:
       "A specialized heavy laser gun that fires volatile ion particles, causing explosions.",
   },
+
+
   {
     name: "Hel",
-    type: "Special",
+    type1: "Rail",
+    type2: "heavyweapon",
     cost: 4000000,
     equipmentLevel: 6,
     stoppingPower: 10,
-    piercingPower: 9,
-    rateOfFire: 10,
+    piercingPower: 11,
+    rateOfFire: 3,
     range: 6,
     accuracy: 5,
     handling: 0,
     roundCapacity: 0,
     action: "Thrower",
     calibre: "n/a",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/paul-dave-malla-reaper-pulse-plasma-railgun-keyshot-01.webp",
     description:
-      "Spews a burning chemical liquid solution that can instantaneously melt through rock.",
+      "A standard ship railgun mounted on legs, can punch through a small moon. Sadly, it takes 30 minutes to reload and it weighs 5 tons.",
   },
   {
     name: "FD99x Perfection",
-    type: "Kinetic",
+    type1: "Kinetic",
+    type2: "heavyweapon",
     cost: 6000000,
     equipmentLevel: 7,
     stoppingPower: 10,
@@ -964,291 +1026,9 @@ const equipment = [
     roundCapacity: 1000,
     action: "Gatling",
     calibre: "45mm Qn",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/mattis-heisler-3rdp-view-7-5.webp",
     description:
       "Usually mounted on vehicles, this monster's roar can be heard from many kilometers away.",
-  },
-  // --- Start of data from equipment stardustSoldier.txt ---
-  {
-    name: "Clothing",
-    type: null,
-    cost: 0,
-    equipmentLevel: 0,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: 0,
-    energyDefence: 0,
-    mobility: 0,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Bulletproof Vest",
-    type: null,
-    cost: 50000,
-    equipmentLevel: 2,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: 82,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Full-Body Tactical",
-    type: null,
-    cost: 150000,
-    equipmentLevel: 3,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: null,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Wastelander",
-    type: null,
-    cost: 150000,
-    equipmentLevel: 3,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: null,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Infiltrator",
-    type: null,
-    cost: 300000,
-    equipmentLevel: 4,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: 0,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Hydra Vest",
-    type: null,
-    cost: 350000,
-    equipmentLevel: 4,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: 0,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Survivalist",
-    type: null,
-    cost: 500000,
-    equipmentLevel: 5,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: 0,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Infantry",
-    type: null,
-    cost: 600000,
-    equipmentLevel: 5,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: 0,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Exo-Skeleton",
-    type: null,
-    cost: 700000,
-    equipmentLevel: 5,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: 0,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Phorcys",
-    type: null,
-    cost: 1200000,
-    equipmentLevel: 6,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: null,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Reactive Plating",
-    type: null,
-    cost: 2000000,
-    equipmentLevel: 6,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: 0,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Nano Suit",
-    type: null,
-    cost: 2500000,
-    equipmentLevel: 7,
-    stoppingPower: null,
-    piercingPower: null,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: null,
-    action: null,
-    calibre: null,
-    kineticDefence: null,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-
-  {
-    name: "Ratio MK II",
-    type: null,
-    cost: 2000000,
-    equipmentLevel: 5,
-    stoppingPower: 0,
-    piercingPower: 0,
-    rateOfFire: null,
-    range: null,
-    accuracy: null,
-    handling: null,
-    roundCapacity: 300,
-    action: "bolt-action",
-    calibre: "42mm",
-    kineticDefence: null,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
-  },
-  {
-    name: "Sardonic-9",
-    type: null,
-    cost: 2200000,
-    equipmentLevel: 5,
-    stoppingPower: 0,
-    piercingPower: 0,
-    rateOfFire: null,
-    range: 10,
-    accuracy: null,
-    handling: null,
-    roundCapacity: 12,
-    action: "Rocket",
-    calibre: "1990nm",
-    kineticDefence: null,
-    energyDefence: null,
-    mobility: null,
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
-    description: "",
   },
 ];
 
@@ -1303,7 +1083,7 @@ const vehicles = [
     mobility: "4",
     armour: 4, // Standardized to 'armour' (camelCase)
     length: "6m",
-    image: "/Images/Vehicles/icle047.webp",
+    image: "Images/Vehicles/dropship-indotort-midjourney.webp",
     description:
       "Large and bulky, these Armoured Personnel Carriers can transport a good handful of troops or VIPs and protect them with thick armour. +Comes with a free T1 weapon",
     shields: 0,
@@ -1341,7 +1121,7 @@ const vehicles = [
     mobility: "3",
     armour: 8, // Standardized to 'armour' (camelCase)
     length: "11m",
-    image: "/Images/Vehicles/icle043.webp",
+    image: "",
     description:
       "Fit for convoys, heavy firepower, artillery support, and everything tank-like, these beasts can lead the charge into combat. +Comes with a free T2 weapon",
     shields: 0,
@@ -1360,7 +1140,7 @@ const vehicles = [
     mobility: "3",
     armour: 5, // Standardized to 'armour' (camelCase)
     length: "9m",
-    image: "/Images/Vehicles/icle041.webp",
+    image: "Images/Vehicles/weiyi-qin-3.webp",
     description:
       "Spider tanks are a more experi- mental platform, but unlike tradi- tional tanks, they have less trouble overcoming terrain. +Comes with a free T2 weapon",
     shields: 0,
@@ -1436,7 +1216,7 @@ const vehicles = [
     mobility: 7,
     armour: "25m", // Standardized to 'armour' (camelCase)
     length: "25m",
-    image: "/Images/Vehicles/icle019.webp",
+    image: "Images/Vehicles/weiyi-qin-osprey.webp",
     description:
       "These submarines can withstand extreme temperatures and pres- sures, and can withstand many liquids. +Comes with a free T1 weapon",
     shields: 0,
@@ -1497,7 +1277,7 @@ const vehicles = [
     t1WeaponSlots: 0,
     t2WeaponSlots: 0,
     length: "5m",
-    image: "/Images/Vehicles/veh033.webp",
+    image: "Images/Vehicles/des-zhu-8-3.webp",
     description:
       "An amphibious all-terrain rover used by Beatrice R&D for exploration that can go underwater. It's a mobile transport and base.",
   },
@@ -1631,7 +1411,7 @@ const vehicles = [
     t1WeaponSlots: 1,
     t2WeaponSlots: 0,
     length: "11m",
-    image: "/Images/Vehicles/veh017.webp",
+    image: "Images/Vehicles/noax-design-monarch-7.webp",
     description:
       "A tank with hyper-reactive armour that was never able to support its own energy demands, now possible with a Dragoon pilot.",
   },
@@ -2276,9 +2056,8 @@ function populateVehicles(dataArray, choicePrefix, sectionID) {
 
     // Image element - common to all
     const imgElement = document.createElement("img");
-    imgElement.src =
-      item.image || "https://placehold.co/100x100/eeeeee/ffffff?text=NoImage";
-    imgElement.alt = `${item.name} image`;
+    imgElement.src = item.image;
+    imgElement.title = getImgName(item.image);
     newSpan.appendChild(imgElement);
 
     // Display the vehicle name
@@ -2311,3 +2090,169 @@ function populateVehicles(dataArray, choicePrefix, sectionID) {
     targetSection.before(newDiv);
   });
 }
+function addGunDataToSection() {
+      // If not populated, create new divs to populate choices
+      guns.forEach(gun => {
+        let targetSection = document.getElementById('endOfEquipment');
+          switch(gun.type2){
+            case 'handgun':
+              targetSection = document.getElementById('title-submachineguns');
+              break;
+            case 'smg':
+              targetSection = document.getElementById('title-shotguns');
+              break;
+            case 'shotgun':
+              targetSection = document.getElementById('title-rifles');
+              break;
+            case 'rifle':
+              targetSection = document.getElementById('title-lightweapons');
+              break;
+            case 'lightweapon':
+              targetSection = document.getElementById('title-launchers');
+              break;
+            case 'launcher':
+              targetSection = document.getElementById('title-heavyweapons');
+              break;
+            default://for heavyweapons
+              break;
+          }
+          const newDiv = document.createElement("div");
+          newDiv.classList.add("choice", "gun");
+          // Ensure unique ID for each choice element, sanitize name for ID
+          newDiv.id = gun.name;
+
+          const newSpan = document.createElement("span");
+          newDiv.appendChild(newSpan);
+
+          const imgElement = document.createElement('img');
+          imgElement.src = gun.image;
+          imgElement.title = getImgName(gun.image); // Add alt text for accessibility
+          newSpan.appendChild(imgElement);
+
+          // Create an h3 element for the name
+          const h3Element = document.createElement('h3');
+          h3Element.style.marginTop = '0px';
+          h3Element.style.marginBottom = '0px';
+          h3Element.textContent = gun.name || 'No Name';
+          newSpan.appendChild(h3Element);
+
+          // Type
+          const typeP = document.createElement('p');
+          typeP.textContent = `Type: ${gun.type1} | Cost: ${formatterIntl.format(gun.cost)}`;
+          typeP.style = "text-align: center;"
+          newSpan.appendChild(typeP);
+
+          // Equipment Level
+          const levelP = document.createElement('p');
+          levelP.textContent = `Equipment Level: ${gun.equipmentLevel || 0}`;
+          newSpan.appendChild(levelP);
+
+          // Stopping Power
+          if (gun.stoppingPower !== null && gun.stoppingPower !== undefined) {
+              const stoppingPowerP = document.createElement('p');
+              stoppingPowerP.textContent = `Stopping Power: ${gun.stoppingPower}`;
+              newSpan.appendChild(stoppingPowerP);
+          }
+
+          // Piercing Power
+          if (gun.piercingPower !== null && gun.piercingPower !== undefined) {
+              const piercingPowerP = document.createElement('p');
+              piercingPowerP.textContent = `Piercing Power: ${gun.piercingPower}`;
+              newSpan.appendChild(piercingPowerP);
+          }
+
+          // Rate of Fire
+          if (gun.rateOfFire !== null && gun.rateOfFire !== undefined) {
+              const rateOfFireP = document.createElement('p');
+              rateOfFireP.textContent = `Rate of Fire: ${gun.rateOfFire}`;
+              newSpan.appendChild(rateOfFireP);
+          }
+
+          // Range
+          if (gun.range !== null && gun.range !== undefined) {
+              const rangeP = document.createElement('p');
+              rangeP.textContent = `Range: ${gun.range}`;
+              newSpan.appendChild(rangeP);
+          }
+
+          // Accuracy
+          if (gun.accuracy !== null && gun.accuracy !== undefined) {
+              const accuracyP = document.createElement('p');
+              accuracyP.textContent = `Accuracy: ${gun.accuracy}`;
+              newSpan.appendChild(accuracyP);
+          }
+
+          // Handling
+          if (gun.handling !== null && gun.handling !== undefined) {
+              const handlingP = document.createElement('p');
+              handlingP.textContent = `Handling: ${gun.handling}`;
+              newSpan.appendChild(handlingP);
+          }
+
+          // Round Capacity
+          if (gun.roundCapacity !== null && gun.roundCapacity !== undefined) {
+              const roundCapacityP = document.createElement('p');
+              roundCapacityP.textContent = `Round Capacity: ${gun.roundCapacity}`;
+              newSpan.appendChild(roundCapacityP);
+          }
+
+          // Action
+          if (gun.action !== undefined) {
+              const actionP = document.createElement('p');
+              actionP.textContent = `Action: ${gun.action}`;
+              newSpan.appendChild(actionP);
+          }
+
+          // Calibre (now includes diode/bolt values from the image)
+          if (gun.calibre !== undefined) {
+              const calibreP = document.createElement('p');
+              calibreP.textContent = `Calibre: ${gun.calibre}`;
+              newSpan.appendChild(calibreP);
+          }
+
+          // Energy Use
+          if (gun.energyUse !== null && gun.energyUse !== undefined) {
+              const energyUseP = document.createElement('p');
+              energyUseP.textContent = `Energy Use: ${gun.energyUse}`;
+              newSpan.appendChild(energyUseP);
+          }
+
+          // Tier
+          if (gun.tier !== null && gun.tier !== undefined) {
+              const tierP = document.createElement('p');
+              tierP.textContent = `Tier: ${gun.tier}`;
+              newSpan.appendChild(tierP);
+          }
+
+          // Damage Per Volley
+          if (gun.damagePerVolley !== null && gun.damagePerVolley !== undefined) {
+              const damagePerVolleyP = document.createElement('p');
+              damagePerVolleyP.textContent = `Damage Per Volley: ${gun.damagePerVolley}`;
+              newSpan.appendChild(damagePerVolleyP);
+          }
+
+          // Projectile Velocity
+          if (gun.projectileVelocity !== null && gun.projectileVelocity !== undefined) {
+              const projectileVelocityP = document.createElement('p');
+              projectileVelocityP.textContent = `Projectile Velocity: ${gun.projectileVelocity}`;
+              newSpan.appendChild(projectileVelocityP);
+          }
+
+          // Tracking
+          if (gun.tracking !== null && gun.tracking !== undefined) {
+              const trackingP = document.createElement('p');
+              trackingP.textContent = `Tracking: ${gun.tracking}`;
+              newSpan.appendChild(trackingP);
+          }
+
+          // Description
+          if (gun.description !== undefined) {
+              const descriptionP = document.createElement('p');
+              descriptionP.textContent = `Description: ${gun.description}`;
+              newSpan.appendChild(descriptionP);
+          }
+
+          targetSection.before(newDiv); // Append to the target section
+        });
+}
+
