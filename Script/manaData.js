@@ -2,12 +2,14 @@ export {
   catalyst,
   affinity,
   spellBases,
+  columnHeaders,
   populateDataToSection,
   populateCatalystToSection,
   appendDropdown,
   formatterIntl,
   appendParagraph,
   appendList1,
+  createAffinityTable,
 };
 const catalyst = [
   {
@@ -159,195 +161,210 @@ const catalyst = [
 ];
 
 const affinity = [
-  {
-    name: "Void Tier 1 Affinity",
-    cost: null, // Cost is not explicitly stated for affinities
-    description:
-      "Causes severe mana overload burns on targets and neutralizes unspent mana. Has a nullifying effect on other mana-powered mechanisms.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Void Tier 2 Affinity",
-    cost: null,
-    description:
-      "Surrounding mana energy is significantly drawn towards the spell base and upon contact, is drained and siphoned back to you.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Void Tier 3 Affinity",
-    cost: null,
-    description:
-      "Greatly reduces the amount of mana consumed by the casting of the spell while also making the next spell executable almost instantly.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Erosion Tier 1 Affinity",
-    cost: null,
-    description:
-      "Accelerates the erosion of inanimate matter the spell comes into contact with. Higher potencies can rust metal extremely quickly.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Erosion Tier 2 Affinity",
-    cost: null,
-    description:
-      "Biomatter that makes contact with the spell is decayed at an alarming rate.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Erosion Tier 3 Affinity",
-    cost: null,
-    description:
-      "Random molecules in the affected area are annihilated. Likelihood of success is dependent on spell potency.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Vorpal Tier 1 Affinity",
-    cost: null,
-    description:
-      "Crystalization effect. Edges are thinner than any matter known to man and cuts through targets at a sub-molecular level.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Vorpal Tier 2 Affinity",
-    cost: null,
-    description:
-      "Ability to drain light. Maximum potency spell bases will have perfect light drain.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Vorpal Tier 3 Affinity",
-    cost: null,
-    description:
-      "Attacks intelligence systems in close proximity by introducing entropy into their systems, including artificial intelligences and human minds.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Thermal Tier 1 Affinity",
-    cost: null,
-    description:
-      "Lengthens the wavelength of the spell base, adding a slight burning effect while also increasing the velocity significantly.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Thermal Tier 2 Affinity",
-    cost: null,
-    description:
-      "Cryogenic affinity that rapidly reduces the temperature of affected targets.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Thermal Tier 3 Affinity",
-    cost: null,
-    description:
-      "Adds a molten effect to the point where higher potency spell bases can melt through metal like butter.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Arc Tier 1 Affinity",
-    cost: null,
-    description:
-      "An electric affinity that adds an electric charge to the spell base.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Arc Tier 2 Affinity",
-    cost: null,
-    description:
-      'Increases the "conductivity" of the target against further spells of the same or similar type.',
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Arc Tier 3 Affinity",
-    cost: null,
-    description:
-      "All affinity effects applied on the target will chain to nearby targets. Radius of distribution is dependent on spell affinity.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Kinetic Tier 1 Affinity",
-    cost: null,
-    description:
-      "Spell bases gain a dense mass as if made of solid matter. Middle potencies are equivalent to that of denser metal.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Kinetic Tier 2 Affinity",
-    cost: null,
-    description:
-      "Adds a detonation effect that releases a shockwave with an explosion velocity dependent on the potency of the spell base.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Kinetic Tier 3 Affinity",
-    cost: null,
-    description:
-      "Spell base warps gravity potential of targets. Higher potencies can cause gravitational pulls or gravity riptides.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Resonance Tier 1 Affinity",
-    cost: null,
-    description:
-      "Increases the operational integrity of the target's makeup, such as adjusted friction or increased bloodflow.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Resonance Tier 2 Affinity",
-    cost: null,
-    description:
-      "Provides a hardening effect on any affected targets, strengthening solid matter or increasing mass for more inertia.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Resonance Tier 3 Affinity",
-    cost: null,
-    description:
-      "Rapidly restructures the integrity of matter it comes into contact with. Biomatter is healed.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Corruption Tier 1 Affinity",
-    cost: null,
-    description:
-      "Adds a sticky affect to the spell base while also allowing other effects in the same spell base to spread easier.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Corruption Tier 2 Affinity",
-    cost: null,
-    description:
-      "Spells leave a lingering effect in the area that is affected. Duration is dependent on the potency of the spell.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Corruption Tier 3 Affinity",
-    cost: null,
-    description:
-      "Spell bases hone in on the intended target upon the time the spell is cast. Accuracy is dependent on the potency of the spell.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Retribution Tier 1 Affinity",
-    cost: null,
-    description:
-      "Adds the ability to set a timer on the spell base before executing. Higher potencies can delay a spell from casting for several hours.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Retribution Tier 2 Affinity",
-    cost: null,
-    description:
-      "Affected targets are hastened. Maximum potency can hasten a target for up to twice normal speed for up to a minute.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
-  {
-    name: "Retribution Tier 3 Affinity",
-    cost: null,
-    description:
-      "Affected areas are caught and slowed in a time stasis. Higher potencies can effectively stop targets when coming into contact.",
-    image: "https://placehold.co/100x100/ccbbdd/ffffff?text=Affinity",
-  },
+  // Column 1 data, grouped
+  [
+    {
+      title: "Void",
+      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Void",
+      items: [
+        {
+          title: "Void Tier 1 Affinity",
+          description:
+            "Casting mana overloads turns on targets internal aetheric mana grid, this has a nullifying effect on other mana-powered mechanisms.",
+        },
+        {
+          title: "Void Tier 2 Affinity",
+          description:
+            "Surrounding mana energy is significantly drawn towards the spell base and upon contact, is drained and siphoned back to you.",
+        },
+        {
+          title: "Void Tier 3 Affinity",
+          description:
+            "Greatly reduces the amount of mana consumed by the casting of the spell while also making the next spell executable almost instantly.",
+        },
+      ],
+    },
+    {
+      title: "Erosion",
+      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Erosion",
+      items: [
+        {
+          title: "Erosion Tier 1 Affinity",
+          description:
+            "Accelerates the erosion of inanimate matter the spell comes into contact with. Higher potencies can melt metal extremely quickly.",
+        },
+        {
+          title: "Erosion Tier 2 Affinity",
+          description:
+            "Biomatter that makes contact with the spell is decayed at an alarming rate.",
+        },
+        {
+          title: "Erosion Tier 3 Affinity",
+          description:
+            "Micro-molecules in the affected area are annihilated. Likelihood of success is dependent on spell potency.",
+        },
+      ],
+    },
+    {
+      title: "Vorpal",
+      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Vorpal",
+      items: [
+        {
+          title: "Vorpal Tier 1 Affinity",
+          description:
+            "Crystallization effect. Edges are thinner than any matter known to man and cuts through targets at a sub-molecular level.",
+        },
+        {
+          title: "Vorpal Tier 2 Affinity",
+          description:
+            "Ability to drain light. Maximum potency spell bases will have perfect light drain.",
+        },
+        {
+          title: "Vorpal Tier 3 Affinity",
+          description:
+            "Attacks intelligence systems in close proximity by introducing entropy into their systems, including artificial intelligence and human minds.",
+        },
+      ],
+    },
+  ],
+  // Column 2 data, grouped
+  [
+    {
+      title: "Thermal",
+      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Thermal",
+      items: [
+        {
+          title: "Thermal Tier 1 Affinity",
+          description:
+            "Lengthens the waveform of the spell base, creating a slight scorching effect while also increasing the velocity significantly.",
+        },
+        {
+          title: "Thermal Tier 2 Affinity",
+          description:
+            "Cryogenic affinity that rapidly reduces the temperature of affected targets.",
+        },
+        {
+          title: "Thermal Tier 3 Affinity",
+          description:
+            "Adds a molten effect to the point where higher potency spell bases can melt through metal like butter.",
+        },
+      ],
+    },
+    {
+      title: "Arc",
+      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Arc",
+      items: [
+        {
+          title: "Arc Tier 1 Affinity",
+          description:
+            "An electric affinity that adds an electric charge to the spell base.",
+        },
+        {
+          title: "Arc Tier 2 Affinity",
+          description:
+            'Increases the "conductivity" of the target against further spells of the same or similar type.',
+        },
+        {
+          title: "Arc Tier 3 Affinity",
+          description:
+            "All affinity effects applied on the target will chain to nearby targets. Radius of distribution is dependent on spell affinity.",
+        },
+      ],
+    },
+    {
+      title: "Kinetic",
+      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Kinetic",
+      items: [
+        {
+          title: "Kinetic Tier 1 Affinity",
+          description:
+            "Spell bases gain a denser mass as if made of solid matter. Middle potencies are equivalent to that of denser metal.",
+        },
+        {
+          title: "Kinetic Tier 2 Affinity",
+          description:
+            "Adds a detonation effect that releases a shockwave with an explosion velocity dependent on the potency of the spell base.",
+        },
+        {
+          title: "Kinetic Tier 3 Affinity",
+          description:
+            "Spell base warps gravity potential of targets. Higher potencies can cause gravitational pulls on nearby systems.",
+        },
+      ],
+    },
+  ],
+  // Column 3 data, grouped
+  [
+    {
+      title: "Resonance",
+      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Resonance",
+      items: [
+        {
+          title: "Resonance Tier 1 Affinity",
+          description:
+            "Increases the operational integrity of the target's mana grid, as well as adjusted friction or increased flow.",
+        },
+        {
+          title: "Resonance Tier 2 Affinity",
+          description:
+            "Provides a hardening effect on any affected targets, strengthening solid matter or increasing mass for more inertia.",
+        },
+        {
+          title: "Resonance Tier 3 Affinity",
+          description:
+            "Rapidly restructures the integrity of matter it comes into contact with. Biomatter is healed.",
+        },
+      ],
+    },
+    {
+      title: "Corruption",
+      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Corruption",
+      items: [
+        {
+          title: "Corruption Tier 1 Affinity",
+          description:
+            "Adds a sticky effect to the spell base while also allowing other effects in the same spell base to spread easier.",
+        },
+        {
+          title: "Corruption Tier 2 Affinity",
+          description:
+            "Spells leave a lingering effect in the area that is affected. Duration is dependent on the potency of the spell.",
+        },
+        {
+          title: "Corruption Tier 3 Affinity",
+          description:
+            "Spells leave a homing effect on the intended target upon the time the spell is cast. Accuracy is dependent on the potency of the spell.",
+        },
+      ],
+    },
+    {
+      title: "Retribution",
+      image: "https://placehold.co/80x280/2f3a4b/9333ea?text=Retribution",
+      items: [
+        {
+          title: "Retribution Tier 1 Affinity",
+          description:
+            "Adds the ability to set a timer on the spell base before executing. Higher potencies can delay a spell from casting for several hours.",
+        },
+        {
+          title: "Retribution Tier 2 Affinity",
+          description:
+            "Affected targets are hastened. Maximum potency can hasten a target for up to twice normal speed for up to a minute.",
+        },
+        {
+          title: "Retribution Tier 3 Affinity",
+          description:
+            "Affected areas are caught and slowed in a time stasis field. Higher potencies can effectively stop targets when coming into contact.",
+        },
+      ],
+    },
+  ],
+];
+
+const columnHeaders = [
+  "PARALOGICAL AFFINITIES",
+  "ELEMENTAL AFFINITIES",
+  "ANTICAUSAL AFFINITIES",
 ];
 
 const spellBases = [
@@ -947,3 +964,105 @@ function appendList1(newUl, content1, content2) {
   newUl.appendChild(li1);
   newUl.appendChild(li2);
 }
+
+/**
+ * Dynamically generates an affinity table with grouped items within a specified container.
+ *
+ * @param {Array<Array<Object>>} data An array of columns, where each column is an array of affinity groups.
+ * @param {Array<string>} headers An array of strings for the column headers.
+ * @param {string} containerID The ID of the HTML element to render the table inside.
+ */
+function createAffinityTable(data, headers, containerID) {
+  const container = document.getElementById(containerID);
+  if (!container) {
+    console.error(`Container with ID "${containerID}" not found.`);
+    return;
+  }
+
+  // Clear any existing content in the container
+  container.innerHTML = "";
+
+  // Create the main table container
+  const tableContainer = document.createElement("div");
+  tableContainer.classList.add("affinity-table-container");
+
+  // Create and append the column headers
+  headers.forEach((headerText) => {
+    const headerDiv = document.createElement("div");
+    headerDiv.classList.add("column-header");
+    headerDiv.textContent = headerText;
+    tableContainer.appendChild(headerDiv);
+  });
+
+  // Iterate over each column of data
+  data.forEach((column, columnIndex) => {
+    const affinityCard = document.createElement("div");
+    affinityCard.classList.add("affinity-card");
+
+    // Iterate over each group within the column
+    column.forEach((group) => {
+      // Create the main affinity group container
+      const affinityGroup = document.createElement("div");
+      affinityGroup.classList.add("affinity-group");
+
+      // Create the single large image element for the group
+      const imgElement = document.createElement("img");
+      imgElement.src =
+        group.image ||
+        `https://placehold.co/80x280/2f3a4b/9333ea?text=${group.title}`;
+      imgElement.alt = `Placeholder image for ${group.title} affinities`;
+      imgElement.classList.add("affinity-group-image");
+      affinityGroup.appendChild(imgElement);
+
+      // Create the content container for the three items
+      const groupContent = document.createElement("div");
+      groupContent.classList.add("affinity-group-content");
+
+      // Iterate over each item within the group
+      group.items.forEach((item) => {
+        const affinityItem = document.createElement("div");
+        affinityItem.classList.add("affinity-item");
+
+        const h3Element = document.createElement("h3");
+        h3Element.textContent = item.title;
+        affinityItem.appendChild(h3Element);
+
+        const pElement = document.createElement("p");
+        pElement.textContent = item.description;
+        affinityItem.appendChild(pElement);
+
+        // Add a click event listener to each individual item
+        affinityItem.addEventListener("click", () => {
+          // Check if the item is already selected
+          if (affinityItem.classList.contains("selected")) {
+            // If it is, deselect it
+            affinityItem.classList.remove("selected");
+            console.log(`${item.title} has been deselected.`);
+          } else {
+            // If not, find all items within the same affinity group and deselect them
+            const parentGroup = affinityItem.closest(".affinity-group");
+            parentGroup.querySelectorAll(".affinity-item").forEach((el) => {
+              el.classList.remove("selected");
+            });
+
+            // Add the 'selected' class to the clicked item
+            affinityItem.classList.add("selected");
+            console.log(`${item.title} has been selected.`);
+          }
+        });
+
+        groupContent.appendChild(affinityItem);
+      });
+
+      // Append the content to the group and the group to the card
+      affinityGroup.appendChild(groupContent);
+      affinityCard.appendChild(affinityGroup);
+    });
+    tableContainer.appendChild(affinityCard);
+  });
+
+  // Append the entire table to the specified container
+  container.appendChild(tableContainer);
+}
+
+
