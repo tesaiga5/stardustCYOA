@@ -35,6 +35,8 @@ import {
   appendList1,
 } from "/Script/manaData.js";
 
+import {getImgName} from "/Script/switchChoose.js";
+
 const hulls = [
   // Fighters
  
@@ -2460,7 +2462,7 @@ const energy = [
     energyOutput: 1,
     description:
       "Solar energy is plentiful, so long as you're near a star. Works great as a hybrid energy system. +Does not count towards your energy system maximum count *Can only be bought once",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/liam-young-solar-night-closed-003.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2470,7 +2472,7 @@ const energy = [
     energyOutput: 5,
     description:
       "Large and bulky, fission reactors are best kept in larger and better defended vessels. Great power output and great efficiency. *Cannot be equipped on fighters *Requires a nuclear engineer",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/fission-indotort-midjourney.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2481,7 +2483,7 @@ const energy = [
     chargeDuration: "15 years",
     description:
       "Fusion has a much more potent energy output than fission, but is also less efficient. *Cannot be equipped on fighters *Requires a nuclear engineer",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/paul-dave-malla-plutonium-nuclear-reactor-delta-02-sketchup-01-mid.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2492,7 +2494,7 @@ const energy = [
     chargeDuration: "Lifetimes",
     description:
       'Mana energy was reverse engineered from the "Ghost" family of Herald technology. Mana energy produced can be stored as mana stones. +Herald ships get +1 energy output and get 10m off',
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/purecrystallizedmana-titaniumdragon-deviantart.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2502,7 +2504,7 @@ const energy = [
     energyOutput: 7,
     description:
       "A very volatile energy substance, anti-matter has brought endless potential technology and sciences. This core safely decommissions itself if it's forcefully broken into.",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/natural-warp-grid-exploration-18-05-2022-001.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2512,7 +2514,7 @@ const energy = [
     energyOutput: 8,
     description:
       "Taps into the energy that exists in a vacuum due to quantum fluctuations. Loses efficiency in debris field.",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/concentric rinds by MS Escher.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2522,7 +2524,7 @@ const energy = [
     energyOutput: 10,
     description:
       "Gathers energy from alternate dimensions or subspace realms that operate under different physical laws. Effectively limitless, as the energy is drawn from outside the conventional universe. <b>Must complete all Herald contracts. Can only be fitted on Herald ships.</b>",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/natural-warp-hexatech-baroque-wallpaper-02.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2533,7 +2535,7 @@ const energy = [
     chargeDuration: "8 days",
     description:
       "Capacitors are small enough to fit in fighters, though they must be recharged often. However, they can also be coupled with other energy systems instead boost their effectiveness.",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/king-fung-ng-battery-02a.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2544,18 +2546,18 @@ const energy = [
     chargeDuration: "8 weeks",
     description:
       "After inventing the Warp Drive, Dr.Yau invented a hyper lattice made of exotic matter, which could fit in the palm of your hand or inside the cartridge of a gun. Alas, his inventions were stolen by Luos and he died penniless.",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/exoticmatter-indotort-midjourney.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
-    name: "The Holy Grail",
+    name: "The Energy Grail",
     type: "battery",
     cost: 0,
     energyOutput: 7,
     chargeDuration: "As long as your conscience",
     description:
       "It escaped your notice that Comet destroyed enemy ships even when your ship had run out of ammo. You remembered the machines that she was hooked up to, the strange tablet that warned her future allies, and how applicances lose power whenever shes around. You are now tempted. <b>Must take Comet's Contract.</b>",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/cometsacrifice-indotort-civitai.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2566,7 +2568,7 @@ const energy = [
     chargeDuration: "8 months",
     description:
       "A descendant of Yau stole a classified prototype from Luos during the Siege of Haven. She further developed its design and patented it with Beatrice R&D. The technology is blackboxed and only available to those 'who are unattached'. <b>Only available to Gazers, Dustkeepers, and Beatrice R&D</b>",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/bubble-xxliang-civitai.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2577,7 +2579,7 @@ const energy = [
     chargeDuration: "Forever",
     description:
       "Store limitless energy in a pocket dimension. Even if the battery is destroyed, can access the pocket dimension if you remember the (4D,2T) coordinates. <b>Only available in Herald Dreadnoughts</b>",
-    image: "https://placehold.co/100x100/123456/ffffff?text=Energy",
+    image: "Images/Subsystem/natural-warp-stripping-the-onion-wallpaper.webp",
   },
 ];
 
@@ -4348,7 +4350,7 @@ function populateHullToSection(dataArray, choicePrefix) {
     const imgElement = document.createElement("img");
     imgElement.src =
       item.image || "https://placehold.co/100x100/eeeeee/ffffff?text=NoImage";
-    imgElement.alt = `${item.name} image`;
+    imgElement.title = getImgName(item.image);
     newSpan.appendChild(imgElement); // Image added after newSpan
 
     // Title (name) - common to all

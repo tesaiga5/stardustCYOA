@@ -11,6 +11,9 @@ export {
   appendList1,
   createAffinityTable,
 };
+
+import {getImgName} from "/Script/switchChoose.js";
+
 const catalyst = [
   {
     name: "Base Catalyst: Arm Blade",
@@ -714,7 +717,7 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
     const imgElement = document.createElement("img");
     imgElement.src =
       item.image || "https://placehold.co/100x100/eeeeee/ffffff?text=NoImage";
-    imgElement.alt = `${item.name} image`;
+    imgElement.title = getImgName(item.image);
     newSpan.appendChild(imgElement); // Image added after newSpan
 
     // Title (name) - common to all
@@ -918,7 +921,7 @@ function populateCatalystToSection(choiceArray, choicePrefix, sectionID) {
   choiceArray.forEach((item) => {
     const newDiv = document.createElement("div");
     newDiv.classList.add("choice", "ship");
-    newDiv.id = `${choicePrefix}-${item.name.replace(/\s/g, "-")}`;
+    newDiv.id = item.name;
 
     const newSpan = document.createElement("span");
     newDiv.appendChild(newSpan);
