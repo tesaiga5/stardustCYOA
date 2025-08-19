@@ -773,10 +773,9 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
         appendParagraph(newSpan, `Role: ${item.role || "N/A"}`);
         break;
       case "energy":
-        appendParagraph(
-          newSpan,
-          `Energy Output: ${item.energyOutput || "N/A"}`
-        );
+        if (item.type==='generation') {appendParagraph(newSpan, `Energy Output: ${item.energyOutput || "N/A"}`);}
+        else {appendParagraph(newSpan, `Battery Capacity: ${item.energyOutput || "N/A"}`);}
+        
         appendParagraph(
           newSpan,
           `Charge Duration: ${item.chargeDuration || "N/A"}`
