@@ -2986,7 +2986,7 @@ const eWar = [
     range: "000000886",
     description:
       "This module can be used to infect a hostile ship's weapons, lowering all of their weapon's tracking, rate of fire, and range effectiveness by 1.",
-    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
+    image: "Images/Ewar/chessmatrix-Tobias Schmid-artstation.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -2996,7 +2996,7 @@ const eWar = [
     range: "0", // Range was blank in source for this item
     description:
       "Set up a fake scapegoat server on your vessel that looks appealing to hostile hackers, and use it to monitor their every move while they try to attack your systems in futile.",
-    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
+    image: "Images/Ewar/honeypot-indotort-midjourney.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -3006,7 +3006,7 @@ const eWar = [
     range: "1 light hour", // Range was blank in source for this item
     description:
       "You can point this module at a hostile ship to effectively disable their warp drive, giving them no chance to escape.",
-    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
+    image: "Images/Ewar/ben-bolton-sat3-001.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -3016,7 +3016,7 @@ const eWar = [
     range: "1 light hour", // Range was blank in source for this item
     description:
       "Pointing this at a hostile ship will scramble their comms, cutting off their outside and inside communi- cations if done well.",
-    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
+    image: "Images/Ewar/richard-wright-satellite-dish.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -3026,7 +3026,7 @@ const eWar = [
     range: "1 light hour", // Range was blank in source for this item
     description:
       "This specialized terminal and tools allow your cybersec officer to easily conduct a man-in-the-middle attack to intercept any sort of data from a ship, giving you information about all of a ship's systems.",
-    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
+    image: "Images/Ewar/ITguy-indotort-midjourney.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -3046,7 +3046,7 @@ const eWar = [
     range: "1 light hour", // Range was blank in source for this item
     description:
       "If successful, this module will disable the teleport jammer of a ship while this process continues to run.",
-    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
+    image: "Images/Ewar/leif-heanzo-cockpit-pilot-v3-insta2.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -3056,7 +3056,7 @@ const eWar = [
     range: "0", // Range was blank in source for this item
     description:
       "This module implements a wide array of cyber defense tools to help your cybersec officer, such as network security monitoring frameworks. Attacks are easier to determine and isolate..",
-    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
+    image: "Images/Ewar/ITguy-indotort-midjourney.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
@@ -3065,7 +3065,7 @@ const eWar = [
     moduleType: "E-War",
     range: "0", // Range was blank in source for this item
     description:
-      "Installing this in your digital securi- ty room vastly improves the efficiency of digital systems on your ship, reducing your ship's radar cross-section by a significant amount.",
+      "Installing this in your digital security room vastly improves the efficiency of digital systems on your ship, reducing your ship's radar cross-section by a significant amount.",
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
   },
   {
@@ -3076,7 +3076,7 @@ const eWar = [
     range: "0", // Range was blank in source for this item
     description:
       "Using complex polymorphic code engines and rootkits, this module helps ensure your digital offensive has staying power. It is more difficult for enemies to find and eliminate your attacks.",
-    image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
+    image: "Images/Ewar/kayla-miller-deskscene.webp",
   },
   {
     image: "Images/Ships/bob009.webp",
