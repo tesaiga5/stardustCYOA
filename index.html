@@ -2519,24 +2519,23 @@ sectionFleet1.addEventListener('click', (event) => {
     }
   }
 });
-//delete ship function and edit ship function 
-if(sectionFleet1) {
-  sectionFleet1.addEventListener('click', (event) => {
-    const deleteButton = event.target.closest('[id="delete-ship-button"]');
-    const editButton = event.target.closest('[id="edit-ship-button"]');
-    // Get the main ship container div, which is an ancestor of both buttons
-    const clickedObjectDiv = event.target.closest('.object-div'); 
 
-    if (deleteButton) {
-      // ... (your existing delete ship logic) ...
-    } else if (editButton) {
-      if (clickedObjectDiv) {
-        // Pass the ID of the main ship object-div to editShipName
-        editShipName(clickedObjectDiv.id); 
-        }
+//delete ship function and edit ship function 
+sectionFleet1.addEventListener('click', (event) => {
+  const deleteButton = event.target.closest('[id="delete-ship-button"]');
+  const editButton = event.target.closest('[id="edit-ship-button"]');
+  // Get the main ship container div, which is an ancestor of both buttons
+  const clickedObjectDiv = event.target.closest('.object-div'); 
+
+  if (deleteButton) {
+    // ... (your existing delete ship logic) ...
+  } else if (editButton) {
+    if (clickedObjectDiv) {
+      // Pass the ID of the main ship object-div to editShipName
+      editShipName(clickedObjectDiv.id); 
       }
-    });
-}
+    }
+});
 
     //choosing the hull and assigning it to the ship object
     //check for clicks on section-hull, if(dataType) write dataType to selected ship object

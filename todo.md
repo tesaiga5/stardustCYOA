@@ -5,7 +5,11 @@ FRAME:
 5. Handlechoice: ewar
 6. Pictures: e-war,
 
-SHIP: 3. Handlechoice subsystems, ship weapons (hard), industrial (easy), mods (easy), rooms (easy) 7. Pictures: hulls, shipAI, shield, shipweapons, industrial, ewarShip, rooms, 8. shipWeapons spinal/broadside mechanic
+SHIP: 3. Handlechoice ship weapons (hard),
+
+7. Pictures: hulls, shipAI, shield, shipweapons, industrial, ewarShip, rooms, 
+
+8. shipWeapons spinal/broadside mechanic
 
 Origins:
 
