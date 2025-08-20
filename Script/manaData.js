@@ -844,7 +844,7 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
         appendParagraph(newSpan, `Module Type: ${item.moduleType || "N/A"}`);
         break;
       case "ewar":
-        newDiv.classList.add('ewar-ship');
+        newDiv.classList.add('ewar');
         appendParagraph(newSpan, `Module Type: ${item.moduleType || "N/A"}`);
         appendParagraph(newSpan, `Range: ${item.range || "N/A"}`);
         break;

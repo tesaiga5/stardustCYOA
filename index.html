@@ -2604,6 +2604,7 @@ sectionHull1.addEventListener('click', (event) => {
   }
 });
 
+//handlechoice for subsystems
 sectionSubsystem1.addEventListener('click', (event) => {
   
   const clickedShipAI = event.target.closest('.shipAI');
@@ -2700,75 +2701,92 @@ sectionSubsystem1.addEventListener('click', (event) => {
   }
 });
 
-/*
-sectionWeapon1.addEventListener('click', (event) => {
-  const clickedElement = event.target.closest('.choice');
+sectionMod1.addEventListener('click', (event) => {
+  const clickedElement = event.target.closest('.mod');
   if (clickedElement) {
-    const shipData = player.ships[player.currentActiveShip]; // Reference to the active ship's shipObject
+    const shipData = player.ships[player.currentActiveShip];
+    const chosenMod = mods.find(mod => mod.name === clickedElement.id);
 
-    // Get the weapon data corresponding to the clicked element
-    const chosenWeapon = weapons.find(weapon => weapon.name === clickedElement.id.replace('choice-', ''));
-
-    if (!chosenWeapon) {
-      console.error("Weapon data not found for:", clickedElement.id);
-      return; // Exit if weapon data isn't found
-    }
-
-    // Check if the clicked weapon is already active (i.e., being deselected)
     if (clickedElement.classList.contains('active')) {
-      // 4. chosen weapon deactivates
       clickedElement.classList.remove('active');
-      // 5. chosen weapon unwrite from currently active ship
-      
-      // Refund credits for the weapon being deselected
-    }
-
-      // 5. chosen weapon unwrite from currently active ship
-      // Refund credits for the weapon being deselected
-      if (shipData.weapon && shipData.weapon.name === chosenWeapon.name) {
-        player.credits += chosenHull.cost;
-        shipData.hull = null; // Remove the hull from the ship
-        console.log(`Refunded ${chosenHull.cost} credits. New balance: ${player.credits}`);
+      if (shipData.mod && shipData.mod.name === chosenMod.name) {
+          player.credits += chosenMod.cost;
+          shipData.mod = null;
       }
     } else {
-      // Handle activation: Make this the only active hull choice in the section
-
-      // Find the parent container that groups these choices
-      const parentContainer = clickedElement.closest('.section');
-      if (parentContainer) {
-        const allChoicesInGroup = parentContainer.querySelectorAll('.choice');
-
-        allChoicesInGroup.forEach(choice => {
-          if (choice.classList.contains('active') && choice !== clickedElement) {
-            choice.classList.remove('active');
-            // If there was a previously active hull, refund its cost
-            const prevHullName = choice.id.replace('choice-', '');
-            const prevHull = hulls.find(hull => hull.name === prevHullName);
-            if (prevHull && shipData.hull && shipData.hull.name === prevHull.name) {
-              player.credits += prevHull.cost;
-              console.log(`Refunded ${prevHull.cost} credits from previous hull. New balance: ${player.credits}`);
-            }
-          }
-        });
-      }
-
-      // 1. chosen hull becomes active
       clickedElement.classList.add('active');
-
-      // Deduct cost and assign new hull
-      // Ensure player has enough credits OR handle insufficient funds
-      
-      // 2. chosen hull writes on currently active ship
-      shipData.hull = chosenHull;
-      player.credits -= chosenHull.cost;
-      console.log(`Deducted ${chosenHull.cost} credits for new hull. New balance: ${player.credits}`);
-
+      shipData.mod = chosenMod;
+      player.credits -= chosenMod.cost;
     }
-      // You might want to update the UI to display the current credits and ship hull here
-      document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+    document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
   }
 });
-*/  
+
+sectionIndustrial1.addEventListener('click', (event) => {
+const clickedElement = event.target.closest('.industrial');
+if (clickedElement) {
+  const shipData = player.ships[player.currentActiveShip];
+  const chosenIndustrial = industrial.find(industrial => industrial.name === clickedElement.id);
+
+  if (clickedElement.classList.contains('active')) {
+    clickedElement.classList.remove('active');
+    if (shipData.industrial && shipData.industrial.name === chosenIndustrial.name) {
+        player.credits += chosenIndustrial.cost;
+        shipData.industrial = null;
+    }
+  } else {
+    clickedElement.classList.add('active');
+    shipData.industrial = chosenIndustrial;
+    player.credits -= chosenIndustrial.cost;
+  }
+  document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+}
+});
+
+sectionEwar1.addEventListener('click', (event) => {
+const clickedElement = event.target.closest('.ewar');
+if (clickedElement) {
+  const shipData = player.ships[player.currentActiveShip];
+  const chosenEwar = eWar.find(eWar => eWar.name === clickedElement.id);
+
+  if (clickedElement.classList.contains('active')) {
+      clickedElement.classList.remove('active');
+      if (shipData.eWar && shipData.eWar.name === chosenEwar.name) {
+          player.credits += chosenEwar.cost;
+          shipData.eWar = null;
+      }
+  } else {
+      clickedElement.classList.add('active');
+      shipData.eWar = chosenEwar;
+      player.credits -= chosenEwar.cost;
+  }
+  document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+}
+});
+
+sectionRoom1.addEventListener('click', (event) => {
+const clickedElement = event.target.closest('.room');
+if (clickedElement) {
+    const shipData = player.ships[player.currentActiveShip];
+    const chosenRoom = rooms.find(room => room.name === clickedElement.id);
+
+    if (clickedElement.classList.contains('active')) {
+      clickedElement.classList.remove('active');
+      if (shipData.room && shipData.room.name === chosenRoom.name) {
+          player.credits += chosenRoom.cost;
+          shipData.room = null;
+      }
+    } else {
+        clickedElement.classList.add('active');
+        shipData.room = chosenRoom;
+        player.credits -= chosenRoom.cost;
+    }
+    document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+}
+});
+
+
+
 </script>
   
 
