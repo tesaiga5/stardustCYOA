@@ -2604,6 +2604,102 @@ sectionHull1.addEventListener('click', (event) => {
   }
 });
 
+sectionSubsystem1.addEventListener('click', (event) => {
+  
+  const clickedShipAI = event.target.closest('.shipAI');
+  console.log(clickedShipAI);
+  const clickedEnergy = event.target.closest('.energy');
+  const clickedShield = event.target.closest('.shield');
+
+  const shipData = player.ships[player.currentActiveShip];
+
+  if(clickedShipAI) {
+    const chosenShipAI = shipAI.find(subsystem => subsystem.name === clickedShipAI.id);
+    if (clickedShipAI.classList.contains('active')) {
+    // Deactivate chosen subsystem
+      clickedShipAI.classList.remove('active');
+      if (shipData.shipAI && shipData.shipAI.name === chosenShipAI.name) {
+        player.credits += chosenShipAI.cost;
+        shipData.shipAI = null; // Remove the subsystem from the ship
+      }
+    } else {
+      // Handle activation: Make this the only active subsystem choice in the section
+
+      // Find the parent container that groups these choices
+      const parentContainer = clickedShipAI.closest('.section');
+      if (parentContainer) {
+        const allChoicesInGroup = parentContainer.querySelectorAll('.shipAI');
+        allChoicesInGroup.forEach(choice => {
+          if (choice.classList.contains('active') && choice !== clickedShipAI) {
+              choice.classList.remove('active');
+              // If there was a previously active subsystem, refund its cost
+              const prevshipAIName = choice.id;
+              const prevshipAI = shipAI.find(subsystem => subsystem.name === prevshipAIName);
+              if (prevshipAI && shipData.shipAI && shipData.shipAI.name === prevshipAI.name) {
+                  player.credits += prevshipAI.cost;
+              }
+          }
+        });
+        clickedShipAI.classList.add('active');
+
+        // Deduct cost and assign new subsystem
+        shipData.shipAI = chosenShipAI;
+        player.credits -= chosenShipAI.cost;
+      }
+    }
+
+  // Update the UI to display the current credits
+    document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+
+  } else if(clickedEnergy) {
+    const chosenEnergy = energy.find(subsystem => subsystem.name === clickedEnergy.id);
+    if (clickedEnergy.classList.contains('active')) {
+        // Deactivate chosen energy
+        clickedEnergy.classList.remove('active');
+        if (shipData.energy && shipData.energy.name === chosenEnergy.name) {
+            player.credits += chosenEnergy.cost;
+            shipData.energy = null;
+        }
+    } else {
+      clickedEnergy.classList.add('active');
+      shipData.energy = chosenEnergy;
+      player.credits -= chosenEnergy.cost;
+    }
+    document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+    
+  } else if (clickedShield) {
+    const chosenShield = shield.find(subsystem => subsystem.name === clickedShield.id);
+    if (clickedShield.classList.contains('active')) {
+        // Deactivate chosen shield
+        clickedShield.classList.remove('active');
+        if (shipData.shield && shipData.shield.name === chosenShield.name) {
+            player.credits += chosenShield.cost;
+            shipData.shield = null;
+        }
+    } else {
+        // Handle activation: Make this the only active shield choice
+        const parentContainer = clickedShield.closest('.section');
+        if (parentContainer) {
+            const allChoicesInGroup = parentContainer.querySelectorAll('.shield');
+            allChoicesInGroup.forEach(choice => {
+                if (choice.classList.contains('active') && choice !== clickedShield) {
+                    choice.classList.remove('active');
+                    const prevShieldName = choice.id;
+                    const prevShield = shield.find(subsystem => subsystem.name === prevShieldName);
+                    if (prevShield && shipData.shield && shipData.shield.name === prevShield.name) {
+                        player.credits += prevShield.cost;
+                    }
+                }
+            });
+            clickedShield.classList.add('active');
+            shipData.shield = chosenShield;
+            player.credits -= chosenShield.cost;
+        }
+    }
+    document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+  }
+});
+
 /*
 sectionWeapon1.addEventListener('click', (event) => {
   const clickedElement = event.target.closest('.choice');

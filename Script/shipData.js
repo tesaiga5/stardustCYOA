@@ -2344,6 +2344,7 @@ const hulls = [
 
 const shipAI = [
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Winston v9.0.3",
     manufacturer: "Beatrice R&D",
@@ -2353,6 +2354,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Beatrice v6.8.2",
     manufacturer: "Beatrice R&D",
@@ -2362,6 +2364,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Targray v3.3",
     manufacturer: "Hammerhead Ind.",
@@ -2371,6 +2374,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Cassandra v16.0.2",
     manufacturer: "Beatrice R&D",
@@ -2380,6 +2384,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Luke v9.5.1",
     manufacturer: "Pulsar Inc.",
@@ -2389,6 +2394,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Rom v22.4",
     manufacturer: "Red Dagger Pirates",
@@ -2398,6 +2404,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Jacob v13.0.4",
     manufacturer: "Federation Navy",
@@ -2407,6 +2414,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Remington v3.0.1",
     manufacturer: "Triglav Innovations",
@@ -2416,6 +2424,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Lai'na v15.3.2",
     manufacturer: "Luos Syndicate",
@@ -2425,6 +2434,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Cedrick v9.2.10",
     manufacturer: "Blackhawk Elite",
@@ -2434,6 +2444,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Blueberry v7.3.2",
     manufacturer: "Talons",
@@ -2443,6 +2454,7 @@ const shipAI = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
+    cost: 1000000,
     image: "Images/Ships/bob009.webp",
     name: "Sophocles v1.0.3",
     manufacturer: "Triglav Innovations",
@@ -4039,6 +4051,9 @@ function createShip() {
     energyUse: 1,
     aiChoice: "winston",
     commandMods: "cool paint job",
+    shipAI: {},
+    energy: [],
+    shield: {},
     choiceList: [
       { subsystemChoice: [] },
       { roomChoice: [] },

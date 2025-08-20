@@ -701,7 +701,7 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
   dataArray.forEach((item) => {
     const newDiv = document.createElement("div");
     newDiv.classList.add("choice", "ship");
-    newDiv.id = `${choicePrefix}-${item.name.replace(/\s/g, "-")}`;
+    newDiv.id = item.name;
 
     const newSpan = document.createElement("span");
     newDiv.appendChild(newSpan);
@@ -745,6 +745,7 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
     // Dynamic properties based on dataType
     switch (dataType) {
       case "hull":
+        newDiv.classList.add('hull');
         appendParagraph(newSpan, `Manufacturer: ${item.manufacturer || "N/A"}`);
         appendParagraph(newSpan, `Type: ${item.type || "N/A"}`);
         appendParagraph(newSpan, `Spinal Mounts: ${item.spinalMount || 0}`);
@@ -769,10 +770,12 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
         appendParagraph(newSpan, `Energy Use: ${item.energyUse || 0}`);
         break;
       case "shipAI":
+        newDiv.classList.add('shipAI');
         appendParagraph(newSpan, `Manufacturer: ${item.manufacturer || "N/A"}`);
         appendParagraph(newSpan, `Role: ${item.role || "N/A"}`);
         break;
       case "energy":
+         newDiv.classList.add('energy');
         if (item.type==='generation') {appendParagraph(newSpan, `Energy Output: ${item.energyOutput || "N/A"}`);}
         else {appendParagraph(newSpan, `Battery Capacity: ${item.energyOutput || "N/A"}`);}
         
@@ -782,12 +785,14 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
         );
         break;
       case "shield":
+        newDiv.classList.add('shield');
         appendParagraph(
           newSpan,
           `Shield Strength: ${item.shieldStrength || "N/A"}`
         );
         break;
       case "mod":
+        newDiv.classList.add('mod');
         if (item.type === "command") {
           appendParagraph(
             newSpan,
@@ -835,18 +840,22 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
         }
         break;
       case "industrial":
+        newDiv.classList.add('industrial');
         appendParagraph(newSpan, `Module Type: ${item.moduleType || "N/A"}`);
         break;
       case "ewar":
+        newDiv.classList.add('ewar-ship');
         appendParagraph(newSpan, `Module Type: ${item.moduleType || "N/A"}`);
         appendParagraph(newSpan, `Range: ${item.range || "N/A"}`);
         break;
       case "room":
+        newDiv.classList.add('room');
         appendParagraph(newSpan, `Type: ${item.type || "N/A"}`);
         if (item.consequences)
           appendParagraph(newSpan, `Consequences: ${item.consequences}`);
         break;
       case "weapon":
+        newDiv.classList.add('shipWeapon');
         if (item.tier === 2 || item.tier === 3) {
           appendDropdown(newSpan, item.tier); // Add the dropdown for weapon mounts
           appendDropdown(newSpan, item.tier);
@@ -871,6 +880,7 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
         appendParagraph(newSpan, `Weapon Types: ${item.weaponTypes || "N/A"}`);
         break;
       case "drone":
+        newDiv.classList.add('drone');
         appendParagraph(
           newSpan,
           `Hangar Space Use: ${item.hangarSpaceUse || "N/A"}`

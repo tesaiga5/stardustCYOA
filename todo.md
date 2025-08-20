@@ -24,3 +24,4 @@ Origins:
 
 Error: 
 1. Delete ship button broken
+2. Change ship button broken
