@@ -35,11 +35,11 @@ import {
   appendList1,
 } from "/Script/manaData.js";
 
-import {getImgName} from "/Script/switchChoose.js";
+import { getImgName } from "/Script/switchChoose.js";
 
 const hulls = [
   // Fighters
- 
+
   {
     image: "Images/Ships/bob006.webp",
     name: "Scorpion",
@@ -62,7 +62,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 2,
-    description: "The “Scorpion” is a multi-environment fighter whose field-linked modules and gravity drive place it in the newly discovered “Ghul” family of Herald technologies. Its unconventional propulsion allows it to maneuver effortlessly in an atmosphere."
+    description:
+      "The “Scorpion” is a multi-environment fighter whose field-linked modules and gravity drive place it in the newly discovered “Ghul” family of Herald technologies. Its unconventional propulsion allows it to maneuver effortlessly in an atmosphere.",
   },
   {
     image: "Images/Ships/bob007.webp",
@@ -86,7 +87,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 1,
-    description: "Recognizing the increasing usefulness of drone warfare, the Talon developed the Cygnus command and control fighter as a test bed for their new squadron synchronization system."
+    description:
+      "Recognizing the increasing usefulness of drone warfare, the Talon developed the Cygnus command and control fighter as a test bed for their new squadron synchronization system.",
   },
   {
     image: "Images/Ships/bob008.webp",
@@ -110,7 +112,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 1,
-    description: "The X66 is a fully autonomous drone fighter adept at assault, ambush, and extended reconnaissance. While capable of carrying a pilot, it doesn't likely need one."
+    description:
+      "The X66 is a fully autonomous drone fighter adept at assault, ambush, and extended reconnaissance. While capable of carrying a pilot, it doesn't likely need one.",
   },
   {
     image: "Images/Ships/ship-coercer EveOnline.jpg",
@@ -134,7 +137,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "Unlike most Herald tech, \"Scabs\" are often found in abundance. Whoever they were, the Heralds most definitely loved to swarm their enemies with these."
+    description:
+      'Unlike most Herald tech, "Scabs" are often found in abundance. Whoever they were, the Heralds most definitely loved to swarm their enemies with these.',
   },
   {
     image: "Images/Ships/long-ouyang-fighter-4000.webp",
@@ -158,7 +162,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "A favourite for elite Talon pilots who often venture out alone, mainly because the Yōkai excels at almost every role, especially when it comes to outgunning opponents."
+    description:
+      "A favourite for elite Talon pilots who often venture out alone, mainly because the Yōkai excels at almost every role, especially when it comes to outgunning opponents.",
   },
   {
     image: "Images/Ships/knight-indotort-midjourney.webp",
@@ -182,7 +187,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "What It lacks in agility, the Knight makes up for in its powerful thrust- ers. As a solid assault fighter, the Knight boasts sturdy defence with a generous drone bay."
+    description:
+      "What It lacks in agility, the Knight makes up for in its powerful thrust- ers. As a solid assault fighter, the Knight boasts sturdy defence with a generous drone bay.",
   },
   {
     image: "Images/Ships/x61stark-indotort-midjourney.webp",
@@ -206,7 +212,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "Only recently did the scientists at Triglav reverse-engineer the strange green coating of Herald craft. The X61 Stark reflects this with powerful native shields."
+    description:
+      "Only recently did the scientists at Triglav reverse-engineer the strange green coating of Herald craft. The X61 Stark reflects this with powerful native shields.",
   },
   {
     image: "Images/Ships/pike-indotort-midjourney.webp",
@@ -230,7 +237,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "When the Daggers get serious, they deploy their fearsome assault fighters, the Pikes. These ships often turn the tide in small confrontations and skirmishes."
+    description:
+      "When the Daggers get serious, they deploy their fearsome assault fighters, the Pikes. These ships often turn the tide in small confrontations and skirmishes.",
   },
   {
     image: "Images/Ships/piv18-indotort-midjourney.webp",
@@ -254,7 +262,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 1,
-    description: "Although Pulsar’s next generation fighter is only an incremental improvement on its previous efforts, the integrated V6 system is a classy touch that leaves room for a second command module."
+    description:
+      "Although Pulsar’s next generation fighter is only an incremental improvement on its previous efforts, the integrated V6 system is a classy touch that leaves room for a second command module.",
   },
   {
     image: "Images/Ships/piv17-indotort-midjourney.webp",
@@ -278,7 +287,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "Most pilots strive to fly one of these, if only for the sheer comfort of being in its cockpit. For any solo pilot wishing to travel the unknown, this is the ship to be in."
+    description:
+      "Most pilots strive to fly one of these, if only for the sheer comfort of being in its cockpit. For any solo pilot wishing to travel the unknown, this is the ship to be in.",
   },
   {
     image: "Images/Ships/tomahawk-indotort-midjourney.webp",
@@ -302,7 +312,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "The Red Daggers produce these en masse, likely using stolen tech. While rookies usually fly them, these lightning-fast Tomahawks pose a serious threat to convoys."
+    description:
+      "The Red Daggers produce these en masse, likely using stolen tech. While rookies usually fly them, these lightning-fast Tomahawks pose a serious threat to convoys.",
   },
   {
     image: "Images/Ships/moth-indotort-midjourney.webp",
@@ -326,7 +337,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "Usually escorted by Wasps, the Moths carry the firepower to the battlefield. A common tactic is to load Moths up with bomber drones to overwhelm enemy heavy ships."
+    description:
+      "Usually escorted by Wasps, the Moths carry the firepower to the battlefield. A common tactic is to load Moths up with bomber drones to overwhelm enemy heavy ships.",
   },
   {
     image: "Images/Ships/Algos by EveOnline.jpg",
@@ -350,9 +362,10 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "The main interceptor spacecraft for the Federation Navy, Wasps have become an icon. Most pilots learn how to fly one early on, and many tend to stick with this ship."
+    description:
+      "The main interceptor spacecraft for the Federation Navy, Wasps have become an icon. Most pilots learn how to fly one early on, and many tend to stick with this ship.",
   },
- {
+  {
     image: "Images/Ships/Beyond_Beatrice_R&D_midjourney.webp",
     name: "Beyond",
     manufacturer: "Beatrice R&D",
@@ -374,7 +387,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "The Beyond is often employed as a support craft for Beatrice R&D exploration teams, but it often sees its use in intercepting threats."
+    description:
+      "The Beyond is often employed as a support craft for Beatrice R&D exploration teams, but it often sees its use in intercepting threats.",
   },
   {
     image: "Images/Ships/S97-TRN-indotort-midjourney.webp",
@@ -398,7 +412,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "Perhaps the most common single pilot ship in the galaxy, it's safe to assume that every space-faring group owns at least four. They're affordable and effective."
+    description:
+      "Perhaps the most common single pilot ship in the galaxy, it's safe to assume that every space-faring group owns at least four. They're affordable and effective.",
   },
   {
     image: "Images/Ships/S92TMC-indotort-midjourney.webp",
@@ -422,7 +437,8 @@ const hulls = [
     extraRooms: 0,
     rooms: [],
     energyUse: 0,
-    description: "Perhaps the most basic fighter ship hull you can get that can fit a multi-purpose role, even for out-of combat activities."
+    description:
+      "Perhaps the most basic fighter ship hull you can get that can fit a multi-purpose role, even for out-of combat activities.",
   },
   // Frigates
   {
@@ -2355,7 +2371,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Beatrice v6.8.2",
     manufacturer: "Beatrice R&D",
     role: "Exploration",
@@ -2365,7 +2381,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Targray v3.3",
     manufacturer: "Hammerhead Ind.",
     role: "Industry",
@@ -2375,7 +2391,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Cassandra v16.0.2",
     manufacturer: "Beatrice R&D",
     role: "Entertainment",
@@ -2385,7 +2401,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Luke v9.5.1",
     manufacturer: "Pulsar Inc.",
     role: "Deep Space Exploration",
@@ -2395,7 +2411,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Rom v22.4",
     manufacturer: "Red Dagger Pirates",
     role: "Skirmish & Interception",
@@ -2405,7 +2421,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Jacob v13.0.4",
     manufacturer: "Federation Navy",
     role: "Fire Support",
@@ -2415,7 +2431,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Remington v3.0.1",
     manufacturer: "Triglav Innovations",
     role: "Covert Ops",
@@ -2425,7 +2441,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Lai'na v15.3.2",
     manufacturer: "Luos Syndicate",
     role: "Assault",
@@ -2435,7 +2451,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Cedrick v9.2.10",
     manufacturer: "Blackhawk Elite",
     role: "Siege & Defence",
@@ -2445,7 +2461,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Blueberry v7.3.2",
     manufacturer: "Talons",
     role: "Guerilla",
@@ -2455,7 +2471,7 @@ const shipAI = [
   },
   {
     cost: 1000000,
-    image: "Images/Ships/bob009.webp",
+    
     name: "Sophocles v1.0.3",
     manufacturer: "Triglav Innovations",
     role: "Mana Interfacing",
@@ -2467,7 +2483,7 @@ const shipAI = [
 
 const energy = [
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Solar Panels",
     type: "generation",
     cost: 2000000,
@@ -2477,7 +2493,7 @@ const energy = [
     image: "Images/Subsystem/liam-young-solar-night-closed-003.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Nuclear Fission",
     type: "generation",
     cost: 16000000,
@@ -2487,7 +2503,7 @@ const energy = [
     image: "Images/Subsystem/fission-indotort-midjourney.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Nuclear Fusion",
     type: "generation",
     cost: 26000000,
@@ -2495,10 +2511,11 @@ const energy = [
     chargeDuration: "15 years",
     description:
       "Fusion has a much more potent energy output than fission, but is also less efficient. *Cannot be equipped on fighters *Requires a nuclear engineer",
-    image: "Images/Subsystem/paul-dave-malla-plutonium-nuclear-reactor-delta-02-sketchup-01-mid.webp",
+    image:
+      "Images/Subsystem/paul-dave-malla-plutonium-nuclear-reactor-delta-02-sketchup-01-mid.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Mana Core",
     type: "generation",
     cost: 70000000,
@@ -2506,10 +2523,10 @@ const energy = [
     chargeDuration: "Lifetimes",
     description:
       'Mana energy was reverse engineered from the "Ghost" family of Herald technology. Mana energy produced can be stored as mana stones. +Herald ships get +1 energy output and get 10m off',
-    image: "Images/Subsystem/purecrystallizedmana-titaniumdragon-deviantart.webp",
+    image:
+      "Images/Subsystem/purecrystallizedmana-titaniumdragon-deviantart.webp",
   },
   {
-
     name: "Anti-Matter Core",
     type: "generation",
     cost: 50000000,
@@ -2519,7 +2536,6 @@ const energy = [
     image: "Images/Subsystem/gridexploration-natural-warp-artstation.webp",
   },
   {
-
     name: "Zero-Point Module",
     type: "generation",
     cost: 100000000,
@@ -2529,7 +2545,6 @@ const energy = [
     image: "Images/Subsystem/concentric rinds by MS Escher.webp",
   },
   {
-
     name: "Subspace Energy Extraction",
     type: "generation",
     cost: 300000000,
@@ -2539,7 +2554,6 @@ const energy = [
     image: "Images/Subsystem/hexatechbaroque-naturalwarp-artstation.webp",
   },
   {
-
     name: "Power Capacitors",
     type: "battery",
     cost: 12000000,
@@ -2550,7 +2564,6 @@ const energy = [
     image: "Images/Subsystem/02abattery-king-fung-ng-artstation.webp",
   },
   {
-
     name: "Exotic Matter Battery",
     type: "battery",
     cost: 24000000,
@@ -2561,7 +2574,6 @@ const energy = [
     image: "Images/Subsystem/exoticmatter-indotort-midjourney.webp",
   },
   {
-
     name: "The Energy Grail",
     type: "battery",
     cost: 0,
@@ -2572,7 +2584,6 @@ const energy = [
     image: "Images/Subsystem/cometsacrifice-indotort-civitai.webp",
   },
   {
-
     name: "Beatrice's Bosom",
     type: "battery",
     cost: 100000000,
@@ -2583,7 +2594,6 @@ const energy = [
     image: "Images/Subsystem/bubble-xxliang-civitai.webp",
   },
   {
-
     name: "Subspace Battery",
     type: "battery",
     cost: 120000000,
@@ -2597,7 +2607,7 @@ const energy = [
 
 const shield = [
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Basic Shielding",
     cost: 1000000,
     shieldStrength: "+7",
@@ -2605,7 +2615,7 @@ const shield = [
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Standard Shielding",
     cost: 5000000,
     shieldStrength: "+10",
@@ -2613,7 +2623,7 @@ const shield = [
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Advanced Shielding",
     cost: 20000000,
     shieldStrength: "+12",
@@ -2621,7 +2631,7 @@ const shield = [
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Aegis Shielding",
     cost: 30000000,
     shieldStrength: "+14",
@@ -2629,7 +2639,7 @@ const shield = [
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Stalwart Shielding",
     cost: 40000000,
     shieldStrength: "+16",
@@ -2637,7 +2647,7 @@ const shield = [
     image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Mana Shielding",
     cost: 40000000,
     shieldStrength: "+15",
@@ -2650,7 +2660,7 @@ const shield = [
 const mods = [
   // This array contains both Command Mods and Hull Mods
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Cool Paint Job",
     manufacturer: "Civillian",
     cost: 0, // Free!
@@ -2663,7 +2673,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "V77-SLT Control Room",
     manufacturer: "Hammerhead Ind.",
     cost: 1000000,
@@ -2676,7 +2686,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: '"Columbus" BTR37',
     manufacturer: "Beatrice R&D",
     cost: 2000000,
@@ -2689,7 +2699,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "FDN Control zrt3",
     manufacturer: "Federation Navy",
     cost: 3000000,
@@ -2702,7 +2712,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: '"Zip" MK III',
     manufacturer: "Red Dagger Pirates",
     cost: 3000000,
@@ -2715,7 +2725,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "PI Control V6",
     manufacturer: "Pulsar Inc.",
     cost: 3000000,
@@ -2728,7 +2738,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: 'X38 "Tribe" TDNK',
     manufacturer: "Triglav Innovations",
     cost: 3000000,
@@ -2741,7 +2751,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: 'CBL2 "Banshee"',
     manufacturer: "Luos Syndicate",
     cost: 4000000,
@@ -2754,7 +2764,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "SH ExmT",
     manufacturer: "Luos Syndicate",
     cost: 4000000,
@@ -2767,7 +2777,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "BH Command VR",
     manufacturer: "Blackhawk Elite",
     cost: 5000000,
@@ -2780,7 +2790,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: 'MI520 "Visage"',
     manufacturer: "Talons",
     cost: 5000000,
@@ -2793,7 +2803,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: 'Herald "Blink"',
     manufacturer: "Heralds",
     cost: 7000000,
@@ -2806,7 +2816,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Point-Defence Upgrade",
     cost: 1000000,
     maximumUpgrades: 3,
@@ -2816,7 +2826,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Broadside Upgrade",
     cost: 2000000,
     maximumUpgrades: 3,
@@ -2826,7 +2836,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Spinal Weapon Mount",
     cost: 3000000,
     maximumUpgrades: 2,
@@ -2836,7 +2846,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Overdrive Afterburner",
     cost: 3000000,
     maximumUpgrades: 5,
@@ -2846,7 +2856,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Nano Armour Coating",
     cost: 4000000,
     maximumUpgrades: 1,
@@ -2856,7 +2866,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Vehicle Bay",
     cost: 3000000,
     maximumUpgrades: 4,
@@ -2867,7 +2877,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Active Cloaking",
     cost: 6000000,
     maximumUpgrades: 1,
@@ -2877,7 +2887,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Teleport Jammer",
     cost: 2000000,
     maximumUpgrades: 1,
@@ -2887,7 +2897,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Shield Extender",
     cost: 4000000,
     maximumUpgrades: 1,
@@ -2898,7 +2908,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Hull Extension",
     cost: 1000000,
     maximumUpgrades: 2,
@@ -2909,7 +2919,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Hangar Bay",
     cost: 5000000,
     maximumUpgrades: 4,
@@ -2920,7 +2930,7 @@ const mods = [
     image: "/Images/Other/Beatrice R&D.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Hull Reduction",
     cost: 0, // Free!
     maximumUpgrades: 2,
@@ -2934,7 +2944,7 @@ const mods = [
 
 const industrial = [
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Mining Harvester",
     cost: 2000000,
     moduleType: "Industrial",
@@ -2943,7 +2953,7 @@ const industrial = [
     image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "MK2 Frequency Lens",
     cost: 1000000,
     moduleType: "Industrial",
@@ -2952,7 +2962,7 @@ const industrial = [
     image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "MK3 Frequency Lens",
     cost: 1000000,
     moduleType: "Industrial",
@@ -2961,7 +2971,7 @@ const industrial = [
     image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Salvage Harvester",
     cost: 3000000,
     moduleType: "Industrial",
@@ -2970,7 +2980,7 @@ const industrial = [
     image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Tractor Beam",
     cost: 3000000,
     moduleType: "Logistics",
@@ -2979,7 +2989,7 @@ const industrial = [
     image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Composition Scanner",
     cost: 4000000,
     moduleType: "Logistics",
@@ -2991,7 +3001,7 @@ const industrial = [
 
 const eWar = [
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Poisoning Module",
     cost: 7000000,
     moduleType: "E-War",
@@ -3001,7 +3011,7 @@ const eWar = [
     image: "Images/Ewar/chessmatrix-Tobias Schmid-artstation.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Honey Pot Module",
     cost: 3000000,
     moduleType: "E-War",
@@ -3011,7 +3021,7 @@ const eWar = [
     image: "Images/Ewar/honeypot-indotort-midjourney.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Warp Jammer",
     cost: 6000000,
     moduleType: "E-War",
@@ -3021,7 +3031,7 @@ const eWar = [
     image: "Images/Ewar/ben-bolton-sat3-001.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Comm Scrambler",
     cost: 5000000,
     moduleType: "E-War",
@@ -3031,7 +3041,7 @@ const eWar = [
     image: "Images/Ewar/richard-wright-satellite-dish.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "MITM Module",
     cost: 4000000,
     moduleType: "E-War",
@@ -3041,7 +3051,7 @@ const eWar = [
     image: "Images/Ewar/ITguy-indotort-midjourney.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Penetration Module",
     cost: 8000000,
     moduleType: "E-War",
@@ -3051,7 +3061,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Bridge Module",
     cost: 8000000,
     moduleType: "E-War",
@@ -3061,7 +3071,7 @@ const eWar = [
     image: "Images/Ewar/leif-heanzo-cockpit-pilot-v3-insta2.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Incident Module",
     cost: 6000000,
     moduleType: "E-War",
@@ -3071,7 +3081,7 @@ const eWar = [
     image: "Images/Ewar/ITguy-indotort-midjourney.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Efficiency Module",
     cost: 4000000,
     moduleType: "E-War",
@@ -3081,7 +3091,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Presence Module",
     cost: 5000000,
     moduleType: "E-War",
@@ -3091,7 +3101,7 @@ const eWar = [
     image: "Images/Ewar/kayla-miller-deskscene.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Overflow Module",
     cost: 10000000,
     moduleType: "E-War",
@@ -3101,7 +3111,7 @@ const eWar = [
     image: "https://placehold.co/100x100/abcdef/ffffff?text=EWar",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Security Grid",
     cost: 14000000,
     moduleType: "E-War",
@@ -3114,7 +3124,7 @@ const eWar = [
 
 const rooms = [
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Command Room",
     description: "The central hub for ship operations and command.",
     cost: 5000000,
@@ -3123,7 +3133,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Crew Quarters Upgrade",
     cost: 1000000,
     description:
@@ -3132,7 +3142,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Officer's Quarters",
     cost: 2000000,
     description:
@@ -3141,7 +3151,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Captain's Quarters",
     cost: 5000000,
     description:
@@ -3150,7 +3160,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Basic Infirmary",
     cost: 1000000,
     description:
@@ -3159,7 +3169,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Standard Infirmary",
     cost: 2000000,
     description:
@@ -3168,7 +3178,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Advanced Infirmary",
     cost: 12000000,
     description:
@@ -3177,7 +3187,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Evacuation Room",
     cost: 1000000,
     description:
@@ -3186,7 +3196,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Advanced Evacuation",
     cost: 9000000,
     description:
@@ -3195,7 +3205,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Standard Mess Hall",
     cost: 2000000,
     description:
@@ -3204,7 +3214,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Fancy Mess Hall",
     cost: 7000000,
     description:
@@ -3213,7 +3223,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Tavern",
     cost: 1000000,
     description:
@@ -3222,7 +3232,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Gravity Control Room",
     cost: 2000000,
     description:
@@ -3231,7 +3241,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Lounge",
     cost: 0, // Free!
     description:
@@ -3240,7 +3250,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Recreational Room",
     cost: 1000000,
     description:
@@ -3249,7 +3259,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Observatory",
     cost: 2000000,
     description:
@@ -3258,7 +3268,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Laboratory",
     cost: 1000000,
     description:
@@ -3267,7 +3277,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Terraforming Bay",
     cost: 9000000,
     description:
@@ -3276,7 +3286,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Cryosleep Chambers",
     cost: 8000000,
     description:
@@ -3285,7 +3295,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Ore Processing Facility",
     cost: 3000000,
     description:
@@ -3294,7 +3304,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Factory Wing",
     cost: 3000000,
     description:
@@ -3303,7 +3313,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Cargo Space",
     cost: 0, // Free!
     description:
@@ -3312,7 +3322,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Engineering Bay",
     cost: 3000000,
     description:
@@ -3321,7 +3331,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Hypercomms Room",
     cost: 2000000,
     description:
@@ -3330,7 +3340,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Digital Security Room",
     cost: 4000000,
     description:
@@ -3339,7 +3349,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Arsenal",
     cost: 4000000,
     description:
@@ -3348,7 +3358,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Advanced Arsenal",
     cost: 9000000,
     description:
@@ -3357,7 +3367,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Training Room",
     cost: 3000000,
     description:
@@ -3366,7 +3376,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Teleporting Platform",
     cost: 5000000,
     description:
@@ -3375,7 +3385,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Holding Cells",
     cost: 1000000,
     description:
@@ -3384,7 +3394,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Stasis Cell",
     cost: 2000000,
     description:
@@ -3393,7 +3403,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Meat Fridge",
     cost: 3000000,
     description:
@@ -3402,7 +3412,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Aquaculture Room",
     cost: 1000000,
     description:
@@ -3411,16 +3421,16 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Hydroponic Garden",
     cost: 1000000,
     description:
       "Have an in-ship garden by raising plants in water; enjoy the fresh air! unless you have plants for that. +Can combine with an aquaculture room",
     type: "food",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/6-evgeny-romanov-artstation.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Secure Vault",
     cost: 2000000,
     description:
@@ -3429,7 +3439,7 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Safe Room",
     cost: 3000000,
     description:
@@ -3438,19 +3448,18 @@ const rooms = [
     image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Upgraded Ship Security",
     cost: 8000000,
     description:
       "All ships come with mild in-ship security drones. Perhaps you want to install more robust automated turrets and camera systems? +Does not cost a room slot",
     type: "security",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/pavelpol-artstation.webp",
   },
 ];
 
 const weapons = [
   {
-    image: "Images/Ships/bob009.webp",
     name: "Machine Gun",
     cost: 1000000,
     secondaryCost: 500000,
@@ -3465,10 +3474,9 @@ const weapons = [
     weaponTypes: "Kinetic",
     description:
       "For ships that can get up close and personal, machine guns offer rapid firepower. Nothing can withstand a hail of high-calibre, metal-shredding bullets.",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    image: "Images/Weapons/alexey-rubakin-turret-general-view-final.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
     name: "Light Particle Blaster",
     cost: 1000000,
     secondaryCost: 500000,
@@ -3483,10 +3491,9 @@ const weapons = [
     weaponTypes: "Blaster",
     description:
       "Blasters fire orbs of very volatile supercharged particles capable of causing severe damage. However, the projectiles are a little slow, they're very close-ranged weapons.",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    image: "Images/Weapons/stephen-witt-lt-paint-1.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
     name: "Light Laser Cannon",
     cost: 1000000,
     secondaryCost: 500000,
@@ -3501,10 +3508,9 @@ const weapons = [
     weaponTypes: "Energy",
     description:
       "Of the three light-class weapons, the light laser lannon is the most accurate and longest-ranged, but is also slightly less damaging than the others. Great against missiles.",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    image: "Images/Weapons/badmaker-pc-l-corporate.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
     name: "Missile Pod",
     cost: 2000000,
     secondaryCost: 1000000,
@@ -3517,10 +3523,9 @@ const weapons = [
     projectileVelocity: 7,
     tracking: 8,
     weaponTypes: "Explosive *Can be shot down",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    image: "Images/Weapons/phillip-stoltz-substancerender.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
     name: "Flak Cannon",
     cost: 2000000,
     secondaryCost: 1000000,
@@ -3533,10 +3538,9 @@ const weapons = [
     projectileVelocity: 8,
     tracking: 8,
     weaponTypes: "Kinetic +1 damage vs drones, fighters",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    image: "Images/Weapons/bartek-nowak-13.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
     name: "Auto Cannon",
     cost: 2000000,
     secondaryCost: 1000000,
@@ -3549,207 +3553,9 @@ const weapons = [
     projectileVelocity: 8,
     tracking: 6,
     weaponTypes: "Kinetic",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    image: "Images/Weapons/alexey-rubakin-lbg-x-main-shot.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
-    name: "Artillery Cannon",
-    cost: 3000000,
-    secondaryCost: 1500000,
-    energyUse: 2,
-    tier: 2,
-    damagePerVolley: 8,
-    rateOfFire: 5,
-    accuracy: 6,
-    range: 8,
-    projectileVelocity: 8,
-    tracking: 5,
-    weaponTypes: "Kin, explosive +1 damage vs hull armour",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Heavy Particle Blaster",
-    cost: 3000000,
-    secondaryCost: 1500000,
-    energyUse: 4,
-    tier: 2,
-    damagePerVolley: 7,
-    rateOfFire: 8,
-    accuracy: 5,
-    range: 5,
-    projectileVelocity: 4,
-    tracking: 8,
-    weaponTypes: "Blaster",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Mana Blaster",
-    cost: 4000000,
-    secondaryCost: 2000000,
-    energyUse: 5,
-    tier: 2,
-    damagePerVolley: 8,
-    rateOfFire: 8,
-    accuracy: 5,
-    range: 5,
-    projectileVelocity: 3,
-    tracking: 8,
-    weaponTypes: "Blaster +1 damage with a mana core",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Heavy Laser Cannon",
-    cost: 4000000,
-    secondaryCost: 2000000,
-    energyUse: 6,
-    tier: 2,
-    damagePerVolley: 4,
-    rateOfFire: 10,
-    accuracy: 9,
-    range: 9,
-    projectileVelocity: 10,
-    tracking: 5,
-    weaponTypes: "Energy +1 damage when focused >2 min",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Rail Gun",
-    cost: 4000000,
-    secondaryCost: 2000000,
-    energyUse: 5,
-    tier: 2,
-    damagePerVolley: 9,
-    rateOfFire: 4,
-    accuracy: 8,
-    range: 9,
-    projectileVelocity: 9,
-    tracking: 3,
-    weaponTypes: "Kin, energy",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Missile Launcher",
-    cost: 5000000,
-    secondaryCost: 2000000,
-    energyUse: 3,
-    tier: 2,
-    damagePerVolley: 8,
-    rateOfFire: 3,
-    accuracy: 9,
-    range: 7,
-    projectileVelocity: 7,
-    tracking: 7,
-    weaponTypes: "Explosive *Can be shot down",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Tesla Overcharger",
-    cost: 6000000,
-    secondaryCost: 4000000,
-    energyUse: 6,
-    tier: 3,
-    damagePerVolley: 3,
-    rateOfFire: 6,
-    accuracy: 8,
-    range: 4,
-    projectileVelocity: 10,
-    tracking: 5,
-    weaponTypes: "Energy +6 damage vs shields +Can stun targets",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Torpedo Silo",
-    cost: 6000000,
-    secondaryCost: 4000000,
-    energyUse: 3,
-    tier: 3,
-    damagePerVolley: 10,
-    rateOfFire: 3,
-    accuracy: 7,
-    range: 9,
-    projectileVelocity: 3,
-    tracking: 3,
-    weaponTypes:
-      "Explosive +8 damage vs hull armour *Can be shot down *Limited to 3 per fighter",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Ragefire Rail Gun",
-    cost: 8000000,
-    secondaryCost: 4000000,
-    energyUse: 7,
-    tier: 3,
-    damagePerVolley: 6,
-    rateOfFire: 10,
-    accuracy: 9,
-    range: 9,
-    projectileVelocity: 10,
-    tracking: 3,
-    weaponTypes:
-      "Kin, energy *Requires a cruiser or larger, or a destroyer spinal mount",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Tachyon Laser Cannon",
-    cost: 6000000,
-    secondaryCost: 4000000,
-    energyUse: 7,
-    tier: 3,
-    damagePerVolley: 8,
-    rateOfFire: 8,
-    accuracy: 9,
-    range: 9,
-    projectileVelocity: 9,
-    tracking: 1,
-    weaponTypes:
-      "Energy +1 damage when focused >2 min *Requires a cruiser or larger, or a destroyer spinal mount",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Pulse Beam Cannon",
-    cost: 8000000,
-    secondaryCost: 4000000,
-    energyUse: 6,
-    tier: 3,
-    damagePerVolley: 10,
-    rateOfFire: 4,
-    accuracy: 9,
-    range: 10,
-    projectileVelocity: 9,
-    tracking: 2,
-    weaponTypes:
-      "En, blaster *Requires a cruiser or larger, or a destroyer spinal mount",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
-    name: "Anti-Matter Cannon",
-    cost: 60000000,
-    secondaryCost: 30000000,
-    energyUse: 8,
-    tier: 4,
-    damagePerVolley: 11,
-    rateOfFire: 0,
-    accuracy: 10,
-    range: 10,
-    projectileVelocity: 10,
-    tracking: 0,
-    weaponTypes:
-      "Unique *Costs 2 spinal weapon mounts *Requires a battleship or larger *5 min charge, 10 min cool down",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
-  },
-  {
-    image: "Images/Ships/bob009.webp",
     name: "Graser",
     cost: 2000000,
     secondaryCost: 1000000,
@@ -3763,27 +3569,162 @@ const weapons = [
     tracking: 8,
     description:
       "Weapon Type: Energy. *Double damage vs. hull armor. The ionizing energy of the gamma ray laser is more effective against hull armor than the thermal effects of lower frequency lasers. The graser is especially suited for intercepting lightly shielded targets such as missiles and drones.",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    image: "Images/Weapons/sleeperts-georg-hilmarsson-artstation.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
-    name: "Quantum Disruptor",
-    cost: 8000000,
+    name: "Artillery Cannon",
+    cost: 3000000,
+    secondaryCost: 1500000,
+    energyUse: 2,
+    tier: 2,
+    damagePerVolley: 8,
+    rateOfFire: 5,
+    accuracy: 6,
+    range: 8,
+    projectileVelocity: 8,
+    tracking: 5,
+    weaponTypes: "Kin, explosive +1 damage vs hull armour",
+    image: "Images/Weapons/mathew-o-imperial-artillery-6.webp",
+  },
+  {
+    name: "Heavy Particle Blaster",
+    cost: 3000000,
+    secondaryCost: 1500000,
+    energyUse: 4,
+    tier: 2,
+    damagePerVolley: 7,
+    rateOfFire: 8,
+    accuracy: 5,
+    range: 5,
+    projectileVelocity: 4,
+    tracking: 8,
+    weaponTypes: "Blaster",
+    image: "Images/Weapons/alex-senechal-front-open-exposed-lenses.webp",
+  },
+  {
+    name: "Mana Blaster",
+    cost: 4000000,
+    secondaryCost: 2000000,
+    energyUse: 5,
+    tier: 2,
+    damagePerVolley: 8,
+    rateOfFire: 8,
+    accuracy: 5,
+    range: 5,
+    projectileVelocity: 3,
+    tracking: 8,
+    weaponTypes: "Blaster +1 damage with a mana core",
+    image: "Images/Weapons/denis-rakaric-turret-01.webp",
+  },
+  {
+    name: "Heavy Laser Cannon",
+    cost: 4000000,
+    secondaryCost: 2000000,
+    energyUse: 6,
+    tier: 2,
+    damagePerVolley: 4,
+    rateOfFire: 10,
+    accuracy: 9,
+    range: 9,
+    projectileVelocity: 10,
+    tracking: 5,
+    weaponTypes: "Energy +1 damage when focused >2 min",
+    image: "Images/Weapons/bartek-nowak-tbrender-viewport-024.webp",
+  },
+  {
+    name: "Rail Gun",
+    cost: 4000000,
+    secondaryCost: 2000000,
+    energyUse: 5,
+    tier: 2,
+    damagePerVolley: 9,
+    rateOfFire: 4,
+    accuracy: 8,
+    range: 9,
+    projectileVelocity: 9,
+    tracking: 3,
+    weaponTypes: "Kin, energy",
+    image: "Images/Weapons/gabriel-radic-image-03.webp",
+  },
+  {
+    name: "Missile Launcher",
+    cost: 5000000,
+    secondaryCost: 2000000,
+    energyUse: 3,
+    tier: 2,
+    damagePerVolley: 8,
+    rateOfFire: 3,
+    accuracy: 9,
+    range: 7,
+    projectileVelocity: 7,
+    tracking: 7,
+    weaponTypes: "Explosive *Can be shot down",
+    image: "Images/Weapons/北陵重工的票票Studio-artstation.webp",
+  },
+  {
+    name: "Tesla Overcharger",
+    cost: 6000000,
+    secondaryCost: 4000000,
+    energyUse: 6,
+    tier: 3,
+    damagePerVolley: 3,
+    rateOfFire: 6,
+    accuracy: 8,
+    range: 4,
+    projectileVelocity: 10,
+    tracking: 5,
+    weaponTypes: "Energy +6 damage vs shields +Can stun targets",
+    image: "Images/Weapons/alexey-rubakin-mecha-plasma-cannon-main-shot.webp",
+  },
+  {
+    name: "Torpedo Silo",
+    cost: 6000000,
+    secondaryCost: 4000000,
+    energyUse: 3,
+    tier: 3,
+    damagePerVolley: 10,
+    rateOfFire: 3,
+    accuracy: 7,
+    range: 9,
+    projectileVelocity: 3,
+    tracking: 3,
+    weaponTypes:
+      "Explosive +8 damage vs hull armour *Can be shot down *Limited to 3 per fighter",
+    image: "Images/Weapons/daniel-white-missilefinal.webp",
+  },
+  {
+    name: "Tachyon Laser Cannon",
+    cost: 6000000,
     secondaryCost: 4000000,
     energyUse: 7,
     tier: 3,
-    damagePerVolley: 6,
-    rateOfFire: 9,
+    damagePerVolley: 8,
+    rateOfFire: 8,
     accuracy: 9,
     range: 9,
     projectileVelocity: 9,
-    tracking: 5,
-    description:
-      "Weapon Type: Energy. *Requires a cruiser or larger ship, or a destroyer spinal mount. Recently reverse-engineered from Herald technology, the quantum disruptor acts as the sub-atomic level, breaking matter apart explosively. Triglav deliberately engineered a well-rounded heavy weapon expected to become a standard in cruiser skirmishes.",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    tracking: 1,
+    weaponTypes:
+      "Energy +1 damage when focused >2 min *Requires a cruiser or larger, or a destroyer spinal mount",
+    image: "Images/Weapons/rene-mitchell-lambert-3quarter-pp-1080-edit.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    name: "Heavy Mana Cannon",
+    cost: 7000000,
+    secondaryCost: 4000000,
+    energyUse: 7,
+    tier: 3,
+    damagePerVolley: 8,
+    rateOfFire: 8,
+    accuracy: 9,
+    range: 9,
+    projectileVelocity: 9,
+    tracking: 1,
+    weaponTypes:
+      "Energy +1 damage when focused >2 min *Requires a cruiser or larger, or a destroyer spinal mount",
+    image: "Images/Weapons/emilie-rinna-medium-pulsecannon-deployed-v2b.webp",
+  },
+  {
     name: "Ion Array",
     cost: 8000000,
     secondaryCost: 4000000,
@@ -3797,10 +3738,59 @@ const weapons = [
     tracking: 7,
     description:
       "Weapon Type: Energy. *Double damage vs. shields. *Can stun targets. *Requires a cruiser or larger ship, or a destroyer spinal mount. Clusters of light ion batteries set in swift-tracking servo mounts, ion arrays are employed as area defense weapons. They were designed to intercept and stun smaller ships so that larger weapons can finish them off. Lately they have seen increasing use on pirate ships seeking to take their prey intact.",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    image: "Images/Weapons/mike-chassagne-as-009.webp",
+  },
+
+  {
+    name: "Ragefire Rail Gun",
+    cost: 8000000,
+    secondaryCost: 4000000,
+    energyUse: 7,
+    tier: 3,
+    damagePerVolley: 6,
+    rateOfFire: 10,
+    accuracy: 9,
+    range: 9,
+    projectileVelocity: 10,
+    tracking: 3,
+    weaponTypes:
+      "Kin, energy *Requires a cruiser or larger, or a destroyer spinal mount",
+    image: "Images/Weapons/multi_particle_wave_cannon_by_karanak_d7h824x.webp",
+  },
+
+  {
+    name: "Pulse Beam Cannon",
+    cost: 8000000,
+    secondaryCost: 4000000,
+    energyUse: 6,
+    tier: 3,
+    damagePerVolley: 10,
+    rateOfFire: 4,
+    accuracy: 9,
+    range: 10,
+    projectileVelocity: 9,
+    tracking: 2,
+    weaponTypes:
+      "En, blaster *Requires a cruiser or larger, or a destroyer spinal mount",
+    image: "Images/Weapons/alex-senechal-main-a.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    name: "Quantum Disruptor",
+    cost: 8000000,
+    secondaryCost: 4000000,
+    energyUse: 7,
+    tier: 3,
+    damagePerVolley: 6,
+    rateOfFire: 9,
+    accuracy: 9,
+    range: 9,
+    projectileVelocity: 9,
+    tracking: 5,
+    description:
+      "Weapon Type: Energy. *Requires a cruiser or larger ship, or a destroyer spinal mount. Recently reverse-engineered from Herald technology, the quantum disruptor acts as the sub-atomic level, breaking matter apart explosively. Triglav deliberately engineered a well-rounded heavy weapon expected to become a standard in cruiser skirmishes.",
+    image: "Images/Weapons/alex-senechal-croc-front-ejection-fire.webp",
+  },
+  {
     name: "Hellbore Cannon",
     cost: 18000000,
     secondaryCost: 9000000,
@@ -3814,10 +3804,9 @@ const weapons = [
     tracking: 1,
     description:
       "Weapon Type: En. Explosive. *Shield piercing: shields can block only half the damage from this weapon. *Double damage vs. shields. The hellbore is a huge plasma battery that delivers a massive strike of thermal and explosive energies at just the right moment.",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    image: "Images/Weapons/edward-barons-snow-pipes-as.webp",
   },
   {
-    image: "Images/Ships/bob009.webp",
     name: "Phase Cannon",
     cost: 24000000,
     secondaryCost: 12000000,
@@ -3831,13 +3820,30 @@ const weapons = [
     tracking: 1,
     description:
       "Weapon Type: Energy. *Shield piercing: shields can block only half the damage from this weapon. *Double damage vs. shields. *Stuns targets of the same class or smaller. *Requires a cruiser or larger ship. *Costs two spinal weapon mounts. The phase cannon is a dedicated alpha strike weapon, dealing overpowering electromagnetic and thermal damage that strips away a ship's shields and heavily disrupts its control systems. Follow up attacks on the stunned target are almost always decisive.",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Weapon",
+    image: "Images/Weapons/aidelank-artboard-3.webp",
+  },
+  {
+    name: "Anti-Matter Cannon",
+    cost: 60000000,
+    secondaryCost: 30000000,
+    energyUse: 8,
+    tier: 4,
+    damagePerVolley: 11,
+    rateOfFire: 0,
+    accuracy: 10,
+    range: 10,
+    projectileVelocity: 10,
+    tracking: 0,
+    weaponTypes:
+      "Unique *Costs 2 spinal weapon mounts *Requires a battleship or larger *5 min charge, 10 min cool down",
+    image:
+      "Images/Weapons/terry-hopfenspirger-terryhopfenspirger-aagun-model-007.webp",
   },
 ];
 
 const drones = [
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Scout Drone",
     cost: 500000,
     hangarSpaceUse: 0.5,
@@ -3853,7 +3859,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Beacon Drone",
     cost: 1000000,
     hangarSpaceUse: 1,
@@ -3869,7 +3875,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Combat Drone",
     cost: 1000000,
     hangarSpaceUse: 1,
@@ -3885,7 +3891,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Brawler Drone",
     cost: 2000000,
     hangarSpaceUse: 2,
@@ -3901,7 +3907,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Stealth Drone",
     cost: 4000000,
     hangarSpaceUse: 2,
@@ -3917,7 +3923,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Bomber Drone",
     cost: 5000000,
     hangarSpaceUse: 3,
@@ -3933,7 +3939,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Mining Drone",
     cost: 1000000,
     hangarSpaceUse: 1,
@@ -3949,7 +3955,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Shield Drone",
     cost: 2000000,
     hangarSpaceUse: 1,
@@ -3965,7 +3971,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Hull Repair Drone",
     cost: 2000000,
     hangarSpaceUse: 1,
@@ -3981,7 +3987,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Combat Repair Drone",
     cost: 2000000,
     hangarSpaceUse: 1,
@@ -3997,7 +4003,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Science Probe",
     cost: 2000000,
     hangarSpaceUse: 0.5,
@@ -4013,7 +4019,7 @@ const drones = [
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
   },
   {
-    image: "Images/Ships/bob009.webp",
+    
     name: "Lasso Drone",
     cost: 8000000,
     hangarSpaceUse: 2,

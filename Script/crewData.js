@@ -1484,6 +1484,7 @@ const crew = [
 const archetype = [
   {
     title: "Volunteers",
+    image: 'Images/Crew/kpopgroup-nontime-civitai.webp',
     skillLevel: 0,
     alignment: "Neutral",
     cost: {
@@ -1499,7 +1500,8 @@ const archetype = [
   },
   {
     title: "Civilian Workers",
-    skillLevel: 0,
+    image: 'Images/Crew/scoobydoo-indotort-midjourney.webp',
+    skillLevel: 5,
     alignment: "Neutral",
     cost: {
       x1: 100000,
@@ -1514,7 +1516,8 @@ const archetype = [
   },
   {
     title: "Industry Labourers",
-    skillLevel: 0,
+    image: 'Images/Crew/mexican-indotort-midjourney.webp',
+    skillLevel: 6,
     alignment: "Neutral",
     cost: {
       x1: 100000,
@@ -1529,7 +1532,7 @@ const archetype = [
   },
   {
     title: "Researchers",
-    skillLevel: 0,
+    skillLevel: 4,
     alignment: "Neutral",
     cost: {
       x1: 100000,
@@ -1545,7 +1548,7 @@ const archetype = [
   {
     title: "Bandits",
     image: "Images/Crew/cyber-samurai-indotort-midjourney.webp",
-    skillLevel: 0,
+    skillLevel: 4,
     alignment: "Pirates",
     cost: {
       x1: 100000,
@@ -1560,7 +1563,7 @@ const archetype = [
   },
   {
     title: "Explorers",
-    skillLevel: 0,
+    skillLevel: 5,
     alignment: "Neutral",
     cost: {
       x1: 100000,
@@ -1575,7 +1578,7 @@ const archetype = [
   },
   {
     title: "Medics",
-    skillLevel: 0,
+    skillLevel: 6,
     alignment: "Neutral",
     cost: {
       x1: 100000,
@@ -1590,7 +1593,7 @@ const archetype = [
   },
   {
     title: "engineers",
-    skillLevel: 0,
+    skillLevel: 6,
     alignment: "Neutral",
     cost: {
       x1: 100000,
@@ -1605,7 +1608,7 @@ const archetype = [
   },
   {
     title: "Mercenaries",
-    skillLevel: 0,
+    skillLevel: 7,
     alignment: "Neutral",
     cost: {
       x1: 100000,
@@ -1620,7 +1623,7 @@ const archetype = [
   },
   {
     title: "Seraphs",
-    skillLevel: 0,
+    skillLevel: 8,
     alignment: "Blackhawk Elite",
     cost: {
       x1: 100000,
@@ -1634,9 +1637,9 @@ const archetype = [
       "Essentially Blackhawks-in-training, the Seraphs is where they all start. While relatively inexperienced, they show promise.",
   },
   {
-    title: "Red Dagger Pirates",
+    title: "Red Dagger Ninjas",
     image: "Images/Crew/future-akatsuki-indotort-midjourney.webp",
-    skillLevel: 0,
+    skillLevel: 8,
     alignment: "Red Daggers",
     cost: {
       x1: 100000,
@@ -1647,11 +1650,12 @@ const archetype = [
       x500: 9000000,
     },
     description:
-      "Above the average pirate and bandit lies the average Red Dagger. Their cunning and hardy instincts are exceptional.",
+      "Above the average pirate and bandit lies the Red Dagger Ninjas. Their cunning and hardy instincts are exceptional.",
   },
   {
     title: "Navy Soldiers",
-    skillLevel: 0,
+    image: 'Images/Crew/troops-shenpeiwu-artstation.jpg',
+    skillLevel: 9,
     alignment: "Federation",
     cost: {
       x1: 100000,
@@ -1666,7 +1670,7 @@ const archetype = [
   },
   {
     title: "Core Ring Mercs",
-    skillLevel: 0,
+    skillLevel: 9,
     alignment: "Luos Syndicate",
     cost: {
       x1: 100000,
@@ -1681,7 +1685,8 @@ const archetype = [
   },
   {
     title: "Dustkeepers",
-    skillLevel: 0,
+    image: 'Images/Crew/johnson-ting-buccaneers-wallpaper.webp',
+    skillLevel: 10,
     alignment: "Neutral",
     cost: {
       x1: 100000,
@@ -1694,6 +1699,113 @@ const archetype = [
     description:
       "Highly skilled with a very rich variety of talents, Dustkeepers can make a very capable crew for almost any job.",
   },
+  {
+    title: "Outer Ring Mercs",
+    image: 'images/crew/outer-ring-mercs.webp',
+    skillLevel: 5,
+    alignment: "Luos Syndicate",
+    cost: {
+      x1: 100000,
+      x5: 500000,
+      x10: 1000000,
+      x50: 2000000,
+      x100: 4000000,
+      x500: 11000000,
+    },
+    description: "Mercenaries from the Luos Outer Ring are fierce and well disciplined, something even the Blackhawks admire and respect.",
+  },
+  {
+    title: "Blackhawk Elites",
+    image: 'images/crew/blackhawk-elites.webp',
+    skillLevel: 6,
+    alignment: "Blackhawk Elite",
+    cost: {
+      x1: 200000,
+      x5: 500000,
+      x10: 1000000,
+      x50: 3000000,
+      x100: 5000000,
+      x500: 14000000,
+    },
+    description: "With a will as hard as steel, the Blackhawks don't often boast about their profession, even if they really are that good.",
+  },
+  {
+    title: "Talons",
+    image: 'images/crew/talons.webp',
+    skillLevel: 7,
+    alignment: "Talons",
+    cost: {
+      x1: 200000,
+      x5: 500000,
+      x10: 1000000,
+      x50: 3000000,
+      x100: 5000000,
+      x500: 14000000,
+    },
+    description: "A crew of Talons will make any pilot think twice before messing with you. While a little cocky, their performance shows.",
+  },
+  {
+    title: "Navy Operators",
+    image: 'Images/Crew/3dma-frogman-re-03.webp',
+    skillLevel: 8,
+    alignment: "Federation",
+    cost: {
+      x1: 200000,
+      x5: 800000,
+      x10: 1500000,
+      x50: 4000000,
+      x100: 6000000,
+      x500: 18000000,
+    },
+    description:
+      "Highly skilled with a very rich variety of talents, Dustkeepers can make a very capable crew for almost any job.",
+  },
+  {
+    title: "Gazer Operators",
+    image: 'images/crew/gazer-operators.webp',
+    skillLevel: 7,
+    alignment: "Neutral",
+    cost: {
+      x1: 200000,
+      x5: 800000,
+      x10: 1500000,
+      x50: 4000000,
+      x100: 6000000,
+      x500: 18000000,
+    },
+    description: "Getting a sizeable crew of Gazer operators is not an easy job to do, but they've been known to group when needed.",
+  },
+  {
+    title: "Androids",
+    image: 'images/crew/androids.webp',
+    skillLevel: 8,
+    alignment: "Neutral",
+    cost: {
+      x1: 400000,
+      x5: 1000000,
+      x10: 3000000,
+      x50: 6000000,
+      x100: 8000000,
+      x500: 24000000,
+    },
+    description: "AI and mechanics have come a long way, and one well-built android can do the average job better than normal crew mates.",
+  },
+  {
+    title: "Controllers",
+    image: 'images/crew/controllers.webp',
+    skillLevel: 9,
+    alignment: "Neutral",
+    cost: {
+      x1: 1000000,
+      x5: 3000000,
+      x10: 4000000,
+      x50: 10000000,
+      x100: 16000000,
+      x500: 44000000,
+    },
+    crewMultiplier: 3,
+    description: "These people are able to link up their minds straight to computers. Without the limitations of flesh, their potential is vast.",
+  },  
 ];
 
 function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
