@@ -7,7 +7,7 @@ FRAME:
 
 SHIP: 3. Handlechoice ship weapons (hard),
 
-7. Pictures: hulls, shipAI, shield, shipweapons, industrial, ewarShip, rooms, [KARANAK DEVIANTART]
+7. Pictures: hulls, shipAI, shield, industrial, ewarShip, rooms, [KARANAK DEVIANTART]
 
 8. shipWeapons spinal/broadside mechanic
 

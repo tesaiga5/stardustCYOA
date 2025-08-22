@@ -430,8 +430,8 @@ const crew = [
     description:
       "Roxanne led the forefront of nuclear research in Talon labs, and has contributed highly to the advancement of anti-matter technology.",
     specialty: "Nuclear",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Roxanne+Gilliam",
+    equipment: 5,
+    image: "Images/Crew/thousandsons-velvets-civitai.webp",
   },
   {
     title: "Mereille Fairley",
@@ -608,14 +608,14 @@ const crew = [
   },
   {
     title: "Vis'yeth",
-    skillLevel: null,
+    skillLevel: 5,
     alignment: "Luos Syndicate",
     cost: 4000000,
     description:
       "Mysterious, took down three cruisers himself in Haven defence.",
     specialty: "Ship Gunner",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Vis%27yeth",
+    image: "Images/Crew/guy-vuxyjeke-civitai.webp",
   },
   {
     title: 'Clara "Sun" Howell',
@@ -657,7 +657,7 @@ const crew = [
       "He is very down to earth and simple (in the sense of being a professional ship gunner). He's reliable, and everybody just calls him Viktor.",
     specialty: "Ship Gunner",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Viktor",
+    image: "Images/Crew/bloodangelsgunner-velvets-civitai.webp",
   },
   {
     title: 'Tavia "Echo" Tsun',
@@ -679,7 +679,7 @@ const crew = [
       "Don't let his boring name fool you-Bill has a track record for being a veteran gunner in the Federation Navy. You can rely on him to hit hard and ruthlessly.",
     specialty: "Ship Gunner",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Lt.+Bill+Smith",
+    image: "Images/Crew/baldalphaleg-velvets-civitai.webp",
   },
   {
     title: "Amanda Lynch",
@@ -690,7 +690,7 @@ const crew = [
       "She's fast, strong-willed and packs a punch, Amanda has never lost in a fleet fight. Her efforts have defended industrial from bandit incursions.",
     specialty: "Ship Gunner",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Amanda+Lynch",
+    image: "Images/Crew/jinx-schmede-civitai.webp",
   },
   // --- combat & Security ---
   {
@@ -1057,14 +1057,14 @@ const crew = [
   },
   {
     title: "Maren Krause",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Maren+Krause",
+    image: "Images/Crew/whitewolves-velvets-civitai.webp",
     cost: 7000000,
-    specialty: "Hand-to-hand",
+    specialty: "Sniping",
     equipment: 7,
     skillLevel: 9,
     alignment: "Federation",
     description:
-      "Seeing Maren on the opposite end of your barrel means it's already too late. She prioritizes efficiency above all else, and she's very good at its practice.",
+      "Seeing Maren on the opposite end of your barrel means it's already too late. She also has a dire wolf protecting her in melee.",
   },
   {
     title: "Ley'ra Laur",
@@ -1176,7 +1176,7 @@ const crew = [
       "Hailing from a large company, Perry is perfectly capable at handling most electronic warfare. Your ship should be well defended with him.",
     specialty: "Electronic Warfare",
     equipment: 4,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Perry+West",
+    image: "Images/Crew/boredkid-indotort-civitai.webp",
   },
   {
     title: "Erica Chung",
@@ -1198,7 +1198,7 @@ const crew = [
       "This man brings an excellent service record and forty exobytes of illegally-obtained porn. Will awkwardly hit on female crew. Constantly. Over the PA.",
     specialty: "Cyber Security",
     equipment: 1,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Damian+Galt",
+    image: "Images/Crew/Fat_Bastard-villainswiki.webp",
   },
   {
     title: "Slash Singer",
@@ -1209,7 +1209,7 @@ const crew = [
       "An ex-military intelligence officer who can go head to head with some of the most notorious hackers in the galaxy in cyberwarfare.",
     specialty: "Programmer (Security Bypass)",
     equipment: 5,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Slash+Singer",
+    image: "Images/Crew/cyberangel-vadim-sadovski-artstation.webp",
   },
   {
     title: "Veslav Smertodov",
@@ -1532,6 +1532,7 @@ const archetype = [
   },
   {
     title: "Researchers",
+    image: 'Images/Crew/researcher-velvets-civitai.webp',
     skillLevel: 4,
     alignment: "Neutral",
     cost: {
@@ -1563,6 +1564,7 @@ const archetype = [
   },
   {
     title: "Explorers",
+    image: 'Images/Crew/explorer-artfullyprompt-civitai.webp',
     skillLevel: 5,
     alignment: "Neutral",
     cost: {
@@ -1701,7 +1703,7 @@ const archetype = [
   },
   {
     title: "Outer Ring Mercs",
-    image: 'images/crew/outer-ring-mercs.webp',
+    image: 'Images/Crew/ironsons-velvets-civitai.webp',
     skillLevel: 5,
     alignment: "Luos Syndicate",
     cost: {
@@ -1716,7 +1718,7 @@ const archetype = [
   },
   {
     title: "Blackhawk Elites",
-    image: 'images/crew/blackhawk-elites.webp',
+    image: 'Images/Crew/blacktemplars-velvets-civitai.webp',
     skillLevel: 6,
     alignment: "Blackhawk Elite",
     cost: {
@@ -1731,7 +1733,7 @@ const archetype = [
   },
   {
     title: "Talons",
-    image: 'images/crew/talons.webp',
+    image: 'Images/Crew/nightlords-velvets-civitai.webp',
     skillLevel: 7,
     alignment: "Talons",
     cost: {
@@ -1762,7 +1764,7 @@ const archetype = [
   },
   {
     title: "Gazer Operators",
-    image: 'images/crew/gazer-operators.webp',
+    image: 'Images/Crew/greyknights-velvets-civitai.webp',
     skillLevel: 7,
     alignment: "Neutral",
     cost: {
@@ -1792,7 +1794,7 @@ const archetype = [
   },
   {
     title: "Controllers",
-    image: 'images/crew/controllers.webp',
+    image: 'Images/Crew/hooked-candyaddict-civitai.webp',
     skillLevel: 9,
     alignment: "Neutral",
     cost: {
