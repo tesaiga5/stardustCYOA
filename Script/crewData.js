@@ -1,5 +1,6 @@
 export { crew, archetype, addCrewToSection };
 import { appendDropdown, formatterIntl } from "/Script/manaData.js";
+import {getImgName} from "/Script/switchChoose.js";
 
 const crew = [
   {
@@ -69,15 +70,15 @@ const crew = [
     image: "Images/Crew/blackjawline-Nixst3r-civitai.webp",
   },
   {
-    title: "Sgt. Mark LeCruz",
+    title: "Sgt. Markima 'Mark' LeCruz",
     skillLevel: 5,
     alignment: "Federation",
     cost: 2000000,
     description:
-      "Mark is a sergeant who led his own squad of fighter pilots during the war against the Luos Syndicate. He is an ace pilot, and proves a great asset to any crew.",
+      "Mark is a sergeant who led her own squad of fighter pilots during the war against the Luos Syndicate. She is an ace pilot, and proves a great asset to any crew.",
     specialty: "Pilot",
     equipment: 6,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Sgt.+Mark+LeCruz",
+    image: "Images/Crew/makima-imge-civitai.webp",
   },
   {
     title: "Jacqueline Young",
@@ -121,7 +122,7 @@ const crew = [
       "Susie flew with a powerful gang in the Red Daggers. She's as sharp as she looks, and has partaken in very risky heists.",
     specialty: "Pilot",
     equipment: 6,
-    image: "",
+    image: "Images/Crew/popularity_choi-29.webp",
   },
   {
     title: "Tyler Vaughn",
@@ -143,7 +144,7 @@ const crew = [
       "He might never take off his mask, but he really is a friendly guy, despite all of his experience flying with mercs. Never take him to a kebab parlour.",
     specialty: "Pilot",
     equipment: 8,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Ivan+Chesnikov",
+    image: "Images/Crew/johnson-ting-fighterpilot9.webp",
   },
   {
     title: "Milka Star",
@@ -176,7 +177,7 @@ const crew = [
       "A former drill sergeant from the Blackhawk Elite, Mokhov turned to piloting to search for vengeance. Vengeance for what, he'll only tell thos trusts.",
     specialty: "Pilot",
     equipment: 8,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Mokhov+Petrovich",
+    image: "Images/Crew/aleksandar-mihajlovic-final.webp",
   },
   {
     title: "E.R.I.",
@@ -198,7 +199,7 @@ const crew = [
       "Wes used to work for a mercenary group, but has since left and is looking for a change in pace. He is very passionate for flying and racing.",
     specialty: "Pilot",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Wes+Lunso",
+    image: "Images/Crew/ThousandHands-civitai.webp",
   },
   {
     title: "Lia Stitt",
@@ -231,7 +232,7 @@ const crew = [
       "Conrad is a man who can stay to his duty and really commit to it. As a loyal Blackhawk pilot, he's flown for several days at a time without rest.",
     specialty: "Pilot",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Conrad+Byrant",
+    image: "Images/Crew/nikolay-demencevich-swame-studio-camera-new-02.webp",
   },
   {
     title: "Mikayla Suzuki",
@@ -254,7 +255,7 @@ const crew = [
     specialty: "Pilot",
     equipment: 7,
     image:
-      "https://placehold.co/200x200/512929/e7a3a3?text=David+%22Tabs%22+Sharp",
+      "Images/Crew/takeshiobata2-Nixst3r-civitai.webp",
   },
   {
     title: "Tera en Chasteaux",
@@ -276,7 +277,7 @@ const crew = [
       "Dorian is a battle-hardened pilot from one of the Federation's SOF. He's a man of few words, but every rare word of his carries intimidating weight.",
     specialty: "Pilot",
     equipment: 8,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Dorian+Krueger",
+    image: "Images/Crew/takeshiobata-Nixst3r-civitai.webp",
   },
   {
     title: "Ise Ley'is",
@@ -369,14 +370,14 @@ const crew = [
   },
   {
     title: "Trainwreck",
-    skillLevel: null,
+    skillLevel: 7,
     alignment: "Red Daggers",
     cost: 3000000,
     description:
-      '"Study for 10 years, toll for 5 more, get passed up in favour of some Fed snot. Sure, I can keep a shit sandwich moving, but sell it and let me build you a tank."',
+      'Trying to predict the future in front of a fortune teller? Yes I am!',
     specialty: "Engineer",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Trainwreck",
+    equipment: 3,
+    image: "Images/Crew/mavdol-疾速 k-artstation.webp",
   },
   {
     title: 'Trisha "Props" Lim',
@@ -395,10 +396,10 @@ const crew = [
     alignment: "Neutral",
     cost: 3000000,
     description:
-      "With a love for working with machines, Troy could spend many hours inside a workshop. His metal arm can be put to many good uses.",
+      "With a love for working with machines, Troy could spend many hours inside a workshop. His fire rings can be put to good use",
     specialty: "Engineer",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Troy+Hall",
+    image: "Images/Crew/k-phoenix-疾速 k-artstation.webp",
   },
   {
     title: "Cindy Kayoko",
@@ -435,34 +436,34 @@ const crew = [
   },
   {
     title: "Mereille Fairley",
-    skillLevel: null,
+    skillLevel: 7,
     alignment: "Federation",
     cost: 4000000,
     description:
       "Equip a geek with some of the Federation's best gadgets, and you get Mireille. She seems to have a device for almost any situation.",
     specialty: "Gadgeteer",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Mereille+Fairley",
+    equipment: 8,
+    image: "Images/Crew/jin-kwang-park-4-1-low.webp",
   },
   {
-    title: "Arthur Foster",
-    skillLevel: null,
+    title: "Miguel Foster",
+    skillLevel: 8,
     alignment: "Neutral",
     cost: 5000000,
     description: "Studied under big titles, offers skills for a challenge.",
     specialty: "Engineer",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Arthur+Foster",
+    equipment: 4,
+    image: "Images/Crew/sova-疾速 k-artstaion.webp",
   },
   {
     title: "Reid Enos",
-    skillLevel: null,
+    skillLevel: 9,
     alignment: "Neutral",
     cost: 6000000,
-    description: "Mad scientist, knows lots about nuclear tech.",
+    description: "Alcoholic scientist, knows lots about nuclear tech.",
     specialty: "Nuclear",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Reid+Enos",
+    equipment: 9,
+    image: "Images/Crew/tonystark--疾速 k-artstation.webp",
   },
   // --- doctors ---
   {
@@ -499,14 +500,14 @@ const crew = [
     image: "Images/Crew/AIDigitalMediaAgency-civitai.webp",
   },
   {
-    title: "Tina Wei",
-    skillLevel: null,
+    title: "Melisa Asli Yazici",
+    skillLevel: 6,
     alignment: "Neutral",
     cost: 4000000,
     description: "Former merc medic, used to stress of high demand.",
     specialty: "Medic",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Tina+Wei",
+    equipment: 6,
+    image: "Images/Crew/fenurse-indotort-midjourney.webp",
   },
   {
     title: "Lupe",
@@ -516,19 +517,19 @@ const crew = [
     description:
       "He's technically a doctor... just don't expect him to be very conventional. He's notorious among the pirates as a miracle worker, however.",
     specialty: "Witch Doctor",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Lupe",
+    equipment: 3,
+    image: "Images/Crew/joestar--疾速 k-artstation.webp",
   },
   {
     title: "Devon Trice",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Blackhawk Elite",
     cost: 5000000,
     description:
       "Stalwart Blackhawk, favors less violent life, skilled in combat.",
     specialty: "Medic",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Devon+Trice",
+    equipment: 4,
+    image: "Images/Crew/dash--疾速 k-artstation.webp",
   },
   {
     title: "Lyra Miralda",
@@ -551,7 +552,7 @@ const crew = [
       "Brian knows everything about ship weapons. While still a student, he'd drop his studies in a heart beat just to be a ship gunner.",
     specialty: "Ship Gunner",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Brian+Richardson",
+    image: "Images/Crew/k-00k-sova-疾速 k-artstation.webp",
   },
   {
     title: "Seer",
@@ -562,7 +563,7 @@ const crew = [
       "A bad history of theft, murder, and drug addiction, Seer is the prime example of a pirate. Even the Red Daggers see him as unsavoury.",
     specialty: "Ship Gunner",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Seer",
+    image: "Images/Crew/male-pirate-indotort-midjourney.webp",
   },
   {
     title: "Elizabeth Tyler",
@@ -576,24 +577,24 @@ const crew = [
   },
   {
     title: "Alton Daniel",
-    skillLevel: null,
+    skillLevel: 3,
     alignment: "Neutral",
     cost: 2000000,
     description:
       "A man who comes from some backwater planet and somehow happens to be skilled in the highly stressful and violent art of ship gunning.",
     specialty: "Ship Gunner",
-    equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Alton+Daniel",
+    equipment: 3,
+    image: "Images/Crew/k-lu-01-疾速 k-artstation.webp",
   },
   {
     title: "John Pope",
-    skillLevel: null,
+    skillLevel: 4,
     alignment: "Neutral",
     cost: 3000000,
     description: "Former merchant, quick aim from bandit attacks.",
     specialty: "Ship Gunner",
     equipment: null,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=John+Pope",
+    image: "Images/Crew/dkok-blackredrose-civitai.webp",
   },
   {
     title: "Theresa Herder",
@@ -823,7 +824,7 @@ const crew = [
       "He has a penchant for laser based weapons and a refusal to use conventional ammunition because it's \"messy\". He's a bit of a neat freak that way.",
     specialty: "Long-range",
     equipment: 8,
-    image: "https://placehold.co/200x200/512929/e7a3a3?text=Vikram+Solar",
+    image: "Images/Crew/k-vishnu-shuiyin疾速 k-artstation.webp",
   },
   {
     title: "Darrel Wallace",
@@ -1068,25 +1069,25 @@ const crew = [
   },
   {
     title: "Ley'ra Laur",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Ley'ra+Laur",
+    image: "Images/Crew/park-jin-kwang-3-5.webp",
     cost: 3000000,
     specialty: "Point Position",
     equipment: 9,
     skillLevel: 8,
     alignment: "Luos Syndicate",
     description:
-      "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy. Her equipment is 'EEEEEEE.'.",
+      "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy.",
   },
   {
     title: "Lex StPierre",
-    image: "https://placehold.co/250x250/20344d/F2E9E4?text=Lex+StPierre",
+    image: "Images/Crew/park-jin-kwang-6 (1).webp",
     cost: 7000000,
     specialty: "Sentry?",
     equipment: 9,
     skillLevel: 8,
     alignment: "Neutral",
     description:
-      "He (or she) bolsters some of the greatest fighting skills and equipment in the galaxy... but he (or she) tends to not move until he (or she) is really needed.",
+      "It bolsters some of the greatest fighting skills and equipment in the galaxy... but it tends to not move until it is really needed.",
   },
   {
     title: "My'hra Jos",
@@ -1479,6 +1480,58 @@ const crew = [
     equipment: 7,
     image: "Images/Crew/jaime-martinez-fabius-bile-02.webp",
   },
+  {
+    title: "Yoav Hoze",
+    skillLevel: 5,
+    alignment: "Heralds",
+    cost: 1000000,
+    description:
+      "Yoav believes that the Apoc are heralds of what's to come, just as the Heralds were. She can do telekinesis and 'miracles'. She believes that you are the strongest Apoc.",
+    specialty: "Mage",
+    equipment: 1,
+    image: "Images/Crew/yoav-hoze-pose2front.webp",
+  },
+  {
+    title: 'Valerius Thorne',
+    skillLevel: 8,
+    alignment: 'Neutral',
+    cost: 3500000,
+    description: 'During his research, he stumbled upon a forbidden ritual that allowed him to harness the raw, untamed energy of Mana. The ritual granted him immense power but came at a great cost: the chaotic energies now surge through his veins, manifesting as the shifting, geometric constructs that surround him. He believes that the Apoc are a necessary force to restore the balance disrupted by the Great Conjunction.',
+    specialty: 'Mage',
+    equipment: 5,
+    image: "Images/Crew/wizard-andygl-civitai.webp" 
+  },
+
+{
+    title: "Lysandra Sol",
+    skillLevel: 7,
+    alignment: "Heralds",
+    cost: 2750000,
+    description: "Born as a zealous sun-worshipper, Lysandra is a conduit for concentrated solar energy. She views those who oppose the Apoc as shadows that must be burned away. She can manipulate UV rays and celestial gravity in small scales (good for ship movement)",
+    specialty: 'Mage',
+    equipment: 5, // Randomized value
+    image: "Images/Crew/sunlady-Nixst3r-civitai.webp"
+  },
+  {
+    title: "Ignis Kaelen",
+    skillLevel: 9,
+    alignment: "Red Dagger Pirates",
+    cost: 4500000,
+    description: "A lone wolf fueled by rage, Ignis is a cybernetically enhanced pyrokinetic. She believes both the Apoc and the old world's order are corrupt and deserve destruction.",
+    specialty: 'Mage',
+    equipment: 9, // Randomized value
+    image: "Images/Crew/firewizard-indotort-midjourney.webp"
+  },
+  {
+    title: "Seraphina Cryos",
+    skillLevel: 10,
+    alignment: "Elder",
+    cost: 10000000,
+    description: "Seraphina is a silent observer and a being of pure thought. She views the Apoc with detached fascination, seeing them as an inevitable, natural progression. Can use ice magic and slow down time by 10%.",
+    specialty: 'Mage',
+    equipment: 10, // Randomized value
+    image: "Images/Crew/icewizard-indotort-midjourney.webp"
+  }
 ];
 
 const archetype = [
@@ -1580,6 +1633,7 @@ const archetype = [
   },
   {
     title: "Medics",
+    image: 'Images/Crew/medic-indotort-midjourney.webp',
     skillLevel: 6,
     alignment: "Neutral",
     cost: {
@@ -1594,7 +1648,8 @@ const archetype = [
       "Medical knowledge is a valuable asset. Unfortunately, not every one's a medic, so why not hire some professionals?",
   },
   {
-    title: "engineers",
+    title: "Engineers",
+    image: 'Images/Crew/kan-liu-666k-engineerf.webp',
     skillLevel: 6,
     alignment: "Neutral",
     cost: {
@@ -1610,6 +1665,7 @@ const archetype = [
   },
   {
     title: "Mercenaries",
+    image: 'Images/Crew/park-jin-kwang-2.webp',
     skillLevel: 7,
     alignment: "Neutral",
     cost: {
@@ -1625,6 +1681,7 @@ const archetype = [
   },
   {
     title: "Seraphs",
+    image: 'Images/Crew/johnson-ting-8.webp',
     skillLevel: 8,
     alignment: "Blackhawk Elite",
     cost: {
@@ -1672,6 +1729,7 @@ const archetype = [
   },
   {
     title: "Core Ring Mercs",
+    image: 'Images/Crew/johnson-ting-demo-1-copy.webp',
     skillLevel: 9,
     alignment: "Luos Syndicate",
     cost: {
@@ -1779,7 +1837,7 @@ const archetype = [
   },
   {
     title: "Androids",
-    image: 'images/crew/androids.webp',
+    image: 'Images/Crew/abigail-diaz-serafleur-artstation.webp',
     skillLevel: 8,
     alignment: "Neutral",
     cost: {
@@ -1853,7 +1911,7 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
     const imgElement = document.createElement("img");
     imgElement.src =
       item.image || "https://placehold.co/100x100/eeeeee/ffffff?text=NoImage";
-    imgElement.alt = `${item.title} image`;
+    imgElement.title = getImgName(item.image);
     newSpan.appendChild(imgElement); // Image added after newSpan
 
     // Create an h3 element for the title
@@ -1955,7 +2013,7 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
           // The section for mages comes after the cybersec section.
           targetSection = document.getElementById("title-mageCrew");
           break;
-        case "mage":
+        case "Mage":
           // The section for scientists comes after the mage section.
           targetSection = document.getElementById("title-scientistCrew");
           break;
