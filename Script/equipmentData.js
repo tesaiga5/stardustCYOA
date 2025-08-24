@@ -492,7 +492,7 @@ const guns = [
     roundCapacity: 0,
     action: "Full-auto",
     calibre: "980nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/alex-senechal-biggun.webp",
     description:
       "A standard full-auto plasma gun... until you mark a target with the tag that the plasma orbs follow.",
   },
@@ -511,9 +511,9 @@ const guns = [
     roundCapacity: 30,
     action: "Semi-auto",
     calibre: "5.91mm IN",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/ranulf-busby-doku-as-03.webp",
     description:
-      "A very niche gun usually only found with bodyguards. Has an underslug ranged taser.",
+      "A very niche gun usually only found with bodyguards.",
   },
   {
     name: "Angel",
@@ -530,12 +530,12 @@ const guns = [
     roundCapacity: 28,
     action: "Select-fire",
     calibre: "6.4mm Ws",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/filippo-ubertino-rifle-ifcc-2019-finale2low.webp",
     description:
       "The PDW improvement over the FD39 with a harder hitting and longer-ranged cartridge.",
   },
   {
-    name: "Devil's Kiss",
+    name: "Puck's Kiss",
     type1: "Plasma", // Changed from 'type'
     type2: "rifle", // New attribute
     cost: 1000000,
@@ -549,7 +549,7 @@ const guns = [
     roundCapacity: 0,
     action: "Full-auto/alt",
     calibre: "995nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/anton-khondoker-5.webp",
     description:
       "Unknown origin. Has a secondary firing mode that overheats more but shoots explosive plasma shots.",
   },
@@ -568,7 +568,7 @@ const guns = [
     roundCapacity: 30,
     action: "Select-fire",
     calibre: "6.16mm UNI",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/fan-zhang-aag-present.webp",
     description:
       "Extremely cheap and shoddy, but that's its charm. Usually only found in the outer rim systems.",
   },
@@ -587,7 +587,7 @@ const guns = [
     roundCapacity: 30,
     action: "Full-auto",
     calibre: "7.75mm SV",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/molina-jinyi-zhu-artstation.webp",
     description:
       "A popular, cheap, and highly customizable assault rifle made in surplus for a war, long ago.",
   },
@@ -606,9 +606,9 @@ const guns = [
     roundCapacity: 0,
     action: "Full-auto",
     calibre: "1155nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/liam-o-hagan-guns-02.webp",
     description:
-      "Looks cheaply put together, but is known to be one of the most well balanced plasma guns made.",
+      "Looks bulky, but is known to be one of the most well balanced plasma guns made.",
   },
   {
     name: "FD22 Sprint",
@@ -625,7 +625,7 @@ const guns = [
     roundCapacity: 22,
     action: "Semi-auto",
     calibre: "6.16mm UNI",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/sean-drake-3.webp",
     description:
       "A lightweight scout rifle, perfect for precision shooting and general recon.",
   },
@@ -644,7 +644,7 @@ const guns = [
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "405nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/lin-hongy-paiban-1-edited.webp",
     description:
       "A versatile and effective laser rifle for scouting and recon. Perfect against armoured personnel.",
   },
@@ -663,7 +663,7 @@ const guns = [
     roundCapacity: 32,
     action: "Select-fire",
     calibre: "6.16mm UNI",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/paul-dave-malla-carbon-4x-keyshot-render-05.webp",
     description:
       "A favourite for gun nuts, mainly due to the high availability of after market parts for customization.",
   },
@@ -682,7 +682,7 @@ const guns = [
     roundCapacity: 28,
     action: "Select-fire",
     calibre: "6.8mm BH",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/ranulf-busby-doku-final-02.webp",
     description:
       "An elite bullpup with a unique, hard-hitting calibre. Some say it's the perfect assault rifle.",
   },
@@ -701,7 +701,7 @@ const guns = [
     roundCapacity: 0,
     action: "Select-fire",
     calibre: "995+440nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/kris-thaler-plasmabazooka1c.webp",
     description:
       "A plasma and laser gun put into one; plasma for full-auto punches and laser for semi-auto piercing.",
   },
@@ -720,7 +720,7 @@ const guns = [
     roundCapacity: 0,
     action: "Burst",
     calibre: "Unknown",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/lin-hongy-1-edited.webp",
     description:
       "Experimental Herald tech. Shoots a quick burst of 3 mana bolts that uncharacteristically move quickly.",
   },
@@ -739,7 +739,7 @@ const guns = [
     roundCapacity: 12,
     action: "Semi-auto",
     calibre: "8.02mm TB",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/lin-hongy-1.webp",
     description:
       "Used in some of the most famous assassinations in history. High-powered and deadly accurate.",
   },
@@ -758,7 +758,7 @@ const guns = [
     roundCapacity: 0,
     action: "Semi-auto",
     calibre: "625nm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/alex-refuser-01-lumistrike-general-shot.webp",
     description:
       "It is said that the victims don't even feel the pain, dropping dead as if it had come from nowhere...",
   },
@@ -819,6 +819,25 @@ const guns = [
     image: "Images/Guns/sean-drake-8.webp",
     description:
       "A medium machine gun that can punch holes in armour and is perfect for suppressive fire.",
+  },
+  {
+    name: "MX Llama",
+    type1: "Rail",
+    type2: "lightweapon",
+    cost: 750000,
+    equipmentLevel: 5,
+    stoppingPower: 6,
+    piercingPower: 5,
+    rateOfFire: 8,
+    range: 5,
+    accuracy: 6,
+    handling: 2,
+    roundCapacity: 100,
+    action: "Full-auto",
+    calibre: "28mm",
+    image: "Images/Guns/mx-llama-presentation-2.webp",
+    description:
+      "Almost called FD8, but it was a class of its own. Can shoot rail projectiles as if it was full-auto.",
   },
   {
     name: "Salamander Or2",
@@ -891,7 +910,7 @@ const guns = [
     roundCapacity: 1,
     action: "Launcher",
     calibre: "82mm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/ben-kiefaber-2.webp",
     description:
       "Can launch any type of grenade. Used for destructive purposes as well as crowd control.",
   },
@@ -910,9 +929,9 @@ const guns = [
     roundCapacity: 8,
     action: "Semi-auto",
     calibre: "28mm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/terraform-studios-grenade-launcher-03-w.webp",
     description:
-      "Cheap for a rocket launcher but effective at taking out heavy and expensive targets.",
+      "Cheap for an all-purpose launcher but effective at taking out heavy and expensive targets.",
   },
   {
     name: "KM Swarm",
@@ -948,7 +967,7 @@ const guns = [
     roundCapacity: 12,
     action: "Semi-auto",
     calibre: "40mm",
-    image: "https://placehold.co/100x100/ff0000/ffffff?text=Equipment",
+    image: "Images/Guns/georgiy-nomerovsky-beaty-shot.webp",
     description:
       "Locks onto targets and launches high-destructive missiles which seek them.",
   },
@@ -986,7 +1005,7 @@ const guns = [
     roundCapacity: 0,
     action: "Burst",
     calibre: "720nm x4",
-    image: "Images/Guns/georgiy-nomerovsky-beaty-shot.webp",
+    image: "Images/Guns/filippo-ubertino-wr138.webp",
     description:
       "A specialized heavy laser gun that fires volatile ion particles, causing explosions.",
   },
@@ -1121,7 +1140,7 @@ const vehicles = [
     mobility: "3",
     armour: 8, // Standardized to 'armour' (camelCase)
     length: "11m",
-    image: "",
+    image: "Images/Vehicles/octopus_by_karanak_-deviantart.webp",
     description:
       "Fit for convoys, heavy firepower, artillery support, and everything tank-like, these beasts can lead the charge into combat. +Comes with a free T2 weapon",
     shields: 0,

@@ -439,7 +439,7 @@ const titles = [
     prerequisites: "none",
     consequences: [],
     credits: 50000000,
-    imageSrc: "/Images/Titles/title051.webp",
+    imageSrc: "Images/Titles/backstabbing-bio-shitto-artstation.webp",
     subDescription:
       "Name up to 5 traitors from the named crew members. Every additional traitor adds 30m.",
     description:
@@ -494,7 +494,7 @@ const titles = [
     complications: [
       "A hostile bandit group has a bone to pick with you. They will show up at the most inconvenient times, but almost never to confront you directly. Sabotage, traps, and spies await you when you least expect it. The larger your crew, the more likely they can infiltrate. You might want intimidating crew members.",
     ],
-    imageSrc: "/Images/Titles/title043.webp",
+    imageSrc: "Images/Titles/trap-billy-christian-artstation.webp",
     subDescription: "",
     description:
       "A hostile bandit group has a bone to pick with you. They will show up at the most inconvenient times, but almost never to confront you directly. Sabotage, traps, and spies await you when you least expect it. The larger your crew, the more likely they can infiltrate. You might want intimidating crew members.",
@@ -508,7 +508,7 @@ const titles = [
     complications: [
       "The notorious (former) \"Siblings of Death\" both join your crew at the same time, unbeknownst to each other. However, they don't find out until you're in the middle of space, and they hate each other's guts with a violent zeal.",
     ],
-    imageSrc: "/Images/Titles/title041.webp",
+    imageSrc: "Images/Titles/2girls-indotort-civitai.webp",
     subDescription: "+Can get Alessia (combat) and Ricce (combat) for free",
     description:
       "The notorious (former) \"Siblings of Death\" both join your crew at the same time, unbeknownst to each other. However, they don't find out until you're in the middle of space, and they hate each other's guts with a violent zeal.",
@@ -553,7 +553,7 @@ const titles = [
     complications: [
       "Somewhere out there in the galaxy, someone sees you as the 'Perfect Rival.' They fly a similar ship or fleet doctrine that is every bit as good as yours. Their leader? A notorious pilot who has had a fearsome record of flawless victo- ries, winning with genius tact. Your hope is to not face them alone...",
     ],
-    imageSrc: "/Images/Titles/title023.webp",
+    imageSrc: "Images/Titles/majesticsun-indotort-midjourney.webp",
     subDescription: "",
     description:
       "Somewhere out there in the galaxy, someone sees you as the 'Perfect Rival.' They fly a similar ship or fleet doctrine that is every bit as good as yours. Their leader? A notorious pilot who has had a fearsome record of flawless victo- ries, winning with genius tact. Your hope is to not face them alone...",
@@ -567,7 +567,7 @@ const titles = [
     complications: [
       "You get horrendously lost and come across a huge ancient space station made completely out of Herald tech. However, you find yourself surrounded by a lot of mysterious Herald vessels. You know their ships are powerful, but they don't sem happy to see you. Better make a good impression...",
     ],
-    imageSrc: "/Images/Titles/title021.webp",
+    imageSrc: "Images/Titles/vadim-sadovski-w1-copy-artstation.webp",
     subDescription: "",
     description:
       "You get horrendously lost and come across a huge ancient space station made completely out of Herald tech. However, you find yourself surrounded by a lot of mysterious Herald vessels. You know their ships are powerful, but they don't sem happy to see you. Better make a good impression...",
@@ -584,7 +584,7 @@ const titles = [
       "Can only hire hostile or neutral crew members.",
       "Diplomacy skill effect reversed.",
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Titles/avetetsuya-studios-harry-hidayat-artstation.webp",
     subDescription:
       "Origin must have hostile factions. Can only hire hostile or neutral crew members. Diplomacy skill effect reversed",
     description:
@@ -627,7 +627,7 @@ const titles = [
     complications: [
       "A wormhole will open up at a random point in time while you are in space and swallow you whole. You will appear in unknown space with no way to indicate where you are in the vast, empty universe. You may make it back eventually, but it will take years, at the least. Maybe decades... or never.",
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Titles/soloexit-indotort-midjourney.webp",
     subDescription: "",
     description:
       "A wormhole will open up at a random point in time while you are in space and swallow you whole. You will appear in unknown space with no way to indicate where you are in the vast, empty universe. You may make it back eventually, but it will take years, at the least. Maybe decades... or never. ",
@@ -671,7 +671,7 @@ const titles = [
     complications: [
       "Receive all complications from The Leader, The Nemesis, and The Space Cowboy.",
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Titles/squarespace-gus-mendonca-static1-artstation.webp",
     subDescription: "Cannot take The Leader, The Nemesis, or The Space Cowboy",
     description:
       "Receive all complications from The Leader, The Nemesis, and The Space Cowboy.\n",
@@ -689,7 +689,7 @@ const titles = [
     complications: [
       "Receive all complications from The Whisperer, The Sleeper and The Traveler.",
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Titles/stringsoffate-indotort-midjourney.webp",
     subDescription: "Cannot take The Whisperer, The Sleeper, or The Traveler",
     description:
       "Receive all complications from The Whisperer, The Sleeper and The Traveler.",
@@ -707,7 +707,7 @@ const titles = [
     complications: [
       "Receive all complications and crew members from The Guardian and The Sorcerer.",
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Titles/demigoddess-indotort-midjourney.webp",
     subDescription: "Cannot take The Guardian or The Sorcerer",
     description:
       "Receive all complications and crew members from The Guardian and The Sorcerer.",

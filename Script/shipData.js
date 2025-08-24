@@ -2367,7 +2367,7 @@ const shipAI = [
     role: "Multi-Role",
     description:
       "A minimalistic and subtle ship AI that has all of the basic functions any ship-farer could want. Most ships will be well off with this AI.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/Multirole-serjanburlak-artstation (1).webp",
   },
   {
     cost: 1000000,
@@ -2377,7 +2377,7 @@ const shipAI = [
     role: "Exploration",
     description:
       "Named after the founder of the corporation herself while also utilizing her voice, the Beatrice AI is reknown for being efficient at managing exploration voyages.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/EXPLORATION - serjanburlak-artstation.webp",
   },
   {
     cost: 1000000,
@@ -2387,7 +2387,7 @@ const shipAI = [
     role: "Industry",
     description:
       "Targray keeps production and mining operations at tip-top shape. He's full of many frameworks built to keep things running.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/INDUSTRY - serjanburlak-artstation (2).webp",
   },
   {
     cost: 1000000,
@@ -2397,7 +2397,7 @@ const shipAI = [
     role: "Entertainment",
     description:
       "If you're planning on flying a vessel for civillian use or comfort, Cassandra is the AI you need. She's programmed to keep everyone happy on your ship.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/Entertainment-serjanburlak-artstation (1).webp",
   },
   {
     cost: 1000000,
@@ -2407,7 +2407,7 @@ const shipAI = [
     role: "Deep Space Exploration",
     description:
       "Luke specializes in max efficiency and recycling of resources for those extremely long journeys.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/DeepSpace--serjanburlak-artstation (1).webp",
   },
   {
     cost: 1000000,
@@ -2417,7 +2417,7 @@ const shipAI = [
     role: "Skirmish & Interception",
     description:
       "Rom was made by Red Dagger programmers specifically to maximize output into navigation, giving ships the best advantage when it comes to scaling the battlefield. He's very adaptable for any situation you may come across.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/Skirmish-serjanburlak-artstation (1).webp",
   },
   {
     cost: 1000000,
@@ -2427,7 +2427,7 @@ const shipAI = [
     role: "Fire Support",
     description:
       "Fleet synergy is the epitome of the Federation Navy, and that's partially thanks to Jacob. He synergizes well with other combat AIs and is a great tactician.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/serjan-burlak-observation.webp",
   },
   {
     cost: 1000000,
@@ -2437,7 +2437,7 @@ const shipAI = [
     role: "Covert Ops",
     description:
       "Nothing's more discrete than the latest version of Remington. For any special ops ship-farers out there, there's no AI better than him.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/Covert Ops - serjanburlak-artstation (1).webp",
   },
   {
     cost: 1000000,
@@ -2447,7 +2447,7 @@ const shipAI = [
     role: "Assault",
     description:
       "There are a lot of assault-based AI out there, but none are better than Lai'na. Programmed by a brilliant Outer Ring programmer, she holds top record in combat performance.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/ASSAULT - serjanburlak-artstation (3).webp",
   },
   {
     cost: 1000000,
@@ -2457,7 +2457,7 @@ const shipAI = [
     role: "Siege & Defence",
     description:
       "When it comes to prolonged battles, Cedrick comes out to be the most stalwart. He's able to manage ship defences perfectly with minimal resources.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/serjan-burlak-observation.webp",
   },
   {
     cost: 1000000,
@@ -2467,7 +2467,7 @@ const shipAI = [
     role: "Guerilla",
     description:
       "She's a little sassy and sinister, but that's how the Talons programmed her. She's easily one of the most fearsome AIs, full of ingenious tactics to wither down foes.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/GUERILLA - serjanburlak-artstation (1).webp",
   },
   {
     cost: 1000000,
@@ -2477,7 +2477,7 @@ const shipAI = [
     role: "Mana Interfacing",
     description:
       "Sophocles is Triglav's best attempt at utilizing mana power. His AI is incredibly complex compared to others, and has the potential to make ships incredible.",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/GUERILLA - serjanburlak-artstation (1).webp",
   },
 ];
 
@@ -2612,7 +2612,7 @@ const shield = [
     cost: 1000000,
     shieldStrength: "+7",
     description: "", // No description provided in the source for this item
-    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
+    image: "Images/Subsystem/purpleshield-indotort-midjourney (4).webp",
   },
   {
     
@@ -2620,7 +2620,7 @@ const shield = [
     cost: 5000000,
     shieldStrength: "+10",
     description: "", // No description provided in the source for this item
-    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
+    image: "Images/Subsystem/purpleshield-indotort-midjourney (4).webp",
   },
   {
     
@@ -2628,7 +2628,7 @@ const shield = [
     cost: 20000000,
     shieldStrength: "+12",
     description: "+Ships with power capacitors or better 10m off",
-    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
+    image: "Images/Subsystem/purpleshield-indotort-midjourney (4).webp",
   },
   {
     
@@ -2636,7 +2636,7 @@ const shield = [
     cost: 30000000,
     shieldStrength: "+14",
     description: "+Ships with nuclear fusion or better get 15m off",
-    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
+    image: "Images/Subsystem/redshield-indotort-midjourney (6).webp",
   },
   {
     
@@ -2644,7 +2644,7 @@ const shield = [
     cost: 40000000,
     shieldStrength: "+16",
     description: "+Ships with anti-matter core or better get 10m off",
-    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
+    image: "Images/Subsystem/allshield-indotort-midjourney (5).webp",
   },
   {
     
@@ -2653,7 +2653,7 @@ const shield = [
     shieldStrength: "+15",
     description:
       "+Ships with a mana core get this for 5m off and with +2 defence",
-    image: "https://placehold.co/100x100/789abc/ffffff?text=Shield",
+    image: "Images/Subsystem/blueshield-indotort-midjourney (3) (1).webp",
   },
 ];
 
@@ -2748,7 +2748,7 @@ const mods = [
     description:
       "Your ship uses experimental EMP tech to single out an enemy ship. For 3 minutes, that ship's shields are weakened, weapons slowed, and navigation cut in half.",
     type: "command",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/fortress-class-adam-burn-artstation.webp",
   },
   {
     
@@ -2761,7 +2761,7 @@ const mods = [
     description:
       "After picking a direction, your ship emits a powerful EMP pulse in a cone, dealing heavy damage to shields while also interfering with electrical systems.",
     type: "command",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/Neonspace-99villages-deviantart.webp",
   },
   {
     
@@ -2774,7 +2774,7 @@ const mods = [
     description:
       "Using stored energy reserves, your ship completely regenerates your shield strength back to its maximum.",
     type: "command",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/thrust-indotort-midjourney.webp",
   },
   {
     
@@ -2843,7 +2843,7 @@ const mods = [
     spinalWeaponMounts: 1, // Specific mount type
     description: "*Can't be fit on carriers",
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/basilisk-adam-burn-artstation.webp",
   },
   {
     
@@ -2863,7 +2863,7 @@ const mods = [
     hullArmor: "20%", // Keep as string as it's a percentage
     description: "", // No general description provided, only stats
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/graphene-indotort-midjourney.webp",
   },
   {
     
@@ -2884,7 +2884,7 @@ const mods = [
     description:
       "Activating this turns your ship invisible to sight or scans. You cannot do anything (including FTL warp) but navigate at half speed.",
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/xebelion-mereak-hd.webp",
   },
   {
     
@@ -2894,7 +2894,7 @@ const mods = [
     description:
       "Prevents boarding parties from teleporting into your vessel. +Dreadnoughts have this for free +Fighters don't need a jammer",
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/roldan-juan-pablo-artstation.webp",
   },
   {
     
@@ -2905,7 +2905,7 @@ const mods = [
     description:
       "Sacrifice 20% of your ship's shields and give it to all allied ships within a moderate distance.",
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/energyshield-indotort-midjourney.webp",
   },
   {
     
@@ -2950,7 +2950,7 @@ const industrial = [
     moduleType: "Industrial",
     description:
       "This harvester uses infrared light to separate common ores from asteroids. It has its own unique built-in tractor beam to bring the ore to your ship while mining. +Can mine low-grade ore *Uses a broadside or point-defence turret mount *Requires ore processing facility",
-    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
+    image: "Images/Subsystem/bartek-nowak-1.webp",
   },
   {
     
@@ -2959,7 +2959,7 @@ const industrial = [
     moduleType: "Industrial",
     description:
       "You can replace the lens of a mining harvester with this lens that uses a smaller green laser to mine more complex ores. Lenses can be changed on the fly. +Can switch with mining harvester lenses to mine mid-grade ore *Requires a mining harvester",
-    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
+    image: "Images/Subsystem/miningbeam1-indotort-midjourney.webp",
   },
   {
     
@@ -2968,7 +2968,7 @@ const industrial = [
     moduleType: "Industrial",
     description:
       "The most precise and powerful lens, the MK3 is capable of pin-pointing the most valuable ore from asteroids. It's inefficient for mining lower grade ores, however. +Can switch with mining harvester lenses to mine high-grade ore *Requires a mining harvester",
-    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
+    image: "Images/Subsystem/miningbeam2-indotort-midjourney.webp",
   },
   {
     
@@ -2977,7 +2977,7 @@ const industrial = [
     moduleType: "Industrial",
     description:
       "Using similar technology to the mining harvesters, this laser is specialized in taking apart machines. Perfect for salvaging debris or ship wrecks. It also comes with its own tractor beam. *Uses a broadside or point-defence turret mount *Requires a cargo space room",
-    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
+    image: "Images/Subsystem/canyon-transit-bynde-artstation.webp",
   },
   {
     
@@ -2986,7 +2986,7 @@ const industrial = [
     moduleType: "Logistics",
     description:
       "A universal tractor beam that harnesses light to attract or push matter not limited to ore or scrap. It's useful for retrieving free- floating objects, or that one maintenance crew member who accidentally cut his safety wire. *Can only be bought once per ship *Cannot target other active ships",
-    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
+    image: "Images/Subsystem/UFOabduction-indotort-midjourney.webp",
   },
   {
     
@@ -2995,7 +2995,7 @@ const industrial = [
     moduleType: "Logistics",
     description:
       "This very complex module can scan objects and bring back very precise results. It can detect ore/mineral compositions in asteroids, energy sources, electri- cal activity, and even life forms. It can also scan other ships to give you intel on their systems. *Can only be bought once per ship",
-    image: "https://placehold.co/100x100/987654/ffffff?text=Industrial",
+    image: "Images/Subsystem/Beam Me Up_ by Denis Dryashkin.jpg",
   },
 ];
 
@@ -3139,7 +3139,7 @@ const rooms = [
     description:
       "All ships have sleeping quarters for your entire crew, but they are cramped and not too comfortable. Upgrade with this if you want more privacy and better comfort. +Does not cost a room slot",
     type: "quarters",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/crewquarters-aristeidis-chrysikopoulos-artstation.webp",
   },
   {
     
@@ -3148,7 +3148,7 @@ const rooms = [
     description:
       "Comfy, furnished dwellings that can accomodate 1-6 people on a frigate, up to 12 on a destroyer, and 10% of your crew on a cruiser or larger. Keep your important crew members with high morale!",
     type: "quarters",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/capoff-aristeidis-chrysikopoulos-artstation.webp",
   },
   {
     
@@ -3166,7 +3166,7 @@ const rooms = [
     description:
       "Got a headache? Maybe you need a bandage? Okay, you can do stitches and make-shift broken-bone splints here too, but don't expect much more.",
     type: "infirmary",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/cpi-web-set-gallery-kitbash3d-artstation.webp",
   },
   {
     
@@ -3175,7 +3175,7 @@ const rooms = [
     description:
       "Equipped with decent medical equipment, enough to perform surgeries. Your wounded may live another day, and with a good doctor, your crew's in good hands. *Requires a doctor",
     type: "infirmary",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/medbnay-ben-olson_-artstation.webp",
   },
   {
     
@@ -3184,7 +3184,7 @@ const rooms = [
     description:
       "The most advanced medical technology is at your finger tips, including magical space beds that can almost instantaneously repair damaged body parts. *Requires a doctor",
     type: "infirmary",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/med-bay2-danny-han-artstation.webp",
   },
   {
     
@@ -3229,7 +3229,7 @@ const rooms = [
     description:
       "Sometimes you need a good drink after a long day of hard work. Kick back and relax. Bar food is good too, but not that filling. +Can combine with a mess hall *Requires a chef or bartender",
     type: "tavern",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/barstools-chrisdoretz-artstation.webp",
   },
   {
     
@@ -3247,7 +3247,7 @@ const rooms = [
     description:
       "Maybe you don't fancy the fancy stuff. Get a few couches, a coffee table, maybe a TV, and suddenly you have a room to laze around in. +Can combine with a recreational room and an observatory",
     type: "recreational",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/lounge-wojtek-fikus-hab-artstation.webp",
   },
   {
     
@@ -3256,7 +3256,7 @@ const rooms = [
     description:
       "During times of no action, your crew might get bored. Why not turn a room into a pool, gym, spa, library, mini-golf course, or more? +Can combine with a lounge and an observatory",
     type: "recreational",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/entertainmentroom-alexander-dudar-artstation.webp",
   },
   {
     
@@ -3292,7 +3292,7 @@ const rooms = [
     description:
       "You may want to go to cryosleep for those really long voyages into unknown space. These chambers ensure you're in good health while you're out cold. *Requires a doctor and scientist",
     type: "medical",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/cryopods-yue-w-artstation.webp",
   },
   {
     
@@ -3301,7 +3301,7 @@ const rooms = [
     description:
       "With all of the ore you will be dealing with, you wil need a place to process them. +Can combine with a factory wing *Requires a production manager",
     type: "industrial",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/oreprocess-chrisdoretz-artstation.webp",
   },
   {
     
@@ -3310,7 +3310,7 @@ const rooms = [
     description:
       "This factory wing is fitted with heavy machinery, capable of producing things en masse. It can also process scrap metal. +Can combine with an ore processing facility",
     type: "industrial",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/engroom-ponte-ryuurui-artstation.webp",
   },
   {
     
@@ -3328,7 +3328,7 @@ const rooms = [
     description:
       "Need to repair something? Bring it here. It's a mechanic's heaven. +Can combine with a cargo space *Requires a mechanical engineer",
     type: "utility",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/mistyman-studio-ihor-khmara-artstation.webp",
   },
   {
     
@@ -3337,7 +3337,7 @@ const rooms = [
     description:
       "This high-tech room comes with hypercommunications tech, able to send communications across star systems almost instantly. +Can combine with a digital security room",
     type: "communications",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/hypercomms-tadeo-d-oria-c2-artstation.webp",
   },
   {
     
@@ -3346,7 +3346,7 @@ const rooms = [
     description:
       "Defend your ship's vulnerable digital systems with top of the line encryption grids. +Can combine with a hypercomms room *Requires a cyber security officer",
     type: "security",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/securityroom-marthe-jonkers-artstation.webp",
   },
   {
     
@@ -3355,7 +3355,7 @@ const rooms = [
     description:
       "Maybe you are a gun nut, or have a few on board with you. Keep all of your small arms, here. Comes with all kinds of weaponry fit for your standard soldier's hands.",
     type: "storage",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/security-hall-nick-stath-artstation.webp",
   },
   {
     
@@ -3382,7 +3382,7 @@ const rooms = [
     description:
       "beam you and your crew into the enemy ship, or onto the surface of a planet.",
     type: "transport",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/teleportroom-tadeo-d-oria-artstation.webp",
   },
   {
     
@@ -3400,7 +3400,7 @@ const rooms = [
     description:
       "Got an extremely volatile prisoner or lifeform that you need to contain at all costs? Throw it in the stasis cell to ensure it doesn't do anything you'd regret. Can only hold up to one specimen.",
     type: "security",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/stasis-stas-yurev-21-08-artstation.webp",
   },
   {
     
@@ -3418,7 +3418,7 @@ const rooms = [
     description:
       "Raise some space fish! While you might get some good eats, you will need to replace the water often... They will need nutrients, however. +Can combine with a hydroponic garden",
     type: "food",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/aquaculture-manon-krapf-artstation.webp",
   },
   {
     
@@ -3436,7 +3436,7 @@ const rooms = [
     description:
       "Transporting critical material worth hundreds of millions of credits? Maybe you don't want to keep it in your cargo space, or maybe you Some aquaculture might help.... Just don't trust your crew mates. +Counts as a cargo space",
     type: "storage",
-    image: "https://placehold.co/100x100/ffccaa/ffffff?text=Room",
+    image: "Images/Room/door-vault-adrian-marc-artstation.webp",
   },
   {
     
@@ -3952,7 +3952,7 @@ const drones = [
     length: "6m",
     description:
       "A drone that uses mining lasers to mine asteroids, and can carry the ore to your ship. +Comes with a free mining harvester (MK1 crystal) *Limited to industrial modules",
-    image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
+    image: "Images/Subsystem/crusher-adam-burn-artstation.webp",
   },
   {
     
