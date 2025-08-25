@@ -4,10 +4,11 @@ FRAME:
 
 5. Handlechoice: ewar, spell, catalyst
 6. Frame mechanic
+7. Pictures: spell, catalyst 
 
 SHIP: 3. Handlechoice ship weapons (hard),
 
-7. Pictures: hulls, shipAI, shield, industrial, rooms, [KARANAK DEVIANTART]
+7. Pictures: hulls
 
 8. shipWeapons spinal/broadside mechanic
 
@@ -26,7 +27,3 @@ Origins:
 
 17. Reserve contracts & battle for next update
 
-Error:
-
-1. Delete ship button broken
-2. Change ship button broken

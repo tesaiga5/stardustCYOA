@@ -1980,7 +1980,7 @@ const hulls = [
 
   // Carriers
   {
-    image: "Images/Ships/bob009.webp",
+    image: "Images/Ships/maelstrom_by_karanak_-deviantart.webp",
     name: "ID-9F",
     manufacturer: "Hammerhead Ind.",
     type: "carrier",
@@ -2054,7 +2054,7 @@ const hulls = [
     description: '"And Earth first bore starry eyes in his marvelous heads"',
   },
   {
-    image: "Images/Ships/bob009.webp",
+    image: "Images/Ships/till-freitag-Endeavor.jpg",
     name: "Ouranos",
     manufacturer: "Luos Syndicate",
     type: "carrier",
@@ -2079,7 +2079,7 @@ const hulls = [
       '"... And from under the brows of his Heaven, equal to herself, to cover flashed fire, and fire burned from her on every side, and to be an ever-sure abiding-place for the blessed Gods."',
   },
   {
-    image: "Images/Ships/bob009.webp",
+    image: "Images/Ships/Ship 5101 by Tom Hicks.webp",
     name: "Asmodai",
     manufacturer: "Talons",
     type: "carrier",
