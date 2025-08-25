@@ -4078,12 +4078,13 @@ function createShip() {
   return newShip;
 }
 
-function deleteShip(shipID, map) {
+function deleteShip(shipID) {
   //delete ship object
   // Logic to delete a ship by its ID
-  map.delete(shipID); // Set the ship object to null to simulate deletion
-  console.log(`Ship with ID: ${shipID} has been deleted.`);
-  return map; // Return null to indicate the ship has been deleted
+  
+  //map.delete(shipID); // Set the ship object to null to simulate deletion
+  //console.log(`Ship with ID: ${shipID} has been deleted.`);
+  //return map; // Return null to indicate the ship has been deleted
 }
 
 function addHull(shipObject, hullData) {

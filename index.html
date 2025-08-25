@@ -2528,7 +2528,13 @@ sectionFleet1.addEventListener('click', (event) => {
   const clickedObjectDiv = event.target.closest('.object-div'); 
 
   if (deleteButton) {
-    // ... (your existing delete ship logic) ...
+    let shipToDelete = deleteButton.closest('.object-div'); 
+    delete player.ships[shipToDelete.id];
+    player.currentActiveShip = null; // Clear the current active ship
+    resetShipConfigUI('section-hull'); // Pass null to reset all UI sections
+    sectionShip1.classList.remove('visible');
+    //console.log(`Ship ${clickedShipId} deactivated. Configuration UI reset.`);
+    shipToDelete.remove();
   } else if (editButton) {
     if (clickedObjectDiv) {
       // Pass the ID of the main ship object-div to editShipName
