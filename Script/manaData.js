@@ -19,14 +19,14 @@ const catalyst = [
     cost: 0,
     description:
       "The base catalyst that can project an arm blade of pure mana. Can cast Tier 1 magic from all magic families. Max two catalysts per suit.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/guillaume-martinet-compo-02-artstation.webp",
   },
   {
     name: "Spell Synthesis",
     cost: 3,
     description:
       "Gain the ability to combine two spell bases into one spell. Spell bases may play out in sequence or at the same time.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/iceandfire-indotort-midjourney.webp",
   },
   {
     name: "Advanced Spell Synthesis",
@@ -39,49 +39,49 @@ const catalyst = [
     cost: 2,
     description:
       "Gain access to tier 2 Paralogical affinity effects. Your blade may now take on tier 1 Paralogical affinities.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/void2-indotort-midjourney (10).webp",
   },
   {
     name: "Elemental Tier 2 Casting",
     cost: 2,
     description:
       "Gain access to tier 2 Elemental affinity effects. Your blade may now take on tier 1 Elemental affinities.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/flamingblade-indotort-midjourney.webp",
   },
   {
     name: "Anticausal Tier 2 Casting",
     cost: 2,
     description:
       "Gain access to tier 2 Anticausal affinity effects. Your blade may now take on tier 1 Anticausal affinities.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/hypercube-indotort-midjourney.webp",
   },
   {
     name: "Paralogical Tier 3 Casting",
     cost: 3,
     description:
       "Gain access to tier 3 Paralogical affinity effects. Your blade may now take on tier 2 Paralogical affinities.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/rust-indotort-midjourney (12) (1).webp",
   },
   {
     name: "Elemental Tier 3 Casting",
     cost: 3,
     description:
       "Gain access to tier Elemental affinity effects. Your blade may now take on tier 2 Elemental affinities.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/frozenflam-indotort-midjourney.webp",
   },
   {
     name: "Anticausal Tier 3 Casting",
     cost: 3,
     description:
       "Gain access to tier 3 Anticausal affinity effects. Your blade may now take on tier 2 Anticausal affinities.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/antimatter-indotort-midjourney (4).webp",
   },
   {
     name: "Catalyst Upgrade: Vanguard",
     cost: 8,
     description:
       "Can't be taken with Slayer or Sentinel. You now have a catalyst blade in the form of a greatsword with increased blade potency.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/claymore-indotort-midjourney.webp",
   },
   {
     name: "Catalyst Upgrade: Slayer",
@@ -95,14 +95,14 @@ const catalyst = [
     cost: 8,
     description:
       "Can't be taken with Vanguard or Slayer. Instead of a blade, your catalyst is now a shield that covers your upper torso. Spells cost less mana.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/energyshield-indotort-midjourney.webp",
   },
   {
     name: "Ghost Blade",
     cost: 2,
     description:
       "Each swing of the blade will cast an echo of itself shortly afterwards, effectively hitting twice.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/ghostblade-indotort-midjourney.webp",
   },
   {
     name: "Smite",
@@ -130,14 +130,14 @@ const catalyst = [
     cost: 2,
     description:
       "Charging up a swing from your catalyst's blade by channeling energy into it will cause the next impact to explode.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/flare-indotort-midjourney.webp",
   },
   {
     name: "Guardian",
     cost: 5,
     description:
       "Create a near-indestructible immobile forcefield around yourself over a small area, enough to cover your entire fireteam.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/forcefield-yomama123556778-artstation.webp",
   },
   {
     name: "Blink",
@@ -151,7 +151,7 @@ const catalyst = [
     cost: 8,
     description:
       "Activating this upgrade injects a large amount of mana into the servos subsystem of the suit, boosting all mobility capabilities two-fold temporarily.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/howl-indotort-midjourney.webp",
   },
   {
     name: "Fortitude",
@@ -376,21 +376,21 @@ const spellBases = [
     cost: 1,
     description:
       "Sprays a somewhat condensed cloud of mana in a continuous stream. It's short ranged with a low velocity, but it is effective at what it hits.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/spray-indotort-midjourney.webp",
   },
   {
     name: "Pulse",
     cost: 1,
     description:
       "Bursts a very concentrated short-ranged shockwave in a cone in front of you. Has a low cooldown and can be devastating to any targets in range.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/pulse-indotort-midjourney.webp",
   },
   {
     name: "Barricade",
     cost: 1,
     description:
       "Projects a rectangular barrier that can cover almost a whole side of your suit. While it has a high potency, it only deploys relatively close to you.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/fortitude-indotort-midjourney.webp",
   },
   {
     name: "Pinch",
@@ -411,14 +411,14 @@ const spellBases = [
     cost: 2,
     description:
       "A short-ranged tether with high concentration. Its potency slightly increases the longer you remain directly attached to the target with this tether.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/void1-indotort-midjourney (6).webp",
   },
   {
     name: "Mine",
     cost: 2,
     description:
       "Mines can only be casted a short distance, but will detonate into a large explosion after the duration expires or when in proximity to a designated target type.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/mine-indotort-midjourney.webp",
   },
   {
     name: "Aura",
@@ -439,7 +439,7 @@ const spellBases = [
     cost: 2,
     description:
       "Shoot out a highly concentrated disc of mana that travels a moderate range. This is very helpful for precision work.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/rockman-angeloXZ91-twitter.jpg",
   },
   {
     name: "Arrow",
@@ -453,21 +453,21 @@ const spellBases = [
     cost: 4,
     description:
       "A beam of concentrated mana that travels almost instantly and accurately to your target.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/hyperbeam-zoupe-13-artstation.webp",
   },
   {
     name: "Bomb",
     cost: 4,
     description:
       "Fire off a large bomb that, while travels slowly, explodes in a very large and concentrated explosion.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/genshiro-maximedestouches-artstation.webp",
   },
   {
     name: "Pillars",
     cost: 4,
     description:
       "Summon extremely thin pillars of very potent mana randomly around a moderate radius of yourself. Can be casted rather frequently, and the pillars somewhat prioritize valid",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/swordofrevealinglight-Shueisha.jpg",
   },
   {
     name: "Cloud",
@@ -481,56 +481,56 @@ const spellBases = [
     cost: 6,
     description:
       "Throw an extremely dense spear of mana that can pierce through multiple targets.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/PhantomKnightsSpear-kazukitakahashi (1).webp",
   },
   {
     name: "Swarm",
     cost: 6,
     description:
       "Burst forward a group of accelerated mana darts. While somewhat inaccurate, it can be casted almost continuously and devastates anything in its path.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/swarm-stas-yurev-artstation.webp",
   },
   {
     name: "Haze",
     cost: 6,
     description:
       "A mana bomb that has a mild-but-effective explosion with a very large radius which leaves behind a lingering dense cloud.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/balllightning-indotort-midjourney.webp",
   },
   {
     name: "Barrier",
     cost: 6,
     description:
       "Summon wide barrier of potent mana that's large enough to cover you and your fireteam from one direction.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/barrier-indotort-midjourney.webp",
   },
   {
     name: "Overload",
     cost: 10,
     description:
       "Charge up to fire a wide, devastating beam of mana that travels a far distance in an instant.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/darkseid-william-j-harris-artstation.webp",
   },
   {
     name: "Nova",
     cost: 10,
     description:
       "Cast a sudden explosion around yourself that engulfs a large area, which then lingers for awhile as a violent storm of mana.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/selfexplode-indotort-midjourney.webp",
   },
   {
     name: "Starfall",
     cost: 10,
     description:
       "Shoot a burst of eight beams of concentrated mana that can hone in on separate targets or hit the same target multiple times.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/starfall-indotort-midjourney.webp",
   },
   {
     name: "Radiance",
     cost: 10,
     description:
       "Radiate an aura of mana over an extremely large area from your suit, which lingers for a long time.",
-    image: "https://placehold.co/100x100/ddeeff/ffffff?text=SpellBase",
+    image: "Images/Mana/radiance-indotort-midjourney.webp",
   },
 ];
 
