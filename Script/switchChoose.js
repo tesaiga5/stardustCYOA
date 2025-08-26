@@ -242,6 +242,36 @@ function handleChoiceCrew(chosenChoice){
   }
 }
 
+// Add this function to switchChoose.js
+function handleEWar(chosenChoice, creditChange) {
+  const isChosenActive = chosenChoice.classList.contains("active");
+  const parentContainer = chosenChoice.closest('.p-frame') || chosenChoice.closest('.choice');
+  
+  // Find all E-War choices in the same category/container
+  const sameCategoryEWar = parentContainer.querySelectorAll('.choice.ewar');
+  
+  if (isChosenActive) {
+    // If already active, deactivate it
+    chosenChoice.classList.remove("active");
+    player.frame.frameIntegrity += creditChange; // Refund integrity
+    
+    // Remove choice from frame choices
+    const index = player.frame.choices.indexOf(chosenChoice.id);
+    if (index !== -1) {
+      player.frame.choices.splice(index, 1);
+    }
+  } else {
+      // Activate the chosen E-War
+      chosenChoice.classList.add("active");
+      player.frame.frameIntegrity -= creditChange; // Deduct integrity
+      player.frame.choices.push(chosenChoice.id);
+  }
+  
+  // Update the frame integrity display
+  document.getElementById("frameCredits-display").innerHTML = 
+    `Frame Resources: ` + formatterIntl.format(player.frame.frameIntegrity);
+}
+
 function switchChoose(
   id,
   choiceElement,
@@ -806,6 +836,58 @@ function switchChoose(
         skillCredits,
         chosenSkill
       );
+      break;
+    
+    case "tech1-comint-discipline":
+    case "tech1-esm-honing":
+    case "tech1-eccm":
+    case "tech1-capacitor-destabilizer":
+    case "tech1-flash-blinder":
+    case "tech1-shield-transmitter":
+    case "tech1-motor-desynchronizer":
+    case "tech1-encryption-entangler":
+    case "tech1-hijack-kit":
+    case "tech1-greenhouse-virus":
+    case "tech1-endurance-nanites":
+    case "tech1-enhanced-trauma-management":
+    case "tech1-clairvoyant-resolution":
+    case "tech1-clarity-boost":
+    case "tech1-phased-membrane":
+      handleEWar(choiceElement, 1);
+      break;
+    case "tech2-elint-discipline":
+    case "tech2-rcs-masking":
+    case "tech2-sensor-dampening":
+    case "tech2-mana-neutralizer":
+    case "tech2-noise-gun":
+    case "tech2-armour-nanite-energizer":
+    case "tech2-active-armour-poisoning":
+    case "tech2-overclocker":
+    case "tech2-backdoor-masking":
+    case "tech2-shield-poisoning":
+    case "tech2-biotic-regenerative-nanites":
+    case "tech2-surgical-response":
+    case "tech2-mana-multivision":
+    case "tech2-pineal-boost":
+    case "tech2-power-membrane":
+      handleEWar(choiceElement, 3);
+      break;
+    case "tech3-asint-discipline":
+    case "tech3-target-rcs-enhancement":
+    case "tech3-ecm-jamming":
+    case "tech3-emp":
+    case "tech3-target-painter":
+    case "tech3-energy-transmitter":
+    case "tech3-weapon-jammer":
+    case "tech3-incident-response":
+    case "tech3-rootkit-library":
+    case "tech3-mana-script-entropy":
+    case "tech3-fuse-nanites":
+    case "tech3-leyline-override":
+    case "tech3-omnidirectional-vision":
+    case "tech3-trance":
+    case "tech3-second-skin":
+      handleEWar(choiceElement, 5);
       break;
     
     

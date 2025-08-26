@@ -1994,6 +1994,8 @@ function handleFrame(choiceFrame) {
     } 
   }
   updateSummary(choiceFrame);
+  document.getElementById("frameCredits-display").innerHTML = 
+    `Frame Resources: ` + formatterIntl.format(player.frame.frameIntegrity);
   return;
 }
 
