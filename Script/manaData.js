@@ -144,7 +144,7 @@ const catalyst = [
     cost: 10,
     description:
       "Gain the ability to teleport a short distance. While low cooldown, repeated successive Blinks cost an increasing amount of mana to cast.",
-    image: "https://placehold.co/100x100/aabbcc/ffffff?text=Catalyst",
+    image: "Images/Mana/Shisui-masashikishimoto-narutofandom.webp",
   },
   {
     name: "Howl",

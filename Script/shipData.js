@@ -2708,7 +2708,7 @@ const mods = [
     description:
       "Your ship slows to half its velocity but deploys a one-sided force field that blocks all but the strongest incoming damage from a certain direction for 20 seconds.",
     type: "command",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Ships/chokepoint-games-valiant-in-game-3.webp",
   },
   {
     
@@ -2721,7 +2721,7 @@ const mods = [
     description:
       "Your ship's engines double their efforts, earning you twice the thrust and acceleration for 20 seconds.",
     type: "command",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Subsystem/shuttletakeoff02b-joan-pique-llorens-artstation.webp",
   },
   {
     
@@ -2734,7 +2734,7 @@ const mods = [
     description:
       "Once activated, your ship links the energy sources of all nearby allied ships. All ships gain a performance boost for all modules, especially for mining and salvage modules.",
     type: "command",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Ships/james-combridge-earth-controlled-by-intellichine-artstation.webp",
   },
   {
     
@@ -2812,7 +2812,7 @@ const mods = [
     description:
       "Your ship blinks out of existence and almost instantaneously re-appears a far distance ahead of where you were pointed.",
     type: "command",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Ships/benjamin-perrot-variation3.webp",
   },
   {
     
@@ -4283,7 +4283,7 @@ function resetShipConfigUI(targetShipSection) {
   //for each div in section-hull, set them to not active
   // Get the parent div with the ID "section-hull"
   const sectionToReset = document.getElementById(targetShipSection);
-
+  console.log(' reset triggered');
   // Check if the element exists to avoid errors
   if (sectionToReset) {
     // Get all direct child div elements within "section-hull"

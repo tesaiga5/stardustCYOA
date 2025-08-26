@@ -4,22 +4,17 @@ FRAME:
 
 5. Handlechoice: ewar, spell, catalyst
 6. Frame mechanic
-7. Pictures: spell, catalyst 
+7. Pictures: spell, catalyst
 
 SHIP: 3. Handlechoice ship weapons (hard)
 
-4. HandleChoice: Archetype (hard)
+4. rendershipconfigUI
 
-7. Pictures: hulls
+5. HandleChoice: Archetype Crew (hard)
 
-8. shipWeapons spinal/broadside mechanic
+6. Pictures: mods
 
-Origins:
-
-3. remaining weapon slot display (1) - inside envelope
-
-4. Credits page (3) -> change to credit pictures instead
-5. toggleEnvelope.html
+7. shipWeapons spinal/broadside mechanic
 
 (4) 8. COMBAT STATS at the end of Equipment 9. Sponsor choice consequences 2. Moneysource choice consequences Start Loc consequences 13. Title pre-requisities and consequences (apply in title not in relevant (e.g. traitor apply in titles section)) 14. Your Fleet pre-requisities & consequences (mostly receiving consequences)
 
@@ -29,31 +24,29 @@ Origins:
 
 17. Reserve contracts & battle for next update
 
-
-
-DISPLAY SUMMARY
-{Frame Pic} [
-  Skill Level: (sum skill level)
-  Equipment Level: (sum equipment level)
-  Abilities: (list frame choices)
-  Equipment: (list equipment choices)
-  ]
+18. DISPLAY SUMMARY
+    {Frame Pic} [
+    Skill Level: (sum skill level)
+    Equipment Level: (sum equipment level)
+    Abilities: (list frame choices)
+    Equipment: (list equipment choices)
+    ]
 
 {Hull Pic} [
-    name: "ID-9F",
-    manufacturer: "Hammerhead Ind.",
-    type: "carrier",
-    cost: 78000000,
-    spinal: [],
-    broadside: [],
-    pointDefence: [],
-    hangar: [],
-    navigation: 2,
-    hullArmor: 20,
-    shieldStrength: 8,
-    length: "1.6km",
-    maxCrew: 2800,
-    extraRooms: 18,
-    rooms: [],
-    energyUse: 5,
+name: "ID-9F",
+manufacturer: "Hammerhead Ind.",
+type: "carrier",
+cost: 78000000,
+spinal: [],
+broadside: [],
+pointDefence: [],
+hangar: [],
+navigation: 2,
+hullArmor: 20,
+shieldStrength: 8,
+length: "1.6km",
+maxCrew: 2800,
+extraRooms: 18,
+rooms: [],
+energyUse: 5,
 ]
