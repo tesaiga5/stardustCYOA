@@ -12,7 +12,8 @@
 
   <script>
     const player = { //collect the pre-requisites in the player
-      credits: 0, 
+      credits: 0,
+      crewNum: 0, //to collect crew size from hull 
       fleetSize: 0, //IF fleetsize is zero, can't choose hulls
       skills: [],
       gear: [],
@@ -119,11 +120,19 @@
             <div class="pseudoChoice">
             <span>
                 <img src="/Images/Other/endless-space2.webp">
-                <span style="text-align: left;"><h3>Space</h3><p>Known Space: sectors that have at least 1 Dark River mapped
+                <span style="text-align: left;"><h3>Space</h3><p>Known Space: sectors that have at least 1 Dark River mapped </p>
                 <p>Unknown/Dark Space: sectors that don't have or known to have a Dark River</p>
                 <p>Dead Space: sectors without any celestial bodies, ergo no Dark River</p></span>
                 </span>
-            </div>        
+            </div>   
+            <div class="pseudoChoice">
+            <span>
+                <img src="Images/Other/playstation-indotort-midjourney.webp">
+                <span style="text-align: left;"><h3>Gameplay</h3><p>Frame Resources, Credits, and Required Crew <b>must go to zero</b> because that's how military budget works! </p>
+                <p>Follow the rules even if the math/mechanic doesn't work. For everything else, use common sense and pseudoscience! </p>
+                <p>Hover on each image to see the bibliography. The format is [image title]-[author]-[source]</p></span>
+                </span>
+            </div>      
         </div>
 
     </div>
@@ -594,7 +603,7 @@
         <div style="flex-direction: column; " id="choice-imperator">
           
           <div style="display:flex;">
-            <img src="Images/Equipment/david-alvarez-dalvarez-voices-of-mars-03.webp">
+            <img class="choice-frame-image" src="Images/Equipment/david-alvarez-dalvarez-voices-of-mars-03.webp">
             <span style="text-align: left; margin-left:5px;" class ="p-frame">
               <p style="margin:5px;">Resources: </p>
               <p style="text-align: center;">75 12</p>
@@ -633,7 +642,7 @@
         
         <div style="flex-grow: 1;" id="choice-imperator">
           <div style="display:flex;">
-            <img src="Images/Equipment/plugsuit-explicatus2654-civitai.webp">
+            <img class="choice-frame-image" src="Images/Equipment/plugsuit-explicatus2654-civitai.webp">
             <span style="text-align: left; margin-left:5px;" class ="p-frame">
               <p style="margin:5px;">Resources: </p>
               <p style="text-align: center;">75 8</p>
@@ -672,7 +681,7 @@
         
         <div style="flex-grow: 1;" id="choice-imperator">
           <div style="display:flex;">
-            <img src="Images/Equipment/pAInCREAT0R-civitai.webp">
+            <img class="choice-frame-image" src="Images/Equipment/pAInCREAT0R-civitai.webp">
             <span style="text-align: left; margin-left:5px;" class ="p-frame">
               <p style="margin:5px;">Resources: </p>
               <p style="text-align: center;">60 8 +45</p>
@@ -1889,19 +1898,21 @@
 
   </div>
 
+  <div class="section" id="summary-display">a</div>
+
   <div class="point-bar">
   
-    <section>
-    </section>
-    <section id="credits-display">Credits: 0
-    </section>
-    <section>
-    </section>
+    <div id ="frameCredits-display"> Frame Resources: 0
+    </div>
+    <div id="credits-display">Credits: 0
+    </div>
+    <div id="crew-display"> Required crew: 0
+    </div>
   </div>
 
 <script type="module">
     import {switchChoose, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew, getImgName,
-      handleChoiceGun,
+      handleChoiceGun, updateSummary,
     } from '/Script/switchChoose.js';
         //populate titles
     import {titles, skills, addTitlesToSection, startPos} from '/Script/choiceData.js';
@@ -2567,6 +2578,7 @@ sectionHull1.addEventListener('click', (event) => {
       // Refund credits for the hull being deselected
       if (shipData.hull && shipData.hull.name === chosenHull.name) {
         player.credits += chosenHull.cost;
+        player.crewNum -= chosenHull.maxCrew;
         shipData.hull = null; // Remove the hull from the ship
         console.log(`Refunded ${chosenHull.cost} credits. New balance: ${player.credits}`);
       }
@@ -2586,6 +2598,7 @@ sectionHull1.addEventListener('click', (event) => {
             const prevHull = hulls.find(hull => hull.name === prevHullName);
             if (prevHull && shipData.hull && shipData.hull.name === prevHull.name) {
               player.credits += prevHull.cost;
+              player.crewNum -= prevHull.maxCrew;
               console.log(`Refunded ${prevHull.cost} credits from previous hull. New balance: ${player.credits}`);
             }
           }
@@ -2601,11 +2614,13 @@ sectionHull1.addEventListener('click', (event) => {
       // 2. chosen hull writes on currently active ship
       shipData.hull = chosenHull;
       player.credits -= chosenHull.cost;
+      player.crewNum += chosenHull.maxCrew;
       console.log(`Deducted ${chosenHull.cost} credits for new hull. New balance: ${player.credits}`);
 
     }
       // You might want to update the UI to display the current credits and ship hull here
       document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+      document.getElementById("crew-display").innerHTML = `Required Crew: `+ formatterIntl.format(player.crewNum);
   }
 });
 

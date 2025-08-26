@@ -6,7 +6,9 @@ FRAME:
 6. Frame mechanic
 7. Pictures: spell, catalyst 
 
-SHIP: 3. Handlechoice ship weapons (hard),
+SHIP: 3. Handlechoice ship weapons (hard)
+
+4. HandleChoice: Archetype (hard)
 
 7. Pictures: hulls
 
@@ -27,3 +29,31 @@ Origins:
 
 17. Reserve contracts & battle for next update
 
+
+
+DISPLAY SUMMARY
+{Frame Pic} [
+  Skill Level: (sum skill level)
+  Equipment Level: (sum equipment level)
+  Abilities: (list frame choices)
+  Equipment: (list equipment choices)
+  ]
+
+{Hull Pic} [
+    name: "ID-9F",
+    manufacturer: "Hammerhead Ind.",
+    type: "carrier",
+    cost: 78000000,
+    spinal: [],
+    broadside: [],
+    pointDefence: [],
+    hangar: [],
+    navigation: 2,
+    hullArmor: 20,
+    shieldStrength: 8,
+    length: "1.6km",
+    maxCrew: 2800,
+    extraRooms: 18,
+    rooms: [],
+    energyUse: 5,
+]

@@ -1,5 +1,5 @@
 export { switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew,
-  handleChoiceGun, getImgName
+  handleChoiceGun, getImgName, updateSummary,
 };
 import { formatterIntl } from "/Script/manaData.js";
 import { titles, skills, } from "/Script/choiceData.js";
@@ -223,7 +223,9 @@ function handleChoiceCrew(chosenChoice){
     // If the chosen choice is already active, deactivate it (deselect)
     chosenChoice.classList.remove("active");
     player.credits += chosenCrew.cost;
+    player.crewNum += 1;
     document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+    document.getElementById("crew-display").innerHTML = `Required Crew: `+ formatterIntl.format(player.crewNum);
     
     //remove choice
     const index = player.crew.indexOf(chosenCrew);
@@ -233,7 +235,9 @@ function handleChoiceCrew(chosenChoice){
   } else {
     chosenChoice.classList.add("active");
     player.credits -= chosenCrew.cost;
+    player.crewNum -= 1;
     document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+    document.getElementById("crew-display").innerHTML = `Required Crew: `+ formatterIntl.format(player.crewNum);
     player.crew.push(chosenCrew);
   }
 }
@@ -805,6 +809,40 @@ function switchChoose(
       break;
     
     
+  }
+}
+
+function updateSummary(choiceFrame){ 
+  const targetDiv = document.getElementById('summary-display');
+
+  if(player.frame){
+    // Construct the HTML for the attributes list
+    let attributesHtml = '';
+    Object.keys(player.frame).forEach(key => {
+      attributesHtml +=  `<li><span>${key}:</span> ${player.frame[key]}</li>`;
+    });       
+    
+    let image1 = choiceFrame.querySelector('.choice-frame-image');
+
+    if(choiceFrame.classList.contains('choice-frame-upgrade')) {
+      let parentElement = choiceFrame.closest('.choice-frame');
+      image1 = parentElement.querySelector('.choice-frame-image');
+    }
+    
+    // Use a template literal to create the full HTML structure
+    const cardHtml = `
+        <div style="display:flex;">
+            <div style="overflow:hidden">
+                <img src='${image1.src}' title='${getImgName(image1.src)}'>
+            </div>
+            <div class="flex:grow>
+                <ul>
+                    ${attributesHtml}
+                </ul>
+            </div>
+        </div>
+    `;
+    targetDiv.innerHTML = cardHtml;
   }
 }
 

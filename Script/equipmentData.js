@@ -1,5 +1,5 @@
 import { formatterIntl, appendList1 } from "/Script/manaData.js";
-import {getImgName} from "/Script/switchChoose.js";
+import {getImgName, updateSummary} from "/Script/switchChoose.js";
 export {
   equipment,
   vehicles,
@@ -1943,7 +1943,7 @@ function createFrame(num) {
       newFrame.defensiveSlot = 4;
       newFrame.mobilitySlot = 5;
       newFrame.vehicleSlot = 1;
-      console.log(newFrame);
+      
       break;
     case 3:
       newFrame.id = "frame-imperator";
@@ -1953,10 +1953,10 @@ function createFrame(num) {
       newFrame.offensiveSlot = 4;
       newFrame.defensiveSlot = 4;
       newFrame.utilitySlot = 8;
-      console.log(newFrame);
+
       break;
     case 1:
-      console.log(newFrame);
+
       break;
   }
   return newFrame;
@@ -1993,6 +1993,7 @@ function handleFrame(choiceFrame) {
 
     } 
   }
+  updateSummary(choiceFrame);
   return;
 }
 

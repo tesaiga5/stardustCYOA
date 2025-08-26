@@ -415,7 +415,7 @@ body b {
   left: 0; /* Aligns to the left of the viewport */
   width: 100%; /* Makes it span the full width of the viewport */
   flex-direction: row; /* Changed to row to align sections horizontally */
-  justify-content: space-around; /* Distributes space evenly */
+  justify-content: center; /* Distributes space evenly */
   align-items: center;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
@@ -426,6 +426,7 @@ body b {
   padding: 10px 0; /* Add some vertical padding inside the bar */
   height: 34px; /* Give it a fixed height */
   margin: 0;
+  gap: 100px;
 }
 
 /* for gauge*/
