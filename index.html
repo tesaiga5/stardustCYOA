@@ -143,7 +143,7 @@
     <div class="choice" id="choice-fleet">Your Fleet</div>
     <div class="choice" id="choice-crew">Your Crew</div>
     <div class="choice" id="choice-contracts">Contracts</div>
-    <div class="choice" id="choice-battle">Battle</div>
+    <div class="choice" id="choice-summary">Summary</div>
   </div>
 
 
@@ -163,7 +163,7 @@
     <div class="choice" id="choice-origin">Origins</div>
     <div class="choice" id="choice-equipment">Apocalypse Program</div>
     <div class="choice" id="choice-titles">Titles</div>
-    <!--<div class="choice" id="choice-startingPos">Starting Location</div>-->
+
   </div>
 
   <!--You-How'd you get the money Section--> 
@@ -590,10 +590,14 @@
           You can start off by building your suit. First, you have to select a frame type. Different frame types have different specialties. Frames have resources and rig slots. Rigs are modifications to the suit itself that adds extra functionality, like upgraded armour systems or improved servosmechanics. Resources are for the attachment of equipment, such as weapons, spells or e-war modules. 
           <h4 style="margin: 15px;">There are two types of resources:</h4>
           <span style="display: flex;">
-          <div><h4>Frame Integrity</h4>
+          <div style="display:flex; flex-direction: column; align-items: center;">
+            <h4 style="margin-bottom: 0;">Frame Integrity</h4>
+            <img src="Images/Other/frame resources.webp" style="width: 100px; height:100px;">
           All attachable modules costs frame integrity. Some frames may have bonus calibration points for use only on specific types of modules.</div>
-          <div><h4>Weapon Hardpoints</h4>
-          The attachment points for conventional weapons on the suit. Larger weapons require more hard- points to attach.</div></span>
+          <div style="display:flex; flex-direction: column; align-items: center;">
+            <h4 style="margin-bottom: 0;">Weapon Hardpoints</h4>
+            <img src="Images/Other/weapon hardpoints.webp" style="width: 100px; height:100px;">
+          The attachment points for conventional weapons on the suit. Larger weapons require more hard points to attach.</div></span>
           </div>
       </span></div>
     <div class="choice-frame" id="choice-frame1">
@@ -606,7 +610,12 @@
             <img class="choice-frame-image" src="Images/Equipment/david-alvarez-dalvarez-voices-of-mars-03.webp">
             <span style="text-align: left; margin-left:5px;" class ="p-frame">
               <p style="margin:5px;">Resources: </p>
-              <p style="text-align: center;">75 12</p>
+              
+                <p style="display:flex; text-align: center; justify-content: center; align-items: center; gap: 5px;">
+                  75<img src="Images/Other/frame resources.webp" style="width: 25px; height: 25px; ;">
+                  12<img src="Images/Other/weapon hardpoints.webp" style="width: 25px; height: 25px; ;">
+                </p> 
+
               <h4 style="margin:5px;">Rig Slots: </h4>
               <ul>
               <li>Offensive: 8</li>
@@ -616,20 +625,20 @@
               <li>Utility: 4</li></ul>
             </span>
           </div>
-          <p class="p-frame">The Vulcan was built as a stout weapon platform, capable of using heavy weapons usually mounted on vehicles or ships. Its technological roots trace back to the Federation Navy and can serve as a staple for any doctrine, as its vast reserves for muni- tions may be replaced for greater capacity for mana grid support. A single Vulcan is capable of wide- spread destruction.</p></div>
+          <p class="p-frame">The Vulcan was built as a stout weapon platform, capable of using heavy weapons usually mounted on vehicles or ships. Its technological roots trace back to the Federation Navy and can serve as a staple for any doctrine, as its vast reserves for munitions may be replaced for greater capacity for mana grid support. A single Vulcan is capable of widespread destruction.</p></div>
         <h4 class ="p-frame">Frame Upgrades (Select One): </h4>
         <div style="display:flex;">
           <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-hellion">
             <img src="Images/Equipment/enclave-interactive-captain-of-the-blood-angels-enclave-dark.webp">
             <p>Hellion</p>
-            <p>+30 usable for conventional weapons only. An upgrade focused on destruction at a versatile level with expanded munition reserves.
+            <p><b>+30 usable for conventional weapons only.</b> <br>An upgrade focused on destruction at a versatile level with expanded munition reserves.
             </p>
           </div>
           <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-seraph">
             <img src="Images/Equipment/ibrahem-swaid-magnus-c35-tss.webp">
             <p>Seraph</p>
-            <p>+40 usable for spell bases or mana interfacing only
-              A frame that enhances the intricacies
+            <p><b>+40 usable for spell bases or mana interfacing only.</b>
+              <br>A frame that enhances the intricacies
               of the suit's mana grid, deepening reserves for spell capabilities.
               </p>
           </div>
@@ -645,9 +654,12 @@
             <img class="choice-frame-image" src="Images/Equipment/plugsuit-explicatus2654-civitai.webp">
             <span style="text-align: left; margin-left:5px;" class ="p-frame">
               <p style="margin:5px;">Resources: </p>
-              <p style="text-align: center;">75 8</p>
+              <p style="display:flex; text-align: center; justify-content: center; align-items: center; gap: 5px;">
+                  75<img src="Images/Other/frame resources.webp" style="width: 25px; height: 25px; ;">
+                  8<img src="Images/Other/weapon hardpoints.webp" style="width: 25px; height: 25px; ;">
+                </p> 
               <h4 style="margin:5px;">Rig Slots: </h4>
-              <ul >
+              <ul>
               <li>Offensive: 4</li>
               <li>Defensive: 4</li>
               <li>Mobility: 5</li>
@@ -662,14 +674,14 @@
           <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-raptor">
             <img src="Images/Equipment/vladislav-ociacia-3.webp">
             <p>Raptor</p>
-            <p>+2 Mobility rigs & "Perfect" stealth Maximizes the mobility potential of the suit. When using the "Phantom" rig, it can still use all of its other functions.
+            <p><b>+2 Mobility rigs & "Perfect" stealth.</b> <br>Maximizes the mobility potential of the suit. When using the "Phantom" rig, it can still use all of its other functions.
               </p>
           </div>
           <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-corvette">
             <img src="Images/Equipment/Bismark-erika_itsumi-warthunder.webp">
             <p>Corvette</p>
-            <p>+2 Dragoon mounts
-              Upgrades the frame to be able to have two more available Dragoon mounts to interface with.
+            <p><b>+2 Dragoon mounts.</b>
+              <br>Upgrades the frame to be able to have two more available Dragoon mounts to interface with.
               </p>
           </div>
         </div>
@@ -684,7 +696,10 @@
             <img class="choice-frame-image" src="Images/Equipment/pAInCREAT0R-civitai.webp">
             <span style="text-align: left; margin-left:5px;" class ="p-frame">
               <p style="margin:5px;">Resources: </p>
-              <p style="text-align: center;">60 8 +45</p>
+              <p style="display:flex; text-align: center; justify-content: center; align-items: center; gap: 5px;">
+                  60 + 45 (EWar)<img src="Images/Other/frame resources.webp" style="width: 25px; height: 25px; ;">
+                  8<img src="Images/Other/weapon hardpoints.webp" style="width: 25px; height: 25px; ;">
+                </p> 
               <h4 style="margin:5px;">Rig Slots: </h4>
               <ul>
               <li>Offensive: 4</li>
@@ -701,16 +716,16 @@
           <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-monsoon">
             <img src="Images\Other\Beatrice R&D.webp">
             <p>Monsoon</p>
-            <p>+20 usable for emissions- type e-war modules only
-              An upgraded frame with greatly increased energy reserves and specialization in emissions module use.
+            <p><b>+20 usable for emissions type e-war modules only.</b>
+              <br>An upgraded frame with greatly increased energy reserves and specialization in emissions module use.
               </p>
           </div>
           
           <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-inquisitor">
             <img src="Images\Other\Beatrice R&D.webp">
             <p>Inquisitor</p>
-            <p>+20 usable for digital-type e-war modules only
-              A frame with more complex circuitry and quantum computing power for digital modules.
+            <p><b>+20 usable for digital-type e-war modules only.</b>
+              <br>A frame with more complex circuitry and quantum computing power for digital modules.
               </p>
           </div>
         </div>
@@ -768,7 +783,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">Emissions Intelligence comes in many forms, and this module uses a mixture of parsing and reporting to help break down that helpful information for you.</p>
                 </div>
             
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice ewar" 
             style="flex-basis: 100%; margin: 2px; width: auto"
@@ -807,7 +822,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">Radar warfare is arguably one of the most important aspects for modern combat, and marking targets while evading being marked can mean life or death.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice ewar" id="tech1-esm-honing" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -844,7 +859,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">With enough energy, you can disrupt the functionality of a target using Electronic Counter Measures. If done well, you can achieve mission success without having to fire a shot.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice ewar" id="tech1-eccm" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -881,7 +896,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">Using precise wavelengths and algorithms, this energy emissions module can disrupt different power sources on the intended target. Shorter range than most other e-war.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice ewar" id="tech1-capacitor-destabilizer" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -918,7 +933,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">This module mostly focuses on the use of a mixture of optical and sound emissions as a weapon.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-flash-blinder" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -955,7 +970,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">Modules that deal with the transfer of energy to allies. They have a decent applicable range, but they are more effective the closer you are in proximity to your target.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-shield-transmitter" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -992,7 +1007,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">This module specializes in the application of a malicious code family which targets various mechanical systems in many types of machinery, including ships and suits.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-motor-desynchronizer" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -1029,7 +1044,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">This module offers an advanced overlay beyond the basic defensive digital security systems already in your suit. A good defense is a layered defense.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-encryption-entangler" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -1066,7 +1081,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">A suite that runs many different encryption-breaking techniques to bypass securities. Greater defenses will only just take longer to crack.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-hijack-kit" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -1103,7 +1118,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">An offensive digital security module that uses code which specifically attempts to disrupt energy systems in other machinery.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-greenhouse-virus" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -1140,7 +1155,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">Adds a resevoir for nanites that are specialized for administering medical assistance to the pilot. Through tubes, these can be transferred to others as well.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-endurance-nanites" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -1177,7 +1192,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">Modules that enhances the suit to be able to decisevely respond to physical trauma inflicted on the pilot or other bodily ailments.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-enhanced-trauma-management" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -1214,7 +1229,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">All Apocalypse suits come with a state-of-the-art HUD, including multiple modes of vision. However, with access to the pilot's leylines, these can be enhanced further.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-clairvoyant-resolution" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -1251,7 +1266,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">Adds temporary mind boosting effects that transmit from your suit through the Neurolink. Overuse can cause strange side effects.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-clarity-boost" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -1288,7 +1303,7 @@
                     <p class="p-frame" style="margin-bottom: 0; margin: 2px;">All Apocalypse pilots must wear a membrane suit in order to properly interface with their power armour. However, it can be upgraded to provide additional functionality.</p>
                 </div>
             </div>
-            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades (Select One): </h4>
+            <h4 class="p-frame" style="margin: 2px;">E-War Upgrades : </h4>
             <div style="display: flex; flex-direction: column; flex-grow: 1; margin: 2px;">
                 <div class="choice" id="tech1-phased-membrane" style="flex-basis: 100%; margin: 2px; width: auto">
                     <div style="display: flex; margin: 2px;">
@@ -1731,32 +1746,40 @@
           Almost every ship that enters space is equipped with some form of self defence. With our practiced art in warfare, weapons have come a long way. A weapon's cost is reduced after purchasing it once (in brackets).</div>
       </span>
     </div>
-    <div style="font-size: 20px;" id="weapon-info">
+    <div style="width: 1250px;"  id="weapon-info">
       <span>
         <h3>Weapon Stat Information</h3>
         <div style="display: flex; flex-basis: 25%;">
-          <div>    
+          <div style="font-size: 20px; text-align: left; justify-content: left;">    
           <p><h3>Tier:</h3>
           The grading of the weapon, concerning size, weight, and damage potential.
           <p><h3>Damage Per Volley:</h3>
           The amount of damage that can be inflicted by a single volley from the weapon. </p></div>      
-          <div><p><h3>Rate of Fire:</h3>
+          <div style="font-size: 20px; text-align: left; justify-content: left;"><p><h3>Rate of Fire:</h3>
           The amount of volleys a weapon can fire per minute.</p>
           <p><h3>Accuracy:</h3>
           The likelihood that a projectile from the weapon will hit its target, concerning recoil and trajectory.</p></div>      
-          <div><p><h3>Range:</h3>
+          <div style="font-size: 20px; text-align: left; justify-content: left;"><p><h3>Range:</h3>
           The effective distance that a weapon can fire to still hit its target with maximum integrity.</p>
           <p><h3>Projectile Velocity: </h3>
           The velocity of a weapon's ordnance.</p> </div>      
-          <div><p><h3>Tracking:</h3>
-          The ability of the weapon to track its targets, concerning turret rotation, tracking computer accu- racy, and (if missiles) the ability for projectiles to follow targets.</p>
+          <div style="font-size: 20px; text-align: left; justify-content: left;"><p><h3>Tracking:</h3>
+          The ability of the weapon to track its targets, concerning turret rotation, tracking computer accuracy, and (if missiles) the ability for projectiles to follow targets.</p>
           <p><h3>Weapon Types:</h3>
-          The archetype of a weapon, be it a kinetic-based weapon, energy- based weapon, blaster-based weapon, or explosive-based weapon. </p></div>      
-
-
+          The archetype of a weapon, be it a kinetic-based weapon, energy-based weapon, blaster-based weapon, or explosive-based weapon. </p></div>      
           </div>
       </span>
     </div>
+
+    <div class="weapons-point-bar">
+    <div id ="spinal-credits-display"> Remaining Spinal Slots: 0
+    </div>
+    <div id="broadside-credits-display">Remaining Broadside Slots: 0
+    </div>
+    <div id="pointdefence-credits-display">Remaining Point Slots: 0
+    </div>
+    </div>
+
     <div style="display: none;" id="endOfWeapons"></div>
   </div>
 
@@ -2448,7 +2471,7 @@
 
   //Ship Creation Script
     import {
-      createShip, deleteShip, addHull, addWeapon, addAI,addEnergyGen, addShield, 
+      createShip, deleteShip, addHullToShip, addWeapon, addAI,addEnergyGen, addShield, 
       addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom, 
       resetShipConfigUI, renderShipConfigUI
      } from '/Script/shipData.js'; // Import the createShip function from ship.js
@@ -2553,8 +2576,8 @@ sectionFleet1.addEventListener('click', (event) => {
     }
 });
 
-    //choosing the hull and assigning it to the ship object
-    //check for clicks on section-hull, if(dataType) write dataType to selected ship object
+  //handleChoice Hull
+  //check for clicks on section-hull, if(dataType) write dataType to selected ship object
 sectionHull1.addEventListener('click', (event) => {
   const clickedElement = event.target.closest('.choice');
   if (clickedElement) {
@@ -2579,7 +2602,12 @@ sectionHull1.addEventListener('click', (event) => {
         player.credits += chosenHull.cost;
         player.crewNum -= chosenHull.maxCrew;
         shipData.hull = null; // Remove the hull from the ship
-        console.log(`Refunded ${chosenHull.cost} credits. New balance: ${player.credits}`);
+        document.getElementById("spinal-credits-display").innerHTML = `Remaining Spinal Slot: `+ 0;
+        document.getElementById("broadside-credits-display").innerHTML = `Remaining Broadside Slot: `+ 0;
+        document.getElementById("pointdefence-credits-display").innerHTML = `Remaining Point Defence Slot: `+ 0;
+
+
+        
       }
     } else {
       // Handle activation: Make this the only active hull choice in the section
@@ -2598,7 +2626,6 @@ sectionHull1.addEventListener('click', (event) => {
             if (prevHull && shipData.hull && shipData.hull.name === prevHull.name) {
               player.credits += prevHull.cost;
               player.crewNum -= prevHull.maxCrew;
-              console.log(`Refunded ${prevHull.cost} credits from previous hull. New balance: ${player.credits}`);
             }
           }
         });
@@ -2611,9 +2638,17 @@ sectionHull1.addEventListener('click', (event) => {
       // Ensure player has enough credits OR handle insufficient funds
       
       // 2. chosen hull writes on currently active ship
-      shipData.hull = chosenHull;
+      shipData.hull = chosenHull; //set ship's hull to chosen hull
+      addHullToShip(shipData); //assign remaining weapon slot by asking hull
+
+      //update slot
+      document.getElementById("spinal-credits-display").innerHTML = `Remaining Spinal Slot: `+ formatterIntl.format(shipData.spinalSlot);
+      document.getElementById("broadside-credits-display").innerHTML = `Remaining Broadside Slot: `+ formatterIntl.format(shipData.broadsideSlot);
+      document.getElementById("pointdefence-credits-display").innerHTML = `Remaining Point Defence Slot: `+ formatterIntl.format(shipData.pointDefenceSlot);
+
       player.credits -= chosenHull.cost;
       player.crewNum += chosenHull.maxCrew;
+      
       console.log(`Deducted ${chosenHull.cost} credits for new hull. New balance: ${player.credits}`);
 
     }

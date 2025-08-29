@@ -13,7 +13,7 @@ export {
   drones,
   createShip,
   deleteShip,
-  addHull,
+  addHullToShip,
   addWeapon,
   addAI,
   addEnergyGen,
@@ -4042,10 +4042,10 @@ function createShip() {
   // You can add more properties to the ship object here as needed,
   // such as a unique ID, name, health, cargo capacity, etc.
   const newShip = {
-    spinalWeapons: [],
-    broadSideWeapons: [],
-    pointDefenseWeapons: [],
-    hull: "fighter",
+    spinalSlot: 0,
+    broadSideSlot: 0,
+    pointDefenceSlot: 0,
+    hull: {},
     hangarSpace: 0,
     navigation: 0,
     hullArmor: 0,
@@ -4086,8 +4086,10 @@ function deleteShip(shipID) {
   //return map; // Return null to indicate the ship has been deleted
 }
 
-function addHull(shipObject, hullData) {
-  shipObject.hull = hullData;
+function addHullToShip(chosenShip) {
+  chosenShip.spinalSlot = chosenShip.hull.spinalMount;
+  chosenShip.broadsideSlot = chosenShip.hull.broadsideMount;
+  chosenShip.pointDefenceSlot = chosenShip.hull.pointDefenceMount;
 }
 
 function addWeapon(shipObject, weaponData) {
@@ -4315,7 +4317,7 @@ function renderShipConfigUI(shipId) {
   if (shipData.hull) {
     const hullName = shipData.hull.name;
     // Ensure the ID matches how it's generated in addHullDataToSection
-    const hullChoiceId = `choice-${hullName}`;
+    const hullChoiceId = hullName;
     const hullElement = document.getElementById(hullChoiceId);
     if (hullElement) {
       hullElement.classList.add("active");
@@ -4362,7 +4364,7 @@ function populateHullToSection(dataArray, choicePrefix) {
   dataArray.forEach((item) => {
     const newDiv = document.createElement("div");
     newDiv.classList.add("choice", "ship");
-    newDiv.id = `${choicePrefix}-${item.name.replace(/\s/g, "-")}`;
+    newDiv.id = item.name;
 
     const newSpan = document.createElement("span");
     newDiv.appendChild(newSpan);

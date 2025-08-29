@@ -6,15 +6,22 @@ FRAME:
 6. Frame mechanic
 7. Pictures: spell, catalyst
 
-SHIP: 3. Handlechoice ship weapons (hard)
+SHIP: 
 
-4. rendershipconfigUI
+3. Handlechoice ship weapons (hard)
+->if click '+' button, check slider (e.g. spinal), then deduct 1 spinal from spinal slot, update remaining spinal slot, add spinal choice to ship
+->if click '-' button, check slider, check if spinal exist in ship, then addback 1 spinal slot, update remaining spinal slot 
+->if buy more than 1 weapon, get discount 
+->Delete Energy use bar 
+->Add a counter of existing guns in ship next to '+' button 
+->When a new ship is selected, render remaining weapon slots 
+
+4. rendershipconfigUI to all components of the ship. 
 
 5. HandleChoice: Archetype Crew (hard)
 
 6. Pictures: mods
 
-7. shipWeapons spinal/broadside mechanic
 
 (4) 8. COMBAT STATS at the end of Equipment 9. Sponsor choice consequences 2. Moneysource choice consequences Start Loc consequences 13. Title pre-requisities and consequences (apply in title not in relevant (e.g. traitor apply in titles section)) 14. Your Fleet pre-requisities & consequences (mostly receiving consequences)
 
@@ -24,7 +31,7 @@ SHIP: 3. Handlechoice ship weapons (hard)
 
 17. Reserve contracts & battle for next update
 
-18. DISPLAY SUMMARY
+18. DISPLAY SUMMARY -> Summary button enables envelope.js
     {Frame Pic} [
     Skill Level: (sum skill level)
     Equipment Level: (sum equipment level)
