@@ -1,5 +1,5 @@
 export { switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew,
-  handleChoiceGun, getImgName, updateSummary,
+  handleChoiceGun, getImgName, updateSummary, 
 };
 import { formatterIntl } from "/Script/manaData.js";
 import { titles, skills, } from "/Script/choiceData.js";
@@ -269,6 +269,36 @@ function handleEWar(chosenChoice, creditChange) {
   
   // Update the frame integrity display
   document.getElementById("frameCredits-display").innerHTML = 
+    `Frame Resources: ` + formatterIntl.format(player.frame.frameIntegrity);
+}
+
+//TODO
+function handleSpells(chosenChoice, creditChange) {
+  const isChosenActive = chosenChoice.classList.contains("active");
+  const parentContainer = chosenChoice.closest('.p-frame') || chosenChoice.closest('.choice');
+
+  // Find all spell choices in the same category/container
+  const sameCategorySpells = parentContainer.querySelectorAll('.choice.spell');
+
+  if (isChosenActive) {
+    // If already active, deactivate it
+    chosenChoice.classList.remove("active");
+    player.frame.frameIntegrity += creditChange; // Refund integrity
+
+    // Remove choice from frame choices
+    const index = player.frame.choices.indexOf(chosenChoice.id);
+    if (index !== -1) {
+      player.frame.choices.splice(index, 1);
+    }
+  } else {
+    // Activate the chosen spell
+    chosenChoice.classList.add("active");
+    player.frame.frameIntegrity -= creditChange; // Deduct integrity
+    player.frame.choices.push(chosenChoice.id);
+  }
+
+  // Update the frame integrity display
+  document.getElementById("frameCredits-display").innerHTML =
     `Frame Resources: ` + formatterIntl.format(player.frame.frameIntegrity);
 }
 
