@@ -14,7 +14,7 @@ export {
   createShip,
   deleteShip,
   addHullToShip,
-  addWeapon,
+  updateWeaponSlot,
   addAI,
   addEnergyGen,
   addShield,
@@ -4053,25 +4053,19 @@ function createShip() {
     length: 0,
     maxCrew: 0,
     extraRooms: 0,
-    energyUse: 1,
-    aiChoice: "winston",
-    commandMods: "cool paint job",
-    shipAI: {},
+    energyUse: 1,    
+    shipAI: [],
+    energy: 0,
+    shield: 0,
+    subsystems: [],
+    rooms: [],
+    industrials: [],
     energy: [],
-    shield: {},
-    choiceList: [
-      { subsystemChoice: [] },
-      { roomChoice: [] },
-      { industrialChoice: [] },
-      { energyChoice: [] },
-      { eWarChoice: [] },
-      { spinalChoice: [] },
-      { broadSideChoice: [] },
-      { pointDefenseChoice: [] },
-      { hangarChoice: [] },
-      { aiChoice: [] },
-      { commandMods: [] },
-    ],
+    shield: [],
+    eWar: [],
+    weaponChoice: {}, //map weapons to quantity
+    hangarChoice: [],
+    mods: [],
   };
 
   return newShip;
@@ -4090,57 +4084,22 @@ function addHullToShip(chosenShip) {
   chosenShip.spinalSlot = chosenShip.hull.spinalMount;
   chosenShip.broadsideSlot = chosenShip.hull.broadsideMount;
   chosenShip.pointDefenceSlot = chosenShip.hull.pointDefenceMount;
+  chosenShip.hangarSpace = chosenShip.hull.hangarSpace;
+  chosenShip.navigation = chosenShip.hull.navigation;
+  chosenShip.hullArmor = chosenShip.hull.hullArmor;
+  chosenShip.shieldStrength = chosenShip.hull.shieldStrength;
+  chosenShip.maxCrew = chosenShip.hull.maxCrew;
+  chosenShip.extraRooms = chosenShip.hull.extraRooms;
+  chosenShip.energyUse = chosenShip.hull.energyUse;
 }
 
-function addWeapon(shipObject, weaponData) {
-  if (weaponData.type.includes("spinal")) {
-    //if the weapon can be slotted into a spinal mount
-    if (shipObject.spinalWeapons.length < shipObject.hull.spinalMount) {
-      //if the number of spinal weapons on the ship is less than the number of spinal mounts
-      shipObject.spinalWeapons.push(weaponData); //add the weapon to the spinal weapons array
-      return;
-    } else if (
-      shipObject.hull.type === "frigate" ||
-      shipObject.hull.type === "fighter"
-    ) {
-      console.log("No available spinal mounts for this weapon.");
-      return;
-    } else if (
-      shipObject.broadsideWeapons.length < shipObject.hull.broadsideMount
-    ) {
-      //if there exists a broadside mount, we can add the weapon
-      if (shipObject.hull.type === "destroyer") {
-        return;
-      }
-      shipObject.broadsideWeapons.push(weaponData);
-      return;
-    } else {
-      console.log("No available mounts for this weapon.");
-      return;
-    }
-  } else if (weaponData.type.includes("broadside")) {
-    //if the weapon can be slotted into a broadside mount
-    if (shipObject.broadsideWeapons.length < shipObject.hull.broadsideMount) {
-      //if the number of broadside weapons on the ship is less than the number of broadside mounts
-      shipObject.broadsideWeapons.push(weaponData); //add the weapon to the broadside weapons array
-      return;
-    } else {
-      console.log("No available broadside mounts for this weapon.");
-      return;
-    }
-  } else {
-    if (
-      shipObject.pointDefenceWeapons.length < shipObject.hull.pointDefenceMount
-    ) {
-      //if the number of point defence weapons on the ship is less than the number of point defence mounts
-      shipObject.pointDefenceWeapons.push(weaponData); //add the weapon to the point defence weapons array
-      return;
-    } else {
-      console.log("No available point defence mounts for this weapon.");
-      return;
-    }
-  }
+function updateWeaponSlot() {
+  document.getElementById("spinal-credits-display").innerHTML = `Remaining Spinal Slot: ${player.ships[player.currentActiveShip].spinalSlot}`;
+  document.getElementById("broadside-credits-display").innerHTML = `Remaining Broadside Slot: ${player.ships[player.currentActiveShip].broadsideSlot}`;
+  document.getElementById("pointdefence-credits-display").innerHTML = `Remaining Point Defence Slot: ${player.ships[player.currentActiveShip].pointDefenceSlot}`;
 }
+
+
 
 //function removeWeapon(shipObject, weaponData) {}
 
@@ -4285,16 +4244,22 @@ function resetShipConfigUI(targetShipSection) {
   //for each div in section-hull, set them to not active
   // Get the parent div with the ID "section-hull"
   const sectionToReset = document.getElementById(targetShipSection);
-  console.log(' reset triggered');
+  let targetDivs = sectionToReset.querySelectorAll(".choice");
   // Check if the element exists to avoid errors
-  if (sectionToReset) {
+  if (targetShipSection === "section-weapon") {
+    targetDivs = sectionToReset.querySelectorAll('.number-span'); //zero all numspan
+    targetDivs.forEach((choice) => {
+      choice.textContent = '0';
+    });
+    
+  } else if (sectionToReset) {
     // Get all direct child div elements within "section-hull"
     const targetDivs = sectionToReset.querySelectorAll(".choice");
-
     // Iterate over each div and add the 'active' class
     targetDivs.forEach((choice) => {
       choice.classList.remove("active");
     });
+
   } else {
     console.error("Element with ID 'section-hull' not found.");
   }
@@ -4304,14 +4269,14 @@ function renderShipConfigUI(shipId) {
   // Reset all relevant configuration UI sections
   resetShipConfigUI("section-hull");
   // Add more reset calls for other sections as they are implemented
-  // resetShipConfigUI('section-mod');
-  // resetShipConfigUI('section-weapon');
-  // resetShipConfigUI('section-industrial');
-  // resetShipConfigUI('section-ewar');
-  // resetShipConfigUI('section-room');
+  resetShipConfigUI('section-mod');
+  resetShipConfigUI('section-weapon');
+  resetShipConfigUI('section-industrial');
+  resetShipConfigUI('section-ewar');
+  resetShipConfigUI('section-room');
+  resetShipConfigUI('section-subsystem');
 
   const shipData = player.ships[shipId];
-  console.log(`Rendering UI for ship: ${shipId}`, shipData);
 
   // --- Render Hull Configuration ---
   if (shipData.hull) {
@@ -4322,11 +4287,90 @@ function renderShipConfigUI(shipId) {
     if (hullElement) {
       hullElement.classList.add("active");
       console.log(`Activated hull UI for: ${hullName}`);
-    } else {
-      console.warn(
-        `Hull UI element not found for ID: ${hullChoiceId}. Make sure it's populated.`
-      );
-    }
+    } 
+  }
+  // --- Render Mod Configuration ---
+  if (shipData.mods){
+    shipData.mods.forEach(mod => {
+      let modElement = document.getElementById(mod);
+      if (modElement) {
+        modElement.classList.add("active");
+        console.log(`Activated mod UI for: ${mod}`);
+      } else {
+        console.warn(
+          `Mod UI element not found for ID: ${mod}. Make sure it's populated.`
+        );
+      }
+    });
+  }
+  // --- Render Weapon Configuration ---
+  if (shipData.weaponChoice) {
+    Object.entries(shipData.weaponChoice).forEach(([weaponName, weaponQty]) => {
+      let weaponNumSpan = document.getElementById(`num-${weaponName}`);
+      if (weaponNumSpan) {
+        weaponNumSpan.textContent = weaponQty;
+      } else {
+        console.warn(
+          `Weapon UI element not found for ID: ${weaponName}. Make sure it's populated.`
+        );
+      }
+    });
+  }
+  // --- Render Industrial Configuration ---
+  if (shipData.industrials) {
+    shipData.industrials.forEach(industry => {
+      let industryElement = document.getElementById(industry.name);
+      if (industryElement) {
+        industryElement.classList.add("active");
+        console.log(`Activated industrial UI for: ${industry}`);
+      } else {
+        console.warn(
+          `Industrial UI element not found for ID: ${industry}. Make sure it's populated.`
+        );
+      }
+    });
+  }
+  // --- Render EWAR Configuration ---
+  if (shipData.eWar) {
+    shipData.eWar.forEach(ewar => {
+      let ewarElement = document.getElementById(ewar.name);
+      if (ewarElement) {
+        ewarElement.classList.add("active");
+        console.log(`Activated EWAR UI for: ${ewar}`);
+      } else {
+        console.warn(
+          `EWAR UI element not found for ID: ${ewar}. Make sure it's populated.`
+        );
+      }
+    });
+  }
+  // --- Render Room Configuration ---
+  if (shipData.rooms) {
+    shipData.rooms.forEach(room => {
+      let roomElement = document.getElementById(room.name);
+      if (roomElement) {
+        roomElement.classList.add("active");
+        console.log(`Activated room UI for: ${room}`);
+      } else {
+        console.warn(
+          `Room UI element not found for ID: ${room}. Make sure it's populated.`
+        );
+      }
+    });
+  }
+  // --- Render Subsystem Configuration ---
+  if (shipData.subsystems) {
+    shipData.subsystems.forEach(subsystem => {
+      let subsystemElement = document.getElementById(subsystem);
+      if (subsystemElement) {
+        subsystemElement.classList.add("active");
+        console.log(`Activated subsystem UI for: ${subsystem}`);
+      } else {
+        console.warn(
+          `Subsystem UI element not found for ID: ${subsystem}. Make sure it's populated.`
+        );
+      }
+    });
   }
 }
 

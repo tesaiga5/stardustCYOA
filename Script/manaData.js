@@ -12,6 +12,8 @@ export {
 };
 
 import { getImgName } from "/Script/switchChoose.js";
+import {weapons} from "/Script/shipData.js"; 
+
 
 const catalyst = [
   {
@@ -545,14 +547,14 @@ function appendParagraph(parentElement, textContent) {
   parentElement.appendChild(p);
 }
 
-function appendDropdown(parentElement, tier) {
+function appendDropdown(parentElement, item) {
   // Create a new div to wrap the dropdown and number input
   const controlGroup = document.createElement("div");
 
   // Create the dropdown menu (select element)
   const selectElement = document.createElement("select");
   //for crewData
-  if (tier === 5) {
+  if (item === 5) {
     selectElement.innerHTML = `
         <option value="x-1">x1</option>
         <option value="x-5">x5</option>
@@ -563,11 +565,9 @@ function appendDropdown(parentElement, tier) {
     `;
   }
   //for weaponData on ship
-  else if (tier === 1) {
-    selectElement.innerHTML = `
-        <option value="point-defence">Point-Defence</option>
-    `;
-  } else if (tier < 4) {
+  else if (item.tier === 1) {
+    selectElement.innerHTML = `<option value="point-defence">Point-Defence</option>`;
+  } else if (item.tier < 4) {
     selectElement.innerHTML = `
         <option value="spinal">Spinal</option>
         <option value="broadside">Broadside</option>
@@ -577,37 +577,26 @@ function appendDropdown(parentElement, tier) {
         <option value="spinal">Spinal</option>
     `;
   }
-  selectElement.addEventListener("change", (event) => {
-    console.log("Selected:", event.target.value);
-    // You can add logic here to handle the selected value
-  });
-
   // Create the number display span
   const numberSpan = document.createElement("span");
+  numberSpan.classList.add("number-span");
   numberSpan.textContent = "0"; // Initial number
-  numberSpan.id = `num-${Date.now()}`; // Unique ID for each number span
+  numberSpan.id = `num-${item.name}`; // Unique ID for each number span
 
   // Create the decrement button
   const decrementButton = document.createElement("button");
   decrementButton.textContent = "-";
-  decrementButton.addEventListener("click", () => {
-    let currentNum = parseInt(numberSpan.textContent);
-    if (currentNum > 0) {
-      // Prevent going below zero
-      numberSpan.textContent = currentNum - 1;
-    }
-  });
+  decrementButton.classList.add('decrement-button');
+  
 
   // Create the increment button
   const incrementButton = document.createElement("button");
   incrementButton.textContent = "+";
+  incrementButton.classList.add('increment-button');
   /*incrementButton.classList.add(
         'btn-secondary', 'px-4', 'py-2', 'rounded-lg', 'font-bold', 'text-xl'
     );*/
-  incrementButton.addEventListener("click", () => {
-    let currentNum = parseInt(numberSpan.textContent);
-    numberSpan.textContent = currentNum + 1;
-  });
+  
 
   // Append all elements to the control group
   controlGroup.appendChild(selectElement);
@@ -857,12 +846,12 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
       case "weapon":
         newDiv.classList.add('shipWeapon');
         if (item.tier === 2 || item.tier === 3) {
-          appendDropdown(newSpan, item.tier); // Add the dropdown for weapon mounts
-          appendDropdown(newSpan, item.tier);
+          appendDropdown(newSpan, item); // Add the dropdown for weapon mounts
+          appendDropdown(newSpan, item);
         } else {
-          appendDropdown(newSpan, item.tier);
+          appendDropdown(newSpan, item);
         }
-        appendGauge(newSpan, "Energy Use: ", 10); // Example gauge for energy use
+        //appendGauge(newSpan, "Energy Use: ", 10); // Example gauge for energy use
         appendParagraph(newSpan, `Energy Use: ${item.energyUse || "N/A"}`);
         appendParagraph(newSpan, `Tier: ${item.tier || "N/A"}`);
         appendParagraph(

@@ -1943,7 +1943,7 @@
     import {crew, archetype, addCrewToSection} from '/Script/crewData.js'; // Import crew data
     //populate hulls
     import {hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
-            populateHullToSection,
+            populateHullToSection, updateWeaponSlot,
     } from '/Script/shipData.js';
     //populate equipment
     import {equipment, vehicles, rigs, populateRigs, populateVehicles, handleFrame, createFrame, 
@@ -2095,6 +2095,7 @@
       const choiceElement = event.target.closest('.choice');
       const crewChoiceElement = event.target.closest('.crew');
       const choiceGun = event.target.closest('.gun');
+      //const weaponSection1
       
       //handle choice of crew
       if(crewChoiceElement) {
@@ -2125,13 +2126,6 @@
       sectionSpell1.classList.toggle('visible');
       sectionMana1.classList.toggle('visible');
     });    
-    
-    //open ship menus when fleet is clicked
-    //sectionFleet1.addEventListener('click', () => {
-      //choiceFleet1.classList.toggle('active');
-      //sectionFleet1.classList.toggle('visible');
-      //sectionShip1.classList.toggle('visible');
-    //});
 
     document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
 
@@ -2471,7 +2465,7 @@
 
   //Ship Creation Script
     import {
-      createShip, deleteShip, addHullToShip, addWeapon, addAI,addEnergyGen, addShield, 
+      createShip, deleteShip, addHullToShip, addAI,addEnergyGen, addShield, 
       addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom, 
       resetShipConfigUI, renderShipConfigUI
      } from '/Script/shipData.js'; // Import the createShip function from ship.js
@@ -2507,6 +2501,10 @@
       //create object to map div to ship object
       const ship1 = createShip(); // Create a new ship object 
       player.currentActiveShip = null;
+      if(sectionFleet1.querySelector('.active')){
+        sectionFleet1.querySelector('.active').classList.remove('active');
+        sectionShip1.classList.remove('visible');
+      }
        // Add the ship object to the player's current active ships
       player.ships[shipDiv1.id] = ship1; 
     });
@@ -2538,6 +2536,7 @@ sectionFleet1.addEventListener('click', (event) => {
         player.currentActiveShip = clickedShipId; // Set the clicked ship as the current active ship
         renderShipConfigUI(player.currentActiveShip);
         sectionShip1.classList.add('visible');
+        updateWeaponSlot();
         console.log(`Ship ${clickedShipId} activated with hull: ${nameOfHull}.`);
     } else {
       // Set the new active ship
@@ -2547,6 +2546,7 @@ sectionFleet1.addEventListener('click', (event) => {
       console.log(`Ship ${clickedShipId} activated.`);
       renderShipConfigUI(player.currentActiveShip)
       sectionShip1.classList.add('visible');
+      updateWeaponSlot();
 
       //player.ships[clickedShipId].hull = hulls.find(hull => hull.name === nameOfHull);
     }
@@ -2584,7 +2584,8 @@ sectionHull1.addEventListener('click', (event) => {
     const shipData = player.ships[player.currentActiveShip]; // Reference to the active ship's shipObject
 
     // Get the hull data corresponding to the clicked element
-    const chosenHull = hulls.find(hull => hull.name === clickedElement.id.replace('choice-', ''));
+    const chosenHull = hulls.find(hull => hull.name === clickedElement.id);
+    console.log(chosenHull);
 
     if (!chosenHull) {
       console.error("Hull data not found for:", clickedElement.id);
@@ -2602,9 +2603,7 @@ sectionHull1.addEventListener('click', (event) => {
         player.credits += chosenHull.cost;
         player.crewNum -= chosenHull.maxCrew;
         shipData.hull = null; // Remove the hull from the ship
-        document.getElementById("spinal-credits-display").innerHTML = `Remaining Spinal Slot: `+ 0;
-        document.getElementById("broadside-credits-display").innerHTML = `Remaining Broadside Slot: `+ 0;
-        document.getElementById("pointdefence-credits-display").innerHTML = `Remaining Point Defence Slot: `+ 0;
+        updateWeaponSlot();
 
 
         
@@ -2763,13 +2762,13 @@ sectionMod1.addEventListener('click', (event) => {
 
     if (clickedElement.classList.contains('active')) {
       clickedElement.classList.remove('active');
-      if (shipData.mod && shipData.mod.name === chosenMod.name) {
-          player.credits += chosenMod.cost;
-          shipData.mod = null;
-      }
+      let tempModIndex1 = shipData.mods.findIndex(mod => mod.name === chosenMod.name);
+      player.credits += chosenMod.cost;
+      shipData.mods.splice(tempModIndex1, 1);
+
     } else {
       clickedElement.classList.add('active');
-      shipData.mod = chosenMod;
+      shipData.mods.push(chosenMod);
       player.credits -= chosenMod.cost;
     }
     document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
@@ -2778,19 +2777,21 @@ sectionMod1.addEventListener('click', (event) => {
 
 sectionIndustrial1.addEventListener('click', (event) => {
 const clickedElement = event.target.closest('.industrial');
+const shipData = player.ships[player.currentActiveShip];
+
 if (clickedElement) {
-  const shipData = player.ships[player.currentActiveShip];
-  const chosenIndustrial = industrial.find(industrial => industrial.name === clickedElement.id);
+  const chosenIndustrial = industrial.find(industry => industry.name === clickedElement.id);
+  console.log(clickedElement, chosenIndustrial);
 
   if (clickedElement.classList.contains('active')) {
     clickedElement.classList.remove('active');
-    if (shipData.industrial && shipData.industrial.name === chosenIndustrial.name) {
-        player.credits += chosenIndustrial.cost;
-        shipData.industrial = null;
-    }
+    player.credits += chosenIndustrial.cost;
+    let tempIndustryIndex1 = shipData.industrials.indexOf(chosenIndustrial);
+    shipData.industrials.splice(tempIndustryIndex1, 1);
+
   } else {
     clickedElement.classList.add('active');
-    shipData.industrial = chosenIndustrial;
+    shipData.industrials.push(chosenIndustrial);
     player.credits -= chosenIndustrial.cost;
   }
   document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
@@ -2805,13 +2806,13 @@ if (clickedElement) {
 
   if (clickedElement.classList.contains('active')) {
       clickedElement.classList.remove('active');
-      if (shipData.eWar && shipData.eWar.name === chosenEwar.name) {
-          player.credits += chosenEwar.cost;
-          shipData.eWar = null;
-      }
+      player.credits += chosenEwar.cost;
+      let tempEwarIndex1 = shipData.eWar.indexOf(chosenEwar);
+      shipData.eWar.splice(tempEwarIndex1, 1);
+
   } else {
       clickedElement.classList.add('active');
-      shipData.eWar = chosenEwar;
+      shipData.eWar.push(chosenEwar);
       player.credits -= chosenEwar.cost;
   }
   document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
@@ -2824,20 +2825,103 @@ if (clickedElement) {
     const shipData = player.ships[player.currentActiveShip];
     const chosenRoom = rooms.find(room => room.name === clickedElement.id);
 
-    if (clickedElement.classList.contains('active')) {
-      clickedElement.classList.remove('active');
-      if (shipData.room && shipData.room.name === chosenRoom.name) {
-          player.credits += chosenRoom.cost;
-          shipData.room = null;
+    if(player.ships[player.currentActiveShip].extraRooms >0){ //check for available rooms
+
+      if (clickedElement.classList.contains('active')) {
+        clickedElement.classList.remove('active');
+        player.credits += chosenRoom.cost;
+        let tempRoomIndex1 = shipData.rooms.indexOf(chosenRoom);
+        shipData.rooms.splice(tempRoomIndex1, 1);
+      } else {
+          clickedElement.classList.add('active');
+          shipData.rooms.push(chosenRoom);
+          player.credits -= chosenRoom.cost;
       }
-    } else {
-        clickedElement.classList.add('active');
-        shipData.room = chosenRoom;
-        player.credits -= chosenRoom.cost;
+      document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+    } 
+    else {
+      alert('No remaining room slot!');
     }
-    document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
 }
 });
+
+sectionWeapon1.addEventListener('click', (event) => {
+  const incrementButton = event.target.closest('.increment-button');
+  const decrementButton = event.target.closest('.decrement-button');
+  let selectElement = event.target.closest('div').querySelector('select');
+  console.log(selectElement);
+  const numberSpan = event.target.closest('div').querySelector('.number-span');
+  const weaponChoice1 = weapons.find(weapon => weapon.name === event.target.closest('.choice').id);
+  const currentActiveShip = player.currentActiveShip;
+
+  if(incrementButton){
+    let allowIncrement = false;
+    //if there is a slot remaining, allow increment
+    if (selectElement.value === 'point-defence' && player.ships[currentActiveShip].pointDefenceSlot > 0){
+      allowIncrement = true;
+      player.ships[currentActiveShip].pointDefenceSlot -= 1; 
+    } else if (selectElement.value === 'broadside' && player.ships[currentActiveShip].broadsideSlot > 0){
+      allowIncrement = true;
+      player.ships[currentActiveShip].broadsideSlot -= 1; 
+    } else if (selectElement.value === 'spinal' && player.ships[currentActiveShip].spinalSlot > 0){
+      allowIncrement = true;
+      player.ships[currentActiveShip].spinalSlot -= 1;
+    } else {
+      alert('No remaining slot for this weapon type!');
+    }
+
+    //
+    if(allowIncrement){
+      let currentNum = parseInt(numberSpan.textContent);
+      numberSpan.textContent = currentNum + 1;
+      if(player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] > 0 ){
+        player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] += 1;
+      } else {
+        player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] = 1; 
+      }
+      //apply qty discount for weapon purchase
+      if(player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] > 1){
+        player.credits -= (weaponChoice1.cost/2);
+      } else {
+        player.credits -= weaponChoice1.cost;
+      }
+    }
+  }
+
+  //Decrement weapon count
+  if(decrementButton){
+    let allowDecrement = false;
+    if (numberSpan === 0){
+      alert('No more weapon to decrement!');
+    } else {
+      if (selectElement.value === 'point-defence'){
+        allowDecrement = true;
+        player.ships[currentActiveShip].pointDefenceSlot += 1; 
+      } else if (selectElement.value === 'broadside'){
+        allowDecrement = true;
+        player.ships[currentActiveShip].broadsideSlot += 1; 
+      } else if (selectElement.value === 'spinal'){
+        allowDecrement = true;
+        player.ships[currentActiveShip].spinalSlot += 1;
+      }
+    }
+    if(allowDecrement){
+      let currentNum = parseInt(numberSpan.textContent);
+      numberSpan.textContent = currentNum - 1;
+      player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] -= 1;
+      if(player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] >= 1){
+        player.credits += (weaponChoice1.cost/2);
+      } else {
+        player.credits += weaponChoice1.cost;
+      }
+    }
+  }
+  document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+  updateWeaponSlot();
+});
+
+
+
 
 
 
