@@ -556,12 +556,12 @@ function appendDropdown(parentElement, item) {
   //for crewData
   if (item === 5) {
     selectElement.innerHTML = `
-        <option value="x-1">x1</option>
-        <option value="x-5">x5</option>
-        <option value="x-10">x10</option>
-        <option value="x-50">x50</option>
-        <option value="x-100">x100</option>
-        <option value="x-500">x500</option>
+        <option value="x1">x1</option>
+        <option value="x5">x5</option>
+        <option value="x10">x10</option>
+        <option value="x50">x50</option>
+        <option value="x100">x100</option>
+        <option value="x500">x500</option>
     `;
   }
   //for weaponData on ship

@@ -2148,7 +2148,7 @@ const hulls = [
     hullArmor: 36,
     shieldStrength: "Energy Damping Field: 80% Damage",
     length: "124m",
-    maxCrew: "4,000-20,000",
+    maxCrew: 20000,
     extraRooms: 60,
     rooms: [],
     energyUse: 10,
@@ -4066,6 +4066,7 @@ function createShip() {
     weaponChoice: {}, //map weapons to quantity
     hangarChoice: [],
     mods: [],
+    crews: [],
   };
 
   return newShip;

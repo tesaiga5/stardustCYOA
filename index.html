@@ -13,7 +13,7 @@
   <script>
     const player = { //collect the pre-requisites in the player
       credits: 0,
-      crewNum: 0, //to collect crew size from hull 
+      crewNum: 0, //remaining crew slots
       fleetSize: 0, //IF fleetsize is zero, can't choose hulls
       skills: [],
       gear: [],
@@ -2097,10 +2097,9 @@
       const choiceGun = event.target.closest('.gun');
       //const weaponSection1
       
-      //handle choice of crew
+      //handle choice of crew, if not archetype
       if(crewChoiceElement) {
         handleChoiceCrew(crewChoiceElement);
-
       } else if (choiceGun) {
         console.log(choiceGun);
         handleChoiceGun(choiceGun);
@@ -2920,7 +2919,136 @@ sectionWeapon1.addEventListener('click', (event) => {
   updateWeaponSlot();
 });
 
+sectionCrew1.addEventListener('click', (event) => {
+  const incrementButton2 = event.target.closest('.increment-button');
+  const decrementButton2 = event.target.closest('.decrement-button');
+  let selectElement2 = event.target.closest('div').querySelector('select');
+  let numberSpan2 = event.target.closest('div').querySelector('.number-span');
+  const archetypeChoice1 = archetype.find(archecrew => archecrew.title === event.target.closest('.archetype').id);
+  console.log(archetypeChoice1);
+  const currentActiveShip = player.currentActiveShip;
 
+  if(incrementButton2){
+    let allowIncrement2 = false;
+    //if there is a slot remaining, allow increment
+    switch(selectElement2.value){
+      case 'x1':
+        if(player.crewNum > 0){
+          allowIncrement2 = true;
+          player.crewNum -= 1;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) + 1;
+          player.credits -= archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      case 'x5':
+        if(player.crewNum > 4){
+          allowIncrement2 = true;
+          player.crewNum -= 5;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) + 5;
+          player.credits -= archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      case 'x10':
+        if(player.crewNum > 9){
+          allowIncrement2 = true;
+          player.crewNum -= 10;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) + 10;
+          player.credits -= archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      case 'x50':
+        if(player.crewNum > 49){
+          allowIncrement2 = true;
+          player.crewNum -= 50;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) + 50;
+          player.credits -= archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      case 'x100':
+        if(player.crewNum > 99){
+          allowIncrement2 = true;
+          player.crewNum -= 100;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) + 100;
+          player.credits -= archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      case 'x500':
+        if(player.crewNum > 499){
+          allowIncrement2 = true;
+          player.crewNum -= 500;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) + 500;
+          player.credits -= archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      default:
+        alert('no more space for crew members');
+        break;
+    }
+    document.getElementById("crew-display").innerHTML = `Required Crew: `+ formatterIntl.format(player.crewNum);
+    document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+
+  }
+  //decrement weapon count, if greater than decrement amount, allow decrement
+  if(decrementButton2){
+    let allowDecrement2 = false;
+    //if there is a slot remaining, allow increment
+    switch(selectElement2.value){
+      case 'x1':
+        if(numberSpan2.textContent > 0){
+          allowDecrement2 = true;
+          player.crewNum += 1;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) - 1;
+          player.credits += archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      case 'x5':
+        if(numberSpan2.textContent > 4){
+          allowDecrement2 = true;
+          player.crewNum += 5;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) - 5;
+          player.credits += archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      case 'x10':
+        if(numberSpan2.textContent > 9){
+          allowDecrement2 = true;
+          player.crewNum += 10;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) - 10;
+          player.credits += archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      case 'x50':
+        if(numberSpan2.textContent > 49){
+          allowDecrement2 = true;
+          player.crewNum += 50;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) - 50;
+          player.credits += archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      case 'x100':
+        if(numberSpan2.textContent > 99){
+          allowDecrement2 = true;
+          player.crewNum += 100;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) - 100;
+          player.credits += archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      case 'x500':
+        if(numberSpan2.textContent > 499){
+          allowDecrement2 = true;
+          player.crewNum += 500;
+          numberSpan2.textContent = parseInt(numberSpan2.textContent) - 500;
+          player.credits += archetypeChoice1.cost[selectElement2.value]; 
+        }
+        break;
+      default:
+        break;
+    }
+    document.getElementById("crew-display").innerHTML = `Required Crew: `+ formatterIntl.format(player.crewNum);
+    document.getElementById("credits-display").innerHTML = `Credits: `+ formatterIntl.format(player.credits);
+  }
+
+});
 
 
 

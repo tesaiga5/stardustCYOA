@@ -1900,7 +1900,13 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
   // If not populated, create new divs to populate choices
   crewArray.forEach((item) => {
     const newDiv = document.createElement("div");
-    newDiv.classList.add("choice", "crew");
+    newDiv.classList.add("choice");
+    if(dataType === "archetype"){
+      newDiv.classList.add('archetype');
+    }
+    else {
+      newDiv.classList.add('crew');
+    }
     // Ensure unique ID for each choice element, sanitize title for ID
     newDiv.id = item.title;
 
