@@ -8,8 +8,6 @@ FRAME:
 
 SHIP:
 
-5. HandleChoice: Archetype Crew (hard)
-
 6. Pictures: mods
 
 7. FIX: Ship Information & crew info
@@ -22,7 +20,7 @@ SHIP:
 
 17. Reserve contracts & battle for next update
 
-18. DISPLAY SUMMARY -> Summary button enables envelope.js
+18. DISPLAY SUMMARY -> Summary button SMOOTHSCROLL.HTML
     {Frame Pic} [
     Skill Level: (sum skill level)
     Equipment Level: (sum equipment level)

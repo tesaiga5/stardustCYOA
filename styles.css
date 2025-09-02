@@ -1,22 +1,27 @@
 .section {
   display: flex;
-  flex-wrap: wrap; /* NEW: Allows flex items to wrap to the next line */
+  flex-wrap: wrap;
+  /* NEW: Allows flex items to wrap to the next line */
   /* REMOVED: grid-template-columns: auto auto auto; - This is for CSS Grid, not needed with flexbox wrapping */
   padding: 10px;
   gap: 10px;
   margin: auto;
   text-align: center;
   /* width: max-content; - Consider adjusting this if you want the section to take up more screen width */
-  justify-content: center; /* NEW: Centers the items on each line when they wrap */
-  max-width: 100%; /* Ensure the section itself doesn't overflow the browser */
+  justify-content: center;
+  /* NEW: Centers the items on each line when they wrap */
+  max-width: 100%;
+  /* Ensure the section itself doesn't overflow the browser */
 }
 
-.section > div {
+.section>div {
   padding: 10px;
   font-size: 30px;
   text-align: center;
-  color: #ffffff; /* White font for readability */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger text shadow for better contrast */
+  color: #ffffff;
+  /* White font for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  /* Stronger text shadow for better contrast */
   overflow: hidden;
   border: 3px solid rgb(177, 59, 255);
   background-color: rgb(71, 19, 150, 0.4);
@@ -24,39 +29,44 @@
   /* display: inline-block; - Not needed when parent is flex container */
 }
 
-.section > div:hover {
-  background-color: rgb(
-    71,
-    19,
-    150,
-    0.8
-  ); /* Darker background on hover for better visibility */
-  cursor: pointer; /* Changes cursor to pointer on hover */
-  transform: translateY(-2px); /* Slight lift effect on hover */
+.section>div:hover {
+  background-color: rgb(71,
+      19,
+      150,
+      0.8);
+  /* Darker background on hover for better visibility */
+  cursor: pointer;
+  /* Changes cursor to pointer on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect on hover */
 }
 
-.section > button {
+.section>button {
   padding: 10px;
   font-size: 30px;
   text-align: center;
-  color: #ffffff; /* White font for readability */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger text shadow for better contrast */
+  color: #ffffff;
+  /* White font for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  /* Stronger text shadow for better contrast */
   overflow: hidden;
   border: 3px solid rgb(177, 59, 255);
   border-radius: 20px;
   background-color: rgb(71, 19, 150, 1);
-  width: max-content; /* Ensures button width is determined by its content */
+  width: max-content;
+  /* Ensures button width is determined by its content */
 }
 
-.section > button:hover {
-  background-color: rgb(
-    71,
-    19,
-    150,
-    0.5
-  ); /* Darker background on hover for better visibility */
-  cursor: pointer; /* Changes cursor to pointer on hover */
-  transform: translateY(-2px); /* Slight lift effect on hover */
+.section>button:hover {
+  background-color: rgb(71,
+      19,
+      150,
+      0.5);
+  /* Darker background on hover for better visibility */
+  cursor: pointer;
+  /* Changes cursor to pointer on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect on hover */
 }
 
 div {
@@ -91,7 +101,8 @@ p {
 #section-industrial,
 #section-ewar,
 #section-room {
-  display: none; /* Hidden by default */
+  display: none;
+  /* Hidden by default */
 }
 
 #section-lore.visible,
@@ -117,7 +128,8 @@ p {
 #section-industrial.visible,
 #section-ewar.visible,
 #section-room.visible {
-  display: flex; /* Hidden by default */
+  display: flex;
+  /* Hidden by default */
 }
 
 .choice,
@@ -125,14 +137,17 @@ p {
 .choice-rigs {
   justify-content: center;
   align-items: center;
-  width: 140px; /* Keep your existing fixed width */
+  width: 140px;
+  /* Keep your existing fixed width */
   /* NEW: flex-basis to control how many items fit per row.
      (100% / 6) makes each item target 1/6th of the container width.
      (10px * 5 / 6) subtracts a portion of the gap space (5 gaps for 6 items)
      to ensure they fit perfectly. */
   flex-basis: calc((100% / 5.5));
-  min-width: 140px; /* Ensure items don't shrink below this size on smaller screens */
-  box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
+  min-width: 140px;
+  /* Ensure items don't shrink below this size on smaller screens */
+  box-sizing: border-box;
+  /* Ensures padding and border are included in the width calculation */
   border-radius: 15px;
 }
 
@@ -165,7 +180,7 @@ p {
 }
 
 .choice-frame-upgrade.active {
-  background-color: rgb(177, 59, 255, 0.7) !important ;
+  background-color: rgb(177, 59, 255, 0.7) !important;
 }
 
 .choice,
@@ -191,35 +206,41 @@ p {
 .choice-frame-upgrade:hover,
 .choice-rigs:hover {
   cursor: pointer;
-  background-color: rgb(
-    9,
-    0,
-    64,
-    0.7
-  ); /* A more vibrant blue with transparency for hover */
+  background-color: rgb(9,
+      0,
+      64,
+      0.7);
+  /* A more vibrant blue with transparency for hover */
   transform: translateY(-2px);
 }
 
 .choice.active,
 .choice-frame-upgrade.active {
-  background-color: rgb(9, 0, 64, 0.7); /* Consistent active color */
+  background-color: rgb(9, 0, 64, 0.7);
+  /* Consistent active color */
 }
 
 .choice img,
 .choice-frame-upgrade img,
 .choice-rigs img {
-  max-width: 100%; /* Ensure images don't overflow their parent pseudoChoice */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 20px; /* Added rounded corners to images */
-  margin-bottom: 10px; /* Space between image and text */
+  max-width: 100%;
+  /* Ensure images don't overflow their parent pseudoChoice */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 20px;
+  /* Added rounded corners to images */
+  margin-bottom: 10px;
+  /* Space between image and text */
 }
 
 h1,
 h2,
 h3 {
   text-align: center;
-  color: #ffffff; /* White color for headings */
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 1); /* Stronger shadow for headings */
+  color: #ffffff;
+  /* White color for headings */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 1);
+  /* Stronger shadow for headings */
 }
 
 /* Styles for the ship object container */
@@ -227,46 +248,62 @@ h3 {
   margin: 0px;
   display: flex;
   align-items: center;
-  border: 3px solid #336699; /* Navy-like border */
-  background-color: #224466; /* Darker navy background */
+  border: 3px solid #336699;
+  /* Navy-like border */
+  background-color: #224466;
+  /* Darker navy background */
   color: #ffffff;
   font-size: 18px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   /* Adjust min-width and height based on the new button size */
-  min-width: 250px; /* Example: 200px (button) + some padding */
-  height: auto; /* Let height adjust to content, or set a fixed height that fits 3 buttons + gaps */
-  overflow: hidden; /* Crucial for pseudo-element transforms */
+  min-width: 250px;
+  /* Example: 200px (button) + some padding */
+  height: auto;
+  /* Let height adjust to content, or set a fixed height that fits 3 buttons + gaps */
+  overflow: hidden;
+  /* Crucial for pseudo-element transforms */
   clip-path: polygon(0% 50%, 10% 0%, 100% 0%, 100% 100%, 10% 100%);
 }
 
 .object-div.active {
-  background-color: #336699; /* Lighter navy background when active */
+  background-color: #336699;
+  /* Lighter navy background when active */
 }
 
 /* Style for the ship name text */
 .ship-name {
-  flex-grow: 1; /* Allows the ship name to take remaining space */
-  text-align: center; /* Center the ship name within its available space */
+  flex-grow: 1;
+  /* Allows the ship name to take remaining space */
+  text-align: center;
+  /* Center the ship name within its available space */
 }
 
 /* Container for the chevron buttons */
 .ship-actions {
   margin: 0;
   display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  flex-shrink: 0; /* Prevent the container from shrinking */
-  height: 100%; /* Full height of the object-div */
-  width: 50px; /* Fixed width for the button container */
+  flex-direction: column;
+  /* Stack buttons vertically */
+  flex-shrink: 0;
+  /* Prevent the container from shrinking */
+  height: 100%;
+  /* Full height of the object-div */
+  width: 50px;
+  /* Fixed width for the button container */
 }
 
 /* Base style for the chevron buttons */
 .x-button,
 .edit-button,
 .blank-button {
-  position: relative; /* For pseudo-elements */
-  height: 100%; /* Height of the chevron button */
-  width: 100%; /* Width of the chevron button */
-  background-color: transparent; /* Base button background - will be covered by pseudo-elements */
+  position: relative;
+  /* For pseudo-elements */
+  height: 100%;
+  /* Height of the chevron button */
+  width: 100%;
+  /* Width of the chevron button */
+  background-color: transparent;
+  /* Base button background - will be covered by pseudo-elements */
   border: none;
   font-weight: bold;
   cursor: pointer;
@@ -274,22 +311,26 @@ h3 {
   align-items: center;
   justify-content: left;
   clip-path: polygon(0% 50%, 50% 0%, 100% 0%, 50% 50%, 100% 100%, 50% 100%);
-  color: white; /* This will be the color of the pseudo-elements */
+  color: white;
+  /* This will be the color of the pseudo-elements */
 }
 
 /* Specific styles for the X button */
 .x-button {
-  background-color: rgb(198, 35, 0); /* Reddish */
+  background-color: rgb(198, 35, 0);
+  /* Reddish */
   color: white;
 }
 
 .x-button:hover {
-  background-color: #f14a00; /* Lighter red on hover */
+  background-color: #f14a00;
+  /* Lighter red on hover */
 }
 
 /* Specific styles for the Edit button */
 .edit-button {
-  background-color: white; /* Goldish/Yellow */
+  background-color: white;
+  /* Goldish/Yellow */
   color: #333;
 }
 
@@ -299,7 +340,8 @@ h3 {
 
 /* Specific styles for the new blank button */
 .blank-button {
-  background-color: rgb(255, 204, 0); /* Gray */
+  background-color: rgb(255, 204, 0);
+  /* Gray */
   color: white;
 }
 
@@ -314,7 +356,8 @@ img {
 
 body {
   /*make galaxy background image*/
-  background-image: url(/Images/Other/timBartonSunsetNebulae.webp); /* Replace with your image path */
+  background-image: url(/Images/Other/timBartonSunsetNebulae.webp);
+  /* Replace with your image path */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -322,7 +365,10 @@ body {
   color: white;
   font-family: "Roboto";
   font-size: 18px;
-  padding-bottom: 70px; /* Add padding to the bottom to prevent content from being hidden behind the fixed point bar */
+  padding-bottom: 70px;
+  /* Add padding to the bottom to prevent content from being hidden behind the fixed point bar */
+  scroll-behavior: smooth;
+  /*for smooth scrolling*/
 }
 
 body b {
@@ -339,13 +385,19 @@ body b {
 
 /* This is the container for the pseudoChoice elements */
 .pseudoChoice-container {
-  display: flex; /* Make it a flex container */
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  justify-content: center; /* Center the items horizontally */
-  gap: 20px; /* Space between pseudoChoice items */
+  display: flex;
+  /* Make it a flex container */
+  flex-wrap: wrap;
+  /* Allow items to wrap to the next line */
+  justify-content: center;
+  /* Center the items horizontally */
+  gap: 20px;
+  /* Space between pseudoChoice items */
   padding: 10px;
-  max-width: 1200px; /* Optional: Set a max-width for the container */
-  margin: 0 auto; /* Center the container itself */
+  max-width: 1200px;
+  /* Optional: Set a max-width for the container */
+  margin: 0 auto;
+  /* Center the container itself */
   flex-direction: row;
 }
 
@@ -356,20 +408,29 @@ body b {
   /* align-items: center; - REMOVED, as its parent now handles wrapping */
 
   /* Calculate width for 4 items per row, considering gap */
-  width: calc(23%); /* (100% / 4 items) - (3 * gap size / 4 items) */
-  min-width: 250px; /* Ensure a reasonable minimum width for readability on smaller screens */
-  box-sizing: border-box; /* Include padding and border in the width calculation */
-  padding: 15px; /* Added padding for content inside the pseudoChoice */
-  text-align: center; /* Center text inside */
-  border-radius: 8px; /* Added rounded corners for aesthetics */
+  width: calc(23%);
+  /* (100% / 4 items) - (3 * gap size / 4 items) */
+  min-width: 250px;
+  /* Ensure a reasonable minimum width for readability on smaller screens */
+  box-sizing: border-box;
+  /* Include padding and border in the width calculation */
+  padding: 15px;
+  /* Added padding for content inside the pseudoChoice */
+  text-align: center;
+  /* Center text inside */
+  border-radius: 8px;
+  /* Added rounded corners for aesthetics */
 
   /* Existing styles for pseudoChoice content */
   border: 3px solid rgb(177, 59, 255);
   border-radius: 15px;
   background-color: rgb(71, 19, 150, 0.4);
-  display: flex; /* Make pseudoChoice itself a flex container */
-  flex-direction: column; /* Stack content inside vertically */
-  align-items: center; /* Center content inside horizontally */
+  display: flex;
+  /* Make pseudoChoice itself a flex container */
+  flex-direction: column;
+  /* Stack content inside vertically */
+  align-items: center;
+  /* Center content inside horizontally */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
@@ -377,54 +438,78 @@ body b {
   /* This div is now a direct child of pseudoChoice, so it inherits flex properties */
   border: 3px solid rgb(177, 59, 255);
   background-color: rgb(71, 19, 150, 0.4);
-  width: 100%; /* Make sure this div takes full width inside pseudoChoice */
+  width: 100%;
+  /* Make sure this div takes full width inside pseudoChoice */
   border-radius: 15px;
 }
 
 .pseudoChoice img {
-  max-width: 100%; /* Ensure images don't overflow their parent pseudoChoice */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Added rounded corners to images */
-  margin-bottom: 10px; /* Space between image and text */
+  max-width: 100%;
+  /* Ensure images don't overflow their parent pseudoChoice */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 8px;
+  /* Added rounded corners to images */
+  margin-bottom: 10px;
+  /* Space between image and text */
 }
 
 .pseudoChoice h3,
 .pseudoChoice p {
-  word-break: break-word; /* Forces long words to break and wrap to the next line */
-  overflow-wrap: break-word; /* Alternative/complementary property for word breaking */
+  word-break: break-word;
+  /* Forces long words to break and wrap to the next line */
+  overflow-wrap: break-word;
+  /* Alternative/complementary property for word breaking */
   /*hyphens: auto;  Allows the browser to automatically hyphenate words for better text flow */
 }
 
 .image-container {
-  display: flex; /* Make it a flex container */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: auto; /* Keep auto height, or set a fixed height if needed */
-  flex-direction: column; /* Stack children vertically if you want the text below the image */
+  display: flex;
+  /* Make it a flex container */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: auto;
+  /* Keep auto height, or set a fixed height if needed */
+  flex-direction: column;
+  /* Stack children vertically if you want the text below the image */
 }
+
 .image-container img {
   /* No specific centering properties needed here if parent is flex */
-  max-width: 100%; /* Ensure image scales down if larger than container */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%;
+  /* Ensure image scales down if larger than container */
+  height: auto;
+  /* Maintain aspect ratio */
 }
 
 .point-bar {
   display: flex;
-  position: fixed; /* Stays in place relative to the viewport */
-  bottom: 0; /* Aligns to the bottom of the viewport */
-  left: 0; /* Aligns to the left of the viewport */
-  width: 100%; /* Makes it span the full width of the viewport */
-  flex-direction: row; /* Changed to row to align sections horizontally */
-  justify-content: center; /* Distributes space evenly */
+  position: fixed;
+  /* Stays in place relative to the viewport */
+  bottom: 0;
+  /* Aligns to the bottom of the viewport */
+  left: 0;
+  /* Aligns to the left of the viewport */
+  width: 100%;
+  /* Makes it span the full width of the viewport */
+  flex-direction: row;
+  /* Changed to row to align sections horizontally */
+  justify-content: center;
+  /* Distributes space evenly */
   align-items: center;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
   border: 3px solid rgb(71, 19, 150);
   border-radius: 15px;
   background-color: rgb(71, 19, 150);
-  z-index: 1000; /* Ensures it's on top of other content */
-  padding: 10px 0; /* Add some vertical padding inside the bar */
-  height: 34px; /* Give it a fixed height */
+  z-index: 1000;
+  /* Ensures it's on top of other content */
+  padding: 10px 0;
+  /* Add some vertical padding inside the bar */
+  height: 34px;
+  /* Give it a fixed height */
   margin: 0;
   gap: 100px;
 }
@@ -433,50 +518,73 @@ body b {
 .gauge-container {
   display: flex;
   flex-grow: 1;
-  margin-bottom: 10px; /* Allow wrapping for responsiveness */
+  margin-bottom: 10px;
+  /* Allow wrapping for responsiveness */
   margin-left: 30px;
-  max-width: 300px; /* Full width to allow label and cells to align properly */
+  max-width: 300px;
+  /* Full width to allow label and cells to align properly */
 }
+
 .gauge-label {
   font-size: 0.95rem;
   font-weight: 600;
   color: #4a5568;
   margin-right: 20px;
   max-width: 100%;
-  align-self: center; /* Center the label vertically */
+  align-self: center;
+  /* Center the label vertically */
   flex-shrink: 0;
 }
+
 .gauge-cells {
   display: flex;
   align-self: center;
-  gap: 1px; /* Small gap between cells */
+  gap: 1px;
+  /* Small gap between cells */
   /* Allow cells to take up remaining space */
-  max-width: 100%; /* Adjust max-width based on container width */
+  max-width: 100%;
+  /* Adjust max-width based on container width */
   border: 2px solid white;
-  box-shadow: 0 0 4px 1px rgba(255, 204, 0, 0.7); /* Soft yellow glow */
-  transition: box-shadow 0.2s ease-in-out; /* Smooth transition for glow */
-  filter: brightness(0.9); /* Slightly dim the glow for a more subtle effect */
+  box-shadow: 0 0 4px 1px rgba(255, 204, 0, 0.7);
+  /* Soft yellow glow */
+  transition: box-shadow 0.2s ease-in-out;
+  /* Smooth transition for glow */
+  filter: brightness(0.9);
+  /* Slightly dim the glow for a more subtle effect */
 }
+
 .gauge-cell {
-  width: 18px; /* Fixed width for each cell */
-  height: 18px; /* Fixed height for each cell */
-  border: 2px yellow; /* Default border color for empty cells */
-  border-radius: 2px; /* Slightly rounded corners for cells */
-  background-color: rgb(241, 241, 241, 0.3); /* Default empty color */
+  width: 18px;
+  /* Fixed width for each cell */
+  height: 18px;
+  /* Fixed height for each cell */
+  border: 2px yellow;
+  /* Default border color for empty cells */
+  border-radius: 2px;
+  /* Slightly rounded corners for cells */
+  background-color: rgb(241, 241, 241, 0.3);
+  /* Default empty color */
 }
 
 /* Custom filled colors based on cell index */
 .gauge-cell.filled-white {
-  background-color: whitesmoke; /* White */
+  background-color: whitesmoke;
+  /* White */
 }
+
 .gauge-cell.filled-light-purple {
-  background-color: rgb(108, 144, 230); /* Tailwind purple-400 */
+  background-color: rgb(108, 144, 230);
+  /* Tailwind purple-400 */
 }
+
 .gauge-cell.filled-dark-purple {
-  background-color: rgb(197, 124, 239); /* Tailwind purple-700 */
+  background-color: rgb(197, 124, 239);
+  /* Tailwind purple-700 */
 }
+
 .gauge-cell.filled-light-red {
-  background-color: rgb(239, 119, 120); /* Tailwind red-400 */
+  background-color: rgb(239, 119, 120);
+  /* Tailwind red-400 */
 }
 
 .p-frame {
@@ -492,74 +600,92 @@ ul {
 
 /* Base styles for Federation System (Blue) */
 .federation-system {
-  border: 3px solid #033669 !important; /* Navy-like border */
+  border: 3px solid #033669 !important;
+  /* Navy-like border */
   background-color: rgba(62, 113, 230, 0.486) !important;
   /* Smooth transition for hover/active states */
 }
 
 /* Deeper/darker color when Federation System is clicked */
 .federation-system.active {
-  border: 3px solid #011e3f !important; /* Darker navy */
-  background-color: rgba(30, 70, 180, 0.6) !important; /* Darker blue */
+  border: 3px solid #011e3f !important;
+  /* Darker navy */
+  background-color: rgba(30, 70, 180, 0.6) !important;
+  /* Darker blue */
 }
 
 /* Base styles for Blackhawk System (Green) */
 .blackhawk-system {
-  border: 3px solid #006400 !important; /* Dark Green border */
-  background-color: rgba(0, 128, 0, 0.486) !important; /* Green background */
+  border: 3px solid #006400 !important;
+  /* Dark Green border */
+  background-color: rgba(0, 128, 0, 0.486) !important;
+  /* Green background */
 }
 
 /* Deeper/darker color when Blackhawk System is clicked */
 .blackhawk-system.active {
-  border: 3px solid #003300 !important; /* Even darker green */
-  background-color: rgba(0, 80, 0, 0.6) !important; /* Darker green */
+  border: 3px solid #003300 !important;
+  /* Even darker green */
+  background-color: rgba(0, 80, 0, 0.6) !important;
+  /* Darker green */
 }
 
 /* Base styles for Talon System (Pink) */
 .talon-system {
-  border: 3px solid #c71585 !important; /* Medium Violet Red border */
-  background-color: rgba(
-    255,
-    105,
-    180,
-    0.486
-  ) !important; /* Hot Pink background */
+  border: 3px solid #c71585 !important;
+  /* Medium Violet Red border */
+  background-color: rgba(255,
+      105,
+      180,
+      0.486) !important;
+  /* Hot Pink background */
 }
 
 /* Deeper/darker color when Talon System is clicked */
 .talon-system.active {
-  border: 3px solid #8b0a50 !important; /* Darker pink/red */
-  background-color: rgba(200, 50, 140, 0.6) !important; /* Darker pink */
+  border: 3px solid #8b0a50 !important;
+  /* Darker pink/red */
+  background-color: rgba(200, 50, 140, 0.6) !important;
+  /* Darker pink */
 }
 
 /* Base styles for Red-Dagger Pirates (Red) */
 .pirate-system {
-  border: 3px solid #8b0000 !important; /* Dark Red border */
-  background-color: rgba(255, 0, 0, 0.486) !important; /* Red background */
+  border: 3px solid #8b0000 !important;
+  /* Dark Red border */
+  background-color: rgba(255, 0, 0, 0.486) !important;
+  /* Red background */
 }
 
 /* Deeper/darker color when Red-Dagger Pirates is clicked */
 .pirate-system.active {
-  border: 3px solid #550000 !important; /* Even darker red */
-  background-color: rgba(200, 0, 0, 0.6) !important; /* Darker red */
+  border: 3px solid #550000 !important;
+  /* Even darker red */
+  background-color: rgba(200, 0, 0, 0.6) !important;
+  /* Darker red */
 }
 
 /* Base styles for Independent System (Purple) */
 .independent-system {
-  border: 3px solid #4b0082 !important; /* Indigo border */
-  background-color: rgba(128, 0, 128, 0.486) !important; /* Purple background */
+  border: 3px solid #4b0082 !important;
+  /* Indigo border */
+  background-color: rgba(128, 0, 128, 0.486) !important;
+  /* Purple background */
 }
 
 /* Deeper/darker color when Independent System is clicked */
 .independent-system.active {
-  border: 3px solid #2f0050 !important; /* Darker indigo */
-  background-color: rgba(80, 0, 80, 0.6) !important; /* Darker purple */
+  border: 3px solid #2f0050 !important;
+  /* Darker indigo */
+  background-color: rgba(80, 0, 80, 0.6) !important;
+  /* Darker purple */
 }
 
 .luos-system {
   border: 3px solid whitesmoke !important;
   background-color: rgba(185, 166, 166, 0.404) !important;
 }
+
 .luos-system.active {
   border: 3px solid white !important;
   background-color: rgba(185, 166, 166, 0.6) !important;
@@ -571,6 +697,7 @@ ul {
   background-color: rgb(253, 88, 95, 0.4) !important;
   border-color: rgb(141, 69, 73) !important;
 }
+
 .offensive-rigs.active {
   background-color: rgb(253, 88, 95, 0.7) !important;
 }
@@ -579,6 +706,7 @@ ul {
   background-color: rgb(90, 152, 255, 0.4) !important;
   border-color: rgb(40, 81, 199) !important;
 }
+
 .defensive-rigs.active {
   background-color: rgb(90, 152, 255, 0.7) !important;
 }
@@ -587,6 +715,7 @@ ul {
   background-color: rgb(244, 255, 82, 0.4) !important;
   border-color: rgb(99, 90, 51) !important;
 }
+
 .utility-rigs.active {
   background-color: rgb(244, 255, 82, 0.7) !important;
 }
@@ -595,6 +724,7 @@ ul {
   background-color: rgb(114, 255, 84, 0.4) !important;
   border-color: rgb(59, 129, 40) !important;
 }
+
 .command-rigs.active {
   background-color: rgb(114, 255, 84, 0.7) !important;
 }
@@ -603,6 +733,7 @@ ul {
   background-color: rgb(9, 0, 64, 0.4) !important;
   border: 3px solid rgb(177, 59, 255) !important;
 }
+
 .mobility-rigs.active {
   background-color: rgb(9, 0, 64, 0.7) !important;
 }
@@ -644,7 +775,8 @@ ul {
 /* Container for each group of 3 affinities + a single large image */
 .affinity-group {
   display: flex;
-  align-items: stretch; /* Stretch items to match height */
+  align-items: stretch;
+  /* Stretch items to match height */
   gap: 10px;
   padding: 10px;
   background-color: #1f2533;
@@ -656,7 +788,8 @@ ul {
 
 .affinity-group-image {
   width: 160px;
-  flex-shrink: 0; /* Prevents the image from shrinking */
+  flex-shrink: 0;
+  /* Prevents the image from shrinking */
   border-radius: 4px;
   object-fit: cover;
 }
@@ -683,8 +816,10 @@ ul {
 
 /* Selected/Active state for an item */
 .affinity-item.selected {
-  background-color: #0b0d0f; /* A darker color for the selected state */
-  border-left: 3px solid #818cf8; /* Optional highlight for selection */
+  background-color: #0b0d0f;
+  /* A darker color for the selected state */
+  border-left: 3px solid #818cf8;
+  /* Optional highlight for selection */
   padding-left: 2px;
 }
 
@@ -699,4 +834,126 @@ ul {
   font-size: 0.85rem;
   line-height: 1.4;
   color: #9ca3af;
+}
+
+/* Fixed Scroll Button */
+.fixed-scroll-button {
+  position: fixed;
+  bottom: 16px !important;
+  right: 16px !important;
+  z-index: 1000;
+}
+
+.scroll-button {
+  width: 60px;
+  height: 60px;
+  background-color: #a855f7;
+  /* WhatsApp green */
+  color: white;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: #7e40b8;
+  transform: scale(1.1);
+}
+
+.scroll-button svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Modal and main content styling */
+.modal-button {
+  padding: 1rem 2rem;
+  background-color: #9333ea;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  transform: scale(1);
+  border: none;
+  cursor: pointer;
+}
+
+.modal-button:hover {
+  background-color: #7e22ce;
+  transform: scale(1.05);
+}
+
+.modal-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.5);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-popup {
+  background-color: #fff;
+  width: 95%;
+  max-width: 512px;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #6b7280;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+  transform: rotate(0deg);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #111827;
+  transform: rotate(90deg);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
