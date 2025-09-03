@@ -2,7 +2,7 @@ export {
   switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew,
   handleChoiceGun, getImgName, updateSummary,
 };
-import { formatterIntl } from "/Script/manaData.js";
+import { formatterIntl, catalyst } from "/Script/manaData.js";
 import { titles, skills, } from "/Script/choiceData.js";
 import { crew } from "/Script/crewData.js";
 import { guns } from "/Script/equipmentData.js";
@@ -332,6 +332,131 @@ function handleSpells(chosenChoice, creditChange) {
   document.getElementById("frameCredits-display").innerHTML =
     `Frame Resources: ` + formatterIntl.format(player.frame.frameIntegrity);
 }
+
+function handleAffinity(id, choiceElement) { //handle affinity
+  const isChosenActive = choiceElement.classList.contains("active");
+  let allowAffinity = false;
+  if (player.frame.choices.includes('Base Catalyst: Arm Blade')) {
+    switch (id) {
+      case "Void Tier 1 Affinity":
+      case "Erosion Tier 1 Affinity":
+      case "Vorpal Tier 1 Affinity":
+      case "Thermal Tier 1 Affinity":
+      case "Arc Tier 1 Affinity":
+      case "Kinetic Tier 1 Affinity":
+      case "Resonance Tier 1 Affinity":
+      case "Corruption Tier 1 Affinity":
+      case "Retribution Tier 1 Affinity":
+        allowAffinity = true;
+        break;
+    }
+  }
+  if (player.frame.choices.includes('Paralogical Tier 2 Casting')) {
+    switch (id) {
+      case "Void Tier 2 Affinity":
+      case "Erosion Tier 2 Affinity":
+      case "Vorpal Tier 2 Affinity":
+        allowAffinity = true;
+        break;
+    }
+  }
+  if (player.frame.choices.includes('Elemental Tier 2 Casting')) {
+    switch (id) {
+      case "Thermal Tier 2 Affinity":
+      case "Arc Tier 2 Affinity":
+      case "Kinetic Tier 2 Affinity":
+        allowAffinity = true;
+        break;
+    }
+  }
+  if (player.frame.choices.includes('Anticausal Tier 2 Casting')) {
+    switch (id) {
+      case "Resonance Tier 2 Affinity":
+      case "Corruption Tier 2 Affinity":
+      case "Retribution Tier 2 Affinity":
+        allowAffinity = true;
+        break;
+    }
+  }
+  if (player.frame.choices.includes('Paralogical Tier 3 Casting')) {
+    switch (id) {
+      case "Void Tier 3 Affinity":
+      case "Erosion Tier 3 Affinity":
+      case "Vorpal Tier 3 Affinity":
+        allowAffinity = true;
+        break;
+    }
+  }
+  if (player.frame.choices.includes('Elemental Tier 3 Casting')) {
+    switch (id) {
+      case "Thermal Tier 3 Affinity":
+      case "Arc Tier 3 Affinity":
+      case "Kinetic Tier 3 Affinity":
+        allowAffinity = true;
+        break;
+    }
+  }
+  if (player.frame.choices.includes('Anticausal Tier 3 Casting')) {
+    switch (id) {
+      case "Resonance Tier 3 Affinity":
+      case "Corruption Tier 3 Affinity":
+      case "Retribution Tier 3 Affinity":
+        allowAffinity = true;
+        break;
+    }
+  }
+
+  console.log(allowAffinity);
+
+  if (isChosenActive) {
+    choiceElement.classList.remove('active');
+    const index = player.frame.choices.indexOf(choiceElement.id);
+    if (index !== -1) {
+      player.frame.choices.splice(index, 1);
+    }
+  } else if (allowAffinity) {
+    choiceElement.classList.add("active");
+    player.frame.choices.push(choiceElement.id);
+  } else {
+    choiceElement.classList.remove("active");
+  }
+}
+
+function handleCatalyst(chosenChoice, creditChange) {
+  const isChosenActive = chosenChoice.classList.contains("active");
+  const parentContainer = chosenChoice.closest('.catalyst');
+
+  if (isChosenActive) {
+    // If already active, deactivate it
+    chosenChoice.classList.remove("active");
+    // Refund integrity
+    if (player.frame.upgrade === 'frame-upgrade-seraph') {
+      player.frame.frameIntegrity += (creditChange - 1);
+    } else {
+      player.frame.frameIntegrity += creditChange;
+    }
+
+    // Remove choice from frame choices
+    const index = player.frame.choices.indexOf(chosenChoice.id);
+    if (index !== -1) {
+      player.frame.choices.splice(index, 1);
+    }
+  } else {
+    // Activate the chosen spell
+    chosenChoice.classList.add("active");
+    if (player.frame.upgrade === 'frame-upgrade-seraph') {
+      player.frame.frameIntegrity -= (creditChange - 1); // Deduct integrity
+    } else {
+      player.frame.frameIntegrity -= creditChange;
+    }
+    player.frame.choices.push(chosenChoice.id);
+  }
+
+  // Update the frame integrity display
+  document.getElementById("frameCredits-display").innerHTML =
+    `Frame Resources: ` + formatterIntl.format(player.frame.frameIntegrity);
+}
+
 
 function switchChoose(
   id,
@@ -950,6 +1075,65 @@ function switchChoose(
     case "tech3-second-skin":
       handleEWar(choiceElement, 8);
       break;
+
+    case "Base Catalyst: Arm Blade":
+    case "Spell Synthesis":
+    case "Advanced Spell Synthesis":
+    case "Paralogical Tier 2 Casting":
+    case "Elemental Tier 2 Casting":
+    case "Anticausal Tier 2 Casting":
+    case "Paralogical Tier 3 Casting":
+    case "Elemental Tier 3 Casting":
+    case "Anticausal Tier 3 Casting":
+    case "Catalyst Upgrade: Vanguard":
+    case "Catalyst Upgrade: Slayer":
+    case "Catalyst Upgrade: Sentinel":
+    case "Ghost Blade":
+    case "Smite":
+    case "Judgement":
+    case "Moonlight":
+    case "Flare":
+    case "Guardian":
+    case "Blink":
+    case "Howl":
+    case "Fortitude":
+      let catalystChoice = catalyst.find(cata => cata.name === id);
+      handleCatalyst(choiceElement, catalystChoice.cost);
+      break;
+
+    case "Void Tier 1 Affinity":
+    case "Void Tier 2 Affinity":
+    case "Void Tier 3 Affinity":
+    case "Erosion Tier 1 Affinity":
+    case "Erosion Tier 2 Affinity":
+    case "Erosion Tier 3 Affinity":
+    case "Vorpal Tier 1 Affinity":
+    case "Vorpal Tier 2 Affinity":
+    case "Vorpal Tier 3 Affinity":
+    case "Thermal Tier 1 Affinity":
+    case "Thermal Tier 2 Affinity":
+    case "Thermal Tier 3 Affinity":
+    case "Arc Tier 1 Affinity":
+    case "Arc Tier 2 Affinity":
+    case "Arc Tier 3 Affinity":
+    case "Kinetic Tier 1 Affinity":
+    case "Kinetic Tier 2 Affinity":
+    case "Kinetic Tier 3 Affinity":
+    case "Resonance Tier 1 Affinity":
+    case "Resonance Tier 2 Affinity":
+    case "Resonance Tier 3 Affinity":
+    case "Corruption Tier 1 Affinity":
+    case "Corruption Tier 2 Affinity":
+    case "Corruption Tier 3 Affinity":
+    case "Retribution Tier 1 Affinity":
+    case "Retribution Tier 2 Affinity":
+    case "Retribution Tier 3 Affinity":
+      handleAffinity(id, choiceElement);
+      break;
+    default:
+      // Handle cases where no match is found
+      break;
+
 
 
   }

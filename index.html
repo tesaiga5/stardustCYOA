@@ -915,7 +915,7 @@
           <div class="choice-frame-upgrade" style="flex-basis: 50%; margin:0;" id="frame-upgrade-seraph">
             <img src="Images/Equipment/ibrahem-swaid-magnus-c35-tss.webp">
             <p>Seraph</p>
-            <p><b>+40 usable for spell bases or mana interfacing only.</b>
+            <p><b>-1 cost for spell, catalyst, and affinity.</b>
               <br>A frame that enhances the intricacies
               of the suit's mana grid, deepening reserves for spell capabilities.
             </p>
@@ -2672,7 +2672,7 @@
       const choiceElement = event.target.closest('.choice');
       const crewChoiceElement = event.target.closest('.crew');
       const choiceGun = event.target.closest('.gun');
-      //const weaponSection1
+      const choiceAffinity = event.target.closest('.affinity-item'); //for affinity
 
       //handle choice of crew, if not archetype
       if (crewChoiceElement) {
@@ -2691,6 +2691,10 @@
         */
         //handles all choices
         switchChoose(id, choiceElement, sectionToToggle, originToggleArray, player);
+      } else if (choiceAffinity) {
+        const id = choiceAffinity.id; // Get the ID of the clicked choice
+        let sectionToToggle = '';
+        switchChoose(id, choiceAffinity, sectionToToggle, originToggleArray, player);
       }
     });
 
@@ -2991,10 +2995,10 @@
       populateRigs(rigs, 'choice', 'endOfRigs');
       populateVehicles(vehicles, 'choice', 'endOfVehicles');
       addGunDataToSection(); //populate guns
-      populateCatalystToSection(catalyst, 'choice', 'endOfCatalyst');
+      populateCatalystToSection(catalyst, 'catalyst', 'endOfCatalyst'); //populate catalyst
       createAffinityTable(affinity, affHeaders, 'endOfAffinities')
       //populateCatalystToSection(affinity, 'choice', 'endOfAffinities');
-      populateCatalystToSection(spellBases, 'choice', 'endOfSpell');
+      populateCatalystToSection(spellBases, 'spell', 'endOfSpell'); //populate spells
     });
 
 

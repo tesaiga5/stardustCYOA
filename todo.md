@@ -2,7 +2,7 @@ TODO:
 
 FRAME:
 
-5. Handlechoice: ewar, spell, catalyst
+5. Handlechoice: spell, catalyst
 6. Frame mechanic
 7. Pictures: spell, catalyst
 

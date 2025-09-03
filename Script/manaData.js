@@ -12,7 +12,7 @@ export {
 };
 
 import { getImgName } from "/Script/switchChoose.js";
-import {weapons} from "/Script/shipData.js"; 
+import { weapons } from "/Script/shipData.js";
 
 
 const catalyst = [
@@ -587,7 +587,7 @@ function appendDropdown(parentElement, item) {
   const decrementButton = document.createElement("button");
   decrementButton.textContent = "-";
   decrementButton.classList.add('decrement-button');
-  
+
 
   // Create the increment button
   const incrementButton = document.createElement("button");
@@ -596,7 +596,7 @@ function appendDropdown(parentElement, item) {
   /*incrementButton.classList.add(
         'btn-secondary', 'px-4', 'py-2', 'rounded-lg', 'font-bold', 'text-xl'
     );*/
-  
+
 
   // Append all elements to the control group
   controlGroup.appendChild(selectElement);
@@ -712,21 +712,19 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
     // Cost - common to most, with special handling for secondaryCost in weapons
     if (item.cost !== undefined) {
       const costP = document.createElement("p");
-      costP.innerHTML = `Cost: ${
-        typeof item.cost === "number"
-          ? typeof formatterIntl !== "undefined"
-            ? formatterIntl.format(item.cost)
-            : item.cost
-          : "N/A"
-      }`;
+      costP.innerHTML = `Cost: ${typeof item.cost === "number"
+        ? typeof formatterIntl !== "undefined"
+          ? formatterIntl.format(item.cost)
+          : item.cost
+        : "N/A"
+        }`;
       if (dataType === "weapon" && item.secondaryCost !== undefined) {
-        costP.innerHTML += ` (${
-          typeof item.secondaryCost === "number"
-            ? typeof formatterIntl !== "undefined"
-              ? formatterIntl.format(item.secondaryCost)
-              : item.secondaryCost
-            : "N/A"
-        })`;
+        costP.innerHTML += ` (${typeof item.secondaryCost === "number"
+          ? typeof formatterIntl !== "undefined"
+            ? formatterIntl.format(item.secondaryCost)
+            : item.secondaryCost
+          : "N/A"
+          })`;
       }
       newSpan.appendChild(costP);
     }
@@ -764,10 +762,10 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
         appendParagraph(newSpan, `Role: ${item.role || "N/A"}`);
         break;
       case "energy":
-         newDiv.classList.add('energy');
-        if (item.type==='generation') {appendParagraph(newSpan, `Energy Output: ${item.energyOutput || "N/A"}`);}
-        else {appendParagraph(newSpan, `Battery Capacity: ${item.energyOutput || "N/A"}`);}
-        
+        newDiv.classList.add('energy');
+        if (item.type === 'generation') { appendParagraph(newSpan, `Energy Output: ${item.energyOutput || "N/A"}`); }
+        else { appendParagraph(newSpan, `Battery Capacity: ${item.energyOutput || "N/A"}`); }
+
         appendParagraph(
           newSpan,
           `Charge Duration: ${item.chargeDuration || "N/A"}`
@@ -911,7 +909,7 @@ function populateCatalystToSection(choiceArray, choicePrefix, sectionID) {
   const targetSection = document.getElementById(sectionID);
   choiceArray.forEach((item) => {
     const newDiv = document.createElement("div");
-    newDiv.classList.add("choice", "ship");
+    newDiv.classList.add("choice", choicePrefix);
     newDiv.id = item.name;
 
     const newSpan = document.createElement("span");
@@ -1016,6 +1014,7 @@ function createAffinityTable(data, headers, containerID) {
       group.items.forEach((item) => {
         const affinityItem = document.createElement("div");
         affinityItem.classList.add("affinity-item");
+        affinityItem.id = item.title;
 
         const h3Element = document.createElement("h3");
         h3Element.textContent = item.title;
@@ -1024,26 +1023,6 @@ function createAffinityTable(data, headers, containerID) {
         const pElement = document.createElement("p");
         pElement.textContent = item.description;
         affinityItem.appendChild(pElement);
-
-        // Add a click event listener to each individual item
-        affinityItem.addEventListener("click", () => {
-          // Check if the item is already selected
-          if (affinityItem.classList.contains("selected")) {
-            // If it is, deselect it
-            affinityItem.classList.remove("selected");
-            console.log(`${item.title} has been deselected.`);
-          } else {
-            // If not, find all items within the same affinity group and deselect them
-            const parentGroup = affinityItem.closest(".affinity-group");
-            parentGroup.querySelectorAll(".affinity-item").forEach((el) => {
-              el.classList.remove("selected");
-            });
-
-            // Add the 'selected' class to the clicked item
-            affinityItem.classList.add("selected");
-            console.log(`${item.title} has been selected.`);
-          }
-        });
 
         groupContent.appendChild(affinityItem);
       });

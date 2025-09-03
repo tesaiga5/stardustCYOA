@@ -815,7 +815,7 @@ ul {
 }
 
 /* Selected/Active state for an item */
-.affinity-item.selected {
+.affinity-item.active {
   background-color: #0b0d0f;
   /* A darker color for the selected state */
   border-left: 3px solid #818cf8;
