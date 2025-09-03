@@ -1,10 +1,11 @@
-export { switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew,
-  handleChoiceGun, getImgName, updateSummary, 
+export {
+  switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew,
+  handleChoiceGun, getImgName, updateSummary,
 };
 import { formatterIntl } from "/Script/manaData.js";
 import { titles, skills, } from "/Script/choiceData.js";
-import {crew} from "/Script/crewData.js";
-import {guns} from "/Script/equipmentData.js";
+import { crew } from "/Script/crewData.js";
+import { guns } from "/Script/equipmentData.js";
 
 function getImgName(url) {
   // Use the URL object to correctly parse the pathname
@@ -129,14 +130,14 @@ function handleChoiceSkills(section, chosenChoice, creditChange, chosenSkill) {
 function handleChoiceGun(chosenChoice) {
   const isChosenActive = chosenChoice.classList.contains("active");
 
-  const chosenGun = guns.find(gun => gun.name === chosenChoice.id); 
+  const chosenGun = guns.find(gun => gun.name === chosenChoice.id);
 
   if (isChosenActive) {
     // If the chosen choice is already active, deactivate it (deselect)
     chosenChoice.classList.remove("active");
     player.credits += chosenGun.cost;
     document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
-    
+
     //remove choice
     const index = player.gear.indexOf(chosenGun);
     if (index !== -1) {
@@ -158,75 +159,75 @@ function handleChoiceRigs(chosenChoice, creditChange, rigType) {
   if (isChosenActive) {
     // If the chosen choice is already active, deactivate it (deselect)
     chosenChoice.classList.remove("active");
-    
+
     player.frame[whatSlot] += creditChange; // player here = player.frame   
-    
+
     //remove choice
     const index = player.frame.choices.indexOf(chosenChoice.id);
     if (index !== -1) {
       player.frame.choices.splice(index, 1);
     }
-    
+
     //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
-  } else if (player.frame[whatSlot]>0){
-      
-      //as long as the num of active choices are less than allowed active
-      chosenChoice.classList.add("active"); //you may toggle the selected choice to be active
-      player.frame[whatSlot] -= creditChange; // and Add credits
-      player.frame.choices.push(chosenChoice.id);
-      //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
-    }
+  } else if (player.frame[whatSlot] > 0) {
+
+    //as long as the num of active choices are less than allowed active
+    chosenChoice.classList.add("active"); //you may toggle the selected choice to be active
+    player.frame[whatSlot] -= creditChange; // and Add credits
+    player.frame.choices.push(chosenChoice.id);
+    //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+  }
 }
 
 function handleChoiceVehicle(chosenChoice, creditChange, vehicles) {
   //passthru section, the choice selected, the credit change, and maximum amount of choices
   //const activeChoices = section.querySelectorAll(".rigs"); //check how many choices are active
   const isChosenActive = chosenChoice.classList.contains("active");
-  const chosenVehicle = vehicles.find(object => object.id === chosenChoice.id); 
-  
+  const chosenVehicle = vehicles.find(object => object.id === chosenChoice.id);
+
   if (isChosenActive) {
     // If the chosen choice is already active, deactivate it (deselect)
     chosenChoice.classList.remove("active");
-    
-    if(creditChange===0){
+
+    if (creditChange === 0) {
       player.credits += chosenVehicle.cost;
       document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
     }
-    else {player.frame.vehicleSlot += creditChange;}
-    
+    else { player.frame.vehicleSlot += creditChange; }
+
     //remove choice
     const index = player.frame.choices.indexOf(chosenChoice.id);
     if (index !== -1) {
       player.frame.choices.splice(index, 1);
     }
-    
+
     //
-  } else if (creditChange === 0 || player.frame.vehicleSlot>0){ // || 
-      //as long as the num of active choices are less than allowed active
-      chosenChoice.classList.add("active"); //you may toggle the selected choice to be active
-      if(creditChange===0){
-        player.credits -= chosenVehicle.cost;
-        document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
-      }
-      else {player.frame.vehicleSlot -= creditChange;}
-      player.frame.choices.push(chosenChoice.id);
-      //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+  } else if (creditChange === 0 || player.frame.vehicleSlot > 0) { // || 
+    //as long as the num of active choices are less than allowed active
+    chosenChoice.classList.add("active"); //you may toggle the selected choice to be active
+    if (creditChange === 0) {
+      player.credits -= chosenVehicle.cost;
+      document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
     }
+    else { player.frame.vehicleSlot -= creditChange; }
+    player.frame.choices.push(chosenChoice.id);
+    //document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
+  }
 }
 
-function handleChoiceCrew(chosenChoice){
-   const isChosenActive = chosenChoice.classList.contains("active");
+function handleChoiceCrew(chosenChoice) {
+  const isChosenActive = chosenChoice.classList.contains("active");
 
-   const chosenCrew = crew.find(employee => employee.title === chosenChoice.id); 
+  const chosenCrew = crew.find(employee => employee.title === chosenChoice.id);
 
-   if (isChosenActive) {
+  if (isChosenActive) {
     // If the chosen choice is already active, deactivate it (deselect)
     chosenChoice.classList.remove("active");
     player.credits += chosenCrew.cost;
     player.crewNum += 1;
     document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
-    document.getElementById("crew-display").innerHTML = `Required Crew: `+ formatterIntl.format(player.crewNum);
-    
+    document.getElementById("crew-display").innerHTML = `Required Crew: ` + formatterIntl.format(player.crewNum);
+
     //remove choice
     const index = player.crew.indexOf(chosenCrew);
     if (index !== -1) {
@@ -237,7 +238,7 @@ function handleChoiceCrew(chosenChoice){
     player.credits -= chosenCrew.cost;
     player.crewNum -= 1;
     document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
-    document.getElementById("crew-display").innerHTML = `Required Crew: `+ formatterIntl.format(player.crewNum);
+    document.getElementById("crew-display").innerHTML = `Required Crew: ` + formatterIntl.format(player.crewNum);
     player.crew.push(chosenCrew);
   }
 }
@@ -246,29 +247,59 @@ function handleChoiceCrew(chosenChoice){
 function handleEWar(chosenChoice, creditChange) {
   const isChosenActive = chosenChoice.classList.contains("active");
   const parentContainer = chosenChoice.closest('.p-frame') || chosenChoice.closest('.choice');
-  
+
   // Find all E-War choices in the same category/container
   const sameCategoryEWar = parentContainer.querySelectorAll('.choice.ewar');
-  
+
   if (isChosenActive) {
     // If already active, deactivate it
     chosenChoice.classList.remove("active");
-    player.frame.frameIntegrity += creditChange; // Refund integrity
-    
+    if (player.frame.name === 'Imperator') {
+      if (player.frame.upgrade === 'frame-upgrade-monsoon') {
+        if (chosenChoice.classList.contains('emissions')) {
+          player.frame.frameIntegrity += (creditChange * 0.5);
+        } else {
+          player.frame.frameIntegrity += (creditChange * 0.75);
+        }
+      } else {
+        if (chosenChoice.classList.contains('digital')) {
+          player.frame.frameIntegrity += (creditChange * 0.5);
+        } else {
+          player.frame.frameIntegrity += (creditChange * 0.75);
+        }
+      }
+    }
+
     // Remove choice from frame choices
     const index = player.frame.choices.indexOf(chosenChoice.id);
     if (index !== -1) {
       player.frame.choices.splice(index, 1);
     }
   } else {
-      // Activate the chosen E-War
-      chosenChoice.classList.add("active");
-      player.frame.frameIntegrity -= creditChange; // Deduct integrity
-      player.frame.choices.push(chosenChoice.id);
+    // Activate the chosen E-War
+    chosenChoice.classList.add("active");
+    if (player.frame.name === 'Imperator') {
+      if (player.frame.upgrade === 'frame-upgrade-monsoon') {
+        if (chosenChoice.classList.contains('emissions')) {
+          player.frame.frameIntegrity -= (creditChange * 0.5);
+        } else {
+          player.frame.frameIntegrity -= (creditChange * 0.75);
+        }
+      } else {
+        if (chosenChoice.classList.contains('digital')) {
+          player.frame.frameIntegrity -= (creditChange * 0.5);
+        } else {
+          player.frame.frameIntegrity -= (creditChange * 0.75);
+        }
+      }
+    } else {
+      player.frame.frameIntegrity -= creditChange;
+    } // Deduct integrity
+    player.frame.choices.push(chosenChoice.id);
   }
-  
+
   // Update the frame integrity display
-  document.getElementById("frameCredits-display").innerHTML = 
+  document.getElementById("frameCredits-display").innerHTML =
     `Frame Resources: ` + formatterIntl.format(player.frame.frameIntegrity);
 }
 
@@ -867,7 +898,7 @@ function switchChoose(
         chosenSkill
       );
       break;
-    
+
     case "tech1-comint-discipline":
     case "tech1-esm-honing":
     case "tech1-eccm":
@@ -883,7 +914,7 @@ function switchChoose(
     case "tech1-clairvoyant-resolution":
     case "tech1-clarity-boost":
     case "tech1-phased-membrane":
-      handleEWar(choiceElement, 1);
+      handleEWar(choiceElement, 2);
       break;
     case "tech2-elint-discipline":
     case "tech2-rcs-masking":
@@ -900,7 +931,7 @@ function switchChoose(
     case "tech2-mana-multivision":
     case "tech2-pineal-boost":
     case "tech2-power-membrane":
-      handleEWar(choiceElement, 3);
+      handleEWar(choiceElement, 4);
       break;
     case "tech3-asint-discipline":
     case "tech3-target-rcs-enhancement":
@@ -917,15 +948,15 @@ function switchChoose(
     case "tech3-omnidirectional-vision":
     case "tech3-trance":
     case "tech3-second-skin":
-      handleEWar(choiceElement, 5);
+      handleEWar(choiceElement, 8);
       break;
-    
-    
+
+
   }
 }
 
-function updateSummary(choiceFrame){ 
-  const targetDiv = document.getElementById('summary-display');
+function updateSummary(choiceFrame) {
+  /*const targetDiv = document.getElementById('summary-display');
 
   if(player.frame){
     // Construct the HTML for the attributes list
@@ -955,6 +986,6 @@ function updateSummary(choiceFrame){
         </div>
     `;
     targetDiv.innerHTML = cardHtml;
-  }
+  }*/
 }
 

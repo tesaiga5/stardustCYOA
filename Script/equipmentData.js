@@ -1,5 +1,5 @@
 import { formatterIntl, appendList1 } from "/Script/manaData.js";
-import {getImgName, updateSummary} from "/Script/switchChoose.js";
+import { getImgName, updateSummary } from "/Script/switchChoose.js";
 export {
   equipment,
   vehicles,
@@ -14,7 +14,7 @@ export {
 // This array contains all equipment objects with their attributes.
 // Blank attributes are set to '0'.
 // Costs are converted to numerical values (k = thousand, m = million).
-const equipment = [ 
+const equipment = [
 ];
 
 const guns = [
@@ -894,7 +894,7 @@ const guns = [
     calibre: "1990nm",
     image: "Images/Guns/enclave-interactive-plusma-gun-enclave-interactive.webp",
     description: "Made from lost technology. When dismantled, the parts don't make sense yet functions realiably when put together.",
-  }, 
+  },
   {
     name: "H12",
     type1: "Explosive",
@@ -1930,7 +1930,7 @@ function createFrame(num) {
     commandSlot: 1,
     utilitySlot: 4,
     vehicleSlot: 0,
-    upgrades: "",
+    upgrade: "",
     choices: [],
   }
 
@@ -1943,7 +1943,7 @@ function createFrame(num) {
       newFrame.defensiveSlot = 4;
       newFrame.mobilitySlot = 5;
       newFrame.vehicleSlot = 1;
-      
+
       break;
     case 3:
       newFrame.id = "frame-imperator";
@@ -1964,37 +1964,39 @@ function createFrame(num) {
 
 function handleFrame(choiceFrame) {
   //if choiceFrame is already active, remove active
-  if(choiceFrame.classList.contains('active')){
-    choiceFrame.classList.remove('active'); 
+  if (choiceFrame.classList.contains('active')) {
+    choiceFrame.classList.remove('active');
     //if choiceframe is a frame upgrade, deactivate parent
-    if(choiceFrame.classList.contains('choice-frame-upgrade')){choiceFrame.closest('.choice-frame').classList.remove('active');} 
-    player.frame = null; 
+    if (choiceFrame.classList.contains('choice-frame-upgrade')) {
+      choiceFrame.closest('.choice-frame').classList.remove('active');
+    }
+    player.frame = null;
   } else { //choiceFrame is not active
     //remove all active choices
     const activeFrame = document.querySelectorAll('.choice-frame.active, .choice-frame-upgrade.active');
-    activeFrame.forEach(choice => choice.classList.remove('active')); 
-    player.frame = null;    
-    
+    activeFrame.forEach(choice => choice.classList.remove('active'));
+    player.frame = null;
+
     //if choiceframe is a frame upgrade, activate it first, then the parent
-    if(choiceFrame.classList.contains('choice-frame-upgrade')){
+    if (choiceFrame.classList.contains('choice-frame-upgrade')) {
       const parentFrame = choiceFrame.closest('.choice-frame');
       choiceFrame.classList.add('active');
       parentFrame.classList.add('active');
       let num = parseInt(parentFrame.id.substring(12));
       player.frame = createFrame(num);
-      player.frame.upgrades = choiceFrame.id;
-     
-    } 
+      player.frame.upgrade = choiceFrame.id;
+
+    }
     //if choiceframe is a frame, activate only it
     else if (choiceFrame.classList.contains('choice-frame')) {
       choiceFrame.classList.add('active');
       let num = parseInt(choiceFrame.id.substring(12));
       player.frame = createFrame(num);
 
-    } 
+    }
   }
   updateSummary(choiceFrame);
-  document.getElementById("frameCredits-display").innerHTML = 
+  document.getElementById("frameCredits-display").innerHTML =
     `Frame Resources: ` + formatterIntl.format(player.frame.frameIntegrity);
   return;
 }
@@ -2113,168 +2115,168 @@ function populateVehicles(dataArray, choicePrefix, sectionID) {
   });
 }
 function addGunDataToSection() {
-      // If not populated, create new divs to populate choices
-      guns.forEach(gun => {
-        let targetSection = document.getElementById('endOfEquipment');
-          switch(gun.type2){
-            case 'handgun':
-              targetSection = document.getElementById('title-submachineguns');
-              break;
-            case 'smg':
-              targetSection = document.getElementById('title-shotguns');
-              break;
-            case 'shotgun':
-              targetSection = document.getElementById('title-rifles');
-              break;
-            case 'rifle':
-              targetSection = document.getElementById('title-lightweapons');
-              break;
-            case 'lightweapon':
-              targetSection = document.getElementById('title-launchers');
-              break;
-            case 'launcher':
-              targetSection = document.getElementById('title-heavyweapons');
-              break;
-            default://for heavyweapons
-              break;
-          }
-          const newDiv = document.createElement("div");
-          newDiv.classList.add("choice", "gun");
-          // Ensure unique ID for each choice element, sanitize name for ID
-          newDiv.id = gun.name;
+  // If not populated, create new divs to populate choices
+  guns.forEach(gun => {
+    let targetSection = document.getElementById('endOfEquipment');
+    switch (gun.type2) {
+      case 'handgun':
+        targetSection = document.getElementById('title-submachineguns');
+        break;
+      case 'smg':
+        targetSection = document.getElementById('title-shotguns');
+        break;
+      case 'shotgun':
+        targetSection = document.getElementById('title-rifles');
+        break;
+      case 'rifle':
+        targetSection = document.getElementById('title-lightweapons');
+        break;
+      case 'lightweapon':
+        targetSection = document.getElementById('title-launchers');
+        break;
+      case 'launcher':
+        targetSection = document.getElementById('title-heavyweapons');
+        break;
+      default://for heavyweapons
+        break;
+    }
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("choice", "gun");
+    // Ensure unique ID for each choice element, sanitize name for ID
+    newDiv.id = gun.name;
 
-          const newSpan = document.createElement("span");
-          newDiv.appendChild(newSpan);
+    const newSpan = document.createElement("span");
+    newDiv.appendChild(newSpan);
 
-          const imgElement = document.createElement('img');
-          imgElement.src = gun.image;
-          imgElement.title = getImgName(gun.image); // Add alt text for accessibility
-          newSpan.appendChild(imgElement);
+    const imgElement = document.createElement('img');
+    imgElement.src = gun.image;
+    imgElement.title = getImgName(gun.image); // Add alt text for accessibility
+    newSpan.appendChild(imgElement);
 
-          // Create an h3 element for the name
-          const h3Element = document.createElement('h3');
-          h3Element.style.marginTop = '0px';
-          h3Element.style.marginBottom = '0px';
-          h3Element.textContent = gun.name || 'No Name';
-          newSpan.appendChild(h3Element);
+    // Create an h3 element for the name
+    const h3Element = document.createElement('h3');
+    h3Element.style.marginTop = '0px';
+    h3Element.style.marginBottom = '0px';
+    h3Element.textContent = gun.name || 'No Name';
+    newSpan.appendChild(h3Element);
 
-          // Type
-          const typeP = document.createElement('p');
-          typeP.textContent = `Type: ${gun.type1} | Cost: ${formatterIntl.format(gun.cost)}`;
-          typeP.style = "text-align: center;"
-          newSpan.appendChild(typeP);
+    // Type
+    const typeP = document.createElement('p');
+    typeP.textContent = `Type: ${gun.type1} | Cost: ${formatterIntl.format(gun.cost)}`;
+    typeP.style = "text-align: center;"
+    newSpan.appendChild(typeP);
 
-          // Equipment Level
-          const levelP = document.createElement('p');
-          levelP.textContent = `Equipment Level: ${gun.equipmentLevel || 0}`;
-          newSpan.appendChild(levelP);
+    // Equipment Level
+    const levelP = document.createElement('p');
+    levelP.textContent = `Equipment Level: ${gun.equipmentLevel || 0}`;
+    newSpan.appendChild(levelP);
 
-          // Stopping Power
-          if (gun.stoppingPower !== null && gun.stoppingPower !== undefined) {
-              const stoppingPowerP = document.createElement('p');
-              stoppingPowerP.textContent = `Stopping Power: ${gun.stoppingPower}`;
-              newSpan.appendChild(stoppingPowerP);
-          }
+    // Stopping Power
+    if (gun.stoppingPower !== null && gun.stoppingPower !== undefined) {
+      const stoppingPowerP = document.createElement('p');
+      stoppingPowerP.textContent = `Stopping Power: ${gun.stoppingPower}`;
+      newSpan.appendChild(stoppingPowerP);
+    }
 
-          // Piercing Power
-          if (gun.piercingPower !== null && gun.piercingPower !== undefined) {
-              const piercingPowerP = document.createElement('p');
-              piercingPowerP.textContent = `Piercing Power: ${gun.piercingPower}`;
-              newSpan.appendChild(piercingPowerP);
-          }
+    // Piercing Power
+    if (gun.piercingPower !== null && gun.piercingPower !== undefined) {
+      const piercingPowerP = document.createElement('p');
+      piercingPowerP.textContent = `Piercing Power: ${gun.piercingPower}`;
+      newSpan.appendChild(piercingPowerP);
+    }
 
-          // Rate of Fire
-          if (gun.rateOfFire !== null && gun.rateOfFire !== undefined) {
-              const rateOfFireP = document.createElement('p');
-              rateOfFireP.textContent = `Rate of Fire: ${gun.rateOfFire}`;
-              newSpan.appendChild(rateOfFireP);
-          }
+    // Rate of Fire
+    if (gun.rateOfFire !== null && gun.rateOfFire !== undefined) {
+      const rateOfFireP = document.createElement('p');
+      rateOfFireP.textContent = `Rate of Fire: ${gun.rateOfFire}`;
+      newSpan.appendChild(rateOfFireP);
+    }
 
-          // Range
-          if (gun.range !== null && gun.range !== undefined) {
-              const rangeP = document.createElement('p');
-              rangeP.textContent = `Range: ${gun.range}`;
-              newSpan.appendChild(rangeP);
-          }
+    // Range
+    if (gun.range !== null && gun.range !== undefined) {
+      const rangeP = document.createElement('p');
+      rangeP.textContent = `Range: ${gun.range}`;
+      newSpan.appendChild(rangeP);
+    }
 
-          // Accuracy
-          if (gun.accuracy !== null && gun.accuracy !== undefined) {
-              const accuracyP = document.createElement('p');
-              accuracyP.textContent = `Accuracy: ${gun.accuracy}`;
-              newSpan.appendChild(accuracyP);
-          }
+    // Accuracy
+    if (gun.accuracy !== null && gun.accuracy !== undefined) {
+      const accuracyP = document.createElement('p');
+      accuracyP.textContent = `Accuracy: ${gun.accuracy}`;
+      newSpan.appendChild(accuracyP);
+    }
 
-          // Handling
-          if (gun.handling !== null && gun.handling !== undefined) {
-              const handlingP = document.createElement('p');
-              handlingP.textContent = `Handling: ${gun.handling}`;
-              newSpan.appendChild(handlingP);
-          }
+    // Handling
+    if (gun.handling !== null && gun.handling !== undefined) {
+      const handlingP = document.createElement('p');
+      handlingP.textContent = `Handling: ${gun.handling}`;
+      newSpan.appendChild(handlingP);
+    }
 
-          // Round Capacity
-          if (gun.roundCapacity !== null && gun.roundCapacity !== undefined) {
-              const roundCapacityP = document.createElement('p');
-              roundCapacityP.textContent = `Round Capacity: ${gun.roundCapacity}`;
-              newSpan.appendChild(roundCapacityP);
-          }
+    // Round Capacity
+    if (gun.roundCapacity !== null && gun.roundCapacity !== undefined) {
+      const roundCapacityP = document.createElement('p');
+      roundCapacityP.textContent = `Round Capacity: ${gun.roundCapacity}`;
+      newSpan.appendChild(roundCapacityP);
+    }
 
-          // Action
-          if (gun.action !== undefined) {
-              const actionP = document.createElement('p');
-              actionP.textContent = `Action: ${gun.action}`;
-              newSpan.appendChild(actionP);
-          }
+    // Action
+    if (gun.action !== undefined) {
+      const actionP = document.createElement('p');
+      actionP.textContent = `Action: ${gun.action}`;
+      newSpan.appendChild(actionP);
+    }
 
-          // Calibre (now includes diode/bolt values from the image)
-          if (gun.calibre !== undefined) {
-              const calibreP = document.createElement('p');
-              calibreP.textContent = `Calibre: ${gun.calibre}`;
-              newSpan.appendChild(calibreP);
-          }
+    // Calibre (now includes diode/bolt values from the image)
+    if (gun.calibre !== undefined) {
+      const calibreP = document.createElement('p');
+      calibreP.textContent = `Calibre: ${gun.calibre}`;
+      newSpan.appendChild(calibreP);
+    }
 
-          // Energy Use
-          if (gun.energyUse !== null && gun.energyUse !== undefined) {
-              const energyUseP = document.createElement('p');
-              energyUseP.textContent = `Energy Use: ${gun.energyUse}`;
-              newSpan.appendChild(energyUseP);
-          }
+    // Energy Use
+    if (gun.energyUse !== null && gun.energyUse !== undefined) {
+      const energyUseP = document.createElement('p');
+      energyUseP.textContent = `Energy Use: ${gun.energyUse}`;
+      newSpan.appendChild(energyUseP);
+    }
 
-          // Tier
-          if (gun.tier !== null && gun.tier !== undefined) {
-              const tierP = document.createElement('p');
-              tierP.textContent = `Tier: ${gun.tier}`;
-              newSpan.appendChild(tierP);
-          }
+    // Tier
+    if (gun.tier !== null && gun.tier !== undefined) {
+      const tierP = document.createElement('p');
+      tierP.textContent = `Tier: ${gun.tier}`;
+      newSpan.appendChild(tierP);
+    }
 
-          // Damage Per Volley
-          if (gun.damagePerVolley !== null && gun.damagePerVolley !== undefined) {
-              const damagePerVolleyP = document.createElement('p');
-              damagePerVolleyP.textContent = `Damage Per Volley: ${gun.damagePerVolley}`;
-              newSpan.appendChild(damagePerVolleyP);
-          }
+    // Damage Per Volley
+    if (gun.damagePerVolley !== null && gun.damagePerVolley !== undefined) {
+      const damagePerVolleyP = document.createElement('p');
+      damagePerVolleyP.textContent = `Damage Per Volley: ${gun.damagePerVolley}`;
+      newSpan.appendChild(damagePerVolleyP);
+    }
 
-          // Projectile Velocity
-          if (gun.projectileVelocity !== null && gun.projectileVelocity !== undefined) {
-              const projectileVelocityP = document.createElement('p');
-              projectileVelocityP.textContent = `Projectile Velocity: ${gun.projectileVelocity}`;
-              newSpan.appendChild(projectileVelocityP);
-          }
+    // Projectile Velocity
+    if (gun.projectileVelocity !== null && gun.projectileVelocity !== undefined) {
+      const projectileVelocityP = document.createElement('p');
+      projectileVelocityP.textContent = `Projectile Velocity: ${gun.projectileVelocity}`;
+      newSpan.appendChild(projectileVelocityP);
+    }
 
-          // Tracking
-          if (gun.tracking !== null && gun.tracking !== undefined) {
-              const trackingP = document.createElement('p');
-              trackingP.textContent = `Tracking: ${gun.tracking}`;
-              newSpan.appendChild(trackingP);
-          }
+    // Tracking
+    if (gun.tracking !== null && gun.tracking !== undefined) {
+      const trackingP = document.createElement('p');
+      trackingP.textContent = `Tracking: ${gun.tracking}`;
+      newSpan.appendChild(trackingP);
+    }
 
-          // Description
-          if (gun.description !== undefined) {
-              const descriptionP = document.createElement('p');
-              descriptionP.textContent = `Description: ${gun.description}`;
-              newSpan.appendChild(descriptionP);
-          }
+    // Description
+    if (gun.description !== undefined) {
+      const descriptionP = document.createElement('p');
+      descriptionP.textContent = `Description: ${gun.description}`;
+      newSpan.appendChild(descriptionP);
+    }
 
-          targetSection.before(newDiv); // Append to the target section
-        });
+    targetSection.before(newDiv); // Append to the target section
+  });
 }
 
