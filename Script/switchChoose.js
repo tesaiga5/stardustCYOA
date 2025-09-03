@@ -2,7 +2,7 @@ export {
   switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew,
   handleChoiceGun, getImgName, updateSummary,
 };
-import { formatterIntl, catalyst } from "/Script/manaData.js";
+import { formatterIntl, catalyst, spellBases } from "/Script/manaData.js";
 import { titles, skills, } from "/Script/choiceData.js";
 import { crew } from "/Script/crewData.js";
 import { guns } from "/Script/equipmentData.js";
@@ -306,7 +306,7 @@ function handleEWar(chosenChoice, creditChange) {
 //TODO
 function handleSpells(chosenChoice, creditChange) {
   const isChosenActive = chosenChoice.classList.contains("active");
-  const parentContainer = chosenChoice.closest('.p-frame') || chosenChoice.closest('.choice');
+  const parentContainer = chosenChoice.closest('.spell');
 
   // Find all spell choices in the same category/container
   const sameCategorySpells = parentContainer.querySelectorAll('.choice.spell');
@@ -314,7 +314,11 @@ function handleSpells(chosenChoice, creditChange) {
   if (isChosenActive) {
     // If already active, deactivate it
     chosenChoice.classList.remove("active");
-    player.frame.frameIntegrity += creditChange; // Refund integrity
+    if (player.choices.includes('choose-gazers')) {
+      player.frame.frameIntegrity += 0;
+    } else {
+      player.frame.frameIntegrity += creditChange;
+    } // Refund integrity
 
     // Remove choice from frame choices
     const index = player.frame.choices.indexOf(chosenChoice.id);
@@ -324,7 +328,11 @@ function handleSpells(chosenChoice, creditChange) {
   } else {
     // Activate the chosen spell
     chosenChoice.classList.add("active");
-    player.frame.frameIntegrity -= creditChange; // Deduct integrity
+    if (player.choices.includes('choose-gazers')) {
+      player.frame.frameIntegrity -= 0;
+    } else {
+      player.frame.frameIntegrity -= creditChange; // Deduct integrity
+    }
     player.frame.choices.push(chosenChoice.id);
   }
 
@@ -1129,6 +1137,33 @@ function switchChoose(
     case "Retribution Tier 2 Affinity":
     case "Retribution Tier 3 Affinity":
       handleAffinity(id, choiceElement);
+      break;
+    case "Dart":
+    case "Spray":
+    case "Pulse":
+    case "Barricade":
+    case "Pinch":
+    case "Self":
+    case "Tether":
+    case "Mine":
+    case "Aura":
+    case "Flash":
+    case "Crescent":
+    case "Arrow":
+    case "Beam":
+    case "Bomb":
+    case "Pillars":
+    case "Cloud":
+    case "Spear":
+    case "Swarm":
+    case "Haze":
+    case "Barrier":
+    case "Overload":
+    case "Nova":
+    case "Starfall":
+    case "Radiance":
+      let spellChoice = spellBases.find(spell => spell.name === id);
+      handleSpells(choiceElement, spellChoice.cost);
       break;
     default:
       // Handle cases where no match is found
