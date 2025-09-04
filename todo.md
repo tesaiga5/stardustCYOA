@@ -16,7 +16,7 @@ SHIP:
 
 16. Publish
 
-17. Reserve contracts & battle for next update
+17. Reserve contracts & battle for next update, make subtotal credits in case user change his mind -> update all consequences
 
 18. DISPLAY SUMMARY -> Summary button SMOOTHSCROLL.HTML
     {Frame Pic} [

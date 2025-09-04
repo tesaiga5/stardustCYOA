@@ -2518,7 +2518,7 @@
     //populate hulls
     import {
       hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
-      populateHullToSection, updateWeaponSlot,
+      populateHullToSection, updateWeaponSlot, hullDiscount, sponsorHullDiscount, weaponDiscount,
     } from '/Script/shipData.js';
     //populate equipment
     import {
@@ -3166,7 +3166,7 @@
 
         // Get the hull data corresponding to the clicked element
         const chosenHull = hulls.find(hull => hull.name === clickedElement.id);
-        console.log(chosenHull);
+
 
         if (!chosenHull) {
           console.error("Hull data not found for:", clickedElement.id);
@@ -3181,7 +3181,8 @@
           // 5. chosen hull unwrite from currently active ship
           // Refund credits for the hull being deselected
           if (shipData.hull && shipData.hull.name === chosenHull.name) {
-            player.credits += chosenHull.cost;
+            player.credits += (hullDiscount(chosenHull) * (chosenHull.cost + sponsorHullDiscount(chosenHull))); //discount for second hull
+            console.log(hullDiscount(chosenHull));
             player.crewNum -= chosenHull.maxCrew;
             shipData.hull = null; // Remove the hull from the ship
             updateWeaponSlot();
@@ -3226,10 +3227,10 @@
           document.getElementById("broadside-credits-display").innerHTML = `Remaining Broadside Slot: ` + formatterIntl.format(shipData.broadsideSlot);
           document.getElementById("pointdefence-credits-display").innerHTML = `Remaining Point Defence Slot: ` + formatterIntl.format(shipData.pointDefenceSlot);
 
-          player.credits -= chosenHull.cost;
+          player.credits -= (hullDiscount(chosenHull) * (chosenHull.cost + sponsorHullDiscount(chosenHull))); //discount for second hull
           player.crewNum += chosenHull.maxCrew;
 
-          console.log(`Deducted ${chosenHull.cost} credits for new hull. New balance: ${player.credits}`);
+          console.log(hullDiscount(chosenHull));
 
         }
         // You might want to update the UI to display the current credits and ship hull here
@@ -3433,7 +3434,13 @@
       console.log(selectElement);
       const numberSpan = event.target.closest('div').querySelector('.number-span');
       const weaponChoice1 = weapons.find(weapon => weapon.name === event.target.closest('.choice').id);
+      console.log(weaponChoice1);
       const currentActiveShip = player.currentActiveShip;
+
+      let weaponChoice2 = {
+        name: weaponChoice1.name,
+        quantity: 1,
+      }
 
       if (incrementButton) {
         let allowIncrement = false;
@@ -3441,6 +3448,7 @@
         if (selectElement.value === 'point-defence' && player.ships[currentActiveShip].pointDefenceSlot > 0) {
           allowIncrement = true;
           player.ships[currentActiveShip].pointDefenceSlot -= 1;
+
         } else if (selectElement.value === 'broadside' && player.ships[currentActiveShip].broadsideSlot > 0) {
           allowIncrement = true;
           player.ships[currentActiveShip].broadsideSlot -= 1;
@@ -3455,16 +3463,13 @@
         if (allowIncrement) {
           let currentNum = parseInt(numberSpan.textContent);
           numberSpan.textContent = currentNum + 1;
-          if (player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] > 0) {
-            player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] += 1;
+          //check if weapon already exists, if so increment quantity instead of adding new object
+          if (player.ships[currentActiveShip].weaponChoice.find(wc => wc.name === weaponChoice1.name)) {
+            player.ships[currentActiveShip].weaponChoice.find(wc => wc.name === weaponChoice1.name).quantity += 1;
+            player.credits -= ((weaponChoice1.cost - weaponDiscount(weaponChoice1)) / 2); //apply qty discount for weapon purchase
           } else {
-            player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] = 1;
-          }
-          //apply qty discount for weapon purchase
-          if (player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] > 1) {
-            player.credits -= (weaponChoice1.cost / 2);
-          } else {
-            player.credits -= weaponChoice1.cost;
+            player.ships[currentActiveShip].weaponChoice.push(weaponChoice2);
+            player.credits -= (weaponChoice1.cost - weaponDiscount(weaponChoice1));
           }
         }
       }
@@ -3472,8 +3477,9 @@
       //Decrement weapon count
       if (decrementButton) {
         let allowDecrement = false;
-        if (numberSpan === 0) {
+        if (numberSpan.textContent <= 0) {
           alert('No more weapon to decrement!');
+          numberSpan.textContent = 0;
         } else {
           if (selectElement.value === 'point-defence') {
             allowDecrement = true;
@@ -3489,11 +3495,13 @@
         if (allowDecrement) {
           let currentNum = parseInt(numberSpan.textContent);
           numberSpan.textContent = currentNum - 1;
-          player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] -= 1;
-          if (player.ships[currentActiveShip].weaponChoice[weaponChoice1.name] >= 1) {
-            player.credits += (weaponChoice1.cost / 2);
+          if (player.ships[currentActiveShip].weaponChoice.find(wc => wc.name === weaponChoice1.name).quantity > 1) {
+            player.ships[currentActiveShip].weaponChoice.find(wc => wc.name === weaponChoice1.name).quantity -= 1;
+            player.credits += ((weaponChoice1.cost - weaponDiscount(weaponChoice1)) / 2);
           } else {
-            player.credits += weaponChoice1.cost;
+            let indexToRemove = player.ships[currentActiveShip].weaponChoice.findIndex(wc => wc.name === weaponChoice1.name);
+            player.ships[currentActiveShip].weaponChoice.splice(indexToRemove, 1);
+            player.credits += (weaponChoice1.cost - weaponDiscount(weaponChoice1));
           }
         }
       }
