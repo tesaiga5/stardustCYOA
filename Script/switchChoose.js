@@ -81,18 +81,33 @@ function handleChoiceSkills(section, chosenChoice, creditChange, chosenSkill) {
   //passthru section, the choice selected, the credit change, and maximum amount of choices
   const activeChoices = section.querySelectorAll("div.section-skills.active"); //check how many choices are active
   const isChosenActive = chosenChoice.classList.contains("active");
+  let isPrereqActive = false;
   if (isChosenActive) {
     // If the chosen choice is already active, deactivate it (deselect)
-    chosenChoice.classList.toggle("active");
-    player.credits -= creditChange; // Remove credits
+    activeChoices.forEach((choice) => {
+      let tempSkill = skills.find((skill) => skill.id === choice.id);
+      if (tempSkill.prerequisites.includes(chosenSkill.id)) {
+        isPrereqActive = true;
+        alert('This skill is an active pre-requisite! Deactivate latest skill first!');
+        return;
+      }
+    });
+    if (isPrereqActive === false) {
+      chosenChoice.classList.remove("active");
+      if (player.choices.includes('choose-civillian')) {
+        player.credits -= (creditChange / 2);
+      } else {
+        player.credits -= creditChange; // Remove credits
+      }
 
-    //remove choice
-    const index = player.choices.indexOf(chosenChoice.id);
-    if (index !== -1) {
-      player.choices.splice(index, 1);
+      //remove choice
+      const index = player.choices.indexOf(chosenChoice.id);
+      if (index !== -1) {
+        player.choices.splice(index, 1);
+      }
+      document.getElementById("credits-display").innerHTML =
+        `Credits: ` + formatterIntl.format(player.credits);
     }
-    document.getElementById("credits-display").innerHTML =
-      `Credits: ` + formatterIntl.format(player.credits);
   } else {
     //check for pre-requisities, if there are pre-requisities
     if (chosenSkill.prerequisites.length > 0) {
@@ -111,7 +126,11 @@ function handleChoiceSkills(section, chosenChoice, creditChange, chosenSkill) {
 
       if (fulfilled === chosenSkill.prerequisites.length) {
         chosenChoice.classList.toggle("active"); //you may toggle the selected choice to be active
-        player.credits += creditChange; // and Add credits
+        if (player.choices.includes('choose-civillian')) {
+          player.credits += (creditChange / 2);
+        } else {
+          player.credits += creditChange; // Remove credits
+        }
         player.choices.push(chosenChoice.id);
         document.getElementById("credits-display").innerHTML =
           `Credits: ` + formatterIntl.format(player.credits);
@@ -120,7 +139,11 @@ function handleChoiceSkills(section, chosenChoice, creditChange, chosenSkill) {
       }
     } else {
       chosenChoice.classList.toggle("active"); //you may toggle the selected choice to be active
-      player.credits += creditChange; // and Add credits
+      if (player.choices.includes('choose-civillian')) {
+        player.credits += (creditChange / 2);
+      } else {
+        player.credits += creditChange; // Remove credits
+      }
       player.choices.push(chosenChoice.id);
       document.getElementById("credits-display").innerHTML =
         `Credits: ` + formatterIntl.format(player.credits);
@@ -220,26 +243,48 @@ function handleChoiceCrew(chosenChoice) {
 
   const chosenCrew = crew.find(employee => employee.title === chosenChoice.id);
 
+  let crewPlace1 = {
+    title: chosenCrew.title,
+    quantity: 1,
+  }
+
   if (isChosenActive) {
     // If the chosen choice is already active, deactivate it (deselect)
     chosenChoice.classList.remove("active");
-    player.credits += chosenCrew.cost;
+    //Talon sponsor benefit
+    if (player.choices.includes('choose-talons')) {
+      if (chosenCrew.alignment === 'Federation' || chosenCrew.alignment === 'Blackhawk Elite') {
+        player.credits += chosenCrew.cost;
+      } else {
+        player.credits += (chosenCrew.cost - 1000000);
+      }
+    } else {
+      player.credits += chosenCrew.cost;
+    }
     player.crewNum += 1;
     document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
     document.getElementById("crew-display").innerHTML = `Required Crew: ` + formatterIntl.format(player.crewNum);
 
     //remove choice
-    const index = player.crew.indexOf(chosenCrew);
-    if (index !== -1) {
-      player.crew.splice(index, 1);
-    }
+    const index = player.crew.findIndex(ac => ac.title === chosenCrew.title);
+    player.crew.splice(index, 1);
+
   } else {
     chosenChoice.classList.add("active");
-    player.credits -= chosenCrew.cost;
+    //Talon sponsor benefit
+    if (player.choices.includes('choose-talons')) {
+      if (chosenCrew.alignment === 'Federation' || chosenCrew.alignment === 'Blackhawk Elite') {
+        player.credits -= chosenCrew.cost;
+      } else {
+        player.credits -= (chosenCrew.cost - 1000000);
+      }
+    } else {
+      player.credits -= chosenCrew.cost;
+    }
     player.crewNum -= 1;
     document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
     document.getElementById("crew-display").innerHTML = `Required Crew: ` + formatterIntl.format(player.crewNum);
-    player.crew.push(chosenCrew);
+    player.crew.push(crewPlace1);
   }
 }
 
@@ -303,7 +348,6 @@ function handleEWar(chosenChoice, creditChange) {
     `Frame Resources: ` + formatterIntl.format(player.frame.frameIntegrity);
 }
 
-//TODO
 function handleSpells(chosenChoice, creditChange) {
   const isChosenActive = chosenChoice.classList.contains("active");
   const parentContainer = chosenChoice.closest('.spell');
@@ -864,12 +908,18 @@ function switchChoose(
       );
       break;
     case "skill-mercantile":
-      handleChoiceSkills(
-        sectionToToggle,
-        choiceElement,
-        skillCredits,
-        chosenSkill
-      );
+      if (player.choices.includes('choose-retired')) {
+        handleChoiceSkills(
+          sectionToToggle,
+          choiceElement, 0, chosenSkill);
+      } else {
+        handleChoiceSkills(
+          sectionToToggle,
+          choiceElement,
+          skillCredits,
+          chosenSkill
+        );
+      }
       break;
     case "skill-basicTraining":
       handleChoiceSkills(

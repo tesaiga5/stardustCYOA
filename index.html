@@ -255,7 +255,7 @@
         <div class="choice-cost">gain: 150 million</div>
         <p>You worked for your sponsor for 20 years, eating goop and saving every penny. Now you have a sizeable 401K
           that you can liquedate. </p>
-        <p>Gain 1 additional skill.
+        <p>Gain mercantile skill free.
         </p>
       </span></div>
     <div class="choice" id="choose-sponsorScam"><span>
@@ -433,7 +433,7 @@
           much-needed mechanics and engineers for the ever expanding industry of space faring and exploration. Their
           ships are everywhere, used by civilians, security groups, PMCs, and bandits alike. Show your skills as a down
           and dirty soot-lover and it won't be hard to strike gold in the industry world.</p>
-        <div class="consequence">+2m off of all vehicles and mechs to a minimum of 1m cost</div>
+        <div class="consequence">+1m off to all rooms</div>
       </span>
     </div>
     <div class="choice choice-sponsor" id="choose-beatrice">
@@ -2007,7 +2007,7 @@
     <div class="choice" id="choice-subsystem">Subsystems</div>
     <div class="choice" id="choice-mod">Mods</div>
     <div class="choice" id="choice-weapon">Weapons</div>
-    <div class="choice" id="choice-industrial">Industrial Equipment</div>
+    <div class="choice" id="choice-industrial">Drone & Industry</div>
     <div class="choice" id="choice-ewar">E-War Equipment</div>
     <div class="choice" id="choice-room">Rooms & Compartments</div>
   </div>
@@ -3367,14 +3367,24 @@
 
         if (clickedElement.classList.contains('active')) {
           clickedElement.classList.remove('active');
-          player.credits += chosenIndustrial.cost;
+          if (player.choices.includes('choose-beatrice')) {
+            player.credits += (chosenIndustrial.cost - 1000000);
+          }
+          else {
+            player.credits += chosenIndustrial.cost;
+          }
           let tempIndustryIndex1 = shipData.industrials.indexOf(chosenIndustrial);
           shipData.industrials.splice(tempIndustryIndex1, 1);
 
         } else {
           clickedElement.classList.add('active');
           shipData.industrials.push(chosenIndustrial);
-          player.credits -= chosenIndustrial.cost;
+          if (player.choices.includes('choose-beatrice')) {
+            player.credits -= (chosenIndustrial.cost - 1000000);
+          }
+          else {
+            player.credits -= chosenIndustrial.cost;
+          }
         }
         document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
       }
@@ -3388,14 +3398,24 @@
 
         if (clickedElement.classList.contains('active')) {
           clickedElement.classList.remove('active');
-          player.credits += chosenEwar.cost;
+          if (player.choices.includes('choose-io')) {
+            player.credits += (chosenEwar.cost - 1000000);
+          }
+          else {
+            player.credits += chosenEwar.cost;
+          }
           let tempEwarIndex1 = shipData.eWar.indexOf(chosenEwar);
           shipData.eWar.splice(tempEwarIndex1, 1);
 
         } else {
           clickedElement.classList.add('active');
           shipData.eWar.push(chosenEwar);
-          player.credits -= chosenEwar.cost;
+          if (player.choices.includes('choose-io')) {
+            player.credits -= (chosenEwar.cost - 1000000);
+          }
+          else {
+            player.credits -= chosenEwar.cost;
+          }
         }
         document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
       }
@@ -3411,13 +3431,21 @@
 
           if (clickedElement.classList.contains('active')) {
             clickedElement.classList.remove('active');
-            player.credits += chosenRoom.cost;
+            if (player.choices.includes('choose-hammerhead')) {
+              player.credits += (chosenRoom.cost - 1000000);
+            } else {
+              player.credits += chosenRoom.cost;
+            }
             let tempRoomIndex1 = shipData.rooms.indexOf(chosenRoom);
             shipData.rooms.splice(tempRoomIndex1, 1);
           } else {
             clickedElement.classList.add('active');
             shipData.rooms.push(chosenRoom);
-            player.credits -= chosenRoom.cost;
+            if (player.choices.includes('choose-hammerhead')) {
+              player.credits -= (chosenRoom.cost - 1000000);
+            } else {
+              player.credits -= chosenRoom.cost;
+            }
           }
           document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
         }
@@ -3517,6 +3545,29 @@
       const archetypeChoice1 = archetype.find(archecrew => archecrew.title === event.target.closest('.archetype').id);
       const currentActiveShip = player.currentActiveShip;
 
+      let archetypeChoice2 = {
+        title: archetypeChoice1.title,
+        quantity: 1,
+      }
+
+      //if player sponsor is blackhawk, reduce 100k for each operator crew
+      let isBlackhawk = 1;
+      if (player.choices.includes('choose-blackhawk')) {
+        switch (archetypeChoice1.title) {
+          case 'Seraphs':
+          case 'Navy Soldiers':
+          case 'Core Ring Mercs':
+          case 'Dustkeepers':
+          case 'Outer Ring Mercs':
+          case 'Blackhawk Elites':
+          case 'Talons':
+          case 'Navy Operators':
+          case 'Gazer Operators':
+            isBlackhawk = 100000;
+            break;
+        }
+      }
+      //increment weapon count, if there is a slot remaining, allow increment
       if (incrementButton2) {
         let allowIncrement2 = false;
         //if there is a slot remaining, allow increment
@@ -3526,7 +3577,14 @@
               allowIncrement2 = true;
               player.crewNum -= 1;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) + 1;
-              player.credits -= archetypeChoice1.cost[selectElement2.value];
+              player.credits -= (archetypeChoice1.cost[selectElement2.value] - isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title)) { //if crew already exists, increment quantity instead of adding new object
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity += 1;
+              }
+              else {
+                player.crew.push(archetypeChoice2);
+              }
+
             }
             break;
           case 'x5':
@@ -3534,7 +3592,14 @@
               allowIncrement2 = true;
               player.crewNum -= 5;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) + 5;
-              player.credits -= archetypeChoice1.cost[selectElement2.value];
+              player.credits -= (archetypeChoice1.cost[selectElement2.value] - 5 * isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title)) {
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity += 5;
+              }
+              else {
+                player.crew.push(archetypeChoice2);
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity = 5;
+              }
             }
             break;
           case 'x10':
@@ -3542,7 +3607,14 @@
               allowIncrement2 = true;
               player.crewNum -= 10;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) + 10;
-              player.credits -= archetypeChoice1.cost[selectElement2.value];
+              player.credits -= (archetypeChoice1.cost[selectElement2.value] - 10 * isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title)) {
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity += 10;
+              }
+              else {
+                player.crew.push(archetypeChoice2);
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity = 10;
+              }
             }
             break;
           case 'x50':
@@ -3550,7 +3622,14 @@
               allowIncrement2 = true;
               player.crewNum -= 50;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) + 50;
-              player.credits -= archetypeChoice1.cost[selectElement2.value];
+              player.credits -= (archetypeChoice1.cost[selectElement2.value] - 50 * isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title)) {
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity += 50;
+              }
+              else {
+                player.crew.push(archetypeChoice2);
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity = 50;
+              }
             }
             break;
           case 'x100':
@@ -3558,7 +3637,14 @@
               allowIncrement2 = true;
               player.crewNum -= 100;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) + 100;
-              player.credits -= archetypeChoice1.cost[selectElement2.value];
+              player.credits -= (archetypeChoice1.cost[selectElement2.value] - 100 * isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title)) {
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity += 100;
+              }
+              else {
+                player.crew.push(archetypeChoice2);
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity = 100;
+              }
             }
             break;
           case 'x500':
@@ -3566,7 +3652,14 @@
               allowIncrement2 = true;
               player.crewNum -= 500;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) + 500;
-              player.credits -= archetypeChoice1.cost[selectElement2.value];
+              player.credits -= (archetypeChoice1.cost[selectElement2.value] - 500 * isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title)) {
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity += 500;
+              }
+              else {
+                player.crew.push(archetypeChoice2);
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity = 500;
+              }
             }
             break;
           default:
@@ -3587,7 +3680,14 @@
               allowDecrement2 = true;
               player.crewNum += 1;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) - 1;
-              player.credits += archetypeChoice1.cost[selectElement2.value];
+              player.credits += (archetypeChoice1.cost[selectElement2.value] - isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title).quantity > 1) { //if crew quantity >1, decrement quantity instead of removing object
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity -= 1;
+              }
+              else {
+                let indexToRemove2 = player.crew.findIndex(ac => ac.title === archetypeChoice1.title);
+                player.crew.splice(indexToRemove2, 1);
+              }
             }
             break;
           case 'x5':
@@ -3595,7 +3695,14 @@
               allowDecrement2 = true;
               player.crewNum += 5;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) - 5;
-              player.credits += archetypeChoice1.cost[selectElement2.value];
+              player.credits += (archetypeChoice1.cost[selectElement2.value] - 5 * isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title).quantity > 5) { //if crew quantity >5, decrement quantity instead of removing object
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity -= 5;
+              }
+              else {
+                let indexToRemove2 = player.crew.findIndex(ac => ac.title === archetypeChoice1.title);
+                player.crew.splice(indexToRemove2, 1);
+              }
             }
             break;
           case 'x10':
@@ -3603,7 +3710,14 @@
               allowDecrement2 = true;
               player.crewNum += 10;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) - 10;
-              player.credits += archetypeChoice1.cost[selectElement2.value];
+              player.credits += (archetypeChoice1.cost[selectElement2.value] - 10 * isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title).quantity > 10) { //if crew quantity >10, decrement quantity instead of removing object
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity -= 10;
+              }
+              else {
+                let indexToRemove2 = player.crew.findIndex(ac => ac.title === archetypeChoice1.title);
+                player.crew.splice(indexToRemove2, 1);
+              }
             }
             break;
           case 'x50':
@@ -3611,7 +3725,14 @@
               allowDecrement2 = true;
               player.crewNum += 50;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) - 50;
-              player.credits += archetypeChoice1.cost[selectElement2.value];
+              player.credits += (archetypeChoice1.cost[selectElement2.value] - 50 * isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title).quantity > 50) { //if crew quantity >50, decrement quantity instead of removing object
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity -= 50;
+              }
+              else {
+                let indexToRemove2 = player.crew.findIndex(ac => ac.title === archetypeChoice1.title);
+                player.crew.splice(indexToRemove2, 1);
+              }
             }
             break;
           case 'x100':
@@ -3619,7 +3740,14 @@
               allowDecrement2 = true;
               player.crewNum += 100;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) - 100;
-              player.credits += archetypeChoice1.cost[selectElement2.value];
+              player.credits += (archetypeChoice1.cost[selectElement2.value] - 100 * isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title).quantity > 100) { //if crew quantity >100, decrement quantity instead of removing object
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity -= 100;
+              }
+              else {
+                let indexToRemove2 = player.crew.findIndex(ac => ac.title === archetypeChoice1.title);
+                player.crew.splice(indexToRemove2, 1);
+              }
             }
             break;
           case 'x500':
@@ -3627,7 +3755,14 @@
               allowDecrement2 = true;
               player.crewNum += 500;
               numberSpan2.textContent = parseInt(numberSpan2.textContent) - 500;
-              player.credits += archetypeChoice1.cost[selectElement2.value];
+              player.credits += (archetypeChoice1.cost[selectElement2.value] - 500 * isBlackhawk);
+              if (player.crew.find(ac => ac.title === archetypeChoice1.title).quantity > 500) { //if crew quantity >500, decrement quantity instead of removing object
+                player.crew.find(ac => ac.title === archetypeChoice1.title).quantity -= 500;
+              }
+              else {
+                let indexToRemove2 = player.crew.findIndex(ac => ac.title === archetypeChoice1.title);
+                player.crew.splice(indexToRemove2, 1);
+              }
             }
             break;
           default:
@@ -3636,7 +3771,6 @@
         document.getElementById("crew-display").innerHTML = `Required Crew: ` + formatterIntl.format(player.crewNum);
         document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
       }
-
     });
 
     //scroll to top button

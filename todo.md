@@ -1,22 +1,15 @@
-TODO:
-
-FRAME:
-
-7. Pictures: spell, catalyst
-
-SHIP:
-
-6. Pictures: mods
-
 7. FIX: Ship Information & crew info
 
-(4) 8. COMBAT STATS at the end of Equipment 9. Sponsor choice consequences 2. Moneysource choice consequences Start Loc consequences 13. Title pre-requisities and consequences (apply in title not in relevant (e.g. traitor apply in titles section)) 14. Your Fleet pre-requisities & consequences (mostly receiving consequences)
+13. Title pre-requisities and consequences (apply in title not in relevant (e.g. traitor apply in titles section)) 
+
+9. SECTION DRONE - combine with industrial & ADD quantity mechanic like crew and must be related to hangar space. 
+10. 
 
 15. Check for accuracy
 
 16. Publish
 
-17. Reserve contracts & battle for next update, make subtotal credits in case user change his mind -> update all consequences
+17. Reserve contracts & battle for next update, make subtotal credits in case user change his mind -> update all consequences, starpos consequences
 
 18. DISPLAY SUMMARY -> Summary button SMOOTHSCROLL.HTML
     {Frame Pic} [

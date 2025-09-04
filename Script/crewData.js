@@ -1,6 +1,6 @@
 export { crew, archetype, addCrewToSection };
 import { appendDropdown, formatterIntl } from "/Script/manaData.js";
-import {getImgName} from "/Script/switchChoose.js";
+import { getImgName } from "/Script/switchChoose.js";
 
 const crew = [
   {
@@ -1499,10 +1499,10 @@ const crew = [
     description: 'During his research, he stumbled upon a forbidden ritual that allowed him to harness the raw, untamed energy of Mana. The ritual granted him immense power but came at a great cost: the chaotic energies now surge through his veins, manifesting as the shifting, geometric constructs that surround him. He believes that the Apoc are a necessary force to restore the balance disrupted by the Great Conjunction.',
     specialty: 'Mage',
     equipment: 5,
-    image: "Images/Crew/wizard-andygl-civitai.webp" 
+    image: "Images/Crew/wizard-andygl-civitai.webp"
   },
 
-{
+  {
     title: "Lysandra Sol",
     skillLevel: 7,
     alignment: "Heralds",
@@ -1558,11 +1558,11 @@ const archetype = [
     alignment: "Neutral",
     cost: {
       x1: 100000,
-      x5: 300000,
-      x10: 500000,
+      x5: 200000,
+      x10: 300000,
       x50: 1000000,
       x100: 2000000,
-      x500: 9000000,
+      x500: 8000000,
     },
     description:
       "Plenty of civilians are looking for legitimate work, and many of them qualify as space-faring crew members.",
@@ -1686,11 +1686,11 @@ const archetype = [
     alignment: "Blackhawk Elite",
     cost: {
       x1: 100000,
-      x5: 300000,
-      x10: 500000,
-      x50: 1000000,
-      x100: 2000000,
-      x500: 9000000,
+      x5: 500000,
+      x10: 1000000,
+      x50: 5000000,
+      x100: 10000000,
+      x500: 50000000,
     },
     description:
       "Essentially Blackhawks-in-training, the Seraphs is where they all start. While relatively inexperienced, they show promise.",
@@ -1702,11 +1702,11 @@ const archetype = [
     alignment: "Red Daggers",
     cost: {
       x1: 100000,
-      x5: 300000,
-      x10: 500000,
-      x50: 1000000,
-      x100: 2000000,
-      x500: 9000000,
+      x5: 500000,
+      x10: 1000000,
+      x50: 5000000,
+      x100: 10000000,
+      x500: 50000000,
     },
     description:
       "Above the average pirate and bandit lies the Red Dagger Ninjas. Their cunning and hardy instincts are exceptional.",
@@ -1717,12 +1717,12 @@ const archetype = [
     skillLevel: 9,
     alignment: "Federation",
     cost: {
-      x1: 100000,
-      x5: 300000,
-      x10: 500000,
-      x50: 1000000,
-      x100: 2000000,
-      x500: 9000000,
+      x1: 150000,
+      x5: 750000,
+      x10: 1500000,
+      x50: 7500000,
+      x100: 15000000,
+      x500: 50000000,
     },
     description:
       "The Federation trains decent and disciplined crew members. They will give to you you are a valiant and capable leader.",
@@ -1730,15 +1730,15 @@ const archetype = [
   {
     title: "Core Ring Mercs",
     image: 'Images/Crew/johnson-ting-demo-1-copy.webp',
-    skillLevel: 9,
+    skillLevel: 6,
     alignment: "Luos Syndicate",
     cost: {
-      x1: 100000,
-      x5: 300000,
-      x10: 500000,
-      x50: 1000000,
-      x100: 2000000,
-      x500: 9000000,
+      x1: 150000,
+      x5: 750000,
+      x10: 1500000,
+      x50: 7500000,
+      x100: 15000000,
+      x500: 50000000,
     },
     description:
       "Luos Core Ring mercs are both fearsome and sinister, and deathly loyal to those who prove their strength.",
@@ -1746,15 +1746,15 @@ const archetype = [
   {
     title: "Dustkeepers",
     image: 'Images/Crew/johnson-ting-buccaneers-wallpaper.webp',
-    skillLevel: 10,
+    skillLevel: 7,
     alignment: "Neutral",
     cost: {
-      x1: 100000,
-      x5: 300000,
-      x10: 500000,
-      x50: 1000000,
-      x100: 2000000,
-      x500: 9000000,
+      x1: 200000,
+      x5: 1000000,
+      x10: 2000000,
+      x50: 10000000,
+      x100: 20000000,
+      x500: 100000000,
     },
     description:
       "Highly skilled with a very rich variety of talents, Dustkeepers can make a very capable crew for almost any job.",
@@ -1762,45 +1762,45 @@ const archetype = [
   {
     title: "Outer Ring Mercs",
     image: 'Images/Crew/ironsons-velvets-civitai.webp',
-    skillLevel: 5,
+    skillLevel: 7,
     alignment: "Luos Syndicate",
     cost: {
-      x1: 100000,
-      x5: 500000,
-      x10: 1000000,
-      x50: 2000000,
-      x100: 4000000,
-      x500: 11000000,
+      x1: 200000,
+      x5: 1000000,
+      x10: 2000000,
+      x50: 10000000,
+      x100: 20000000,
+      x500: 100000000,
     },
     description: "Mercenaries from the Luos Outer Ring are fierce and well disciplined, something even the Blackhawks admire and respect.",
   },
   {
     title: "Blackhawk Elites",
     image: 'Images/Crew/blacktemplars-velvets-civitai.webp',
-    skillLevel: 6,
+    skillLevel: 8,
     alignment: "Blackhawk Elite",
     cost: {
-      x1: 200000,
-      x5: 500000,
-      x10: 1000000,
-      x50: 3000000,
-      x100: 5000000,
-      x500: 14000000,
+      x1: 250000,
+      x5: 1250000,
+      x10: 2500000,
+      x50: 12500000,
+      x100: 25000000,
+      x500: 125000000,
     },
     description: "With a will as hard as steel, the Blackhawks don't often boast about their profession, even if they really are that good.",
   },
   {
     title: "Talons",
     image: 'Images/Crew/nightlords-velvets-civitai.webp',
-    skillLevel: 7,
+    skillLevel: 8,
     alignment: "Talons",
     cost: {
-      x1: 200000,
-      x5: 500000,
-      x10: 1000000,
-      x50: 3000000,
-      x100: 5000000,
-      x500: 14000000,
+      x1: 250000,
+      x5: 1250000,
+      x10: 2500000,
+      x50: 12500000,
+      x100: 25000000,
+      x500: 125000000,
     },
     description: "A crew of Talons will make any pilot think twice before messing with you. While a little cocky, their performance shows.",
   },
@@ -1810,15 +1810,15 @@ const archetype = [
     skillLevel: 8,
     alignment: "Federation",
     cost: {
-      x1: 200000,
-      x5: 800000,
-      x10: 1500000,
-      x50: 4000000,
-      x100: 6000000,
-      x500: 18000000,
+      x1: 280000,
+      x5: 1400000,
+      x10: 2800000,
+      x50: 14000000,
+      x100: 28000000,
+      x500: 140000000,
     },
     description:
-      "Highly skilled with a very rich variety of talents, Dustkeepers can make a very capable crew for almost any job.",
+      "The Federation has many SOF programs, and they all train very skilled crew members. They follow if you lead them.",
   },
   {
     title: "Gazer Operators",
@@ -1826,27 +1826,27 @@ const archetype = [
     skillLevel: 7,
     alignment: "Neutral",
     cost: {
-      x1: 200000,
-      x5: 800000,
-      x10: 1500000,
-      x50: 4000000,
-      x100: 6000000,
-      x500: 18000000,
+      x1: 280000,
+      x5: 1400000,
+      x10: 2800000,
+      x50: 14000000,
+      x100: 28000000,
+      x500: 140000000,
     },
     description: "Getting a sizeable crew of Gazer operators is not an easy job to do, but they've been known to group when needed.",
   },
   {
     title: "Androids",
     image: 'Images/Crew/abigail-diaz-serafleur-artstation.webp',
-    skillLevel: 8,
+    skillLevel: 9,
     alignment: "Neutral",
     cost: {
       x1: 400000,
-      x5: 1000000,
-      x10: 3000000,
-      x50: 6000000,
-      x100: 8000000,
-      x500: 24000000,
+      x5: 2000000,
+      x10: 4000000,
+      x50: 20000000,
+      x100: 40000000,
+      x500: 200000000,
     },
     description: "AI and mechanics have come a long way, and one well-built android can do the average job better than normal crew mates.",
   },
@@ -1865,7 +1865,7 @@ const archetype = [
     },
     crewMultiplier: 3,
     description: "These people are able to link up their minds straight to computers. Without the limitations of flesh, their potential is vast.",
-  },  
+  },
 ];
 
 function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
@@ -1901,7 +1901,7 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
   crewArray.forEach((item) => {
     const newDiv = document.createElement("div");
     newDiv.classList.add("choice");
-    if(dataType === "archetype"){
+    if (dataType === "archetype") {
       newDiv.classList.add('archetype');
     }
     else {
