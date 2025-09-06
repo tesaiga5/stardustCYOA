@@ -5,7 +5,8 @@ export {
 import { formatterIntl, catalyst, spellBases } from "/Script/manaData.js";
 import { titles, skills, } from "/Script/choiceData.js";
 import { crew } from "/Script/crewData.js";
-import { guns } from "/Script/equipmentData.js";
+import { guns, generateStatBar } from "/Script/equipmentData.js";
+import { sponsorMap } from "/Script/choiceData.js";
 
 function getImgName(url) {
   // Use the URL object to correctly parse the pathname
@@ -101,9 +102,9 @@ function handleChoiceSkills(section, chosenChoice, creditChange, chosenSkill) {
       }
 
       //remove choice
-      const index = player.choices.indexOf(chosenChoice.id);
+      const index = player.skills.indexOf(chosenChoice.id);
       if (index !== -1) {
-        player.choices.splice(index, 1);
+        player.skills.splice(index, 1);
       }
       document.getElementById("credits-display").innerHTML =
         `Credits: ` + formatterIntl.format(player.credits);
@@ -131,7 +132,7 @@ function handleChoiceSkills(section, chosenChoice, creditChange, chosenSkill) {
         } else {
           player.credits += creditChange; // Remove credits
         }
-        player.choices.push(chosenChoice.id);
+        player.skills.push(chosenChoice.id);
         document.getElementById("credits-display").innerHTML =
           `Credits: ` + formatterIntl.format(player.credits);
       } else {
@@ -144,7 +145,7 @@ function handleChoiceSkills(section, chosenChoice, creditChange, chosenSkill) {
       } else {
         player.credits += creditChange; // Remove credits
       }
-      player.choices.push(chosenChoice.id);
+      player.skills.push(chosenChoice.id);
       document.getElementById("credits-display").innerHTML =
         `Credits: ` + formatterIntl.format(player.credits);
     }
@@ -159,6 +160,7 @@ function handleChoiceGun(chosenChoice) {
     // If the chosen choice is already active, deactivate it (deselect)
     chosenChoice.classList.remove("active");
     player.credits += chosenGun.cost;
+    player.equipmentLevel -= chosenGun.equipmentLevel;
     document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
 
     //remove choice
@@ -169,6 +171,7 @@ function handleChoiceGun(chosenChoice) {
   } else {
     chosenChoice.classList.add("active");
     player.credits -= chosenGun.cost;
+    player.equipmentLevel += chosenGun.equipmentLevel;
     document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
     player.gear.push(chosenGun);
   }
@@ -214,6 +217,7 @@ function handleChoiceVehicle(chosenChoice, creditChange, vehicles) {
 
     if (creditChange === 0) {
       player.credits += chosenVehicle.cost;
+      player.equipmentLevel += 1;
       document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
     }
     else { player.frame.vehicleSlot += creditChange; }
@@ -230,6 +234,7 @@ function handleChoiceVehicle(chosenChoice, creditChange, vehicles) {
     chosenChoice.classList.add("active"); //you may toggle the selected choice to be active
     if (creditChange === 0) {
       player.credits -= chosenVehicle.cost;
+      player.equipmentLevel -= 1;
       document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
     }
     else { player.frame.vehicleSlot -= creditChange; }
@@ -1224,37 +1229,117 @@ function switchChoose(
   }
 }
 
-function updateSummary(choiceFrame) {
-  /*const targetDiv = document.getElementById('summary-display');
+function findAlignment(player) {
+  const matchedSponsorValues = [];
+  player.choices.forEach(sponsor => {
+    if (sponsorMap.has(sponsor)) {
+      // If it does, use that choice as a key to get the value from the Map
+      const sponsorValue = sponsorMap.get(sponsor);
 
-  if(player.frame){
-    // Construct the HTML for the attributes list
-    let attributesHtml = '';
-    Object.keys(player.frame).forEach(key => {
-      attributesHtml +=  `<li><span>${key}:</span> ${player.frame[key]}</li>`;
-    });       
-    
-    let image1 = choiceFrame.querySelector('.choice-frame-image');
-
-    if(choiceFrame.classList.contains('choice-frame-upgrade')) {
-      let parentElement = choiceFrame.closest('.choice-frame');
-      image1 = parentElement.querySelector('.choice-frame-image');
+      // Add the found value to our results array
+      matchedSponsorValues.push(sponsorValue);
     }
-    
-    // Use a template literal to create the full HTML structure
-    const cardHtml = `
-        <div style="display:flex;">
-            <div style="overflow:hidden">
-                <img src='${image1.src}' title='${getImgName(image1.src)}'>
-            </div>
-            <div class="flex:grow>
-                <ul>
-                    ${attributesHtml}
-                </ul>
-            </div>
+  });
+  return matchedSponsorValues;
+}
+
+function sumEnergy(ship, type1) {
+  let sumGen = 0;
+  let sumBattery = 0;
+  ship.energy.forEach(energy => {
+    if (energy.type === 'generation') {
+      sumGen += energy.energyOutput;
+    }
+    else if (energy.type === 'battery') {
+      sumBattery += energy.sumBattery;
+    }
+  });
+  if (type1 === 'gen') {
+    return sumGen;
+  } else {
+    return sumBattery;
+  }
+}
+
+function updateSummary() {
+  //IF Frame exists, display summary. Else, don't. 
+  let frameCardContainer = document.getElementById('frameCard');
+  let hullCardList = document.getElementById('hullCardList');
+  let alignment = findAlignment(player);
+  let html = '';
+  let html2 = '';
+
+  //this joins array 
+
+
+  if (player.frame.name) {
+    //find join the array
+    const allAbilities = [...player.frame.choices, ...player.skills].join(', ');
+    html = `
+    <img src="${player.frame.image}" title="${getImgName(player.frame.image)}" class="card-image" style="object-fit:cover;">
+    <div class="card-content">
+        <h2 class="card-title">${player.frame.name}</h2>
+        <p class="card-subtitle">Cost: ${0}</p>                                
+        <div class="divider"></div>
+        <div class="details-grid">
+            <b>Specialty:</b><span> Apoc</span>
+            <b>Equipment:</b><div class="stat-bar-container">${generateStatBar(player.equipmentLevel)}</div>
+            <b>Skill Level:</b><div class="stat-bar-container">${generateStatBar(player.skills.length)}</div>
+            <b>Alignment:</b><span>${alignment}</span>
+            <b>Abilities:</b><span>${allAbilities}</span>
         </div>
+        <div class="description">${player.choices}</div>
+    </div>
     `;
-    targetDiv.innerHTML = cardHtml;
-  }*/
+
+    frameCardContainer.innerHTML = html;
+  }
+  else {
+
+    frameCardContainer.innerText = 'No Summary Yet';
+    frameCardContainer = 'color: black';
+  }
+  //IF ship exists, display summary. Else, don't. 
+
+  if (player.ships) {
+    hullCardList.innerHTML = '';
+    for (const ship of Object.values(player.ships)) {
+      const card = document.createElement('div');
+      card.className = `card-wrapper hull-card`;
+
+      const allShipChoices = [...ship.shipAI, ...ship.subsystems, ...ship.industrials, ...ship.energy, ...ship.eWar, ...ship.shield, ...ship.mods].join(', ');
+
+      //for weapons
+      const weaponNames = ship.weaponChoice.map(weapon => weapon.name)
+      const weaponChoices = weaponNames.join(',');
+
+      const roomNames = ship.rooms.map(room => room.name)
+      const roomChoices = roomNames.join(',');
+
+      html2 = `
+        <img src="${ship.hull.image}" title="${getImgName(ship.hull.image)}" class="card-image">
+        <div class="card-content">
+            <div class="hull-details-grid">
+                <b>Name:</b><span>${ship.shipName}</span>
+                <b>Manufacturer:</b><span>${ship.hull.manufacturer}</span>
+                <b>Type:</b><span>${ship.hull.type}</span>
+                <b>Navigation/Hull Armor/Shield:</b><span>${ship.navigation}/${ship.hullArmor}/${ship.shieldStr}</span>
+                <b>Length:</b><span>${ship.length}</span>
+                <b>Max Crew:</b><span>${ship.maxCrew}</span> </div>
+            <div class="hull-details-grid">
+                <b>Rooms:</b><span>${roomChoices}</span>
+                <b>Energy Generation/Use/Storage:</b><span>${sumEnergy(ship, 'gen')}/${ship.energyUse}/${sumEnergy(ship, 'bat')}</span>
+                <b>Weapons:</b><span>${weaponChoices}</span>
+                <b>Choices:</b><span>${allShipChoices}</span>
+            </div> 
+        </div>
+      `;
+
+      card.innerHTML = html2;
+      hullCardList.appendChild(card);
+
+    }
+    return;
+  }
 }
 

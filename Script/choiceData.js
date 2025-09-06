@@ -1,4 +1,4 @@
-export { skills, titles, startPos, addTitlesToSection };
+export { skills, titles, startPos, addTitlesToSection, sponsorMap };
 import { formatterIntl } from "/Script/manaData.js";
 
 const skills = [
@@ -1029,6 +1029,22 @@ const startPos = [
     description: "CYOA Event System: Contract: 'Rogue Drones'.",
   },
 ];
+
+const sponsorMap = new Map([
+  ["choose-navy", "Federation Navy"],
+  ["choose-seal", "Federation Special Forces"],
+  ["choose-civillian", "Federation Civillian"],
+  ["choose-blackhawk", "Blackhawk Elite"],
+  ["choose-pirates", "Red Dagger Pirates"],
+  ["choose-luos", "Luos Syndicate"],
+  ["choose-talons", "Talons"],
+  ["choose-dustkeepers", "Society of Dustkeepers"],
+  ["choose-gazers", "Gazers"],
+  ["choose-io", "IO Security"],
+  ["choose-hammerhead", "Hammerhead Industries"],
+  ["choose-beatrice", "Beatrice R&D"],
+  ["choose-noSponsor", "No Sponsor"],
+]);
 
 function addTitlesToSection(titlesArray, sectionID) {
   const targetSection = document.getElementById(sectionID);

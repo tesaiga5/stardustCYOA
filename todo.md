@@ -1,7 +1,5 @@
 7. FIX: Ship Information & crew info
 
-13. Title pre-requisities and consequences (apply in title not in relevant (e.g. traitor apply in titles section)) 
-
 9. SECTION DRONE - combine with industrial & ADD quantity mechanic like crew and must be related to hangar space. 
 10. 
 
@@ -11,7 +9,7 @@
 
 17. Reserve contracts & battle for next update, make subtotal credits in case user change his mind -> update all consequences, starpos consequences
 
-18. DISPLAY SUMMARY -> Summary button SMOOTHSCROLL.HTML
+18. DISPLAY SUMMARY -> Summary button SMOOTHSCROLL.HTML 
     {Frame Pic} [
     Skill Level: (sum skill level)
     Equipment Level: (sum equipment level)
@@ -37,3 +35,7 @@ extraRooms: 18,
 rooms: [],
 energyUse: 5,
 ]
+
+19. SUM skill level + equipment level, SUM credits
+
+20. FIX: Image.title

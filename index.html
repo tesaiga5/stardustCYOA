@@ -26,6 +26,8 @@
       hostiles: [], //array of strings
       frame: {},
       crew: [],
+      equipmentLevel: 0,
+      alignment: '',
     };
 
     //collect frame attributes
@@ -818,7 +820,7 @@
           <div>
             <h3>Courses</h3>
             You may take up to 20 courses during your formation years, for every course you take, you gain 1 Skill Level
-            up to a maximum of 20. A course lasts a semester.
+            up to a maximum of 10. A course lasts a semester.
             You are only able to do one job in addition to being the pilot at the same time.
           </div>
         </span>
@@ -837,6 +839,7 @@
       <span>
         <div>
           <h3>Wavelength</h3>
+          *A mysterious stranger approaches you*
           We were driven to you because of your wavelength. Not everyone has one, but your frequency is precisely what
           allows you to become a Rider of the Apocalypse. Furthermore, it can evolve to resonate more profoundly with
           your suit. By pursuing perfect harmony with this new extension of yourself, you thereby grasp transcendence of
@@ -1780,9 +1783,10 @@
       <span style="text-align: left;">
         <div>
           <h3>Equipment</h3>
-          <p style="font-size: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt explicabo
-            voluptatibus enim iste minima eos at animi maxime qui sapiente, aspernatur reprehenderit ad perspiciatis
-            tenetur, provident dolore. Accusantium, animi totam?</p>
+          <p style="font-size: 20px;">There is no limit to how many weapons you may purchase. However, you may only get
+            the Equipment
+            Level gain of your two highest Equipment Level firearms. Grenades do not count towards this max.
+          </p>
 
           <p style="font-size: 20px;">The weapons that your suit can support is determined by its munitions capacity and
             available weapon hard- points. Conventional weapons are split among four different types: kinetic,
@@ -1810,9 +1814,7 @@
         <span>
           <div>
             <h3>Hand Guns</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed?
-            Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione
-            mollitia officiis officia quis.
+            Guns that fit in your hands. Usually used as self-defence or last resort weapons.
           </div>
         </span>
       </div>
@@ -1822,9 +1824,8 @@
         <span>
           <div>
             <h3>Sub-Machine Guns</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed?
-            Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione
-            mollitia officiis officia quis.
+            SMGs saw a boom in popularity once space structure combat became a thing. The low calibre reduced the
+            possibility of hull breaches and the full-auto made clearing tight spaces easy.
           </div>
         </span>
       </div>
@@ -1834,9 +1835,8 @@
         <span>
           <div>
             <h3>Shotguns</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed?
-            Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione
-            mollitia officiis officia quis.
+            Like SMGs, shotguns became a stable for space structure combat. Still universally used in all forms of
+            combat, too.
           </div>
         </span>
       </div>
@@ -1846,9 +1846,7 @@
         <span>
           <div>
             <h3>Rifles</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed?
-            Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione
-            mollitia officiis officia quis.
+            Carbines, assault rifles, sniper rifles, you name it.
           </div>
         </span>
       </div>
@@ -1858,9 +1856,8 @@
         <span>
           <div>
             <h3>Light Weapons</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed?
-            Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione
-            mollitia officiis officia quis.
+            Large weapons that some people have difficulty carrying around. This includes anti-personnel and
+            anti-materiel weapons.
           </div>
         </span>
       </div>
@@ -1870,9 +1867,7 @@
         <span>
           <div>
             <h3>Launchers</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed?
-            Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione
-            mollitia officiis officia quis.
+            Weapons that fire large ordnance, usually for anti-materiel purposes.
           </div>
         </span>
       </div>
@@ -1882,9 +1877,8 @@
         <span>
           <div>
             <h3>Heavy Weapons</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis explicabo omnis sed?
-            Aut consequuntur a quibusdam sequi, explicabo magnam! Deleniti aliquam beatae praesentium, inventore ratione
-            mollitia officiis officia quis.
+            These weapons cannot be held by normal human beings. They must either be deployed, mounted, or carried with
+            assistance of some sort.
           </div>
         </span>
       </div>
@@ -1976,23 +1970,13 @@
       <span>
         <div>
           <h3>Titles</h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora
-          doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit
-          ducimus odit.
+          To gain a title, you must go through some sort of complication. But when you do, people who speak your name
+          will acknowledge your achievement and respect you for it. You can only choose up to two titles to bear.
+          .
         </div>
       </span>
     </div>
     <div style="display:none;" id="endOfTitles"></div>
-    <div id="title-player-summary">
-      <span>
-        <div>
-          <h3>Your Combat Stats</h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellendus voluptate est magni, neque tempora
-          doloremque repellat hic, quis earum voluptatem exercitationem totam veritatis facilis quod molestiae sit
-          ducimus odit.
-        </div>
-      </span>
-    </div>
   </div>
 
   <!--FLEET section-->
@@ -2375,8 +2359,8 @@
       <span style="text-align: left;">
         <div>
           <h3>Engineers</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente qui, impedit dolor inventore laudantium in
-          eveniet, ipsum nulla laborum eum assumenda possimus rerum quos velit saepe dolore voluptatum quo asperiores.
+          Engineers repair damage, maintain subsystems, and operate everything on the ship basically. They will lead the
+          engineering crew and control the repair drones.
         </div>
       </span>
     </div>
@@ -2384,8 +2368,8 @@
       <span style="text-align: left;">
         <div>
           <h3>Doctors</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente qui, impedit dolor inventore laudantium in
-          eveniet, ipsum nulla laborum eum assumenda possimus rerum quos velit saepe dolore voluptatum quo asperiores.
+          Doctors heal the crew, treat injuries, and can even perform surgery if needed. They will lead the medical crew
+          and maintain the medbay.
         </div>
       </span>
     </div>
@@ -2393,8 +2377,8 @@
       <span style="text-align: left;">
         <div>
           <h3>Gunner</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente qui, impedit dolor inventore laudantium in
-          eveniet, ipsum nulla laborum eum assumenda possimus rerum quos velit saepe dolore voluptatum quo asperiores.
+          Gunners operate the ship's weapons systems, ensuring optimal performance and accuracy during combat. Can be
+          replaced by AI for non-spinal weapons.
         </div>
       </span>
     </div>
@@ -2402,8 +2386,8 @@
       <span style="text-align: left;">
         <div>
           <h3>Combat & Security</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente qui, impedit dolor inventore laudantium in
-          eveniet, ipsum nulla laborum eum assumenda possimus rerum quos velit saepe dolore voluptatum quo asperiores.
+          You need soldiers to board enemy ships, launch invasions, and defend your own ship from boarders. They can be
+          your generals in a planetary war.
         </div>
       </span>
     </div>
@@ -2412,8 +2396,8 @@
       <span style="text-align: left;">
         <div>
           <h3>Cyber Security</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente qui, impedit dolor inventore laudantium in
-          eveniet, ipsum nulla laborum eum assumenda possimus rerum quos velit saepe dolore voluptatum quo asperiores.
+          Cyber Security specialists protect the ship's systems from hacking and other digital threats. You can't rely
+          on AI for this job.
         </div>
       </span>
     </div>
@@ -2422,8 +2406,7 @@
       <span style="text-align: left;">
         <div>
           <h3>Mages</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente qui, impedit dolor inventore laudantium in
-          eveniet, ipsum nulla laborum eum assumenda possimus rerum quos velit saepe dolore voluptatum quo asperiores.
+          Anomalous individuals who can wield mana. Most factions don't believe their existence and consider them crazy.
         </div>
       </span>
     </div>
@@ -2432,8 +2415,8 @@
       <span style="text-align: left;">
         <div>
           <h3>Scientists</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente qui, impedit dolor inventore laudantium in
-          eveniet, ipsum nulla laborum eum assumenda possimus rerum quos velit saepe dolore voluptatum quo asperiores.
+          Scientists can help with research, terraforming, and understanding Herald technology. If pushed, they can
+          replace engineers.
         </div>
       </span>
     </div>
@@ -2442,8 +2425,9 @@
       <span style="text-align: left;">
         <div>
           <h3>Production Managers</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente qui, impedit dolor inventore laudantium in
-          eveniet, ipsum nulla laborum eum assumenda possimus rerum quos velit saepe dolore voluptatum quo asperiores.
+          Production Managers oversee mining, manufacturing, and trading operations. They will handle the ship's
+          economy, refueling, and resource management. Some ships allow their members to operate their own business,
+          making the ship into a 'country'.
         </div>
       </span>
     </div>
@@ -2452,8 +2436,7 @@
       <span style="text-align: left;">
         <div>
           <h3>Chefs</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente qui, impedit dolor inventore laudantium in
-          eveniet, ipsum nulla laborum eum assumenda possimus rerum quos velit saepe dolore voluptatum quo asperiores.
+          Chefs keep the crew well-fed and happy. A well-fed crew is a productive crew.
         </div>
       </span>
     </div>
@@ -2498,11 +2481,10 @@
       <button id="closeModalButton" class="close-button">
         &times;
       </button>
-      <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Welcome to the Pop-up!</h2>
-      <p style="color: #374151;">
-        This modal pop-up is a great way to display important information without navigating away from the current page.
-        It's built with simple HTML, CSS, and JavaScript.
-      </p>
+      <div id="summary-popup" class="container">
+        <div id="frameCard" class="card-wrapper frame-card"></div>
+        <div id="hullCardList" class="hull-card-list"></div>
+      </div>
     </div>
   </div>
 
@@ -2724,7 +2706,7 @@
         console.error(`Global variable "${choiceArray}" is not an array or does not exist.`);
         return;
       }
-      const checkDiv = document.getElementById(`${choicePrefix}-${choiceArray[0].id}`)
+      const checkDiv = document.getElementById(choiceArray[0].id);
       //check if section already has population
       if (document.contains(checkDiv)) {
         return;
@@ -3292,13 +3274,13 @@
         if (clickedEnergy.classList.contains('active')) {
           // Deactivate chosen energy
           clickedEnergy.classList.remove('active');
-          if (shipData.energy && shipData.energy.name === chosenEnergy.name) {
-            player.credits += chosenEnergy.cost;
-            shipData.energy = null;
-          }
+          player.credits += chosenEnergy.cost;
+          let indexEnergy1 = shipData.energy.findIndex(energi => energi.id === chosenEnergy.id);
+          shipData.energy.splice(indexEnergy1, 1);
+
         } else {
           clickedEnergy.classList.add('active');
-          shipData.energy = chosenEnergy;
+          shipData.energy.push(chosenEnergy);
           player.credits -= chosenEnergy.cost;
         }
         document.getElementById("credits-display").innerHTML = `Credits: ` + formatterIntl.format(player.credits);
@@ -3779,6 +3761,8 @@
     const openModalButton = document.getElementById('choice-summary'); //for popup
     const closeModalButton = document.getElementById('closeModalButton');
     const modalOverlay = document.getElementById('modalOverlay');
+    //const frameCardContainer = document.getElementById('frameCard');
+    //const hullCardList = document.getElementById('hullCardList');
 
     // Add a click event listener to the scroll button
     scrollButton.addEventListener('click', () => {
@@ -3789,6 +3773,7 @@
 
     // Function to open the modal
     openModalButton.addEventListener('click', () => {
+      updateSummary();
       modalOverlay.classList.add('visible');
     });
 

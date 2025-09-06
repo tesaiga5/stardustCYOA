@@ -9,6 +9,7 @@ export {
   handleFrame,
   createFrame,
   guns, addGunDataToSection,
+  generateStatBar,
 };
 
 // This array contains all equipment objects with their attributes.
@@ -1922,6 +1923,7 @@ function createFrame(num) {
   let newFrame = {
     id: "frame-vulcan",
     name: "Vulcan",
+    image: 'Images/Equipment/david-alvarez-dalvarez-voices-of-mars-03.webp',
     frameIntegrity: 75,
     weaponPoints: 12,
     offensiveSlot: 8,
@@ -1943,6 +1945,7 @@ function createFrame(num) {
       newFrame.defensiveSlot = 4;
       newFrame.mobilitySlot = 5;
       newFrame.vehicleSlot = 1;
+      newFrame.image = 'Images/Equipment/plugsuit-explicatus2654-civitai.webp';
 
       break;
     case 3:
@@ -1953,7 +1956,7 @@ function createFrame(num) {
       newFrame.offensiveSlot = 4;
       newFrame.defensiveSlot = 4;
       newFrame.utilitySlot = 8;
-
+      newFrame.image = 'Images/Equipment/pAInCREAT0R-civitai.webp';
       break;
     case 1:
 
@@ -1995,7 +1998,6 @@ function handleFrame(choiceFrame) {
 
     }
   }
-  updateSummary(choiceFrame);
   document.getElementById("frameCredits-display").innerHTML =
     `Frame Resources: ` + formatterIntl.format(player.frame.frameIntegrity);
   return;
@@ -2278,5 +2280,15 @@ function addGunDataToSection() {
 
     targetSection.before(newDiv); // Append to the target section
   });
+}
+
+function generateStatBar(level) {
+  let html = '<div class="stat-bar-cells">';
+  for (let i = 0; i < 10; i++) {
+    const isFilled = i < level; //ternary operator, if i < level isFilled is true, else false
+    html += `<div class="stat-cell${isFilled ? ' filled' : ''}"></div>`;
+  }
+  html += '</div>';
+  return html;
 }
 

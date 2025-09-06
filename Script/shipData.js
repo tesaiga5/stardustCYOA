@@ -4058,7 +4058,6 @@ function createShip() {
     extraRooms: 0,
     energyUse: 1,
     shipAI: [],
-    energy: 0,
     shield: 0,
     subsystems: [],
     rooms: [],
@@ -4069,8 +4068,8 @@ function createShip() {
     weaponChoice: [], //map weapons to quantity
     hangarChoice: [],
     mods: [],
-    crews: [],
     tier: 0,
+    shipName: '',
   };
 
   return newShip;
@@ -4097,6 +4096,7 @@ function addHullToShip(chosenShip) {
   chosenShip.extraRooms = chosenShip.hull.extraRooms;
   chosenShip.energyUse = chosenShip.hull.energyUse;
   chosenShip.tier = chosenShip.hull.tier;
+  chosenShip.length = chosenShip.hull.length;
 }
 
 function updateWeaponSlot() {
@@ -4417,6 +4417,7 @@ function renderShipConfigUI(shipId) {
 function editShipName(shipId) {
   // Get the main ship container div using the passed ID
   const shipDiv = document.getElementById(shipId);
+
   if (!shipDiv) {
     console.error(`Ship div with ID "${shipId}" not found.`);
     return;
@@ -4425,7 +4426,8 @@ function editShipName(shipId) {
     const shipNameDiv = shipDiv.querySelector(".ship-name");
     if (shipNameDiv) {
       shipNameDiv.focus(); // Focus on the ship name div to allow editing
-      //shipNameDiv.addEventListener('blur', () =>
+      let newShipName = shipNameDiv.textContent;
+      player.ships[player.currentActiveShip].shipName = newShipName;
     } else {
       console.error(
         `Ship name display div not found within ship ID "${shipId}".`
