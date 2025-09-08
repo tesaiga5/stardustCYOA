@@ -181,7 +181,7 @@ const crew = [
   },
   {
     title: "E.R.I.",
-    skillLevel: null,
+    skillLevel: 9,
     alignment: "Neutral",
     cost: 5000000,
     description:
@@ -192,13 +192,13 @@ const crew = [
   },
   {
     title: "Wes Lunso",
-    skillLevel: null,
+    skillLevel: 5,
     alignment: "Neutral",
     cost: 5000000,
     description:
       "Wes used to work for a mercenary group, but has since left and is looking for a change in pace. He is very passionate for flying and racing.",
     specialty: "Pilot",
-    equipment: null,
+    equipment: 9,
     image: "Images/Crew/ThousandHands-civitai.webp",
   },
   {
@@ -214,35 +214,35 @@ const crew = [
   },
   {
     title: "Hailey",
-    skillLevel: null,
+    skillLevel: 9,
     alignment: "Neutral",
-    cost: "Special cost",
+    cost: 0,
     description:
       "While she's not very talkative, Hailey seems to have some sort of psi powers. She knows what you're gonna say efore you do.",
     specialty: "Pilot",
-    equipment: null,
+    equipment: 6,
     image: "Images/Titles/hailey-crew-midjourney.webp",
   },
   {
     title: "Conrad Byrant",
-    skillLevel: 8,
+    skillLevel: 7,
     alignment: "Blackhawk Elite",
     cost: 5000000,
     description:
       "Conrad is a man who can stay to his duty and really commit to it. As a loyal Blackhawk pilot, he's flown for several days at a time without rest.",
     specialty: "Pilot",
-    equipment: null,
+    equipment: 8,
     image: "Images/Crew/nikolay-demencevich-swame-studio-camera-new-02-artstation.webp",
   },
   {
     title: "Mikayla Suzuki",
-    skillLevel: null,
+    skillLevel: 9,
     alignment: "Gazers",
     cost: 6000000,
     description:
       "Mikayla is one of the Gazer's elite pilots, and has baited many fleets to their deaths. She's bold and brash, but always keeps her cool, even under high pressure.",
     specialty: "Pilot",
-    equipment: null,
+    equipment: 6,
     image: "Images/Crew/I_never_Did707-civitai.webp",
   },
   {
@@ -315,13 +315,13 @@ const crew = [
   // --- engineerS ---
   {
     title: "Enrico Jourdan",
-    skillLevel: null,
+    skillLevel: 3,
     alignment: "Neutral",
     cost: 1000000,
     description:
       "Kind hearted and loyal, Enrico can do a lot of handiwork for relatively cheap. He doesn't ask many questions either, he just loves doing his job.",
     specialty: "Engineer",
-    equipment: null,
+    equipment: 1,
     image: "Images/Crew/enrico-indotort-midjourney.webp",
   },
   {
@@ -332,40 +332,40 @@ const crew = [
     description:
       "Derek is from a very rare line mechanics. He claims his people were one with nature; he believes that he is one with metal, wires, and static.",
     specialty: "Engineer",
-    equipment: null,
+    equipment: 5,
     image: "Images/Crew/dhiseveled-indotort-midjourney.webp",
   },
   {
     title: "Alena Bach",
-    skillLevel: null,
+    skillLevel: 5,
     alignment: "Neutral",
     cost: 2000000,
     description:
       "Alena was an exceptional inventor from when she was child. She just started her career in starship mechanics, and would like to impress you with her work.",
     specialty: "Engineer",
-    equipment: null,
+    equipment: 1,
     image: "Images/Crew/kindeng-indotort-midjourney.webp",
   },
   {
     title: "Malcolm Red",
-    skillLevel: 7,
+    skillLevel: 5,
     alignment: "Neutral",
     cost: 2000000,
     description:
       "Malcolm blames exploding ships, bandit raids and bounty hunters as to why he has been barely able to actually do his job. Skilled with a crowbar.",
     specialty: "Engineer",
-    equipment: null,
+    equipment: 6,
     image: "Images/Crew/trauma-indotort-midjourney.webp",
   },
   {
     title: "Adan Cervantes",
-    skillLevel: null,
+    skillLevel: 7,
     alignment: "Neutral",
     cost: 3000000,
     description:
       "Terrible radiation burns cover his skin, so Adan relies on a life-support suit for his survival. That being said, he's highly intelligent and insightful.",
     specialty: "Nuclear",
-    equipment: null,
+    equipment: 6,
     image: "Images/Crew/radiationburn-indotort-midjourney.webp",
   },
   {
@@ -387,7 +387,7 @@ const crew = [
     description:
       "Props is a hobbyist mechanic and loves to tinker. As a kid, she loved gears and wires over dolls. She also has a very active and bubbly personality.",
     specialty: "Mechanic",
-    equipment: null,
+    equipment: 5,
     image: "Images/Crew/engineer-indotort-civitai.webp",
   },
   {
@@ -398,40 +398,40 @@ const crew = [
     description:
       "With a love for working with machines, Troy could spend many hours inside a workshop. His fire rings can be put to good use",
     specialty: "Engineer",
-    equipment: null,
+    equipment: 7,
     image: "Images/Crew/k-phoenix-疾速 k-artstation.webp",
   },
   {
     title: "Cindy Kayoko",
-    skillLevel: null,
+    skillLevel: 6,
     alignment: "Red Daggers",
     cost: 4000000,
     description:
       "Popular among the Red Daggers, Cindy has worked with an immeasurable amount of questionable machinery. She's not much for politics.",
     specialty: "Engineer",
-    equipment: null,
+    equipment: 3,
     image: "Images/Crew/liyihao1999-civitai.webp",
   },
   {
     title: "Amy McCartney",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Federation",
     cost: 4000000,
     description:
       "While Amy is a revered scientist, she's also graceful and likes to sing as a hobby. While she's a little shy, she would love it if you had a tavern.",
     specialty: "Scientist",
-    equipment: null,
+    equipment: 8,
     image: "Images/Crew/IsekaiLanayaya2-civitai.webp",
   },
   {
     title: "Roxanne Gilliam",
-    skillLevel: 4,
+    skillLevel: 8,
     alignment: "Talons",
     cost: 4000000,
     description:
       "Roxanne led the forefront of nuclear research in Talon labs, and has contributed highly to the advancement of anti-matter technology.",
     specialty: "Nuclear",
-    equipment: 5,
+    equipment: 9,
     image: "Images/Crew/thousandsons-velvets-civitai.webp",
   },
   {
@@ -468,13 +468,13 @@ const crew = [
   // --- doctors ---
   {
     title: "Kelly Moss",
-    skillLevel: null,
+    skillLevel: 3,
     alignment: "Neutral",
     cost: 0,
     description:
       "Kelly was part of a volunteer program to aid the unfortunate in poverty-stricken planets. Cannot be alone in an advanced infirmary.",
     specialty: "Medic",
-    equipment: null,
+    equipment: 1,
     image: "Images/Crew/corporat4-civitai.webp",
   },
   {
@@ -485,7 +485,7 @@ const crew = [
     description:
       "Straight out of medical school, Bethany seeks to get field experience. She would like nothing more than to be a space doctor. Loves cats.",
     specialty: "Medic",
-    equipment: null,
+    equipment: 2,
     image: "Images/Crew/KandooAI-civitai.webp",
   },
   {
@@ -533,46 +533,46 @@ const crew = [
   },
   {
     title: "Lyra Miralda",
-    skillLevel: null,
+    skillLevel: 7,
     alignment: "Neutral",
     cost: 7000000,
     description:
       "Young, in medical textbooks, quick, efficient, a little awkward.",
     specialty: "Medic",
-    equipment: null,
+    equipment: 8,
     image: "Images/Crew/max-frorer-dhaliafinal-artstation.webp",
   },
   // --- Ship gunners ---
   {
     title: "Brian Richardson",
-    skillLevel: null,
+    skillLevel: 3,
     alignment: "Neutral",
     cost: 1000000,
     description:
       "Brian knows everything about ship weapons. While still a student, he'd drop his studies in a heart beat just to be a ship gunner.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 1,
     image: "Images/Crew/k-00k-sova-疾速 k-artstation.webp",
   },
   {
     title: "Seer",
-    skillLevel: null,
+    skillLevel: 4,
     alignment: "Red Daggers",
     cost: 1000000,
     description:
       "A bad history of theft, murder, and drug addiction, Seer is the prime example of a pirate. Even the Red Daggers see him as unsavoury.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 2,
     image: "Images/Crew/male-pirate-indotort-midjourney.webp",
   },
   {
     title: "Elizabeth Tyler",
-    skillLevel: null,
+    skillLevel: 4,
     alignment: "Federation",
     cost: 2000000,
     description: "Part of rare Fed patrols, met action but inexperienced.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 3,
     image: "Images/Crew/reijlita2-civitai.webp",
   },
   {
@@ -588,23 +588,23 @@ const crew = [
   },
   {
     title: "John Pope",
-    skillLevel: 4,
+    skillLevel: 5,
     alignment: "Neutral",
     cost: 3000000,
     description: "Former merchant, quick aim from bandit attacks.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 4,
     image: "Images/Crew/dkok-blackredrose-civitai.webp",
   },
   {
     title: "Theresa Herder",
-    skillLevel: null,
+    skillLevel: 6,
     alignment: "Blackhawk Elite",
     cost: 3000000,
     description:
       "Former Fed gunner, Blackhawk Elite, disciplined but laid-back off work.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 4,
     image: "Images/Crew/IsekaiLanayaya4-civitai.webp",
   },
   {
@@ -615,7 +615,7 @@ const crew = [
     description:
       "Mysterious, took down three cruisers himself in Haven defence.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 6,
     image: "Images/Crew/guy-vuxyjeke-civitai.webp",
   },
   {
@@ -625,17 +625,17 @@ const crew = [
     cost: 4000000,
     description: "Fiery and passionate, fun to tease about being a ginger.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 6,
     image: "Images/Crew/corporat5-civitai.webp",
   },
   {
     title: "Faith Nichols",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Federation",
     cost: 4000000,
     description: "From Fed SOF, high-tech equipment, very innocent.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 7,
     image: "Images/Crew/we11-civitai.webp",
   },
   {
@@ -646,7 +646,7 @@ const crew = [
     description:
       "Her body seems to mingle with energy sources whenever she's near them, almost as if it courses through her veins...",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 9,
     image: "Images/Crew/sorcerer-crew-midjourney.webp",
   },
   {
@@ -657,7 +657,7 @@ const crew = [
     description:
       "He is very down to earth and simple (in the sense of being a professional ship gunner). He's reliable, and everybody just calls him Viktor.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 5,
     image: "Images/Crew/bloodangelsgunner-velvets-civitai.webp",
   },
   {
@@ -668,7 +668,7 @@ const crew = [
     description:
       "Echo is of a rare breed from the Talons who offers up her skills for hire. She looks intimidating, but she's actually pretty down-to-earth... just don't call her Tavi.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 6,
     image: "Images/Crew/awegirl-reijlita-civitai (1).webp",
   },
   {
@@ -679,18 +679,18 @@ const crew = [
     description:
       "Don't let his boring name fool you-Bill has a track record for being a veteran gunner in the Federation Navy. You can rely on him to hit hard and ruthlessly.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 7,
     image: "Images/Crew/baldalphaleg-velvets-civitai.webp",
   },
   {
     title: "Amanda Lynch",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Neutral",
     cost: 6000000,
     description:
       "She's fast, strong-willed and packs a punch, Amanda has never lost in a fleet fight. Her efforts have defended industrial from bandit incursions.",
     specialty: "Ship Gunner",
-    equipment: null,
+    equipment: 8,
     image: "Images/Crew/jinx-schmede-civitai.webp",
   },
   // --- combat & Security ---
@@ -751,29 +751,29 @@ const crew = [
   },
   {
     title: "Grzegorz Grzegrzółka",
-    skillLevel: null,
+    skillLevel: 3,
     alignment: "Neutral",
     cost: 2000000,
     description:
       "Always seen working together with Pierre, Gregorz is an ex-cop working to pay for his little sister's education. He often does things his own way.",
     specialty: "Ship Security",
-    equipment: null,
+    equipment: 6,
     image: "Images/Crew/robocop-indotort-midjourney.webp",
   },
   {
     title: "Ley'ra Laur",
-    skillLevel: 8,
+    skillLevel: 4,
     alignment: "Luos Syndicate",
     cost: 3000000,
     description:
       "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy.",
     specialty: "Point Position",
-    equipment: 6,
+    equipment: 7,
     image: "Images/Crew/lou-ll-asuka-079-2-artstation.webp",
   },
   {
     title: 'Dani "Cuts" Laine',
-    skillLevel: null,
+    skillLevel: 5,
     alignment: "Blackhawk Elite",
     cost: 3000000,
     description:
@@ -828,24 +828,24 @@ const crew = [
   },
   {
     title: "Darrel Wallace",
-    skillLevel: null,
+    skillLevel: 5,
     alignment: "Blackhawk Elite",
     cost: 4000000,
     description:
       "Darrel has flown in many fleets, making sure that on-ship security is as good as it can be. The Blackhawks are tough, and Darrel mirrors that to a tee.",
     specialty: "Sentry",
-    equipment: null,
+    equipment: 8,
     image: "Images/Crew/exoboy-archangel_ai-civitai.webp",
   },
   {
     title: "Rooks King",
-    skillLevel: null,
+    skillLevel: 7,
     alignment: "Gazers",
     cost: 5000000,
     description:
       "Rooks is a skilled Gazer operator, but can be found hanging around Dustkeepers often. His comrades learned to ignore his disappearances.",
     specialty: "Guerilla Warfare",
-    equipment: 5,
+    equipment: 7,
     image: "Images/Crew/johnson-ting-destiny-publishing-warlock-artstation.webp",
   },
   {
@@ -861,7 +861,7 @@ const crew = [
   },
   {
     title: "Scot Shephard",
-    skillLevel: null,
+    skillLevel: 7,
     alignment: "Neutral",
     cost: 5000000,
     description: "SWAT in a big city, seen the worst of humanity.",
@@ -888,12 +888,12 @@ const crew = [
     description:
       "A stalwart soldier in high tech power armour, Ricce is a force to be reckoned with on the battlefield. When asked about his sister Alessia, he'll remain silent.",
     specialty: "Front-line Assault",
-    equipment: null,
+    equipment: 8,
     image: "Images/Crew/mak-oosayam-civitai.webp",
   },
   {
     title: "Arabelle Meyer",
-    skillLevel: null,
+    skillLevel: 8,
     alignment: "Neutral",
     cost: 5000000,
     description:
@@ -1102,13 +1102,13 @@ const crew = [
   },
   {
     title: "Patch Newton",
-    skillLevel: null,
+    skillLevel: 9,
     alignment: "Neutral",
     cost: 7000000,
     description:
       "A notorious assassin who's very deadly behind a rifle. His unique hardware was built by himself; It's often said that he's \"one with his armour.\"",
     specialty: "Sniping (Assassin)",
-    equipment: null,
+    equipment: 8,
     image: "Images/Crew/em-rifle-14-1-valentine-sorokin-artstation.webp",
   },
   {
@@ -1287,7 +1287,7 @@ const crew = [
     description:
       "Incredibly intelligent, but with a very short attention span. Her frequent experiments with mana energy has earned her unnerving red eyes.",
     specialty: "Mana Energy Experiments",
-    equipment: null,
+    equipment: 6,
     image: "Images/Crew/goth nun by tentacles-riders - civitai.webp",
   },
   {
@@ -1326,24 +1326,24 @@ const crew = [
   // --- production MANAGERS ---
   {
     title: "Sibyl",
-    skillLevel: null,
+    skillLevel: 4,
     alignment: "Red Daggers",
     cost: 1000000,
     description:
       "Sibyl has worked in industrial wings for the Red Daggers for over 20 years. He knows lots of tricks and methods on mining and manufacturing.",
     specialty: "Mining, Manufacturing",
-    equipment: null,
+    equipment: 4,
     image: "Images/Crew/audec-aenaluck-gelbooru.webp",
   },
   {
     title: "Madeline Moran",
-    skillLevel: null,
+    skillLevel: 5,
     alignment: "Blackhawk Elite",
     cost: 2000000,
     description:
       "The Blackhawk Elite's might is largely due to their hardware, and with production managers like Madeline, they're set for a long, long time.",
     specialty: "Hardware production",
-    equipment: null,
+    equipment: 4,
     image: "Images/Crew/female-engineer-indotort-midjourney.webp",
   },
   {
@@ -1354,19 +1354,19 @@ const crew = [
     description:
       "Skelly will always get the job done, at the cost of your crew's mental health",
     specialty: "Production Management",
-    equipment: null,
+    equipment: 6,
     image:
       "Images/Crew/theadministrator-thomas-du-crest-artstation.webp",
   },
   {
     title: "Corrine Peyton",
-    skillLevel: null,
+    skillLevel: 7,
     alignment: "Neutral",
     cost: 3000000,
     description:
       "Serious and authoritative in industrial wings, workers obey or face a long, deafening scolding.",
     specialty: "Industrial Management",
-    equipment: null,
+    equipment: 6,
     image: "Images/Crew/LordTerror-civitai.webp",
   },
   {
@@ -1377,7 +1377,7 @@ const crew = [
     description:
       "Great production manager, excellent track record from Fed industrial systems, promotes efficiency and work ethics.",
     specialty: "Production Management",
-    equipment: null,
+    equipment: 4,
     image: "Images/Crew/leader-horatio-thomas-du-crest-artstation.webp",
   },
   {
