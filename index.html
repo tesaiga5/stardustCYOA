@@ -3525,6 +3525,7 @@
       let selectElement2 = event.target.closest('div').querySelector('select');
       let numberSpan2 = event.target.closest('div').querySelector('.number-span');
       const archetypeChoice1 = archetype.find(archecrew => archecrew.title === event.target.closest('.archetype').id);
+      console.log(incrementButton2, decrementButton2, selectElement2, numberSpan2, archetypeChoice1);
       const currentActiveShip = player.currentActiveShip;
 
       let archetypeChoice2 = {
