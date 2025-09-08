@@ -1,54 +1,72 @@
-/*
- * -----------------------------------------------------------------------------------------------------------------------------------------
- * Base styles for all devices (Mobile-First Approach)
- * These styles apply to all screens by default, and are then overridden by media queries for larger screens
- * -----------------------------------------------------------------------------------------------------------------------------------------
- */
 .section {
   display: flex;
   flex-wrap: wrap;
+  /* NEW: Allows flex items to wrap to the next line */
+  /* REMOVED: grid-template-columns: auto auto auto; - This is for CSS Grid, not needed with flexbox wrapping */
   padding: 10px;
   gap: 10px;
   margin: auto;
   text-align: center;
+  /* width: max-content; - Consider adjusting this if you want the section to take up more screen width */
   justify-content: center;
+  /* NEW: Centers the items on each line when they wrap */
   max-width: 100%;
+  /* Ensure the section itself doesn't overflow the browser */
 }
 
 .section>div {
   padding: 10px;
-  font-size: 1.6rem;
+  font-size: 30px;
   text-align: center;
   color: #ffffff;
+  /* White font for readability */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  /* Stronger text shadow for better contrast */
   overflow: hidden;
   border: 3px solid rgb(177, 59, 255);
   background-color: rgb(71, 19, 150, 0.4);
+  /* width: max-content; - This can cause issues with wrapping; flex-basis is preferred for flex items */
+  /* display: inline-block; - Not needed when parent is flex container */
 }
 
 .section>div:hover {
-  background-color: rgb(71, 19, 150, 0.8);
+  background-color: rgb(71,
+      19,
+      150,
+      0.8);
+  /* Darker background on hover for better visibility */
   cursor: pointer;
+  /* Changes cursor to pointer on hover */
   transform: translateY(-2px);
+  /* Slight lift effect on hover */
 }
 
 .section>button {
   padding: 10px;
-  font-size: 1.6rem;
+  font-size: 30px;
   text-align: center;
   color: #ffffff;
+  /* White font for readability */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  /* Stronger text shadow for better contrast */
   overflow: hidden;
   border: 3px solid rgb(177, 59, 255);
   border-radius: 20px;
   background-color: rgb(71, 19, 150, 1);
   width: max-content;
+  /* Ensures button width is determined by its content */
 }
 
 .section>button:hover {
-  background-color: rgb(71, 19, 150, 0.5);
+  background-color: rgb(71,
+      19,
+      150,
+      0.5);
+  /* Darker background on hover for better visibility */
   cursor: pointer;
+  /* Changes cursor to pointer on hover */
   transform: translateY(-2px);
+  /* Slight lift effect on hover */
 }
 
 div {
@@ -84,6 +102,7 @@ p {
 #section-ewar,
 #section-room {
   display: none;
+  /* Hidden by default */
 }
 
 #section-lore.visible,
@@ -110,6 +129,7 @@ p {
 #section-ewar.visible,
 #section-room.visible {
   display: flex;
+  /* Hidden by default */
 }
 
 .choice,
@@ -117,34 +137,40 @@ p {
 .choice-rigs {
   justify-content: center;
   align-items: center;
-  /* NEW: Use flex-basis to allow wrapping based on available space */
-  flex-basis: calc(50% - 10px);
-  /* Two items per row on mobile, with a gap */
+  width: 140px;
+  /* Keep your existing fixed width */
+  /* NEW: flex-basis to control how many items fit per row.
+     (100% / 6) makes each item target 1/6th of the container width.
+     (10px * 5 / 6) subtracts a portion of the gap space (5 gaps for 6 items)
+     to ensure they fit perfectly. */
+  flex-basis: calc((100% / 5.5));
   min-width: 140px;
+  /* Ensure items don't shrink below this size on smaller screens */
   box-sizing: border-box;
+  /* Ensures padding and border are included in the width calculation */
   border-radius: 15px;
 }
 
 .gun {
-  flex-basis: calc(50% - 10px) !important;
+  flex-basis: calc((100% / 4.5)) !important;
 }
 
 .ship {
-  flex-basis: calc(50% - 10px);
+  flex-basis: calc((100% / 5));
 }
 
 .ship1 {
-  flex-basis: 100%;
+  flex-basis: calc((100% / 3.4));
   min-width: 300px;
 }
 
 .choice-sponsor {
-  flex-basis: calc(50% - 10px);
+  flex-basis: calc((100% / 4));
 }
 
 .choice-frame {
   width: 300px;
-  flex-basis: 100%;
+  flex-basis: calc(100% / 3.4);
   margin: 0;
   padding: 0;
 }
@@ -159,7 +185,7 @@ p {
 
 .choice,
 .choice-frame-upgrade h3 {
-  font-size: 1.5rem;
+  font-size: 28px;
 }
 
 .choice p,
@@ -168,11 +194,11 @@ p {
 .choice-rigs div,
 .choice-frame-upgrade p,
 .choice-frame-upgrade div {
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 .choice-cost {
-  font-size: 1rem;
+  font-size: 18px;
   color: rgb(255, 204, 0);
 }
 
@@ -180,22 +206,31 @@ p {
 .choice-frame-upgrade:hover,
 .choice-rigs:hover {
   cursor: pointer;
-  background-color: rgb(9, 0, 64, 0.7);
+  background-color: rgb(9,
+      0,
+      64,
+      0.7);
+  /* A more vibrant blue with transparency for hover */
   transform: translateY(-2px);
 }
 
 .choice.active,
 .choice-frame-upgrade.active {
   background-color: rgb(9, 0, 64, 0.7);
+  /* Consistent active color */
 }
 
 .choice img,
 .choice-frame-upgrade img,
 .choice-rigs img {
   max-width: 100%;
+  /* Ensure images don't overflow their parent pseudoChoice */
   height: auto;
+  /* Maintain aspect ratio */
   border-radius: 20px;
+  /* Added rounded corners to images */
   margin-bottom: 10px;
+  /* Space between image and text */
 }
 
 h1,
@@ -203,7 +238,9 @@ h2,
 h3 {
   text-align: center;
   color: #ffffff;
+  /* White color for headings */
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 1);
+  /* Stronger shadow for headings */
 }
 
 /* Styles for the ship object container */
@@ -212,24 +249,33 @@ h3 {
   display: flex;
   align-items: center;
   border: 3px solid #336699;
+  /* Navy-like border */
   background-color: #224466;
+  /* Darker navy background */
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 18px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  /* Adjust min-width and height based on the new button size */
   min-width: 250px;
+  /* Example: 200px (button) + some padding */
   height: auto;
+  /* Let height adjust to content, or set a fixed height that fits 3 buttons + gaps */
   overflow: hidden;
+  /* Crucial for pseudo-element transforms */
   clip-path: polygon(0% 50%, 10% 0%, 100% 0%, 100% 100%, 10% 100%);
 }
 
 .object-div.active {
   background-color: #336699;
+  /* Lighter navy background when active */
 }
 
 /* Style for the ship name text */
 .ship-name {
   flex-grow: 1;
+  /* Allows the ship name to take remaining space */
   text-align: center;
+  /* Center the ship name within its available space */
 }
 
 /* Container for the chevron buttons */
@@ -237,9 +283,13 @@ h3 {
   margin: 0;
   display: flex;
   flex-direction: column;
+  /* Stack buttons vertically */
   flex-shrink: 0;
+  /* Prevent the container from shrinking */
   height: 100%;
+  /* Full height of the object-div */
   width: 50px;
+  /* Fixed width for the button container */
 }
 
 /* Base style for the chevron buttons */
@@ -247,9 +297,13 @@ h3 {
 .edit-button,
 .blank-button {
   position: relative;
+  /* For pseudo-elements */
   height: 100%;
+  /* Height of the chevron button */
   width: 100%;
+  /* Width of the chevron button */
   background-color: transparent;
+  /* Base button background - will be covered by pseudo-elements */
   border: none;
   font-weight: bold;
   cursor: pointer;
@@ -258,21 +312,25 @@ h3 {
   justify-content: left;
   clip-path: polygon(0% 50%, 50% 0%, 100% 0%, 50% 50%, 100% 100%, 50% 100%);
   color: white;
+  /* This will be the color of the pseudo-elements */
 }
 
 /* Specific styles for the X button */
 .x-button {
   background-color: rgb(198, 35, 0);
+  /* Reddish */
   color: white;
 }
 
 .x-button:hover {
   background-color: #f14a00;
+  /* Lighter red on hover */
 }
 
 /* Specific styles for the Edit button */
 .edit-button {
   background-color: white;
+  /* Goldish/Yellow */
   color: #333;
 }
 
@@ -283,6 +341,7 @@ h3 {
 /* Specific styles for the new blank button */
 .blank-button {
   background-color: rgb(255, 204, 0);
+  /* Gray */
   color: white;
 }
 
@@ -296,16 +355,20 @@ img {
 }
 
 body {
+  /*make galaxy background image*/
   background-image: url(Images/Other/timBartonSunsetNebulae-artstation.webp);
+  /* Replace with your image path */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: white;
   font-family: "Roboto";
-  font-size: 1rem;
+  font-size: 18px;
   padding-bottom: 70px;
+  /* Add padding to the bottom to prevent content from being hidden behind the fixed point bar */
   scroll-behavior: smooth;
+  /*for smooth scrolling*/
 }
 
 body b {
@@ -323,72 +386,118 @@ body b {
 /* This is the container for the pseudoChoice elements */
 .pseudoChoice-container {
   display: flex;
+  /* Make it a flex container */
   flex-wrap: wrap;
+  /* Allow items to wrap to the next line */
   justify-content: center;
+  /* Center the items horizontally */
   gap: 20px;
+  /* Space between pseudoChoice items */
   padding: 10px;
   max-width: 1200px;
+  /* Optional: Set a max-width for the container */
   margin: 0 auto;
+  /* Center the container itself */
   flex-direction: row;
 }
 
 .pseudoChoice {
-  flex-basis: calc(50% - 10px);
-  /* Two items per row on mobile, with a gap */
+  /* No longer a flex container for its children, but a flex item in pseudo-choice-container */
+  /* flex-wrap: wrap; - REMOVED, as its parent now handles wrapping */
+  /* flex-direction: row; - REMOVED, as its parent now handles wrapping */
+  /* align-items: center; - REMOVED, as its parent now handles wrapping */
+
+  /* Calculate width for 4 items per row, considering gap */
+  width: calc(23%);
+  /* (100% / 4 items) - (3 * gap size / 4 items) */
   min-width: 250px;
+  /* Ensure a reasonable minimum width for readability on smaller screens */
   box-sizing: border-box;
+  /* Include padding and border in the width calculation */
   padding: 15px;
+  /* Added padding for content inside the pseudoChoice */
   text-align: center;
+  /* Center text inside */
   border-radius: 8px;
+  /* Added rounded corners for aesthetics */
+
+  /* Existing styles for pseudoChoice content */
   border: 3px solid rgb(177, 59, 255);
+  border-radius: 15px;
   background-color: rgb(71, 19, 150, 0.4);
   display: flex;
+  /* Make pseudoChoice itself a flex container */
   flex-direction: column;
+  /* Stack content inside vertically */
   align-items: center;
+  /* Center content inside horizontally */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 .pseudoChoice div {
+  /* This div is now a direct child of pseudoChoice, so it inherits flex properties */
   border: 3px solid rgb(177, 59, 255);
   background-color: rgb(71, 19, 150, 0.4);
   width: 100%;
+  /* Make sure this div takes full width inside pseudoChoice */
   border-radius: 15px;
 }
 
 .pseudoChoice img {
   max-width: 100%;
+  /* Ensure images don't overflow their parent pseudoChoice */
   height: auto;
+  /* Maintain aspect ratio */
   border-radius: 8px;
+  /* Added rounded corners to images */
   margin-bottom: 10px;
+  /* Space between image and text */
 }
 
 .pseudoChoice h3,
 .pseudoChoice p {
   word-break: break-word;
+  /* Forces long words to break and wrap to the next line */
   overflow-wrap: break-word;
+  /* Alternative/complementary property for word breaking */
+  /*hyphens: auto;  Allows the browser to automatically hyphenate words for better text flow */
 }
 
 .image-container {
   display: flex;
+  /* Make it a flex container */
   justify-content: center;
+  /* Center horizontally */
   align-items: center;
+  /* Center vertically */
   height: auto;
+  /* Keep auto height, or set a fixed height if needed */
   flex-direction: column;
+  /* Stack children vertically if you want the text below the image */
 }
 
 .image-container img {
+  /* No specific centering properties needed here if parent is flex */
   max-width: 100%;
+  /* Ensure image scales down if larger than container */
   height: auto;
+  /* Maintain aspect ratio */
 }
 
 .point-bar {
   display: flex;
   position: fixed;
+  /* Stays in place relative to the viewport */
   bottom: 0;
+  /* Aligns to the bottom of the viewport */
   left: 0;
+  /* Aligns to the left of the viewport */
   width: 100%;
+  /* Makes it span the full width of the viewport */
   flex-direction: row;
+  /* Changed to row to align sections horizontally */
   justify-content: center;
+  /* Distributes space evenly */
   align-items: center;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
@@ -396,18 +505,24 @@ body b {
   border-radius: 15px;
   background-color: rgb(71, 19, 150);
   z-index: 1000;
+  /* Ensures it's on top of other content */
   padding: 10px 0;
+  /* Add some vertical padding inside the bar */
   height: 34px;
+  /* Give it a fixed height */
   margin: 0;
   gap: 100px;
 }
 
+/* for gauge*/
 .gauge-container {
   display: flex;
   flex-grow: 1;
   margin-bottom: 10px;
+  /* Allow wrapping for responsiveness */
   margin-left: 30px;
   max-width: 300px;
+  /* Full width to allow label and cells to align properly */
 }
 
 .gauge-label {
@@ -417,6 +532,7 @@ body b {
   margin-right: 20px;
   max-width: 100%;
   align-self: center;
+  /* Center the label vertically */
   flex-shrink: 0;
 }
 
@@ -424,39 +540,55 @@ body b {
   display: flex;
   align-self: center;
   gap: 1px;
+  /* Small gap between cells */
+  /* Allow cells to take up remaining space */
   max-width: 100%;
+  /* Adjust max-width based on container width */
   border: 2px solid white;
   box-shadow: 0 0 4px 1px rgba(255, 204, 0, 0.7);
+  /* Soft yellow glow */
   transition: box-shadow 0.2s ease-in-out;
+  /* Smooth transition for glow */
   filter: brightness(0.9);
+  /* Slightly dim the glow for a more subtle effect */
 }
 
 .gauge-cell {
   width: 18px;
+  /* Fixed width for each cell */
   height: 18px;
+  /* Fixed height for each cell */
   border: 2px yellow;
+  /* Default border color for empty cells */
   border-radius: 2px;
+  /* Slightly rounded corners for cells */
   background-color: rgb(241, 241, 241, 0.3);
+  /* Default empty color */
 }
 
+/* Custom filled colors based on cell index */
 .gauge-cell.filled-white {
   background-color: whitesmoke;
+  /* White */
 }
 
 .gauge-cell.filled-light-purple {
   background-color: rgb(108, 144, 230);
+  /* Tailwind purple-400 */
 }
 
 .gauge-cell.filled-dark-purple {
   background-color: rgb(197, 124, 239);
+  /* Tailwind purple-700 */
 }
 
 .gauge-cell.filled-light-red {
   background-color: rgb(239, 119, 120);
+  /* Tailwind red-400 */
 }
 
 .p-frame {
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 ul {
@@ -466,54 +598,87 @@ ul {
   padding: 0;
 }
 
+/* Base styles for Federation System (Blue) */
 .federation-system {
   border: 3px solid #033669 !important;
+  /* Navy-like border */
   background-color: rgba(62, 113, 230, 0.486) !important;
+  /* Smooth transition for hover/active states */
 }
 
+/* Deeper/darker color when Federation System is clicked */
 .federation-system.active {
   border: 3px solid #011e3f !important;
+  /* Darker navy */
   background-color: rgba(30, 70, 180, 0.6) !important;
+  /* Darker blue */
 }
 
+/* Base styles for Blackhawk System (Green) */
 .blackhawk-system {
   border: 3px solid #006400 !important;
+  /* Dark Green border */
   background-color: rgba(0, 128, 0, 0.486) !important;
+  /* Green background */
 }
 
+/* Deeper/darker color when Blackhawk System is clicked */
 .blackhawk-system.active {
   border: 3px solid #003300 !important;
+  /* Even darker green */
   background-color: rgba(0, 80, 0, 0.6) !important;
+  /* Darker green */
 }
 
+/* Base styles for Talon System (Pink) */
 .talon-system {
   border: 3px solid #c71585 !important;
-  background-color: rgba(255, 105, 180, 0.486) !important;
+  /* Medium Violet Red border */
+  background-color: rgba(255,
+      105,
+      180,
+      0.486) !important;
+  /* Hot Pink background */
 }
 
+/* Deeper/darker color when Talon System is clicked */
 .talon-system.active {
   border: 3px solid #8b0a50 !important;
+  /* Darker pink/red */
   background-color: rgba(200, 50, 140, 0.6) !important;
+  /* Darker pink */
 }
 
+/* Base styles for Red-Dagger Pirates (Red) */
 .pirate-system {
   border: 3px solid #8b0000 !important;
+  /* Dark Red border */
   background-color: rgba(255, 0, 0, 0.486) !important;
+  /* Red background */
 }
 
+/* Deeper/darker color when Red-Dagger Pirates is clicked */
 .pirate-system.active {
   border: 3px solid #550000 !important;
+  /* Even darker red */
   background-color: rgba(200, 0, 0, 0.6) !important;
+  /* Darker red */
 }
 
+/* Base styles for Independent System (Purple) */
 .independent-system {
   border: 3px solid #4b0082 !important;
+  /* Indigo border */
   background-color: rgba(128, 0, 128, 0.486) !important;
+  /* Purple background */
 }
 
+/* Deeper/darker color when Independent System is clicked */
 .independent-system.active {
   border: 3px solid #2f0050 !important;
+  /* Darker indigo */
   background-color: rgba(80, 0, 80, 0.6) !important;
+  /* Darker purple */
 }
 
 .luos-system {
@@ -527,6 +692,7 @@ ul {
 }
 
 /*for rigs*/
+
 .offensive-rigs {
   background-color: rgb(253, 88, 95, 0.4) !important;
   border-color: rgb(141, 69, 73) !important;
@@ -574,17 +740,17 @@ ul {
 
 /*For Affinities*/
 .affinity-table-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  width: 100%;
-  /* Make it full width on smaller screens */
+  width: 1500px;
   border: 3px solid rgb(177, 59, 255) !important;
   border-radius: 8px;
   overflow: hidden;
   background-color: rgb(71, 19, 150, 0.4) !important;
 }
 
+/* Column Header Styling */
 .column-header {
   padding: 20px 10px;
   text-align: center;
@@ -598,15 +764,19 @@ ul {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Affinity Card Styling */
 .affinity-card {
+  grid-column: span 1;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+/* Container for each group of 3 affinities + a single large image */
 .affinity-group {
   display: flex;
   align-items: stretch;
+  /* Stretch items to match height */
   gap: 10px;
   padding: 10px;
   background-color: #1f2533;
@@ -614,13 +784,12 @@ ul {
   border: 1px solid #30363d;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  flex-direction: column;
-  /* Stack image and content vertically on mobile */
 }
 
 .affinity-group-image {
-  width: 100%;
-  height: auto;
+  width: 160px;
+  flex-shrink: 0;
+  /* Prevents the image from shrinking */
   border-radius: 4px;
   object-fit: cover;
 }
@@ -632,20 +801,25 @@ ul {
   width: 100%;
 }
 
+/* Styling for a single affinity item within the group */
 .affinity-item {
   padding: 5px;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+/* Hover effect for individual items */
 .affinity-item:hover {
   transform: translateY(-3px);
   background-color: #2a3340;
 }
 
+/* Selected/Active state for an item */
 .affinity-item.active {
   background-color: #0b0d0f;
+  /* A darker color for the selected state */
   border-left: 3px solid #818cf8;
+  /* Optional highlight for selection */
   padding-left: 2px;
 }
 
@@ -662,6 +836,7 @@ ul {
   color: #9ca3af;
 }
 
+/* Fixed Scroll Button */
 .fixed-scroll-button {
   position: fixed;
   bottom: 16px !important;
@@ -673,6 +848,7 @@ ul {
   width: 60px;
   height: 60px;
   background-color: #a855f7;
+  /* WhatsApp green */
   color: white;
   border-radius: 50%;
   border: none;
@@ -694,6 +870,7 @@ ul {
   height: 28px;
 }
 
+/* Modal and main content styling */
 .modal-button {
   padding: 1rem 2rem;
   background-color: #9333ea;
@@ -747,7 +924,9 @@ ul {
   height: 90vh;
   overflow-y: scroll;
   -ms-overflow-style: none;
+  /* for IE and Edge */
   scrollbar-width: none;
+  /* for Firefox */
 }
 
 .close-button {
@@ -755,7 +934,7 @@ ul {
   top: 0px;
   right: 15px;
   color: #6b7280;
-  font-size: 1.5rem;
+  font-size: 30px;
   font-weight: 700;
   transition: all 0.2s ease;
   transform: rotate(0deg);
@@ -781,11 +960,14 @@ ul {
   }
 }
 
+/*for modal popup*/
 .container {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  /* Reduced gap */
   max-width: 100%;
+
 }
 
 .card-wrapper {
@@ -797,12 +979,14 @@ ul {
 
 .frame-card {
   width: 33%;
+  /* Smaller card size */
   max-width: 300px;
   flex-grow: 1;
 }
 
 .frame-card .card-image {
   width: 100%;
+  /* Smaller image size */
   height: 100%;
   object-fit: cover;
   border-bottom: none;
@@ -814,6 +998,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  /* Reduced gap */
   flex-grow: 2;
 }
 
@@ -822,9 +1007,12 @@ ul {
   align-items: center;
   width: 100%;
   height: 200px;
+  /* Smaller card height */
   overflow-y: scroll;
   -ms-overflow-style: none;
+  /* for IE and Edge */
   scrollbar-width: none;
+  /* for Firefox */
 }
 
 .card-image {
@@ -836,6 +1024,7 @@ ul {
 
 .hull-card .card-image {
   width: 100%;
+  /* Smaller image size */
   height: 100%;
   object-fit: cover;
   border-bottom: none;
@@ -844,8 +1033,10 @@ ul {
 
 .card-content {
   padding: 10px;
+  /* Smaller padding */
   display: flex;
   flex-direction: column;
+
 }
 
 .hull-card .card-content {
@@ -861,6 +1052,7 @@ ul {
 .card-title {
   text-align: center;
   font-size: 1.2em;
+  /* Smaller font size */
   font-weight: bold;
   margin: 0 0 5px 0;
 }
@@ -868,6 +1060,7 @@ ul {
 .card-subtitle {
   text-align: center;
   font-size: 0.8em;
+  /* Smaller font size */
   margin: 0 0 10px 0;
   color: #b0b0b0;
 }
@@ -891,6 +1084,7 @@ ul {
   color: #9c9c9c;
 }
 
+/* Updated styles for the hull card details grid */
 .hull-details-grid {
   display: grid;
   grid-template-columns: max-content;
@@ -917,6 +1111,7 @@ ul {
   margin: 1px;
 }
 
+/* New styles for the stat bar cells */
 .stat-bar-cells {
   display: flex;
   gap: 2px;
@@ -928,7 +1123,9 @@ ul {
 
 .stat-cell {
   width: 12px;
+  /* Smaller cells */
   height: 12px;
+  /* Smaller cells */
   background-color: #3b3b4f;
   border-radius: 2px;
   margin: 1px !important;
@@ -950,55 +1147,4 @@ ul {
   margin: 0;
   padding: 0;
   border: none;
-}
-
-/*
- * -----------------------------------------------------------------------------------------------------------------------------------------
- * Media Queries for larger screens (e.g., Tablets and Desktops)
- * These styles override the mobile-first styles to optimize for more screen real estate
- * -----------------------------------------------------------------------------------------------------------------------------------------
- */
-@media (min-width: 640px) {
-
-  .choice,
-  .choice-frame-upgrade,
-  .choice-rigs,
-  .gun,
-  .ship,
-  .choice-sponsor,
-  .choice-frame,
-  .pseudoChoice,
-  .choice .ship {
-    flex-basis: 80% !important;
-    width: 100% !important;
-    /* Three items per row on tablets */
-  }
-
-  img,
-  div {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .point-bar {
-    max-width: 640px;
-    gap: 50px;
-  }
-
-  .affinity-group {
-    flex-direction: row;
-    /* Go back to horizontal layout on larger screens */
-  }
-
-  .affinity-group-image {
-    width: 160px;
-  }
-
-  .modal-popup {
-    padding: 20px;
-  }
-
-  .hull-card {
-    height: 150px;
-  }
 }
