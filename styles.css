@@ -291,8 +291,8 @@ h3 {
 }
 
 img {
-  height: 22.22rem;
-  max-width: 16.67rem;
+  height: 400px;
+  max-width: 300px;
 }
 
 body {
@@ -958,7 +958,7 @@ ul {
  * These styles override the mobile-first styles to optimize for more screen real estate
  * -----------------------------------------------------------------------------------------------------------------------------------------
  */
-@media (max-width: 640px) {
+@media (min-width: 640px) {
 
   .choice,
   .choice-frame-upgrade,
