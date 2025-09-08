@@ -1,5 +1,5 @@
 export { skills, titles, startPos, addTitlesToSection, sponsorMap };
-import { formatterIntl } from "/Script/manaData.js";
+import { formatterIntl } from "stardustCYOA/Script/manaData.js";
 
 const skills = [
   // Skills from "Page 1 Stardust word.docx"
