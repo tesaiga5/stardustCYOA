@@ -1,348 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+  #indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: transparent;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 50px;
+    line-height: 25px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #d5c999;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #fff000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Starship Data Cards</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #2c2c3e;
-      color: #dcdcdc;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 20px;
+  #indicator:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 104%;
+    height: 104%;
+    border: 3px solid transparent;
+    border-top: 3px solid #d5c999;
+    border-right: 3px solid #d5c999;
+    border-radius: 50%;
+    animation: animateC 2s linear infinite;
+  }
+
+  @keyframes animateC {
+    0% {
+      transform: rotate(0deg);
     }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 20px;
-      max-width: 1200px;
-      width: 100%;
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      transform: rotate(45deg);
     }
 
-    .card-wrapper {
-      background-color: #3b3b4f;
-      border: 2px solid #5a5a6b;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
+    100% {
+      transform: rotate(405deg);
     }
+  }
+</style>
 
-    .frame-card {
-      width: 300px;
-      min-width: 280px;
-      flex-grow: 1;
-    }
-
-    .hull-card-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      flex-grow: 2;
-    }
-
-    .hull-card {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 180px;
-    }
-
-    .card-image {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-bottom: 2px solid #5a5a6b;
-    }
-
-    .hull-card .card-image {
-      width: 180px;
-      height: 100%;
-      object-fit: cover;
-      border-bottom: none;
-      border-right: 2px solid #5a5a6b;
-    }
-
-    .card-content {
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hull-card .card-content {
-      padding: 15px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: row;
-    }
-
-    .card-title {
-      text-align: center;
-      font-size: 1.5em;
-      font-weight: bold;
-      margin: 0 0 5px 0;
-    }
-
-    .card-subtitle {
-      text-align: center;
-      font-size: 0.9em;
-      margin: 0 0 15px 0;
-      color: #b0b0b0;
-    }
-
-    .divider {
-      height: 2px;
-      background-color: #5a5a6b;
-      width: 80%;
-      margin: 0 auto 15px auto;
-    }
-
-    .details-grid {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 8px 15px;
-      font-size: 0.9em;
-    }
-
-    .details-grid b {
-      font-weight: normal;
-      color: #9c9c9c;
-    }
-
-    /* Updated styles for the hull card details grid */
-    .hull-details-grid {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 8px 15px;
-      font-size: 0.9em;
-      flex-grow: 1;
-      /* Allow the grid to take up available space */
-    }
-
-    .hull-details-grid b {
-      font-weight: normal;
-      color: #9c9c9c;
-    }
-
-    .hull-card .card-content {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-    }
-
-    .stat-bar-container {
-      display: flex;
-      align-items: center;
-    }
-
-    /* New styles for the stat bar cells */
-    .stat-bar-cells {
-      display: flex;
-      gap: 2px;
-      background-color: #5a5a6b;
-      border-radius: 5px;
-      padding: 2px;
-    }
-
-    .stat-cell {
-      width: 10px;
-      height: 10px;
-      background-color: #3b3b4f;
-      border-radius: 2px;
-    }
-
-    .stat-cell.filled {
-      background-color: #6a6afe;
-    }
-
-    .description {
-      font-size: 0.9em;
-      line-height: 1.4;
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 2px solid #5a5a6b;
-    }
-
-    .hull-card .description {
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="container">
-    <div id="frameCard" class="card-wrapper frame-card"></div>
-    <div id="hullCardList" class="hull-card-list"></div>
-  </div>
-
+<div id="indicator">
   <script>
-    const data = {
-      frame: {
-        name: "Ley'ra Laur",
-        cost: "3m",
-        specialty: "Point position",
-        equipmentLevel: 9,
-        skillLevel: 8,
-        alignment: "Luos Syndicate",
-        description: "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy."
-      },
-      hulls: [
-        {
-          name: "ID-9F",
-          manufacturer: "Hammerhead Ind.",
-          type: "carrier",
-          cost: "78,000,000",
-          navigation: 2,
-          hullArmor: 20,
-          shieldStrength: 8,
-          length: "1.6km",
-          maxCrew: 2800,
-          extraRooms: 18,
-          energyUse: 5
-        },
-        {
-          name: "Vanguard",
-          manufacturer: "AstroCorp",
-          type: "battleship",
-          cost: "125,000,000",
-          navigation: 5,
-          hullArmor: 35,
-          shieldStrength: 15,
-          length: "2.1km",
-          maxCrew: 4500,
-          extraRooms: 25,
-          energyUse: 8
-        },
-        {
-          name: "Stinger-7",
-          manufacturer: "Galactic Fleetworks",
-          type: "frigate",
-          cost: "15,000,000",
-          navigation: 8,
-          hullArmor: 10,
-          shieldStrength: 4,
-          length: "0.8km",
-          maxCrew: 500,
-          extraRooms: 5,
-          energyUse: 3
-        },
-        {
-          name: "Mantis",
-          manufacturer: "Zenith Aerospace",
-          type: "scout",
-          cost: "5,000,000",
-          navigation: 12,
-          hullArmor: 5,
-          shieldStrength: 2,
-          length: "0.3km",
-          maxCrew: 150,
-          extraRooms: 2,
-          energyUse: 1
-        },
-        {
-          name: "Odyssey",
-          manufacturer: "Orion Dynamics",
-          type: "cruiser",
-          cost: "55,000,000",
-          navigation: 4,
-          hullArmor: 25,
-          shieldStrength: 10,
-          length: "1.2km",
-          maxCrew: 1500,
-          extraRooms: 12,
-          energyUse: 6
+    {
+      let _XHR = XMLHttpRequest; XMLHttpRequest = class XHR extends _XHR {
+        constructor() {
+          super();
+          this.addEventListener('progress', e => { app.style.display = "none", indicator.innerHTML = " Loading " + (!e.total ? `${(100 * e.loaded / 43225498).toFixed(1)}%` : `${(100 * e.loaded / e.total).toFixed(1)}%`) });
+          this.addEventListener('loadend', () => { indicator.innerHTML = " Loading 100.0%", setTimeout(() => { indicator.remove(), app.style.display = "block" }, 100) });
         }
-      ]
-    };
-
-    // Helper function to generate the stat bar cells
-    function generateStatBar(level) {
-      let html = '<div class="stat-bar-cells">';
-      for (let i = 0; i < 10; i++) {
-        const isFilled = i < level; //ternary operator, if i < level isFilled is true, else false
-        html += `<div class="stat-cell${isFilled ? ' filled' : ''}"></div>`;
       }
-      html += '</div>';
-      return html;
     }
-
-    function createCard(type, data) {
-      let imageSrc = '';
-      if (type === 'frame') {
-        imageSrc = 'https://placehold.co/600x800/2c2c3e/dcdcdc?text=Frame+Pic';
-      } else {
-        imageSrc = 'https://placehold.co/800x600/2c2c3e/dcdcdc?text=Hull+Pic';
-      }
-
-      const card = document.createElement('div');
-      card.className = `card-wrapper ${type}-card`;
-
-      let html = '';
-
-      if (type === 'frame') {
-        html = `
-                <img src="${imageSrc}" alt="${data.name}" class="card-image">
-                <div class="card-content">
-                    <h2 class="card-title">${data.name}</h2>
-                    <p class="card-subtitle">Cost: ${data.cost}</p>
-                    <div class="divider"></div>
-                    <div class="details-grid">
-                        <b>Specialty:</b><span>${data.specialty}</span>
-                        <b>Equipment:</b><div class="stat-bar-container">${generateStatBar(data.equipmentLevel)}</div>
-                        <b>Skill Level:</b><div class="stat-bar-container">${generateStatBar(data.skillLevel)}</div>
-                        <b>Alignment:</b><span>${data.alignment}</span>
-                    </div>
-                    <div class="description">${data.description}</div>
-                </div>
-            `;
-      } else {
-        html = `
-                <img src="${imageSrc}" alt="${data.name}" class="card-image">
-                <div class="card-content">
-                    <div class="hull-details-grid">
-                        <b>Name:</b><span>${data.name}</span>
-                        <b>Manufacturer:</b><span>${data.manufacturer}</span>
-                        <b>Type:</b><span>${data.type}</span>
-                        <b>Cost:</b><span>${data.cost}</span>
-                        <b>Navigation:</b><span>${data.navigation}</span>
-                        <b>Hull Armor:</b><span>${data.hullArmor}</span>
-                        <b>Shield Strength:</b><span>${data.shieldStrength}</span>
-                        <b>Length:</b><span>${data.length}</span>
-                        <b>Max Crew:</b><span>${data.maxCrew}</span>
-                        <b>Extra Rooms:</b><span>${data.extraRooms}</span>
-                        <b>Energy Use:</b><span>${data.energyUse}</span>
-                    </div>
-                </div>
-            `;
-      }
-
-      card.innerHTML = html;
-      return card;
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const frameCardContainer = document.getElementById('frameCard');
-      frameCardContainer.appendChild(createCard('frame', data.frame));
-
-      const hullCardList = document.getElementById('hullCardList');
-      data.hulls.forEach(hull => {
-        hullCardList.appendChild(createCard('hull', hull));
-      });
-    });
   </script>
-
-</body>
-
-</html>
+</div>
