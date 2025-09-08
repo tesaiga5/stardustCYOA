@@ -122,7 +122,7 @@ const crew = [
       "Susie flew with a powerful gang in the Red Daggers. She's as sharp as she looks, and has partaken in very risky heists.",
     specialty: "Pilot",
     equipment: 6,
-    image: "Images/Crew/popularity_choi-29.webp",
+    image: "Images/Crew/popularity_choi-29-artstation.webp",
   },
   {
     title: "Tyler Vaughn",
@@ -144,7 +144,7 @@ const crew = [
       "He might never take off his mask, but he really is a friendly guy, despite all of his experience flying with mercs. Never take him to a kebab parlour.",
     specialty: "Pilot",
     equipment: 8,
-    image: "Images/Crew/johnson-ting-fighterpilot9.webp",
+    image: "Images/Crew/johnson-ting-fighterpilot9-artstation.webp",
   },
   {
     title: "Milka Star",
@@ -177,7 +177,7 @@ const crew = [
       "A former drill sergeant from the Blackhawk Elite, Mokhov turned to piloting to search for vengeance. Vengeance for what, he'll only tell thos trusts.",
     specialty: "Pilot",
     equipment: 8,
-    image: "Images/Crew/aleksandar-mihajlovic-final.webp",
+    image: "Images/Crew/aleksandar-mihajlovic-final-artstation.webp",
   },
   {
     title: "E.R.I.",
@@ -232,7 +232,7 @@ const crew = [
       "Conrad is a man who can stay to his duty and really commit to it. As a loyal Blackhawk pilot, he's flown for several days at a time without rest.",
     specialty: "Pilot",
     equipment: null,
-    image: "Images/Crew/nikolay-demencevich-swame-studio-camera-new-02.webp",
+    image: "Images/Crew/nikolay-demencevich-swame-studio-camera-new-02-artstation.webp",
   },
   {
     title: "Mikayla Suzuki",
@@ -443,7 +443,7 @@ const crew = [
       "Equip a geek with some of the Federation's best gadgets, and you get Mireille. She seems to have a device for almost any situation.",
     specialty: "Gadgeteer",
     equipment: 8,
-    image: "Images/Crew/jin-kwang-park-4-1-low.webp",
+    image: "Images/Crew/4-1-low-jin-kwang-park-artstation.webp",
   },
   {
     title: "Miguel Foster",
@@ -540,7 +540,7 @@ const crew = [
       "Young, in medical textbooks, quick, efficient, a little awkward.",
     specialty: "Medic",
     equipment: null,
-    image: "Images/Crew/max-frorer-dhaliafinal.webp",
+    image: "Images/Crew/max-frorer-dhaliafinal-artstation.webp",
   },
   // --- Ship gunners ---
   {
@@ -769,7 +769,7 @@ const crew = [
       "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy.",
     specialty: "Point Position",
     equipment: 6,
-    image: "Images/Crew/lou-ll-asuka-079-2.webp",
+    image: "Images/Crew/lou-ll-asuka-079-2-artstation.webp",
   },
   {
     title: 'Dani "Cuts" Laine',
@@ -846,7 +846,7 @@ const crew = [
       "Rooks is a skilled Gazer operator, but can be found hanging around Dustkeepers often. His comrades learned to ignore his disappearances.",
     specialty: "Guerilla Warfare",
     equipment: 5,
-    image: "Images/Crew/johnson-ting-destiny-publishing-warlock.webp",
+    image: "Images/Crew/johnson-ting-destiny-publishing-warlock-artstation.webp",
   },
   {
     title: "Livia Amaruq",
@@ -900,7 +900,7 @@ const crew = [
       "It takes discipline, patience and cunning to be a professional assassin, and Arabelle has all of them. She's exceptionally good at hiding out of sight.",
     specialty: "Sniping",
     equipment: 9,
-    image: "Images/Crew/jinyi-zhu-ruler-adjust2.webp",
+    image: "Images/Crew/ruler-adjust2-jinyi-zhu-artstation.webp",
   },
   {
     title: "Marcelo Lee",
@@ -911,7 +911,7 @@ const crew = [
       "Talons up for hire are very rare, and Marcelo is one of the few. He is equipped with lots of nifty gadgets, and has experience in running solo missions.",
     specialty: "Guerilla Warfare",
     equipment: 7,
-    image: "Images/Crew/johnson-ting-destiny-publishing-voidarmor-hunter.webp",
+    image: "Images/Crew/johnson-ting-destiny-publishing-voidarmor-hunter-artstation.webp",
   },
   {
     title: "Lt. Jenny Larue",
@@ -1047,7 +1047,7 @@ const crew = [
   },
   {
     title: "Connell Xuan",
-    image: "Images/Crew/jinyi-zhu-9-22.webp",
+    image: "Images/Crew/9-22-jinyi-zhu-artstation.webp",
     cost: 6000000,
     specialty: "Front-line Assault",
     equipment: 8,
@@ -1069,7 +1069,7 @@ const crew = [
   },
   {
     title: "Ley'ra Laur",
-    image: "Images/Crew/park-jin-kwang-3-5.webp",
+    image: "Images/Crew/park-jin-kwang-3-5-artstation.webp",
     cost: 3000000,
     specialty: "Point Position",
     equipment: 9,
@@ -1080,7 +1080,7 @@ const crew = [
   },
   {
     title: "Lex StPierre",
-    image: "Images/Crew/park-jin-kwang-6 (1).webp",
+    image: "Images/Crew/park-jin-kwang-6 (1)-artstation.webp",
     cost: 7000000,
     specialty: "Sentry?",
     equipment: 9,
@@ -1109,7 +1109,7 @@ const crew = [
       "A notorious assassin who's very deadly behind a rifle. His unique hardware was built by himself; It's often said that he's \"one with his armour.\"",
     specialty: "Sniping (Assassin)",
     equipment: null,
-    image: "Images/Crew/valentine-sorokin-em-rifle-14-1.webp",
+    image: "Images/Crew/em-rifle-14-1-valentine-sorokin-artstation.webp",
   },
   {
     title: "Locust",
@@ -1120,7 +1120,7 @@ const crew = [
       "\"Rider of Famine.\" Locust can 'melt' armies with his eye. The highly classified Apocalypse program produced four of the greatest soldiers in the galaxy.",
     specialty: "Hand-to-hand (Fists)",
     equipment: 10,
-    image: "Images/Crew/matthew-hjellen-lowpoly-torso-color-turn-01.webp",
+    image: "Images/Crew/matthew-hjellen-lowpoly-torso-color-turn-01-artstation.webp",
   },
   {
     title: "Plague",
@@ -1132,7 +1132,7 @@ const crew = [
     specialty: "Front-line assault (Brute Force)",
     equipment: 10,
     image:
-      "Images/Crew/l-j-koh-mortarion-commission-final-for-portfolios (1).webp",
+      "Images/Crew/mortarion-commission-l-j-koh-artstation.webp",
   },
   {
     title: "Archangel",
@@ -1143,7 +1143,7 @@ const crew = [
       '"Rider of War." Archangel wields a one-of-a-kind, hand-held nuclear Saber, capable of leveling city blocks. She is still loyal to the Federation.',
     specialty: "Mass Destruction",
     equipment: 10,
-    image: "Images/Crew/l-j-koh-sanguinius-new.webp",
+    image: "Images/Crew/sanguinius-new-l-j-koh-artstation.webp",
   },
   {
     title: "Styx",
@@ -1158,7 +1158,7 @@ const crew = [
   },
   {
     title: "Begger",
-    image: "Images/Crew/l-j-koh-angron-throne-1-edited-2022.webp",
+    image: "Images/Crew/angron-throne-1-edited-2022-l-j-koh-artstation.webp",
     cost: 20000000,
     specialty: "Heavy weapons",
     equipment: 10,
@@ -1254,7 +1254,7 @@ const crew = [
     description:
       "Your crew found her in your lab after leaving a port once, caffeine packets everywhere while she was feverishly working on a thesis. She sleeps in the lab.",
     specialty: "Scientist",
-    equipment: null,
+    equipment: 1,
     image: "Images/Crew/agnes-kadokura(sushiu max)-gelbooru.webp",
   },
   {
@@ -1265,8 +1265,8 @@ const crew = [
     description:
       "Curt believes that you should never abandon your own body. He's a specialist in human biology, and is very tall at the result of his biological research.",
     specialty: "Human Biology",
-    equipment: null,
-    image: "Images/Crew/ben-erdt-ally-all.webp",
+    equipment: 3,
+    image: "Images/Crew/ben-erdt-ally-all-artstation.webp",
   },
   {
     title: "Emily Park",
@@ -1276,7 +1276,7 @@ const crew = [
     description:
       "Morally opposed to combat-purpose vessels, Dr. Newton is an expert at xenobiology and terraforming. She's a bit eccentric, though.",
     specialty: "Xenobiology, Terraforming",
-    equipment: null,
+    equipment: 3,
     image: "Images/Crew/reijlita4-civitai.webp",
   },
   {
@@ -1288,7 +1288,7 @@ const crew = [
       "Incredibly intelligent, but with a very short attention span. Her frequent experiments with mana energy has earned her unnerving red eyes.",
     specialty: "Mana Energy Experiments",
     equipment: null,
-    image: "Images/Crew/goth nun by tentacles-riders.webp",
+    image: "Images/Crew/goth nun by tentacles-riders - civitai.webp",
   },
   {
     title: "Shinichi Yagazen",
@@ -1310,7 +1310,7 @@ const crew = [
       "Expert in biology, bioengineering, chemistry and biological warfare. Wanted for morally ambiguous experiments and creation of biological weapons.",
     specialty: "Biology, Bioengineering, Chemistry, Biological Warfare",
     equipment: 7,
-    image: "Images/Crew/jakub-bazyluk-crafter-action-jb.webp",
+    image: "Images/Crew/crafter-action-jakub-bazyluk-jb-artstation.webp",
   },
   {
     title: "Wilhelm von Welch",
@@ -1320,8 +1320,8 @@ const crew = [
     description:
       "Both brilliant and a mad man at the same time, Wilhelm is a strict scientist who has an obsession with the pursuit of knowledge about the Heralds.",
     specialty: "Heralds Research",
-    equipment: null,
-    image: "Images/Crew/javier-charro-murray-30-solo.webp",
+    equipment: 4,
+    image: "Images/Crew/javier-charro-murray-30-solo-artstation.webp",
   },
   // --- production MANAGERS ---
   {
@@ -1356,7 +1356,7 @@ const crew = [
     specialty: "Production Management",
     equipment: null,
     image:
-      "Images/Crew/thomas-du-crest-theadministrator-frame12-thomasducrest.webp",
+      "Images/Crew/theadministrator-thomas-du-crest-artstation.webp",
   },
   {
     title: "Corrine Peyton",
@@ -1378,7 +1378,7 @@ const crew = [
       "Great production manager, excellent track record from Fed industrial systems, promotes efficiency and work ethics.",
     specialty: "Production Management",
     equipment: null,
-    image: "Images/Crew/thomas-du-crest-leader-horatio.webp",
+    image: "Images/Crew/leader-horatio-thomas-du-crest-artstation.webp",
   },
   {
     title: "May Padilla",
@@ -1400,7 +1400,7 @@ const crew = [
       "An extremely successful industrialist, Danagger's company provided fuel for the shipping businesses over a dozen systems.",
     specialty: "Industrialist",
     equipment: 1,
-    image: "Images/Crew/dmitry-vishnevsky-44-4-23.webp",
+    image: "Images/Crew/dmitry-vishnevsky-44-4-23-artstation.webp",
   },
   // --- CHEFS & BARTENDERS ---
   {
@@ -1478,7 +1478,7 @@ const crew = [
       "Repentant bio-terrorist, has many stories, might have 'special' mixes that need a lab.",
     specialty: "Bartender",
     equipment: 7,
-    image: "Images/Crew/jaime-martinez-fabius-bile-02.webp",
+    image: "Images/Crew/fabius-bile-jaime-martinez-02-artstation.webp",
   },
   {
     title: "Yoav Hoze",
@@ -1489,7 +1489,7 @@ const crew = [
       "Yoav believes that the Apoc are heralds of what's to come, just as the Heralds were. She can do telekinesis and 'miracles'. She believes that you are the strongest Apoc.",
     specialty: "Mage",
     equipment: 1,
-    image: "Images/Crew/yoav-hoze-pose2front.webp",
+    image: "Images/Crew/yoav-hoze-pose2front-artstation.webp",
   },
   {
     title: 'Valerius Thorne',
@@ -1649,7 +1649,7 @@ const archetype = [
   },
   {
     title: "Engineers",
-    image: 'Images/Crew/kan-liu-666k-engineerf.webp',
+    image: 'Images/Crew/kan-liu-666k-engineerf-artstation.webp',
     skillLevel: 6,
     alignment: "Neutral",
     cost: {
@@ -1665,7 +1665,7 @@ const archetype = [
   },
   {
     title: "Mercenaries",
-    image: 'Images/Crew/park-jin-kwang-2.webp',
+    image: 'Images/Crew/park-jin-kwang-2-artstation.webp',
     skillLevel: 7,
     alignment: "Neutral",
     cost: {
@@ -1681,7 +1681,7 @@ const archetype = [
   },
   {
     title: "Seraphs",
-    image: 'Images/Crew/johnson-ting-8.webp',
+    image: 'Images/Crew/johnson-ting-8-artstation.webp',
     skillLevel: 8,
     alignment: "Blackhawk Elite",
     cost: {
@@ -1729,7 +1729,7 @@ const archetype = [
   },
   {
     title: "Core Ring Mercs",
-    image: 'Images/Crew/johnson-ting-demo-1-copy.webp',
+    image: 'Images/Crew/demo-1-copy-johnson-ting-artstation.webp',
     skillLevel: 6,
     alignment: "Luos Syndicate",
     cost: {
@@ -1745,7 +1745,7 @@ const archetype = [
   },
   {
     title: "Dustkeepers",
-    image: 'Images/Crew/johnson-ting-buccaneers-wallpaper.webp',
+    image: 'Images/Crew/buccaneers-wallpaper-johnson-ting-artstation.webp',
     skillLevel: 7,
     alignment: "Neutral",
     cost: {
@@ -1806,7 +1806,7 @@ const archetype = [
   },
   {
     title: "Navy Operators",
-    image: 'Images/Crew/3dma-frogman-re-03.webp',
+    image: 'Images/Crew/3dma-frogman-re-03-artstation.webp',
     skillLevel: 8,
     alignment: "Federation",
     cost: {

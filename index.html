@@ -46,7 +46,7 @@
   <div>
     <span class="image-container">
       <image style="max-width: 1200px; border-radius: 12px; border: 3px solid rgb(177, 59, 255);"
-        src="https://i.imgur.com/YasCZ1V.jpeg">
+        src="https://i.imgur.com/YasCZ1V.jpeg" title="">
         <div style="border: 3px solid rgb(177, 59, 255); background-color: rgb(71, 19, 150, 0.4); border-radius: 15px;">
           <span style="margin-top:5px; margin-bottom:5px;">
             <p style="margin-left: 5px; margin-right: 5px; text-align: left; justify-content: center;">Well, you've
@@ -2513,6 +2513,14 @@
       appendParagraph, appendList1, createAffinityTable,
     } from '/stardustCYOA/Script/manaData.js';
 
+    function setImageTitle() {
+      const images1 = document.querySelectorAll('img');
+      images1.forEach((img, index) => {
+        // Get the source (src) URL of the current image.
+        img.title = getImgName(img.src);
+      });
+
+    }
 
 
     // Get references to the elements
@@ -3525,7 +3533,7 @@
       let selectElement2 = event.target.closest('div').querySelector('select');
       let numberSpan2 = event.target.closest('div').querySelector('.number-span');
       const archetypeChoice1 = archetype.find(archecrew => archecrew.title === event.target.closest('.archetype').id);
-      console.log(incrementButton2, decrementButton2, selectElement2, numberSpan2, archetypeChoice1);
+
       const currentActiveShip = player.currentActiveShip;
 
       let archetypeChoice2 = {
@@ -3789,6 +3797,10 @@
         modalOverlay.classList.remove('visible');
       }
     });
+
+    //image credits
+    setImageTitle();
+
 
 
 

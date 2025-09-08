@@ -598,7 +598,7 @@ const hulls = [
   },
   // Federation Navy
   {
-    image: "Images/Ships/muhamx-naafi-adriana-1.webp",
+    image: "Images/Ships/muhamx-naafi-adriana-1-artstation.webp",
     name: "Viper",
     manufacturer: "Federation Navy",
     type: "frigate", tier: 1,
@@ -827,7 +827,7 @@ const hulls = [
       "The PI Vk2 is often used as a shuttle for couriers or a luxury yacht for wealthy businessmen. Fast, spacious, and surprisingly comfortable, the Vk2 is an increasingly common sight.",
   },
   {
-    image: "Images/Ships/s-firat-demir-untitled-196.webp",
+    image: "Images/Ships/s-firat-demir-untitled-196-artstation.webp",
     name: "Morning Star",
     manufacturer: "Federation Navy",
     type: "corvette", tier: 1,
@@ -880,7 +880,7 @@ const hulls = [
   // Destroyers
 
   {
-    image: "Images/Ships/saiful-haque-crazyship-saifulhaque.webp",
+    image: "Images/Ships/crazyship-saifulhaque-artstation.webp",
     name: "Carapace",
     manufacturer: "Heralds",
     type: "destroyer", tier: 2,
@@ -930,7 +930,7 @@ const hulls = [
       "Despite its capability of excelling at almost any task, the Acheri is never alone. When the Talons want to win, they'll throw in more than one of these just to be sure.",
   },
   {
-    image: "Images/Ships/kevin-koesnodihardjo-artemis-painted-firing.webp",
+    image: "Images/Ships/kevin-koesnodihardjo-artemis-painted-firing-artstation.webp",
     name: "Viking",
     manufacturer: "Blackhawk Elite",
     type: "destroyer", tier: 2,
@@ -1005,7 +1005,7 @@ const hulls = [
       "This hull is one of the rare few that Pulsar created for the sole purpose of combat. In particular, they're made almost exclusively to escort deep-space exploration craft.",
   },
   {
-    image: "Images/Ships/markus-schuler-a1.webp",
+    image: "Images/Ships/markus-schuler-a1-artstation.webp",
     name: "Longbow",
     manufacturer: "Red Dagger Pirates",
     type: "destroyer", tier: 2,
@@ -1182,7 +1182,7 @@ const hulls = [
   },
   // Cruisers
   {
-    image: "Images/Ships/lino-thomas-xenon-mothership-01.webp",
+    image: "Images/Ships/xenon-mothership-01-lino-thomas-artstation.webp",
     name: "Waltz",
     manufacturer: "Heralds",
     type: "cruiser", tier: 3,
@@ -1507,7 +1507,7 @@ const hulls = [
       "Prospect hulls are seldom a common sight, but that's their purpose. These vessels tend to keep a low profile and are avid at avoiding unnecessary conflict.",
   },
   {
-    image: "Images/Ships/shahan-big-ship261a.webp",
+    image: "Images/Ships/shahan-big-ship261a-artstation.webp",
     name: "TCO-7B",
     manufacturer: "Hammerhead Ind.",
     type: "cruiser", tier: 3,
@@ -1532,7 +1532,7 @@ const hulls = [
       "This is the main support vessel for the venerable Security corporation, who dedicate themselves to guarding the assets of companies such as Beatrice or Pulsar.",
   },
   {
-    image: "Images/Ships/s-yu-s-yu-st-59battlecruiser-1.webp",
+    image: "Images/Ships/Images/Ships/s-yu-s-yu-st-59battlecruiser-1-artstation.webp",
     name: "S07-DD",
     manufacturer: "Hammerhead Ind.",
     type: "cruiser", tier: 3,
@@ -1633,7 +1633,7 @@ const hulls = [
       "Advanced Jump Drive allows the Monarch to travel freely between systems without jump gates. Kings of the Ghul tech family, two Monarch fast battleships were recently found. These ships feel alive, and maneuver with a grace unheard of in such a large vessel.",
   },
   {
-    image: "Images/Ships/victor-keyes-hatak008.webp",
+    image: "Images/Ships/victor-keyes-hatak008-artstation.webp",
     name: "Pyramid",
     manufacturer: "Heralds",
     type: "battleship", tier: 4,
@@ -1758,7 +1758,7 @@ const hulls = [
       "A favourite for the Syndicate's more elite Outer Ring corporations, like the militaristic Cerberus Legion. They symbolize the side of Luos that kept to its morals.",
   },
   {
-    image: "Images/Ships/kevin-koesnodihardjo-final-art-v2-small.webp",
+    image: "Images/Ships/final-art-v2-small-kevin-koesnodihardjo-artstation.webp",
     name: "X7 Phantom",
     manufacturer: "Triglav Innovations",
     type: "battleship", tier: 4,
@@ -1783,7 +1783,7 @@ const hulls = [
       "Almost as old as Triglav Itself, the X7 Phantom is a staple in the Federation Navy. These are usually piloted by the higher ranks, or used by spec ops.",
   },
   {
-    image: "Images/Ships/tauan-bellintani-render-final-png.webp",
+    image: "Images/Ships/tauan-bellintani-render-final-artstation.webp",
     name: "Troilus",
     manufacturer: "Luos Syndicate",
     type: "battleship", tier: 4,
@@ -1808,7 +1808,7 @@ const hulls = [
       "This was more of a trophy ship employed by Luos Core Ring corporations. While still a capable vessel, these painted the fearsome and oppressive picture of Luos.",
   },
   {
-    image: "Images/Ships/michael-daglas-icarus-1-beauty.webp",
+    image: "Images/Ships/icarus-1-beauty-michael-daglas-artstation.webp",
     name: "PI Vb4",
     manufacturer: "Pulsar Inc.",
     type: "battleship", tier: 4,
@@ -1958,7 +1958,7 @@ const hulls = [
       "When humanity began its efforts at colonizing other star systems, this was the ship of choice that was sent out into the void. Most were never heard from again.",
   },
   {
-    image: "Images/Ships/simon-fuchs-spearofadun-ingame-01.webp",
+    image: "Images/Ships/spearofadun-ingame-01-simon-fuchs-artstation.webp",
     name: "X45 Scythe",
     manufacturer: "Triglav Innovations",
     type: "battleship", tier: 4,
@@ -2334,7 +2334,7 @@ const hulls = [
       "Within the Odysseus, Triglav fused the titanic might of the dreadnought with the more versatile nature of the battleship, creating a new breed of super-capital ship.",
   },
   {
-    image: "Images/Ships/ramon-matas-1.webp",
+    image: "Images/Ships/ramon-matas-1-artstation.webp",
     name: "Charon",
     manufacturer: "Beatrice R&D",
     type: "dreadnought", tier: 6,
