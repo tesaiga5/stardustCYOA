@@ -2492,26 +2492,26 @@
     import {
       switchChoose, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew, getImgName,
       handleChoiceGun, updateSummary,
-    } from 'stardustCYOA/Script/switchChoose.js';
+    } from '/stardustCYOA/Script/switchChoose.js';
     //populate titles
-    import { titles, skills, addTitlesToSection, startPos } from 'stardustCYOA/Script/choiceData.js';
+    import { titles, skills, addTitlesToSection, startPos } from '/stardustCYOA/Script/choiceData.js';
 
-    import { crew, archetype, addCrewToSection } from 'stardustCYOA/Script/crewData.js'; // Import crew data
+    import { crew, archetype, addCrewToSection } from '/stardustCYOA/Script/crewData.js'; // Import crew data
     //populate hulls
     import {
       hulls, shipAI, energy, shield, mods, industrial, eWar, rooms, weapons, drones,
       populateHullToSection, updateWeaponSlot, hullDiscount, sponsorHullDiscount, weaponDiscount,
-    } from 'stardustCYOA/Script/shipData.js';
+    } from '/stardustCYOA/Script/shipData.js';
     //populate equipment
     import {
       equipment, vehicles, rigs, populateRigs, populateVehicles, handleFrame, createFrame,
       guns, addGunDataToSection,
-    } from 'stardustCYOA/Script/equipmentData.js';
+    } from '/stardustCYOA/Script/equipmentData.js';
     //populate spells and unified population function
     import {
       catalyst, affinity, spellBases, populateDataToSection, populateCatalystToSection, appendDropdown, formatterIntl,
       appendParagraph, appendList1, createAffinityTable,
-    } from 'stardustCYOA/Script/manaData.js';
+    } from '/stardustCYOA/Script/manaData.js';
 
 
 
@@ -3031,7 +3031,7 @@
       createShip, deleteShip, addHullToShip, addAI, addEnergyGen, addShield,
       addCommandMod, addHullMod, addToHangar, addShipEquipment, addRoom,
       resetShipConfigUI, renderShipConfigUI
-    } from 'stardustCYOA/Script/shipData.js'; // Import the createShip function from ship.js
+    } from '/stardustCYOA/Script/shipData.js'; // Import the createShip function from ship.js
 
     //create a function for each attribute because each attribute has different requirements
     const toggleAddShip1 = document.getElementById('choice-toggle-addShip'); // Get the button to add a ship

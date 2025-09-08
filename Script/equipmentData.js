@@ -1,5 +1,5 @@
-import { formatterIntl, appendList1 } from "stardustCYOA/Script/manaData.js";
-import { getImgName, updateSummary } from "stardustCYOA/Script/switchChoose.js";
+import { formatterIntl, appendList1 } from "/stardustCYOA/Script/manaData.js";
+import { getImgName, updateSummary } from "/stardustCYOA/Script/switchChoose.js";
 export {
   equipment,
   vehicles,
