@@ -969,19 +969,20 @@ ul {
   .choice-frame,
   .pseudoChoice,
   .choice .ship {
-    flex-basis: 50%;
-    width: 100%;
+    flex-basis: 80% !important;
+    width: 100% !important;
     /* Three items per row on tablets */
   }
 
   img,
   div {
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .point-bar {
     max-width: 640px;
+    gap: 50px;
   }
 
   .affinity-group {
