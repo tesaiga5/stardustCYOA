@@ -171,7 +171,7 @@ const skills = [
     ],
     consequences: [{ type: "job-slots", value: 3 }], // Can assume 3 jobs instead of 2
     playerUpdates: [{ attribute: "skills", action: "add", value: "mind-link" }],
-    imageSrc: "/Images/Skills/skills013.webp",
+    imageSrc: "Images/Skills/skills013.webp",
   },
   {
     id: "skill-mercantile",
@@ -245,7 +245,7 @@ const skills = [
     playerUpdates: [
       { attribute: "skills", action: "add", value: "advanced-firearms" },
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Other/Beatrice R&D.webp",
   },
   {
     id: "skill-field-medic",
@@ -451,7 +451,7 @@ const titles = [
     prerequisites: "none",
     consequences: [],
     credits: 130000000,
-    imageSrc: "/Images/Titles/title045.webp",
+    imageSrc: "Images/Titles/title045.webp",
     subDescription: "",
     description:
       "It takes awhile for you to catch on, but you find out that your ship Al has began to develop a more... emotional personality. How it happened, you're not sure, but it's become moody and will reject your orders if not treated well... some- thing Al shouldn't do. It's probably best you don't piss it off.",
@@ -465,7 +465,7 @@ const titles = [
       "Cannot take nuclear fusion, mana core, or anti-matter energy.",
       "Cannot take aegis or mana shields.",
     ],
-    imageSrc: "/Images/Titles/title049.webp",
+    imageSrc: "Images/Titles/title049.webp",
     subDescription:
       "Can't take nuclear fusion, mana core, or anti-matter energy. Can't take aegis or mana shields.",
     description:
@@ -480,7 +480,7 @@ const titles = [
     complications: [
       "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously.",
     ],
-    imageSrc: "/Images/Titles/title047.webp",
+    imageSrc: "Images/Titles/title047.webp",
     subDescription: "",
     description:
       "For some reason, you appear as dead to all databases across the civilized galaxy. And whenever someone updates you as not dead, it reverts back the next day. This causes a lot of problems when you try to trade with others, gain acess to certain areas, or try to get people to take you seriously.",
@@ -613,7 +613,7 @@ const titles = [
     complications: [
       "A group of mindless but well organized and well equipped rogue drones are always at your heels, determined to assimilate you, your crew, and your ships into its hoard. Why, you're not sure. You just know they're tough to deal with, as they have an almost endless arsenal of ships and weapons.",
     ],
-    imageSrc: "/Images/Other/Beatrice R&D.webp",
+    imageSrc: "Images/Other/Beatrice R&D.webp",
     subDescription: "",
     description:
       "A group of mindless but well organized and well equipped rogue drones are always at your heels, determined to assimilate you, your crew, and your ships into its hoard. Why, you're not sure. You just know they're tough to deal with, as they have an almost endless arsenal of ships and weapons. ",

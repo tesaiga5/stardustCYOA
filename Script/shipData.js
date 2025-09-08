@@ -2672,7 +2672,7 @@ const mods = [
     description:
       "Your ship turns the heads of the opposite sex by about an extra 0.4 radians per second.",
     type: "command", // Added type to differentiate
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
   {
 
@@ -2685,7 +2685,7 @@ const mods = [
     description:
       "Your ship gains a small boost to engine thrust, weapon damage and shield defence for 30 seconds.",
     type: "command",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
   {
 
@@ -2698,7 +2698,7 @@ const mods = [
     description:
       "Other weapons take almost twice as long to lock weapons onto your ship. Your FTL drives are also stronger, and can achieve warp-speed quicker than others.",
     type: "command",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
   {
 
@@ -2789,7 +2789,7 @@ const mods = [
     description:
       "All allied ships get a massive bonus to shield and hull armour defence for 3 minutes.",
     type: "command",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
   {
 
@@ -2825,7 +2825,7 @@ const mods = [
     pointDefenceMounts: 2, // Specific mount type
     description: "", // No general description provided, only stats
     type: "hull", // Added type to differentiate
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
   {
 
@@ -2835,7 +2835,7 @@ const mods = [
     broadsideTurretMounts: 2, // Specific mount type
     description: "*Can't be fit on carriers",
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
   {
 
@@ -2855,7 +2855,7 @@ const mods = [
     navigation: 1, // Specific stat
     description: "", // No general description provided, only stats
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
   {
 
@@ -2876,7 +2876,7 @@ const mods = [
     description:
       "+Cost does not scale with class *Spaces are only for vehicles *Can't be fit on fighters",
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
   {
 
@@ -2918,7 +2918,7 @@ const mods = [
     extraRooms: 0, // No specific extra rooms value provided
     description: "+Frigates gain 2 crew slots *Can't be fit on fighters",
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
   {
 
@@ -2929,7 +2929,7 @@ const mods = [
     description:
       "+Cost does not scale with class *Spaces are only for drones/ships *Can't be fit on fighters",
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
   {
 
@@ -2940,7 +2940,7 @@ const mods = [
     extraRooms: -2, // No specific extra rooms value provided
     description: "*Frigates lose 2 crew slots *Can't be fit on fighters",
     type: "hull",
-    image: "/Images/Other/Beatrice R&D.webp",
+    image: "Images/Other/Beatrice R&D.webp",
   },
 ];
 
