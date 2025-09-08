@@ -453,7 +453,7 @@ const crew = [
     description: "Studied under big titles, offers skills for a challenge.",
     specialty: "Engineer",
     equipment: 4,
-    image: "Images/Crew/sova-疾速 k-artstaion.webp",
+    image: "Images/Crew/sova-疾速 k-artstation.webp",
   },
   {
     title: "Reid Enos",
