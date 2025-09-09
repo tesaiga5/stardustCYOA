@@ -1532,7 +1532,7 @@ const hulls = [
       "This is the main support vessel for the venerable Security corporation, who dedicate themselves to guarding the assets of companies such as Beatrice or Pulsar.",
   },
   {
-    image: "Images/Ships/Images/Ships/s-yu-s-yu-st-59battlecruiser-1-artstation.webp",
+    image: "Images/Ships/s-yu-s-yu-st-59battlecruiser-1-artstation.webp",
     name: "S07-DD",
     manufacturer: "Hammerhead Ind.",
     type: "cruiser", tier: 3,

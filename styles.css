@@ -1177,7 +1177,7 @@ ul {
 
   .point-bar {
     max-width: 95%;
-    gap: 5rem;
+    gap: 3rem;
   }
 
   .affinity-group {
@@ -1216,6 +1216,8 @@ ul {
   .scroll-button {
     width: 3.33rem;
     height: 3.33rem;
+    bottom: 1.25rem !important;
+    right: 1.25rem !important;
   }
 
 }
