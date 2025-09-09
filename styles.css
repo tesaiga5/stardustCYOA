@@ -870,8 +870,8 @@ ul {
 }
 
 .scroll-button svg {
-  width: 28px;
-  height: 28px;
+  width: 1.56rem;
+  height: 1.56rem;
 }
 
 /* Modal and main content styling */
@@ -1212,5 +1212,10 @@ ul {
     max-width: 67%;
   }
 
+  .fixed-scroll-button,
+  .scroll-button {
+    width: 3.33rem;
+    height: 3.33rem;
+  }
 
 }
