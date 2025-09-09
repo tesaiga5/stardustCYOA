@@ -216,7 +216,7 @@ const crew = [
     title: "Hailey",
     skillLevel: 9,
     alignment: "Neutral",
-    cost: 0,
+    cost: 8000000,
     description:
       "While she's not very talkative, Hailey seems to have some sort of psi powers. She knows what you're gonna say efore you do.",
     specialty: "Pilot",
@@ -642,7 +642,7 @@ const crew = [
     title: "Comet",
     skillLevel: 9,
     alignment: "Neutral",
-    cost: "Special cost",
+    cost: 8000000,
     description:
       "Her body seems to mingle with energy sources whenever she's near them, almost as if it courses through her veins...",
     specialty: "Ship Gunner",
@@ -1887,12 +1887,8 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
   // Assuming the first item's title is representative for checking
   if (crewArray.length > 0) {
     // Sanitize the title for use as an ID
-    const checkDiv = document.getElementById(
-      `${choicePrefix}-${crewArray[0].title
-        .replace(/\s/g, "-")
-        .replace(/[^a-zA-Z0-9-]/g, "")}`
-    );
-    if (document.contains(checkDiv)) {
+    const checkDiv = document.getElementById(crewArray[0].title);
+    if (sectionCrew1.contains(checkDiv)) {
       return; // Section already populated, do nothing
     }
   }

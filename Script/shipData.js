@@ -2142,19 +2142,17 @@ const hulls = [
     spinalMount: 0,
     weaponList: [],
     broadsideMount: 48,
-
     pointDefenceMount: 24,
-
-    hangarSpace: 81,
+    hangarSpace: 84,
     hangar: [],
     navigation: 0,
     hullArmor: 36,
-    shieldStrength: "Energy Damping Field: 80% Damage",
-    length: "9km",
+    shieldStrength: 25,
+    length: "12km",
     maxCrew: 20000,
     extraRooms: 60,
     rooms: [],
-    energyUse: 9,
+    energyUse: 10,
     description:
       "Hades is a mobile space station the size of a small city, recovered from a decaying orbit around a black hole. Formerly a scientific research outpost, Hades possesses unique technologies that will have a strong impact on space travel once they are reverse engineered. Wormhole Generator creates a temporary gateway to any designated star system. Damping field negates 80% of damage received. Anti-matter cannon strike overloads damping field for five minutes, but Hades survives otherwise intact.",
   },
@@ -2167,9 +2165,7 @@ const hulls = [
     spinalMount: 8,
     weaponList: [],
     broadsideMount: 40,
-
     pointDefenceMount: 15,
-
     hangarSpace: 38,
     hangar: [],
     navigation: 0,
@@ -2195,7 +2191,7 @@ const hulls = [
 
     pointDefenceMount: 14,
 
-    hangarSpace: 38,
+    hangarSpace: 44,
     hangar: [],
     navigation: 0,
     hullArmor: 32,
@@ -2267,9 +2263,7 @@ const hulls = [
     spinalMount: 4,
     weaponList: [],
     broadsideMount: 32,
-
     pointDefenceMount: 16,
-
     hangarSpace: 28,
     hangar: [],
     navigation: 0,
@@ -2292,15 +2286,13 @@ const hulls = [
     spinalMount: 4,
     weaponList: [],
     broadsideMount: 32,
-
     pointDefenceMount: 20,
-
     hangarSpace: 50,
     hangar: [],
     navigation: 0,
     hullArmor: 30,
     shieldStrength: 10,
-    length: "10km",
+    length: "6km",
     maxCrew: 6000,
     extraRooms: 40,
     rooms: [],

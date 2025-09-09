@@ -791,10 +791,26 @@ function switchChoose(
       handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
       break;
     case "title-guardian":
+      //if player has chosen guardian, return Hailey's cost to its original, then deactivate guardian
+      let haileyCrew = crew.find(employee => employee.title === 'Hailey');
+      if (player.choices.includes(id)) {
+        haileyCrew.cost = 8000000;
+      } else {
+        haileyCrew.cost = 0;
+      }
       handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
+
       break;
     case "title-sorcerer":
+      //if player has chosen guardian, return Hailey's cost to its original, then deactivate guardian
+      let cometCrew = crew.find(employee => employee.title === 'Comet');
+      if (player.choices.includes(id)) {
+        cometCrew.cost = 8000000;
+      } else {
+        cometCrew.cost = 0;
+      }
       handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
+
       break;
     case "title-hellraiser":
       handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
@@ -803,9 +819,15 @@ function switchChoose(
       handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
       break;
     case "title-demigod":
-      handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
-      break;
-    case "title-demigod":
+      let haileyCrew1 = crew.find(employee => employee.title === 'Hailey');
+      let cometCrew1 = crew.find(employee => employee.title === 'Comet');
+      if (player.choices.includes(id)) {
+        cometCrew1.cost = 8000000;
+        haileyCrew1.cost = 8000000;
+      } else {
+        cometCrew1.cost = 0;
+        haileyCrew1.cost = 0;
+      }
       handleChoice(sectionToToggle, choiceElement, titleCredits, 2);
       break;
     case "skill-basic-piloting":
