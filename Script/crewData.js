@@ -1888,7 +1888,7 @@ function addCrewToSection(crewArray, choicePrefix, sectionID, dataType) {
   if (crewArray.length > 0) {
     // Sanitize the title for use as an ID
     const checkDiv = document.getElementById(crewArray[0].title);
-    if (sectionCrew1.contains(checkDiv)) {
+    if (choicePrefix.contains(checkDiv)) {
       return; // Section already populated, do nothing
     }
   }

@@ -2937,8 +2937,8 @@
     const sectionCrew1 = document.getElementById('section-crew');
     choiceCrew1.addEventListener('click', () => {
       sectionCrew1.classList.toggle('active');
-      addCrewToSection(crew, 'choice', 'endOfCrew', 'crew');
-      addCrewToSection(archetype, 'choice', 'endOfArchetype', 'archetype');
+      addCrewToSection(crew, sectionCrew1, 'endOfCrew', 'crew');
+      addCrewToSection(archetype, sectionCrew1, 'endOfArchetype', 'archetype');
     });
 
     choiceHull1.addEventListener('click', () => {
