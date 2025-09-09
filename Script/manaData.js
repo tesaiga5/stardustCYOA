@@ -679,9 +679,7 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
 
   // Check if the section already has population to prevent duplicate entries
   if (dataArray.length > 0) {
-    const checkDiv = document.getElementById(
-      `${choicePrefix}-${dataArray[0].name.replace(/\s/g, "-")}`
-    );
+    const checkDiv = document.getElementById(dataArray[0].name);
     if (document.contains(checkDiv)) {
       return;
     }
@@ -905,6 +903,12 @@ function populateDataToSection(dataArray, choicePrefix, sectionID, dataType) {
 }
 
 function populateCatalystToSection(choiceArray, choicePrefix, sectionID) {
+  if (choiceArray.length > 0) {
+    const checkDiv = document.getElementById(choiceArray[0].name);
+    if (document.contains(checkDiv)) {
+      return;
+    }
+  }
   //name, cost, description, image
   const targetSection = document.getElementById(sectionID);
   choiceArray.forEach((item) => {

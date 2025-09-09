@@ -2058,6 +2058,12 @@ function populateRigs(dataArray, choicePrefix, sectionID) {
 }
 
 function populateVehicles(dataArray, choicePrefix, sectionID) {
+  if (dataArray.length > 0) {
+    const checkDiv = document.getElementById(dataArray[0].id);
+    if (document.contains(checkDiv)) {
+      return;
+    }
+  }
   const targetSection = document.getElementById(sectionID);
 
   if (!targetSection) {
@@ -2118,6 +2124,13 @@ function populateVehicles(dataArray, choicePrefix, sectionID) {
 }
 function addGunDataToSection() {
   // If not populated, create new divs to populate choices
+  if (guns.length > 0) {
+    const checkDiv = document.getElementById(guns[0].name);
+    if (document.contains(checkDiv)) {
+      return;
+    }
+  }
+
   guns.forEach(gun => {
     let targetSection = document.getElementById('endOfEquipment');
     switch (gun.type2) {
