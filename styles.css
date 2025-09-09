@@ -1171,8 +1171,8 @@ ul {
 
   img,
   div {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
   }
 
   .point-bar {
@@ -1200,11 +1200,16 @@ ul {
   /*for chevrons*/
   .object-div,
   .object-div>div {
-    min-width: none;
+    min-width: none !important;
+    max-width: 50% !important;
   }
 
   .ship-actions {
-    width: 2.7rem;
+    width: 2.7rem !important;
+  }
+
+  .choice-frame-image {
+    max-width: 67%;
   }
 
 
