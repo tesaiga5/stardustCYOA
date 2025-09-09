@@ -16,7 +16,7 @@
 
 .section>div {
   padding: 10px;
-  font-size: 30px;
+  font-size: 1.67rem;
   text-align: center;
   color: #ffffff;
   /* White font for readability */
@@ -43,7 +43,7 @@
 
 .section>button {
   padding: 10px;
-  font-size: 30px;
+  font-size: 1.67rem;
   text-align: center;
   color: #ffffff;
   /* White font for readability */
@@ -185,7 +185,7 @@ p {
 
 .choice,
 .choice-frame-upgrade h3 {
-  font-size: 28px;
+  font-size: 1.67rem;
 }
 
 .choice p,
@@ -194,11 +194,11 @@ p {
 .choice-rigs div,
 .choice-frame-upgrade p,
 .choice-frame-upgrade div {
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .choice-cost {
-  font-size: 18px;
+  font-size: 1rem;
   color: rgb(255, 204, 0);
 }
 
@@ -253,7 +253,7 @@ h3 {
   background-color: #224466;
   /* Darker navy background */
   color: #ffffff;
-  font-size: 18px;
+  font-size: 1rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   /* Adjust min-width and height based on the new button size */
   min-width: 250px;
@@ -364,7 +364,7 @@ body {
   background-attachment: fixed;
   color: white;
   font-family: "Roboto";
-  font-size: 18px;
+  font-size: 1rem;
   padding-bottom: 70px;
   /* Add padding to the bottom to prevent content from being hidden behind the fixed point bar */
   scroll-behavior: smooth;
@@ -588,7 +588,7 @@ body b {
 }
 
 .p-frame {
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 ul {
@@ -934,7 +934,7 @@ ul {
   top: 0px;
   right: 15px;
   color: #6b7280;
-  font-size: 30px;
+  font-size: 1.67rem;
   font-weight: 700;
   transition: all 0.2s ease;
   transform: rotate(0deg);
@@ -1147,4 +1147,49 @@ ul {
   margin: 0;
   padding: 0;
   border: none;
+}
+
+@media (max-width: 500px) {
+
+  .choice,
+  .choice-frame-upgrade,
+  .choice-rigs,
+  .gun,
+  .ship,
+  .choice-sponsor,
+  .choice-frame,
+  .pseudoChoice,
+  .choice .ship {
+    flex-basis: 90% !important;
+    width: 100% !important;
+    /* Three items per row on tablets */
+  }
+
+  img,
+  div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .point-bar {
+    max-width: 95%;
+    gap: 5rem;
+  }
+
+  .affinity-group {
+    flex-direction: row;
+    /* Go back to horizontal layout on larger screens */
+  }
+
+  .affinity-group-image {
+    width: 160px;
+  }
+
+  .modal-popup {
+    padding: 20px;
+  }
+
+  .hull-card {
+    height: 150px;
+  }
 }
