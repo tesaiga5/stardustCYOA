@@ -151,6 +151,10 @@ p {
   border-radius: 15px;
 }
 
+.choice-frame-image {
+  max-width: 67%;
+}
+
 .gun {
   flex-basis: calc((100% / 4.5)) !important;
 }
@@ -1192,4 +1196,16 @@ ul {
   .hull-card {
     height: 150px;
   }
+
+  /*for chevrons*/
+  .object-div,
+  .object-div>div {
+    min-width: none;
+  }
+
+  .ship-actions {
+    width: 2.7rem;
+  }
+
+
 }
