@@ -2005,6 +2005,12 @@ function handleFrame(choiceFrame) {
 
 function populateRigs(dataArray, choicePrefix, sectionID) {
   const targetSection = document.getElementById(sectionID);
+  if (dataArray.length > 0) {
+    const checkDiv = document.getElementById(dataArray[0].id);
+    if (document.contains(checkDiv)) {
+      return;
+    }
+  }
 
   if (!targetSection) {
     console.error(`Target section with ID "${sectionID}" not found.`);
