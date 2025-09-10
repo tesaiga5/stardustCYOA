@@ -7,7 +7,7 @@
 23. Handlechoice mods!!
 24. Room Pictures
 25. Overhaul affinity, mana
-26. Change all pics to Artstation
+26. Fix: Description, thematic image, ship stats
+27. FUTURE UPDATE: CONTRACTS
 
-
-
+Ewar module not refunding

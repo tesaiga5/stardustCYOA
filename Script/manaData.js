@@ -11,8 +11,8 @@ export {
   createAffinityTable,
 };
 
-import { getImgName } from "/stardustCYOA/Script/switchChoose.js";
-import { weapons } from "/stardustCYOA/Script/shipData.js";
+import { getImgName } from "/Script/switchChoose.js";
+import { weapons } from "/Script/shipData.js";
 
 
 const catalyst = [

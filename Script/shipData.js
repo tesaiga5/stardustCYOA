@@ -36,9 +36,9 @@ import {
   formatterIntl,
   appendParagraph,
   appendList1,
-} from "/stardustCYOA/Script/manaData.js";
+} from "/Script/manaData.js";
 
-import { getImgName } from "/stardustCYOA/Script/switchChoose.js";
+import { getImgName } from "/Script/switchChoose.js";
 
 const hulls = [
   // Fighters

@@ -2,11 +2,11 @@ export {
   switchChoose, handleChoiceSkills, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew,
   handleChoiceGun, getImgName, updateSummary,
 };
-import { formatterIntl, catalyst, spellBases } from "/stardustCYOA/Script/manaData.js";
-import { titles, skills, } from "/stardustCYOA/Script/choiceData.js";
-import { crew } from "/stardustCYOA/Script/crewData.js";
-import { guns, generateStatBar } from "/stardustCYOA/Script/equipmentData.js";
-import { sponsorMap } from "/stardustCYOA/Script/choiceData.js";
+import { formatterIntl, catalyst, spellBases } from "/Script/manaData.js";
+import { titles, skills, } from "/Script/choiceData.js";
+import { crew } from "/Script/crewData.js";
+import { guns, generateStatBar } from "/Script/equipmentData.js";
+import { sponsorMap } from "/Script/choiceData.js";
 
 function getImgName(url) {
   // Use the URL object to correctly parse the pathname

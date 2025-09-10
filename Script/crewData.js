@@ -1,6 +1,6 @@
 export { crew, archetype, addCrewToSection };
-import { appendDropdown, formatterIntl } from "/stardustCYOA/Script/manaData.js";
-import { getImgName } from "/stardustCYOA/Script/switchChoose.js";
+import { appendDropdown, formatterIntl } from "/Script/manaData.js";
+import { getImgName } from "/Script/switchChoose.js";
 
 const crew = [
   {
