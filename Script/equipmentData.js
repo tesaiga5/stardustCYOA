@@ -16,6 +16,133 @@ export {
 // Blank attributes are set to '0'.
 // Costs are converted to numerical values (k = thousand, m = million).
 const equipment = [
+  {
+    name: "Fragmentation",
+    cost: 50000,
+    equipmentLevel: 1,
+    description: "Your standard free grenade. Explodes and sends deadly shrapnel in every direction.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Fragmentation"
+  },
+  {
+    name: "Hi-Ex",
+    cost: 100000,
+    equipmentLevel: 1,
+
+    description: "Damage is primarily from its explosiveness. Usually used for demolition purposes.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Hi-Ex"
+  },
+  {
+    name: "Incendiary",
+    cost: 200000,
+    equipmentLevel: 1,
+
+    description: "Explodes in a great ball of fire, meant to flush out tight spaces.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Incendiary"
+  },
+  {
+    name: "Breacher",
+    cost: 700000,
+    equipmentLevel: 2,
+
+    description: "An explosive that's specialized in punching holes in structures, particularly walls and ship hulls.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Breacher"
+  },
+  {
+    name: "Flashbang",
+    cost: 200000,
+    equipmentLevel: 1,
+
+    description: "Produces a loud and bright burst that can temporarily blind and deafen through light protection.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Flashbang"
+  },
+  {
+    name: "EMP",
+    cost: 300000,
+    equipmentLevel: 1,
+
+    description: "Sends out a controlled EMP, disrupting and disabling electrical systems.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=EMP"
+  },
+  {
+    name: "Stasis",
+    cost: 1000000,
+    equipmentLevel: 2,
+
+    description: "Slows down time to a near crawl in a room-wide area.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Stasis"
+  },
+  {
+    name: "Grapple Mod",
+    cost: 250000,
+    equipmentLevel: 1,
+
+    description: "A modification that can be added to any other grenade type. Counts as a grenade type to your max.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Grapple+Mod"
+  },
+  {
+    name: "Plasma Sticky",
+    cost: 600000,
+    equipmentLevel: 1,
+
+    description: "While not as explosive as a hi-ex, these grenades are light and can stick to almost any surface.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Plasma+Sticky"
+  },
+  {
+    name: "Explosive Charge",
+    cost: 800000,
+    equipmentLevel: 2,
+
+    description: "Explosive that can set off remotely, by proximity, time, or just to add more power to another explosion.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Explosive+Charge"
+  },
+  {
+    name: "Taser Baton",
+    cost: 50000,
+    equipmentLevel: 1,
+
+    description: "A non-lethal but painful stick that can stun most people if they don't pick up that can.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Taser+Baton"
+  },
+  {
+    name: "Combat Knife",
+    cost: 100000,
+    equipmentLevel: 1,
+
+    description: "It is said that the best knives in the galaxy were made by Reibar, a company in the Luos Outer Ring.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Combat+Knife"
+  },
+  {
+    name: "Medium Melee Weapon",
+    cost: 100000,
+    equipmentLevel: 1,
+
+    description: "Any melee weapon that's about the size of a machete or larger. A bit primitive for the times, though.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Medium+Melee+Weapon"
+  },
+  {
+    name: "Vibro-Blade",
+    cost: 400000,
+    equipmentLevel: 2,
+
+    description: "A special type of hyper-vibrated blades that use hypersonic vibrations to assist in cutting things.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Vibro-Blade"
+  },
+  {
+    name: "Energy Sword",
+    cost: 4000000,
+    equipmentLevel: 3,
+
+    description: "A searing-hot blade made of energy that can cut through almost any material with ease.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Energy+Sword"
+  },
+  {
+    name: "H \"Grasps\"",
+    cost: 900000,
+    equipmentLevel: 5,
+
+    description: "Allows you to conjure up mana blades and even shields. Becomes taxing on your stamina, however.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=H+%22Grasps%22"
+  }
 ];
 
 const guns = [
@@ -1277,6 +1404,24 @@ const vehicles = [
     image: "Images/Vehicles/icle015.webp",
     description:
       "Heavily armoured and perfectly capable of transporting troops and vehicles. +Comes with a free T1 weapon +Has 3 hangar space capacity",
+    shields: 0,
+    uptime: 0,
+    recharge: 0,
+    type: "regular",
+  },
+  {
+    id: "vehicle-courier",
+    name: "Courier",
+    cost: 5000000,
+    hangarSpaceUse: 2,
+    crew: 4,
+    T1WeaponSlots: 1,
+    T2WeaponSlots: 0,
+    armour: 4,
+    mobility: 9,
+    length: "12m",
+    description: "This vehicle is a small space to surface craft for transporting cargo, personnel, or yourself. It has a cargo bay to keep supplies, a small hangar, and a crew quarter that can be used for a variety of tasks. It is also highly effective in a team environment, and it can be used to transport its commander from one location to another.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Courier",
     shields: 0,
     uptime: 0,
     recharge: 0,

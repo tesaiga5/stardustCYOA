@@ -919,7 +919,7 @@ const crew = [
     alignment: "Federation",
     cost: 6000000,
     description:
-      'A top tier officer in the Federation SOF, Jen commands with a valiant heart, and is known for her "strict kindness." Often finds herself working under Tera.',
+      "Lieutenant Jenny Larue serves as a capable operative, representing Hope Incident Response Unit 4 of the Federation SOF. She's trained in many forms of combat and tactics and has proven herself as a strong leader. Unfortunately for her, she’s often stationed near Freeport station where peace is relatively abundant. While action here is scarce, she does get to participate in small campaigns to drive out local bandits. She serves under the influential Captain Tera en Chasteaux and often plays the role as her adviser. With the lack of things to do however, she tends to play the responsible friend to a drunken Tera who could get herself into misconduct, like heckling freelance couriers for more meat for the station.",
     specialty: "Point Position",
     equipment: 8,
     image: "Images/Crew/Maggs-civitai.webp",
@@ -1028,11 +1028,11 @@ const crew = [
     image: "Images/Crew/harley-indotort-midjourney.webp",
     cost: 3000000,
     specialty: "Demolition",
-    equipment: 6,
+    equipment: 9,
     skillLevel: 6,
     alignment: "Luos Syndicate",
     description:
-      "Called the Mad Roller friends, Sya'ra has a love for weapons. She'll follow you around if you show any interest in weaponry. Likes to wear roller blades.",
+      "A veteran Cerberus Legion officer, Sya'ra's early years were spent fighting and tinkering with weapons. Her favorite hobbies are riding skates, explosives, and teasing her childhood friend Lyre. Yes, that homemade rocket launcher is safe.",
   },
   {
     title: "Jerilyn Hyata",
@@ -1079,7 +1079,7 @@ const crew = [
       "A soldier from the Outer Ring. Ley'ra has nerves of steel, always taking point. She lost her high-tech Erinyes armour from the war. Out of work, she's... shy.",
   },
   {
-    title: "Lex StPierre",
+    title: "Lex St Pierre",
     image: "Images/Crew/park-jin-kwang-6 (1)-artstation.webp",
     cost: 7000000,
     specialty: "Sentry?",
@@ -1531,7 +1531,107 @@ const crew = [
     specialty: 'Mage',
     equipment: 10, // Randomized value
     image: "Images/Crew/icewizard-indotort-midjourney.webp"
-  }
+  },
+  {
+    title: "Dreamer",
+    cost: 16000000,
+    specialty: "Controller",
+    equipment: 10,
+    skillLevel: 10,
+    alignment: "Neutral",
+    description: "One of a few completely compatible with her cybernetic interface, Dreamer lives inside the machine, the ship an extension of herself. She is the quiet voice in the back of your mind whispering 'is there room in here for one more?'.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Dreamer"
+  },
+  {
+    title: "Wintermute",
+    cost: 16000000,
+    specialty: "Cyber security",
+    equipment: 8,
+    skillLevel: 10,
+    alignment: "Gazers",
+    description: "Wintermute describes herself as an information technology specialist. That the site is an enemy information and data organization is in a high-security server only justifies her high rate of pay.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Wintermute"
+  },
+  {
+    title: "Kraehe",
+    cost: 9000000,
+    specialty: "Mechanical Engineer",
+    equipment: 9,
+    skillLevel: 8,
+    alignment: "Dustkeepers",
+    description: "Krache is an explorer at heart. Always searching for the most unknown, eager to discover the next frontier. The multi-limbed combat exoskeleton she uses is of her own design.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Krache"
+  },
+  {
+    title: "Lorelei",
+    cost: 8000000,
+    specialty: "Pilot",
+    equipment: 7,
+    skillLevel: 8,
+    alignment: "Dustkeepers",
+    description: "Lorelei is a highly succesful pirate and con-artist. Successful enough to be targeted by a specOps elimination force. Unfortunately, she set up a scapegoat, emptied her accounts and forged a new identity. Now, theres no telling which fresh young pilot asking for help is luring good Samaritans to their deaths.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Krache"
+  },
+  {
+    title: "Atlas",
+    cost: 8000000,
+    specialty: "Doctor",
+    equipment: 7,
+    skillLevel: 6,
+    alignment: "Neutral",
+    description: "Be it astrophysics, nuclear physics, terraforming, or even genetics, Atlas is an android that has a fondness for goldfish. And smoking. No, the fish is not making faces at you.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Atlas"
+  },
+  {
+    title: "Cylene",
+    cost: 7000000,
+    specialty: "Infiltration",
+    equipment: 10,
+    skillLevel: 7,
+    alignment: "Luos Syndicate",
+    description: "Cylene is an executive assassination android with a full suite of optical camouflage. Including a visual cloaking and holographic mimicry. It prides itself on being neat, efficient, and causing minimal collateral damage... unless someone is really asking for it.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Cylene"
+  },
+  {
+    title: "Nettie",
+    cost: 1000000,
+    specialty: "Survival",
+    equipment: 10,
+    skillLevel: 3,
+    alignment: "Neutral",
+    description: "Nettie is a young arms dealer who has been trying to get off Faraday for years. The last ship captain who offered her help was looking for a monster infested labyrinth, so she's happy to go with you. She just needs you to help her with a few debts.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Nettie"
+  },
+  {
+    title: "K-10",
+    cost: 5000000,
+    specialty: "Special Luxury Nekenoid",
+    equipment: 10,
+    skillLevel: 8,
+    alignment: "Neutral",
+    description: "Despite having to reformat part of her memory, K-10 is a Nekenoid android who is looking for the chance to prove her worth to her new owner.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=K-10"
+  },
+  {
+    title: "Gideon Kirkegaard",
+    cost: 3000000,
+    specialty: "Seraph",
+    equipment: 10,
+    skillLevel: 4,
+    alignment: "Beatrice R&D",
+    description: "Researchers at Beatrice R&D come off to others as the bookworm type; brains with a strong penchant for scientific advancement. However, the company has its own sizeable fleet of space exploration vessels which turns out to be its largest department. Gideon’s life plan originally included joining the Federation Navy as a professional pilot, but when he realized that he was less likely to get shot at if he were in a neutral research vessel, he joined Beatrice R&D instead. At first he was out of place, being a bit on the meathead side. But getting to explore the unknown became a passion of his without even knowing it, and soon he earned the reputation of being one of the company’s most skilled pilots and leaders.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Gideon+Kirkegaard"
+  },
+  {
+    title: "Henrik Larun",
+    cost: 5000000,
+    specialty: "Hellion",
+    equipment: 10,
+    skillLevel: 4,
+    alignment: "Blackhawk Elite",
+    description: "The Blackhawk Elite is a massive conglomerate of mercenary groups that aims to bring order to the unlawful parts of the galaxy, especially to where the Federation can’t reach. The Cyclone Marauders are a mechanized PMC that embodies the very characterizion of the frontline of a Blackhawk assault, and Henrik is one of its oldest members. Among the ranks of the Marauders, no tank has earned more notches than the Dearly Beloved, which Henrik crews. It was this tank that first dropped from orbit onto the homeworld of the Luos Syndicate during the siege, and it was the Marauders that led the charge which ended the conflict decisevly.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Henrik+Larun"
+  },
 ];
 
 const archetype = [

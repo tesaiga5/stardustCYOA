@@ -2810,6 +2810,28 @@ const mods = [
     image: "Images/Ships/benjamin-perrot-variation3.webp",
   },
   {
+    name: "MI 550 'Oracle'",
+    manufacturer: "Talons",
+    cost: 3000000,
+    specialAbility: "Hydra",
+    cooldown: "Continuous",
+    range: "Moderate",
+    description: "The Oracles command module is capable of predicting enemy movements and combat behavior using a combination of Psychohistory, Total Recall, and Quantum Death simulations. Its only weakness is inability to anticipate attacks from 0.5LY away.",
+    type: "command",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=MI+550.30+Tacle"
+  },
+  {
+    name: "X68 'Eclipse'",
+    manufacturer: "Triglav Innovations",
+    cost: 4000000,
+    specialAbility: "Specter",
+    cooldown: "Continuous",
+    range: "Self",
+    description: "Cloak synergy: May travel at 75% speed while active. Your ship is specialized for stealth, reducing its signature and synergizing with active cloaking technologies. Cloak synergy: Detection reduced at 60% of normal range.",
+    type: "command",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=X68+Eclipse"
+  },
+  {
 
     name: "Point-Defence Upgrade",
     cost: 1000000,
@@ -3341,6 +3363,30 @@ const rooms = [
       "Defend your ship's vulnerable digital systems with top of the line encryption grids. +Can combine with a hypercomms room *Requires a cyber security officer",
     type: "security",
     image: "Images/Room/securityroom-marthe-jonkers-artstation.webp",
+  },
+  {
+    name: "Clone Vat Bay",
+    cost: 20000000,
+    type: "utility",
+    prerequisites: "A Doctor and a Scientist",
+    description: "+Officers lost in combat have their consciousness transferred to prepared clones. +advanced version allows creation and transfer to custom biological bodies.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Clone+Vat+Bay"
+  },
+  {
+    name: "Cybernetics Bay",
+    cost: 5000000,
+    type: "utility",
+    prerequisites: "A Doctor, Scientist, and Mechanical Engineer",
+    description: "+Allows you to enhance your crew members with cybernetics. You can also use the bay to repair and maintain your cybernetics. \nFlesh is weak. Embrace your transhumanity and transfer your consciousness into a custom built machine body. Handle hostile environments with ease and never fear sickness or aging again. But watch out for planned obscolences and call for tech support if your vision suddenly goes blue.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Cybernetics+Bay"
+  },
+  {
+    name: "Oculus",
+    cost: 10000000,
+    type: "utility",
+    prerequisites: "A Doctor and a Scientist, 'Beanstalk' Contract",
+    description: "+Can emulate any command module.Must complete the active module's cooldown period before reactivating. \n Oculus is the enigmatic AI found overseeing the derelict atmosphere harvesting towers orbiting an oxygen-rich gas giant. It agreed to travel with you to learn why the facility was abandoned. A highly efficient management module, Oculus can greatly enhance the systems of any ship it is installed in, provided you trust it to do so. It remains highly secretive about its own origins and purpose.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Oculus"
   },
   {
 
@@ -4027,6 +4073,67 @@ const drones = [
     description:
       "If you plan on engaging multiple enemy ships and you want to keep them all from escaping, loading up on lasso drones is a good idea. +Has a built-in warp jammer",
     image: "https://placehold.co/100x100/00ff00/ffffff?text=Drone",
+  },
+  {
+    name: "Wasp Drone",
+    cost: 1000000,
+    hangarSpaceUse: 0.5,
+    spinalWeaponMounts: 0,
+    broadsideTurretMounts: 2,
+    pointDefenseMounts: 1,
+    navigation: 25,
+    hullArmour: 1,
+    shieldDefence: 2,
+    length: "2m",
+    description: "+Comes with a free machine gun. Limited to T1 weapons. Agile and quick, scout drones are cheap, portable, and expendable. They're great for for basic recon, combat, or point defense.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Wasp+Drone"
+  },
+  {
+    name: "Foehammer MDS",
+    cost: 2000000,
+    hangarSpaceUse: 2,
+    pointDefenseMounts: 0,
+    broadsideTurretMounts: 0,
+    spinalWeaponMounts: 2,
+    shieldDefence: 5,
+    navigation: 20,
+    hullArmour: 4,
+    length: "14m",
+    description: "+Weapon size modifier: x2. Comes with free hull and missile kit.Munitions must be replenished at another ship after each volley. \nLong-range offense is what the Foehammer Missile Delivery System excels at. Carrying a payload of battleship grade missiles or torpedoes, it delivers a potent alpha strike against distant targets lurking behind planetary bodies.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Foehammer+MDS"
+  },
+  {
+    name: "Omni Drone",
+    cost: 4000000,
+    hangarSpaceUse: 1,
+    pointDefenseMounts: 2,
+    broadsideTurretMounts: 0,
+    spinalWeaponMounts: 0,
+    shieldDefence: 3,
+    navigation: 18,
+    hullArmour: 2,
+    length: "6m",
+    notes: [
+      "",
+      "Limited to T1 weapons",
+      ""
+    ],
+    description: "+May mount one hull module available. Can repair hull armor. Has built-in composition scanner and tractor beam. Limited to T1 weapons and industrial modules. Pre-requisite: 'Hide and Seek Tier 4'. \nDesigned as a space-saving multi-purpose drone, the Omni can perform the functions of several other drone types. ",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Omni+Drone"
+  },
+  {
+    name: "Harrower Drone",
+    cost: 6000000,
+    hangarSpaceUse: 2,
+    pointDefenseMounts: 2,
+    broadsideTurretMounts: 2,
+    spinalWeaponMounts: 2,
+    navigation: 22,
+    hullArmour: 5,
+    shieldDefence: 8,
+    length: "12m",
+    description: "May mount one command module, Comes with free T2 weapons, Limited to T1 and T2 weapons, T2 weapons restricted to spinal mounts, Prerequisite: 'the Harrowing Tier 3', \nTriglav's nextgen combat drone, the Harrower is programmed with an advanced AI that has a level of initiative atypical of machine intelligence. It has 'Tribe' module or BH Command VR module.",
+    image: "https://placehold.co/100x100/A020F0/FFFFFF?text=Harrower+Drone"
   },
 ];
 
