@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYOA Save/Load</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #2d004d;
+            color: #f0e0ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background-color: #3b0066;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #3b0066;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 500px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button {
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            color: #fff;
+        }
+
+        .button.open-btn {
+            background-color: #8c33ff;
+        }
+
+        .button.open-btn:hover {
+            background-color: #7314e3;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button.save-btn {
+            background-color: #a166ff;
+            border-radius: 0.75rem;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.75rem 1rem;
+            font-weight: 700;
+        }
+
+        .button.save-btn:hover {
+            background-color: #8c33ff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button.load-btn {
+            background-color: #5a20b0;
+            border-radius: 0.75rem;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.75rem 1rem;
+            font-weight: 700;
+        }
+
+        .button.load-btn:hover {
+            background-color: #451982;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button.close-btn {
+            background-color: #94005b;
+            border-radius: 0.75rem;
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            font-weight: 700;
+        }
+
+        .button.close-btn:hover {
+            background-color: #7a004b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input {
+            background-color: #5a20b0;
+            border: 1px solid #8c33ff;
+            color: #fff;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            transition: border-color 0.2s;
+            width: 100%;
+            resize: none;
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: #c299ff;
+        }
+
+        .message-box {
+            background-color: #5a20b0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #8c33ff;
+            margin-top: 1rem;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main container and button to open the form -->
+    <div class="container">
+        <h1 class="text-3xl font-bold mb-6">Choose Your Adventure</h1>
+        <p class="mb-8 max-w-md mx-auto">Click the button below to save your progress or load a previous game using a
+            comma-separated string.</p>
+        <button id="openFormBtn" class="button open-btn">
+            Save / Load Choices
+        </button>
+    </div>
+
+    <!-- The modal/popup form -->
+    <div id="formModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2 class="text-2xl font-bold mb-6 text-center">Save or Load Your Choices</h2>
+
+            <!-- Save section -->
+            <!-- The save input is hidden as it's no longer needed for this function -->
+            <div id="saveGroup" class="input-group hidden">
+                <label for="saveInput" class="block text-left mb-2 text-sm font-medium">Choices to Save
+                    (comma-separated):</label>
+                <textarea id="saveInput" rows="3" class="input w-full resize-none"></textarea>
+            </div>
+            <button id="saveBtn" class="button save-btn">
+                Save
+            </button>
+            <div id="saveMessage" class="message-box hidden text-sm text-center"></div>
+
+            <!-- Load section -->
+            <div class="input-group">
+                <label for="loadInput" class="block text-left mb-2 text-sm font-medium">Choices to Load (comma-separated
+                    string):</label>
+                <textarea id="loadInput" rows="3" class="input"></textarea>
+            </div>
+            <button id="loadBtn" class="button load-btn">
+                Load
+            </button>
+            <div id="loadMessage" class="message-box hidden text-sm text-center"></div>
+
+            <button id="closeFormBtn" class="button close-btn">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const openFormBtn = document.getElementById('openFormBtn');
+            const formModal = document.getElementById('formModal');
+            const closeFormBtn = document.getElementById('closeFormBtn');
+            const saveBtn = document.getElementById('saveBtn');
+            const loadBtn = document.getElementById('loadBtn');
+            const saveInput = document.getElementById('saveInput');
+            const loadInput = document.getElementById('loadInput');
+            const saveMessage = document.getElementById('saveMessage');
+            const loadMessage = document.getElementById('loadMessage');
+
+            // Show the modal
+            openFormBtn.addEventListener('click', () => {
+                formModal.classList.remove('hidden');
+            });
+
+            // Hide the modal
+            closeFormBtn.addEventListener('click', () => {
+                formModal.classList.add('hidden');
+            });
+
+            // Save functionality (modified)
+            saveBtn.addEventListener('click', () => {
+                // The save button now just displays a temporary message
+                saveMessage.textContent = 'Choices saved!';
+                saveMessage.classList.remove('hidden');
+                // Hide after 3 seconds
+                setTimeout(() => saveMessage.classList.add('hidden'), 3000);
+            });
+
+            // Load functionality
+            loadBtn.addEventListener('click', () => {
+                const choicesString = loadInput.value.trim(); //load text area and remove whitespace
+                if (choicesString) {
+                    // Here you would typically fetch the string from a database or local storage
+                    // For this example, we'll just parse the input string
+                    const choicesArray = choicesString.split(',').map(choice => choice.trim());
+                    loadMessage.textContent = `Choices loaded: ${choicesArray.join(', ')}`;
+                    loadMessage.classList.remove('hidden');
+                    // Hide after 3 seconds
+                    setTimeout(() => loadMessage.classList.add('hidden'), 3000);
+                } else {
+                    loadMessage.textContent = 'Please enter a string to load.';
+                    loadMessage.classList.remove('hidden');
+                }
+            });
+
+            // Close the modal when clicking outside of the content
+            formModal.addEventListener('click', (e) => {
+                if (e.target === formModal) {
+                    formModal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

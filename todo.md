@@ -59,3 +59,17 @@ I can definitely summarize the feedback for you. It's great that the community i
     * A system for upgrading and evolving the dragoon mount.
     * New high-tech AI crew.
 * **Other Requests:** One user requested a "non-interactive" downloadable version to bypass the bugs, and another asked for a "god mod."
+
+add to lore: if a faction is hostile, they will attack on sight, refuse to trade, and betray your crew. 
+
+Code improvements:
+1. Section eventlistener instead of document.eventlistener
+2. There should be a function that sums all choices' cost/gain and update the credit tally. Because, if a player clicks on a discount AFTER making the choice, I want the credits to be refunded. 
+Thus, all discounts should affect the js data itself, instead of credit-only. This paves the way for choices to be saved
+3. Omni-discount function = when triggered, apply discount to the choice cost
+4. Display choice function = display player.choices by making all choices active minus ship choices
+5. Display ship function only affects ships 
+
+To display loaded choices, frame and ship object must be declared prior to DOM 
+
+

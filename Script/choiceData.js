@@ -1126,3 +1126,31 @@ function addTitlesToSection(titlesArray, sectionID) {
     targetSection.before(newDiv); // Append to the target section
   });
 }
+
+function loadSave() {
+  loadBtn.addEventListener('click', () => {
+    const choicesString = loadInput.value.trim(); //load text area and remove whitespace
+    if (choicesString) {
+      // Here you would typically fetch the string from a database or local storage
+      // For this example, we'll just parse the input string
+      const choicesArray = choicesString.split(',').map(choice => choice.trim()); //The map() method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array.
+      const uniqueChoices = [...new Set([...choicesArray, ...player.choices])]; //combine loaded choices with current player choices, remove duplicates. Set is a built-in object that lets you store unique values of any type, whether primitive values or object references.
+      player.choices = uniqueChoices; // Update player choices
+
+      setTimeout(() => loadMessage.classList.add('hidden'), 3000); //hide load message after 3 seconds
+    } else {
+      loadMessage.textContent = 'Please enter a string to load.';
+      loadMessage.classList.remove('hidden');
+    }
+  });
+}
+
+function saveGame() {
+  saveBtn.addEventListener('click', () => {
+    // The save button now just displays a temporary message
+    saveMessage.textContent = player.choices.join(', ');
+    saveMessage.classList.remove('hidden');
+    // Hide after 3 seconds
+    setTimeout(() => saveMessage.classList.add('hidden'), 3000);
+  });
+}
