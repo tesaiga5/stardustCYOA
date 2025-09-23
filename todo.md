@@ -73,3 +73,4 @@ Thus, all discounts should affect the js data itself, instead of credit-only. Th
 To display loaded choices, frame and ship object must be declared prior to DOM 
 
 
+6. dropdown on frame resources

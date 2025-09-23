@@ -2515,6 +2515,15 @@
     </div>
   </div>
 
+  <!--Save Modal Pop Up-->
+  <div id="saveModalOverlay" class="save-modal-overlay">
+    <div class="save-modal-popup">
+      <button id="closeModalButton" class="close-button">
+        &times;
+      </button>
+    </div>
+  </div>
+
   <script type="module">
     import {
       switchChoose, handleChoiceRigs, handleChoiceVehicle, handleChoiceCrew, getImgName,
@@ -2595,6 +2604,8 @@
     const sectionEwar1 = document.getElementById('section-ewar');
     const choiceRoom1 = document.getElementById('choice-room');
     const sectionRoom1 = document.getElementById('section-room');
+
+
 
 
 
@@ -3797,8 +3808,17 @@
     const openModalButton = document.getElementById('choice-summary'); //for popup
     const closeModalButton = document.getElementById('closeModalButton');
     const modalOverlay = document.getElementById('modalOverlay');
+
     //const frameCardContainer = document.getElementById('frameCard');
     //const hullCardList = document.getElementById('hullCardList');
+
+    //for save/load button 
+    const saveButton1 = document.getElementById('saveButton');
+    const saveButton2 = document.getElementById('saveButtonInside');
+    const loadButton1 = document.getElementById('loadButtonInside');
+    const saveModalOverlay1 = document.getElementById('saveModalOverlay');
+    const closeSaveModal1 = document.getElementById('closeSaveModal');
+    const savePopup1 = document.getElementById('save-popup'); //TODO
 
     // Add a click event listener to the scroll button
     scrollButton.addEventListener('click', () => {
@@ -3823,6 +3843,28 @@
       if (event.target === modalOverlay) {
         modalOverlay.classList.remove('visible');
       }
+    });
+
+    //open the modal
+    saveButton1.addEventListener('click', () => {
+      saveModalOverlay1.classList.add('visible');
+    });
+
+    //close the modal
+    closeSaveModal1.addEventListener('click', () => {
+      saveModalOverlay1.classList.remove('visible');
+    });
+
+    saveModalOverlay1.addEventListener('click', (event) => {
+      if (event.target === saveModalOverlay1) {
+        saveModalOverlay1.classList.remove('visible');
+      }
+    });
+
+    savePopup1.addEventListener('click', (event) => {
+      if (event.target.closest === saveButton2) { }
+      else if (event.target.closest === loadButton1) { }
+
     });
 
     //image credits
