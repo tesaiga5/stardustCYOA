@@ -1,3 +1,7 @@
+div {
+  border-radius: 1rem;
+}
+
 .section {
   display: flex;
   flex-wrap: wrap;
@@ -224,18 +228,7 @@ p {
   /* Consistent active color */
 }
 
-.choice img,
-.choice-frame-upgrade img,
-.choice-rigs img {
-  max-width: 100%;
-  /* Ensure images don't overflow their parent pseudoChoice */
-  height: auto;
-  /* Maintain aspect ratio */
-  border-radius: 20px;
-  /* Added rounded corners to images */
-  margin-bottom: 10px;
-  /* Space between image and text */
-}
+
 
 h1,
 h2,
@@ -353,10 +346,7 @@ h3 {
   background-color: rgb(170, 136, 2);
 }
 
-img {
-  height: 400px;
-  max-width: 300px;
-}
+
 
 body {
   /*make galaxy background image*/
@@ -447,16 +437,7 @@ body b {
   border-radius: 15px;
 }
 
-.pseudoChoice img {
-  max-width: 100%;
-  /* Ensure images don't overflow their parent pseudoChoice */
-  height: auto;
-  /* Maintain aspect ratio */
-  border-radius: 8px;
-  /* Added rounded corners to images */
-  margin-bottom: 10px;
-  /* Space between image and text */
-}
+
 
 .pseudoChoice h3,
 .pseudoChoice p {
@@ -480,13 +461,7 @@ body b {
   /* Stack children vertically if you want the text below the image */
 }
 
-.image-container img {
-  /* No specific centering properties needed here if parent is flex */
-  max-width: 100%;
-  /* Ensure image scales down if larger than container */
-  height: auto;
-  /* Maintain aspect ratio */
-}
+
 
 .point-bar {
   display: flex;
@@ -898,13 +873,16 @@ ul {
   box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.5);
 }
 
-.modal-overlay {
+.modal-overlay,
+.save-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  margin: 0;
+  /* This creates the blur effect */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -913,10 +891,13 @@ ul {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.modal-overlay.visible {
+.modal-overlay.visible,
+.save-modal-overlay.visible {
   opacity: 1;
   visibility: visible;
 }
+
+
 
 .modal-popup {
   background-color: #2c2c3e;
@@ -924,13 +905,94 @@ ul {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 75vh;
   height: 90vh;
   overflow-y: scroll;
   -ms-overflow-style: none;
   /* for IE and Edge */
   scrollbar-width: none;
   /* for Firefox */
+}
+
+.save-modal-popup {
+  display: flex;
+  background-color: #2c2c3e;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 100%;
+  max-width: 58vh;
+  height: 90vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* for IE and Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  align-items: top;
+  justify-content: center;
+}
+
+.save-modal-popup textarea {
+  height: 21vh;
+  border-radius: 1vh;
+}
+
+.save-modal-popup>div {
+  display: flex;
+  flex-direction: column;
+}
+
+.save-modal-popup>*>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-inside {
+  max-width: 100%;
+  border-radius: 10px;
+  background-color: rgba(71, 19, 150, 0.493);
+  color: white;
+  font-size: 1rem;
+  border-color: rgb(214, 156, 248);
+  font-weight: 700;
+  text-align: center;
+  height: 3vh;
+  transition: all 0.2s ease-in-out;
+  border: 0.2vh solid var(--glow-color);
+  /* The outer pink/purple border */
+  box-shadow: 0 0 1vh rgba(216, 150, 255, 0.6);
+  /* The soft glow effect */
+  padding-left: 1vh;
+  padding-right: 1vh;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.button-inside:hover {
+  background-color: #7d3ed4;
+  /* Slightly lighter base */
+  box-shadow: 0 0 15px var(--glow-color), 0 0 25px rgba(216, 150, 255, 0.4);
+  transform: translateY(-2px);
+  /* Lift button slightly */
+  cursor: pointer;
+}
+
+.button-inside:active {
+  background-color: #5a099a;
+  /* Darker base for "pressed" state */
+  box-shadow: 0 0 5px var(--glow-color);
+  transform: translateY(1px);
+  /* Push button down */
+}
+
+.save-textarea {
+  width: 90%;
+  height: 100%;
+  align-items: center;
 }
 
 .close-button {

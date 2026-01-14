@@ -1,3 +1,18 @@
+Make submenu 
+Reduce img size
+Change img name to functional names, so have to change image credits function 
+Make graphics for equipment stats 
+Make class for objects = ship, body
+Function to turn number in JSON into CSS 'stat bar'
+Port all data into JSON  
+
+Rewrite CSS 
+Add mutations to choices ala Lt. Omourov 
+
+
+
+
+
 17. FUTURE UPDATE: Reserve contracts & battle for next update, make subtotal credits in case user change his mind -> update all consequences, starpos consequences
 
 18. FUTURE UPDATE: SECTION DRONE - combine with industrial & ADD quantity mechanic like crew and must be related to hangar space. 

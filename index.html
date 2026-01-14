@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
   <title>Star Dust CYOA</title>
   <link rel="stylesheet" href="styles.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
@@ -74,7 +74,7 @@
     <div>
       <div>
         <h1>Lore</h1>
-        <p>
+        <p></p>
       </div>
     </div>
     <div style="display:flex; flex-direction:row; flex-wrap:wrap;">
@@ -2518,9 +2518,27 @@
   <!--Save Modal Pop Up-->
   <div id="saveModalOverlay" class="save-modal-overlay">
     <div class="save-modal-popup">
-      <button id="closeModalButton" class="close-button">
-        &times;
-      </button>
+      <div style="margin:0; padding:0; width:75%; height:50%;">
+        <button id="closeSaveModal" class="close-button">
+          &times;
+        </button>
+        <div>
+          <button id="saveButtonInside" class="button-inside">Save</button>
+        </div>
+        <div>
+          <textarea id="saveTextArea" placeholder="Copy IDs here separated by commas then click load button"
+            class="save-textarea"></textarea>
+        </div>
+        <div>
+          <button id="loadButtonInside" class="button-inside">Load</button>
+        </div>
+
+        <div><button id="saveToReddit" class="button-inside">Paste to Reddit?</button></div>
+        <div>
+          <textarea id="redditTextArea" class="save-textarea" readonly
+            placeholder="Click on Paste to Reddit button, then CTRL+V on Reddit"></textarea>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -3855,17 +3873,18 @@
       saveModalOverlay1.classList.remove('visible');
     });
 
+    //close modal if click outside of it
     saveModalOverlay1.addEventListener('click', (event) => {
       if (event.target === saveModalOverlay1) {
         saveModalOverlay1.classList.remove('visible');
       }
     });
 
-    savePopup1.addEventListener('click', (event) => {
+    //handle save/load button inside modal
+    /*savePopup1.addEventListener('click', (event) => {
       if (event.target.closest === saveButton2) { }
       else if (event.target.closest === loadButton1) { }
-
-    });
+    });*/
 
     //image credits
     setImageTitle();

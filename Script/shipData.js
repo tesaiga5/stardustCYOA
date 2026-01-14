@@ -4183,7 +4183,9 @@ function deleteShip(shipID) {
   //return map; // Return null to indicate the ship has been deleted
 }
 
-function addHullToShip(chosenShip) {
+/*
+  IN SHIPCLASS.JS
+function addHullToShip(chosenShip) { 
   chosenShip.spinalSlot = chosenShip.hull.spinalMount;
   chosenShip.broadsideSlot = chosenShip.hull.broadsideMount;
   chosenShip.pointDefenceSlot = chosenShip.hull.pointDefenceMount;
@@ -4202,7 +4204,7 @@ function updateWeaponSlot() {
   document.getElementById("spinal-credits-display").innerHTML = `Remaining Spinal Slot: ${player.ships[player.currentActiveShip].spinalSlot}`;
   document.getElementById("broadside-credits-display").innerHTML = `Remaining Broadside Slot: ${player.ships[player.currentActiveShip].broadsideSlot}`;
   document.getElementById("pointdefence-credits-display").innerHTML = `Remaining Point Defence Slot: ${player.ships[player.currentActiveShip].pointDefenceSlot}`;
-}
+}*/
 
 function hullDiscount(chosenHull) {
   const shipIds = Object.values(player.ships);
